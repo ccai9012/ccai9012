@@ -1,0 +1,33 @@
+The **Cold Climate Housing Research Center (CCHRC)** plays a key role in supporting energy efficiency and renewable energy projects in cold climates, particularly in communities like Aniak, Alaska. Based on the provided context, here are the detailed responsibilities of CCHRC in the **Aniak Energy Action Plan 2019**:
+
+### **Primary Responsibilities:**
+1. **Project Coordination & Planning**  
+   - Collaborates with **Energy Audits of Alaska** to develop an **Energy Action Plan** for the Aniak Tribe.  
+   - Helps the Tribe meet grant requirements (e.g., writing quarterly progress reports, final reports, and outreach materials).  
+
+2. **Energy Audits & Assessments**  
+   - Works with **Energy Audits of Alaska** to conduct **on-site energy assessments** of buildings in Aniak.  
+   - Collects **baseline data** (energy use, building conditions, occupant comfort) before audits.  
+
+3. **Data Management & Reporting**  
+   - Stores **baseline data** on CCHRC’s server and makes it publicly available on their website.  
+   - Assists in tracking **building improvements** and **energy efficiency measures**.  
+   - Uses the **Invita web portal** to monitor **building and heating appliance temperatures** via wireless thermostats.  
+
+4. **Community Engagement & Feedback**  
+   - Presents a **draft Energy Action Plan** to the Aniak Tribe for review.  
+   - Incorporates feedback from the Tribe before finalizing the plan.  
+
+5. **Final Deliverables**  
+   - Prepares and submits the **final Energy Action Plan** to the Aniak Tribe.  
+   - Ensures compliance with **U.S. Government grant requirements** (e.g., DOE-funded projects).  
+
+### **Additional Support Roles:**
+- Provides **technical expertise** on cold-climate housing and energy efficiency.  
+- Assists with **outreach and education** to promote energy-saving strategies.  
+- Ensures transparency by **disclaiming any government endorsement** of specific products or services used in the project.  
+
+### **Conclusion**  
+CCHRC acts as a **research, planning, and implementation partner**, helping rural Alaskan communities like Aniak improve energy efficiency, reduce costs, and enhance building performance in extreme climates. Their work includes **data collection, audits, reporting, and community collaboration** to create sustainable energy solutions.  
+
+For more details, visit: [http://www.cchrc.org/doe-energy-efficiency-and-renewable-energy-projects](http://www.cchrc.org/doe-energy-efficiency-and-renewable-energy-projects)

@@ -1,0 +1,9 @@
+digest: 37f1fe8c
+name: validation_0
+profile: '{"features_shape": [2203, 15], "features_size": 33045, "features_nbytes":
+  132180}'
+schema: '{"mlflow_tensorspec": {"features": "[{\"type\": \"tensor\", \"tensor-spec\":
+  {\"dtype\": \"float32\", \"shape\": [-1, 15]}}]", "targets": null}}'
+source: '{"tags": {"mlflow.user": "kanxuanhe", "mlflow.source.name": "/opt/anaconda3/envs/ai_course/lib/python3.10/site-packages/ipykernel_launcher.py",
+  "mlflow.source.type": "LOCAL"}}'
+source_type: code
