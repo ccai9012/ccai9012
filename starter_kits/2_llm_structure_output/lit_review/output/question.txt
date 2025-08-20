@@ -1,0 +1,8 @@
+The paper applies a **multinomial logistic regression** model. 
+
+Specifically:
+- The **dependent variable** is the type of trajectory (e.g., passive, serious, playful, mixed).
+- The **independent variables** include the total duration within 0.5m distance to different types of features (e.g., heart-shaped seating, bench, pavilion, waterfront), which indicate the level of interaction between people and these features.
+- The **reference group** for the regression is the "Passive" trajectory type (with n=3050 observations).
+
+This model is used to determine whether different movement trajectories are associated with the usage of different spatial features.
