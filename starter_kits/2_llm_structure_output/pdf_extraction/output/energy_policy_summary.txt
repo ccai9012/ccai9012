@@ -1,33 +1,22 @@
-### **Comparison and Summary of Energy Policies**  
+Based on the provided policy tables for the Alaskan communities of Aniak, Kwigillingok, and Atmautluak, here is a comparative summary.
 
-#### **Common Energy Policy Goals**  
-- **Reduce energy consumption** and costs across tribal buildings.  
-- **Improve occupant comfort** and building safety.  
-- **Guide future retrofit projects** through energy audits and data monitoring.  
-- **Enhance community engagement** via outreach (presentations, flyers, videos).  
-- **Secure funding/training** for long-term sustainability.  
+### Common Energy Policy Goals
+The communities share nearly identical primary objectives, focusing on practical, immediate improvements to building efficiency and energy management.
+*   **Improve Building Condition:** All plans prioritize assessing and upgrading the physical state of buildings, including insulation, siding, and safety.
+*   **Decrease Energy Use:** A universal goal is to reduce consumption of fuel and electricity to lower costs and increase sustainability.
+*   **Data-Driven Planning:** Each project emphasizes the critical role of collecting and analyzing baseline data (e.g., from energy bills and building surveys) to inform future retrofit projects and measure success.
 
-#### **Most Comprehensive Plans**  
-- **Aniak** and **Akiachak** stand out for detailed actions:  
-  - Both include energy audits, maintenance checklists, training, and quarterly reporting.  
-  - Akiachak explicitly seeks financing for retrofits, while Aniak emphasizes coordination with regional projects.  
+### Regions with the Most Comprehensive Plans
+While all plans are focused, Atmautluak's project outline is the most structured and comprehensive.
+*   **Atmautluak** has a clearly defined, multi-step process that moves from initial meetings and data collection to creating, reviewing, and finalizing a formal Energy Action Plan. This indicates a strategic approach to long-term energy management.
+*   **Aniak** also demonstrates a strong, ongoing monitoring component with specific tasks like monthly energy bill analysis, making its plan operationally detailed.
 
-#### **Unique or Innovative Actions**  
-- **Atmautluak**: Interviews with experts to refine energy action plans.  
-- **Kwigillingok**: Outreach via video, a less common method in other plans.  
-- **Akiachak**: Monthly maintenance checklists (more frequent than others).  
+### Unique or Innovative Actions Mentioned
+The actions are largely centered on foundational audits and retrofits, with one notable exception.
+*   **Standard Actions:** Most key actions are standard for energy efficiency projects: building surveys, energy bill analysis, LED lighting upgrades, and installing setback thermostats.
+*   **Innovative Action:** **Kwigillingok** mentions the unique and ambitious goal of providing electricity and heat via wind turbines, which is a significant step towards renewable energy generation rather than just efficiency.
 
-#### **Main Differences in Stakeholders and Timelines**  
-- **Stakeholders**:  
-  - All involve tribes, CCHRC, Energy Audits of Alaska, and Nuvista Electric.  
-  - **Atmautluak** uniquely includes "Alaskans" broadly; **Akiachak** specifies building occupants.  
-- **Timelines**:  
-  - Most focus on **2017–2018**, with quarterly reports.  
-  - **Atmautluak** extends to **February 2019** for final review.  
-  - **Akiachak** mentions ongoing maintenance beyond 2018.  
-
-### **Key Takeaways**  
-- Shared goals of efficiency, cost reduction, and comfort.  
-- Aniak and Akiachak have the most structured plans.  
-- Outreach and stakeholder engagement vary slightly by region.  
-- Timelines are similar, but Atmautluak has a later review phase.
+### Summary of Main Differences in Stakeholders and Timelines
+The main differences lie in the specificity of timelines and the inclusion of technical partners.
+*   **Stakeholders:** All involve tribal leadership (IRA Council/Traditional Council), project staff, and occupants. The key difference is the explicit involvement of technical research partners like the **Cold Climate Housing Research Center (CCHRC)** in Aniak and Atmautluak, which adds a layer of expertise not mentioned for Kwigillingok.
+*   **Timelines:** This is the area of greatest variation. **Atmautluak** has a specific start point (May 2018). **Aniak** outlines ongoing, periodic tasks (monthly analysis) and a mid-2019 publication date. **Kwigillingok's** plan lacks a defined timeline altogether.

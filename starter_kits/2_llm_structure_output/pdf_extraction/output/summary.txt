@@ -1,32 +1,27 @@
-Here’s a summary of the **Aniak Energy Action Plan 2019** based on the provided context:
+Based on the provided text, here is a summary of the described energy plan.
 
-### **Location**  
-- **Aniak, Alaska** – The project focuses on tribal buildings in the Aniak community.
+**Location:**
+The project is located in **Aniak, Alaska**.
 
-### **Main Objectives**  
-1. **Improve energy efficiency** in tribal buildings through audits, retrofits, and maintenance plans.  
-2. **Reduce energy consumption** by identifying cost-effective measures.  
-3. **Develop a long-term Energy Action Plan** to guide future efficiency projects.  
-4. **Enhance data monitoring** to track energy use and occupant comfort.  
-5. **Secure funding and training** for retrofits and maintenance.  
+**Main Objectives:**
+The overall goal is to create an **Energy Action Plan** for the Aniak Traditional Council. The key objectives are:
+*   Improve energy efficiency in tribal buildings.
+*   Summarize energy audit recommendations.
+*   Provide actionable steps to guide future retrofit projects.
+*   Help the Tribe achieve its overall energy goals.
 
-### **Key Actions**  
-1. **Energy Audits** – Conducted by Energy Audits of Alaska to assess tribal buildings and recommend efficiency measures.  
-2. **Data Monitoring Plan** – Track energy use and comfort metrics in participating buildings.  
-3. **Maintenance Plan** – Provide checklists for staff to implement low-cost energy-saving measures.  
-4. **Funding & Training** – Identify financing opportunities and local contractors for retrofits.  
-5. **Outreach & Reporting** – Share project progress with the community and submit reports to the **U.S. Department of Energy (DOE)**.  
+**Actions:**
+The project followed a specific procedure, which included these key actions:
+1.  **Holding a Kick-off Meeting:** Discussing project goals with the Tribal Council and developing a data monitoring plan to track energy use and occupant comfort.
+2.  **Conducting Energy Audits:** Energy Audits of Alaska performed assessments of the tribal buildings to identify energy efficiency measures.
+3.  **Developing the Energy Action Plan:** Creating this document, which includes audit summaries, a maintenance plan, and information on funding and training opportunities.
+4.  **Community Outreach:** Presenting the project at conferences and creating flyers and a video for the community.
+5.  **Coordination:** Communicating with local energy programs to coordinate with other regional projects.
 
-### **Stakeholders**  
-1. **Aniak Traditional Council** – Provided building-specific goals and broader energy objectives.  
-2. **Cold Climate Housing Research Center (CCHRC)** – Assisted with project coordination and planning.  
-3. **Energy Audits of Alaska** – Conducted building assessments and efficiency recommendations.  
-4. **Nuvista Electric Light & Power / CEMAI** – Collaborated on regional energy projects (via Bertha Prince, Energy Program Coordinator).  
-5. **U.S. Department of Energy (DOE) Office of Indian Energy** – Provided funding and received quarterly reports.  
-6. **Local Contractors & Maintenance Staff** – Identified as key players in implementing retrofits and maintenance tasks.  
-
-### **Additional Notes**  
-- The plan includes **appendix materials** such as audit summaries, outreach flyers, and contractor scopes of work.  
-- The project was presented at **DOE Office of Indian Energy Program Reviews (2017 & 2018)**.  
-
-Would you like more details on any specific section?
+**Stakeholders:**
+The main stakeholders involved are:
+*   **Aniak Traditional Council:** The primary partner and project lead.
+*   **Cold Climate Housing Research Center (CCHRC):** A key project organizer and author of the plan.
+*   **Energy Audits of Alaska:** The company that conducted the building energy audits.
+*   **Nuvista Electric Light & Power / CEMAI (Bertha Prince):** A local energy program coordinator for regional collaboration.
+*   **United States Department of Energy Office of Indian Energy:** The federal agency providing support and funding for the project.

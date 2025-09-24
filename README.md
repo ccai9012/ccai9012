@@ -25,6 +25,8 @@ In this repository, you'll find a comprehensive set of resources, including week
 │   └── 5_bias_detection_interpretability/  # Bias detection & interpretability
 │
 ├── ccai9012/            # Core utility library
+├── docs/                # Generated documentation
+│   └── ccai9012/        # Module documentation pages
 ├── data/                # Example datasets
 └── models/              # Pre-trained models
 ```
@@ -37,15 +39,39 @@ Weekly course materials including:
 
 ### starter_kits
 Starter kits for final projects covering various AI applications:
-1. Traditional Generative Models (e.g., GANs)
-2. LLM Structured Output Processing
-3. Multimodal Reasoning Applications
-4. Computer Vision Model Applications
-5. AI Bias Detection & Interpretability Analysis
 
-Each kit contains complete example code and detailed documentation to serve as a reference and starting point for final projects.
+1. **Traditional Generative Models**: Create AI-generated images and patterns using GANs (Generative Adversarial Networks). 
+   - `GANmapper` project demonstrates how to generate architectural or urban patterns from existing imagery.
+
+2. **LLM Structured Output Processing**: Extract and analyze structured information from text using Large Language Models. Includes projects for:
+   - `airbnb_reviews`: Analyzing sentiment and feature preferences from accommodation reviews
+   - `lit_review`: Automating literature review summaries from academic papers
+   - `pdf_extraction`: Extracting structured information from PDF documents
+   - `urban_sentiment`: Analyzing public sentiment about urban spaces from text data
+
+3. **Multimodal Reasoning Applications**: Combine image and text understanding for advanced AI applications:
+   - `clip_historic`: Classify architectural styles and historic buildings using CLIP models
+   - `gen_images_eval`: Generate and evaluate AI-created images based on text prompts
+
+4. **Computer Vision Model Applications**: Apply computer vision to urban analysis:
+   - `svi_housing_price`: Predict housing prices from Street View imagery
+   - `webcam_yolo`: Real-time object detection for pedestrian and traffic analysis
+
+5. **AI Bias Detection & Interpretability**: Explore ethical AI and model transparency:
+   - `credit_audit`: Audit credit decision models for potential biases
+   - `recidivism_prediction`: Analyze fairness in criminal risk assessment systems
+
+
+### docs
+Generated documentation explaining each module's functions, classes, and usage examples:
+- Auto-generated HTML documentation for each module in the `ccai9012` library
+- Usage examples and parameter descriptions for all functions
+- Clear navigation between related modules and components
+- **Access documentation by opening `/docs/ccai9012/index.html` in your web browser**
 
 ## Installation Guide
+
+This guide will help you set up the toolkit on your computer, even if you're new to programming or AI.
 
 ### 1. Install Anaconda
 
@@ -53,60 +79,88 @@ First, install Anaconda, a Python data science platform that includes necessary 
 
 1. Visit [Anaconda's website](https://www.anaconda.com/products/distribution)
 2. Download the installer for your operating system:
-   - Windows: Download the .exe installer
-   - macOS: Download the .pkg installer
-   - Linux: Download the .sh installer
-3. Run the installer with default options
+   - **Windows**: Download the .exe installer (Select "64-Bit Graphical Installer")
+   - **macOS**: Download the .pkg installer (Select "64-Bit Graphical Installer")
+   - **Linux**: Download the .sh installer
+
+3. Run the installer:
+   - **Windows**: Double-click the .exe file and follow the prompts. Important: Select "Add Anaconda to my PATH environment variable" during installation.
+   - **macOS**: Double-click the .pkg file and follow the installation wizard.
+   - **Linux**: Open a terminal, navigate to the download location, and run: `bash Anaconda3-xxxx.xx-Linux-x86_64.sh` (replace xxxx.xx with the version you downloaded)
 
 Verify installation:
 1\. Open Terminal:  
-   - On **Windows**: Press `Win + S`, type `cmd` , and press Enter.  
+   - On **Windows**: Press `Win + S`, type `Anaconda Prompt`, and select "Anaconda Prompt (anaconda3)".  
    - On **macOS**: Press `Command + Space`, type `Terminal`, and press Enter.
+   - On **Linux**: Open your terminal application.
 
 2\. Copy and paste the following command into the terminal, then press Enter:
 ```bash
 conda --version
 ```
+You should see the conda version number displayed, confirming installation.
 
 ### 2. Create Virtual Environment
 
-Create a new environment named `ccai9012` with Python 3.9：
+A virtual environment isolates the project dependencies from other Python projects. Create a new environment named `ccai9012` with Python 3.9：
 
 ```bash
 conda create -n ccai9012 python=3.9
 ```
+When prompted to proceed, type `y` and press Enter.
 
 Activate the environment：
 ```bash
+# On Windows:
+conda activate ccai9012
+
+# On macOS/Linux:
 conda activate ccai9012
 ```
+Your command prompt should now show `(ccai9012)` at the beginning of the line, indicating the environment is active.
 
 ### 3. Install Dependencies
 
 Clone the project and install dependencies：
 
 ```bash
-# Clone repository
-git clone [repository_url]
-cd toolkit
+# Clone repository (you need Git installed)
+cd ~/Desktop  # Or any directory where you want to store the project
+git clone https://github.com/ccai9012/ccai9012.git # Clone the repository
+cd ccai9012 # Enter the project directory
 
 # Install requirements
 pip install -r requirements.txt
+```
 
-# Install toolkit in development mode
+If you don't have Git installed:
+- Visit [git-scm.com](https://git-scm.com/downloads) to download and install it
+- Or download the repository as a ZIP file from the GitHub page and extract it to your desired location
+
+Alternative installation (if you don't want to use Git):
+```bash
+# Install the package directly from the current directory
+cd path/to/downloaded/project
 pip install -e .
 ```
 
 ### 4. Verify Installation
 
-Verify in Python：
+Open Python and verify the installation:
+```bash
+python
+```
+
+Then in the Python interactive console, type:
 ```python
 import ccai9012
 import torch
 import transformers
 ```
 
-If no errors occur, the installation is successful.
+If no errors occur, the installation is successful. Type `exit()` to exit the Python console.
+
+You can also access the documentation by opening the file `docs/ccai9012/index.html` in your web browser.
 
 ## Common Issues
 
@@ -117,16 +171,23 @@ If you have an NVIDIA GPU, it's recommended to set up CUDA for GPU acceleration�
 ```bash
 nvidia-smi
 ```
+This will display your GPU and driver information.
 
 2. Install matching CUDA version：
 ```bash
 conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
 ```
 
+### Common Error Messages
+
+1. **ModuleNotFoundError**: If you see "No module named 'xyz'", run: `pip install xyz`
+2. **DLL Load Failed**: On Windows, reinstall PyTorch with the correct CUDA version
+3. **Out of Memory**: Reduce batch sizes in your code or use CPU mode
+
 ## Support & Feedback
 
 For questions or suggestions：
-1. Submit an issue
+1. Submit an issue on our GitHub repository
 2. Email [course_email]
 3. Post in the course forum
 
