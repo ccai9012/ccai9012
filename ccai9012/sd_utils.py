@@ -1,4 +1,25 @@
-# utils/sd_utils.py
+"""
+Stable Diffusion Utilities Module
+=================================
+
+This module provides utilities for text-to-image generation using Stable Diffusion models.
+It offers a flexible interface to generate images either through the Hugging Face Inference API
+(cloud-based) or locally using downloaded models.
+
+The module is designed to simplify the process of generating images from text prompts,
+handling authentication, model loading, and providing consistent interfaces regardless
+of the execution mode chosen.
+
+Main components:
+- API key management: Secure handling of Hugging Face API keys
+- SDClient: A versatile client that can operate in two modes:
+  - "inference": Uses Hugging Face's Inference API (cloud-based, faster startup)
+  - "local": Loads and runs models locally (higher throughput for multiple generations)
+
+Usage:
+    client = SDClient(mode="inference")  # Use Hugging Face Inference API
+    images = client.generate_images("a photo of a cat", num_images=2)
+"""
 
 import os
 import getpass
@@ -9,7 +30,20 @@ from IPython.display import display
 
 
 def get_hf_api_key(env_var: str = "HUGGINGFACE_API_KEY") -> str:
-    """Get HF API key from env or prompt user securely."""
+    """
+    Get Hugging Face API key from environment variables or prompt user securely.
+
+    This function first attempts to retrieve the API key from the specified environment variable.
+    If the key is not found, it prompts the user to enter it securely (without displaying it),
+    then stores it in the environment variable for future use within the session.
+
+    Args:
+        env_var (str): The name of the environment variable to check for the API key.
+                      Defaults to "HUGGINGFACE_API_KEY".
+
+    Returns:
+        str: The Hugging Face API key.
+    """
     api_key = os.getenv(env_var)
     if not api_key:
         api_key = getpass.getpass(f"Enter your {env_var}: ")
@@ -18,6 +52,33 @@ def get_hf_api_key(env_var: str = "HUGGINGFACE_API_KEY") -> str:
 
 
 class SDClient:
+    """
+    Stable Diffusion Client for text-to-image generation.
+
+    This class provides a unified interface for generating images from text prompts,
+    supporting two operational modes:
+
+    1. "inference" mode: Uses Hugging Face's Inference API (cloud-based)
+       - Advantages: Faster startup, no model downloads, lower memory requirements
+       - Use case: Quick testing, limited hardware resources
+
+    2. "local" mode: Loads and runs models locally via diffusers library
+       - Advantages: Higher throughput for multiple generations, more control
+       - Use case: Batch processing, offline usage, custom pipelines
+
+    The class handles model loading, device management, and API authentication
+    automatically, providing a simple interface for generating images.
+
+    Attributes:
+        mode (str): Operating mode ("inference" or "local").
+        model_id (str): Hugging Face model repository ID.
+        device (str): Torch device for computation ("cuda" or "cpu").
+        api_key (str): Hugging Face API key for authentication.
+        client: Inference client (in "inference" mode).
+        pipe: StableDiffusionPipeline instance (in "local" mode).
+        cache_dir (str): Directory to cache downloaded models (in "local" mode).
+    """
+
     def __init__(
         self,
         mode: str = "inference",  # "inference" or "local"
@@ -27,15 +88,27 @@ class SDClient:
         device: str = None,
     ):
         """
-        Initialize SDClient.
+        Initialize the Stable Diffusion Client with specified configuration.
+
+        Sets up the client based on the chosen operational mode, handling authentication,
+        model loading, and device selection automatically.
 
         Args:
-            mode: "inference" to use HuggingFace Inference API,
-                  "local" to load model locally via diffusers.
-            model_id: HuggingFace model repo ID.
-            cache_dir: local directory to cache model (for local mode).
-            use_auth_token: HF API token (str), if None will auto-get.
-            device: torch device, default: "cuda" if available else "cpu".
+            mode (str): Operational mode for image generation. Options:
+                       - "inference": Use Hugging Face's cloud-based Inference API.
+                       - "local": Load and run the model locally using diffusers library.
+                       Defaults to "inference".
+            model_id (str): Hugging Face model repository ID for the Stable Diffusion model.
+                          Defaults to "stabilityai/stable-diffusion-2-base".
+            cache_dir (str, optional): Local directory to cache downloaded models in "local" mode.
+                                     If None, defaults to "./models" as an absolute path.
+            use_auth_token (str, optional): Hugging Face API token for authentication.
+                                          If None, will attempt to retrieve or prompt for it.
+            device (str, optional): PyTorch device to use for computation.
+                                  If None, automatically selects CUDA if available, otherwise CPU.
+
+        Raises:
+            ValueError: If the specified mode is not "inference" or "local".
         """
         self.mode = mode.lower()
         self.model_id = model_id
@@ -71,20 +144,30 @@ class SDClient:
         display_images: bool = True,
     ):
         """
-        Generate images from prompt.
+        Generate images from a text prompt using Stable Diffusion.
 
-        Returns list of PIL.Image objects.
-
-        For `inference` mode, uses HF Inference API.
-        For `local` mode, uses local model pipeline.
+        This method generates one or more images based on the provided text prompt,
+        using either the Hugging Face Inference API (in "inference" mode) or a locally
+        loaded model (in "local" mode). Generated images can optionally be displayed
+        inline in Jupyter notebooks.
 
         Args:
-            prompt: Text prompt.
-            num_images: Number of images to generate.
-            guidance_scale: CFG scale.
-            num_inference_steps: Diffusion steps.
-            seed: Random seed.
-            display_images: If True, show images inline (in notebooks).
+            prompt (str): Text description of the image to generate.
+            num_images (int, optional): Number of images to generate. Defaults to 1.
+            guidance_scale (float, optional): Classifier-free guidance scale, controlling how
+                                           closely the image follows the prompt. Higher values
+                                           give more prompt adherence but less diversity.
+                                           Defaults to 7.5.
+            num_inference_steps (int, optional): Number of denoising steps in the diffusion process.
+                                              More steps typically yield higher quality images
+                                              but take longer to generate. Defaults to 50.
+            seed (int, optional): Random seed for reproducible generation.
+                                If None, a random seed is used. Defaults to None.
+            display_images (bool, optional): Whether to display generated images inline
+                                          in Jupyter notebook environments. Defaults to True.
+
+        Returns:
+            list: A list of PIL.Image objects representing the generated images.
         """
         images = []
 

@@ -1,3 +1,22 @@
+"""
+Street View Imagery (SVI) Utilities
+===================================
+
+This module provides tools for working with Google Street View Images (SVIs), including downloading,
+segmentation, and visualization functionalities. It enables users to download street view imagery
+using Google Maps API, perform semantic segmentation on these images using pre-trained models,
+and visualize the segmentation results.
+
+The module is organized into several components:
+- Google Street View downloader: Tools for fetching street view images using the Google Maps API
+- Segmentation utilities: Functions to perform semantic segmentation on street view images
+- Visualization utilities: Functions to visualize original images alongside their segmentations
+
+This is particularly useful for urban analysis, streetscape assessment, and understanding
+the composition of street-level imagery through semantic segmentation.
+
+"""
+
 import os
 import numpy as np
 import torch
@@ -24,7 +43,30 @@ CITYSCAPES_COLORS = [
 
 # === Pulling SVIs from Google Map ===
 class GoogleSVIDownloader:
+    """
+    A utility class for downloading Google Street View Images (SVIs) using Google Maps API.
+
+    This class provides functionality to download SVIs at specific geographic coordinates,
+    check image availability, and download images in a grid pattern across an area.
+
+    Attributes:
+        api_key (str): Google Maps API key for authentication.
+        save_dir (str): Directory path to save downloaded images.
+        base_url (str): Base URL for the Google Street View API.
+        meta_url (str): URL for the metadata endpoint of the Google Street View API.
+    """
+
     def __init__(self, api_key: str = None, save_dir: str = "images"):
+        """
+        Initialize the GoogleSVIDownloader with API key and save directory.
+
+        If no API key is provided, it attempts to get the key from the GOOGLEMAP_API_KEY
+        environment variable. If that fails, it prompts the user to enter the key.
+
+        Args:
+            api_key (str, optional): Google Maps API key. Defaults to None.
+            save_dir (str, optional): Directory to save downloaded images. Defaults to "images".
+        """
         if api_key is None:
             api_key = os.getenv("GOOGLEMAP_API_KEY")
             if api_key is None:
@@ -36,6 +78,19 @@ class GoogleSVIDownloader:
         self.meta_url = "https://maps.googleapis.com/maps/api/streetview/metadata"
 
     def is_svi_available(self, lat: float, lon: float) -> bool:
+        """
+        Check if Street View imagery is available at the given coordinates.
+
+        This method queries the Google Street View metadata API to determine
+        whether street view imagery exists for the specified location.
+
+        Args:
+            lat (float): Latitude coordinate.
+            lon (float): Longitude coordinate.
+
+        Returns:
+            bool: True if street view imagery is available, False otherwise.
+        """
         params = {
             "location": f"{lat},{lon}",
             "key": self.api_key
@@ -47,6 +102,21 @@ class GoogleSVIDownloader:
     def download_svi(self, lat: float, lon: float, heading: int = 0,
                      pitch: int = 0, fov: int = 90, size: str = "640x640",
                      save: bool = True) -> Image.Image | None:
+        """
+        Download a Street View image at the specified coordinates with given parameters.
+
+        Args:
+            lat (float): Latitude coordinate.
+            lon (float): Longitude coordinate.
+            heading (int, optional): Camera heading in degrees, 0-360. Defaults to 0 (north).
+            pitch (int, optional): Camera pitch in degrees, -90 to 90. Defaults to 0 (flat).
+            fov (int, optional): Field of view in degrees, 0-120. Defaults to 90.
+            size (str, optional): Image size in format "WIDTHxHEIGHT". Defaults to "640x640".
+            save (bool, optional): Whether to save the image to disk. Defaults to True.
+
+        Returns:
+            PIL.Image.Image | None: Downloaded image as PIL Image object, or None if download failed.
+        """
         params = {
             "location": f"{lat},{lon}",
             "size": size,
@@ -71,6 +141,22 @@ class GoogleSVIDownloader:
 
     def generate_grid_coords(self, lat_start: float, lon_start: float,
                              rows: int, cols: int, delta: float) -> list[tuple[float, float]]:
+        """
+        Generate a grid of geographic coordinates starting from a point.
+
+        Creates a rectangular grid of coordinates with the specified number of rows and columns,
+        where each point is separated by the delta value in degrees.
+
+        Args:
+            lat_start (float): Starting latitude for the grid.
+            lon_start (float): Starting longitude for the grid.
+            rows (int): Number of rows in the grid.
+            cols (int): Number of columns in the grid.
+            delta (float): Spacing between points in degrees.
+
+        Returns:
+            list[tuple[float, float]]: List of (latitude, longitude) coordinate pairs.
+        """
         coords = []
         for i in range(rows):
             for j in range(cols):
@@ -82,6 +168,27 @@ class GoogleSVIDownloader:
     def download_grid_svis(self, lat_start: float, lon_start: float, rows: int, cols: int,
                            delta: float, heading: int = 0, pitch: int = 0,
                            fov: int = 90, size: str = "640x640") -> list[dict]:
+        """
+        Download Street View images for a grid of locations.
+
+        This method generates a grid of coordinates and downloads SVIs for each location
+        where imagery is available.
+
+        Args:
+            lat_start (float): Starting latitude for the grid.
+            lon_start (float): Starting longitude for the grid.
+            rows (int): Number of rows in the grid.
+            cols (int): Number of columns in the grid.
+            delta (float): Spacing between grid points in degrees.
+            heading (int, optional): Camera heading in degrees. Defaults to 0.
+            pitch (int, optional): Camera pitch in degrees. Defaults to 0.
+            fov (int, optional): Field of view in degrees. Defaults to 90.
+            size (str, optional): Image size. Defaults to "640x640".
+
+        Returns:
+            list[dict]: List of dictionaries, each containing 'lat', 'lon', and 'image' keys
+                        for the downloaded images.
+        """
         coords = self.generate_grid_coords(lat_start, lon_start, rows, cols, delta)
         svis = []
 
@@ -105,17 +212,25 @@ def segment_and_save_images(
     filename_prefix: Optional[str] = None
 ) -> np.ndarray:
     """
-    Perform segmentation on input PIL image, optionally save segmentation results.
+    Perform semantic segmentation on an input image and optionally save the results.
+
+    This function takes a PIL image, runs it through a semantic segmentation model,
+    and creates a colored segmentation mask. The segmentation can be saved to disk
+    with a specified filename prefix.
 
     Args:
-        image_pil (PIL.Image): Input image.
-        processor: Huggingface processor for segmentation model.
-        model: Huggingface segmentation model.
-        save_dir (str, optional): Directory to save segmentation image. If None, no saving.
-        filename_prefix (str, optional): Filename prefix for saved image.
+        image_pil (PIL.Image.Image): Input image to segment.
+        processor: HuggingFace image processor object for the segmentation model.
+        model: HuggingFace segmentation model (e.g., SegFormer).
+        colors (list, optional): List of RGB color tuples for visualization.
+                                If None, uses CITYSCAPES_COLORS. Defaults to None.
+        save_dir (str, optional): Directory to save segmentation results.
+                                 If None, no saving occurs. Defaults to None.
+        filename_prefix (str, optional): Prefix for the saved segmentation file.
+                                        Defaults to None.
 
     Returns:
-        np.ndarray: Segmentation mask array (H, W) with label indices.
+        np.ndarray: Segmentation mask array with shape (H, W) containing class indices.
     """
     if colors is None:
         colors = CITYSCAPES_COLORS
@@ -153,12 +268,23 @@ def visualize_segmentation_pair(
     colors=None
 ) -> None:
     """
-    Visualize original image and segmentation side-by-side.
+    Visualize an original image alongside its semantic segmentation mask.
+
+    This function creates a side-by-side visualization of an input image and its
+    corresponding segmentation mask, with an optional legend showing the semantic
+    classes present in the segmentation.
 
     Args:
-        image_pil (PIL.Image): Original input image.
-        mask_np (np.ndarray): Segmentation mask with label indices.
-        show_legend (bool): Whether to show legend of classes.
+        image_pil (PIL.Image.Image): Original input image.
+        mask_np (np.ndarray): Segmentation mask with class label indices as values.
+        show_legend (bool, optional): Whether to display a legend with class names. Defaults to True.
+        classes (list, optional): List of class names for the legend.
+                                 If None, uses CITYSCAPES_CLASSES. Defaults to None.
+        colors (list, optional): List of RGB color tuples for visualizing the mask.
+                               If None, uses CITYSCAPES_COLORS. Defaults to None.
+
+    Returns:
+        None: This function displays the visualization but does not return any value.
     """
     if classes is None:
         classes = CITYSCAPES_CLASSES
@@ -202,16 +328,24 @@ def batch_segment_and_visualize(
     image_extensions: tuple = (".jpg", ".png", ".jpeg")
 ):
     """
-    Batch run segmentation on all images in save_dir, save results to output_dir,
-    and visualize the first max_visualize images.
+    Process and segment a batch of images, save the results, and visualize a subset of them.
+
+    This function processes all images in the specified directory, performs semantic segmentation
+    on each one, saves the colored segmentation masks, and optionally visualizes the first few
+    results as side-by-side comparisons.
 
     Args:
-        save_dir (str): Directory containing images to segment.
-        output_dir (str): Directory to save segmentation masks.
-        processor: Huggingface processor for segmentation.
-        model: Huggingface segmentation model.
-        max_visualize (int): Max number of images to visualize.
-        image_extensions (tuple): Allowed image file extensions.
+        save_dir (str): Directory containing the input images to process.
+        output_dir (str): Directory where segmentation results will be saved.
+        processor: HuggingFace image processor for preparing inputs to the segmentation model.
+        model: HuggingFace segmentation model to use for inference.
+        max_visualize (int, optional): Maximum number of images to visualize. Defaults to 6.
+        image_extensions (tuple, optional): File extensions to identify images for processing.
+                                          Defaults to (".jpg", ".png", ".jpeg").
+
+    Returns:
+        None: This function does not return a value but saves segmentation masks to disk
+              and displays visualizations for the first max_visualize images.
     """
     os.makedirs(output_dir, exist_ok=True)
 

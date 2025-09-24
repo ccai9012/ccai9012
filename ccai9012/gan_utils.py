@@ -1,3 +1,40 @@
+"""
+GAN Utilities Module
+===================
+
+This module provides comprehensive utilities for training and using Generative Adversarial Networks (GANs),
+specifically focused on image-to-image translation tasks with Pix2Pix-style architectures.
+
+The module covers the entire GAN workflow from data preparation to model training and inference,
+making it easy to implement image translation tasks between paired domains.
+
+Main components:
+- Data preparation: Functions to organize and process image pairs
+- Data loading: Custom datasets and dataloaders for paired images
+- Model architectures: U-Net generator and PatchGAN discriminator implementations
+- Training pipeline: Complete GAN training workflow with appropriate losses
+- Inference utilities: Functions for using trained models and visualizing results
+
+Usage:
+    ### Prepare dataset
+    train_count, test_count = prepare_gan_dataset(source_root="source_data",
+                                                 train_root="data/train",
+                                                 test_root="data/test")
+
+    ### Create data loaders
+    train_loader = create_paired_data_loader("data/train", batch_size=4)
+
+    ### Initialize models
+    G = UNetGenerator()
+    D = PatchDiscriminator()
+
+    ### Train GAN
+    G, history = train_GAN(G, D, train_loader, num_epochs=100)
+
+    ### Inference
+    fake_img = inference_gan(G, "data/test/A", "results/")
+"""
+
 import os
 import random
 import glob

@@ -1,3 +1,35 @@
+"""
+Neural Network Utilities Module
+===============================
+
+This module provides a comprehensive set of utilities for building, training, and evaluating 
+neural network models using PyTorch. It includes functions for data preprocessing, model training,
+and performance evaluation for both regression and classification tasks.
+
+Main components:
+- Data preparation: Functions to prepare DataLoaders with proper train/val/test splits
+- Device management: Automatic detection of optimal compute device (CPU/CUDA/MPS)
+- Model training: Streamlined training loop with validation and progress tracking
+- Model evaluation: Comprehensive metrics and visualization for regression and classification tasks
+
+This module aims to simplify common PyTorch workflows and provide consistent interfaces for
+neural network experimentation and evaluation.
+
+Usage:
+    ### Prepare data
+    train_loader, val_loader, test_loader, scaler = prepare_dataloaders(X, y)
+    
+    ### Create and train model
+    model = YourNeuralNetwork()
+    optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
+    criterion = torch.nn.MSELoss()
+    train_losses, val_losses = train_model(model, train_loader, val_loader, optimizer, criterion, num_epochs=100)
+    
+    ### Evaluate model
+    metrics = evaluate_regression_model(model, test_loader)
+"""
+
+
 import torch
 import numpy as np
 import matplotlib.pyplot as plt
@@ -5,6 +37,7 @@ from torch.utils.data import TensorDataset, DataLoader, random_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import mean_squared_error, mean_absolute_error, root_mean_squared_error, r2_score
 from sklearn.metrics import classification_report
+
 
 def prepare_dataloaders(
     X,
@@ -14,19 +47,33 @@ def prepare_dataloaders(
     val_ratio=0.15
 ):
     """
-    Prepare train/val/test DataLoaders from raw features and labels.
+    Prepare train/validation/test DataLoaders from raw features and labels.
+
+    This function standardizes features, creates PyTorch tensors, splits the dataset
+    into training, validation, and test sets, and returns DataLoader objects for each set.
+    It handles the entire data preparation pipeline for neural network training.
 
     Parameters:
-    - X: numpy array, input features
-    - y: numpy array, target labels
-    - batch_size: int, batch size for DataLoader
-    - train_ratio, val_ratio, test_ratio: float, must sum to 1, dataset split ratios
-    - transform: callable or None, transformation to apply to dataset samples (optional)
-    - dataset_class: custom Dataset class that wraps raw data and transform (optional)
-                     If provided, it will be used to wrap subsets instead of TensorDataset.
+        X (numpy.ndarray): Input features matrix with shape (n_samples, n_features).
+        y (numpy.ndarray): Target labels with shape (n_samples,) or (n_samples, n_targets).
+        batch_size (int, optional): Number of samples per batch. Defaults to 64.
+        train_ratio (float, optional): Proportion of data to use for training. Defaults to 0.7.
+        val_ratio (float, optional): Proportion of data to use for validation. Defaults to 0.15.
+                                     The remaining proportion (1 - train_ratio - val_ratio)
+                                     will be used for testing.
 
     Returns:
-    - train_loader, val_loader, test_loader: torch DataLoader objects
+        tuple: A tuple containing:
+            - train_loader (DataLoader): DataLoader for the training set.
+            - val_loader (DataLoader): DataLoader for the validation set.
+            - test_loader (DataLoader): DataLoader for the test set.
+            - scaler (StandardScaler): Fitted scaler used to standardize the features.
+
+    Example:
+        >>> train_loader, val_loader, test_loader, scaler = prepare_dataloaders(X, y)
+        >>> # Use the loaders for model training and evaluation
+        >>> for features, targets in train_loader:
+        >>>     # Training loop code
     """
 
     # Standardize features
@@ -61,7 +108,21 @@ def prepare_dataloaders(
 
 def get_best_device():
     """
-        Choose proper device to train and do inference
+    Determines the best available computational device for PyTorch operations.
+
+    This function checks for the availability of CUDA (NVIDIA GPUs), MPS (Apple Silicon),
+    or falls back to CPU. Using the appropriate device can significantly speed up
+    neural network training and inference.
+
+    Returns:
+        torch.device: The best available device in the following priority order:
+                     1. CUDA (if NVIDIA GPU is available)
+                     2. MPS (if Apple Silicon GPU is available)
+                     3. CPU (as fallback)
+
+    Example:
+        device = get_best_device()
+        model.to(device)  # Move model to optimal device
     """
     if torch.cuda.is_available():
         return torch.device("cuda")
@@ -72,23 +133,42 @@ def get_best_device():
 
 def train_model(model, train_loader, val_loader, optimizer, criterion, num_epochs, device=None, verbose=True):
     """
-    Train a PyTorch model with validation.
+    Train a PyTorch neural network model with validation.
 
-    Args:
-        model (torch.nn.Module): The model to train.
-        train_loader (DataLoader): DataLoader for training data.
-        val_loader (DataLoader): DataLoader for validation data.
-        optimizer (torch.optim.Optimizer): Optimizer.
-        criterion (loss function): Loss function.
-        num_epochs (int): Number of training epochs.
-        train_size (int): Number of training samples (used for loss averaging).
-        val_size (int): Number of validation samples.
-        device (torch.device or None): Device to run training on (e.g., 'cuda' or 'cpu'). If None, use CPU.
-        verbose (bool): Whether to print progress.
+    This function implements a complete training loop for neural networks, including:
+    - Moving the model and data to the appropriate device (GPU/CPU)
+    - Forward and backward passes
+    - Optimization steps
+    - Loss tracking for both training and validation sets
+    - Progress reporting
+
+    Parameters:
+        model (torch.nn.Module): The PyTorch model to train.
+        train_loader (torch.utils.data.DataLoader): DataLoader for training data.
+        val_loader (torch.utils.data.DataLoader): DataLoader for validation data.
+        optimizer (torch.optim.Optimizer): Optimizer for updating model weights.
+        criterion (callable): Loss function to minimize.
+        num_epochs (int): Number of complete passes through the training dataset.
+        device (torch.device, optional): Device to run the training on. If None,
+                                        the best available device is automatically selected.
+        verbose (bool, optional): Whether to print progress updates. Defaults to True.
 
     Returns:
-        train_losses (list): List of average training losses per epoch.
-        val_losses (list): List of average validation losses per epoch.
+        tuple: A tuple containing:
+            - train_losses (list): Average training loss for each epoch.
+            - val_losses (list): Average validation loss for each epoch.
+
+    Example:
+        >>> model = MyNeuralNetwork()
+        >>> optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
+        >>> criterion = torch.nn.MSELoss()
+        >>> train_losses, val_losses = train_model(
+        >>>     model, train_loader, val_loader,
+        >>>     optimizer, criterion, num_epochs=50
+        >>> )
+        >>> # Plot learning curves
+        >>> plt.plot(train_losses, label='Training Loss')
+        >>> plt.plot(val_losses, label='Validation Loss')
     """
     if device is None:
         device = get_best_device()
@@ -137,7 +217,27 @@ def train_model(model, train_loader, val_loader, optimizer, criterion, num_epoch
     return train_losses, val_losses
 
 def mean_absolute_percentage_error(y_true, y_pred):
-    """Calculate MAPE, avoid division by zero."""
+    """
+    Calculate Mean Absolute Percentage Error (MAPE) while avoiding division by zero.
+
+    MAPE measures the size of error in percentage terms, providing an intuitive measure
+    of prediction error for regression tasks. This implementation handles zero values
+    in the true labels by excluding them from the calculation.
+
+    Parameters:
+        y_true (numpy.ndarray or list): True target values.
+        y_pred (numpy.ndarray or list): Predicted target values.
+
+    Returns:
+        float: MAPE value as a percentage (not as a fraction). Lower values indicate
+              better model performance.
+
+    Example:
+        >>> y_true = [10, 20, 30, 0, 40]  # Note the zero value
+        >>> y_pred = [11, 18, 33, 1, 38]
+        >>> error = mean_absolute_percentage_error(y_true, y_pred)
+        >>> print(f"MAPE: {error:.2f}%")
+    """
     y_true, y_pred = np.array(y_true), np.array(y_pred)
     non_zero_idx = y_true != 0
     return np.mean(np.abs((y_true[non_zero_idx] - y_pred[non_zero_idx]) / y_true[non_zero_idx])) * 100
@@ -153,19 +253,35 @@ def evaluate_regression_model(
     ylabel="Predicted Values"
 ):
     """
-    Evaluate a regression model on a dataset loader, compute selected metrics.
+    Evaluate a regression model on a dataset loader and compute selected metrics.
+
+    This function performs a comprehensive evaluation of regression models by:
+    - Computing standard regression metrics (MSE, RMSE, MAE, MAPE, R²)
+    - Printing performance statistics
+    - Optionally visualizing predictions against actual values
 
     Parameters:
-    - model: PyTorch model to evaluate
-    - loader: DataLoader providing (features, labels)
-    - device: torch.device, device to run model on (default: cpu if None)
-    - show_examples: bool, whether to plot predicted vs actual scatter plot
-    - metrics: list of str, which metrics to compute ('mse', 'rmse', 'mae', 'mape')
-    - example_plot_title: str, title for the scatter plot
-    - xlabel, ylabel: str, axis labels for the scatter plot
+        model (torch.nn.Module): The PyTorch model to evaluate.
+        loader (torch.utils.data.DataLoader): DataLoader providing (features, labels).
+        device (torch.device, optional): Device to run evaluation on. If None,
+                                       the best available device is automatically selected.
+        show_examples (bool, optional): Whether to plot a scatter plot of predictions
+                                      vs actual values. Defaults to True.
+        metrics (list, optional): List of metrics to compute. Options include 'mse', 'rmse',
+                                'mae', and 'mape'. Defaults to all of them.
+        title (str, optional): Title for the scatter plot. Defaults to "Predicted vs Actual on Test Set".
+        xlabel (str, optional): X-axis label for the scatter plot. Defaults to "Actual Values".
+        ylabel (str, optional): Y-axis label for the scatter plot. Defaults to "Predicted Values".
 
     Returns:
-    - dict of computed metrics
+        dict: A dictionary containing computed metrics. Always includes 'r2' (R² score),
+              and includes other metrics as specified in the 'metrics' parameter.
+
+    Example:
+        >>> model = MyRegressionModel()
+        >>> results = evaluate_regression_model(model, test_loader)
+        >>> print(f"R² Score: {results['r2']:.4f}")
+        >>> print(f"RMSE: {results['rmse']:.4f}")
     """
 
     model.eval()
@@ -229,21 +345,36 @@ def evaluate_classification_model(
     cmap="gray"
 ):
     """
-    Evaluate a classification model on a dataset loader, print accuracy and classification report,
-    optionally display example predictions.
+    Evaluate a classification model on a dataset and visualize predictions.
 
-    Args:
-        model: PyTorch model to evaluate.
-        loader: DataLoader providing (inputs, labels).
-        device: torch.device, device to run model on (default: get_best_device() if None).
-        show_examples: bool, whether to plot example predictions.
-        class_names: list of class names (optional, for display).
-        num_examples: int, number of examples to show.
-        example_plot_title: str, title for example prediction plot.
-        cmap: str, matplotlib colormap for images (default: 'gray').
+    This function performs a comprehensive evaluation of classification models by:
+    - Computing accuracy and generating a detailed classification report
+    - Printing performance statistics including precision, recall, and f1-score
+    - Optionally visualizing example predictions with their true labels
+
+    Parameters:
+        model (torch.nn.Module): The PyTorch model to evaluate.
+        loader (torch.utils.data.DataLoader): DataLoader providing (inputs, labels).
+        device (torch.device, optional): Device to run evaluation on. If None,
+                                        the best available device is automatically selected.
+        show_examples (bool, optional): Whether to display example predictions. Defaults to True.
+        class_names (list, optional): List of class names for display purposes. Required if
+                                     show_examples=True.
+        num_examples (int, optional): Number of example predictions to show. Defaults to 10.
+        example_plot_title (str, optional): Title for the examples plot. Defaults to "Prediction Examples".
+        cmap (str, optional): Colormap for image display. Defaults to "gray".
 
     Returns:
-        dict: {'accuracy': float, 'classification_report': str}
+        dict: A dictionary containing:
+            - 'accuracy': Classification accuracy as a percentage.
+            - 'classification_report': Detailed classification report as a string,
+                                      including precision, recall, and f1-score.
+
+    Example:
+        >>> model = MyClassificationModel()
+        >>> class_names = ['cat', 'dog', 'bird']
+        >>> results = evaluate_classification_model(model, test_loader, class_names=class_names)
+        >>> print(f"Accuracy: {results['accuracy']:.2f}%")
     """
     if device is None:
         device = get_best_device()
