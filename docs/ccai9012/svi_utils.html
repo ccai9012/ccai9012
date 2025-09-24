@@ -1,0 +1,821 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
+<title>ccai9012.svi_utils API documentation</title>
+<meta name="description" content="Street View Imagery (SVI) Utilities
+…">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>ccai9012.svi_utils</code></h1>
+</header>
+<section id="section-intro">
+<h1 id="street-view-imagery-svi-utilities">Street View Imagery (SVI) Utilities</h1>
+<p>This module provides tools for working with Google Street View Images (SVIs), including downloading,
+segmentation, and visualization functionalities. It enables users to download street view imagery
+using Google Maps API, perform semantic segmentation on these images using pre-trained models,
+and visualize the segmentation results.</p>
+<p>The module is organized into several components:
+- Google Street View downloader: Tools for fetching street view images using the Google Maps API
+- Segmentation utilities: Functions to perform semantic segmentation on street view images
+- Visualization utilities: Functions to visualize original images alongside their segmentations</p>
+<p>This is particularly useful for urban analysis, streetscape assessment, and understanding
+the composition of street-level imagery through semantic segmentation.</p>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="ccai9012.svi_utils.batch_segment_and_visualize"><code class="name flex">
+<span>def <span class="ident">batch_segment_and_visualize</span></span>(<span>save_dir: str,<br>output_dir: str,<br>processor,<br>model,<br>max_visualize: int = 6,<br>image_extensions: tuple = ('.jpg', '.png', '.jpeg'))</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def batch_segment_and_visualize(
+    save_dir: str,
+    output_dir: str,
+    processor,
+    model,
+    max_visualize: int = 6,
+    image_extensions: tuple = (&#34;.jpg&#34;, &#34;.png&#34;, &#34;.jpeg&#34;)
+):
+    &#34;&#34;&#34;
+    Process and segment a batch of images, save the results, and visualize a subset of them.
+
+    This function processes all images in the specified directory, performs semantic segmentation
+    on each one, saves the colored segmentation masks, and optionally visualizes the first few
+    results as side-by-side comparisons.
+
+    Args:
+        save_dir (str): Directory containing the input images to process.
+        output_dir (str): Directory where segmentation results will be saved.
+        processor: HuggingFace image processor for preparing inputs to the segmentation model.
+        model: HuggingFace segmentation model to use for inference.
+        max_visualize (int, optional): Maximum number of images to visualize. Defaults to 6.
+        image_extensions (tuple, optional): File extensions to identify images for processing.
+                                          Defaults to (&#34;.jpg&#34;, &#34;.png&#34;, &#34;.jpeg&#34;).
+
+    Returns:
+        None: This function does not return a value but saves segmentation masks to disk
+              and displays visualizations for the first max_visualize images.
+    &#34;&#34;&#34;
+    os.makedirs(output_dir, exist_ok=True)
+
+    image_filenames = [f for f in os.listdir(save_dir) if f.lower().endswith(image_extensions)]
+
+    for i, filename in enumerate(image_filenames):
+        image_path = os.path.join(save_dir, filename)
+        image_pil = Image.open(image_path).convert(&#34;RGB&#34;)
+
+        # Run segmentation and save masks
+        mask_np = segment_and_save_images(
+            image_pil=image_pil,
+            processor=processor,
+            model=model,
+            save_dir=output_dir,
+            filename_prefix=os.path.splitext(filename)[0]
+        )
+
+        # Visualize some of the images
+        if i &lt; max_visualize:
+            visualize_segmentation_pair(image_pil, mask_np, show_legend=True)</code></pre>
+</details>
+<div class="desc"><p>Process and segment a batch of images, save the results, and visualize a subset of them.</p>
+<p>This function processes all images in the specified directory, performs semantic segmentation
+on each one, saves the colored segmentation masks, and optionally visualizes the first few
+results as side-by-side comparisons.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>save_dir</code></strong> :&ensp;<code>str</code></dt>
+<dd>Directory containing the input images to process.</dd>
+<dt><strong><code>output_dir</code></strong> :&ensp;<code>str</code></dt>
+<dd>Directory where segmentation results will be saved.</dd>
+<dt><strong><code>processor</code></strong></dt>
+<dd>HuggingFace image processor for preparing inputs to the segmentation model.</dd>
+<dt><strong><code>model</code></strong></dt>
+<dd>HuggingFace segmentation model to use for inference.</dd>
+<dt><strong><code>max_visualize</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>Maximum number of images to visualize. Defaults to 6.</dd>
+<dt><strong><code>image_extensions</code></strong> :&ensp;<code>tuple</code>, optional</dt>
+<dd>File extensions to identify images for processing.
+Defaults to (".jpg", ".png", ".jpeg").</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>None</code></dt>
+<dd>This function does not return a value but saves segmentation masks to disk
+and displays visualizations for the first max_visualize images.</dd>
+</dl></div>
+</dd>
+<dt id="ccai9012.svi_utils.segment_and_save_images"><code class="name flex">
+<span>def <span class="ident">segment_and_save_images</span></span>(<span>image_pil: PIL.Image.Image,<br>processor,<br>model,<br>colors=None,<br>save_dir: str | None = None,<br>filename_prefix: str | None = None) ‑> numpy.ndarray</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def segment_and_save_images(
+    image_pil: Image.Image,
+    processor,
+    model,
+    colors = None,
+    save_dir: Optional[str] = None,
+    filename_prefix: Optional[str] = None
+) -&gt; np.ndarray:
+    &#34;&#34;&#34;
+    Perform semantic segmentation on an input image and optionally save the results.
+
+    This function takes a PIL image, runs it through a semantic segmentation model,
+    and creates a colored segmentation mask. The segmentation can be saved to disk
+    with a specified filename prefix.
+
+    Args:
+        image_pil (PIL.Image.Image): Input image to segment.
+        processor: HuggingFace image processor object for the segmentation model.
+        model: HuggingFace segmentation model (e.g., SegFormer).
+        colors (list, optional): List of RGB color tuples for visualization.
+                                If None, uses CITYSCAPES_COLORS. Defaults to None.
+        save_dir (str, optional): Directory to save segmentation results.
+                                 If None, no saving occurs. Defaults to None.
+        filename_prefix (str, optional): Prefix for the saved segmentation file.
+                                        Defaults to None.
+
+    Returns:
+        np.ndarray: Segmentation mask array with shape (H, W) containing class indices.
+    &#34;&#34;&#34;
+    if colors is None:
+        colors = CITYSCAPES_COLORS
+
+    inputs = processor(images=image_pil, return_tensors=&#34;pt&#34;)
+    with torch.no_grad():
+        outputs = model(**inputs)
+    pred_mask = outputs.logits.argmax(dim=1)[0].cpu().numpy()
+
+    # Resize mask to original image size
+    mask_img = Image.fromarray(pred_mask.astype(np.uint8))
+    mask_img = mask_img.resize(image_pil.size, resample=Image.NEAREST)
+    mask_np = np.array(mask_img)
+
+    # Create color mask for visualization
+    color_mask = np.zeros((*mask_np.shape, 3), dtype=np.uint8)
+    for label_idx, color in enumerate(colors):
+        color_mask[mask_np == label_idx] = color
+
+    color_mask_img = Image.fromarray(color_mask)
+
+    # Save segmentation image if directory and prefix provided
+    if save_dir and filename_prefix:
+        os.makedirs(os.path.join(save_dir, &#34;segmentations&#34;), exist_ok=True)
+        color_mask_img.save(os.path.join(save_dir, &#34;segmentations&#34;, f&#34;{filename_prefix}_segmentation.png&#34;))
+
+    return mask_np</code></pre>
+</details>
+<div class="desc"><p>Perform semantic segmentation on an input image and optionally save the results.</p>
+<p>This function takes a PIL image, runs it through a semantic segmentation model,
+and creates a colored segmentation mask. The segmentation can be saved to disk
+with a specified filename prefix.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>image_pil</code></strong> :&ensp;<code>PIL.Image.Image</code></dt>
+<dd>Input image to segment.</dd>
+<dt><strong><code>processor</code></strong></dt>
+<dd>HuggingFace image processor object for the segmentation model.</dd>
+<dt><strong><code>model</code></strong></dt>
+<dd>HuggingFace segmentation model (e.g., SegFormer).</dd>
+<dt><strong><code>colors</code></strong> :&ensp;<code>list</code>, optional</dt>
+<dd>List of RGB color tuples for visualization.
+If None, uses CITYSCAPES_COLORS. Defaults to None.</dd>
+<dt><strong><code>save_dir</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Directory to save segmentation results.
+If None, no saving occurs. Defaults to None.</dd>
+<dt><strong><code>filename_prefix</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Prefix for the saved segmentation file.
+Defaults to None.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>np.ndarray</code></dt>
+<dd>Segmentation mask array with shape (H, W) containing class indices.</dd>
+</dl></div>
+</dd>
+<dt id="ccai9012.svi_utils.visualize_segmentation_pair"><code class="name flex">
+<span>def <span class="ident">visualize_segmentation_pair</span></span>(<span>image_pil: PIL.Image.Image,<br>mask_np: numpy.ndarray,<br>show_legend: bool = True,<br>classes=None,<br>colors=None) ‑> None</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def visualize_segmentation_pair(
+    image_pil: Image.Image,
+    mask_np: np.ndarray,
+    show_legend: bool = True,
+    classes=None,
+    colors=None
+) -&gt; None:
+    &#34;&#34;&#34;
+    Visualize an original image alongside its semantic segmentation mask.
+
+    This function creates a side-by-side visualization of an input image and its
+    corresponding segmentation mask, with an optional legend showing the semantic
+    classes present in the segmentation.
+
+    Args:
+        image_pil (PIL.Image.Image): Original input image.
+        mask_np (np.ndarray): Segmentation mask with class label indices as values.
+        show_legend (bool, optional): Whether to display a legend with class names. Defaults to True.
+        classes (list, optional): List of class names for the legend.
+                                 If None, uses CITYSCAPES_CLASSES. Defaults to None.
+        colors (list, optional): List of RGB color tuples for visualizing the mask.
+                               If None, uses CITYSCAPES_COLORS. Defaults to None.
+
+    Returns:
+        None: This function displays the visualization but does not return any value.
+    &#34;&#34;&#34;
+    if classes is None:
+        classes = CITYSCAPES_CLASSES
+    if colors is None:
+        colors = CITYSCAPES_COLORS
+
+    # Map label indices to RGB color mask using Cityscapes palette
+    color_mask = np.zeros((*mask_np.shape, 3), dtype=np.uint8)
+    for label_idx, color in enumerate(colors):
+        color_mask[mask_np == label_idx] = color
+
+    plt.figure(figsize=(12, 6))
+
+    plt.subplot(1, 2, 1)
+    plt.imshow(image_pil)
+    plt.title(&#34;Original Image&#34;)
+    plt.axis(&#34;off&#34;)
+
+    plt.subplot(1, 2, 2)
+    plt.imshow(color_mask)
+    plt.title(&#34;Segmentation Prediction&#34;)
+    plt.axis(&#34;off&#34;)
+
+    if show_legend:
+        unique_labels = np.unique(mask_np)
+        handles = [
+            mpatches.Patch(color=np.array(colors[idx]) / 255.0, label=classes[idx])
+            for idx in unique_labels if idx &lt; len(classes)
+        ]
+        plt.legend(handles=handles, bbox_to_anchor=(1.05, 1), loc=&#34;upper left&#34;, borderaxespad=0., title=&#34;Cityscapes Classes&#34;)
+
+    plt.tight_layout()
+    plt.show()</code></pre>
+</details>
+<div class="desc"><p>Visualize an original image alongside its semantic segmentation mask.</p>
+<p>This function creates a side-by-side visualization of an input image and its
+corresponding segmentation mask, with an optional legend showing the semantic
+classes present in the segmentation.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>image_pil</code></strong> :&ensp;<code>PIL.Image.Image</code></dt>
+<dd>Original input image.</dd>
+<dt><strong><code>mask_np</code></strong> :&ensp;<code>np.ndarray</code></dt>
+<dd>Segmentation mask with class label indices as values.</dd>
+<dt><strong><code>show_legend</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>Whether to display a legend with class names. Defaults to True.</dd>
+<dt><strong><code>classes</code></strong> :&ensp;<code>list</code>, optional</dt>
+<dd>List of class names for the legend.
+If None, uses CITYSCAPES_CLASSES. Defaults to None.</dd>
+<dt><strong><code>colors</code></strong> :&ensp;<code>list</code>, optional</dt>
+<dd>List of RGB color tuples for visualizing the mask.
+If None, uses CITYSCAPES_COLORS. Defaults to None.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>None</code></dt>
+<dd>This function displays the visualization but does not return any value.</dd>
+</dl></div>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="ccai9012.svi_utils.GoogleSVIDownloader"><code class="flex name class">
+<span>class <span class="ident">GoogleSVIDownloader</span></span>
+<span>(</span><span>api_key: str = None, save_dir: str = 'images')</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class GoogleSVIDownloader:
+    &#34;&#34;&#34;
+    A utility class for downloading Google Street View Images (SVIs) using Google Maps API.
+
+    This class provides functionality to download SVIs at specific geographic coordinates,
+    check image availability, and download images in a grid pattern across an area.
+
+    Attributes:
+        api_key (str): Google Maps API key for authentication.
+        save_dir (str): Directory path to save downloaded images.
+        base_url (str): Base URL for the Google Street View API.
+        meta_url (str): URL for the metadata endpoint of the Google Street View API.
+    &#34;&#34;&#34;
+
+    def __init__(self, api_key: str = None, save_dir: str = &#34;images&#34;):
+        &#34;&#34;&#34;
+        Initialize the GoogleSVIDownloader with API key and save directory.
+
+        If no API key is provided, it attempts to get the key from the GOOGLEMAP_API_KEY
+        environment variable. If that fails, it prompts the user to enter the key.
+
+        Args:
+            api_key (str, optional): Google Maps API key. Defaults to None.
+            save_dir (str, optional): Directory to save downloaded images. Defaults to &#34;images&#34;.
+        &#34;&#34;&#34;
+        if api_key is None:
+            api_key = os.getenv(&#34;GOOGLEMAP_API_KEY&#34;)
+            if api_key is None:
+                api_key = getpass.getpass(&#34;Enter your Google Map API key: &#34;)
+        self.api_key = api_key
+        self.save_dir = save_dir
+        os.makedirs(self.save_dir, exist_ok=True)
+        self.base_url = &#34;https://maps.googleapis.com/maps/api/streetview&#34;
+        self.meta_url = &#34;https://maps.googleapis.com/maps/api/streetview/metadata&#34;
+
+    def is_svi_available(self, lat: float, lon: float) -&gt; bool:
+        &#34;&#34;&#34;
+        Check if Street View imagery is available at the given coordinates.
+
+        This method queries the Google Street View metadata API to determine
+        whether street view imagery exists for the specified location.
+
+        Args:
+            lat (float): Latitude coordinate.
+            lon (float): Longitude coordinate.
+
+        Returns:
+            bool: True if street view imagery is available, False otherwise.
+        &#34;&#34;&#34;
+        params = {
+            &#34;location&#34;: f&#34;{lat},{lon}&#34;,
+            &#34;key&#34;: self.api_key
+        }
+        response = requests.get(self.meta_url, params=params)
+        data = response.json()
+        return data.get(&#34;status&#34;) == &#34;OK&#34; and data.get(&#34;pano_id&#34;) is not None
+
+    def download_svi(self, lat: float, lon: float, heading: int = 0,
+                     pitch: int = 0, fov: int = 90, size: str = &#34;640x640&#34;,
+                     save: bool = True) -&gt; Image.Image | None:
+        &#34;&#34;&#34;
+        Download a Street View image at the specified coordinates with given parameters.
+
+        Args:
+            lat (float): Latitude coordinate.
+            lon (float): Longitude coordinate.
+            heading (int, optional): Camera heading in degrees, 0-360. Defaults to 0 (north).
+            pitch (int, optional): Camera pitch in degrees, -90 to 90. Defaults to 0 (flat).
+            fov (int, optional): Field of view in degrees, 0-120. Defaults to 90.
+            size (str, optional): Image size in format &#34;WIDTHxHEIGHT&#34;. Defaults to &#34;640x640&#34;.
+            save (bool, optional): Whether to save the image to disk. Defaults to True.
+
+        Returns:
+            PIL.Image.Image | None: Downloaded image as PIL Image object, or None if download failed.
+        &#34;&#34;&#34;
+        params = {
+            &#34;location&#34;: f&#34;{lat},{lon}&#34;,
+            &#34;size&#34;: size,
+            &#34;heading&#34;: heading,
+            &#34;pitch&#34;: pitch,
+            &#34;fov&#34;: fov,
+            &#34;key&#34;: self.api_key
+        }
+        response = requests.get(self.base_url, params=params)
+
+        if response.status_code == 200:
+            image = Image.open(BytesIO(response.content))
+            if save:
+                filename = f&#34;lat{lat:.6f}_lon{lon:.6f}_hdg{heading}.jpg&#34;
+                filepath = os.path.join(self.save_dir, filename)
+                image.save(filepath)
+                print(f&#34;Saved SVI: {filepath}&#34;)
+            return image
+        else:
+            print(f&#34;Failed to download SVI at ({lat}, {lon}), status code: {response.status_code}&#34;)
+            return None
+
+    def generate_grid_coords(self, lat_start: float, lon_start: float,
+                             rows: int, cols: int, delta: float) -&gt; list[tuple[float, float]]:
+        &#34;&#34;&#34;
+        Generate a grid of geographic coordinates starting from a point.
+
+        Creates a rectangular grid of coordinates with the specified number of rows and columns,
+        where each point is separated by the delta value in degrees.
+
+        Args:
+            lat_start (float): Starting latitude for the grid.
+            lon_start (float): Starting longitude for the grid.
+            rows (int): Number of rows in the grid.
+            cols (int): Number of columns in the grid.
+            delta (float): Spacing between points in degrees.
+
+        Returns:
+            list[tuple[float, float]]: List of (latitude, longitude) coordinate pairs.
+        &#34;&#34;&#34;
+        coords = []
+        for i in range(rows):
+            for j in range(cols):
+                lat = lat_start + i * delta
+                lon = lon_start + j * delta
+                coords.append((lat, lon))
+        return coords
+
+    def download_grid_svis(self, lat_start: float, lon_start: float, rows: int, cols: int,
+                           delta: float, heading: int = 0, pitch: int = 0,
+                           fov: int = 90, size: str = &#34;640x640&#34;) -&gt; list[dict]:
+        &#34;&#34;&#34;
+        Download Street View images for a grid of locations.
+
+        This method generates a grid of coordinates and downloads SVIs for each location
+        where imagery is available.
+
+        Args:
+            lat_start (float): Starting latitude for the grid.
+            lon_start (float): Starting longitude for the grid.
+            rows (int): Number of rows in the grid.
+            cols (int): Number of columns in the grid.
+            delta (float): Spacing between grid points in degrees.
+            heading (int, optional): Camera heading in degrees. Defaults to 0.
+            pitch (int, optional): Camera pitch in degrees. Defaults to 0.
+            fov (int, optional): Field of view in degrees. Defaults to 90.
+            size (str, optional): Image size. Defaults to &#34;640x640&#34;.
+
+        Returns:
+            list[dict]: List of dictionaries, each containing &#39;lat&#39;, &#39;lon&#39;, and &#39;image&#39; keys
+                        for the downloaded images.
+        &#34;&#34;&#34;
+        coords = self.generate_grid_coords(lat_start, lon_start, rows, cols, delta)
+        svis = []
+
+        for lat, lon in coords:
+            if self.is_svi_available(lat, lon):
+                img = self.download_svi(lat, lon, heading, pitch, fov, size)
+                if img:
+                    svis.append({&#34;lat&#34;: lat, &#34;lon&#34;: lon, &#34;image&#34;: img})
+            else:
+                print(f&#34;No SVI available at ({lat}, {lon})&#34;)
+
+        return svis</code></pre>
+</details>
+<div class="desc"><p>A utility class for downloading Google Street View Images (SVIs) using Google Maps API.</p>
+<p>This class provides functionality to download SVIs at specific geographic coordinates,
+check image availability, and download images in a grid pattern across an area.</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>api_key</code></strong> :&ensp;<code>str</code></dt>
+<dd>Google Maps API key for authentication.</dd>
+<dt><strong><code>save_dir</code></strong> :&ensp;<code>str</code></dt>
+<dd>Directory path to save downloaded images.</dd>
+<dt><strong><code>base_url</code></strong> :&ensp;<code>str</code></dt>
+<dd>Base URL for the Google Street View API.</dd>
+<dt><strong><code>meta_url</code></strong> :&ensp;<code>str</code></dt>
+<dd>URL for the metadata endpoint of the Google Street View API.</dd>
+</dl>
+<p>Initialize the GoogleSVIDownloader with API key and save directory.</p>
+<p>If no API key is provided, it attempts to get the key from the GOOGLEMAP_API_KEY
+environment variable. If that fails, it prompts the user to enter the key.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>api_key</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Google Maps API key. Defaults to None.</dd>
+<dt><strong><code>save_dir</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Directory to save downloaded images. Defaults to "images".</dd>
+</dl></div>
+<h3>Methods</h3>
+<dl>
+<dt id="ccai9012.svi_utils.GoogleSVIDownloader.download_grid_svis"><code class="name flex">
+<span>def <span class="ident">download_grid_svis</span></span>(<span>self,<br>lat_start: float,<br>lon_start: float,<br>rows: int,<br>cols: int,<br>delta: float,<br>heading: int = 0,<br>pitch: int = 0,<br>fov: int = 90,<br>size: str = '640x640') ‑> list[dict]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def download_grid_svis(self, lat_start: float, lon_start: float, rows: int, cols: int,
+                       delta: float, heading: int = 0, pitch: int = 0,
+                       fov: int = 90, size: str = &#34;640x640&#34;) -&gt; list[dict]:
+    &#34;&#34;&#34;
+    Download Street View images for a grid of locations.
+
+    This method generates a grid of coordinates and downloads SVIs for each location
+    where imagery is available.
+
+    Args:
+        lat_start (float): Starting latitude for the grid.
+        lon_start (float): Starting longitude for the grid.
+        rows (int): Number of rows in the grid.
+        cols (int): Number of columns in the grid.
+        delta (float): Spacing between grid points in degrees.
+        heading (int, optional): Camera heading in degrees. Defaults to 0.
+        pitch (int, optional): Camera pitch in degrees. Defaults to 0.
+        fov (int, optional): Field of view in degrees. Defaults to 90.
+        size (str, optional): Image size. Defaults to &#34;640x640&#34;.
+
+    Returns:
+        list[dict]: List of dictionaries, each containing &#39;lat&#39;, &#39;lon&#39;, and &#39;image&#39; keys
+                    for the downloaded images.
+    &#34;&#34;&#34;
+    coords = self.generate_grid_coords(lat_start, lon_start, rows, cols, delta)
+    svis = []
+
+    for lat, lon in coords:
+        if self.is_svi_available(lat, lon):
+            img = self.download_svi(lat, lon, heading, pitch, fov, size)
+            if img:
+                svis.append({&#34;lat&#34;: lat, &#34;lon&#34;: lon, &#34;image&#34;: img})
+        else:
+            print(f&#34;No SVI available at ({lat}, {lon})&#34;)
+
+    return svis</code></pre>
+</details>
+<div class="desc"><p>Download Street View images for a grid of locations.</p>
+<p>This method generates a grid of coordinates and downloads SVIs for each location
+where imagery is available.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>lat_start</code></strong> :&ensp;<code>float</code></dt>
+<dd>Starting latitude for the grid.</dd>
+<dt><strong><code>lon_start</code></strong> :&ensp;<code>float</code></dt>
+<dd>Starting longitude for the grid.</dd>
+<dt><strong><code>rows</code></strong> :&ensp;<code>int</code></dt>
+<dd>Number of rows in the grid.</dd>
+<dt><strong><code>cols</code></strong> :&ensp;<code>int</code></dt>
+<dd>Number of columns in the grid.</dd>
+<dt><strong><code>delta</code></strong> :&ensp;<code>float</code></dt>
+<dd>Spacing between grid points in degrees.</dd>
+<dt><strong><code>heading</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>Camera heading in degrees. Defaults to 0.</dd>
+<dt><strong><code>pitch</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>Camera pitch in degrees. Defaults to 0.</dd>
+<dt><strong><code>fov</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>Field of view in degrees. Defaults to 90.</dd>
+<dt><strong><code>size</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Image size. Defaults to "640x640".</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list[dict]</code></dt>
+<dd>List of dictionaries, each containing 'lat', 'lon', and 'image' keys
+for the downloaded images.</dd>
+</dl></div>
+</dd>
+<dt id="ccai9012.svi_utils.GoogleSVIDownloader.download_svi"><code class="name flex">
+<span>def <span class="ident">download_svi</span></span>(<span>self,<br>lat: float,<br>lon: float,<br>heading: int = 0,<br>pitch: int = 0,<br>fov: int = 90,<br>size: str = '640x640',<br>save: bool = True) ‑> PIL.Image.Image | None</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def download_svi(self, lat: float, lon: float, heading: int = 0,
+                 pitch: int = 0, fov: int = 90, size: str = &#34;640x640&#34;,
+                 save: bool = True) -&gt; Image.Image | None:
+    &#34;&#34;&#34;
+    Download a Street View image at the specified coordinates with given parameters.
+
+    Args:
+        lat (float): Latitude coordinate.
+        lon (float): Longitude coordinate.
+        heading (int, optional): Camera heading in degrees, 0-360. Defaults to 0 (north).
+        pitch (int, optional): Camera pitch in degrees, -90 to 90. Defaults to 0 (flat).
+        fov (int, optional): Field of view in degrees, 0-120. Defaults to 90.
+        size (str, optional): Image size in format &#34;WIDTHxHEIGHT&#34;. Defaults to &#34;640x640&#34;.
+        save (bool, optional): Whether to save the image to disk. Defaults to True.
+
+    Returns:
+        PIL.Image.Image | None: Downloaded image as PIL Image object, or None if download failed.
+    &#34;&#34;&#34;
+    params = {
+        &#34;location&#34;: f&#34;{lat},{lon}&#34;,
+        &#34;size&#34;: size,
+        &#34;heading&#34;: heading,
+        &#34;pitch&#34;: pitch,
+        &#34;fov&#34;: fov,
+        &#34;key&#34;: self.api_key
+    }
+    response = requests.get(self.base_url, params=params)
+
+    if response.status_code == 200:
+        image = Image.open(BytesIO(response.content))
+        if save:
+            filename = f&#34;lat{lat:.6f}_lon{lon:.6f}_hdg{heading}.jpg&#34;
+            filepath = os.path.join(self.save_dir, filename)
+            image.save(filepath)
+            print(f&#34;Saved SVI: {filepath}&#34;)
+        return image
+    else:
+        print(f&#34;Failed to download SVI at ({lat}, {lon}), status code: {response.status_code}&#34;)
+        return None</code></pre>
+</details>
+<div class="desc"><p>Download a Street View image at the specified coordinates with given parameters.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>lat</code></strong> :&ensp;<code>float</code></dt>
+<dd>Latitude coordinate.</dd>
+<dt><strong><code>lon</code></strong> :&ensp;<code>float</code></dt>
+<dd>Longitude coordinate.</dd>
+<dt><strong><code>heading</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>Camera heading in degrees, 0-360. Defaults to 0 (north).</dd>
+<dt><strong><code>pitch</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>Camera pitch in degrees, -90 to 90. Defaults to 0 (flat).</dd>
+<dt><strong><code>fov</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>Field of view in degrees, 0-120. Defaults to 90.</dd>
+<dt><strong><code>size</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Image size in format "WIDTHxHEIGHT". Defaults to "640x640".</dd>
+<dt><strong><code>save</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>Whether to save the image to disk. Defaults to True.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>PIL.Image.Image | None</code></dt>
+<dd>Downloaded image as PIL Image object, or None if download failed.</dd>
+</dl></div>
+</dd>
+<dt id="ccai9012.svi_utils.GoogleSVIDownloader.generate_grid_coords"><code class="name flex">
+<span>def <span class="ident">generate_grid_coords</span></span>(<span>self, lat_start: float, lon_start: float, rows: int, cols: int, delta: float) ‑> list[tuple[float, float]]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def generate_grid_coords(self, lat_start: float, lon_start: float,
+                         rows: int, cols: int, delta: float) -&gt; list[tuple[float, float]]:
+    &#34;&#34;&#34;
+    Generate a grid of geographic coordinates starting from a point.
+
+    Creates a rectangular grid of coordinates with the specified number of rows and columns,
+    where each point is separated by the delta value in degrees.
+
+    Args:
+        lat_start (float): Starting latitude for the grid.
+        lon_start (float): Starting longitude for the grid.
+        rows (int): Number of rows in the grid.
+        cols (int): Number of columns in the grid.
+        delta (float): Spacing between points in degrees.
+
+    Returns:
+        list[tuple[float, float]]: List of (latitude, longitude) coordinate pairs.
+    &#34;&#34;&#34;
+    coords = []
+    for i in range(rows):
+        for j in range(cols):
+            lat = lat_start + i * delta
+            lon = lon_start + j * delta
+            coords.append((lat, lon))
+    return coords</code></pre>
+</details>
+<div class="desc"><p>Generate a grid of geographic coordinates starting from a point.</p>
+<p>Creates a rectangular grid of coordinates with the specified number of rows and columns,
+where each point is separated by the delta value in degrees.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>lat_start</code></strong> :&ensp;<code>float</code></dt>
+<dd>Starting latitude for the grid.</dd>
+<dt><strong><code>lon_start</code></strong> :&ensp;<code>float</code></dt>
+<dd>Starting longitude for the grid.</dd>
+<dt><strong><code>rows</code></strong> :&ensp;<code>int</code></dt>
+<dd>Number of rows in the grid.</dd>
+<dt><strong><code>cols</code></strong> :&ensp;<code>int</code></dt>
+<dd>Number of columns in the grid.</dd>
+<dt><strong><code>delta</code></strong> :&ensp;<code>float</code></dt>
+<dd>Spacing between points in degrees.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list[tuple[float, float]]</code></dt>
+<dd>List of (latitude, longitude) coordinate pairs.</dd>
+</dl></div>
+</dd>
+<dt id="ccai9012.svi_utils.GoogleSVIDownloader.is_svi_available"><code class="name flex">
+<span>def <span class="ident">is_svi_available</span></span>(<span>self, lat: float, lon: float) ‑> bool</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def is_svi_available(self, lat: float, lon: float) -&gt; bool:
+    &#34;&#34;&#34;
+    Check if Street View imagery is available at the given coordinates.
+
+    This method queries the Google Street View metadata API to determine
+    whether street view imagery exists for the specified location.
+
+    Args:
+        lat (float): Latitude coordinate.
+        lon (float): Longitude coordinate.
+
+    Returns:
+        bool: True if street view imagery is available, False otherwise.
+    &#34;&#34;&#34;
+    params = {
+        &#34;location&#34;: f&#34;{lat},{lon}&#34;,
+        &#34;key&#34;: self.api_key
+    }
+    response = requests.get(self.meta_url, params=params)
+    data = response.json()
+    return data.get(&#34;status&#34;) == &#34;OK&#34; and data.get(&#34;pano_id&#34;) is not None</code></pre>
+</details>
+<div class="desc"><p>Check if Street View imagery is available at the given coordinates.</p>
+<p>This method queries the Google Street View metadata API to determine
+whether street view imagery exists for the specified location.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>lat</code></strong> :&ensp;<code>float</code></dt>
+<dd>Latitude coordinate.</dd>
+<dt><strong><code>lon</code></strong> :&ensp;<code>float</code></dt>
+<dd>Longitude coordinate.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>bool</code></dt>
+<dd>True if street view imagery is available, False otherwise.</dd>
+</dl></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul>
+<li><a href="#street-view-imagery-svi-utilities">Street View Imagery (SVI) Utilities</a></li>
+</ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="ccai9012" href="index.html">ccai9012</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="ccai9012.svi_utils.batch_segment_and_visualize" href="#ccai9012.svi_utils.batch_segment_and_visualize">batch_segment_and_visualize</a></code></li>
+<li><code><a title="ccai9012.svi_utils.segment_and_save_images" href="#ccai9012.svi_utils.segment_and_save_images">segment_and_save_images</a></code></li>
+<li><code><a title="ccai9012.svi_utils.visualize_segmentation_pair" href="#ccai9012.svi_utils.visualize_segmentation_pair">visualize_segmentation_pair</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="ccai9012.svi_utils.GoogleSVIDownloader" href="#ccai9012.svi_utils.GoogleSVIDownloader">GoogleSVIDownloader</a></code></h4>
+<ul class="">
+<li><code><a title="ccai9012.svi_utils.GoogleSVIDownloader.download_grid_svis" href="#ccai9012.svi_utils.GoogleSVIDownloader.download_grid_svis">download_grid_svis</a></code></li>
+<li><code><a title="ccai9012.svi_utils.GoogleSVIDownloader.download_svi" href="#ccai9012.svi_utils.GoogleSVIDownloader.download_svi">download_svi</a></code></li>
+<li><code><a title="ccai9012.svi_utils.GoogleSVIDownloader.generate_grid_coords" href="#ccai9012.svi_utils.GoogleSVIDownloader.generate_grid_coords">generate_grid_coords</a></code></li>
+<li><code><a title="ccai9012.svi_utils.GoogleSVIDownloader.is_svi_available" href="#ccai9012.svi_utils.GoogleSVIDownloader.is_svi_available">is_svi_available</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,752 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
+<title>ccai9012.multi_modal_utils API documentation</title>
+<meta name="description" content="Multi-Modal Utilities Module
+…">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>ccai9012.multi_modal_utils</code></h1>
+</header>
+<section id="section-intro">
+<h1 id="multi-modal-utilities-module">Multi-Modal Utilities Module</h1>
+<p>This module provides utilities for working with multi-modal AI models, focusing on vision-language tasks.
+It includes tools for image classification using CLIP and visual question answering using Qwen2.5-VL.</p>
+<p>The module is organized into two main components:
+1. CLIPClassifier: A class for zero-shot image classification using OpenAI's CLIP model
+2. VisionQAProcessor: A class for visual question answering and image captioning using Qwen's VL model</p>
+<p>These utilities simplify working with pre-trained multi-modal models, handling model loading,
+inference, batch processing, and result visualization. The module is particularly useful for:
+- Automated image labeling and classification
+- Extracting semantic information from images using natural language
+- Material detection and attribute extraction from architectural/building images
+- Batch processing of image datasets with multi-modal models</p>
+<h2 id="usage">Usage</h2>
+<h3 id="image-classification-with-clip">Image classification with CLIP</h3>
+<p>classifier = CLIPClassifier(image_dir="path/to/images")
+results = classifier.batch_classify(["urban", "rural", "industrial"])</p>
+<h3 id="visual-question-answering-with-qwen25-vl">Visual question answering with Qwen2.5-VL</h3>
+<p>vqa = VisionQAProcessor()
+results = vqa.batch_image_qa("path/to/images", "What materials are used in this building?")</p>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="ccai9012.multi_modal_utils.CLIPClassifier"><code class="flex name class">
+<span>class <span class="ident">CLIPClassifier</span></span>
+<span>(</span><span>model_name='openai/clip-vit-base-patch32', device=None, image_dir='images')</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class CLIPClassifier:
+    &#34;&#34;&#34;
+    A class for performing zero-shot image classification using OpenAI&#39;s CLIP model.
+
+    CLIP (Contrastive Language-Image Pre-training) is a neural network trained on a variety
+    of image-text pairs, enabling it to associate images with natural language descriptions.
+    This class provides an interface for using CLIP to classify images based on arbitrary
+    text categories without requiring specific training for those categories.
+
+    The class supports:
+    - Single image classification with confidence scores
+    - Batch processing of multiple images
+    - Result visualization
+    - Saving classification results to CSV
+
+    Attributes:
+        model (CLIPModel): The pre-trained CLIP model from HuggingFace.
+        processor (CLIPProcessor): The CLIP processor for preparing inputs.
+        device (str): The computing device used for inference (&#39;cuda&#39; or &#39;cpu&#39;).
+        image_dir (str): Directory containing images to process.
+    &#34;&#34;&#34;
+
+    def __init__(self, model_name=&#34;openai/clip-vit-base-patch32&#34;, device=None, image_dir=&#34;images&#34;):
+        &#34;&#34;&#34;
+        Initialize the CLIP classifier with model, processor and device settings.
+
+        This method loads the CLIP model and processor from HuggingFace&#39;s model hub,
+        sets up the computing device (automatically selecting CUDA if available),
+        and configures the image directory for batch operations.
+
+        Args:
+            model_name (str): HuggingFace model identifier for CLIP.
+                            Defaults to &#34;openai/clip-vit-base-patch32&#34;.
+            device (str, optional): Computing device for inference (&#39;cuda&#39; or &#39;cpu&#39;).
+                                  If None, automatically uses CUDA if available, else CPU.
+            image_dir (str, optional): Directory containing images to be processed.
+                                     Defaults to &#34;images&#34;.
+        &#34;&#34;&#34;
+        self.device = device or (&#34;cuda&#34; if torch.cuda.is_available() else &#34;cpu&#34;)
+        self.model = CLIPModel.from_pretrained(model_name)
+        self.processor = CLIPProcessor.from_pretrained(model_name)
+        self.image_dir = image_dir
+
+    def classify_image(self, image_path, text_prompts):
+        &#34;&#34;&#34;
+        Classify a single image against a set of text categories using CLIP.
+
+        This method loads an image, processes it with the CLIP model, and determines
+        which of the provided text categories best matches the image content. It performs
+        zero-shot classification by computing similarity scores between the image and text embeddings.
+
+        Args:
+            image_path (str): Path to the image file to be classified.
+            text_prompts (list): List of text categories/prompts for zero-shot classification.
+                               Example: [&#34;urban landscape&#34;, &#34;rural countryside&#34;, &#34;industrial area&#34;]
+
+        Returns:
+            dict: Classification results containing:
+                - filename: The base filename of the image
+                - label_id: Index of the best matching text prompt
+                - label_text: Text of the best matching prompt
+                - confidence: Probability score for the best match
+                - all_scores: List of probability scores for all prompts
+                Returns None if image loading fails.
+        &#34;&#34;&#34;
+        try:
+            image = Image.open(image_path).convert(&#34;RGB&#34;)
+        except Exception as e:
+            print(f&#34;Failed to open image: {image_path}, {e}&#34;)
+            return None
+
+        inputs = self.processor(text=text_prompts, images=image, return_tensors=&#34;pt&#34;, padding=True).to(self.device)
+
+        with torch.no_grad():
+            outputs = self.model(**inputs)
+            logits_per_image = outputs.logits_per_image  # Image-text similarity scores
+            probs = logits_per_image.softmax(dim=1)  # Convert to probabilities
+
+        top_idx = probs.argmax().item()
+        return {
+            &#34;filename&#34;: os.path.basename(image_path),
+            &#34;label_id&#34;: top_idx,
+            &#34;label_text&#34;: text_prompts[top_idx],
+            &#34;confidence&#34;: probs[0, top_idx].item(),
+            &#34;all_scores&#34;: probs.squeeze().tolist()
+        }
+
+    def batch_classify(self, text_prompts, save_csv=None):
+        &#34;&#34;&#34;
+        Run inference on all images in the image directory.
+
+        Parameters:
+            text_prompts (list): List of text categories for classification
+            save_csv (str, optional): Path to save results as CSV file
+
+        Returns:
+            DataFrame: Results of classification for all images
+        &#34;&#34;&#34;
+        image_paths = [os.path.join(self.image_dir, f) for f in os.listdir(self.image_dir) if f.endswith(&#34;.jpg&#34;)]
+        results = []
+
+        for img_path in tqdm(image_paths, desc=&#34;Running inference&#34;):
+            result = self.classify_image(img_path, text_prompts)
+            if result is not None:
+                results.append(result)
+
+        df = pd.DataFrame(results)
+
+        if save_csv:
+            df.to_csv(save_csv, index=False)
+            print(f&#34;Inference results saved to {save_csv}&#34;)
+
+        return df
+
+    def show_result(self, df, index=0):
+        &#34;&#34;&#34;
+        Visualize an image with its predicted label and confidence.
+
+        Parameters:
+            df (DataFrame): Results dataframe from batch_classify
+            index (int): Index of the image result to display
+        &#34;&#34;&#34;
+        row = df.iloc[index]
+        img_path = os.path.join(self.image_dir, row[&#39;filename&#39;])
+        img = Image.open(img_path)
+
+        plt.figure(figsize=(6,6))
+        plt.imshow(img)
+        plt.axis(&#39;off&#39;)
+        plt.title(f&#34;Label: {row[&#39;label_text&#39;]}\nConfidence: {row[&#39;confidence&#39;]:.2f}&#34;)
+        plt.show()</code></pre>
+</details>
+<div class="desc"><p>A class for performing zero-shot image classification using OpenAI's CLIP model.</p>
+<p>CLIP (Contrastive Language-Image Pre-training) is a neural network trained on a variety
+of image-text pairs, enabling it to associate images with natural language descriptions.
+This class provides an interface for using CLIP to classify images based on arbitrary
+text categories without requiring specific training for those categories.</p>
+<p>The class supports:
+- Single image classification with confidence scores
+- Batch processing of multiple images
+- Result visualization
+- Saving classification results to CSV</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>model</code></strong> :&ensp;<code>CLIPModel</code></dt>
+<dd>The pre-trained CLIP model from HuggingFace.</dd>
+<dt><strong><code>processor</code></strong> :&ensp;<code>CLIPProcessor</code></dt>
+<dd>The CLIP processor for preparing inputs.</dd>
+<dt><strong><code>device</code></strong> :&ensp;<code>str</code></dt>
+<dd>The computing device used for inference ('cuda' or 'cpu').</dd>
+<dt><strong><code>image_dir</code></strong> :&ensp;<code>str</code></dt>
+<dd>Directory containing images to process.</dd>
+</dl>
+<p>Initialize the CLIP classifier with model, processor and device settings.</p>
+<p>This method loads the CLIP model and processor from HuggingFace's model hub,
+sets up the computing device (automatically selecting CUDA if available),
+and configures the image directory for batch operations.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>model_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>HuggingFace model identifier for CLIP.
+Defaults to "openai/clip-vit-base-patch32".</dd>
+<dt><strong><code>device</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Computing device for inference ('cuda' or 'cpu').
+If None, automatically uses CUDA if available, else CPU.</dd>
+<dt><strong><code>image_dir</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Directory containing images to be processed.
+Defaults to "images".</dd>
+</dl></div>
+<h3>Methods</h3>
+<dl>
+<dt id="ccai9012.multi_modal_utils.CLIPClassifier.batch_classify"><code class="name flex">
+<span>def <span class="ident">batch_classify</span></span>(<span>self, text_prompts, save_csv=None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def batch_classify(self, text_prompts, save_csv=None):
+    &#34;&#34;&#34;
+    Run inference on all images in the image directory.
+
+    Parameters:
+        text_prompts (list): List of text categories for classification
+        save_csv (str, optional): Path to save results as CSV file
+
+    Returns:
+        DataFrame: Results of classification for all images
+    &#34;&#34;&#34;
+    image_paths = [os.path.join(self.image_dir, f) for f in os.listdir(self.image_dir) if f.endswith(&#34;.jpg&#34;)]
+    results = []
+
+    for img_path in tqdm(image_paths, desc=&#34;Running inference&#34;):
+        result = self.classify_image(img_path, text_prompts)
+        if result is not None:
+            results.append(result)
+
+    df = pd.DataFrame(results)
+
+    if save_csv:
+        df.to_csv(save_csv, index=False)
+        print(f&#34;Inference results saved to {save_csv}&#34;)
+
+    return df</code></pre>
+</details>
+<div class="desc"><p>Run inference on all images in the image directory.</p>
+<h2 id="parameters">Parameters</h2>
+<p>text_prompts (list): List of text categories for classification
+save_csv (str, optional): Path to save results as CSV file</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>DataFrame</code></dt>
+<dd>Results of classification for all images</dd>
+</dl></div>
+</dd>
+<dt id="ccai9012.multi_modal_utils.CLIPClassifier.classify_image"><code class="name flex">
+<span>def <span class="ident">classify_image</span></span>(<span>self, image_path, text_prompts)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def classify_image(self, image_path, text_prompts):
+    &#34;&#34;&#34;
+    Classify a single image against a set of text categories using CLIP.
+
+    This method loads an image, processes it with the CLIP model, and determines
+    which of the provided text categories best matches the image content. It performs
+    zero-shot classification by computing similarity scores between the image and text embeddings.
+
+    Args:
+        image_path (str): Path to the image file to be classified.
+        text_prompts (list): List of text categories/prompts for zero-shot classification.
+                           Example: [&#34;urban landscape&#34;, &#34;rural countryside&#34;, &#34;industrial area&#34;]
+
+    Returns:
+        dict: Classification results containing:
+            - filename: The base filename of the image
+            - label_id: Index of the best matching text prompt
+            - label_text: Text of the best matching prompt
+            - confidence: Probability score for the best match
+            - all_scores: List of probability scores for all prompts
+            Returns None if image loading fails.
+    &#34;&#34;&#34;
+    try:
+        image = Image.open(image_path).convert(&#34;RGB&#34;)
+    except Exception as e:
+        print(f&#34;Failed to open image: {image_path}, {e}&#34;)
+        return None
+
+    inputs = self.processor(text=text_prompts, images=image, return_tensors=&#34;pt&#34;, padding=True).to(self.device)
+
+    with torch.no_grad():
+        outputs = self.model(**inputs)
+        logits_per_image = outputs.logits_per_image  # Image-text similarity scores
+        probs = logits_per_image.softmax(dim=1)  # Convert to probabilities
+
+    top_idx = probs.argmax().item()
+    return {
+        &#34;filename&#34;: os.path.basename(image_path),
+        &#34;label_id&#34;: top_idx,
+        &#34;label_text&#34;: text_prompts[top_idx],
+        &#34;confidence&#34;: probs[0, top_idx].item(),
+        &#34;all_scores&#34;: probs.squeeze().tolist()
+    }</code></pre>
+</details>
+<div class="desc"><p>Classify a single image against a set of text categories using CLIP.</p>
+<p>This method loads an image, processes it with the CLIP model, and determines
+which of the provided text categories best matches the image content. It performs
+zero-shot classification by computing similarity scores between the image and text embeddings.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>image_path</code></strong> :&ensp;<code>str</code></dt>
+<dd>Path to the image file to be classified.</dd>
+<dt><strong><code>text_prompts</code></strong> :&ensp;<code>list</code></dt>
+<dd>List of text categories/prompts for zero-shot classification.
+Example: ["urban landscape", "rural countryside", "industrial area"]</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>dict</code></dt>
+<dd>Classification results containing:
+- filename: The base filename of the image
+- label_id: Index of the best matching text prompt
+- label_text: Text of the best matching prompt
+- confidence: Probability score for the best match
+- all_scores: List of probability scores for all prompts
+Returns None if image loading fails.</dd>
+</dl></div>
+</dd>
+<dt id="ccai9012.multi_modal_utils.CLIPClassifier.show_result"><code class="name flex">
+<span>def <span class="ident">show_result</span></span>(<span>self, df, index=0)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def show_result(self, df, index=0):
+    &#34;&#34;&#34;
+    Visualize an image with its predicted label and confidence.
+
+    Parameters:
+        df (DataFrame): Results dataframe from batch_classify
+        index (int): Index of the image result to display
+    &#34;&#34;&#34;
+    row = df.iloc[index]
+    img_path = os.path.join(self.image_dir, row[&#39;filename&#39;])
+    img = Image.open(img_path)
+
+    plt.figure(figsize=(6,6))
+    plt.imshow(img)
+    plt.axis(&#39;off&#39;)
+    plt.title(f&#34;Label: {row[&#39;label_text&#39;]}\nConfidence: {row[&#39;confidence&#39;]:.2f}&#34;)
+    plt.show()</code></pre>
+</details>
+<div class="desc"><p>Visualize an image with its predicted label and confidence.</p>
+<h2 id="parameters">Parameters</h2>
+<p>df (DataFrame): Results dataframe from batch_classify
+index (int): Index of the image result to display</p></div>
+</dd>
+</dl>
+</dd>
+<dt id="ccai9012.multi_modal_utils.VisionQAProcessor"><code class="flex name class">
+<span>class <span class="ident">VisionQAProcessor</span></span>
+<span>(</span><span>model_name='Qwen/Qwen2.5-VL-3B-Instruct',<br>cache_dir='../../../models',<br>keywords_list=None,<br>device=None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class VisionQAProcessor:
+    def __init__(self,
+                 model_name=&#34;Qwen/Qwen2.5-VL-3B-Instruct&#34;,
+                 cache_dir=&#34;../../../models&#34;,
+                 keywords_list=None,
+                 device=None):
+        &#34;&#34;&#34;
+        Initialize the VisionQA processor with model, processor, and optional keyword list.
+
+        Parameters:
+            model_name (str): HuggingFace model identifier for Qwen2.5-VL
+            cache_dir (str): Directory to cache downloaded models
+            keywords_list (list, optional): List of keywords to extract from responses
+            device (str): Computing device (&#39;cuda&#39; or &#39;cpu&#39;)
+        &#34;&#34;&#34;
+        self.device = device or (&#34;cuda&#34; if torch.cuda.is_available() else &#34;cpu&#34;)
+        self.model = Qwen2_5_VLForConditionalGeneration.from_pretrained(
+            model_name, torch_dtype=&#34;auto&#34;, device_map=&#34;auto&#34;, cache_dir=cache_dir
+        )
+        self.processor = AutoProcessor.from_pretrained(model_name)
+        if keywords_list is None:
+            # Default list of material keywords to extract from responses
+            self.keywords_list = [
+                &#34;glass&#34;, &#34;concrete&#34;, &#34;brick&#34;, &#34;metal&#34;, &#34;wood&#34;, &#34;stone&#34;, &#34;ceramic&#34;,
+                &#34;steel&#34;, &#34;aluminum&#34;, &#34;marble&#34;, &#34;plaster&#34;, &#34;cladding&#34;, &#34;tile&#34;,
+                &#34;granite&#34;, &#34;copper&#34;, &#34;composite&#34;
+            ]
+        else:
+            self.keywords_list = keywords_list
+
+    def extract_keywords(self, text):
+        &#34;&#34;&#34;
+        Extract material keywords from text by case-insensitive matching.
+
+        Parameters:
+            text (str): The text to search for keywords
+
+        Returns:
+            list: Found keywords in the text
+        &#34;&#34;&#34;
+        text_lower = text.lower()
+        found = [k for k in self.keywords_list if re.search(rf&#34;\b{k}\b&#34;, text_lower)]
+        return found
+
+    def generate_caption_for_image(self, image, prompt):
+        &#34;&#34;&#34;
+        Generate a caption / answer for a single image given a prompt.
+
+        Parameters:
+            image (PIL.Image): The input image to analyze
+            prompt (str): Text prompt/question about the image
+
+        Returns:
+            str: Generated text response from the model
+        &#34;&#34;&#34;
+        messages = [
+            {
+                &#34;role&#34;: &#34;user&#34;,
+                &#34;content&#34;: [
+                    {&#34;type&#34;: &#34;image&#34;, &#34;image&#34;: image},
+                    {&#34;type&#34;: &#34;text&#34;, &#34;text&#34;: prompt}
+                ]
+            }
+        ]
+
+        text = self.processor.apply_chat_template(
+            messages, tokenize=False, add_generation_prompt=True
+        )
+        image_inputs, video_inputs = process_vision_info(messages)
+        inputs = self.processor(
+            text=[text],
+            images=image_inputs,
+            videos=video_inputs,
+            padding=True,
+            return_tensors=&#34;pt&#34;
+        )
+
+        model_device = next(self.model.parameters()).device
+        inputs = {k: v.to(model_device) for k, v in inputs.items()}
+
+        with torch.no_grad():
+            generated_ids = self.model.generate(**inputs, max_new_tokens=128)
+
+        # Remove input_ids prefix to get only the generated response
+        generated_ids_trimmed = [
+            out_ids[len(in_ids):] for in_ids, out_ids in zip(inputs[&#39;input_ids&#39;], generated_ids)
+        ]
+
+        output_text = self.processor.batch_decode(
+            generated_ids_trimmed, skip_special_tokens=True, clean_up_tokenization_spaces=False
+        )[0]
+
+        return output_text
+
+    def batch_image_qa(self, image_folder, prompt, save_csv_path=&#34;output/results.csv&#34;):
+        &#34;&#34;&#34;
+        Run inference on all images in a folder and save results to CSV.
+
+        Parameters:
+            image_folder (str): Directory containing images to analyze
+            prompt (str): Text prompt/question to ask about each image
+            save_csv_path (str): Path to save the results CSV file
+
+        Returns:
+            DataFrame: Results including image filenames, answers and extracted keywords
+        &#34;&#34;&#34;
+        results = []
+        os.makedirs(os.path.dirname(save_csv_path), exist_ok=True)
+
+        for filename in tqdm(sorted(os.listdir(image_folder))):
+            if not filename.lower().endswith((&#34;.png&#34;, &#34;.jpg&#34;, &#34;.jpeg&#34;, &#34;.bmp&#34;, &#34;.webp&#34;)):
+                continue
+
+            image_path = os.path.join(image_folder, filename)
+            image = Image.open(image_path).convert(&#34;RGB&#34;)
+
+            output_text = self.generate_caption_for_image(image, prompt)
+            keywords = self.extract_keywords(output_text)
+
+            results.append({
+                &#34;image&#34;: filename,
+                &#34;answer&#34;: output_text,
+                &#34;materials&#34;: &#34;, &#34;.join(keywords) if keywords else &#34;&#34;
+            })
+
+            tqdm.write(f&#34;Processed {filename} | Materials found: {keywords}&#34;)
+
+        df = pd.DataFrame(results)
+        df.to_csv(save_csv_path, index=False, encoding=&#34;utf-8-sig&#34;)
+        print(f&#34;All results saved to {save_csv_path}&#34;)
+        return df</code></pre>
+</details>
+<div class="desc"><p>Initialize the VisionQA processor with model, processor, and optional keyword list.</p>
+<h2 id="parameters">Parameters</h2>
+<p>model_name (str): HuggingFace model identifier for Qwen2.5-VL
+cache_dir (str): Directory to cache downloaded models
+keywords_list (list, optional): List of keywords to extract from responses
+device (str): Computing device ('cuda' or 'cpu')</p></div>
+<h3>Methods</h3>
+<dl>
+<dt id="ccai9012.multi_modal_utils.VisionQAProcessor.batch_image_qa"><code class="name flex">
+<span>def <span class="ident">batch_image_qa</span></span>(<span>self, image_folder, prompt, save_csv_path='output/results.csv')</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def batch_image_qa(self, image_folder, prompt, save_csv_path=&#34;output/results.csv&#34;):
+    &#34;&#34;&#34;
+    Run inference on all images in a folder and save results to CSV.
+
+    Parameters:
+        image_folder (str): Directory containing images to analyze
+        prompt (str): Text prompt/question to ask about each image
+        save_csv_path (str): Path to save the results CSV file
+
+    Returns:
+        DataFrame: Results including image filenames, answers and extracted keywords
+    &#34;&#34;&#34;
+    results = []
+    os.makedirs(os.path.dirname(save_csv_path), exist_ok=True)
+
+    for filename in tqdm(sorted(os.listdir(image_folder))):
+        if not filename.lower().endswith((&#34;.png&#34;, &#34;.jpg&#34;, &#34;.jpeg&#34;, &#34;.bmp&#34;, &#34;.webp&#34;)):
+            continue
+
+        image_path = os.path.join(image_folder, filename)
+        image = Image.open(image_path).convert(&#34;RGB&#34;)
+
+        output_text = self.generate_caption_for_image(image, prompt)
+        keywords = self.extract_keywords(output_text)
+
+        results.append({
+            &#34;image&#34;: filename,
+            &#34;answer&#34;: output_text,
+            &#34;materials&#34;: &#34;, &#34;.join(keywords) if keywords else &#34;&#34;
+        })
+
+        tqdm.write(f&#34;Processed {filename} | Materials found: {keywords}&#34;)
+
+    df = pd.DataFrame(results)
+    df.to_csv(save_csv_path, index=False, encoding=&#34;utf-8-sig&#34;)
+    print(f&#34;All results saved to {save_csv_path}&#34;)
+    return df</code></pre>
+</details>
+<div class="desc"><p>Run inference on all images in a folder and save results to CSV.</p>
+<h2 id="parameters">Parameters</h2>
+<p>image_folder (str): Directory containing images to analyze
+prompt (str): Text prompt/question to ask about each image
+save_csv_path (str): Path to save the results CSV file</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>DataFrame</code></dt>
+<dd>Results including image filenames, answers and extracted keywords</dd>
+</dl></div>
+</dd>
+<dt id="ccai9012.multi_modal_utils.VisionQAProcessor.extract_keywords"><code class="name flex">
+<span>def <span class="ident">extract_keywords</span></span>(<span>self, text)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def extract_keywords(self, text):
+    &#34;&#34;&#34;
+    Extract material keywords from text by case-insensitive matching.
+
+    Parameters:
+        text (str): The text to search for keywords
+
+    Returns:
+        list: Found keywords in the text
+    &#34;&#34;&#34;
+    text_lower = text.lower()
+    found = [k for k in self.keywords_list if re.search(rf&#34;\b{k}\b&#34;, text_lower)]
+    return found</code></pre>
+</details>
+<div class="desc"><p>Extract material keywords from text by case-insensitive matching.</p>
+<h2 id="parameters">Parameters</h2>
+<p>text (str): The text to search for keywords</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list</code></dt>
+<dd>Found keywords in the text</dd>
+</dl></div>
+</dd>
+<dt id="ccai9012.multi_modal_utils.VisionQAProcessor.generate_caption_for_image"><code class="name flex">
+<span>def <span class="ident">generate_caption_for_image</span></span>(<span>self, image, prompt)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def generate_caption_for_image(self, image, prompt):
+    &#34;&#34;&#34;
+    Generate a caption / answer for a single image given a prompt.
+
+    Parameters:
+        image (PIL.Image): The input image to analyze
+        prompt (str): Text prompt/question about the image
+
+    Returns:
+        str: Generated text response from the model
+    &#34;&#34;&#34;
+    messages = [
+        {
+            &#34;role&#34;: &#34;user&#34;,
+            &#34;content&#34;: [
+                {&#34;type&#34;: &#34;image&#34;, &#34;image&#34;: image},
+                {&#34;type&#34;: &#34;text&#34;, &#34;text&#34;: prompt}
+            ]
+        }
+    ]
+
+    text = self.processor.apply_chat_template(
+        messages, tokenize=False, add_generation_prompt=True
+    )
+    image_inputs, video_inputs = process_vision_info(messages)
+    inputs = self.processor(
+        text=[text],
+        images=image_inputs,
+        videos=video_inputs,
+        padding=True,
+        return_tensors=&#34;pt&#34;
+    )
+
+    model_device = next(self.model.parameters()).device
+    inputs = {k: v.to(model_device) for k, v in inputs.items()}
+
+    with torch.no_grad():
+        generated_ids = self.model.generate(**inputs, max_new_tokens=128)
+
+    # Remove input_ids prefix to get only the generated response
+    generated_ids_trimmed = [
+        out_ids[len(in_ids):] for in_ids, out_ids in zip(inputs[&#39;input_ids&#39;], generated_ids)
+    ]
+
+    output_text = self.processor.batch_decode(
+        generated_ids_trimmed, skip_special_tokens=True, clean_up_tokenization_spaces=False
+    )[0]
+
+    return output_text</code></pre>
+</details>
+<div class="desc"><p>Generate a caption / answer for a single image given a prompt.</p>
+<h2 id="parameters">Parameters</h2>
+<p>image (PIL.Image): The input image to analyze
+prompt (str): Text prompt/question about the image</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>str</code></dt>
+<dd>Generated text response from the model</dd>
+</dl></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul>
+<li><a href="#multi-modal-utilities-module">Multi-Modal Utilities Module</a></li>
+</ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="ccai9012" href="index.html">ccai9012</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="ccai9012.multi_modal_utils.CLIPClassifier" href="#ccai9012.multi_modal_utils.CLIPClassifier">CLIPClassifier</a></code></h4>
+<ul class="">
+<li><code><a title="ccai9012.multi_modal_utils.CLIPClassifier.batch_classify" href="#ccai9012.multi_modal_utils.CLIPClassifier.batch_classify">batch_classify</a></code></li>
+<li><code><a title="ccai9012.multi_modal_utils.CLIPClassifier.classify_image" href="#ccai9012.multi_modal_utils.CLIPClassifier.classify_image">classify_image</a></code></li>
+<li><code><a title="ccai9012.multi_modal_utils.CLIPClassifier.show_result" href="#ccai9012.multi_modal_utils.CLIPClassifier.show_result">show_result</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="ccai9012.multi_modal_utils.VisionQAProcessor" href="#ccai9012.multi_modal_utils.VisionQAProcessor">VisionQAProcessor</a></code></h4>
+<ul class="">
+<li><code><a title="ccai9012.multi_modal_utils.VisionQAProcessor.batch_image_qa" href="#ccai9012.multi_modal_utils.VisionQAProcessor.batch_image_qa">batch_image_qa</a></code></li>
+<li><code><a title="ccai9012.multi_modal_utils.VisionQAProcessor.extract_keywords" href="#ccai9012.multi_modal_utils.VisionQAProcessor.extract_keywords">extract_keywords</a></code></li>
+<li><code><a title="ccai9012.multi_modal_utils.VisionQAProcessor.generate_caption_for_image" href="#ccai9012.multi_modal_utils.VisionQAProcessor.generate_caption_for_image">generate_caption_for_image</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
+</footer>
+</body>
+</html>

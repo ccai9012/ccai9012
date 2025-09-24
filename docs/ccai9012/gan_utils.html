@@ -1,0 +1,985 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
+<title>ccai9012.gan_utils API documentation</title>
+<meta name="description" content="GAN Utilities Module
+…">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>ccai9012.gan_utils</code></h1>
+</header>
+<section id="section-intro">
+<h1 id="gan-utilities-module">GAN Utilities Module</h1>
+<p>This module provides comprehensive utilities for training and using Generative Adversarial Networks (GANs),
+specifically focused on image-to-image translation tasks with Pix2Pix-style architectures.</p>
+<p>The module covers the entire GAN workflow from data preparation to model training and inference,
+making it easy to implement image translation tasks between paired domains.</p>
+<p>Main components:
+- Data preparation: Functions to organize and process image pairs
+- Data loading: Custom datasets and dataloaders for paired images
+- Model architectures: U-Net generator and PatchGAN discriminator implementations
+- Training pipeline: Complete GAN training workflow with appropriate losses
+- Inference utilities: Functions for using trained models and visualizing results</p>
+<h2 id="usage">Usage</h2>
+<h3 id="prepare-dataset">Prepare dataset</h3>
+<p>train_count, test_count = prepare_gan_dataset(source_root="source_data",
+train_root="data/train",
+test_root="data/test")</p>
+<h3 id="create-data-loaders">Create data loaders</h3>
+<p>train_loader = create_paired_data_loader("data/train", batch_size=4)</p>
+<h3 id="initialize-models">Initialize models</h3>
+<p>G = UNetGenerator()
+D = PatchDiscriminator()</p>
+<h3 id="train-gan">Train GAN</h3>
+<p>G, history = train_GAN(G, D, train_loader, num_epochs=100)</p>
+<h3 id="inference">Inference</h3>
+<p>fake_img = inference_gan(G, "data/test/A", "results/")</p>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="ccai9012.gan_utils.augment_pair"><code class="name flex">
+<span>def <span class="ident">augment_pair</span></span>(<span>image_A: PIL.Image.Image,<br>image_B: PIL.Image.Image,<br>flip_prob: float = 0.5,<br>rotate_prob: float = 0.3,<br>max_rotation: int = 30,<br>brightness: float = 0.2,<br>contrast: float = 0.2) ‑> Tuple[PIL.Image.Image, PIL.Image.Image]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def augment_pair(image_A: Image.Image,
+                image_B: Image.Image,
+                flip_prob: float = 0.5,
+                rotate_prob: float = 0.3,
+                max_rotation: int = 30,
+                brightness: float = 0.2,
+                contrast: float = 0.2) -&gt; Tuple[Image.Image, Image.Image]:
+    &#34;&#34;&#34;
+    Apply synchronized data augmentation to a pair of images.
+    Ensures both input and target images undergo the same transformations.
+
+    Args:
+        image_A: Input image (Source)
+        image_B: Target image (Target)
+        flip_prob: Probability of horizontal flip
+        rotate_prob: Probability of random rotation
+        max_rotation: Maximum rotation degree (+/-)
+        brightness: Max brightness adjustment factor
+        contrast: Max contrast adjustment factor
+
+    Returns:
+        Tuple of augmented images (aug_A, aug_B)
+    &#34;&#34;&#34;
+
+    # --------------------------
+    # Horizontal flip
+    # --------------------------
+    if random.random() &lt; flip_prob:
+        image_A = ImageOps.mirror(image_A)
+        image_B = ImageOps.mirror(image_B)
+
+    # --------------------------
+    # Random rotation
+    # --------------------------
+    if random.random() &lt; rotate_prob:
+        angle = random.uniform(-max_rotation, max_rotation)
+        image_A = image_A.rotate(angle, resample=Image.BILINEAR)
+        image_B = image_B.rotate(angle, resample=Image.BILINEAR)
+
+    # --------------------------
+    # Brightness adjustment
+    # --------------------------
+    if brightness &gt; 0:
+        factor = random.uniform(1 - brightness, 1 + brightness)
+        image_A = TF.adjust_brightness(image_A, factor)
+        image_B = TF.adjust_brightness(image_B, factor)
+
+    # --------------------------
+    # Contrast adjustment
+    # --------------------------
+    if contrast &gt; 0:
+        factor = random.uniform(1 - contrast, 1 + contrast)
+        image_A = TF.adjust_contrast(image_A, factor)
+        image_B = TF.adjust_contrast(image_B, factor)
+
+    return image_A, image_B</code></pre>
+</details>
+<div class="desc"><p>Apply synchronized data augmentation to a pair of images.
+Ensures both input and target images undergo the same transformations.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>image_A</code></strong></dt>
+<dd>Input image (Source)</dd>
+<dt><strong><code>image_B</code></strong></dt>
+<dd>Target image (Target)</dd>
+<dt><strong><code>flip_prob</code></strong></dt>
+<dd>Probability of horizontal flip</dd>
+<dt><strong><code>rotate_prob</code></strong></dt>
+<dd>Probability of random rotation</dd>
+<dt><strong><code>max_rotation</code></strong></dt>
+<dd>Maximum rotation degree (+/-)</dd>
+<dt><strong><code>brightness</code></strong></dt>
+<dd>Max brightness adjustment factor</dd>
+<dt><strong><code>contrast</code></strong></dt>
+<dd>Max contrast adjustment factor</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>Tuple of augmented images (aug_A, aug_B)</p></div>
+</dd>
+<dt id="ccai9012.gan_utils.collect_image_pairs"><code class="name flex">
+<span>def <span class="ident">collect_image_pairs</span></span>(<span>source_root: str) ‑> List[Tuple[str, str, str, str]]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def collect_image_pairs(source_root: str) -&gt; List[Tuple[str, str, str, str]]:
+    &#34;&#34;&#34;
+    Collect paired source and target images from the source directory.
+
+    Args:
+        source_root: Root directory containing source data
+
+    Returns:
+        List of tuples (region, relative_path, source_path, target_path)
+    &#34;&#34;&#34;
+    pairs = []
+    valid_exts = [&#39;.png&#39;, &#39;.jpg&#39;, &#39;.jpeg&#39;, &#39;.bmp&#39;, &#39;.tiff&#39;]
+
+    for region in os.listdir(source_root):
+        region_path = os.path.join(source_root, region)
+        source_dir = os.path.join(region_path, &#34;Source&#34;)
+        target_dir = os.path.join(region_path, &#34;Target&#34;)
+
+        for root, _, files in os.walk(source_dir):
+            for file in files:
+                if not any(file.lower().endswith(ext) for ext in valid_exts):
+                    continue
+                source_path = os.path.join(root, file)
+                relative_path = os.path.relpath(source_path, source_dir)
+                target_path = os.path.join(target_dir, relative_path)
+                if os.path.exists(target_path):
+                    pairs.append((region, relative_path, source_path, target_path))
+
+    return pairs</code></pre>
+</details>
+<div class="desc"><p>Collect paired source and target images from the source directory.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>source_root</code></strong></dt>
+<dd>Root directory containing source data</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>List of tuples (region, relative_path, source_path, target_path)</p></div>
+</dd>
+<dt id="ccai9012.gan_utils.copy_pair"><code class="name flex">
+<span>def <span class="ident">copy_pair</span></span>(<span>pair_list: List[Tuple], split_root: str) ‑> None</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def copy_pair(pair_list: List[Tuple], split_root: str) -&gt; None:
+    &#34;&#34;&#34;
+    Copy and process image pairs to train/test directories.
+
+    Args:
+        pair_list: List of image pairs
+        split_root: Destination root directory
+    &#34;&#34;&#34;
+    for region, rel_path, source_path, target_path in pair_list:
+        parts = rel_path.split(os.sep)
+        new_name = f&#34;{region}_{&#39;_&#39;.join(parts)}&#34;
+
+        dst_A = os.path.join(split_root, &#34;A&#34;, new_name)
+        dst_B = os.path.join(split_root, &#34;B&#34;, new_name)
+
+        process_and_save_image(source_path, dst_A)
+        process_and_save_image(target_path, dst_B)</code></pre>
+</details>
+<div class="desc"><p>Copy and process image pairs to train/test directories.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>pair_list</code></strong></dt>
+<dd>List of image pairs</dd>
+<dt><strong><code>split_root</code></strong></dt>
+<dd>Destination root directory</dd>
+</dl></div>
+</dd>
+<dt id="ccai9012.gan_utils.create_paired_data_loader"><code class="name flex">
+<span>def <span class="ident">create_paired_data_loader</span></span>(<span>data_dir: str, batch_size: int = 32) ‑> torch.utils.data.dataloader.DataLoader</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def create_paired_data_loader(data_dir: str, batch_size: int = 32) -&gt; DataLoader:
+    &#34;&#34;&#34;
+    Creates a DataLoader with standard GAN image transformations.
+
+    Args:
+        data_dir: Directory containing paired images (with A/ and B/ subdirs)
+        batch_size: Number of samples per batch
+
+    Returns:
+        DataLoader object configured for GAN training
+    &#34;&#34;&#34;
+    # Define standard transformations
+    transform_list = [
+        transforms.Resize((256, 256)),
+        transforms.ToTensor(),
+        transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
+    ]
+
+    # Create transformation pipeline
+    transform = transforms.Compose(transform_list)
+
+    # Create dataset
+    dataset = PairedImageDataset(data_dir, transform=transform)
+
+    # Create data loader
+    loader = DataLoader(
+        dataset,
+        batch_size=batch_size,
+        shuffle=True,
+        num_workers=4,
+        pin_memory=True
+    )
+
+    return loader</code></pre>
+</details>
+<div class="desc"><p>Creates a DataLoader with standard GAN image transformations.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>data_dir</code></strong></dt>
+<dd>Directory containing paired images (with A/ and B/ subdirs)</dd>
+<dt><strong><code>batch_size</code></strong></dt>
+<dd>Number of samples per batch</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>DataLoader object configured for GAN training</p></div>
+</dd>
+<dt id="ccai9012.gan_utils.inference_gan"><code class="name flex">
+<span>def <span class="ident">inference_gan</span></span>(<span>G, test_A_dir, results_dir='results/', device=None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def inference_gan(G, test_A_dir, results_dir=&#39;results/&#39;, device=None):
+    &#34;&#34;&#34;
+    Run inference with a trained Pix2Pix generator on a folder of test images.
+
+    Parameters:
+        G (nn.Module)        -- trained generator
+        test_A_dir (str)     -- directory of input images (A)
+        results_dir (str)    -- directory to save generated images
+        device (str or torch.device, optional) -- &#39;cuda&#39; or &#39;cpu&#39;; if None, automatically select
+
+    Returns:
+        None (saves images in results_dir)
+    &#34;&#34;&#34;
+    if device is None:
+        device = torch.device(&#39;cuda&#39; if torch.cuda.is_available() else &#39;cpu&#39;)
+    else:
+        device = torch.device(device)
+
+    G.to(device)
+    G.eval()
+    os.makedirs(results_dir, exist_ok=True)
+
+    # Transform (same as training)
+    transform = transforms.Compose([
+        transforms.Resize((256, 256)),
+        transforms.ToTensor(),
+        transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
+    ])
+
+    # Iterate over test images
+    for img_name in sorted(os.listdir(test_A_dir)):
+        if not img_name.lower().endswith((&#39;.png&#39;, &#39;.jpg&#39;, &#39;.jpeg&#39;)):
+            continue
+        A_path = os.path.join(test_A_dir, img_name)
+        A_img = Image.open(A_path).convert(&#34;RGB&#34;)
+        A_tensor = transform(A_img).unsqueeze(0).to(device)
+
+        with torch.no_grad():
+            fake_B = G(A_tensor)
+
+        # Convert to image and save
+        fake_B_img = Image.fromarray(tensor2img(fake_B))
+        fake_B_img.save(os.path.join(results_dir, img_name))
+
+    print(&#34;Inference done! Results saved to&#34;, results_dir)
+
+    return fake_B_img</code></pre>
+</details>
+<div class="desc"><p>Run inference with a trained Pix2Pix generator on a folder of test images.</p>
+<h2 id="parameters">Parameters</h2>
+<p>G (nn.Module)
+&ndash; trained generator
+test_A_dir (str)
+&ndash; directory of input images (A)
+results_dir (str)
+&ndash; directory to save generated images
+device (str or torch.device, optional) &ndash; 'cuda' or 'cpu'; if None, automatically select</p>
+<h2 id="returns">Returns</h2>
+<p>None (saves images in results_dir)</p></div>
+</dd>
+<dt id="ccai9012.gan_utils.load_model"><code class="name flex">
+<span>def <span class="ident">load_model</span></span>(<span>G, model_path, device=None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def load_model(G, model_path, device=None):
+
+    if device is None:
+        device = torch.device(&#39;cuda&#39; if torch.cuda.is_available() else &#39;cpu&#39;)
+    else:
+        device = torch.device(device)
+
+    G.load_state_dict(torch.load(model_path, map_location=device))
+    G.eval()
+    G.to(device)
+
+    return G</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="ccai9012.gan_utils.prepare_gan_dataset"><code class="name flex">
+<span>def <span class="ident">prepare_gan_dataset</span></span>(<span>source_root: str = 'data/Exp4',<br>train_root: str = 'data/train',<br>test_root: str = 'data/test',<br>train_ratio: float = 0.85) ‑> Tuple[int, int]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def prepare_gan_dataset(source_root: str = &#34;data/Exp4&#34;,
+                       train_root: str = &#34;data/train&#34;,
+                       test_root: str = &#34;data/test&#34;,
+                       train_ratio: float = 0.85) -&gt; Tuple[int, int]:
+    &#34;&#34;&#34;
+    Main function to prepare GAN training dataset.
+    Creates directories, collects images, splits data, and processes images.
+
+    Args:
+        source_root: Source data root directory
+        train_root: Training set directory
+        test_root: Testing set directory
+        train_ratio: Training set ratio
+
+    Returns:
+        (train_count, test_count): Number of samples in training and testing sets
+    &#34;&#34;&#34;
+    # Create directories
+    setup_directories(os.path.dirname(train_root))
+
+    # Collect image pairs
+    pairs = collect_image_pairs(source_root)
+
+    # Split dataset
+    train_pairs, test_pairs = split_pairs(pairs, train_ratio)
+
+    # Copy and process images
+    copy_pair(train_pairs, train_root)
+    copy_pair(test_pairs, test_root)
+
+    return len(train_pairs), len(test_pairs)</code></pre>
+</details>
+<div class="desc"><p>Main function to prepare GAN training dataset.
+Creates directories, collects images, splits data, and processes images.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>source_root</code></strong></dt>
+<dd>Source data root directory</dd>
+<dt><strong><code>train_root</code></strong></dt>
+<dd>Training set directory</dd>
+<dt><strong><code>test_root</code></strong></dt>
+<dd>Testing set directory</dd>
+<dt><strong><code>train_ratio</code></strong></dt>
+<dd>Training set ratio</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>(train_count, test_count): Number of samples in training and testing sets</p></div>
+</dd>
+<dt id="ccai9012.gan_utils.process_and_save_image"><code class="name flex">
+<span>def <span class="ident">process_and_save_image</span></span>(<span>image_path: str, dst_path: str) ‑> None</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def process_and_save_image(image_path: str, dst_path: str) -&gt; None:
+    &#34;&#34;&#34;
+    Process and save a single image (handles RGBA/LA formats).
+
+    Args:
+        image_path: Source image path
+        dst_path: Destination save path
+    &#34;&#34;&#34;
+    img = Image.open(image_path)
+    if img.mode in (&#39;RGBA&#39;, &#39;LA&#39;):
+        background = Image.new(&#39;RGB&#39;, img.size, (255, 255, 255))
+        if img.mode == &#39;LA&#39;:
+            alpha = img.split()[1]
+        else:
+            alpha = img.split()[3]
+        background.paste(img.convert(&#39;RGB&#39;), mask=alpha)
+        img = background
+    img.save(dst_path)</code></pre>
+</details>
+<div class="desc"><p>Process and save a single image (handles RGBA/LA formats).</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>image_path</code></strong></dt>
+<dd>Source image path</dd>
+<dt><strong><code>dst_path</code></strong></dt>
+<dd>Destination save path</dd>
+</dl></div>
+</dd>
+<dt id="ccai9012.gan_utils.setup_directories"><code class="name flex">
+<span>def <span class="ident">setup_directories</span></span>(<span>base_path: str = 'data') ‑> None</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def setup_directories(base_path: str = &#34;data&#34;) -&gt; None:
+    &#34;&#34;&#34;
+    Create necessary directory structure for GAN training.
+
+    Args:
+        base_path: Base directory path for data
+    &#34;&#34;&#34;
+    for split in [&#39;train&#39;, &#39;test&#39;]:
+        for folder in [&#39;A&#39;, &#39;B&#39;]:
+            os.makedirs(os.path.join(base_path, split, folder), exist_ok=True)</code></pre>
+</details>
+<div class="desc"><p>Create necessary directory structure for GAN training.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>base_path</code></strong></dt>
+<dd>Base directory path for data</dd>
+</dl></div>
+</dd>
+<dt id="ccai9012.gan_utils.split_pairs"><code class="name flex">
+<span>def <span class="ident">split_pairs</span></span>(<span>pairs: List[Tuple], train_ratio: float = 0.85, random_seed: int = 42) ‑> Tuple[List, List]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def split_pairs(pairs: List[Tuple], train_ratio: float = 0.85, random_seed: int = 42) -&gt; Tuple[List, List]:
+    &#34;&#34;&#34;
+    Split image pairs into training and testing sets.
+
+    Args:
+        pairs: List of image pairs
+        train_ratio: Ratio of training set
+        random_seed: Random seed for reproducibility
+
+    Returns:
+        (train_pairs, test_pairs)
+    &#34;&#34;&#34;
+    random.seed(random_seed)
+    pairs_copy = pairs.copy()
+    random.shuffle(pairs_copy)
+    num_train = int(len(pairs_copy) * train_ratio)
+    return pairs_copy[:num_train], pairs_copy[num_train:]</code></pre>
+</details>
+<div class="desc"><p>Split image pairs into training and testing sets.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>pairs</code></strong></dt>
+<dd>List of image pairs</dd>
+<dt><strong><code>train_ratio</code></strong></dt>
+<dd>Ratio of training set</dd>
+<dt><strong><code>random_seed</code></strong></dt>
+<dd>Random seed for reproducibility</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>(train_pairs, test_pairs)</p></div>
+</dd>
+<dt id="ccai9012.gan_utils.tensor2img"><code class="name flex">
+<span>def <span class="ident">tensor2img</span></span>(<span>t)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@torch.no_grad()
+# Helper function to convert tensor to image
+def tensor2img(t):
+    t = t.cpu().squeeze(0)
+    t = (t + 1) / 2.0  # [-1,1] -&gt; [0,1]
+    t = t.permute(1, 2, 0).numpy()
+    t = np.clip(t, 0, 1)
+    t = (t * 255).astype(np.uint8)
+    return t</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="ccai9012.gan_utils.train_GAN"><code class="name flex">
+<span>def <span class="ident">train_GAN</span></span>(<span>G,<br>D,<br>train_loader,<br>num_epochs=50,<br>log_interval=10,<br>save_dir='checkpoints',<br>save_interval=20,<br>device=None,<br>lambda_L1=100,<br>lr=0.0002,<br>betas=(0.5, 0.999))</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def train_GAN(G, D, train_loader, num_epochs=50, log_interval=10,
+              save_dir=&#39;checkpoints&#39;, save_interval=20,
+              device=None, lambda_L1=100, lr=0.0002, betas=(0.5, 0.999)):
+    &#34;&#34;&#34;
+    Train a Pix2Pix GAN model with given Generator and Discriminator.
+    Losses, optimizers, and optional model checkpoint saving are handled internally.
+
+    Parameters:
+        G (nn.Module)             -- Pre-initialized Generator network
+        D (nn.Module)             -- Pre-initialized Discriminator network
+        train_loader (DataLoader) -- PyTorch DataLoader providing training data pairs (A, B)
+        num_epochs (int)          -- Number of training epochs
+        log_interval (int)        -- Steps between printing loss logs
+        save_dir (str or None)    -- Directory to save model checkpoints. If None, checkpoints are not saved
+        save_interval (int)       -- Save model every `save_interval` epochs
+        device (str or None)      -- &#39;cuda&#39;, &#39;cpu&#39;, or None for auto selection
+        lambda_L1 (float)         -- Weight for L1 loss relative to GAN loss
+        lr (float)                -- Learning rate for Adam optimizer
+        betas (tuple)             -- Beta parameters for Adam optimizer
+
+    Returns:
+        G (nn.Module)  -- Trained generator network
+        history (dict) -- Dictionary containing lists of discriminator and generator losses:
+                          history[&#39;loss_D&#39;], history[&#39;loss_G&#39;]
+    &#34;&#34;&#34;
+
+    if device is None:
+        device = torch.device(&#39;cuda&#39; if torch.cuda.is_available() else &#39;cpu&#39;)
+    else:
+        device = torch.device(device)
+
+    if save_dir is not None:
+        os.makedirs(save_dir, exist_ok=True)
+
+    history = {&#39;loss_D&#39;: [], &#39;loss_G&#39;: []}
+
+    G.to(device)
+    D.to(device)
+    G.train()
+    D.train()
+
+    # --- Loss functions ---
+    criterion_GAN = nn.MSELoss()
+    criterion_L1 = nn.L1Loss()
+
+    # --- Optimizers ---
+    optimizer_G = optim.Adam(G.parameters(), lr=lr, betas=betas)
+    optimizer_D = optim.Adam(D.parameters(), lr=lr, betas=betas)
+
+    for epoch in range(num_epochs):
+        for i, data in enumerate(train_loader):
+            real_A = data[&#39;A&#39;].to(device)
+            real_B = data[&#39;B&#39;].to(device)
+
+            # --- Train Discriminator ---
+            optimizer_D.zero_grad()
+            fake_B = G(real_A)
+            real_AB = torch.cat([real_A, real_B], 1)
+            fake_AB = torch.cat([real_A, fake_B.detach()], 1)
+
+            D_real_out = D(real_AB)
+            D_fake_out = D(fake_AB)
+            real_label = torch.ones_like(D_real_out)
+            fake_label = torch.zeros_like(D_fake_out)
+
+            loss_D_real = criterion_GAN(D_real_out, real_label)
+            loss_D_fake = criterion_GAN(D_fake_out, fake_label)
+            loss_D = (loss_D_real + loss_D_fake) * 0.5
+            loss_D.backward()
+            optimizer_D.step()
+
+            # --- Train Generator ---
+            optimizer_G.zero_grad()
+            fake_AB = torch.cat([real_A, fake_B], 1)
+            D_fake_out = D(fake_AB)
+            real_label_G = torch.ones_like(D_fake_out)
+
+            loss_G_GAN = criterion_GAN(D_fake_out, real_label_G)
+            loss_G_L1 = criterion_L1(fake_B, real_B) * lambda_L1
+            loss_G = loss_G_GAN + loss_G_L1
+            loss_G.backward()
+            optimizer_G.step()
+
+            # --- Logging ---
+            if i % log_interval == 0:
+                print(f&#34;Epoch [{epoch + 1}/{num_epochs}] Step [{i}/{len(train_loader)}] &#34;
+                      f&#34;Loss D: {loss_D.item():.4f}, Loss G: {loss_G.item():.4f}&#34;)
+
+            history[&#39;loss_D&#39;].append(loss_D.item())
+            history[&#39;loss_G&#39;].append(loss_G.item())
+
+        # --- Save model at intervals ---
+        if save_dir is not None and ((epoch + 1) % save_interval == 0 or (epoch + 1) == num_epochs):
+            torch.save(G.state_dict(), os.path.join(save_dir, f&#39;G_epoch_{epoch + 1}.pth&#39;))
+            torch.save(D.state_dict(), os.path.join(save_dir, f&#39;D_epoch_{epoch + 1}.pth&#39;))
+            print(f&#34;Models saved at epoch {epoch + 1}&#34;)
+
+    return G, history</code></pre>
+</details>
+<div class="desc"><p>Train a Pix2Pix GAN model with given Generator and Discriminator.
+Losses, optimizers, and optional model checkpoint saving are handled internally.</p>
+<h2 id="parameters">Parameters</h2>
+<p>G (nn.Module)
+&ndash; Pre-initialized Generator network
+D (nn.Module)
+&ndash; Pre-initialized Discriminator network
+train_loader (DataLoader) &ndash; PyTorch DataLoader providing training data pairs (A, B)
+num_epochs (int)
+&ndash; Number of training epochs
+log_interval (int)
+&ndash; Steps between printing loss logs
+save_dir (str or None)
+&ndash; Directory to save model checkpoints. If None, checkpoints are not saved
+save_interval (int)
+&ndash; Save model every <code>save_interval</code> epochs
+device (str or None)
+&ndash; 'cuda', 'cpu', or None for auto selection
+lambda_L1 (float)
+&ndash; Weight for L1 loss relative to GAN loss
+lr (float)
+&ndash; Learning rate for Adam optimizer
+betas (tuple)
+&ndash; Beta parameters for Adam optimizer</p>
+<h2 id="returns">Returns</h2>
+<p>G (nn.Module)
+&ndash; Trained generator network
+history (dict) &ndash; Dictionary containing lists of discriminator and generator losses:
+history['loss_D'], history['loss_G']</p></div>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="ccai9012.gan_utils.PairedImageDataset"><code class="flex name class">
+<span>class <span class="ident">PairedImageDataset</span></span>
+<span>(</span><span>root_dir, transform=None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class PairedImageDataset(Dataset):
+    &#34;&#34;&#34;
+    Custom Dataset class for paired images training.
+    Loads corresponding images from A/ and B/ directories.
+    Assumes both directories have matching filenames.
+    &#34;&#34;&#34;
+
+    def __init__(self, root_dir, transform=None):
+        self.A_paths = sorted(glob.glob(os.path.join(root_dir, &#39;A&#39;, &#39;*.png&#39;)))
+        self.B_paths = sorted(glob.glob(os.path.join(root_dir, &#39;B&#39;, &#39;*.png&#39;)))
+        assert len(self.A_paths) == len(self.B_paths), &#34;A/B image counts must match&#34;
+        self.transform = transform
+
+    def __len__(self):
+        return len(self.A_paths)
+
+    def __getitem__(self, idx):
+        A_img = Image.open(self.A_paths[idx]).convert(&#39;RGB&#39;)
+        B_img = Image.open(self.B_paths[idx]).convert(&#39;RGB&#39;)
+
+        if self.transform:
+            A_img = self.transform(A_img)
+            B_img = self.transform(B_img)
+
+        return {&#39;A&#39;: A_img, &#39;B&#39;: B_img}</code></pre>
+</details>
+<div class="desc"><p>Custom Dataset class for paired images training.
+Loads corresponding images from A/ and B/ directories.
+Assumes both directories have matching filenames.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>torch.utils.data.dataset.Dataset</li>
+<li>typing.Generic</li>
+</ul>
+</dd>
+<dt id="ccai9012.gan_utils.PatchDiscriminator"><code class="flex name class">
+<span>class <span class="ident">PatchDiscriminator</span></span>
+<span>(</span><span>in_channels=6, features=64)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class PatchDiscriminator(nn.Module):
+    def __init__(self, in_channels=6, features=64):
+        super().__init__()
+        self.model = nn.Sequential(
+            nn.Conv2d(in_channels, features, 4, 2, 1),
+            nn.LeakyReLU(0.2),
+            nn.Conv2d(features, features * 2, 4, 2, 1),
+            nn.BatchNorm2d(features * 2),
+            nn.LeakyReLU(0.2),
+            nn.Conv2d(features * 2, 1, 4, 1, 1)  # output 1-channel patch
+        )
+
+    def forward(self, x):
+        return self.model(x)</code></pre>
+</details>
+<div class="desc"><p>Base class for all neural network modules.</p>
+<p>Your models should also subclass this class.</p>
+<p>Modules can also contain other Modules, allowing them to be nested in
+a tree structure. You can assign the submodules as regular attributes::</p>
+<pre><code>import torch.nn as nn
+import torch.nn.functional as F
+
+class Model(nn.Module):
+    def __init__(self) -&gt; None:
+        super().__init__()
+        self.conv1 = nn.Conv2d(1, 20, 5)
+        self.conv2 = nn.Conv2d(20, 20, 5)
+
+    def forward(self, x):
+        x = F.relu(self.conv1(x))
+        return F.relu(self.conv2(x))
+</code></pre>
+<p>Submodules assigned in this way will be registered, and will also have their
+parameters converted when you call :meth:<code>to</code>, etc.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>As per the example above, an <code>__init__()</code> call to the parent class
+must be made before assignment on the child.</p>
+</div>
+<p>:ivar training: Boolean represents whether this module is in training or
+evaluation mode.
+:vartype training: bool</p>
+<p>Initialize internal Module state, shared by both nn.Module and ScriptModule.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>torch.nn.modules.module.Module</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="ccai9012.gan_utils.PatchDiscriminator.forward"><code class="name flex">
+<span>def <span class="ident">forward</span></span>(<span>self, x) ‑> Callable[..., Any]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def forward(self, x):
+    return self.model(x)</code></pre>
+</details>
+<div class="desc"><p>Define the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the :class:<code>Module</code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div></div>
+</dd>
+</dl>
+</dd>
+<dt id="ccai9012.gan_utils.UNetGenerator"><code class="flex name class">
+<span>class <span class="ident">UNetGenerator</span></span>
+<span>(</span><span>in_channels=3, out_channels=3, features=64)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class UNetGenerator(nn.Module):
+    # Simple U-Net for demo purposes
+    def __init__(self, in_channels=3, out_channels=3, features=64):
+        super().__init__()
+        self.down1 = nn.Sequential(nn.Conv2d(in_channels, features, 4, 2, 1), nn.LeakyReLU(0.2))
+        self.down2 = nn.Sequential(nn.Conv2d(features, features * 2, 4, 2, 1), nn.BatchNorm2d(features * 2),
+                                   nn.LeakyReLU(0.2))
+        self.down3 = nn.Sequential(nn.Conv2d(features * 2, features * 4, 4, 2, 1), nn.BatchNorm2d(features * 4),
+                                   nn.LeakyReLU(0.2))
+
+        self.up1 = nn.Sequential(nn.ConvTranspose2d(features * 4, features * 2, 4, 2, 1), nn.BatchNorm2d(features * 2),
+                                 nn.ReLU())
+        self.up2 = nn.Sequential(nn.ConvTranspose2d(features * 2, features, 4, 2, 1), nn.BatchNorm2d(features),
+                                 nn.ReLU())
+        self.up3 = nn.Sequential(nn.ConvTranspose2d(features, out_channels, 4, 2, 1), nn.Tanh())
+
+    def forward(self, x):
+        d1 = self.down1(x)
+        d2 = self.down2(d1)
+        d3 = self.down3(d2)
+        u1 = self.up1(d3)
+        u2 = self.up2(u1 + d2)  # skip connection
+        u3 = self.up3(u2 + d1)
+        return u3</code></pre>
+</details>
+<div class="desc"><p>Base class for all neural network modules.</p>
+<p>Your models should also subclass this class.</p>
+<p>Modules can also contain other Modules, allowing them to be nested in
+a tree structure. You can assign the submodules as regular attributes::</p>
+<pre><code>import torch.nn as nn
+import torch.nn.functional as F
+
+class Model(nn.Module):
+    def __init__(self) -&gt; None:
+        super().__init__()
+        self.conv1 = nn.Conv2d(1, 20, 5)
+        self.conv2 = nn.Conv2d(20, 20, 5)
+
+    def forward(self, x):
+        x = F.relu(self.conv1(x))
+        return F.relu(self.conv2(x))
+</code></pre>
+<p>Submodules assigned in this way will be registered, and will also have their
+parameters converted when you call :meth:<code>to</code>, etc.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>As per the example above, an <code>__init__()</code> call to the parent class
+must be made before assignment on the child.</p>
+</div>
+<p>:ivar training: Boolean represents whether this module is in training or
+evaluation mode.
+:vartype training: bool</p>
+<p>Initialize internal Module state, shared by both nn.Module and ScriptModule.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>torch.nn.modules.module.Module</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="ccai9012.gan_utils.UNetGenerator.forward"><code class="name flex">
+<span>def <span class="ident">forward</span></span>(<span>self, x) ‑> Callable[..., Any]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def forward(self, x):
+    d1 = self.down1(x)
+    d2 = self.down2(d1)
+    d3 = self.down3(d2)
+    u1 = self.up1(d3)
+    u2 = self.up2(u1 + d2)  # skip connection
+    u3 = self.up3(u2 + d1)
+    return u3</code></pre>
+</details>
+<div class="desc"><p>Define the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the :class:<code>Module</code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul>
+<li><a href="#gan-utilities-module">GAN Utilities Module</a></li>
+</ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="ccai9012" href="index.html">ccai9012</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="ccai9012.gan_utils.augment_pair" href="#ccai9012.gan_utils.augment_pair">augment_pair</a></code></li>
+<li><code><a title="ccai9012.gan_utils.collect_image_pairs" href="#ccai9012.gan_utils.collect_image_pairs">collect_image_pairs</a></code></li>
+<li><code><a title="ccai9012.gan_utils.copy_pair" href="#ccai9012.gan_utils.copy_pair">copy_pair</a></code></li>
+<li><code><a title="ccai9012.gan_utils.create_paired_data_loader" href="#ccai9012.gan_utils.create_paired_data_loader">create_paired_data_loader</a></code></li>
+<li><code><a title="ccai9012.gan_utils.inference_gan" href="#ccai9012.gan_utils.inference_gan">inference_gan</a></code></li>
+<li><code><a title="ccai9012.gan_utils.load_model" href="#ccai9012.gan_utils.load_model">load_model</a></code></li>
+<li><code><a title="ccai9012.gan_utils.prepare_gan_dataset" href="#ccai9012.gan_utils.prepare_gan_dataset">prepare_gan_dataset</a></code></li>
+<li><code><a title="ccai9012.gan_utils.process_and_save_image" href="#ccai9012.gan_utils.process_and_save_image">process_and_save_image</a></code></li>
+<li><code><a title="ccai9012.gan_utils.setup_directories" href="#ccai9012.gan_utils.setup_directories">setup_directories</a></code></li>
+<li><code><a title="ccai9012.gan_utils.split_pairs" href="#ccai9012.gan_utils.split_pairs">split_pairs</a></code></li>
+<li><code><a title="ccai9012.gan_utils.tensor2img" href="#ccai9012.gan_utils.tensor2img">tensor2img</a></code></li>
+<li><code><a title="ccai9012.gan_utils.train_GAN" href="#ccai9012.gan_utils.train_GAN">train_GAN</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="ccai9012.gan_utils.PairedImageDataset" href="#ccai9012.gan_utils.PairedImageDataset">PairedImageDataset</a></code></h4>
+</li>
+<li>
+<h4><code><a title="ccai9012.gan_utils.PatchDiscriminator" href="#ccai9012.gan_utils.PatchDiscriminator">PatchDiscriminator</a></code></h4>
+<ul class="">
+<li><code><a title="ccai9012.gan_utils.PatchDiscriminator.forward" href="#ccai9012.gan_utils.PatchDiscriminator.forward">forward</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="ccai9012.gan_utils.UNetGenerator" href="#ccai9012.gan_utils.UNetGenerator">UNetGenerator</a></code></h4>
+<ul class="">
+<li><code><a title="ccai9012.gan_utils.UNetGenerator.forward" href="#ccai9012.gan_utils.UNetGenerator.forward">forward</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
+</footer>
+</body>
+</html>

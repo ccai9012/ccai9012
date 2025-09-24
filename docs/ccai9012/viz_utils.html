@@ -1,0 +1,1297 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
+<title>ccai9012.viz_utils API documentation</title>
+<meta name="description" content="Visualization Utilities Module
+…">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>ccai9012.viz_utils</code></h1>
+</header>
+<section id="section-intro">
+<h1 id="visualization-utilities-module">Visualization Utilities Module</h1>
+<p>This module provides a comprehensive set of visualization tools for data science and machine learning applications.
+It includes functions for visualizing neural network architectures, training processes, word embeddings,
+geospatial data, and various other types of data visualizations.</p>
+<p>The module is organized into several categories:
+- Neural network visualization: Functions for visualizing MLP architectures and training metrics
+- Word embedding visualization: Tools for visualizing word embeddings and bias in language models
+- Geospatial visualization: Functions for creating maps, heatmaps, and plotting geo-located data points
+- Word cloud visualization: Utilities for generating word clouds from text data
+- General data visualization: Additional visualization tools for various data types</p>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="ccai9012.viz_utils.draw_simple_mlp"><code class="name flex">
+<span>def <span class="ident">draw_simple_mlp</span></span>(<span>input_size=8,<br>hidden_size=64,<br>output_size=1,<br>hidden_display=5,<br>input_color='lightblue',<br>hidden_color='lightgreen',<br>output_color='lightcoral',<br>layer_label_color='lightgrey',<br>layout_prog='dot',<br>filename='simple_mlp.png',<br>figsize=(30, 10),<br>dpi=100,<br>nodesep=1.0,<br>ranksep=4.0,<br>fontsize=24)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def draw_simple_mlp(
+        input_size=8,
+        hidden_size=64,
+        output_size=1,
+        hidden_display=5,
+        # Number of hidden nodes to display (for clarity), actual hidden layer size remains hidden_size
+        input_color=&#39;lightblue&#39;,
+        hidden_color=&#39;lightgreen&#39;,
+        output_color=&#39;lightcoral&#39;,
+        layer_label_color=&#39;lightgrey&#39;,
+        layout_prog=&#39;dot&#39;,
+        filename=&#39;simple_mlp.png&#39;,
+        figsize=(30, 10),
+        dpi=100,
+        nodesep=1.0,
+        ranksep=4.0,
+        fontsize=24
+):
+    &#34;&#34;&#34;
+    Draws a simple MLP (Multi-Layer Perceptron) architecture graph using pygraphviz.
+    Parameters:
+    - input_size: int, number of input layer nodes
+    - hidden_size: int, total number of hidden layer nodes (used for labeling)
+    - output_size: int, number of output layer nodes
+    - hidden_display: int, number of hidden nodes to actually display (for visualization clarity)
+    - input_color, hidden_color, output_color: colors for nodes of each layer
+    - layer_label_color: color for the subgraph (layer) labels and borders
+    - layout_prog: graphviz layout program to use (e.g., &#39;dot&#39;, &#39;neato&#39;)
+    - filename: output image filename
+    - figsize: tuple(width, height), size of the graph image
+    - dpi: image resolution
+    - nodesep: separation between nodes
+    - ranksep: separation between layers (ranks)
+    - fontsize: font size for labels
+
+    Returns:
+    - IPython.display.Image object of the generated graph image
+    &#34;&#34;&#34;
+
+    G = pgv.AGraph(strict=False, directed=True)
+
+    # Create input layer nodes
+    input_nodes = [f&#39;in{i + 1}&#39; for i in range(input_size)]
+    for node in input_nodes:
+        G.add_node(node, shape=&#39;circle&#39;, style=&#39;filled&#39;, fillcolor=input_color)
+
+    # Create hidden layer nodes for visualization (limited to hidden_display)
+    hidden_display = min(hidden_display, hidden_size)
+    hidden_nodes = [f&#39;hid{i + 1}&#39; for i in range(hidden_display)]
+    for node in hidden_nodes:
+        G.add_node(node, shape=&#39;circle&#39;, style=&#39;filled&#39;, fillcolor=hidden_color)
+
+    # Create output layer nodes
+    output_nodes = [f&#39;out{i + 1}&#39; for i in range(output_size)]
+    for node in output_nodes:
+        G.add_node(node, shape=&#39;circle&#39;, style=&#39;filled&#39;, fillcolor=output_color)
+
+    # Add edges from input layer to hidden layer
+    for i_node in input_nodes:
+        for h_node in hidden_nodes:
+            G.add_edge(i_node, h_node)
+
+    # Add edges from hidden layer to output layer
+    for h_node in hidden_nodes:
+        for o_node in output_nodes:
+            G.add_edge(h_node, o_node)
+
+    # Define subgraph for input layer with label and styling
+    with G.subgraph(name=&#39;cluster_input&#39;) as c:
+        c.add_nodes_from(input_nodes)
+        c.graph_attr.update(label=f&#39;Input Layer ({input_size})&#39;, color=layer_label_color, style=&#39;dashed&#39;)
+        c.graph_attr.update(rank=&#39;same&#39;)  # Keep nodes in the same rank (horizontal alignment)
+
+    # Define subgraph for hidden layer with label and styling
+    with G.subgraph(name=&#39;cluster_hidden&#39;) as c:
+        c.add_nodes_from(hidden_nodes)
+        c.graph_attr.update(label=f&#39;Hidden Layer ({hidden_size})&#39;, color=layer_label_color, style=&#39;dashed&#39;)
+        c.graph_attr.update(rank=&#39;same&#39;)
+
+    # Define subgraph for output layer with label and styling
+    with G.subgraph(name=&#39;cluster_output&#39;) as c:
+        c.add_nodes_from(output_nodes)
+        c.graph_attr.update(label=f&#39;Output Layer ({output_size})&#39;, color=layer_label_color, style=&#39;dashed&#39;)
+        c.graph_attr.update(rank=&#39;same&#39;)
+
+    # Set global graph attributes for layout and style
+    G.graph_attr.update(
+        rankdir=&#39;LR&#39;,  # Layout direction Left to Right
+        size=f&#39;{figsize[0]},{figsize[1]}!&#39;,
+        dpi=str(dpi),
+        nodesep=str(nodesep),
+        ranksep=str(ranksep),
+        fontsize=str(fontsize),
+        splines=&#39;line&#39;  # Use straight lines for edges
+    )
+
+    # Render the graph to file
+    G.draw(filename, prog=layout_prog)
+
+    # Return the image for display in Jupyter Notebook
+    return Image(filename)</code></pre>
+</details>
+<div class="desc"><p>Draws a simple MLP (Multi-Layer Perceptron) architecture graph using pygraphviz.
+Parameters:
+- input_size: int, number of input layer nodes
+- hidden_size: int, total number of hidden layer nodes (used for labeling)
+- output_size: int, number of output layer nodes
+- hidden_display: int, number of hidden nodes to actually display (for visualization clarity)
+- input_color, hidden_color, output_color: colors for nodes of each layer
+- layer_label_color: color for the subgraph (layer) labels and borders
+- layout_prog: graphviz layout program to use (e.g., 'dot', 'neato')
+- filename: output image filename
+- figsize: tuple(width, height), size of the graph image
+- dpi: image resolution
+- nodesep: separation between nodes
+- ranksep: separation between layers (ranks)
+- fontsize: font size for labels</p>
+<p>Returns:
+- IPython.display.Image object of the generated graph image</p></div>
+</dd>
+<dt id="ccai9012.viz_utils.occupation_comparison"><code class="name flex">
+<span>def <span class="ident">occupation_comparison</span></span>(<span>df, occ_fel_percent)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def occupation_comparison(df, occ_fel_percent):
+    &#34;&#34;&#34;
+    Plot a scatter plot comparing gender bias scores with real-world female percentages in different occupations.
+
+    This function creates an interactive scatter plot using Plotly that shows the relationship
+    between gender bias in word embeddings and the actual percentage of females in various occupations.
+
+    Args:
+        df (pd.DataFrame): DataFrame containing occupation words and their gender direction scores.
+            Must include columns: &#39;word&#39; and &#39;gender_direction&#39;.
+        occ_fel_percent (dict): Dictionary mapping occupation words to their real-world female percentage
+            (as decimal values between 0 and 1).
+
+    Returns:
+        None: Displays the interactive Plotly scatter plot.
+    &#34;&#34;&#34;
+
+    df[&#39;female_percent&#39;] = df[&#39;word&#39;].map(occ_fel_percent)
+
+    # Drop rows where female percentage is not available (NaN)
+    df_f = df.dropna(subset=[&#39;female_percent&#39;])
+
+    # Normalize gender_direction for color mapping
+    color_scale = df_f[&#39;gender_direction&#39;]
+
+    fig = go.Figure()
+
+    fig.add_trace(go.Scatter(
+        x=df_f[&#39;gender_direction&#39;],
+        y=df_f[&#39;female_percent&#39;],
+        mode=&#39;markers+text&#39;,
+        text=df_f[&#39;word&#39;],
+        textposition=&#39;top center&#39;,
+        marker=dict(
+            size=12,
+            color=color_scale,  # Color by bias score
+            colorscale=&#39;RdBu&#39;,  # Red to Blue diverging scale
+            cmin=-max(abs(color_scale)),
+            cmax=max(abs(color_scale)),
+            colorbar=dict(
+                title=&#34;Gender direction&#34;,
+                tickformat=&#34;.2f&#34;
+            ),
+            line=dict(width=1, color=&#39;DarkSlateGrey&#39;)
+        ),
+        hovertemplate=&#39;&lt;b&gt;%{text}&lt;/b&gt;&lt;br&gt;Bias Score: %{x:.3f}&lt;br&gt;Female %: %{y:.1%}&lt;extra&gt;&lt;/extra&gt;&#39;
+    ))
+
+    # Add vertical line at x=0
+    fig.add_shape(
+        type=&#39;line&#39;,
+        x0=0, x1=0,
+        y0=min(df_f[&#39;female_percent&#39;]),
+        y1=max(df_f[&#39;female_percent&#39;]),
+        line=dict(color=&#39;gray&#39;, dash=&#39;dash&#39;)
+    )
+
+    fig.update_layout(
+        title=&#39;Gender Bias Score vs Female Percentage in Occupations&#39;,
+        xaxis_title=&#39;Gender Direction (sim(&#34;he&#34;) - sim(&#34;she&#34;))&#39;,
+        yaxis_title=&#39;Percentage of Females in Occupation&#39;,
+        template=&#39;plotly_white&#39;,
+        width=850,
+        height=500
+    )
+
+    fig.show()</code></pre>
+</details>
+<div class="desc"><p>Plot a scatter plot comparing gender bias scores with real-world female percentages in different occupations.</p>
+<p>This function creates an interactive scatter plot using Plotly that shows the relationship
+between gender bias in word embeddings and the actual percentage of females in various occupations.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>df</code></strong> :&ensp;<code>pd.DataFrame</code></dt>
+<dd>DataFrame containing occupation words and their gender direction scores.
+Must include columns: 'word' and 'gender_direction'.</dd>
+<dt><strong><code>occ_fel_percent</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Dictionary mapping occupation words to their real-world female percentage
+(as decimal values between 0 and 1).</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>None</code></dt>
+<dd>Displays the interactive Plotly scatter plot.</dd>
+</dl></div>
+</dd>
+<dt id="ccai9012.viz_utils.plot_bar_bias"><code class="name flex">
+<span>def <span class="ident">plot_bar_bias</span></span>(<span>df,<br>word_col='word',<br>bias_col='gender_direction',<br>top_n=10,<br>neg_color='mediumvioletred',<br>pos_color='royalblue',<br>title=None,<br>xlabel=None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def plot_bar_bias(df, word_col=&#39;word&#39;, bias_col=&#39;gender_direction&#39;, top_n=10,
+                  neg_color=&#39;mediumvioletred&#39;, pos_color=&#39;royalblue&#39;,
+                  title=None, xlabel=None):
+    &#34;&#34;&#34;
+    Plot horizontal bar chart of top negative and positive bias scores.
+
+    Args:
+        df (pd.DataFrame): DataFrame containing words and bias scores.
+        word_col (str): Column name for words.
+        bias_col (str): Column name for bias scores.
+        top_n (int): Number of top positive/negative bars to show.
+        neg_color (str): Color for negative bars.
+        pos_color (str): Color for positive bars.
+        title (str or None): Plot title.
+        xlabel (str or None): X-axis label.
+    &#34;&#34;&#34;
+
+    top_neg = df[df[bias_col] &lt; 0].nsmallest(top_n, bias_col)
+    top_pos = df[df[bias_col] &gt; 0].nlargest(top_n, bias_col)
+    top_words = pd.concat([top_neg, top_pos]).sort_values(bias_col).reset_index(drop=True)
+
+    colors = [neg_color if x &lt; 0 else pos_color for x in top_words[bias_col]]
+
+    fig = go.Figure(go.Bar(
+        x=top_words[bias_col],
+        y=top_words[word_col],
+        orientation=&#39;h&#39;,
+        marker_color=colors,
+        hovertemplate=f&#39;%{{y}}&lt;br&gt;Bias Score: %{{x:.3f}}&lt;extra&gt;&lt;/extra&gt;&#39;
+    ))
+
+    fig.update_layout(
+        title=title or f&#39;Top {top_n} Negative and Positive Bias Scores&#39;,
+        xaxis_title=xlabel or bias_col,
+        yaxis=dict(autorange=&#39;reversed&#39;),
+        template=&#39;plotly_white&#39;,
+        margin=dict(l=120, r=40, t=80, b=40),
+        font=dict(size=14)
+    )
+
+    fig.show()</code></pre>
+</details>
+<div class="desc"><p>Plot horizontal bar chart of top negative and positive bias scores.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>df</code></strong> :&ensp;<code>pd.DataFrame</code></dt>
+<dd>DataFrame containing words and bias scores.</dd>
+<dt><strong><code>word_col</code></strong> :&ensp;<code>str</code></dt>
+<dd>Column name for words.</dd>
+<dt><strong><code>bias_col</code></strong> :&ensp;<code>str</code></dt>
+<dd>Column name for bias scores.</dd>
+<dt><strong><code>top_n</code></strong> :&ensp;<code>int</code></dt>
+<dd>Number of top positive/negative bars to show.</dd>
+<dt><strong><code>neg_color</code></strong> :&ensp;<code>str</code></dt>
+<dd>Color for negative bars.</dd>
+<dt><strong><code>pos_color</code></strong> :&ensp;<code>str</code></dt>
+<dd>Color for positive bars.</dd>
+<dt><strong><code>title</code></strong> :&ensp;<code>str</code> or <code>None</code></dt>
+<dd>Plot title.</dd>
+<dt><strong><code>xlabel</code></strong> :&ensp;<code>str</code> or <code>None</code></dt>
+<dd>X-axis label.</dd>
+</dl></div>
+</dd>
+<dt id="ccai9012.viz_utils.plot_cooccurrence_heatmap"><code class="name flex">
+<span>def <span class="ident">plot_cooccurrence_heatmap</span></span>(<span>results_df, column='materials', top_k=10, save_path=None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def plot_cooccurrence_heatmap(results_df, column=&#34;materials&#34;, top_k=10, save_path=None):
+    &#34;&#34;&#34;
+    Plot a co-occurrence heatmap of material keywords that frequently appear together.
+
+    Args:
+        results_df (pd.DataFrame): DataFrame containing a column with comma-separated material keywords.
+        column (str): Name of the column containing keywords (default: &#34;materials&#34;).
+        top_k (int): Number of top frequent keywords to include in the heatmap.
+
+    Returns:
+        pd.DataFrame: Co-occurrence matrix of the top_k keywords.
+    &#34;&#34;&#34;
+    # Step 1: Count frequency of all individual keywords
+    keyword_counter = Counter()
+    for entry in results_df[column].dropna():
+        keywords = [kw.strip().lower() for kw in entry.split(&#34;,&#34;) if kw.strip()]
+        keyword_counter.update(keywords)
+
+    # Select top_k most frequent keywords
+    top_keywords = [kw for kw, _ in keyword_counter.most_common(top_k)]
+
+    # Step 2: Initialize a co-occurrence matrix as a nested dictionary
+    co_matrix = defaultdict(lambda: defaultdict(int))
+
+    # Step 3: Iterate through each row and count co-occurrences
+    for entry in results_df[column].dropna():
+        keywords = [kw.strip().lower() for kw in entry.split(&#34;,&#34;) if kw.strip()]
+        # Keep only keywords that are in the top_k list
+        keywords = [kw for kw in keywords if kw in top_keywords]
+        # Count pairwise combinations
+        for kw1, kw2 in itertools.combinations(set(keywords), 2):
+            co_matrix[kw1][kw2] += 1
+            co_matrix[kw2][kw1] += 1
+        # Optionally count self-co-occurrence
+        for kw in keywords:
+            co_matrix[kw][kw] += 1
+
+    # Step 4: Convert the nested dictionary to a DataFrame
+    co_df = pd.DataFrame(co_matrix).fillna(0).astype(int)
+    co_df = co_df.reindex(index=top_keywords, columns=top_keywords)
+
+    # Step 5: Plot the heatmap
+    plt.figure(figsize=(8, 6))
+    sns.heatmap(co_df, annot=True, fmt=&#34;d&#34;, cmap=&#34;Blues&#34;)
+    plt.title(f&#34;Co-occurrence Heatmap of Top {top_k} Material Keywords&#34;)
+    plt.xticks(rotation=45, ha=&#34;right&#34;)
+    plt.yticks(rotation=0)
+    plt.tight_layout()
+
+    if save_path is not None:
+        plt.savefig(save_path)
+
+    plt.show()
+
+    return co_df</code></pre>
+</details>
+<div class="desc"><p>Plot a co-occurrence heatmap of material keywords that frequently appear together.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>results_df</code></strong> :&ensp;<code>pd.DataFrame</code></dt>
+<dd>DataFrame containing a column with comma-separated material keywords.</dd>
+<dt><strong><code>column</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the column containing keywords (default: "materials").</dd>
+<dt><strong><code>top_k</code></strong> :&ensp;<code>int</code></dt>
+<dd>Number of top frequent keywords to include in the heatmap.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>pd.DataFrame</code></dt>
+<dd>Co-occurrence matrix of the top_k keywords.</dd>
+</dl></div>
+</dd>
+<dt id="ccai9012.viz_utils.plot_heatmap"><code class="name flex">
+<span>def <span class="ident">plot_heatmap</span></span>(<span>df, target_col='price')</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def plot_heatmap(df, target_col=&#39;price&#39;):
+    &#34;&#34;&#34;
+    Create a folium heatmap visualization from geographical data with values as weights.
+
+    This function takes a DataFrame with latitude and longitude coordinates and creates
+    a heatmap where the intensity is determined by the values in the target column.
+
+    Args:
+        df (pd.DataFrame): DataFrame containing at least &#39;latitude&#39;, &#39;longitude&#39;, and target_col.
+        target_col (str, optional): Column name to use for heatmap intensity values. Defaults to &#39;price&#39;.
+
+    Returns:
+        folium.Map: Interactive folium map with heatmap layer.
+    &#34;&#34;&#34;
+    # Calculate map center coordinates
+    center_lat = df[&#39;latitude&#39;].mean()
+    center_lon = df[&#39;longitude&#39;].mean()
+
+    # Initialize Folium map centered at mean latitude and longitude
+    m = folium.Map(location=[center_lat, center_lon], zoom_start=7)
+
+    # Prepare heatmap data as list of [lat, lon, weight]
+    heat_data = [[row[&#39;latitude&#39;], row[&#39;longitude&#39;], row[target_col]] for idx, row in df.iterrows()]
+
+    # Add heatmap layer with price as weight
+    HeatMap(
+        heat_data,
+        radius=15,  # radius of each heat point
+        blur=10,  # blur intensity
+        max_zoom=13,
+        max_val=df[target_col].max(),
+        min_opacity=0.3
+    ).add_to(m)
+
+    return m</code></pre>
+</details>
+<div class="desc"><p>Create a folium heatmap visualization from geographical data with values as weights.</p>
+<p>This function takes a DataFrame with latitude and longitude coordinates and creates
+a heatmap where the intensity is determined by the values in the target column.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>df</code></strong> :&ensp;<code>pd.DataFrame</code></dt>
+<dd>DataFrame containing at least 'latitude', 'longitude', and target_col.</dd>
+<dt><strong><code>target_col</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Column name to use for heatmap intensity values. Defaults to 'price'.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>folium.Map</code></dt>
+<dd>Interactive folium map with heatmap layer.</dd>
+</dl></div>
+</dd>
+<dt id="ccai9012.viz_utils.plot_loss_curve"><code class="name flex">
+<span>def <span class="ident">plot_loss_curve</span></span>(<span>train_losses,<br>val_losses,<br>num_epochs=None,<br>title='Training and Validation Loss Curve',<br>xlabel='Epoch',<br>ylabel='MSE Loss',<br>figsize=(8, 5))</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def plot_loss_curve(
+        train_losses,
+        val_losses,
+        num_epochs=None,
+        title=&#34;Training and Validation Loss Curve&#34;,
+        xlabel=&#34;Epoch&#34;,
+        ylabel=&#34;MSE Loss&#34;,
+        figsize=(8, 5)
+):
+    &#34;&#34;&#34;
+    Plot training and validation loss curves.
+
+    Parameters:
+    - train_losses: list or array of training loss values per epoch
+    - val_losses: list or array of validation loss values per epoch
+    - num_epochs: int, number of epochs (if None, inferred from length of train_losses)
+    - title: str, plot title
+    - xlabel: str, label for x-axis
+    - ylabel: str, label for y-axis
+    - figsize: tuple, figure size
+    &#34;&#34;&#34;
+    if num_epochs is None:
+        num_epochs = len(train_losses)
+
+    plt.figure(figsize=figsize)
+    plt.plot(range(1, num_epochs + 1), train_losses, label=&#34;Train Loss&#34;)
+    plt.plot(range(1, num_epochs + 1), val_losses, label=&#34;Validation Loss&#34;)
+    plt.xlabel(xlabel)
+    plt.ylabel(ylabel)
+    plt.title(title)
+    plt.legend()
+    plt.grid(True)
+    plt.show()</code></pre>
+</details>
+<div class="desc"><p>Plot training and validation loss curves.</p>
+<p>Parameters:
+- train_losses: list or array of training loss values per epoch
+- val_losses: list or array of validation loss values per epoch
+- num_epochs: int, number of epochs (if None, inferred from length of train_losses)
+- title: str, plot title
+- xlabel: str, label for x-axis
+- ylabel: str, label for y-axis
+- figsize: tuple, figure size</p></div>
+</dd>
+<dt id="ccai9012.viz_utils.plot_poi_sampled"><code class="name flex">
+<span>def <span class="ident">plot_poi_sampled</span></span>(<span>pois, center=(36.1699, -115.1398), zoom=4, sample_size=1000)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def plot_poi_sampled(pois, center=(36.1699, -115.1398), zoom=4, sample_size=1000):
+    &#34;&#34;&#34;
+    Plot a random sample of business coordinates on a folium map.
+
+    Args:
+        pois (list): List of business dicts with lat/lon
+        center (tuple): Initial center of the map
+        zoom (int): Initial zoom level
+        sample_size (int): Number of businesses to sample for plotting
+
+    Returns:
+        folium.Map
+    &#34;&#34;&#34;
+    sampled = random.sample(pois, min(sample_size, len(pois)))
+
+    m = folium.Map(location=center, zoom_start=zoom)
+
+    for b in sampled:
+        folium.CircleMarker(
+            location=(b[&#39;latitude&#39;], b[&#39;longitude&#39;]),
+            radius=2,
+            color=&#39;blue&#39;,
+            fill=True,
+            fill_opacity=0.6,
+            popup=f&#34;{b[&#39;name&#39;]} ({b[&#39;city&#39;]})&#34;
+        ).add_to(m)
+
+    return m</code></pre>
+</details>
+<div class="desc"><p>Plot a random sample of business coordinates on a folium map.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>pois</code></strong> :&ensp;<code>list</code></dt>
+<dd>List of business dicts with lat/lon</dd>
+<dt><strong><code>center</code></strong> :&ensp;<code>tuple</code></dt>
+<dd>Initial center of the map</dd>
+<dt><strong><code>zoom</code></strong> :&ensp;<code>int</code></dt>
+<dd>Initial zoom level</dd>
+<dt><strong><code>sample_size</code></strong> :&ensp;<code>int</code></dt>
+<dd>Number of businesses to sample for plotting</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>folium.Map</p></div>
+</dd>
+<dt id="ccai9012.viz_utils.plot_points"><code class="name flex">
+<span>def <span class="ident">plot_points</span></span>(<span>df,<br>lat_col='latitude',<br>lon_col='longitude',<br>value_col='weighted_score',<br>map_center=None,<br>zoom=15,<br>colormap_colors=['blue', 'green', 'yellow', 'red'],<br>colormap_caption=None,<br>radius=7,<br>fill_opacity=0.7)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def plot_points(
+        df,
+        lat_col=&#39;latitude&#39;,
+        lon_col=&#39;longitude&#39;,
+        value_col=&#39;weighted_score&#39;,
+        map_center=None,
+        zoom=15,
+        colormap_colors=[&#39;blue&#39;, &#39;green&#39;, &#39;yellow&#39;, &#39;red&#39;],
+        colormap_caption=None,
+        radius=7,
+        fill_opacity=0.7,
+):
+    &#34;&#34;&#34;
+    Plot points on a folium map, color-coded by a target column.
+
+    Args:
+        df (pd.DataFrame): DataFrame containing coordinates and value_col.
+        lat_col (str): Name of latitude column.
+        lon_col (str): Name of longitude column.
+        value_col (str): Column used to determine color.
+        map_center (list/tuple): [lat, lon] for map center. If None, use mean coordinates.
+        zoom (int): Initial zoom level.
+        colormap_colors (list): List of colors for colormap.
+        colormap_caption (str): Caption for color legend.
+        radius (int): Radius of CircleMarkers.
+        fill_opacity (float): Fill opacity of markers.
+
+    Returns:
+        folium.Map: Folium map object.
+    &#34;&#34;&#34;
+    if map_center is None:
+        map_center = [df[lat_col].mean(), df[lon_col].mean()]
+
+    m = folium.Map(location=map_center, zoom_start=zoom, tiles=&#39;cartodbpositron&#39;)
+
+    # Set min/max for colormap based on data
+    vmin, vmax = df[value_col].min(), df[value_col].max()
+
+    colormap = cm.LinearColormap(
+        colors=colormap_colors,
+        vmin=vmin,
+        vmax=vmax,
+        caption=colormap_caption or value_col
+    )
+
+    # Add points
+    for _, row in df.iterrows():
+        lat, lon, val = row[lat_col], row[lon_col], row[value_col]
+        color = colormap(val)
+        folium.CircleMarker(
+            location=[lat, lon],
+            radius=radius,
+            color=color,
+            fill=True,
+            fill_color=color,
+            fill_opacity=fill_opacity,
+            popup=f&#34;{value_col}: {val:.2f}&#34;
+        ).add_to(m)
+
+    colormap.add_to(m)
+
+    return m</code></pre>
+</details>
+<div class="desc"><p>Plot points on a folium map, color-coded by a target column.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>df</code></strong> :&ensp;<code>pd.DataFrame</code></dt>
+<dd>DataFrame containing coordinates and value_col.</dd>
+<dt><strong><code>lat_col</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of latitude column.</dd>
+<dt><strong><code>lon_col</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of longitude column.</dd>
+<dt><strong><code>value_col</code></strong> :&ensp;<code>str</code></dt>
+<dd>Column used to determine color.</dd>
+<dt>map_center (list/tuple): [lat, lon] for map center. If None, use mean coordinates.</dt>
+<dt><strong><code>zoom</code></strong> :&ensp;<code>int</code></dt>
+<dd>Initial zoom level.</dd>
+<dt><strong><code>colormap_colors</code></strong> :&ensp;<code>list</code></dt>
+<dd>List of colors for colormap.</dd>
+<dt><strong><code>colormap_caption</code></strong> :&ensp;<code>str</code></dt>
+<dd>Caption for color legend.</dd>
+<dt><strong><code>radius</code></strong> :&ensp;<code>int</code></dt>
+<dd>Radius of CircleMarkers.</dd>
+<dt><strong><code>fill_opacity</code></strong> :&ensp;<code>float</code></dt>
+<dd>Fill opacity of markers.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>folium.Map</code></dt>
+<dd>Folium map object.</dd>
+</dl></div>
+</dd>
+<dt id="ccai9012.viz_utils.plot_review_heatmap"><code class="name flex">
+<span>def <span class="ident">plot_review_heatmap</span></span>(<span>reviews, map_center=None, zoom_start=11)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def plot_review_heatmap(reviews, map_center=None, zoom_start=11):
+    &#34;&#34;&#34;
+    Create a heatmap visualization of review locations using folium.
+
+    This function takes a list of review dictionaries containing geographic coordinates
+    and plots them as a heatmap on an interactive map.
+
+    Args:
+        reviews (list): List of review dictionaries, each containing at least &#39;latitude&#39;
+            and &#39;longitude&#39; keys.
+        map_center (tuple, optional): (latitude, longitude) tuple to center the map. If None,
+            the center is calculated as the average of all review locations.
+        zoom_start (int, optional): Initial zoom level for the map. Defaults to 11.
+
+    Returns:
+        folium.Map: Interactive folium map with heatmap layer, or None if no valid data is provided.
+    &#34;&#34;&#34;
+    # Prepare location points
+    heat_data = [
+        [review[&#39;latitude&#39;], review[&#39;longitude&#39;]]
+        for review in reviews
+        if review[&#39;latitude&#39;] is not None and review[&#39;longitude&#39;] is not None
+    ]
+
+    if not heat_data:
+        print(&#34;No valid location data to plot.&#34;)
+        return
+
+    # If no center provided, use mean location
+    if map_center is None:
+        avg_lat = sum(p[0] for p in heat_data) / len(heat_data)
+        avg_lon = sum(p[1] for p in heat_data) / len(heat_data)
+        map_center = (avg_lat, avg_lon)
+
+    # Create folium map
+    m = folium.Map(location=map_center, zoom_start=zoom_start)
+    HeatMap(heat_data, radius=10, blur=15).add_to(m)
+
+    return m</code></pre>
+</details>
+<div class="desc"><p>Create a heatmap visualization of review locations using folium.</p>
+<p>This function takes a list of review dictionaries containing geographic coordinates
+and plots them as a heatmap on an interactive map.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>reviews</code></strong> :&ensp;<code>list</code></dt>
+<dd>List of review dictionaries, each containing at least 'latitude'
+and 'longitude' keys.</dd>
+<dt><strong><code>map_center</code></strong> :&ensp;<code>tuple</code>, optional</dt>
+<dd>(latitude, longitude) tuple to center the map. If None,
+the center is calculated as the average of all review locations.</dd>
+<dt><strong><code>zoom_start</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>Initial zoom level for the map. Defaults to 11.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>folium.Map</code></dt>
+<dd>Interactive folium map with heatmap layer, or None if no valid data is provided.</dd>
+</dl></div>
+</dd>
+<dt id="ccai9012.viz_utils.plot_review_map"><code class="name flex">
+<span>def <span class="ident">plot_review_map</span></span>(<span>df,<br>name_field='business_name',<br>sentiment_field='overall_impression',<br>map_center=[22.3193, 114.1694],<br>zoom=12)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def plot_review_map(df, name_field = &#39;business_name&#39;, sentiment_field=&#39;overall_impression&#39;, map_center=[22.3193, 114.1694], zoom=12):
+    &#34;&#34;&#34;
+    Plot Airbnb review locations on a map, color-coded by a given sentiment field.
+
+    Args:
+        df (pd.DataFrame): DataFrame containing at least &#39;latitude&#39;, &#39;longitude&#39;, and the sentiment_field.
+        name_field (str): Name of column in the DataFrame containing review locations.
+        sentiment_field (str): The field to determine color (e.g., &#39;overall_impression&#39;, &#39;location_opinion&#39;).
+        map_center (list): Map center as [lat, lon].
+        zoom (int): Initial zoom level.
+
+    Returns:
+        folium.Map: Folium map object with plotted points.
+    &#34;&#34;&#34;
+    # Define color mapping
+    impression_color = {
+        &#39;positive&#39;: &#39;green&#39;,
+        &#39;neutral&#39;: &#39;gray&#39;,
+        &#39;negative&#39;: &#39;red&#39;
+    }
+
+    # Create map
+    m = folium.Map(location=map_center, zoom_start=zoom, tiles=&#34;CartoDB positron&#34;)
+
+    # Plot each review
+    for _, row in df.iterrows():
+        lat, lon = row.get(&#39;latitude&#39;), row.get(&#39;longitude&#39;)
+        name = row.get(name_field, &#39;Unknown&#39;)
+        sentiment = row.get(sentiment_field, &#39;neutral&#39;)
+        color = impression_color.get(sentiment, &#39;gray&#39;)
+
+        if pd.notna(lat) and pd.notna(lon):
+            folium.CircleMarker(
+                location=[lat, lon],
+                radius=4,
+                color=color,
+                fill=True,
+                fill_color=color,
+                fill_opacity=0.7,
+                popup=f&#34;{name}, {sentiment_field}: {sentiment}&#34;
+            ).add_to(m)
+
+    return m</code></pre>
+</details>
+<div class="desc"><p>Plot Airbnb review locations on a map, color-coded by a given sentiment field.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>df</code></strong> :&ensp;<code>pd.DataFrame</code></dt>
+<dd>DataFrame containing at least 'latitude', 'longitude', and the sentiment_field.</dd>
+<dt><strong><code>name_field</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of column in the DataFrame containing review locations.</dd>
+<dt><strong><code>sentiment_field</code></strong> :&ensp;<code>str</code></dt>
+<dd>The field to determine color (e.g., 'overall_impression', 'location_opinion').</dd>
+<dt><strong><code>map_center</code></strong> :&ensp;<code>list</code></dt>
+<dd>Map center as [lat, lon].</dd>
+<dt><strong><code>zoom</code></strong> :&ensp;<code>int</code></dt>
+<dd>Initial zoom level.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>folium.Map</code></dt>
+<dd>Folium map object with plotted points.</dd>
+</dl></div>
+</dd>
+<dt id="ccai9012.viz_utils.plot_star_distribution"><code class="name flex">
+<span>def <span class="ident">plot_star_distribution</span></span>(<span>reviews)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def plot_star_distribution(reviews):
+    stars = [review[&#39;stars&#39;] for review in reviews]
+
+    plt.figure(figsize=(8, 5))
+    plt.hist(stars, bins=[0.5, 1.5, 2.5, 3.5, 4.5, 5.5], edgecolor=&#39;black&#39;, rwidth=0.8)
+    plt.xticks([1, 2, 3, 4, 5])
+    plt.xlabel(&#34;Star Rating&#34;)
+    plt.ylabel(&#34;Number of Reviews&#34;)
+    plt.title(&#34;Distribution of Yelp Review Star Ratings&#34;)
+    plt.grid(axis=&#39;y&#39;, linestyle=&#39;--&#39;, alpha=0.7)
+    plt.tight_layout()
+    plt.show()</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="ccai9012.viz_utils.plot_tsne_words"><code class="name flex">
+<span>def <span class="ident">plot_tsne_words</span></span>(<span>tsne_results, valid_words, key_words, key_word_colors=None, key_word_labels=None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def plot_tsne_words(tsne_results, valid_words, key_words, key_word_colors=None, key_word_labels=None):
+    &#34;&#34;&#34;
+    Plot t-SNE results of word embeddings with key words highlighted by color.
+
+    Args:
+        tsne_results (np.ndarray): 2D array of shape (N, 2) with t-SNE coordinates.
+        valid_words (list of str): List of words corresponding to embeddings.
+        key_words (set or list): Words to highlight with special colors.
+        key_word_colors (dict or None): Optional dict mapping keys to colors.
+            Example: {&#39;group1&#39;: &#39;red&#39;, &#39;group2&#39;: &#39;blue&#39;}
+        key_word_labels (dict or None): Optional dict mapping keys to labels for legend.
+    &#34;&#34;&#34;
+    pio.renderers.default = &#39;notebook&#39;  # or &#39;notebook_connected&#39;
+    sns.set(style=&#39;whitegrid&#39;)
+    plt.figure(figsize=(12, 8))
+
+    # Default color assignment
+    colors = []
+    for w in valid_words:
+        if w in key_words:
+            # If key_word_colors provided and word belongs to group, use color
+            if key_word_colors:
+                # find color by group, fallback to &#39;red&#39;
+                # Here assume key_words is a dict {group_name: set_of_words}
+                found_color = &#39;red&#39;
+                for group, words_set in key_words.items():
+                    if w in words_set:
+                        found_color = key_word_colors.get(group, &#39;red&#39;)
+                        break
+                colors.append(found_color)
+            else:
+                colors.append(&#39;red&#39;)
+        else:
+            colors.append(&#39;gray&#39;)
+
+    plt.scatter(tsne_results[:, 0], tsne_results[:, 1], c=colors, s=100, edgecolors=&#39;k&#39;, alpha=0.75)
+
+    for i, word in enumerate(valid_words):
+        fontweight = &#39;bold&#39; if (word in key_words if isinstance(key_words, (set, list)) else any(word in s for s in key_words.values())) else &#39;normal&#39;
+        color = &#39;black&#39;
+        if key_word_colors and isinstance(key_words, dict):
+            for group, words_set in key_words.items():
+                if word in words_set:
+                    color = key_word_colors.get(group, &#39;black&#39;)
+                    break
+
+        plt.text(tsne_results[i, 0]+0.5, tsne_results[i, 1]+0.5, word,
+                 fontsize=11, fontweight=fontweight,
+                 color=color)
+
+    plt.title(&#39;t-SNE Visualization of Word Groups&#39;, fontsize=18, fontweight=&#39;bold&#39;)
+    plt.xlabel(&#39;t-SNE Dimension 1&#39;, fontsize=14)
+    plt.ylabel(&#39;t-SNE Dimension 2&#39;, fontsize=14)
+
+    # Legend
+    legend_elements = []
+    if key_word_colors and key_word_labels:
+        for group, color in key_word_colors.items():
+            label = key_word_labels.get(group, group)
+            legend_elements.append(Line2D([0], [0], marker=&#39;o&#39;, color=&#39;w&#39;, label=label,
+                                          markerfacecolor=color, markersize=12, markeredgecolor=&#39;k&#39;))
+    else:
+        # default legend entries
+        legend_elements = [
+            Line2D([0], [0], marker=&#39;o&#39;, color=&#39;w&#39;, label=&#39;Key words&#39;,
+                   markerfacecolor=&#39;red&#39;, markersize=12, markeredgecolor=&#39;k&#39;),
+            Line2D([0], [0], marker=&#39;o&#39;, color=&#39;w&#39;, label=&#39;Other words&#39;,
+                   markerfacecolor=&#39;gray&#39;, markersize=12, markeredgecolor=&#39;k&#39;),
+        ]
+
+    plt.legend(handles=legend_elements, loc=&#39;best&#39;, fontsize=12)
+    plt.tight_layout()
+    plt.show()</code></pre>
+</details>
+<div class="desc"><p>Plot t-SNE results of word embeddings with key words highlighted by color.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>tsne_results</code></strong> :&ensp;<code>np.ndarray</code></dt>
+<dd>2D array of shape (N, 2) with t-SNE coordinates.</dd>
+<dt><strong><code>valid_words</code></strong> :&ensp;<code>list</code> of <code>str</code></dt>
+<dd>List of words corresponding to embeddings.</dd>
+<dt><strong><code>key_words</code></strong> :&ensp;<code>set</code> or <code>list</code></dt>
+<dd>Words to highlight with special colors.</dd>
+<dt><strong><code>key_word_colors</code></strong> :&ensp;<code>dict</code> or <code>None</code></dt>
+<dd>Optional dict mapping keys to colors.
+Example: {'group1': 'red', 'group2': 'blue'}</dd>
+<dt><strong><code>key_word_labels</code></strong> :&ensp;<code>dict</code> or <code>None</code></dt>
+<dd>Optional dict mapping keys to labels for legend.</dd>
+</dl></div>
+</dd>
+<dt id="ccai9012.viz_utils.plot_wordclouds"><code class="name flex">
+<span>def <span class="ident">plot_wordclouds</span></span>(<span>df, target_col='overall_impression', tag_col='decision_tags', delimiter=',')</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def plot_wordclouds(df, target_col=&#39;overall_impression&#39;, tag_col=&#39;decision_tags&#39;, delimiter=&#39;,&#39;):
+    &#34;&#34;&#34;
+    Plot word clouds of decision_tags grouped by overall_impression categories.
+
+    Args:
+        df (pd.DataFrame): DataFrame containing overall impression and tags columns.
+        target_col (str): Column name for overall impression (categorical).
+        tag_col (str): Column name for decision tags.
+        delimiter (str): Delimiter separating multiple tags in one entry.
+    &#34;&#34;&#34;
+    overall_values = df[target_col].dropna().unique()
+    num_categories = len(overall_values)
+
+    plt.figure(figsize=(8, 4 * num_categories))
+
+    for i, val in enumerate(sorted(overall_values)):
+        # Filter rows for this overall impression
+        subset = df[df[target_col] == val]
+        # Combine all tags, split and clean
+        all_tags = subset[tag_col].dropna().astype(str)
+        tags_list = all_tags.str.split(delimiter).explode().str.strip()
+        text = &#39; &#39;.join(tags_list)
+
+        wc = WordCloud(
+            width=600, height=300,
+            background_color=&#39;white&#39;,
+            collocations=False
+        ).generate(text)
+
+        plt.subplot(num_categories, 1, i + 1)
+        plt.imshow(wc, interpolation=&#39;bilinear&#39;)
+        plt.axis(&#39;off&#39;)
+        plt.title(f&#34;Decision Tags Word Cloud\nOverall Impression: {val}&#34;)
+
+    plt.tight_layout()
+    plt.show()</code></pre>
+</details>
+<div class="desc"><p>Plot word clouds of decision_tags grouped by overall_impression categories.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>df</code></strong> :&ensp;<code>pd.DataFrame</code></dt>
+<dd>DataFrame containing overall impression and tags columns.</dd>
+<dt><strong><code>target_col</code></strong> :&ensp;<code>str</code></dt>
+<dd>Column name for overall impression (categorical).</dd>
+<dt><strong><code>tag_col</code></strong> :&ensp;<code>str</code></dt>
+<dd>Column name for decision tags.</dd>
+<dt><strong><code>delimiter</code></strong> :&ensp;<code>str</code></dt>
+<dd>Delimiter separating multiple tags in one entry.</dd>
+</dl></div>
+</dd>
+<dt id="ccai9012.viz_utils.plot_wordclouds_by_aspect_opinion"><code class="name flex">
+<span>def <span class="ident">plot_wordclouds_by_aspect_opinion</span></span>(<span>df, aspect_cols, comment_col_prefix='{}_comment')</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def plot_wordclouds_by_aspect_opinion(df, aspect_cols, comment_col_prefix=&#39;{}_comment&#39;):
+    &#34;&#34;&#34;
+    Plot word clouds of comments grouped by opinions for each given aspect.
+
+    Args:
+        df (pd.DataFrame): DataFrame containing opinion columns and comment columns.
+        aspect_cols (list of str): List of aspect column names, e.g. [&#39;location_opinion&#39;, &#39;facility_opinion&#39;, &#39;host_opinion&#39;].
+        comment_col_prefix (str): Pattern to get comment column name from aspect name, default &#39;{}_comment&#39;.
+                                  For example, if aspect is &#39;location_opinion&#39;, comment_col is &#39;location_comment&#39;.
+    &#34;&#34;&#34;
+    for aspect in aspect_cols:
+        opinions = df[aspect].dropna().unique()
+        num_opinions = len(opinions)
+
+        plt.figure(figsize=(6, 3 * num_opinions))
+        plt.suptitle(f&#34;Word Clouds of {aspect.replace(&#39;_&#39;, &#39; &#39;).capitalize()} Comments by Opinion&#34;, fontsize=16)
+
+        comment_col = comment_col_prefix.format(aspect.split(&#39;_&#39;)[0])  # e.g. &#39;location_comment&#39;
+
+        for i, opinion in enumerate(sorted(opinions)):
+            # Select rows matching the opinion and drop missing comments
+            comments = df[df[aspect] == opinion][comment_col].dropna().astype(str)
+            text = &#39; &#39;.join(comments)
+
+            wc = WordCloud(
+                width=600,
+                height=300,
+                background_color=&#39;white&#39;,
+                collocations=False
+            ).generate(text)
+
+            plt.subplot(num_opinions, 1, i + 1)
+            plt.imshow(wc, interpolation=&#39;bilinear&#39;)
+            plt.axis(&#39;off&#39;)
+            plt.title(f&#34;{opinion.capitalize()}&#34;)
+
+        plt.tight_layout(rect=[0, 0, 1, 0.96])  # leave space for suptitle
+        plt.show()</code></pre>
+</details>
+<div class="desc"><p>Plot word clouds of comments grouped by opinions for each given aspect.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>df</code></strong> :&ensp;<code>pd.DataFrame</code></dt>
+<dd>DataFrame containing opinion columns and comment columns.</dd>
+<dt><strong><code>aspect_cols</code></strong> :&ensp;<code>list</code> of <code>str</code></dt>
+<dd>List of aspect column names, e.g. ['location_opinion', 'facility_opinion', 'host_opinion'].</dd>
+<dt><strong><code>comment_col_prefix</code></strong> :&ensp;<code>str</code></dt>
+<dd>Pattern to get comment column name from aspect name, default '{}_comment'.
+For example, if aspect is 'location_opinion', comment_col is 'location_comment'.</dd>
+</dl></div>
+</dd>
+<dt id="ccai9012.viz_utils.sample_street_points_map"><code class="name flex">
+<span>def <span class="ident">sample_street_points_map</span></span>(<span>bbox, dist=100, min_distance_m=50, zoom=15)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def sample_street_points_map(bbox, dist=100, min_distance_m=50, zoom=15):
+    &#34;&#34;&#34;
+    Sample points along streets within a bounding box and visualize them on a folium map.
+
+    Args:
+        bbox (tuple): (lat_min, lon_min, lat_max, lon_max)
+        dist (float): approximate distance between sampled points along lines (in meters)
+        min_distance_m (float): minimum distance between points after KDTree filtering
+        zoom (int): initial zoom level for the folium map
+
+    Returns:
+        folium.Map: folium map with sampled points
+        list of tuple: sampled points as (lat, lon)
+    &#34;&#34;&#34;
+    lon_min, lat_min, lon_max, lat_max = bbox
+    map_center = [(lat_min + lat_max) / 2, (lon_min + lon_max) / 2]
+
+    # --------------------------
+    # Function to sample points along a linestring at approx. regular intervals
+    def sample_points_along_line(line, dist):
+        length = line.length
+        points = [line.interpolate(d) for d in np.arange(0, length, dist)]
+        return points
+
+    # KDTree filtering function
+    def filter_points_kdtree(points_proj, min_distance_m):
+        if not points_proj:
+            return []
+        xy = np.array([[pt.x, pt.y] for pt in points_proj])
+        tree = KDTree(xy)
+        kept_idx = []
+        visited = np.zeros(len(xy), dtype=bool)
+        for i in range(len(xy)):
+            if not visited[i]:
+                kept_idx.append(i)
+                neighbors = tree.query_ball_point(xy[i], r=min_distance_m)
+                visited[neighbors] = True
+        return [points_proj[i] for i in kept_idx]
+
+    # --------------------------
+    # Download street network graph within bounding box
+    G = ox.graph_from_bbox(
+        bbox,
+        network_type=&#39;all&#39;
+    )
+
+    # Project graph to a metric CRS (meters)
+    G_proj = ox.project_graph(G)
+
+    # Extract edges as GeoDataFrame
+    edges = ox.graph_to_gdfs(G_proj, nodes=False, edges=True)
+
+    # Sample points from all edges
+    sampled_points_proj = []
+    for line in edges.geometry:
+        sampled_points_proj.extend(sample_points_along_line(line, dist=dist))
+
+    # Filter points to ensure minimum spacing
+    filtered_points_proj = filter_points_kdtree(sampled_points_proj, min_distance_m=min_distance_m)
+
+    # Convert filtered points from projected CRS back to latitude/longitude
+    project_crs = edges.crs
+    to_latlon = Transformer.from_crs(project_crs, &#34;EPSG:4326&#34;, always_xy=True)
+    sampled_points_latlon = [to_latlon.transform(pt.x, pt.y)[::-1] for pt in filtered_points_proj]  # (lat, lon)
+
+    # Create folium map
+    m = folium.Map(location=map_center, zoom_start=zoom, tiles=&#34;cartodbpositron&#34;)
+
+    # Add bounding box rectangle
+    bounding_box = [(lat_min, lon_min), (lat_min, lon_max),
+                    (lat_max, lon_max), (lat_max, lon_min), (lat_min, lon_min)]
+    folium.PolyLine(locations=bounding_box, color=&#34;red&#34;, weight=3, opacity=0.8).add_to(m)
+
+    # Add CircleMarkers for sampled points
+    for lat, lon in sampled_points_latlon:
+        folium.CircleMarker(location=[lat, lon], radius=1, color=&#39;blue&#39;,
+                            fill=True, fill_opacity=0.5).add_to(m)
+
+    print(f&#34;In total {len(sampled_points_latlon)} points sampled.&#34;)
+    return m, sampled_points_latlon</code></pre>
+</details>
+<div class="desc"><p>Sample points along streets within a bounding box and visualize them on a folium map.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>bbox</code></strong> :&ensp;<code>tuple</code></dt>
+<dd>(lat_min, lon_min, lat_max, lon_max)</dd>
+<dt><strong><code>dist</code></strong> :&ensp;<code>float</code></dt>
+<dd>approximate distance between sampled points along lines (in meters)</dd>
+<dt><strong><code>min_distance_m</code></strong> :&ensp;<code>float</code></dt>
+<dd>minimum distance between points after KDTree filtering</dd>
+<dt><strong><code>zoom</code></strong> :&ensp;<code>int</code></dt>
+<dd>initial zoom level for the folium map</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>folium.Map</code></dt>
+<dd>folium map with sampled points</dd>
+<dt><code>list</code> of <code>tuple</code></dt>
+<dd>sampled points as (lat, lon)</dd>
+</dl></div>
+</dd>
+<dt id="ccai9012.viz_utils.viz_keywords_freq"><code class="name flex">
+<span>def <span class="ident">viz_keywords_freq</span></span>(<span>results_df, column='materials', top_k=None, save_path=None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def viz_keywords_freq(results_df, column=&#34;materials&#34;, top_k=None, save_path=None):
+    &#34;&#34;&#34;
+    Visualize the frequency of keywords in a specified column of a DataFrame.
+
+    This function extracts keywords from a comma-separated column in the DataFrame,
+    counts their frequency, and visualizes the results as a bar chart.
+
+    Args:
+        results_df (pd.DataFrame): DataFrame containing the column with comma-separated keywords.
+        column (str, optional): Name of column containing comma-separated keywords. Defaults to &#34;materials&#34;.
+        top_k (int, optional): Number of top keywords to display. If None, all keywords are shown.
+        save_path (str, optional): If provided, the plot is saved to this file path.
+
+    Returns:
+        collections.Counter: Counter object with keyword frequencies.
+    &#34;&#34;&#34;
+    all_keywords = []
+    for entry in results_df[column].dropna():
+        keywords = [kw.strip().lower() for kw in entry.split(&#34;,&#34;) if kw.strip()]
+        all_keywords.extend(keywords)
+
+    counter = Counter(all_keywords)
+    most_common = counter.most_common(top_k)
+
+    labels, counts = zip(*most_common) if most_common else ([], [])
+
+    plt.figure(figsize=(10, 6))
+    bars = plt.bar(labels, counts)
+    plt.xticks(rotation=34, ha=&#34;right&#34;)
+    plt.title(f&#34;Frequency of {column} keywords&#34;)
+    plt.ylabel(&#34;Count&#34;)
+    plt.tight_layout()
+
+    for bar, count in zip(bars, counts):
+        height = bar.get_height()
+        plt.text(bar.get_x() + bar.get_width() / 2, height + 0.1, str(count),
+                 ha=&#39;center&#39;, va=&#39;bottom&#39;, fontsize=10)
+
+    if save_path is not None:
+        plt.savefig(save_path)
+    plt.show()
+    return counter</code></pre>
+</details>
+<div class="desc"><p>Visualize the frequency of keywords in a specified column of a DataFrame.</p>
+<p>This function extracts keywords from a comma-separated column in the DataFrame,
+counts their frequency, and visualizes the results as a bar chart.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>results_df</code></strong> :&ensp;<code>pd.DataFrame</code></dt>
+<dd>DataFrame containing the column with comma-separated keywords.</dd>
+<dt><strong><code>column</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Name of column containing comma-separated keywords. Defaults to "materials".</dd>
+<dt><strong><code>top_k</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>Number of top keywords to display. If None, all keywords are shown.</dd>
+<dt><strong><code>save_path</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>If provided, the plot is saved to this file path.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>collections.Counter</code></dt>
+<dd>Counter object with keyword frequencies.</dd>
+</dl></div>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul>
+<li><a href="#visualization-utilities-module">Visualization Utilities Module</a></li>
+</ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="ccai9012" href="index.html">ccai9012</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="ccai9012.viz_utils.draw_simple_mlp" href="#ccai9012.viz_utils.draw_simple_mlp">draw_simple_mlp</a></code></li>
+<li><code><a title="ccai9012.viz_utils.occupation_comparison" href="#ccai9012.viz_utils.occupation_comparison">occupation_comparison</a></code></li>
+<li><code><a title="ccai9012.viz_utils.plot_bar_bias" href="#ccai9012.viz_utils.plot_bar_bias">plot_bar_bias</a></code></li>
+<li><code><a title="ccai9012.viz_utils.plot_cooccurrence_heatmap" href="#ccai9012.viz_utils.plot_cooccurrence_heatmap">plot_cooccurrence_heatmap</a></code></li>
+<li><code><a title="ccai9012.viz_utils.plot_heatmap" href="#ccai9012.viz_utils.plot_heatmap">plot_heatmap</a></code></li>
+<li><code><a title="ccai9012.viz_utils.plot_loss_curve" href="#ccai9012.viz_utils.plot_loss_curve">plot_loss_curve</a></code></li>
+<li><code><a title="ccai9012.viz_utils.plot_poi_sampled" href="#ccai9012.viz_utils.plot_poi_sampled">plot_poi_sampled</a></code></li>
+<li><code><a title="ccai9012.viz_utils.plot_points" href="#ccai9012.viz_utils.plot_points">plot_points</a></code></li>
+<li><code><a title="ccai9012.viz_utils.plot_review_heatmap" href="#ccai9012.viz_utils.plot_review_heatmap">plot_review_heatmap</a></code></li>
+<li><code><a title="ccai9012.viz_utils.plot_review_map" href="#ccai9012.viz_utils.plot_review_map">plot_review_map</a></code></li>
+<li><code><a title="ccai9012.viz_utils.plot_star_distribution" href="#ccai9012.viz_utils.plot_star_distribution">plot_star_distribution</a></code></li>
+<li><code><a title="ccai9012.viz_utils.plot_tsne_words" href="#ccai9012.viz_utils.plot_tsne_words">plot_tsne_words</a></code></li>
+<li><code><a title="ccai9012.viz_utils.plot_wordclouds" href="#ccai9012.viz_utils.plot_wordclouds">plot_wordclouds</a></code></li>
+<li><code><a title="ccai9012.viz_utils.plot_wordclouds_by_aspect_opinion" href="#ccai9012.viz_utils.plot_wordclouds_by_aspect_opinion">plot_wordclouds_by_aspect_opinion</a></code></li>
+<li><code><a title="ccai9012.viz_utils.sample_street_points_map" href="#ccai9012.viz_utils.sample_street_points_map">sample_street_points_map</a></code></li>
+<li><code><a title="ccai9012.viz_utils.viz_keywords_freq" href="#ccai9012.viz_utils.viz_keywords_freq">viz_keywords_freq</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
+</footer>
+</body>
+</html>

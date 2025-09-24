@@ -1,0 +1,1212 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
+<title>ccai9012.llm_utils API documentation</title>
+<meta name="description" content="Large Language Model (LLM) Utilities Module
+…">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>ccai9012.llm_utils</code></h1>
+</header>
+<section id="section-intro">
+<h1 id="large-language-model-llm-utilities-module">Large Language Model (LLM) Utilities Module</h1>
+<p>This module provides a comprehensive set of utilities for working with Large Language Models (LLMs),
+particularly focused on the DeepSeek API. It includes functions for API key management,
+model initialization, basic prompting, and advanced use cases such as structured output extraction
+and retrieval-augmented generation.</p>
+<p>Main components:
+- API key management: Secure handling of DeepSeek API keys
+- Basic LLM interaction: Functions to initialize models and send prompts
+- Structured output utilities: Functions to extract structured data from reviews
+- Retrieval utilities: Tools for document loading, chunking, embedding, and question answering</p>
+<p>This module aims to simplify common LLM workflows and provide consistent interfaces for
+various natural language processing tasks.</p>
+<h2 id="usage">Usage</h2>
+<h3 id="basic-usage">Basic usage</h3>
+<p>llm = initialize_llm()
+ask_llm("What is the capital of France?", llm)</p>
+<h3 id="structured-output-extraction">Structured output extraction</h3>
+<p>analyze_reviews(reviews_data, llm, "output.csv")</p>
+<h3 id="retrieval-based-question-answering">Retrieval-based question answering</h3>
+<p>retriever = build_pdf_retriever("document.pdf")
+run_qa_chain("What does the document say about climate change?", retriever, llm)</p>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="ccai9012.llm_utils.analyze_airbnb_reviews"><code class="name flex">
+<span>def <span class="ident">analyze_airbnb_reviews</span></span>(<span>reviews_df, llm, output_csv, max_reviews=50, sleep_time=0.1)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def analyze_airbnb_reviews(reviews_df, llm, output_csv, max_reviews=50, sleep_time=0.1):
+    &#34;&#34;&#34;
+    Analyze Airbnb reviews using a language model to extract structured opinion data.
+
+    This function processes a dataset of Airbnb reviews, using a language model to extract
+    structured information including overall impression, useful tags for potential guests,
+    and opinions about specific aspects (location, facilities, host). Results are saved
+    to a CSV file for further analysis.
+
+    Parameters:
+        reviews_df (pd.DataFrame): DataFrame containing Airbnb reviews with at least the columns
+                                 &#39;comments&#39;, &#39;listing_id&#39;, &#39;id&#39;, and &#39;date&#39;.
+        llm (ChatDeepSeek): An initialized DeepSeek language model client.
+        output_csv (str): Path where the resulting CSV file will be saved.
+        max_reviews (int, optional): Maximum number of reviews to process. Defaults to 50.
+                                   A random sample is taken if the dataset is larger.
+        sleep_time (float, optional): Delay in seconds between API calls to avoid rate limits.
+                                    Defaults to 0.1.
+
+    Returns:
+        pd.DataFrame: The processed results as a DataFrame.
+
+    Example:
+        &gt;&gt;&gt; reviews = pd.read_csv(&#34;airbnb_reviews.csv&#34;)
+        &gt;&gt;&gt; llm = initialize_llm()
+        &gt;&gt;&gt; results_df = analyze_airbnb_reviews(
+        &gt;&gt;&gt;     reviews,
+        &gt;&gt;&gt;     llm,
+        &gt;&gt;&gt;     &#34;analyzed_reviews.csv&#34;,
+        &gt;&gt;&gt;     max_reviews=100
+        &gt;&gt;&gt; )
+    &#34;&#34;&#34;
+    reviews_df = reviews_df.sample(n=max_reviews, random_state=42).reset_index(drop=True)
+    results = []
+
+    for _, row in tqdm(reviews_df.iterrows(), total=len(reviews_df)):
+        review_text = str(row[&#39;comments&#39;]).replace(&#39;\n&#39;, &#39; &#39;).strip()
+
+        prompt = f&#34;&#34;&#34;
+You are analyzing Airbnb guest reviews to extract structured information.
+
+For each review, extract the following:
+
+1. overall_impression: One of &#34;positive&#34;, &#34;negative&#34;, or &#34;neutral&#34;.
+2. decision_tags: Generate 2 to 5 helpful tags for future guests (e.g., clean room, near MTR, great host).
+3. highlighted_aspects: For each of these aspects – location, facility, host – extract:
+   - aspect (one of &#34;location&#34;, &#34;facility&#34;, or &#34;host&#34;)
+   - opinion: &#34;positive&#34;, &#34;negative&#34;, or &#34;neutral&#34;
+   - comment: A short sentence describing the opinion
+
+Review: &#34;{review_text}&#34;
+
+Return your answer strictly in the following JSON format:
+{{
+  &#34;overall_impression&#34;: &#34;...&#34;,
+  &#34;decision_tags&#34;: [&#34;...&#34;, &#34;...&#34;],
+  &#34;highlighted_aspects&#34;: [
+    {{
+      &#34;aspect&#34;: &#34;location&#34;,
+      &#34;opinion&#34;: &#34;...&#34;,
+      &#34;comment&#34;: &#34;...&#34;
+    }},
+    {{
+      &#34;aspect&#34;: &#34;facility&#34;,
+      &#34;opinion&#34;: &#34;...&#34;,
+      &#34;comment&#34;: &#34;...&#34;
+    }},
+    {{
+      &#34;aspect&#34;: &#34;host&#34;,
+      &#34;opinion&#34;: &#34;...&#34;,
+      &#34;comment&#34;: &#34;...&#34;
+    }}
+  ]
+}}
+        &#34;&#34;&#34;.strip()
+
+        try:
+            full_response = &#34;&#34;
+            for chunk in llm.stream(prompt):
+                full_response += chunk.text()
+
+            json_start = full_response.find(&#39;{&#39;)
+            json_end = full_response.rfind(&#39;}&#39;) + 1
+            json_str = full_response[json_start:json_end]
+
+            data = json.loads(json_str)
+
+            result = {
+                &#34;listing_id&#34;: row.get(&#34;listing_id&#34;),
+                &#34;review_id&#34;: row.get(&#34;id&#34;),
+                &#34;date&#34;: row.get(&#34;date&#34;),
+                &#34;review_text&#34;: review_text,
+                &#34;overall_impression&#34;: data.get(&#34;overall_impression&#34;),
+                &#34;decision_tags&#34;: &#34;, &#34;.join(data.get(&#34;decision_tags&#34;, []))
+            }
+
+            # Add aspects individually
+            for aspect_data in data.get(&#34;highlighted_aspects&#34;, []):
+                aspect = aspect_data.get(&#34;aspect&#34;)
+                result[f&#34;{aspect}_opinion&#34;] = aspect_data.get(&#34;opinion&#34;)
+                result[f&#34;{aspect}_comment&#34;] = aspect_data.get(&#34;comment&#34;)
+
+            results.append(result)
+
+        except Exception as e:
+            print(f&#34;\nError processing review: {e}&#34;)
+            continue
+
+        time.sleep(sleep_time)
+
+    df = pd.DataFrame(results)
+    df.to_csv(output_csv, index=False)
+    print(f&#34;\nSaved {len(df)} analyzed reviews to {output_csv}&#34;)
+    return df</code></pre>
+</details>
+<div class="desc"><p>Analyze Airbnb reviews using a language model to extract structured opinion data.</p>
+<p>This function processes a dataset of Airbnb reviews, using a language model to extract
+structured information including overall impression, useful tags for potential guests,
+and opinions about specific aspects (location, facilities, host). Results are saved
+to a CSV file for further analysis.</p>
+<h2 id="parameters">Parameters</h2>
+<p>reviews_df (pd.DataFrame): DataFrame containing Airbnb reviews with at least the columns
+'comments', 'listing_id', 'id', and 'date'.
+llm (ChatDeepSeek): An initialized DeepSeek language model client.
+output_csv (str): Path where the resulting CSV file will be saved.
+max_reviews (int, optional): Maximum number of reviews to process. Defaults to 50.
+A random sample is taken if the dataset is larger.
+sleep_time (float, optional): Delay in seconds between API calls to avoid rate limits.
+Defaults to 0.1.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>pd.DataFrame</code></dt>
+<dd>The processed results as a DataFrame.</dd>
+</dl>
+<h2 id="example">Example</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; reviews = pd.read_csv(&quot;airbnb_reviews.csv&quot;)
+&gt;&gt;&gt; llm = initialize_llm()
+&gt;&gt;&gt; results_df = analyze_airbnb_reviews(
+&gt;&gt;&gt;     reviews,
+&gt;&gt;&gt;     llm,
+&gt;&gt;&gt;     &quot;analyzed_reviews.csv&quot;,
+&gt;&gt;&gt;     max_reviews=100
+&gt;&gt;&gt; )
+</code></pre></div>
+</dd>
+<dt id="ccai9012.llm_utils.analyze_reviews"><code class="name flex">
+<span>def <span class="ident">analyze_reviews</span></span>(<span>reviews, llm, output_csv, max_reviews=50, sleep_time=0.2)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def analyze_reviews(reviews, llm, output_csv, max_reviews=50, sleep_time=0.2):
+    &#34;&#34;&#34;
+    Analyze Yelp reviews using LLM to extract sentiment polarity, emotion, and keywords.
+
+    This function processes Yelp reviews through a language model to extract structured
+    information about sentiment and content. Each review is analyzed to determine:
+    - Overall polarity (positive/negative/neutral)
+    - Specific emotional sentiment (e.g., delighted, disappointed)
+    - Key topics or aspects mentioned in the review
+
+    Results are saved to a CSV file for further analysis or visualization.
+
+    Parameters:
+        reviews (list): List of review dictionaries, each containing at least a &#39;text&#39; key.
+                      May also contain metadata like &#39;stars&#39;, &#39;business_name&#39;, etc.
+        llm (ChatDeepSeek): An initialized DeepSeek language model client.
+        output_csv (str): Path where the resulting CSV file will be saved.
+        max_reviews (int, optional): Maximum number of reviews to process. Defaults to 50.
+        sleep_time (float, optional): Delay in seconds between API calls to avoid rate limits.
+                                    Defaults to 0.2.
+
+    Returns:
+        pd.DataFrame: The processed results as a DataFrame with columns for review text,
+                    polarity, sentiment, keywords, and any metadata from the original reviews.
+
+    Example:
+        &gt;&gt;&gt; # First load reviews from a city
+        &gt;&gt;&gt; reviews = load_reviews_by_city(
+        &gt;&gt;&gt;     &#34;data/yelp_reviews/business.json&#34;,
+        &gt;&gt;&gt;     &#34;data/yelp_reviews/review.json&#34;,
+        &gt;&gt;&gt;     &#34;San Francisco&#34;,
+        &gt;&gt;&gt;     max_reviews=200
+        &gt;&gt;&gt; )
+        &gt;&gt;&gt; # Then analyze them
+        &gt;&gt;&gt; llm = initialize_llm()
+        &gt;&gt;&gt; results_df = analyze_reviews(reviews, llm, &#34;sf_review_analysis.csv&#34;, max_reviews=100)
+        &gt;&gt;&gt;
+        &gt;&gt;&gt; # Visualize results
+        &gt;&gt;&gt; import matplotlib.pyplot as plt
+        &gt;&gt;&gt; plt.figure(figsize=(10, 6))
+        &gt;&gt;&gt; results_df[&#39;polarity&#39;].value_counts().plot(kind=&#39;bar&#39;)
+        &gt;&gt;&gt; plt.title(&#39;Sentiment Distribution in San Francisco Reviews&#39;)
+        &gt;&gt;&gt; plt.ylabel(&#39;Number of Reviews&#39;)
+    &#34;&#34;&#34;
+    reviews = list(reviews)[:max_reviews]
+    results = []
+
+    for review in tqdm(reviews, total=len(reviews)):
+        review_text = review[&#39;text&#39;].replace(&#39;\n&#39;, &#39; &#39;).strip()
+
+        prompt = f&#34;&#34;&#34;
+You are an assistant performing structured sentiment analysis on Yelp reviews.
+
+Please analyze the following review and extract:
+
+1. polarity: One of &#34;positive&#34;, &#34;negative&#34;, or &#34;neutral&#34;.
+2. sentiment: Choose the most appropriate emotion from the list: &#34;delighted&#34;, &#34;content&#34;, &#34;surprise&#34;, &#34;indifferent&#34;, &#34;disappointed&#34;, &#34;angry&#34;, or &#34;frustrated&#34;.
+3. keywords: Extract 2 to 5 important keywords that describe the main topics or aspects mentioned (e.g., cleanliness, service, location, waiting time).
+
+Review: &#34;{review_text}&#34;
+
+Return your answer strictly in the following JSON format:
+{{
+  &#34;polarity&#34;: &#34;...&#34;,
+  &#34;sentiment&#34;: &#34;...&#34;,
+  &#34;keywords&#34;: [&#34;...&#34;, &#34;...&#34;, &#34;...&#34;]
+}}
+        &#34;&#34;&#34;.strip()
+
+        try:
+            full_response = &#34;&#34;
+            for chunk in llm.stream(prompt):
+                full_response += chunk.text()
+
+            # find JSON and extract
+            json_start = full_response.find(&#39;{&#39;)
+            json_end = full_response.rfind(&#39;}&#39;) + 1
+            json_str = full_response[json_start:json_end]
+
+            data = json.loads(json_str)
+
+            results.append({
+                &#34;review_text&#34;: review_text,
+                &#34;polarity&#34;: data.get(&#34;polarity&#34;),
+                &#34;sentiment&#34;: data.get(&#34;sentiment&#34;),
+                &#34;keywords&#34;: &#34;, &#34;.join(data.get(&#34;keywords&#34;, [])),
+                &#34;stars&#34;: review.get(&#34;stars&#34;),
+                &#34;business_name&#34;: review.get(&#34;business_name&#34;),
+                &#34;latitude&#34;: review.get(&#34;latitude&#34;),
+                &#34;longitude&#34;: review.get(&#34;longitude&#34;)
+            })
+
+        except Exception as e:
+            print(f&#34;\n Error processing review: {e}&#34;)
+            continue
+
+        time.sleep(sleep_time)
+
+    df = pd.DataFrame(results)
+    df.to_csv(output_csv, index=False)
+    print(f&#34;\n Saved {len(df)} analyzed reviews to {output_csv}&#34;)
+    return df</code></pre>
+</details>
+<div class="desc"><p>Analyze Yelp reviews using LLM to extract sentiment polarity, emotion, and keywords.</p>
+<p>This function processes Yelp reviews through a language model to extract structured
+information about sentiment and content. Each review is analyzed to determine:
+- Overall polarity (positive/negative/neutral)
+- Specific emotional sentiment (e.g., delighted, disappointed)
+- Key topics or aspects mentioned in the review</p>
+<p>Results are saved to a CSV file for further analysis or visualization.</p>
+<h2 id="parameters">Parameters</h2>
+<p>reviews (list): List of review dictionaries, each containing at least a 'text' key.
+May also contain metadata like 'stars', 'business_name', etc.
+llm (ChatDeepSeek): An initialized DeepSeek language model client.
+output_csv (str): Path where the resulting CSV file will be saved.
+max_reviews (int, optional): Maximum number of reviews to process. Defaults to 50.
+sleep_time (float, optional): Delay in seconds between API calls to avoid rate limits.
+Defaults to 0.2.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>pd.DataFrame</code></dt>
+<dd>The processed results as a DataFrame with columns for review text,
+polarity, sentiment, keywords, and any metadata from the original reviews.</dd>
+</dl>
+<h2 id="example">Example</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; # First load reviews from a city
+&gt;&gt;&gt; reviews = load_reviews_by_city(
+&gt;&gt;&gt;     &quot;data/yelp_reviews/business.json&quot;,
+&gt;&gt;&gt;     &quot;data/yelp_reviews/review.json&quot;,
+&gt;&gt;&gt;     &quot;San Francisco&quot;,
+&gt;&gt;&gt;     max_reviews=200
+&gt;&gt;&gt; )
+&gt;&gt;&gt; # Then analyze them
+&gt;&gt;&gt; llm = initialize_llm()
+&gt;&gt;&gt; results_df = analyze_reviews(reviews, llm, &quot;sf_review_analysis.csv&quot;, max_reviews=100)
+&gt;&gt;&gt;
+&gt;&gt;&gt; # Visualize results
+&gt;&gt;&gt; import matplotlib.pyplot as plt
+&gt;&gt;&gt; plt.figure(figsize=(10, 6))
+&gt;&gt;&gt; results_df['polarity'].value_counts().plot(kind='bar')
+&gt;&gt;&gt; plt.title('Sentiment Distribution in San Francisco Reviews')
+&gt;&gt;&gt; plt.ylabel('Number of Reviews')
+</code></pre></div>
+</dd>
+<dt id="ccai9012.llm_utils.ask_llm"><code class="name flex">
+<span>def <span class="ident">ask_llm</span></span>(<span>prompt: str, llm: langchain_deepseek.chat_models.ChatDeepSeek | None = None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ask_llm(prompt: str, llm: Optional[ChatDeepSeek] = None):
+    &#34;&#34;&#34;
+    Send a prompt to the language model and stream the response to the console.
+
+    This function provides a simple interface for interacting with a DeepSeek model.
+    It prints both the input prompt and the generated response in a user-friendly format.
+    If no LLM instance is provided, a default one will be initialized automatically.
+
+    Parameters:
+        prompt (str): The text prompt to send to the language model.
+        llm (ChatDeepSeek, optional): An initialized DeepSeek language model client.
+                                    If None, a default model will be initialized.
+
+    Returns:
+        None: The response is printed to the console.
+
+    Example:
+        &gt;&gt;&gt; ask_llm(&#34;Explain quantum computing in simple terms.&#34;)
+        &gt;&gt;&gt;
+        &gt;&gt;&gt; # With custom LLM instance
+        &gt;&gt;&gt; custom_llm = initialize_llm(temperature=0.7)
+        &gt;&gt;&gt; ask_llm(&#34;Write a short poem about AI.&#34;, custom_llm)
+    &#34;&#34;&#34;
+    if llm is None:
+        llm = initialize_llm()
+
+    print(f&#34;\n📌 Prompt:\n{prompt}\n&#34;)
+    for chunk in llm.stream(prompt):
+        print(chunk.text(), end=&#34;&#34;)
+    print(&#34;\n&#34;)</code></pre>
+</details>
+<div class="desc"><p>Send a prompt to the language model and stream the response to the console.</p>
+<p>This function provides a simple interface for interacting with a DeepSeek model.
+It prints both the input prompt and the generated response in a user-friendly format.
+If no LLM instance is provided, a default one will be initialized automatically.</p>
+<h2 id="parameters">Parameters</h2>
+<p>prompt (str): The text prompt to send to the language model.
+llm (ChatDeepSeek, optional): An initialized DeepSeek language model client.
+If None, a default model will be initialized.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>None</code></dt>
+<dd>The response is printed to the console.</dd>
+</dl>
+<h2 id="example">Example</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; ask_llm(&quot;Explain quantum computing in simple terms.&quot;)
+&gt;&gt;&gt;
+&gt;&gt;&gt; # With custom LLM instance
+&gt;&gt;&gt; custom_llm = initialize_llm(temperature=0.7)
+&gt;&gt;&gt; ask_llm(&quot;Write a short poem about AI.&quot;, custom_llm)
+</code></pre></div>
+</dd>
+<dt id="ccai9012.llm_utils.build_pdf_retriever"><code class="name flex">
+<span>def <span class="ident">build_pdf_retriever</span></span>(<span>pdf_path: str,<br>embedding_model_name: str = 'BAAI/bge-base-en-v1.5',<br>chunk_size: int = 1500,<br>chunk_overlap: int = 200,<br>top_k: int = 10,<br>exclude_last_n_pages: int = 2)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def build_pdf_retriever(
+    pdf_path: str,
+    embedding_model_name: str = &#34;BAAI/bge-base-en-v1.5&#34;,
+    chunk_size: int = 1500,
+    chunk_overlap: int = 200,
+    top_k: int = 10,
+    exclude_last_n_pages: int = 2
+):
+    &#34;&#34;&#34;
+    Build a retriever for semantic search within PDF documents.
+
+    This function implements a complete pipeline for PDF-based retrieval:
+    1. Loading the PDF document and extracting text
+    2. Chunking text into manageable segments with appropriate overlap
+    3. Embedding text chunks using a vector embedding model
+    4. Creating a FAISS vector store for efficient similarity search
+    5. Returning a retriever that can find relevant document sections based on queries
+
+    Parameters:
+        pdf_path (str): Path to the PDF document to process.
+        embedding_model_name (str, optional): Name of the HuggingFace embedding model to use.
+                                           Defaults to &#34;BAAI/bge-base-en-v1.5&#34;.
+        chunk_size (int, optional): Maximum number of characters to process in a single chunk.
+                                  Defaults to 1500.
+        chunk_overlap (int, optional): Number of characters to overlap between consecutive chunks.
+                                     Defaults to 200.
+        top_k (int, optional): Number of top similar chunks to return for each query.
+                             Defaults to 10.
+        exclude_last_n_pages (int, optional): Number of pages to exclude from the end of the document
+                                           (useful for skipping references, bibliographies).
+                                           Defaults to 2.
+
+    Returns:
+        retriever: A LangChain retriever object ready for semantic search operations.
+
+    Example:
+        &gt;&gt;&gt; # Build a retriever for a PDF document
+        &gt;&gt;&gt; retriever = build_pdf_retriever(
+        &gt;&gt;&gt;     pdf_path=&#34;data/energy-action-plan/1527001.pdf&#34;,
+        &gt;&gt;&gt;     chunk_size=2000,  # Larger chunks for more context
+        &gt;&gt;&gt;     top_k=5  # Return top 5 most relevant chunks
+        &gt;&gt;&gt; )
+        &gt;&gt;&gt;
+        &gt;&gt;&gt; # Use it with a language model for question answering
+        &gt;&gt;&gt; llm = initialize_llm()
+        &gt;&gt;&gt; run_qa_chain(
+        &gt;&gt;&gt;     &#34;What are the main goals of the energy plan?&#34;,
+        &gt;&gt;&gt;     retriever,
+        &gt;&gt;&gt;     llm
+        &gt;&gt;&gt; )
+    &#34;&#34;&#34;
+   # Load PDF pages as documents
+    loader = PyPDFLoader(pdf_path)
+    pages = loader.load()
+
+    # Split each page into overlapping chunks
+    text_splitter = RecursiveCharacterTextSplitter(
+        chunk_size=chunk_size,
+        chunk_overlap=chunk_overlap
+    )
+    docs = text_splitter.split_documents(pages)
+
+    # Clean metadata: keep only &#39;page&#39; and &#39;source&#39;
+    for doc in docs:
+        doc.metadata = {
+            &#34;page&#34;: doc.metadata.get(&#34;page&#34;),
+            &#34;source&#34;: doc.metadata.get(&#34;source&#34;)
+        }
+
+    # Exclude the last N pages (e.g., references)
+    if exclude_last_n_pages &gt; 0:
+        max_page = max(doc.metadata.get(&#34;page&#34;, 0) for doc in docs)
+        docs = [doc for doc in docs if doc.metadata.get(&#34;page&#34;, 0) &lt;= max_page - exclude_last_n_pages]
+
+    # Initialize the embedding model
+    embedding_model = HuggingFaceEmbeddings(model_name=embedding_model_name)
+
+    # Build FAISS vector store from document chunks
+    vectorstore = FAISS.from_documents(docs, embedding_model)
+
+    # Create retriever with similarity search
+    retriever = vectorstore.as_retriever(
+        search_type=&#34;similarity&#34;,
+        search_kwargs={&#34;k&#34;: top_k}
+    )
+
+    return retriever</code></pre>
+</details>
+<div class="desc"><p>Build a retriever for semantic search within PDF documents.</p>
+<p>This function implements a complete pipeline for PDF-based retrieval:
+1. Loading the PDF document and extracting text
+2. Chunking text into manageable segments with appropriate overlap
+3. Embedding text chunks using a vector embedding model
+4. Creating a FAISS vector store for efficient similarity search
+5. Returning a retriever that can find relevant document sections based on queries</p>
+<h2 id="parameters">Parameters</h2>
+<p>pdf_path (str): Path to the PDF document to process.
+embedding_model_name (str, optional): Name of the HuggingFace embedding model to use.
+Defaults to "BAAI/bge-base-en-v1.5".
+chunk_size (int, optional): Maximum number of characters to process in a single chunk.
+Defaults to 1500.
+chunk_overlap (int, optional): Number of characters to overlap between consecutive chunks.
+Defaults to 200.
+top_k (int, optional): Number of top similar chunks to return for each query.
+Defaults to 10.
+exclude_last_n_pages (int, optional): Number of pages to exclude from the end of the document
+(useful for skipping references, bibliographies).
+Defaults to 2.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>retriever</code></dt>
+<dd>A LangChain retriever object ready for semantic search operations.</dd>
+</dl>
+<h2 id="example">Example</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; # Build a retriever for a PDF document
+&gt;&gt;&gt; retriever = build_pdf_retriever(
+&gt;&gt;&gt;     pdf_path=&quot;data/energy-action-plan/1527001.pdf&quot;,
+&gt;&gt;&gt;     chunk_size=2000,  # Larger chunks for more context
+&gt;&gt;&gt;     top_k=5  # Return top 5 most relevant chunks
+&gt;&gt;&gt; )
+&gt;&gt;&gt;
+&gt;&gt;&gt; # Use it with a language model for question answering
+&gt;&gt;&gt; llm = initialize_llm()
+&gt;&gt;&gt; run_qa_chain(
+&gt;&gt;&gt;     &quot;What are the main goals of the energy plan?&quot;,
+&gt;&gt;&gt;     retriever,
+&gt;&gt;&gt;     llm
+&gt;&gt;&gt; )
+</code></pre></div>
+</dd>
+<dt id="ccai9012.llm_utils.generate_multiple_outputs"><code class="name flex">
+<span>def <span class="ident">generate_multiple_outputs</span></span>(<span>prompt: str,<br>num_outputs: int = 3,<br>temperature: float = 1.0,<br>llm_params: dict | None = None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def generate_multiple_outputs(
+    prompt: str,
+    num_outputs: int = 3,
+    temperature: float = 1.0,
+    llm_params: Optional[dict] = None
+):
+    &#34;&#34;&#34;
+    Generate multiple responses to the same prompt, each with identical parameters.
+
+    This function is useful for exploring the variety of responses that can be generated
+    from a single prompt. It initializes a language model with the specified temperature
+    and other parameters, then generates multiple responses sequentially.
+
+    Parameters:
+        prompt (str): The text prompt to send to the language model.
+        num_outputs (int, optional): Number of different outputs to generate. Defaults to 3.
+        temperature (float, optional): Temperature setting for generation. Higher values
+                                      produce more diverse outputs. Defaults to 1.0.
+        llm_params (dict, optional): Additional parameters to pass to initialize_llm().
+                                   Defaults to {}.
+
+    Returns:
+        None: The responses are printed to the console.
+
+    Example:
+        &gt;&gt;&gt; # Generate 3 different outputs with high creativity
+        &gt;&gt;&gt; generate_multiple_outputs(
+        &gt;&gt;&gt;     &#34;Write a short marketing slogan for an AI product.&#34;,
+        &gt;&gt;&gt;     num_outputs=3,
+        &gt;&gt;&gt;     temperature=1.2
+        &gt;&gt;&gt; )
+        &gt;&gt;&gt;
+        &gt;&gt;&gt; # Generate more deterministic outputs with custom model settings
+        &gt;&gt;&gt; generate_multiple_outputs(
+        &gt;&gt;&gt;     &#34;List 5 facts about machine learning.&#34;,
+        &gt;&gt;&gt;     num_outputs=2,
+        &gt;&gt;&gt;     temperature=0.3,
+        &gt;&gt;&gt;     llm_params={&#34;max_tokens&#34;: 200, &#34;model&#34;: &#34;deepseek-chat&#34;}
+        &gt;&gt;&gt; )
+    &#34;&#34;&#34;
+    llm_params = llm_params or {}
+    llm = initialize_llm(temperature=temperature, **llm_params)
+
+    for i in range(num_outputs):
+        print(f&#34;\n Output #{i + 1} — Temperature {temperature}&#34;)
+        print(f&#34;📌 Prompt:\n{prompt}\n&#34;)
+        for chunk in llm.stream(prompt):
+            print(chunk.text(), end=&#34;&#34;)
+        print(&#34;\n&#34;)</code></pre>
+</details>
+<div class="desc"><p>Generate multiple responses to the same prompt, each with identical parameters.</p>
+<p>This function is useful for exploring the variety of responses that can be generated
+from a single prompt. It initializes a language model with the specified temperature
+and other parameters, then generates multiple responses sequentially.</p>
+<h2 id="parameters">Parameters</h2>
+<p>prompt (str): The text prompt to send to the language model.
+num_outputs (int, optional): Number of different outputs to generate. Defaults to 3.
+temperature (float, optional): Temperature setting for generation. Higher values
+produce more diverse outputs. Defaults to 1.0.
+llm_params (dict, optional): Additional parameters to pass to initialize_llm().
+Defaults to {}.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>None</code></dt>
+<dd>The responses are printed to the console.</dd>
+</dl>
+<h2 id="example">Example</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; # Generate 3 different outputs with high creativity
+&gt;&gt;&gt; generate_multiple_outputs(
+&gt;&gt;&gt;     &quot;Write a short marketing slogan for an AI product.&quot;,
+&gt;&gt;&gt;     num_outputs=3,
+&gt;&gt;&gt;     temperature=1.2
+&gt;&gt;&gt; )
+&gt;&gt;&gt;
+&gt;&gt;&gt; # Generate more deterministic outputs with custom model settings
+&gt;&gt;&gt; generate_multiple_outputs(
+&gt;&gt;&gt;     &quot;List 5 facts about machine learning.&quot;,
+&gt;&gt;&gt;     num_outputs=2,
+&gt;&gt;&gt;     temperature=0.3,
+&gt;&gt;&gt;     llm_params={&quot;max_tokens&quot;: 200, &quot;model&quot;: &quot;deepseek-chat&quot;}
+&gt;&gt;&gt; )
+</code></pre></div>
+</dd>
+<dt id="ccai9012.llm_utils.get_deepseek_api_key"><code class="name flex">
+<span>def <span class="ident">get_deepseek_api_key</span></span>(<span>env_var: str = 'DEEPSEEK_API_KEY') ‑> str</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_deepseek_api_key(env_var: str = &#34;DEEPSEEK_API_KEY&#34;) -&gt; str:
+    &#34;&#34;&#34;
+    Ensure the DeepSeek API key is set, or prompt the user to input it securely.
+
+    This function first checks if the API key is available in the specified environment
+    variable. If not found, it prompts the user to input it securely (without showing the
+    keystrokes), and then sets it as an environment variable for future use.
+
+    Parameters:
+        env_var (str, optional): The name of the environment variable to check for the API key.
+                               Defaults to &#34;DEEPSEEK_API_KEY&#34;.
+
+    Returns:
+        str: The DeepSeek API key.
+
+    Example:
+        &gt;&gt;&gt; api_key = get_deepseek_api_key()
+        &gt;&gt;&gt; # Or specify a custom environment variable
+        &gt;&gt;&gt; api_key = get_deepseek_api_key(&#34;MY_CUSTOM_DEEPSEEK_KEY&#34;)
+    &#34;&#34;&#34;
+    api_key = os.getenv(env_var)
+    if not api_key:
+        api_key = getpass.getpass(f&#34;Enter your {env_var}: &#34;)
+        os.environ[env_var] = api_key
+    return api_key</code></pre>
+</details>
+<div class="desc"><p>Ensure the DeepSeek API key is set, or prompt the user to input it securely.</p>
+<p>This function first checks if the API key is available in the specified environment
+variable. If not found, it prompts the user to input it securely (without showing the
+keystrokes), and then sets it as an environment variable for future use.</p>
+<h2 id="parameters">Parameters</h2>
+<p>env_var (str, optional): The name of the environment variable to check for the API key.
+Defaults to "DEEPSEEK_API_KEY".</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>str</code></dt>
+<dd>The DeepSeek API key.</dd>
+</dl>
+<h2 id="example">Example</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; api_key = get_deepseek_api_key()
+&gt;&gt;&gt; # Or specify a custom environment variable
+&gt;&gt;&gt; api_key = get_deepseek_api_key(&quot;MY_CUSTOM_DEEPSEEK_KEY&quot;)
+</code></pre></div>
+</dd>
+<dt id="ccai9012.llm_utils.initialize_llm"><code class="name flex">
+<span>def <span class="ident">initialize_llm</span></span>(<span>model: str = 'deepseek-chat',<br>temperature: float = 0.5,<br>max_tokens: int = 2048,<br>timeout: int = 30,<br>max_retries: int = 3,<br>api_key: str | None = None) ‑> langchain_deepseek.chat_models.ChatDeepSeek</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def initialize_llm(
+    model: str = &#34;deepseek-chat&#34;,
+    temperature: float = 0.5,
+    max_tokens: int = 2048,
+    timeout: int = 30,
+    max_retries: int = 3,
+    api_key: Optional[str] = None
+) -&gt; ChatDeepSeek:
+    &#34;&#34;&#34;
+    Initialize and configure a DeepSeek Chat model with the specified parameters.
+
+    This function creates a ChatDeepSeek instance with the provided configuration,
+    handling API key management automatically if not explicitly provided.
+
+    Parameters:
+        model (str, optional): The model identifier to use. Defaults to &#34;deepseek-chat&#34;.
+        temperature (float, optional): Controls randomness in generation. Higher values (e.g., 0.8)
+                                     make output more random, lower values (e.g., 0.2) make it more
+                                     deterministic. Defaults to 0.5.
+        max_tokens (int, optional): Maximum number of tokens to generate. Defaults to 2048.
+        timeout (int, optional): API request timeout in seconds. Defaults to 30.
+        max_retries (int, optional): Number of times to retry failed API calls. Defaults to 3.
+        api_key (str, optional): DeepSeek API key. If None, will be obtained using get_deepseek_api_key().
+
+    Returns:
+        ChatDeepSeek: Initialized DeepSeek language model client.
+
+    Example:
+        &gt;&gt;&gt; # Basic initialization with default parameters
+        &gt;&gt;&gt; llm = initialize_llm()
+        &gt;&gt;&gt;
+        &gt;&gt;&gt; # Custom configuration
+        &gt;&gt;&gt; llm = initialize_llm(
+        &gt;&gt;&gt;     model=&#34;deepseek-chat&#34;,
+        &gt;&gt;&gt;     temperature=0.7,
+        &gt;&gt;&gt;     max_tokens=4096
+        &gt;&gt;&gt; )
+    &#34;&#34;&#34;
+    if not api_key:
+        api_key = get_deepseek_api_key()
+    
+    return ChatDeepSeek(
+        model=model,
+        temperature=temperature,
+        max_tokens=max_tokens,
+        timeout=timeout,
+        max_retries=max_retries,
+        api_key=api_key,
+    )</code></pre>
+</details>
+<div class="desc"><p>Initialize and configure a DeepSeek Chat model with the specified parameters.</p>
+<p>This function creates a ChatDeepSeek instance with the provided configuration,
+handling API key management automatically if not explicitly provided.</p>
+<h2 id="parameters">Parameters</h2>
+<p>model (str, optional): The model identifier to use. Defaults to "deepseek-chat".
+temperature (float, optional): Controls randomness in generation. Higher values (e.g., 0.8)
+make output more random, lower values (e.g., 0.2) make it more
+deterministic. Defaults to 0.5.
+max_tokens (int, optional): Maximum number of tokens to generate. Defaults to 2048.
+timeout (int, optional): API request timeout in seconds. Defaults to 30.
+max_retries (int, optional): Number of times to retry failed API calls. Defaults to 3.
+api_key (str, optional): DeepSeek API key. If None, will be obtained using get_deepseek_api_key().</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>ChatDeepSeek</code></dt>
+<dd>Initialized DeepSeek language model client.</dd>
+</dl>
+<h2 id="example">Example</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; # Basic initialization with default parameters
+&gt;&gt;&gt; llm = initialize_llm()
+&gt;&gt;&gt;
+&gt;&gt;&gt; # Custom configuration
+&gt;&gt;&gt; llm = initialize_llm(
+&gt;&gt;&gt;     model=&quot;deepseek-chat&quot;,
+&gt;&gt;&gt;     temperature=0.7,
+&gt;&gt;&gt;     max_tokens=4096
+&gt;&gt;&gt; )
+</code></pre></div>
+</dd>
+<dt id="ccai9012.llm_utils.load_business_locations"><code class="name flex">
+<span>def <span class="ident">load_business_locations</span></span>(<span>business_file)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def load_business_locations(business_file):
+    &#34;&#34;&#34;
+    Load all business entries with latitude and longitude from the Yelp dataset.
+
+    This function reads a Yelp business.json file line by line, extracting businesses
+    that have valid geographic coordinates. It&#39;s useful for applications requiring
+    location-based analysis or visualization of business data.
+
+    Parameters:
+        business_file (str): Path to the Yelp business.json file.
+
+    Returns:
+        list: A list of dictionaries, where each dictionary contains business information:
+              - name: Business name
+              - latitude: Geographic latitude
+              - longitude: Geographic longitude
+              - city: City name (may be empty)
+              - state: State code (may be empty)
+              - categories: Business categories (may be empty)
+
+    Example:
+        &gt;&gt;&gt; businesses = load_business_locations(&#34;data/yelp_reviews/business.json&#34;)
+        &gt;&gt;&gt; print(f&#34;Loaded {len(businesses)} businesses with geographic coordinates&#34;)
+        &gt;&gt;&gt; # Plot businesses on a map
+        &gt;&gt;&gt; import folium
+        &gt;&gt;&gt; m = folium.Map(location=[businesses[0][&#39;latitude&#39;], businesses[0][&#39;longitude&#39;]])
+        &gt;&gt;&gt; for business in businesses[:100]:  # Plot first 100 businesses
+        &gt;&gt;&gt;     folium.Marker(
+        &gt;&gt;&gt;         [business[&#39;latitude&#39;], business[&#39;longitude&#39;]],
+        &gt;&gt;&gt;         tooltip=business[&#39;name&#39;]
+        &gt;&gt;&gt;     ).add_to(m)
+    &#34;&#34;&#34;
+    businesses = []
+    with open(business_file, &#39;r&#39;, encoding=&#39;utf-8&#39;) as f:
+        for line in tqdm(f, desc=&#34;Loading businesses&#34;):
+            biz = json.loads(line)
+            if biz.get(&#39;latitude&#39;) is not None and biz.get(&#39;longitude&#39;) is not None:
+                businesses.append({
+                    &#39;name&#39;: biz[&#39;name&#39;],
+                    &#39;latitude&#39;: biz[&#39;latitude&#39;],
+                    &#39;longitude&#39;: biz[&#39;longitude&#39;],
+                    &#39;city&#39;: biz.get(&#39;city&#39;, &#39;&#39;),
+                    &#39;state&#39;: biz.get(&#39;state&#39;, &#39;&#39;),
+                    &#39;categories&#39;: biz.get(&#39;categories&#39;, &#39;&#39;)
+                })
+    return businesses</code></pre>
+</details>
+<div class="desc"><p>Load all business entries with latitude and longitude from the Yelp dataset.</p>
+<p>This function reads a Yelp business.json file line by line, extracting businesses
+that have valid geographic coordinates. It's useful for applications requiring
+location-based analysis or visualization of business data.</p>
+<h2 id="parameters">Parameters</h2>
+<p>business_file (str): Path to the Yelp business.json file.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list</code></dt>
+<dd>A list of dictionaries, where each dictionary contains business information:
+- name: Business name
+- latitude: Geographic latitude
+- longitude: Geographic longitude
+- city: City name (may be empty)
+- state: State code (may be empty)
+- categories: Business categories (may be empty)</dd>
+</dl>
+<h2 id="example">Example</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; businesses = load_business_locations(&quot;data/yelp_reviews/business.json&quot;)
+&gt;&gt;&gt; print(f&quot;Loaded {len(businesses)} businesses with geographic coordinates&quot;)
+&gt;&gt;&gt; # Plot businesses on a map
+&gt;&gt;&gt; import folium
+&gt;&gt;&gt; m = folium.Map(location=[businesses[0]['latitude'], businesses[0]['longitude']])
+&gt;&gt;&gt; for business in businesses[:100]:  # Plot first 100 businesses
+&gt;&gt;&gt;     folium.Marker(
+&gt;&gt;&gt;         [business['latitude'], business['longitude']],
+&gt;&gt;&gt;         tooltip=business['name']
+&gt;&gt;&gt;     ).add_to(m)
+</code></pre></div>
+</dd>
+<dt id="ccai9012.llm_utils.load_reviews_by_city"><code class="name flex">
+<span>def <span class="ident">load_reviews_by_city</span></span>(<span>business_file, review_file, city_name, max_reviews=1000)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def load_reviews_by_city(business_file, review_file, city_name, max_reviews=1000):
+    &#34;&#34;&#34;
+    Load Yelp reviews for businesses located in a specific city.
+
+    This function performs a two-step process:
+    1. First, it filters businesses located in the specified city
+    2. Then, it loads reviews for those businesses, with additional location metadata
+
+    This is especially useful for city-specific sentiment analysis and geographic
+    visualization of review data.
+
+    Parameters:
+        business_file (str): Path to the Yelp business.json file.
+        review_file (str): Path to the Yelp review.json file.
+        city_name (str): Target city name (case-insensitive matching).
+        max_reviews (int, optional): Maximum number of reviews to return. Defaults to 1000.
+
+    Returns:
+        list: A list of review dictionaries enriched with business location data:
+             - business_id: Unique business identifier
+             - business_name: Name of the business
+             - text: Review text content
+             - stars: Review rating (1-5)
+             - date: Review date
+             - latitude: Business geographic latitude
+             - longitude: Business geographic longitude
+
+    Example:
+        &gt;&gt;&gt; reviews = load_reviews_by_city(
+        &gt;&gt;&gt;     &#34;data/yelp_reviews/business.json&#34;,
+        &gt;&gt;&gt;     &#34;data/yelp_reviews/review.json&#34;,
+        &gt;&gt;&gt;     &#34;Las Vegas&#34;,
+        &gt;&gt;&gt;     max_reviews=500
+        &gt;&gt;&gt; )
+        &gt;&gt;&gt; print(f&#34;Loaded {len(reviews)} reviews from Las Vegas businesses&#34;)
+    &#34;&#34;&#34;
+    business_ids_in_city = {}
+
+    # First, load businesses in the target city
+    with open(business_file, &#39;r&#39;, encoding=&#39;utf-8&#39;) as f:
+        for line in f:
+            biz = json.loads(line)
+            if biz.get(&#39;city&#39;, &#39;&#39;).strip().lower() == city_name.strip().lower():
+                business_ids_in_city[biz[&#39;business_id&#39;]] = {
+                    &#39;name&#39;: biz[&#39;name&#39;],
+                    &#39;latitude&#39;: biz.get(&#39;latitude&#39;),
+                    &#39;longitude&#39;: biz.get(&#39;longitude&#39;),
+                    &#39;categories&#39;: biz.get(&#39;categories&#39;, &#39;&#39;),
+                    &#39;city&#39;: biz.get(&#39;city&#39;, &#39;&#39;)
+                }
+
+    # Then, load reviews for those businesses
+    reviews = []
+    with open(review_file, &#39;r&#39;, encoding=&#39;utf-8&#39;) as f:
+        for line in f:
+            review = json.loads(line)
+            biz_id = review[&#39;business_id&#39;]
+            if biz_id in business_ids_in_city:
+                # Combine review with business info
+                review_data = {
+                    &#39;business_id&#39;: biz_id,
+                    &#39;business_name&#39;: business_ids_in_city[biz_id][&#39;name&#39;],
+                    &#39;text&#39;: review[&#39;text&#39;],
+                    &#39;stars&#39;: review[&#39;stars&#39;],
+                    &#39;date&#39;: review[&#39;date&#39;],
+                    &#39;latitude&#39;: business_ids_in_city[biz_id][&#39;latitude&#39;],
+                    &#39;longitude&#39;: business_ids_in_city[biz_id][&#39;longitude&#39;]
+                }
+                reviews.append(review_data)
+                if len(reviews) &gt;= max_reviews:
+                    break
+
+    return reviews</code></pre>
+</details>
+<div class="desc"><p>Load Yelp reviews for businesses located in a specific city.</p>
+<p>This function performs a two-step process:
+1. First, it filters businesses located in the specified city
+2. Then, it loads reviews for those businesses, with additional location metadata</p>
+<p>This is especially useful for city-specific sentiment analysis and geographic
+visualization of review data.</p>
+<h2 id="parameters">Parameters</h2>
+<p>business_file (str): Path to the Yelp business.json file.
+review_file (str): Path to the Yelp review.json file.
+city_name (str): Target city name (case-insensitive matching).
+max_reviews (int, optional): Maximum number of reviews to return. Defaults to 1000.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list</code></dt>
+<dd>A list of review dictionaries enriched with business location data:
+- business_id: Unique business identifier
+- business_name: Name of the business
+- text: Review text content
+- stars: Review rating (1-5)
+- date: Review date
+- latitude: Business geographic latitude
+- longitude: Business geographic longitude</dd>
+</dl>
+<h2 id="example">Example</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; reviews = load_reviews_by_city(
+&gt;&gt;&gt;     &quot;data/yelp_reviews/business.json&quot;,
+&gt;&gt;&gt;     &quot;data/yelp_reviews/review.json&quot;,
+&gt;&gt;&gt;     &quot;Las Vegas&quot;,
+&gt;&gt;&gt;     max_reviews=500
+&gt;&gt;&gt; )
+&gt;&gt;&gt; print(f&quot;Loaded {len(reviews)} reviews from Las Vegas businesses&quot;)
+</code></pre></div>
+</dd>
+<dt id="ccai9012.llm_utils.parse_markdown_table"><code class="name flex">
+<span>def <span class="ident">parse_markdown_table</span></span>(<span>md_text: str) ‑> pandas.core.frame.DataFrame</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def parse_markdown_table(md_text: str) -&gt; pd.DataFrame:
+    &#34;&#34;&#34;
+    Convert a markdown-formatted table string into a pandas DataFrame.
+
+    This function extracts and parses a markdown table from text input, handling special
+    formatting like &lt;br&gt; tags in cells.
+
+    Parameters:
+        md_text (str): Text containing a markdown table (must include table rows starting with &#39;|&#39;)
+
+    Returns:
+        pd.DataFrame: A pandas DataFrame containing the parsed table data
+
+    Raises:
+        ValueError: If no valid markdown table is found in the input text
+
+    Example:
+        &gt;&gt;&gt; markdown = &#39;&#39;&#39;
+        &gt;&gt;&gt; | Name | Age | Occupation |
+        &gt;&gt;&gt; | ---- | --- | ---------- |
+        &gt;&gt;&gt; | John | 32  | Engineer   |
+        &gt;&gt;&gt; | Mary | 28  | Designer&lt;br&gt;Consultant |
+        &gt;&gt;&gt; &#39;&#39;&#39;
+        &gt;&gt;&gt; df = parse_markdown_table(markdown)
+        &gt;&gt;&gt; print(df.columns)  # [&#39;Name&#39;, &#39;Age&#39;, &#39;Occupation&#39;]
+        &gt;&gt;&gt; print(df.loc[1, &#39;Occupation&#39;])  # &#39;Designer; Consultant&#39;
+    &#34;&#34;&#34;
+    # Extract markdown table (start from the first &#39;|&#39;)
+    table_lines = [line for line in md_text.splitlines() if line.strip().startswith(&#34;|&#34;)]
+
+    if len(table_lines) &lt; 2:
+        raise ValueError(&#34;No valid markdown table found.&#34;)
+
+    # Extract header and rows
+    header_line = table_lines[0]
+    column_names = [col.strip() for col in header_line.strip().strip(&#39;|&#39;).split(&#39;|&#39;)]
+
+    # Parse rows
+    data_rows = []
+    for line in table_lines[2:]:  # skip header and separator
+        cells = [re.sub(r&#39;&lt;br\s*/?&gt;&#39;, &#39;; &#39;, cell.strip(), flags=re.IGNORECASE) for cell in line.strip().strip(&#39;|&#39;).split(&#39;|&#39;)]
+        # If row is shorter than columns, pad
+        while len(cells) &lt; len(column_names):
+            cells.append(&#34;&#34;)
+        data_rows.append(cells)
+
+    df = pd.DataFrame(data_rows, columns=column_names)
+    return df</code></pre>
+</details>
+<div class="desc"><p>Convert a markdown-formatted table string into a pandas DataFrame.</p>
+<p>This function extracts and parses a markdown table from text input, handling special
+formatting like <br> tags in cells.</p>
+<h2 id="parameters">Parameters</h2>
+<p>md_text (str): Text containing a markdown table (must include table rows starting with '|')</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>pd.DataFrame</code></dt>
+<dd>A pandas DataFrame containing the parsed table data</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>ValueError</code></dt>
+<dd>If no valid markdown table is found in the input text</dd>
+</dl>
+<h2 id="example">Example</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; markdown = '''
+&gt;&gt;&gt; | Name | Age | Occupation |
+&gt;&gt;&gt; | ---- | --- | ---------- |
+&gt;&gt;&gt; | John | 32  | Engineer   |
+&gt;&gt;&gt; | Mary | 28  | Designer&lt;br&gt;Consultant |
+&gt;&gt;&gt; '''
+&gt;&gt;&gt; df = parse_markdown_table(markdown)
+&gt;&gt;&gt; print(df.columns)  # ['Name', 'Age', 'Occupation']
+&gt;&gt;&gt; print(df.loc[1, 'Occupation'])  # 'Designer; Consultant'
+</code></pre></div>
+</dd>
+<dt id="ccai9012.llm_utils.run_qa_chain"><code class="name flex">
+<span>def <span class="ident">run_qa_chain</span></span>(<span>query: str,<br>retriever,<br>llm,<br>prompt_template: langchain_core.prompts.prompt.PromptTemplate = None,<br>return_sources: bool = False,<br>save_path: str = None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def run_qa_chain(
+    query: str,
+    retriever,
+    llm,
+    prompt_template: PromptTemplate = None,
+    return_sources: bool = False,
+    save_path: str = None,
+):
+    &#34;&#34;&#34;
+    Run a retrieval-based question answering chain on a given query.
+
+    This function combines a retriever (which finds relevant document chunks) with a
+    language model to generate answers based on the retrieved context. It provides
+    options for customizing the prompt, viewing source documents, and saving results.
+
+    Parameters:
+        query (str): The question to be answered by the system.
+        retriever: A LangChain retriever object (e.g., from build_pdf_retriever).
+        llm: An initialized language model instance (e.g., from initialize_llm).
+        prompt_template (PromptTemplate, optional): Custom prompt template to override the default.
+                                                 Useful for specialized instructions or formatting.
+        return_sources (bool, optional): Whether to print the source documents used for the answer.
+                                      Defaults to False.
+        save_path (str, optional): File path to save the result as a .txt file.
+                                 If None, results are not saved. Defaults to None.
+
+    Returns:
+        str: The generated answer to the query based on retrieved documents.
+    &#34;&#34;&#34;
+    chain_kwargs = {}
+    if prompt_template is not None:
+        chain_kwargs[&#34;prompt&#34;] = prompt_template
+
+    qa_chain = RetrievalQA.from_chain_type(
+        llm=llm,
+        retriever=retriever,
+        chain_type=&#34;stuff&#34;,
+        chain_type_kwargs=chain_kwargs,
+        return_source_documents=return_sources,
+    )
+
+    response = qa_chain.invoke(query)
+
+    print(&#34;\n--- Final Answer ---&#34;)
+    print(response[&#34;result&#34;])
+
+    if return_sources:
+        for i, doc in enumerate(response[&#34;source_documents&#34;]):
+            print(f&#34;\n-------------------- Document {i+1} --------------------&#34;)
+            print(doc.page_content)
+
+    if save_path is not None:
+        os.makedirs(os.path.dirname(save_path), exist_ok=True)
+        with open(save_path, &#34;w&#34;, encoding=&#34;utf-8&#34;) as f:
+            f.write(response[&#34;result&#34;])
+        print(f&#34;\n Answer saved to: {save_path}&#34;)
+
+    return response[&#34;result&#34;]</code></pre>
+</details>
+<div class="desc"><p>Run a retrieval-based question answering chain on a given query.</p>
+<p>This function combines a retriever (which finds relevant document chunks) with a
+language model to generate answers based on the retrieved context. It provides
+options for customizing the prompt, viewing source documents, and saving results.</p>
+<h2 id="parameters">Parameters</h2>
+<p>query (str): The question to be answered by the system.
+retriever: A LangChain retriever object (e.g., from build_pdf_retriever).
+llm: An initialized language model instance (e.g., from initialize_llm).
+prompt_template (PromptTemplate, optional): Custom prompt template to override the default.
+Useful for specialized instructions or formatting.
+return_sources (bool, optional): Whether to print the source documents used for the answer.
+Defaults to False.
+save_path (str, optional): File path to save the result as a .txt file.
+If None, results are not saved. Defaults to None.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>str</code></dt>
+<dd>The generated answer to the query based on retrieved documents.</dd>
+</dl></div>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul>
+<li><a href="#large-language-model-llm-utilities-module">Large Language Model (LLM) Utilities Module</a></li>
+</ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="ccai9012" href="index.html">ccai9012</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="ccai9012.llm_utils.analyze_airbnb_reviews" href="#ccai9012.llm_utils.analyze_airbnb_reviews">analyze_airbnb_reviews</a></code></li>
+<li><code><a title="ccai9012.llm_utils.analyze_reviews" href="#ccai9012.llm_utils.analyze_reviews">analyze_reviews</a></code></li>
+<li><code><a title="ccai9012.llm_utils.ask_llm" href="#ccai9012.llm_utils.ask_llm">ask_llm</a></code></li>
+<li><code><a title="ccai9012.llm_utils.build_pdf_retriever" href="#ccai9012.llm_utils.build_pdf_retriever">build_pdf_retriever</a></code></li>
+<li><code><a title="ccai9012.llm_utils.generate_multiple_outputs" href="#ccai9012.llm_utils.generate_multiple_outputs">generate_multiple_outputs</a></code></li>
+<li><code><a title="ccai9012.llm_utils.get_deepseek_api_key" href="#ccai9012.llm_utils.get_deepseek_api_key">get_deepseek_api_key</a></code></li>
+<li><code><a title="ccai9012.llm_utils.initialize_llm" href="#ccai9012.llm_utils.initialize_llm">initialize_llm</a></code></li>
+<li><code><a title="ccai9012.llm_utils.load_business_locations" href="#ccai9012.llm_utils.load_business_locations">load_business_locations</a></code></li>
+<li><code><a title="ccai9012.llm_utils.load_reviews_by_city" href="#ccai9012.llm_utils.load_reviews_by_city">load_reviews_by_city</a></code></li>
+<li><code><a title="ccai9012.llm_utils.parse_markdown_table" href="#ccai9012.llm_utils.parse_markdown_table">parse_markdown_table</a></code></li>
+<li><code><a title="ccai9012.llm_utils.run_qa_chain" href="#ccai9012.llm_utils.run_qa_chain">run_qa_chain</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
+</footer>
+</body>
+</html>
