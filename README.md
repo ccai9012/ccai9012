@@ -64,7 +64,7 @@ Starter kits for final projects covering various AI applications:
 
 ### docs
 Generated documentation explaining each module's functions, classes, and usage examples:
-- Auto-generated HTML documentation for each module in the `ccai9012` library
+- HTML documentation for each module in the `ccai9012` library
 - Usage examples and parameter descriptions for all functions
 - Clear navigation between related modules and components
 - **Access documentation by opening `/docs/ccai9012/index.html` in your web browser**
@@ -100,51 +100,93 @@ conda --version
 ```
 You should see the conda version number displayed, confirming installation.
 
-### 2. Create Virtual Environment
+### 2. Download the Project and Create Environment
 
-A virtual environment isolates the project dependencies from other Python projects. Create a new environment named `ccai9012` with Python 3.9：
+Clone the project repository or download it as a ZIP file, then create the conda environment:
 
+**Option 1: Using Git (Recommended)**
 ```bash
-conda create -n ccai9012 python=3.9
+# Navigate to your desired directory
+cd ~/Desktop  # Or any directory where you want to store the project
+
+# Clone repository (you need Git installed)
+git clone https://github.com/ccai9012/ccai9012.git
+cd ccai9012
+
+# Create environment from environment.yml
+conda env create -f environment.yml
 ```
-When prompted to proceed, type `y` and press Enter.
 
-Activate the environment：
+**Option 2: Download ZIP**
+If you don't have Git installed:
+- Visit the GitHub repository page
+- Click the green "Code" button and select "Download ZIP"
+- Extract the ZIP file to your desired location
+- Open terminal and navigate to the extracted folder:
 ```bash
-# On Windows:
-conda activate ccai9012
+cd path/to/extracted/ccai9012 # use your own path, for example: cd ~/Desktop/ccai9012
+# Create environment from environment.yml
+conda env create -f environment.yml
+```
 
-# On macOS/Linux:
-conda activate ccai9012
+This command will:
+- Create a new conda environment named `ccai9012`
+- Install Python and all required packages
+- Set up all dependencies for the course materials
+
+Activate the environment:
+```bash
+conda activate ccai9012 # ensuring you're in the project directory, with (ccai9012) yourname@device toolkit % displayed in terminal
 ```
 Your command prompt should now show `(ccai9012)` at the beginning of the line, indicating the environment is active.
 
-### 3. Install Dependencies
-
-Clone the project and install dependencies：
-
+Install the ccai9012 package in development mode:
 ```bash
-# Clone repository (you need Git installed)
-cd ~/Desktop  # Or any directory where you want to store the project
-git clone https://github.com/ccai9012/ccai9012.git # Clone the repository
-cd ccai9012 # Enter the project directory
-
-# Install requirements
-pip install -r requirements.txt
-```
-
-If you don't have Git installed:
-- Visit [git-scm.com](https://git-scm.com/downloads) to download and install it
-- Or download the repository as a ZIP file from the GitHub page and extract it to your desired location
-
-Alternative installation (if you don't want to use Git):
-```bash
-# Install the package directly from the current directory
-cd path/to/downloaded/project
+# Make sure you're in the project directory and environment is activated
 pip install -e .
 ```
+This installs the ccai9012 utilities as a package, allowing you to `import ccai9012` from anywhere.
 
-### 4. Verify Installation
+### 3. Set Up Jupyter Notebook Kernel
+
+To use the course materials in Jupyter notebooks, you need to add the conda environment as a Jupyter kernel:
+
+```bash
+# Make sure the ccai9012 environment is activated
+conda activate ccai9012
+
+# Install the environment as a Jupyter kernel
+python -m ipykernel install --user --name ccai9012 --display-name "ccai9012"
+```
+
+### 4. Launch Jupyter Notebook
+
+Now you can start Jupyter Notebook and access all course materials:
+
+```bash
+# Make sure you're in the project directory and environment is activated
+conda activate ccai9012 # activate the environment if not already done
+cd path/to/ccai9012  # Navigate to the project directory if not already there, use your own path
+
+# Launch Jupyter Notebook
+jupyter notebook
+```
+
+**Important Jupyter Setup Steps:**
+
+1. **Jupyter will open in your web browser** (usually at http://localhost:8888)
+2. **Select the correct kernel**: When you open any notebook (.ipynb file):
+   - Click on "Kernel" in the menu bar
+   - Select "Change kernel"
+   - Choose "ccai9012" from the dropdown
+   - This ensures the notebook uses the correct environment with all installed packages
+
+3. **Navigate to course materials**:
+   - `weekly_scripts/` - for weekly course materials
+   - `starter_kits/` - for project starter kits
+   - `docs/ccai9012/` - for documentation (open index.html in browser)
+
+### 5. Verify Installation
 
 Open Python and verify the installation:
 ```bash
