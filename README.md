@@ -186,24 +186,6 @@ jupyter notebook
    - `starter_kits/` - for project starter kits
    - `docs/ccai9012/` - for documentation (open index.html in browser)
 
-### 5. Verify Installation
-
-Open Python and verify the installation:
-```bash
-python
-```
-
-Then in the Python interactive console, type:
-```python
-import ccai9012
-import torch
-import transformers
-```
-
-If no errors occur, the installation is successful. Type `exit()` to exit the Python console.
-
-You can also access the documentation by opening the file `docs/ccai9012/index.html` in your web browser.
-
 ## Common Issues
 
 ### CUDA Setup
