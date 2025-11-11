@@ -70,11 +70,9 @@ Quick overview:
 ### docs
 Comprehensive documentation for the course:
 - **[Reading Materials](docs/reading_material.md)**: Curated articles, papers, and resources organized by learning modules
-- **[📖 Reading Materials](docs/reading_material.md)**: Curated articles, papers, and resources organized by learning modules
-- **[🚀 Starter Kits Guide](docs/starter_kits.md)**: Detailed guides for each project starter kit with use cases, datasets, and required packages
-- **[📊 Datasets Reference](docs/datasets.md)**: Comprehensive dataset catalog with 40+ datasets and direct download links
-- **[📚 API Documentation](docs/ccai9012/index.html)**: HTML documentation for the `ccai9012` library with usage examples and parameter descriptions
-**Access API documentation by opening `/docs/ccai9012/index.html` in your web browser**
+- **[Starter Kits Guide](docs/starter_kits.md)**: Detailed guides for each project starter kit with use cases, datasets, and required packages
+- **[Datasets Reference](docs/datasets.md)**: Comprehensive dataset catalog with 40+ datasets and direct download links
+- **[API Documentation](docs/ccai9012/index.html)**: HTML documentation for the `ccai9012` library with usage examples and parameter descriptions
 
 ## Installation Guide
 
