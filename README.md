@@ -25,8 +25,10 @@ In this repository, you'll find a comprehensive set of resources, including week
 │   └── 5_bias_detection_interpretability/  # Bias detection & interpretability
 │
 ├── ccai9012/            # Core utility library
-├── docs/                # Generated documentation
-│   └── ccai9012/        # Module documentation pages
+├── docs/                # Documentation
+│   ├── Reading_Material.md     # Course reading materials
+│   ├── starter_kits.md         # Detailed starter kit documentation
+│   └── ccai9012/              # Module API documentation
 ├── data/                # Example datasets
 └── models/              # Pre-trained models
 ```
@@ -38,7 +40,11 @@ Weekly course materials including:
 - Related datasets and resources
 
 ### starter_kits
-Starter kits for final projects covering various AI applications:
+Starter kits for final projects covering various AI applications.
+
+**[View detailed starter kit documentation](docs/starter_kits.md)**
+
+Quick overview:
 
 1. **Traditional Generative Models**: Create AI-generated images and patterns using GANs (Generative Adversarial Networks). 
    - `GANmapper` project demonstrates how to generate architectural or urban patterns from existing imagery.
@@ -59,15 +65,16 @@ Starter kits for final projects covering various AI applications:
 
 5. **AI Bias Detection & Interpretability**: Explore ethical AI and model transparency:
    - `credit_audit`: Audit credit decision models for potential biases
-   - `recidivism_prediction`: Analyze fairness in criminal risk assessment systems
 
 
 ### docs
-Generated documentation explaining each module's functions, classes, and usage examples:
-- HTML documentation for each module in the `ccai9012` library
-- Usage examples and parameter descriptions for all functions
-- Clear navigation between related modules and components
-- **Access documentation by opening `/docs/ccai9012/index.html` in your web browser**
+Comprehensive documentation for the course:
+- **[Reading Materials](docs/reading_material.md)**: Curated articles, papers, and resources organized by learning modules
+- **[📖 Reading Materials](docs/reading_material.md)**: Curated articles, papers, and resources organized by learning modules
+- **[🚀 Starter Kits Guide](docs/starter_kits.md)**: Detailed guides for each project starter kit with use cases, datasets, and required packages
+- **[📊 Datasets Reference](docs/datasets.md)**: Comprehensive dataset catalog with 40+ datasets and direct download links
+- **[📚 API Documentation](docs/ccai9012/index.html)**: HTML documentation for the `ccai9012` library with usage examples and parameter descriptions
+**Access API documentation by opening `/docs/ccai9012/index.html` in your web browser**
 
 ## Installation Guide
 
