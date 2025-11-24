@@ -31,18 +31,18 @@ In this repository, you'll find a comprehensive set of resources, including week
 └── models/              # Pre-trained models
 ```
 
-## 📚 Documentation
+## Documentation
 
-**[View Complete Documentation Website →](docs/ccai9012/home.html)**
+**[View Complete Documentation Website →](https://ccai9012.github.io/)**
 
 The complete course documentation is now available as a unified website with the following sections:
 
-- **[Home](docs/ccai9012/home.html)** - Course overview and quick start guide
-- **[Installation Guide](docs/ccai9012/installation.html)** - Step-by-step setup instructions
-- **[Starter Kits](docs/ccai9012/starter_kits.html)** - Five project modules with examples and use cases
-- **[Reading Materials](docs/ccai9012/reading_material.html)** - Curated academic papers and resources
-- **[Datasets Reference](docs/ccai9012/datasets.html)** - Comprehensive catalog of 40+ datasets
-- **[API Documentation](docs/ccai9012/index.html)** - Complete ccai9012 library reference
+- **[Home](https://ccai9012.github.io/)** - Course overview and quick start guide
+- **[Installation Guide](https://ccai9012.github.io/installation.html)** - Step-by-step setup instructions
+- **[Starter Kits](https://ccai9012.github.io/starter_kits.html)** - Five project modules with examples and use cases
+- **[Reading Materials](https://ccai9012.github.io/reading_material.html)** - Curated academic papers and resources
+- **[Datasets Reference](https://ccai9012.github.io/datasets.html)** - Comprehensive catalog of 40+ datasets
+- **[API Documentation](https://ccai9012.github.io/api/index.html)** - Complete ccai9012 library reference
 
 ## Quick Start
 
@@ -75,18 +75,6 @@ python -m ipykernel install --user --name ccai9012 --display-name "ccai9012"
 # Start Jupyter
 jupyter notebook
 ```
-
-### 4. Browse Documentation
-
-Open `docs/ccai9012/home.html` in your web browser to access the complete documentation website.
-
-## Starter Kit Modules
-
-1. **Traditional Generative Models** - GANs for architectural pattern generation
-2. **LLM Structured Output** - Text analysis and knowledge extraction
-3. **Multimodal Reasoning** - Visual-language AI applications
-4. **Computer Vision Models** - Detection, tracking, and segmentation
-5. **Bias Detection & Interpretability** - Ethical AI and model transparency
 
 ## Support & Feedback
 
