@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
+<title>ccai9012 API documentation</title>
+<meta name="description" content="CCAI9012 Toolkit">
+<link rel="stylesheet" href="../docs-style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>
+/* Additional styles for API documentation content */
+.api-content {
+    max-width: none;
+}
+.api-content code {
+    background-color: var(--code-bg);
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.875rem;
+}
+.api-content pre code {
+    background: var(--code-bg);
+    padding: 1rem;
+    display: block;
+}
+.api-content .name {
+    background: #eee;
+    font-size: 0.85em;
+    padding: 5px 10px;
+    display: inline-block;
+    border-radius: 4px;
+}
+.api-content .name:hover {
+    background: #e0e0e0;
+}
+.api-content dl {
+    margin-bottom: 2em;
+}
+.api-content dd {
+    margin: 0 0 1em 2em;
+}
+.api-content .desc {
+    margin-top: 1em;
+}
+</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+    <div class="container">
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h2>CCAI9012 Toolkit</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../home.html">Home</a></li>
+                <li><a href="../installation.html">Installation Guide</a></li>
+                <li><a href="../starter_kits.html">Starter Kits</a></li>
+                <li><a href="../reading_material.html">Reading Materials</a></li>
+                <li><a href="../datasets.html">Datasets Reference</a></li>
+                <li><a href="index.html" class="active">API Documentation</a></li>
+                <li style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--sidebar-hover);">
+                    <span style="color: #94a3b8; font-size: 0.875rem; padding-left: 1.5rem; display: block; margin-bottom: 0.5rem;">API Modules</span>
+                </li>
+                <li style="padding-left: 1rem;"><a href="gan_utils.html">gan_utils</a></li>
+                <li style="padding-left: 1rem;"><a href="llm_utils.html">llm_utils</a></li>
+                <li style="padding-left: 1rem;"><a href="multi_modal_utils.html">multi_modal_utils</a></li>
+                <li style="padding-left: 1rem;"><a href="nn_utils.html">nn_utils</a></li>
+                <li style="padding-left: 1rem;"><a href="sd_utils.html">sd_utils</a></li>
+                <li style="padding-left: 1rem;"><a href="svi_utils.html">svi_utils</a></li>
+                <li style="padding-left: 1rem;"><a href="viz_utils.html">viz_utils</a></li>
+                <li style="padding-left: 1rem;"><a href="yolo_utils.html">yolo_utils</a></li>
+            </ul>
+        </nav>
+
+        <main id="content" class="api-content">
+<header>
+<h1 class="title">Package <code>ccai9012</code></h1>
+</header>
+<section id="section-intro">
+<h1 id="ccai9012-toolkit">CCAI9012 Toolkit</h1>
+<p>This package provides a collection of utilities for AI course projects, offering tools for
+various machine learning, computer vision, and natural language processing tasks.</p>
+<h2 id="modules">Modules</h2>
+<ul>
+<li>llm_utils: Utilities for working with Large Language Models</li>
+<li>nn_utils: Neural network training and evaluation utilities</li>
+<li>sd_utils: Stable Diffusion image generation utilities</li>
+<li>svi_utils: Google Street View Image handling utilities</li>
+<li>viz_utils: Data and model visualization utilities</li>
+<li>yolo_utils: YOLO object detection and tracking utilities</li>
+<li>multi_modal_utils: Multi-modal AI model utilities</li>
+<li>gan_utils: Generative Adversarial Network utilities</li>
+</ul>
+<p>Each module contains specialized functions and classes to simplify common AI tasks,
+from data preparation to model training, evaluation, and visualization.</p>
+</section>
+<section>
+<h2 class="section-title" id="header-submodules">Sub-modules</h2>
+<dl>
+<dt><code class="name"><a title="ccai9012.gan_utils" href="gan_utils.html">ccai9012.gan_utils</a></code></dt>
+<dd>
+<div class="desc"><p>GAN Utilities Module
+…</p></div>
+</dd>
+<dt><code class="name"><a title="ccai9012.llm_utils" href="llm_utils.html">ccai9012.llm_utils</a></code></dt>
+<dd>
+<div class="desc"><p>Large Language Model (LLM) Utilities Module
+…</p></div>
+</dd>
+<dt><code class="name"><a title="ccai9012.multi_modal_utils" href="multi_modal_utils.html">ccai9012.multi_modal_utils</a></code></dt>
+<dd>
+<div class="desc"><p>Multi-Modal Utilities Module
+…</p></div>
+</dd>
+<dt><code class="name"><a title="ccai9012.nn_utils" href="nn_utils.html">ccai9012.nn_utils</a></code></dt>
+<dd>
+<div class="desc"><p>Neural Network Utilities Module
+…</p></div>
+</dd>
+<dt><code class="name"><a title="ccai9012.sd_utils" href="sd_utils.html">ccai9012.sd_utils</a></code></dt>
+<dd>
+<div class="desc"><p>Stable Diffusion Utilities Module
+…</p></div>
+</dd>
+<dt><code class="name"><a title="ccai9012.svi_utils" href="svi_utils.html">ccai9012.svi_utils</a></code></dt>
+<dd>
+<div class="desc"><p>Street View Imagery (SVI) Utilities
+…</p></div>
+</dd>
+<dt><code class="name"><a title="ccai9012.viz_utils" href="viz_utils.html">ccai9012.viz_utils</a></code></dt>
+<dd>
+<div class="desc"><p>Visualization Utilities Module
+…</p></div>
+</dd>
+<dt><code class="name"><a title="ccai9012.yolo_utils" href="yolo_utils.html">ccai9012.yolo_utils</a></code></dt>
+<dd>
+<div class="desc"><p>YOLO Utilities Module
+…</p></div>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+</article>
+</main>
+</div>
+</body>
+</html>

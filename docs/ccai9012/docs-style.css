@@ -1,0 +1,475 @@
+/* CCAI9012 Documentation Stylesheet */
+
+:root {
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+    --sidebar-bg: #1e293b;
+    --sidebar-text: #e2e8f0;
+    --sidebar-hover: #334155;
+    --content-bg: #ffffff;
+    --text-color: #1e293b;
+    --border-color: #e2e8f0;
+    --code-bg: #f8fafc;
+    --card-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #f8fafc;
+}
+<!DOCTYPE html>
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar Styles */
+#sidebar {
+    width: 280px;
+    background-color: var(--sidebar-bg);
+    color: var(--sidebar-text);
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+    padding: 2rem 0;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-header {
+    padding: 0 1.5rem 1.5rem;
+    border-bottom: 1px solid var(--sidebar-hover);
+}
+
+.sidebar-header h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--sidebar-text);
+}
+
+.nav-menu {
+    list-style: none;
+    padding: 1rem 0;
+}
+
+.nav-menu li {
+    margin: 0.25rem 0;
+}
+
+.nav-menu a {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    color: var(--sidebar-text);
+    text-decoration: none;
+    transition: all 0.2s;
+    border-left: 3px solid transparent;
+}
+
+.nav-menu a:hover {
+    background-color: var(--sidebar-hover);
+    border-left-color: var(--primary-color);
+}
+
+.nav-menu a.active {
+    background-color: var(--sidebar-hover);
+    border-left-color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* Main Content Styles */
+#content {
+    flex: 1;
+    margin-left: 280px;
+    padding: 3rem;
+    max-width: 1200px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+}
+
+section {
+    margin-bottom: 3rem;
+}
+
+section h2 {
+    font-size: 1.875rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+section h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-color);
+}
+
+section h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}
+
+ul, ol {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+/* Code Styles */
+code {
+    background-color: var(--code-bg);
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.875rem;
+    color: #e11d48;
+}
+
+pre {
+    background-color: var(--code-bg);
+    padding: 1rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin-bottom: 1rem;
+    border: 1px solid var(--border-color);
+}
+
+pre code {
+    background: none;
+    padding: 0;
+    color: var(--text-color);
+    font-size: 0.875rem;
+}
+
+/* Card Grid */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.card {
+    background: var(--content-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+    margin-top: 0;
+    font-size: 1.25rem;
+    color: var(--primary-color);
+}
+
+.card p {
+    margin-bottom: 1rem;
+    color: #64748b;
+}
+
+/* Button Styles */
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+    font-weight: 500;
+}
+
+.btn:hover {
+    background-color: var(--primary-hover);
+}
+
+/* Module Styles */
+.module {
+    background: var(--content-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--border-color);
+}
+
+.module h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5rem;
+    background: var(--content-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+}
+
+thead {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+th, td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+tbody tr:hover {
+    background-color: var(--code-bg);
+}
+
+th {
+    font-weight: 600;
+}
+
+/* Links */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Alert/Info Boxes */
+.info-box {
+    background-color: #dbeafe;
+    border-left: 4px solid var(--primary-color);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+}
+
+.warning-box {
+    background-color: #fef3c7;
+    border-left: 4px solid #f59e0b;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    #content {
+        margin-left: 0;
+        padding: 1.5rem;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--code-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #94a3b8;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #64748b;
+}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCAI9012 - Home</title>
+    <link rel="stylesheet" href="docs-style.css">
+</head>
+<body>
+    <div class="container">
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h2>CCAI9012 Toolkit</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="home.html" class="active">Home</a></li>
+                <li><a href="installation.html">Installation Guide</a></li>
+                <li><a href="starter_kits.html">Starter Kits</a></li>
+                <li><a href="reading_material.html">Reading Materials</a></li>
+                <li><a href="datasets.html">Datasets Reference</a></li>
+                <li><a href="index.html">API Documentation</a></li>
+            </ul>
+        </nav>
+
+        <main id="content">
+            <header>
+                <h1>CCAI9012 Course Material and Toolkits</h1>
+            </header>
+
+            <section class="intro">
+                <p>Artificial Intelligence is rapidly reshaping how we think, create, and solve problems across disciplines. From automation to creative expression, AI is transforming not only industries but also the way we engage with the world around us. This course explores AI as a tool for critical inquiry, design thinking, and communication—especially in the context of urban life and the built environment.</p>
+
+                <p>In this repository, you'll find a comprehensive set of resources, including weekly course materials and project starter kits, designed to help you harness the power of AI in your work.</p>
+            </section>
+
+            <section class="repo-structure">
+                <h2>Repository Structure</h2>
+                <pre><code>├── weekly_scripts/        # Weekly course code
+│   ├── week1/            # Python basics
+│   ├── week2/            # Data processing & MLP
+│   ├── week3/            # CNN & SVI
+│   ├── week4/            # Image Generation & LLM
+│   ├── week6/            # ML Fundamentals
+│   ├── week7/            # YOLO Object Detection
+│   ├── week8/            # Model Fairness
+│   └── week9/            # ...
+│
+├── starter_kits/         # Project starter kits
+│   ├── 1_traditional_generative_ml/
+│   ├── 2_llm_structure_output/
+│   ├── 3_multimodal_reasoning/
+│   ├── 4_cv_models/
+│   └── 5_bias_detection_interpretability/
+│
+├── ccai9012/            # Core utility library
+├── docs/                # Documentation
+├── data/                # Example datasets
+└── models/              # Pre-trained models</code></pre>
+            </section>
+
+            <section class="quick-links">
+                <h2>Quick Start</h2>
+                <div class="card-grid">
+                    <div class="card">
+                        <h3>📦 Installation</h3>
+                        <p>Set up your development environment with Anaconda and all required dependencies.</p>
+                        <a href="installation.html" class="btn">Get Started →</a>
+                    </div>
+
+                    <div class="card">
+                        <h3>🚀 Starter Kits</h3>
+                        <p>Explore five comprehensive modules for your AI projects, from GANs to bias detection.</p>
+                        <a href="starter_kits.html" class="btn">View Kits →</a>
+                    </div>
+
+                    <div class="card">
+                        <h3>📚 Reading Materials</h3>
+                        <p>Curated academic papers and resources organized by learning modules.</p>
+                        <a href="reading_material.html" class="btn">Read More →</a>
+                    </div>
+
+                    <div class="card">
+                        <h3>💾 Datasets</h3>
+                        <p>Access 40+ datasets with direct download links for your projects.</p>
+                        <a href="datasets.html" class="btn">Browse Datasets →</a>
+                    </div>
+
+                    <div class="card">
+                        <h3>🔧 API Reference</h3>
+                        <p>Detailed documentation for the ccai9012 utility library.</p>
+                        <a href="index.html" class="btn">View API Docs →</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="modules-overview">
+                <h2>Starter Kit Modules</h2>
+
+                <div class="module">
+                    <h3>1. Traditional Generative Models</h3>
+                    <p>Create AI-generated images and patterns using GANs (Generative Adversarial Networks).</p>
+                    <ul>
+                        <li><strong>GANmapper</strong>: Generate architectural or urban patterns from existing imagery</li>
+                    </ul>
+                </div>
+
+                <div class="module">
+                    <h3>2. LLM Structured Output Processing</h3>
+                    <p>Extract and analyze structured information from text using Large Language Models.</p>
+                    <ul>
+                        <li><strong>airbnb_reviews</strong>: Sentiment and feature analysis from accommodation reviews</li>
+                        <li><strong>lit_review</strong>: Automate literature review summaries</li>
+                        <li><strong>pdf_extraction</strong>: Extract structured information from PDFs</li>
+                        <li><strong>urban_sentiment</strong>: Analyze public sentiment about urban spaces</li>
+                    </ul>
+                </div>
+
+                <div class="module">
+                    <h3>3. Multimodal Reasoning Applications</h3>
+                    <p>Combine image and text understanding for advanced AI applications.</p>
+                    <ul>
+                        <li><strong>clip_historic</strong>: Classify architectural styles using CLIP models</li>
+                        <li><strong>gen_images_eval</strong>: Generate and evaluate AI-created images</li>
+                    </ul>
+                </div>
+
+                <div class="module">
+                    <h3>4. Computer Vision Model Applications</h3>
+                    <p>Apply computer vision to urban analysis and real-time detection.</p>
+                    <ul>
+                        <li><strong>svi_housing_price</strong>: Predict housing prices from Street View imagery</li>
+                        <li><strong>webcam_yolo</strong>: Real-time object detection for traffic analysis</li>
+                    </ul>
+                </div>
+
+                <div class="module">
+                    <h3>5. AI Bias Detection & Interpretability</h3>
+                    <p>Explore ethical AI and model transparency.</p>
+                    <ul>
+                        <li><strong>credit_audit</strong>: Audit credit decision models for biases</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
