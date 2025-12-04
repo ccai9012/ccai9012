@@ -9,7 +9,7 @@ This comprehensive guide includes all datasets used in the CCAI9012 starter kits
 | **Building Profile & Road Network** | Computer Vision | Module 1 | Image pairs for GAN training - building profiles and corresponding road networks | [GitHub - GANmapper](https://github.com/ualsg/GANmapper) | ~500MB | MIT |
 | **Yelp Open Dataset** | Text Analysis | Module 2 | Business reviews, user data, and check-ins for sentiment analysis | [Yelp Dataset](https://www.yelp.com/dataset) | ~10GB | Academic Use |
 | **Inside Airbnb Dataset** | Text Analysis | Module 2 | Airbnb listings and reviews data for accommodation analysis | [Inside Airbnb](https://insideairbnb.com/get-the-data/) | Varies by city | CC0 1.0 |
-| **Energy Action Plans** | Document Analysis | Module 2 | PDF documents containing tribal energy action plans | [CCHRC](https://cchrc.org/) | ~100MB | Public Domain |
+| **Energy Action Plans** | Document Analysis | Module 2 | PDF documents containing energy action plans | [CCHRC](https://cchrc.org/) | ~100MB | Public Domain |
 | **Google Street View Imagery** | Computer Vision | Module 3 & 4 | Street-level imagery for urban analysis and perception scoring | [Google Maps API](https://developers.google.com/maps/documentation/streetview) | API-based | Commercial |
 | **Webcam Data** | Computer Vision | Module 4 | Real-time webcam feeds for pedestrian behavior analysis | [Skyline Webcams](https://www.skylinewebcams.com/en.html) | Streaming | Varies |
 | **California Housing Prices** | Machine Learning | Module 4 | Housing price data for regression analysis | [Scikit-learn](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.fetch_california_housing.html) | ~1MB | BSD |

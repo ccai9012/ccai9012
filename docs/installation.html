@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCAI9012 - Installation Guide</title>
+    <link rel="stylesheet" href="docs-style.css">
+</head>
+<body>
+    <div class="container">
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h2>CCAI9012</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="timetable.html">Timetable</a></li>
+                <li><a href="installation.html" class="active">Installation Guide</a></li>
+                <li><a href="starter_kits.html">Starter Kits</a></li>
+                <li><a href="reading_material.html">Reading Materials</a></li>
+                <li><a href="datasets.html">Datasets Reference</a></li>
+                <li><a href="api/index.html">API Documentation</a></li>
+            </ul>
+        </nav>
+
+        <main id="content">
+<h1>Installation Guide</h1>
+<p>This guide will help you set up the toolkit on your computer, even if you're new to programming or AI.</p>
+<h2>1. Install Anaconda</h2>
+<p>First, install Anaconda, a Python data science platform that includes necessary tools and package management.</p>
+<h3>Download Anaconda</h3>
+<ol>
+<li>Visit <a href="https://www.anaconda.com/products/distribution">Anaconda's website</a></li>
+<li>Download the installer for your operating system:<br />
+   - <strong>Windows</strong>: Download the .exe installer (Select "64-Bit Graphical Installer")<br />
+   - <strong>macOS</strong>: Download the .pkg installer (Select "64-Bit Graphical Installer")<br />
+   - <strong>Linux</strong>: Download the .sh installer</li>
+</ol>
+<h3>Run the Installer</h3>
+<ul>
+<li><strong>Windows</strong>: Double-click the .exe file and follow the prompts. <strong>Important</strong>: Select "Add Anaconda to my PATH environment variable" during installation.</li>
+<li><strong>macOS</strong>: Double-click the .pkg file and follow the installation wizard.</li>
+<li><strong>Linux</strong>: Open a terminal, navigate to the download location, and run:<br />
+<code>bash
+  bash Anaconda3-xxxx.xx-Linux-x86_64.sh</code><br />
+  (replace xxxx.xx with the version you downloaded)</li>
+</ul>
+<h3>Verify Installation</h3>
+<p><strong>1. Open Terminal:</strong></p>
+<ul>
+<li>On <strong>Windows</strong>: Press <code>Win + S</code>, type <code>Anaconda Prompt</code>, and select "Anaconda Prompt (anaconda3)".</li>
+<li>On <strong>macOS</strong>: Press <code>Command + Space</code>, type <code>Terminal</code>, and press Enter.</li>
+<li>On <strong>Linux</strong>: Open your terminal application.</li>
+</ul>
+<p><strong>2. Copy and paste the following command into the terminal, then press Enter:</strong></p>
+<pre><code class="language-bash">conda --version
+</code></pre>
+<p>You should see the conda version number displayed, confirming installation.</p>
+<h2>2. Download the Project and Create Environment</h2>
+<p>Clone the project repository or download it as a ZIP file, then create the conda environment:</p>
+<h3>Option 1: Using Git (Recommended)</h3>
+<pre><code class="language-bash"># Navigate to your desired directory
+cd ~/Desktop  # Or any directory where you want to store the project
+
+# Clone repository (you need Git installed)
+git clone https://github.com/ccai9012/ccai9012.git
+cd ccai9012
+
+# Create environment from environment.yml
+conda env create -f environment.yml
+</code></pre>
+<h3>Option 2: Download ZIP</h3>
+<p>If you don't have Git installed:</p>
+<ul>
+<li>Visit the GitHub repository page</li>
+<li>Click the green "Code" button and select "Download ZIP"</li>
+<li>Extract the ZIP file to your desired location</li>
+<li>Open terminal and navigate to the extracted folder:</li>
+</ul>
+<pre><code class="language-bash">cd path/to/extracted/ccai9012 # use your own path, for example: cd ~/Desktop/ccai9012
+# Create environment from environment.yml
+conda env create -f environment.yml
+</code></pre>
+<p>This command will:</p>
+<ul>
+<li>Create a new conda environment named <code>ccai9012</code></li>
+<li>Install Python and all required packages</li>
+<li>Set up all dependencies for the course materials</li>
+</ul>
+<h3>Activate the Environment</h3>
+<pre><code class="language-bash">conda activate ccai9012 # ensuring you're in the project directory
+</code></pre>
+<p>Your command prompt should now show <code>(ccai9012)</code> at the beginning of the line, indicating the environment is active.</p>
+<h3>Install the ccai9012 Package</h3>
+<p>Install the ccai9012 package in development mode:</p>
+<pre><code class="language-bash"># Make sure you're in the project directory and environment is activated
+pip install -e .
+</code></pre>
+<p>This installs the ccai9012 utilities as a package, allowing you to <code>import ccai9012</code> from anywhere.</p>
+<h2>3. Set Up Jupyter Notebook Kernel</h2>
+<p>To use the course materials in Jupyter notebooks, you need to add the conda environment as a Jupyter kernel:</p>
+<pre><code class="language-bash"># Make sure the ccai9012 environment is activated
+conda activate ccai9012
+
+# Install the environment as a Jupyter kernel
+python -m ipykernel install --user --name ccai9012 --display-name &quot;ccai9012&quot;
+</code></pre>
+<h2>4. Launch Jupyter Notebook</h2>
+<p>Now you can start Jupyter Notebook and access all course materials:</p>
+<pre><code class="language-bash"># Make sure you're in the project directory and environment is activated
+conda activate ccai9012 # activate the environment if not already done
+cd path/to/ccai9012  # Navigate to the project directory if not already there
+
+# Launch Jupyter Notebook
+jupyter notebook
+</code></pre>
+<h3>Important Jupyter Setup Steps</h3>
+<ol>
+<li><strong>Jupyter will open in your web browser</strong> (usually at http://localhost:8888)</li>
+<li><strong>Select the correct kernel</strong>: When you open any notebook (.ipynb file):<br />
+   - Click on "Kernel" in the menu bar<br />
+   - Select "Change kernel"<br />
+   - Choose "ccai9012" from the dropdown<br />
+   - This ensures the notebook uses the correct environment with all installed packages</li>
+<li><strong>Navigate to course materials</strong>:<br />
+   - <code>weekly_scripts/</code> - for weekly course materials<br />
+   - <code>starter_kits/</code> - for project starter kits<br />
+   - <code>docs/ccai9012/</code> - for documentation (open index.html in browser)</li>
+</ol>
+<h2>Common Issues</h2>
+<h3>CUDA Setup</h3>
+<p>If you have an NVIDIA GPU, it's recommended to set up CUDA for GPU acceleration:</p>
+<h4>1. Check CUDA compatibility:</h4>
+<pre><code class="language-bash">nvidia-smi
+</code></pre>
+<p>This will display your GPU and driver information.</p>
+<h4>2. Install matching CUDA version:</h4>
+<pre><code class="language-bash">conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
+</code></pre>
+<h3>Common Error Messages</h3>
+<ol>
+<li><strong>ModuleNotFoundError</strong>: If you see "No module named 'xyz'", run: <code>pip install xyz</code></li>
+<li><strong>DLL Load Failed</strong>: On Windows, reinstall PyTorch with the correct CUDA version</li>
+<li><strong>Out of Memory</strong>: Reduce batch sizes in your code or use CPU mode</li>
+</ol>
+<h2>Support &amp; Feedback</h2>
+<p>For questions or suggestions:</p>
+<ol>
+<li>Submit an issue on our GitHub repository</li>
+<li>Email [course_email]</li>
+<li>Post in the course forum</li>
+</ol>
+        </main>
+    </div>
+</body>
+</html>

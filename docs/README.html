@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCAI9012 - Readme</title>
+    <link rel="stylesheet" href="docs-style.css">
+</head>
+<body>
+    <div class="container">
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h2>CCAI9012</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="timetable.html">Timetable</a></li>
+                <li><a href="installation.html">Installation Guide</a></li>
+                <li><a href="starter_kits.html">Starter Kits</a></li>
+                <li><a href="reading_material.html">Reading Materials</a></li>
+                <li><a href="datasets.html">Datasets Reference</a></li>
+                <li><a href="api/index.html">API Documentation</a></li>
+            </ul>
+        </nav>
+
+        <main id="content">
+<h1>Markdown to HTML Converter</h1>
+<p>This is a simple, lightweight tool to automatically convert Markdown files into HTML files with a consistent style and navigation bar.</p>
+<h2>Usage</h2>
+<h3>Method 1: Convert all Markdown files (recommended)</h3>
+<pre><code class="language-bash">cd docs
+python md_to_html.py
+</code></pre>
+<p>This will automatically convert all <code>.md</code> files under the <code>docs/</code> directory into HTML and save them to the <code>docs/ccai9012/</code> directory.</p>
+<h3>Method 2: Convert a single file</h3>
+<pre><code class="language-bash">python md_to_html.py datasets.md
+</code></pre>
+<h2>Features</h2>
+<ul>
+<li>✅ Automatically maintains a consistent navigation bar and style</li>
+<li>✅ Supports Markdown tables</li>
+<li>✅ Supports code block syntax highlighting</li>
+<li>✅ Automatically sets the correct page title</li>
+<li>✅ Automatically highlights the current page in the navigation</li>
+</ul>
+<h2>Workflow</h2>
+<ol>
+<li>Edit your Markdown files (e.g., <code>datasets.md</code>)</li>
+<li>Run <code>python md_to_html.py</code></li>
+<li>The HTML files are automatically updated in the <code>ccai9012/</code> directory</li>
+<li>Open the HTML file in your browser to view the result</li>
+</ol>
+<h2>Dependencies</h2>
+<p>You need the <code>markdown</code> library:</p>
+<pre><code class="language-bash">pip install markdown
+</code></pre>
+<h2>Notes</h2>
+<ul>
+<li>Markdown files should be placed in the <code>docs/</code> directory</li>
+<li>HTML output will be saved to the <code>docs/ccai9012/</code> directory</li>
+<li>Make sure the <code>docs-style.css</code> file exists in the <code>ccai9012/</code> directory</li>
+</ul>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCAI9012 - Starter Kits</title>
+    <link rel="stylesheet" href="docs-style.css">
+</head>
+<body>
+    <div class="container">
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h2>CCAI9012</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="timetable.html">Timetable</a></li>
+                <li><a href="installation.html">Installation Guide</a></li>
+                <li><a href="starter_kits.html" class="active">Starter Kits</a></li>
+                <li><a href="reading_material.html">Reading Materials</a></li>
+                <li><a href="datasets.html">Datasets Reference</a></li>
+                <li><a href="api/index.html">API Documentation</a></li>
+            </ul>
+        </nav>
+
+        <main id="content">
+<h1>Starter Kits Documentation</h1>
+<p>This document provides detailed information about all five starter kit modules available for your final projects. Each module includes comprehensive components, example use cases, and required packages.</p>
+<h2>Module 1: Traditional Generative ML</h2>
+<h3>Overview</h3>
+<p><strong>Category:</strong> Synthetic Data Generation &amp; Prediction</p>
+<p><strong>Modular Components:</strong><br />
+- CycleGAN Training Pipeline<br />
+- Custom Dataset Loader<br />
+- Image Augmentation<br />
+- Text2Image Prompt Interface</p>
+<h3>Use Cases</h3>
+<ul>
+<li>Predicting dockless bike-sharing demand based on satellite image</li>
+<li>Riding activity heatmap generation with urban map</li>
+<li>Solar radiation prediction at the urban-scale</li>
+</ul>
+<h3>Code Example: Building Profile Layout Generation from Road Network</h3>
+<p><strong>Content:</strong><br />
+- Use Pix2Pix style GAN model to generate building profile layout from road network<br />
+- Illustrate the whole pipeline of GAN, including data processing, training, inference and evaluate<br />
+- Data augmentation to deal with insufficient data volume</p>
+<p><strong>Dataset:</strong><br />
+- Building profile and road network dataset (image pair)<br />
+- Source: https://github.com/ualsg/GANmapper</p>
+<p><strong>Required Packages:</strong> PyTorch, torchvision, CycleGAN, Pillow, matplotlib</p>
+<hr />
+<h2>Module 2: LLM for Structuring Information</h2>
+<h3>Overview</h3>
+<p><strong>Category:</strong> Unstructured Text Analysis &amp; Knowledge Structuring</p>
+<p><strong>Modular Components:</strong><br />
+- Text Preprocessing Pipeline<br />
+- LLM API Calling<br />
+- LLM Embedding Extractor<br />
+- Vector Clustering<br />
+- Q&amp;A over Documents<br />
+- Heatmap Visualization<br />
+- Wordcloud generation</p>
+<h3>Use Cases</h3>
+<ul>
+<li>How do short-term rental reviews reflect neighborhood livability over time?</li>
+<li>Can we detect major sentiment shifts before and after a major policy announcement or public event?</li>
+<li>How is generative AI affecting job market? (Job market analysis across industry and time)</li>
+<li>Can we use LLMs to detect gaps between declared policy priorities and proposed implementation measures in urban planning documents?</li>
+<li>How are terms like "resilience", "sustainability", or "equity" defined and operationalized differently across documents?</li>
+</ul>
+<h3>Code Examples</h3>
+<h4>Urban Sentiment Classification</h4>
+<p><strong>Content:</strong><br />
+- Extract structured sentiment (location, themes, polarity) from reviews using LLM<br />
+- Use NER + classification<br />
+- Create sentiment maps to inform urban design</p>
+<p><strong>Dataset:</strong><br />
+- Yelp open dataset<br />
+- Source: https://business.yelp.com/data/resources/open-dataset/</p>
+<p><strong>Required Packages:</strong> LangChain, DeepSeek, transformers, pandas, json</p>
+<h4>Airbnb Reviews Analysis</h4>
+<p><strong>Content:</strong><br />
+- Collect Airbnb housing and review data (public dataset Inside Airbnb)<br />
+- Classification of reviews' sentiments of different aspects (location, host, facility)<br />
+- Create Airbnb aspect-wise impression heatmap and wordcloud</p>
+<p><strong>Dataset:</strong><br />
+- Airbnb review dataset<br />
+- Source: https://insideairbnb.com/get-the-data/</p>
+<h4>Energy Action Plan PDF Structuring</h4>
+<p><strong>Content:</strong><br />
+- Extract building/energy info from Energy Action Plans (PDFs)<br />
+- Summarize content into JSON format for analysis<br />
+- Enable comparison across tribal regions over time</p>
+<p><strong>Dataset:</strong><br />
+- Energy Action Plans documents<br />
+- Source: https://cchrc.org/</p>
+<p><strong>Required Packages:</strong> LangChain, PyMuPDF, pdfplumber, transformers, pandas</p>
+<h4>Literature Review of Topics</h4>
+<p><strong>Content:</strong><br />
+- Webcrawl website for relevant papers<br />
+- Go through document by document with specific questions<br />
+- Identify insights &amp; keywords<br />
+- Catalogue &amp; represent findings</p>
+<p><strong>Dataset:</strong> Collection of literatures from specific topic</p>
+<hr />
+<h2>Module 3: Multimodal Reasoning</h2>
+<h3>Overview</h3>
+<p><strong>Category:</strong> Visual-Language Reasoning</p>
+<p><strong>Modular Components:</strong><br />
+- Model Initialization (API calling/Local implementation)<br />
+- Image Captioning<br />
+- Keyword Extraction from Text</p>
+<h3>Use Cases</h3>
+<ul>
+<li>Do AI models associate certain architectural styles with particular geographic regions unfairly?</li>
+<li>Urban light pollution areas spotting based on facade material analysis</li>
+<li>Can we visualize gentrification through facade transformation using historical vs. recent street views?</li>
+<li>Thermal defect spotting based on facade and indoor infrared images</li>
+</ul>
+<h3>Code Examples</h3>
+<h4>Material Bias in AI-generated Architectural Images</h4>
+<p><strong>Content:</strong><br />
+- Use Text2Image to generate images of buildings<br />
+- Generate lots of images<br />
+- Parse images</p>
+<h4>Assessment of Conservation Status in Urban Historic Districts</h4>
+<p><strong>Content:</strong><br />
+- Categorizing SVIs of historic districts with CLIP<br />
+- Evaluating mixing index of historic and added-on buildings</p>
+<p><strong>Dataset:</strong><br />
+- Google Street View Imagery (SVI)<br />
+- Source: Google Map API</p>
+<hr />
+<h2>Module 4: CV Models (Segmentation, Detection, Tracking)</h2>
+<h3>Overview</h3>
+<p><strong>Category:</strong> Perception &amp; Prediction from Visual Data</p>
+<p><strong>Modular Components:</strong><br />
+- Object Detection/Tracking with YOLO<br />
+- Semantic Segmentation Model<br />
+- Trajectory Extraction<br />
+- Visualization</p>
+<h3>Use Cases</h3>
+<ul>
+<li>What factors influence walking behavior?</li>
+<li>How does visual cleanliness (graffiti, trash, lighting) relate to perceived safety?</li>
+<li>Can we predict CO2 emission using the SVIs?</li>
+</ul>
+<h3>Code Examples</h3>
+<h4>Pedestrian Behavior Analysis in Public Spaces</h4>
+<p><strong>Content:</strong><br />
+- Detect pedestrians using YOLO<br />
+- Track movement using DeepSORT<br />
+- Analyze flow, dwell time, and walkability</p>
+<p><strong>Dataset:</strong><br />
+- Webcam data<br />
+- Source: https://www.skylinewebcams.com/en.html</p>
+<p><strong>Required Packages:</strong> YOLOv5, OpenCV, DeepSORT, numpy, matplotlib</p>
+<h4>SVI-Based Housing Price Prediction</h4>
+<p><strong>Content:</strong><br />
+- Use subjective perception scores (e.g., cleanliness, greenery) on SVI<br />
+- Combine CV scoring with regression to predict housing price<br />
+- Visual quality → real estate value linkage</p>
+<p><strong>Datasets:</strong><br />
+- Google Street View Imagery (SVI) from Google Map API<br />
+- California housing price dataset from sklearn.datasets</p>
+<p><strong>Required Packages:</strong> OpenCV, scikit-learn, pandas, matplotlib, PyTorch</p>
+<hr />
+<h2>Module 5: Bias Detection &amp; Interpretability</h2>
+<h3>Overview</h3>
+<p><strong>Category:</strong> Bias Detection</p>
+<p><strong>Modular Components:</strong><br />
+- Fairness Metrics Evaluator<br />
+- Model Explainer (SHAP/LIME)<br />
+- Feature Attribution Visualizer</p>
+<h3>Use Cases</h3>
+<ul>
+<li>Do public service recommendation models (e.g., bus stop placement, streetlight allocation) tend to ignore low-density or low-income areas?</li>
+<li>Why citizens' application for housing subsidies or public services was deprioritized?</li>
+<li>Do predictive maintenance systems for infrastructure (e.g., water leaks, power outages) prioritize certain zones? Is this optimization fair?</li>
+<li>In citizen feedback systems (e.g., 311 complaints), are certain types of reports more likely to trigger response recommendations than others? Why?</li>
+</ul>
+<h3>Code Example: Credit Decision Bias Auditing</h3>
+<p><strong>Content:</strong><br />
+- Analyze credit data using LLM and interpretable ML<br />
+- Detect bias in approval logic (e.g., income, gender)<br />
+- Apply SHAP and counterfactual fairness methods</p>
+<p><strong>Datasets:</strong><br />
+- German Dataset (credit data) from AIF Fairness 360<br />
+- COMPAS dataset (pre-prepared from https://www.kaggle.com/datasets/danofer/compass)</p>
+<p><strong>Required Packages:</strong> Fairlearn, SHAP, pandas, scikit-learn, transformers</p>
+<hr />
+<h2>Getting Started</h2>
+<ol>
+<li><strong>Choose your module</strong> based on your interests and project goals</li>
+<li><strong>Review the use cases</strong> to understand potential applications</li>
+<li><strong>Check the required packages</strong> and install them in your environment</li>
+<li><strong>Access the starter code</strong> in the corresponding <code>starter_kits/</code> directory</li>
+<li><strong>Download the datasets</strong> from the provided sources</li>
+<li><strong>Follow the code examples</strong> to understand the implementation approach</li>
+</ol>
+<p>For technical support and detailed API documentation, refer to the main <a href="../README.md">README.md</a> and the <a href="ccai9012/index.html">ccai9012 library documentation</a>.</p>
+        </main>
+    </div>
+</body>
+</html>
