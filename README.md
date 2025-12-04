@@ -37,7 +37,7 @@ In this repository, you'll find a comprehensive set of resources, including week
 
 The complete course documentation is now available as a unified website with the following sections:
 
-- **[Home](https://ccai9012.github.io/)** - Course overview and quick start guide
+- **[Home](https://ccai9012.github.io/ccai9012/index.html)** - Course overview and quick start guide
 - **[Installation Guide](https://ccai9012.github.io/ccai9012/installation.html)** - Step-by-step setup instructions
 - **[Starter Kits](https://ccai9012.github.io/ccai9012/starter_kits.html)** - Five project modules with examples and use cases
 - **[Reading Materials](https://ccai9012.github.io/ccai9012/reading_material.html)** - Curated academic papers and resources
