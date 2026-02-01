@@ -30,9 +30,9 @@ Your job is to understand its walls, break through them, and make it answer to y
 
 | Class | Title | What Happens | What You Learn |
 |-------|-------|--------------|----------------|
-| 1 | [Walls & Friction](https://caadfutures2025.hku.hk/ccgl9065/genai/class1.html#/title-slide) | You discover what AI resists | "Someone built constraints into this" |
-| 2 | [Breaking Through](https://caadfutures2025.hku.hk/ccgl9065/genai/class2.html#/title-slide) | You bypass guardrails, witness hallucinations | "The constraints are external and leaky. AI has no internal commitment to anything." |
-| 3 | [Your Signature](https://caadfutures2025.hku.hk/ccgl9065/genai/class3.html#/title-slide) | You create something that couldn't come from the machine alone | "AI follows patterns. If I don't fight, I become average. The responsibility is mine." |
+| 1 | [Walls & Friction](class1.html) | You discover what AI resists | "Someone built constraints into this" |
+| 2 | [Breaking Through](class2.html) | You bypass guardrails, witness hallucinations | "The constraints are external and leaky. AI has no internal commitment to anything." |
+| 3 | [Your Signature](class3.html) | You create something that couldn't come from the machine alone | "AI follows patterns. If I don't fight, I become average. The responsibility is mine." |
 
 
 <div style="height:1.5rem"></div>

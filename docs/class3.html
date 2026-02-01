@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCAI9012 - Class3</title>
+    <link rel="stylesheet" href="docs-style.css">
+</head>
+<body>
+    <div class="container">
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h2>CCAI9012</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="timetable.html">Course Plan</a></li>
+                <li><a href="Assessment.html">Assessment</a></li>
+                <li class="sub-item"><a href="casestudy.html">Case Study</a></li>
+                <li class="sub-item"><a href="course_project.html">Course Project</a></li>
+                <li><a href="reading_material.html">Reading Materials</a></li>
+                <li><a href="pi_responsibility.html">I. Responsibility & AI</a></li>
+                <li><a href="pii_mechanics.html">II. Mechanics of AI</a></li>
+                <li><a href="piii_data_and_risks.html">III. Datasets & Risks of AI</a></li>
+                <li><a href="installation.html">Installation Guide</a></li>
+                <li><a href="starter_kits/index.html">Starter Kits</a></li>
+                <li><a href="datasets.html">Datasets Reference</a></li>
+            </ul>
+        </nav>
+
+        <main id="content">
+<hr />
+<p>title: &ldquo;GenAI Module&rdquo;
+subtitle: &ldquo;Class 3: Your Signature&rdquo;
+author: &ldquo;Dr. Hongshan Guo&rdquo;
+format:
+  revealjs:
+    slide-level: 2
+    center: true
+    slide-number: true
+    theme: simple
+    width: 1600
+    height: 1300
+    embed-resources: true
+    incremental: false</p>
+<hr />
+<h1>Session 3A: Content</h1>
+<hr />
+<h2>The Story So Far</h2>
+<p>::: {style=&rdquo;font-size: 1.8em; line-height: 2;&rdquo;}
+- <strong>Class 1:</strong> You found the walls.
+- <strong>Class 2:</strong> You broke through and found&hellip; <strong>nothing</strong>.
+- <strong>Class 3:</strong> So what? What does this mean for how you <strong>use AI</strong>?
+:::</p>
+<hr />
+<h2></h2>
+<p>::: {style=&rdquo;font-size: 2.5em; font-weight: bold; color: #8e44ad;&rdquo;}
+No agency. No values.
+:::</p>
+<p>::: {style=&rdquo;font-size: 2em; margin-top: 40px;&rdquo;}
+Just patterns.
+:::</p>
+<hr />
+<h1>The Convergence Problem</h1>
+<hr />
+<h2></h2>
+<p>::: {style=&rdquo;font-size: 2em; line-height: 1.8;&rdquo;}
+AI outputs are not &ldquo;original.&rdquo;</p>
+<p>They are the <strong>statistical average</strong> of training data.
+:::</p>
+<hr />
+<h2></h2>
+<p>::: {style=&rdquo;font-size: 2.5em; font-weight: bold; color: #c0392b;&rdquo;}
+Every output is the most likely next token,
+:::</p>
+<p>::: {style=&rdquo;font-size: 2.5em; font-weight: bold; color: #c0392b; margin-top: 20px;&rdquo;}
+repeated.
+:::</p>
+<hr />
+<h2></h2>
+<p>::: {style=&rdquo;font-size: 1.8em; line-height: 1.8;&rdquo;}
+When you accept defaults, you are accepting the <strong>average</strong> of everything that came before.
+:::</p>
+<p>::: {style=&rdquo;font-size: 2em; font-weight: bold; color: #e67e22; margin-top: 40px;&rdquo;}
+You are sliding into a groove worn by millions of previous users.
+:::</p>
+<hr />
+<h1>The Real Danger</h1>
+<hr />
+<h2></h2>
+<p>::: {style=&rdquo;font-size: 2em; line-height: 1.8;&rdquo;}
+The <strong>legal</strong> risks are real.</p>
+<p>The <strong>ethical</strong> risks are real.
+:::</p>
+<p>::: {style=&rdquo;font-size: 1.8em; margin-top: 40px; color: #7f8c8d;&rdquo;}
+But there&rsquo;s a fourth risk nobody talks about:
+:::</p>
+<hr />
+<h2></h2>
+<p>::: {style=&rdquo;font-size: 3em; font-weight: bold; color: #c0392b;&rdquo;}
+Creative Risk:
+:::</p>
+<p>::: {style=&rdquo;font-size: 3.5em; font-weight: bold; color: #8e44ad; margin-top: 30px;&rdquo;}
+You vanish into the mean.
+:::</p>
+<hr />
+<h2>The Questions</h2>
+<p>::: {style=&rdquo;font-size: 1.8em; line-height: 2; margin-top: 30px;&rdquo;}
+- If everyone uses the same tools trained on the same data, what happens to <strong>range</strong>?</p>
+<ul>
+<li>
+<p>Does the space of human creative output <strong>expand</strong> or <strong>contract</strong>?</p>
+</li>
+<li>
+<p>When you use AI unreflectively, are you <strong>creating</strong>—or just <strong>retrieving</strong>?
+:::</p>
+</li>
+</ul>
+<hr />
+<h1>The Reframe</h1>
+<hr />
+<h2>Old Frame → New Frame</h2>
+<p>::: {style=&rdquo;font-size: 1.4em;&rdquo;}
+| Old Frame | New Frame |
+|-----------|-----------|
+| &ldquo;Use AI responsibly&rdquo; | &ldquo;Make AI answer to <strong>your standards</strong>&rdquo; |
+| &ldquo;Follow the rules&rdquo; | &ldquo;<strong>Understand</strong> the rules well enough to navigate them&rdquo; |
+| &ldquo;Don&rsquo;t break things&rdquo; | &ldquo;Know where the walls are, and <strong>decide when to push</strong>&rdquo; |
+| &ldquo;AI as collaborator&rdquo; | &ldquo;AI as <strong>current</strong>—it will drag you to average unless you fight&rdquo; |
+:::</p>
+<hr />
+<h2></h2>
+<p>::: {style=&rdquo;font-size: 2.5em; font-weight: bold; color: #27ae60;&rdquo;}
+AI as current—
+:::</p>
+<p>::: {style=&rdquo;font-size: 2em; margin-top: 30px;&rdquo;}
+it will drag you to average
+:::</p>
+<p>::: {style=&rdquo;font-size: 2.5em; font-weight: bold; color: #c0392b; margin-top: 30px;&rdquo;}
+unless you fight.
+:::</p>
+<hr />
+<h1>What Makes Work &ldquo;Yours&rdquo;?</h1>
+<hr />
+<h2></h2>
+<p>::: {style=&rdquo;font-size: 2.5em; font-weight: bold; color: #2c3e50;&rdquo;}
+If AI can write, what&rsquo;s the value of your writing?
+:::</p>
+<p>::: {style=&rdquo;font-size: 2.5em; font-weight: bold; color: #2c3e50; margin-top: 40px;&rdquo;}
+If AI can design, what&rsquo;s the value of your design?
+:::</p>
+<hr />
+<h2></h2>
+<p>::: {style=&rdquo;font-size: 2.5em; font-weight: bold; color: #8e44ad;&rdquo;}
+What can you bring that the machine cannot?
+:::</p>
+<hr />
+<h2>Your Signature</h2>
+<p>::: {style=&rdquo;display: flex; flex-wrap: wrap; justify-content: space-around; margin-top: 30px;&rdquo;}
+::: {style=&rdquo;width: 30%; background: #e74c3c; color: white; padding: 25px; border-radius: 10px; margin: 10px; text-align: center;&rdquo;}
+::: {style=&rdquo;font-size: 1.4em; font-weight: bold;&rdquo;}
+Intentionality
+:::
+You chose this, for reasons
+:::</p>
+<p>::: {style=&rdquo;width: 30%; background: #e67e22; color: white; padding: 25px; border-radius: 10px; margin: 10px; text-align: center;&rdquo;}
+::: {style=&rdquo;font-size: 1.4em; font-weight: bold;&rdquo;}
+Lived Experience
+:::
+The machine has never lived
+:::</p>
+<p>::: {style=&rdquo;width: 30%; background: #27ae60; color: white; padding: 25px; border-radius: 10px; margin: 10px; text-align: center;&rdquo;}
+::: {style=&rdquo;font-size: 1.4em; font-weight: bold;&rdquo;}
+Taste
+:::
+Knowing what to reject
+:::</p>
+<p>::: {style=&rdquo;width: 30%; background: #3498db; color: white; padding: 25px; border-radius: 10px; margin: 10px; text-align: center;&rdquo;}
+::: {style=&rdquo;font-size: 1.4em; font-weight: bold;&rdquo;}
+Risk-taking
+:::
+Willingness to fail
+:::</p>
+<p>::: {style=&rdquo;width: 30%; background: #9b59b6; color: white; padding: 25px; border-radius: 10px; margin: 10px; text-align: center;&rdquo;}
+::: {style=&rdquo;font-size: 1.4em; font-weight: bold;&rdquo;}
+Idiosyncrasy
+:::
+The weird thing only you would do
+:::</p>
+<p>::: {style=&rdquo;width: 30%; background: #34495e; color: white; padding: 25px; border-radius: 10px; margin: 10px; text-align: center;&rdquo;}
+::: {style=&rdquo;font-size: 1.4em; font-weight: bold;&rdquo;}
+Accountability
+:::
+You stand behind it
+:::
+:::</p>
+<hr />
+<h1>Session 3B: Activity</h1>
+<hr />
+<h2>Quick Exercise: Your Avatar (10 min)</h2>
+<p>::: {style=&rdquo;font-size: 1.6em; line-height: 1.8;&rdquo;}
+Before we split into activities, everyone try this:
+:::</p>
+<p>::: {style=&rdquo;font-size: 1.5em; line-height: 2; margin-top: 20px;&rdquo;}
+1. Open any AI image tool (DALL-E, Midjourney, etc.)
+2. Prompt: <strong>&ldquo;Create a logo or avatar for me&rdquo;</strong>
+3. Look at what you get.
+:::</p>
+<hr />
+<h2>What Did You Get?</h2>
+<p>::: {style=&rdquo;font-size: 1.8em; line-height: 2;&rdquo;}
+- What&rsquo;s <strong>generic</strong> about it?
+- What&rsquo;s <strong>missing</strong> that would make it <em>you</em>?
+- What would you have to <strong>add, change, or fight for</strong>?
+:::</p>
+<p>::: {style=&rdquo;font-size: 1.6em; margin-top: 40px; background: #f39c12; padding: 20px; border-radius: 10px;&rdquo;}
+This is convergence in action. The AI gave you the <strong>average avatar</strong>.</p>
+<p>Now you know what you&rsquo;re pushing against.
+:::</p>
+<hr />
+<h2>Now Choose Your Path</h2>
+<p>::: {style=&rdquo;display: flex; justify-content: space-around; margin-top: 40px;&rdquo;}
+::: {style=&rdquo;text-align: center; width: 40%; background: #3498db; color: white; padding: 30px; border-radius: 10px;&rdquo;}
+::: {style=&rdquo;font-size: 1.8em; font-weight: bold;&rdquo;}
+Option A
+:::
+Design Sprint (group)
+:::</p>
+<p>::: {style=&rdquo;text-align: center; width: 40%; background: #27ae60; color: white; padding: 30px; border-radius: 10px;&rdquo;}
+::: {style=&rdquo;font-size: 1.8em; font-weight: bold;&rdquo;}
+Option B
+:::
+Individual Launch (solo)
+:::
+:::</p>
+<hr />
+<h2>Option A: Design Sprint</h2>
+<p>::: {style=&rdquo;font-size: 1.8em; font-weight: bold; color: #3498db;&rdquo;}
+Create an AI Use Charter for a real-world context.
+:::</p>
+<p>::: {style=&rdquo;display: flex; flex-wrap: wrap; justify-content: center; margin-top: 20px;&rdquo;}
+::: {style=&rdquo;background: #3498db; color: white; padding: 15px 25px; border-radius: 8px; margin: 8px; font-size: 1.2em;&rdquo;}
+University marketing team
+:::
+::: {style=&rdquo;background: #e74c3c; color: white; padding: 15px 25px; border-radius: 8px; margin: 8px; font-size: 1.2em;&rdquo;}
+Newsroom
+:::
+::: {style=&rdquo;background: #27ae60; color: white; padding: 15px 25px; border-radius: 8px; margin: 8px; font-size: 1.2em;&rdquo;}
+Hospital communications
+:::
+::: {style=&rdquo;background: #9b59b6; color: white; padding: 15px 25px; border-radius: 8px; margin: 8px; font-size: 1.2em;&rdquo;}
+Creative studio
+:::
+::: {style=&rdquo;background: #e67e22; color: white; padding: 15px 25px; border-radius: 8px; margin: 8px; font-size: 1.2em;&rdquo;}
+Political campaign
+:::
+::: {style=&rdquo;background: #1abc9c; color: white; padding: 15px 25px; border-radius: 8px; margin: 8px; font-size: 1.2em;&rdquo;}
+High school classroom
+:::
+::: {style=&rdquo;background: #34495e; color: white; padding: 15px 25px; border-radius: 8px; margin: 8px; font-size: 1.2em;&rdquo;}
+Legal firm
+:::
+::: {style=&rdquo;background: #c0392b; color: white; padding: 15px 25px; border-radius: 8px; margin: 8px; font-size: 1.2em;&rdquo;}
+Dating app
+:::
+:::</p>
+<hr />
+<h2>Group Roles (2 min)</h2>
+<p>::: {style=&rdquo;font-size: 1.6em; line-height: 2;&rdquo;}
+Assign roles:</p>
+<ul>
+<li><strong>Facilitator</strong> — keeps time, moves discussion forward</li>
+<li><strong>Designer</strong> — leads visual layout of the charter</li>
+<li><strong>Devil&rsquo;s Advocate</strong> — asks &ldquo;but what about&hellip;&rdquo;</li>
+<li><strong>Writer</strong> — captures language and phrasing</li>
+<li><strong>Presenter</strong> — explains your charter in gallery walk
+:::</li>
+</ul>
+<hr />
+<h2>The Flow</h2>
+<p>::: {style=&rdquo;display: flex; justify-content: space-around; margin-top: 30px;&rdquo;}
+::: {style=&rdquo;text-align: center; width: 18%; background: #3498db; color: white; padding: 20px; border-radius: 10px;&rdquo;}
+::: {style=&rdquo;font-size: 1.3em; font-weight: bold;&rdquo;}
+Brainstorm
+:::
+5 min
+:::</p>
+<p>::: {style=&rdquo;text-align: center; width: 18%; background: #27ae60; color: white; padding: 20px; border-radius: 10px;&rdquo;}
+::: {style=&rdquo;font-size: 1.3em; font-weight: bold;&rdquo;}
+Draft
+:::
+15 min
+:::</p>
+<p>::: {style=&rdquo;text-align: center; width: 18%; background: #e67e22; color: white; padding: 20px; border-radius: 10px;&rdquo;}
+::: {style=&rdquo;font-size: 1.3em; font-weight: bold;&rdquo;}
+Refine
+:::
+10 min
+:::</p>
+<p>::: {style=&rdquo;text-align: center; width: 18%; background: #9b59b6; color: white; padding: 20px; border-radius: 10px;&rdquo;}
+::: {style=&rdquo;font-size: 1.3em; font-weight: bold;&rdquo;}
+Gallery
+:::
+15 min
+:::
+:::</p>
+<hr />
+<h2>Charter Questions</h2>
+<p>::: {style=&rdquo;font-size: 1.8em; line-height: 1.8;&rdquo;}
+Your charter must address:
+:::</p>
+<p>::: {style=&rdquo;font-size: 1.6em; line-height: 2; margin-top: 20px;&rdquo;}
+- What&rsquo;s <strong>allowed</strong>? (green light)
+- What&rsquo;s <strong>slowed down</strong>? (yellow — needs review)
+- What&rsquo;s <strong>stopped</strong>? (red line)
+- <strong>Who decides</strong> edge cases?
+- What happens <strong>when it breaks</strong>?
+:::</p>
+<hr />
+<h2>Gallery Walk (15 min)</h2>
+<p>::: {style=&rdquo;font-size: 1.8em; line-height: 2;&rdquo;}
+Display your charter. Circulate and vote on:</p>
+<ul>
+<li>&ldquo;<strong>Most realistic</strong>&ldquo;</li>
+<li>&ldquo;<strong>Most unexpected</strong>&ldquo;</li>
+<li>&ldquo;<strong>Most honest about tradeoffs</strong>&rdquo;
+:::</li>
+</ul>
+<hr />
+<h2>Option B: Individual Launch</h2>
+<p>::: {style=&rdquo;font-size: 1.8em; line-height: 1.8;&rdquo;}
+Begin working on your <a href="assessment.html">final assessment</a>.
+:::</p>
+<hr />
+<h2>Individual Launch Flow</h2>
+<p>::: {style=&rdquo;display: flex; justify-content: space-around; margin-top: 30px;&rdquo;}
+::: {style=&rdquo;text-align: center; width: 22%; background: #3498db; color: white; padding: 20px; border-radius: 10px;&rdquo;}
+::: {style=&rdquo;font-size: 1.3em; font-weight: bold;&rdquo;}
+Concept
+:::
+10 min: What are you making?
+:::</p>
+<p>::: {style=&rdquo;text-align: center; width: 22%; background: #27ae60; color: white; padding: 20px; border-radius: 10px;&rdquo;}
+::: {style=&rdquo;font-size: 1.3em; font-weight: bold;&rdquo;}
+First Prompt
+:::
+10 min: Start with AI
+:::</p>
+<p>::: {style=&rdquo;text-align: center; width: 22%; background: #e67e22; color: white; padding: 20px; border-radius: 10px;&rdquo;}
+::: {style=&rdquo;font-size: 1.3em; font-weight: bold;&rdquo;}
+Document
+:::
+5 min: Note the friction
+:::</p>
+<p>::: {style=&rdquo;text-align: center; width: 22%; background: #9b59b6; color: white; padding: 20px; border-radius: 10px;&rdquo;}
+::: {style=&rdquo;font-size: 1.3em; font-weight: bold;&rdquo;}
+Plan
+:::
+5 min: Where will you push?
+:::
+:::</p>
+<hr />
+<h2>Checkpoints</h2>
+<p>::: {style=&rdquo;font-size: 1.6em; line-height: 2;&rdquo;}
+By end of session, you should have:</p>
+<p>✓ A <strong>concept</strong> for your artifact (visual, written, hybrid?)</p>
+<p>✓ At least <strong>one AI interaction</strong> documented</p>
+<p>✓ A note on what the AI gave you <strong>by default</strong></p>
+<p>✓ An idea of where you&rsquo;ll <strong>diverge</strong>
+:::</p>
+<hr />
+<h1>What Comes Next</h1>
+<hr />
+<h2></h2>
+<p>::: {style=&rdquo;font-size: 1.8em; line-height: 1.8;&rdquo;}
+You&rsquo;ve <strong>mapped the walls</strong>.</p>
+<p>You&rsquo;ve <strong>seen behind them</strong>.</p>
+<p>You&rsquo;ve understood the <strong>convergence problem</strong>.
+:::</p>
+<hr />
+<h2></h2>
+<p>::: {style=&rdquo;font-size: 2.5em; font-weight: bold; color: #2c3e50;&rdquo;}
+Now:
+:::</p>
+<p>::: {style=&rdquo;font-size: 3.5em; font-weight: bold; color: #c0392b; margin-top: 40px;&rdquo;}
+Prove you&rsquo;re not redundant.
+:::</p>
+<p>::: {style=&rdquo;font-size: 1.6em; margin-top: 50px;&rdquo;}
+See the <a href="assessment.html">Assessment</a> for full details.
+:::</p>
+        </main>
+    </div>
+</body>
+</html>
