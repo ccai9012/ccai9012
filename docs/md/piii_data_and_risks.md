@@ -110,7 +110,7 @@ This should be read alongside the general case study rubric [link](casestudy.htm
 
 ## Resources
 
-**Reading Material:** see _Part III: Datasets and Risks of AI_ under [link](https://drive.google.com/drive/folders/1mmM4n6IR7e9HXRLq_WI7uPWG3NlEgGkv?usp=sharing).
+**Reading Material:** see [**link**](https://drive.google.com/drive/folders/1mmM4n6IR7e9HXRLq_WI7uPWG3NlEgGkv?usp=sharing).
 
 ### Datasets of AI:
 

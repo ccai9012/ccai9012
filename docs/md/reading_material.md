@@ -59,7 +59,19 @@ _Articles will be released progressively throughout the lecture series..._
 
 ## Part III: Datasets & Risks of AI
 
-_Stay tuned for more._
+Please view your reading material [**here**](https://drive.google.com/drive/folders/1mmM4n6IR7e9HXRLq_WI7uPWG3NlEgGkv?usp=sharing).
+
+### Datasets of AI:
+
+- Kaplan, J., McCandlish, S., Henighan, T., Brown, T. B., Chess, B., Child, R., Gray, S., Radford, A., Wu, J., & Amodei, D. (2020). _Scaling Laws for Neural Language Models_ (arXiv:2001.08361). arXiv. https://doi.org/10.48550/arXiv.2001.08361
+
+- Shumailov, I., Shumaylov, Z., Zhao, Y., Papernot, N., Anderson, R., & Gal, Y. (2024). AI models collapse when trained on recursively generated data. _Nature_, 631(8022), 755–759. https://doi.org/10.1038/s41586-024-07566-y
+
+### Risks of AI:
+
+- Kosmyna, N., Hauptmann, E., Yuan, Y. T., Situ, J., Liao, X.-H., Beresnitzky, A. V., Braunstein, I., & Maes, P. (2025). _Your Brain on ChatGPT: Accumulation of Cognitive Debt when Using an AI Assistant for Essay Writing Task_ (arXiv:2506.08872). arXiv. https://doi.org/10.48550/arXiv.2506.08872
+
+
 
 <!-- 
 - **Week 9: When AI Goes Wrong — Limitations, Failures & Troubleshooting**
