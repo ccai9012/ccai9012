@@ -11,5 +11,7 @@ python md_to_html.py md/pii_examples.md
 python md_to_html.py md/cp_pechakucha.md
 python md_to_html.py md/cp_final.md
 python md_to_html.py md/tutorials.md
+python md_to_html.py md/piii_data_and_risks.md
+python md_to_html.py md/piii_casestudy.md
 
 #./make_docs.sh

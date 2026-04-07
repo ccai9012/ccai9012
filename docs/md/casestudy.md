@@ -31,7 +31,7 @@ Each case study consists of four required components:
 |------|-------|-------------------|
 | A.1.1 | **[Responsibility & AI](pi_casestudy.html)** | Examines responsibility and authorship in generative AI through the deliberate production of a non-default artefact. Students document how they resisted model defaults, navigated legal, ethical, regulatory, or creative risks, and identified clear boundaries between machine output and human judgement, supported by evidence of divergence. |
 | A.1.2 | **[Mechanics of AI](pii_casestudy.html)** | Investigates how a specific technical aspect of an AI system operates, such as model architecture, training approach, or inference behaviour. Students analyse how this mechanism shapes system strengths, limitations, and failure modes, linking observed behaviour to underlying design choices rather than surface-level outputs. |
-| A.1.3 | **Datasets & Risks of AI** | Analyses a dataset or data-generation pipeline used in AI systems, focusing on how data collection, labelling, filtering, or curation decisions influence outputs and introduce risk. Emphasis is placed on bias, representational gaps, and downstream consequences, along with reasoned proposals for mitigation or improvement. |
+| A.1.3 | **[Datasets & Risks of AI](piii_casestudy.html)** | Analyses a dataset or data-generation pipeline used in AI systems, focusing on how data collection, labelling, filtering, or curation decisions influence outputs and introduce risk. Emphasis is placed on bias, representational gaps, and downstream consequences, along with reasoned proposals for mitigation or improvement. |
 
 
 The contents will be archived online to showcase your extrodinary work.  
