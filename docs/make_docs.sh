@@ -13,5 +13,7 @@ python md_to_html.py md/cp_final.md
 python md_to_html.py md/tutorials.md
 python md_to_html.py md/piii_data_and_risks.md
 python md_to_html.py md/piii_casestudy.md
+python md_to_html.py md/cp_reflect.md
+
 
 #./make_docs.sh

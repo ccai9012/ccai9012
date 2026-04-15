@@ -46,7 +46,7 @@ The course project consists of the following assessed components:
 | **Crit-Style Peer Review (Post-Midterm)** | Structured studio-style peer critique conducted during tutorial slots, focused on problem definition, methodological coherence, assumptions, and responsible AI positioning. Formative and non-graded. | 2026.03.19-24 | – | – |
 | [[**Final Project Submission**]](cp_final.html)  | Submission of all core deliverables. Projects are presented through the screening of the vignette component. | 2026.04.22 | – | 35 |
 | **Crit-Style Peer Review (Post-Final)** | Reflective peer critique of completed projects (via tutorial slots), emphasising evaluative judgement, strengths, limitations, and comparative learning. Formative and non-graded. | 2026.04.23-28 | – | – |
-| **Individual Reflection** | Individually assessed reflective statement on contributions, learning process, and key design decisions. | 2026.05.06 | 10 | – |
+| [[**Individual Reflection**]](cp_reflect.html) | Individually assessed reflective statement on contributions, learning process, and key design decisions. | 2026.05.06 | 10 | – |
 | **Peer Assessment** | Advisory peer feedback on group process and individual contributions, used to inform moderation where appropriate. | 2026.05.06 | – | – |
 
 
