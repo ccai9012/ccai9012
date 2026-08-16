@@ -12,6 +12,9 @@ tmp/
 docs/figs/flowchart/*.xml.bkp
 docs/figs/flowchart/*.xml
 docs/md/weekly_syllabus.md
+docs/temp/
+
+ccai9012/token.yaml
 
 starter_kits/4_cv_models/webcam_yolo/video/Live Cam Iseo _ SkylineWebcams _(9_30_16_55).mp4
 starter_kits/1_traditional_generative_ml/GANmapper/data/test
@@ -28,5 +31,9 @@ weekly_scripts/week8/yolo/runs
 
 docs/figs/brand_identity/*
 !docs/figs/brand_identity/banner.png
+
+*.md
+!docs/*.md
+!README.md
 
 ____*
