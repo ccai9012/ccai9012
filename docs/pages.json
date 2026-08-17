@@ -57,7 +57,7 @@
             "number": 1,
             "page_title": "Case Studies",
             "index_summary": "Case Studies"
-            }
+          }
         },
         {
           "key": "Course Project",
@@ -156,7 +156,44 @@
         "icon": "🚀",
         "description": "Explore five comprehensive modules for your AI projects, from GANs to bias detection.",
         "button": "View Kits →"
-      }
+      },
+      "children": [
+        {
+          "key": "starter_gan",
+          "label": "Module 1: Traditional Generative ML",
+          "title": "Traditional Generative ML",
+          "source": "starter_kits/m1_gan.md",
+          "output": "starter_kits/m1_gan.html"
+        },
+        {
+          "key": "starter_llm",
+          "label": "Module 2: LLM for Structuring Information",
+          "title": "LLM for Structuring Information",
+          "source": "starter_kits/m2_llm.md",
+          "output": "starter_kits/m2_llm.html"
+        },
+        {
+          "key": "starter_multimodal",
+          "label": "Module 3: Multimodal Reasoning",
+          "title": "Multimodal Reasoning",
+          "source": "starter_kits/m3_mm.md",
+          "output": "starter_kits/m3_mm.html"
+        },
+        {
+          "key": "starter_cv",
+          "label": "Module 4: CV Models",
+          "title": "Computer Vision Models",
+          "source": "starter_kits/m4_cv.md",
+          "output": "starter_kits/m4_cv.html"
+        },
+        {
+          "key": "starter_bias",
+          "label": "Module 5: Bias & Interpretability",
+          "title": "Bias Detection & Interpretability",
+          "source": "starter_kits/m5_bias.md",
+          "output": "starter_kits/m5_bias.html"
+        }
+      ]
     },
     {
       "key": "datasets",
@@ -171,6 +208,12 @@
         "description": "Access 40+ datasets with direct download links for your projects.",
         "button": "Browse Datasets →"
       }
+    },
+    {
+      "key": "api",
+      "label": "API Reference",
+      "title": "API Reference",
+      "href": "api/index.html"
     }
   ]
 }

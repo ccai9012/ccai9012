@@ -1,0 +1,29 @@
+<nav class="bd-docs-nav bd-links" aria-label="API navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">API Reference</p>
+  <div class="bd-toc-item navbar-nav">
+    <ul class="nav bd-sidenav">
+      <li class="toctree-l1{% if not active_api_module %} current active{% endif %}">
+        <a class="reference internal" href="{{ api_home_href }}">Overview</a>
+      </li>
+      {% for module in api_modules %}
+      <li class="toctree-l1{% if active_api_module == module %} current active{% endif %}">
+        <a class="reference internal" href="{{ api_module_prefix }}{{ module }}.html">{{ module }}</a>
+        {% if active_api_module == module %}
+        <ul class="nav bd-sidenav api-member-nav">
+          {% for group, members in api_members[module].items() %}
+          {% if members %}
+          <li class="api-member-group">{{ group }}</li>
+          {% for member in members %}
+          <li class="toctree-l2{% if active_api_object == member.object %} current active{% endif %}">
+            <a class="reference internal" href="{{ api_object_prefix }}{{ module }}.{{ member.object }}.html"{% if active_api_object == member.object %} aria-current="page"{% endif %}>{{ member.label }}</a>
+          </li>
+          {% endfor %}
+          {% endif %}
+          {% endfor %}
+        </ul>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</nav>

@@ -1,19 +1,16 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-python md_to_html.py
-python md_to_html.py md/pi_responsibility.md
-python md_to_html.py md/pi_resources.md
-python md_to_html.py md/pi_showflow.md
-python md_to_html.py md/pi_casestudy.md
-python md_to_html.py md/pii_mechanics.md
-python md_to_html.py md/pii_casestudy.md
-python md_to_html.py md/pii_examples.md
-python md_to_html.py md/cp_pechakucha.md
-python md_to_html.py md/cp_final.md
-python md_to_html.py md/tutorials.md
-python md_to_html.py md/piii_data_and_risks.md
-python md_to_html.py md/piii_casestudy.md
-python md_to_html.py md/cp_reflect.md
+set -euo pipefail
 
+DOCS_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(dirname "$DOCS_DIR")"
 
-#./make_docs.sh
+cd "$REPO_ROOT"
+
+echo "Building API Reference..."
+python docs/generate_api_doc.py
+
+echo "Building course pages..."
+python docs/md_to_html.py
+
+echo "Documentation build complete: docs/index.html"

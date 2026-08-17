@@ -1,952 +1,705 @@
-<!-- START PDOC WRAPPER -->
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Module ccai9012.gan_utils</title>
-  <link rel="stylesheet" href="../../docs-style.css">
-</head>
-<body>
-  <div class="container">
-    <nav id="sidebar">
-      <div class="sidebar-header">
-        <h2>CCAI9012</h2>
-      </div>
-      <ul class="nav-menu">
-                <li><a href="../../index.html">Home</a></li>
-                <li><a href="../../timetable.html">Course Plan</a></li>
-                <li><a href="../../Assessment.html">Assessment</a></li>
-                <li class="sub-item"><a href="../../casestudy.html">Case Study</a></li>
-                <li class="sub-item"><a href="../../course_project.html">Course Project</a></li>
-                <li><a href="../../reading_material.html">Reading Materials</a></li>
-                <li><a href="../../pi_responsibility.html">I. Responsibility & AI</a></li>
-                <li><a href="../../pii_mechanics.html">II. Mechanics of AI</a></li>
-                <li><a href="../../piii_data_and_risks.html">III. Datasets & Risks of AI</a></li>
-                <li><a href="../../installation.html">Installation Guide</a></li>
-                <li><a href="../../starter_kits/index.html">Starter Kits</a></li>
-                <li><a href="../../datasets.html">Datasets Reference</a></li>
-      </ul>
-    </nav>
 
-    <main id="content" class="api-content">
-      <!-- API content extracted from pdoc -->
-<article class="api-doc">
-<header>
-<h1 class="title">Module <code>ccai9012.gan_utils</code></h1>
-</header>
-<!-- STARTERKIT_BACKLINKS_START -->
-<section class="api-related-block" style="margin:1rem 0; padding:1rem; border:1px solid #e5e7eb; border-left:6px solid #4f46e5; border-radius:10px; background:#fafafa">
-  <div class="api-related-block__title" style="font-weight:700; margin-bottom:0.5rem">Related Starter Kit(s)</div>
-  <ul style="margin:0; padding-left:1.2rem">
-<li><a href="../../casestudy.html">Case Studies</a></li>
-  </ul>
-</section>
-<!-- STARTERKIT_BACKLINKS_END -->
-<section id="section-intro">
-<h1 id="gan-utilities-module">GAN Utilities Module</h1>
-<p>This module provides comprehensive utilities for training and using Generative Adversarial Networks (GANs),
-specifically focused on image-to-image translation tasks with Pix2Pix-style architectures.</p>
-<p>The module covers the entire GAN workflow from data preparation to model training and inference,
-making it easy to implement image translation tasks between paired domains.</p>
-<p>Main components:
-- Data preparation: Functions to organize and process image pairs
-- Data loading: Custom datasets and dataloaders for paired images
-- Model architectures: U-Net generator and PatchGAN discriminator implementations
-- Training pipeline: Complete GAN training workflow with appropriate losses
-- Inference utilities: Functions for using trained models and visualizing results</p>
-<h2 id="usage">Usage</h2>
-<h3 id="prepare-dataset">Prepare dataset</h3>
-<p>train_count, test_count = prepare_gan_dataset(source_root="source_data",
-train_root="data/train",
-test_root="data/test")</p>
-<h3 id="create-data-loaders">Create data loaders</h3>
-<p>train_loader = create_paired_data_loader("data/train", batch_size=4)</p>
-<h3 id="initialize-models">Initialize models</h3>
-<p>G = UNetGenerator()
-D = PatchDiscriminator()</p>
-<h3 id="train-gan">Train GAN</h3>
-<p>G, history = train_GAN(G, D, train_loader, num_epochs=100)</p>
-<h3 id="inference">Inference</h3>
-<p>fake_img = inference_gan(G, "data/test/A", "results/")</p>
-</section>
-<section>
-</section>
-<section>
-</section>
-<section>
-<h2 class="section-title" id="header-functions">Functions</h2>
-<dl>
-<dt id="ccai9012.gan_utils.augment_pair"><code class="name flex">
-<span>def <span class="ident">augment_pair</span></span>(<span>image_A: PIL.Image.Image,<br>image_B: PIL.Image.Image,<br>flip_prob: float = 0.5,<br>rotate_prob: float = 0.3,<br>max_rotation: int = 30,<br>brightness: float = 0.2,<br>contrast: float = 0.2) ‑> Tuple[PIL.Image.Image, PIL.Image.Image]</span>
-</code></dt>
-<dd>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def augment_pair(image_A: Image.Image,
-                image_B: Image.Image,
-                flip_prob: float = 0.5,
-                rotate_prob: float = 0.3,
-                max_rotation: int = 30,
-                brightness: float = 0.2,
-                contrast: float = 0.2) -&gt; Tuple[Image.Image, Image.Image]:
-    &#34;&#34;&#34;
-    Apply synchronized data augmentation to a pair of images.
-    Ensures both input and target images undergo the same transformations.
+<!DOCTYPE html>
 
-    Args:
-        image_A: Input image (Source)
-        image_B: Target image (Target)
-        flip_prob: Probability of horizontal flip
-        rotate_prob: Probability of random rotation
-        max_rotation: Maximum rotation degree (+/-)
-        brightness: Max brightness adjustment factor
-        contrast: Max contrast adjustment factor
 
-    Returns:
-        Tuple of augmented images (aug_A, aug_B)
-    &#34;&#34;&#34;
+<html lang="en" data-content_root="../" >
 
-    # --------------------------
-    # Horizontal flip
-    # --------------------------
-    if random.random() &lt; flip_prob:
-        image_A = ImageOps.mirror(image_A)
-        image_B = ImageOps.mirror(image_B)
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    # --------------------------
-    # Random rotation
-    # --------------------------
-    if random.random() &lt; rotate_prob:
-        angle = random.uniform(-max_rotation, max_rotation)
-        image_A = image_A.rotate(angle, resample=Image.BILINEAR)
-        image_B = image_B.rotate(angle, resample=Image.BILINEAR)
+    <title>gan_utils &#8212; CCAI9012 API Reference</title>
 
-    # --------------------------
-    # Brightness adjustment
-    # --------------------------
-    if brightness &gt; 0:
-        factor = random.uniform(1 - brightness, 1 + brightness)
-        image_A = TF.adjust_brightness(image_A, factor)
-        image_B = TF.adjust_brightness(image_B, factor)
 
-    # --------------------------
-    # Contrast adjustment
-    # --------------------------
-    if contrast &gt; 0:
-        factor = random.uniform(1 - contrast, 1 + contrast)
-        image_A = TF.adjust_contrast(image_A, factor)
-        image_B = TF.adjust_contrast(image_B, factor)
 
-    return image_A, image_B</code></pre>
-</details>
-<div class="desc"><p>Apply synchronized data augmentation to a pair of images.
-Ensures both input and target images undergo the same transformations.</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>image_A</code></strong></dt>
-<dd>Input image (Source)</dd>
-<dt><strong><code>image_B</code></strong></dt>
-<dd>Target image (Target)</dd>
-<dt><strong><code>flip_prob</code></strong></dt>
-<dd>Probability of horizontal flip</dd>
-<dt><strong><code>rotate_prob</code></strong></dt>
-<dd>Probability of random rotation</dd>
-<dt><strong><code>max_rotation</code></strong></dt>
-<dd>Maximum rotation degree (+/-)</dd>
-<dt><strong><code>brightness</code></strong></dt>
-<dd>Max brightness adjustment factor</dd>
-<dt><strong><code>contrast</code></strong></dt>
-<dd>Max contrast adjustment factor</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<p>Tuple of augmented images (aug_A, aug_B)</p></div>
-</dd>
-<dt id="ccai9012.gan_utils.collect_image_pairs"><code class="name flex">
-<span>def <span class="ident">collect_image_pairs</span></span>(<span>source_root: str) ‑> List[Tuple[str, str, str, str]]</span>
-</code></dt>
-<dd>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def collect_image_pairs(source_root: str) -&gt; List[Tuple[str, str, str, str]]:
-    &#34;&#34;&#34;
-    Collect paired source and target images from the source directory.
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
 
-    Args:
-        source_root: Root directory containing source data
+    </style>
+  </noscript>
 
-    Returns:
-        List of tuples (region, relative_path, source_path, target_path)
-    &#34;&#34;&#34;
-    pairs = []
-    valid_exts = [&#39;.png&#39;, &#39;.jpg&#39;, &#39;.jpeg&#39;, &#39;.bmp&#39;, &#39;.tiff&#39;]
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
 
-    for region in os.listdir(source_root):
-        region_path = os.path.join(source_root, region)
-        source_dir = os.path.join(region_path, &#34;Source&#34;)
-        target_dir = os.path.join(region_path, &#34;Target&#34;)
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/api-theme.css?v=28db1ad0" />
 
-        for root, _, files in os.walk(source_dir):
-            for file in files:
-                if not any(file.lower().endswith(ext) for ext in valid_exts):
-                    continue
-                source_path = os.path.join(root, file)
-                relative_path = os.path.relpath(source_path, source_dir)
-                target_path = os.path.join(target_dir, relative_path)
-                if os.path.exists(target_path):
-                    pairs.append((region, relative_path, source_path, target_path))
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
 
-    return pairs</code></pre>
-</details>
-<div class="desc"><p>Collect paired source and target images from the source directory.</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>source_root</code></strong></dt>
-<dd>Root directory containing source data</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<p>List of tuples (region, relative_path, source_path, target_path)</p></div>
-</dd>
-<dt id="ccai9012.gan_utils.copy_pair"><code class="name flex">
-<span>def <span class="ident">copy_pair</span></span>(<span>pair_list: List[Tuple], split_root: str) ‑> None</span>
-</code></dt>
-<dd>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def copy_pair(pair_list: List[Tuple], split_root: str) -&gt; None:
-    &#34;&#34;&#34;
-    Copy and process image pairs to train/test directories.
+    <script src="../_static/documentation_options.js?v=7f41d439"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ccai9012/gan_utils';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="PairedImageDataset" href="../generated/ccai9012.gan_utils.PairedImageDataset.html" />
+    <link rel="prev" title="Modules" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
 
-    Args:
-        pair_list: List of image pairs
-        split_root: Destination root directory
-    &#34;&#34;&#34;
-    # Ensure destination directories exist even if the caller didn&#39;t run setup_directories
-    os.makedirs(os.path.join(split_root, &#34;A&#34;), exist_ok=True)
-    os.makedirs(os.path.join(split_root, &#34;B&#34;), exist_ok=True)
 
-    for region, rel_path, source_path, target_path in pair_list:
-        parts = rel_path.split(os.sep)
-        new_name = f&#34;{region}_{&#39;_&#39;.join(parts)}&#34;
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
 
-        dst_A = os.path.join(split_root, &#34;A&#34;, new_name)
-        dst_B = os.path.join(split_root, &#34;B&#34;, new_name)
+  </head>
+  <body data-default-mode="">
 
-        # Be defensive: make sure parent dirs exist right before saving
-        os.makedirs(os.path.dirname(dst_A), exist_ok=True)
-        os.makedirs(os.path.dirname(dst_B), exist_ok=True)
 
-        process_and_save_image(source_path, dst_A)
-        process_and_save_image(target_path, dst_B)</code></pre>
-</details>
-<div class="desc"><p>Copy and process image pairs to train/test directories.</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>pair_list</code></strong></dt>
-<dd>List of image pairs</dd>
-<dt><strong><code>split_root</code></strong></dt>
-<dd>Destination root directory</dd>
-</dl></div>
-</dd>
-<dt id="ccai9012.gan_utils.create_paired_data_loader"><code class="name flex">
-<span>def <span class="ident">create_paired_data_loader</span></span>(<span>data_dir: str, batch_size: int = 32) ‑> torch.utils.data.dataloader.DataLoader</span>
-</code></dt>
-<dd>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def create_paired_data_loader(data_dir: str, batch_size: int = 32) -&gt; DataLoader:
-    &#34;&#34;&#34;
-    Creates a DataLoader with standard GAN image transformations.
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
 
-    Args:
-        data_dir: Directory containing paired images (with A/ and B/ subdirs)
-        batch_size: Number of samples per batch
 
-    Returns:
-        DataLoader object configured for GAN training
-    &#34;&#34;&#34;
-    # Define standard transformations
-    transform_list = [
-        transforms.Resize((256, 256)),
-        transforms.ToTensor(),
-        transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
-    ]
+  <div id="pst-scroll-pixel-helper"></div>
 
-    # Create transformation pipeline
-    transform = transforms.Compose(transform_list)
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
-    # Create dataset
-    dataset = PairedImageDataset(data_dir, transform=transform)
 
-    # Create data loader
-    loader = DataLoader(
-        dataset,
-        batch_size=batch_size,
-        shuffle=True,
-        num_workers=4,
-        pin_memory=True
-    )
 
-    return loader</code></pre>
-</details>
-<div class="desc"><p>Creates a DataLoader with standard GAN image transformations.</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>data_dir</code></strong></dt>
-<dd>Directory containing paired images (with A/ and B/ subdirs)</dd>
-<dt><strong><code>batch_size</code></strong></dt>
-<dd>Number of samples per batch</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<p>DataLoader object configured for GAN training</p></div>
-</dd>
-<dt id="ccai9012.gan_utils.inference_gan"><code class="name flex">
-<span>def <span class="ident">inference_gan</span></span>(<span>G, test_A_dir, results_dir='results/', device=None)</span>
-</code></dt>
-<dd>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def inference_gan(G, test_A_dir, results_dir=&#39;results/&#39;, device=None):
-    &#34;&#34;&#34;
-    Run inference with a trained Pix2Pix generator on a folder of test images.
 
-    Parameters:
-        G (nn.Module)        -- trained generator
-        test_A_dir (str)     -- directory of input images (A)
-        results_dir (str)    -- directory to save generated images
-        device (str or torch.device, optional) -- &#39;cuda&#39; or &#39;cpu&#39;; if None, automatically select
+  <dialog id="pst-search-dialog">
 
-    Returns:
-        None (saves images in results_dir)
-    &#34;&#34;&#34;
-    if device is None:
-        device = torch.device(&#39;cuda&#39; if torch.cuda.is_available() else &#39;cpu&#39;)
-    else:
-        device = torch.device(device)
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
 
-    G.to(device)
-    G.eval()
-    os.makedirs(results_dir, exist_ok=True)
-
-    # Transform (same as training)
-    transform = transforms.Compose([
-        transforms.Resize((256, 256)),
-        transforms.ToTensor(),
-        transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
-    ])
-
-    # Iterate over test images
-    for img_name in sorted(os.listdir(test_A_dir)):
-        if not img_name.lower().endswith((&#39;.png&#39;, &#39;.jpg&#39;, &#39;.jpeg&#39;)):
-            continue
-        A_path = os.path.join(test_A_dir, img_name)
-        A_img = Image.open(A_path).convert(&#34;RGB&#34;)
-        A_tensor = transform(A_img).unsqueeze(0).to(device)
-
-        with torch.no_grad():
-            fake_B = G(A_tensor)
-
-        # Convert to image and save
-        fake_B_img = Image.fromarray(tensor2img(fake_B))
-        fake_B_img.save(os.path.join(results_dir, img_name))
-
-    print(&#34;Inference done! Results saved to&#34;, results_dir)
-
-    return fake_B_img</code></pre>
-</details>
-<div class="desc"><p>Run inference with a trained Pix2Pix generator on a folder of test images.</p>
-<h2 id="parameters">Parameters</h2>
-<p>G (nn.Module)
-&ndash; trained generator
-test_A_dir (str)
-&ndash; directory of input images (A)
-results_dir (str)
-&ndash; directory to save generated images
-device (str or torch.device, optional) &ndash; 'cuda' or 'cpu'; if None, automatically select</p>
-<h2 id="returns">Returns</h2>
-<p>None (saves images in results_dir)</p></div>
-</dd>
-<dt id="ccai9012.gan_utils.load_model"><code class="name flex">
-<span>def <span class="ident">load_model</span></span>(<span>G, model_path, device=None)</span>
-</code></dt>
-<dd>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def load_model(G, model_path, device=None):
-
-    if device is None:
-        device = torch.device(&#39;cuda&#39; if torch.cuda.is_available() else &#39;cpu&#39;)
-    else:
-        device = torch.device(device)
-
-    G.load_state_dict(torch.load(model_path, map_location=device))
-    G.eval()
-    G.to(device)
-
-    return G</code></pre>
-</details>
-<div class="desc"></div>
-</dd>
-<dt id="ccai9012.gan_utils.prepare_gan_dataset"><code class="name flex">
-<span>def <span class="ident">prepare_gan_dataset</span></span>(<span>source_root: str = 'data/Exp4',<br>train_root: str = 'data/train',<br>test_root: str = 'data/test',<br>train_ratio: float = 0.85) ‑> Tuple[int, int]</span>
-</code></dt>
-<dd>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def prepare_gan_dataset(source_root: str = &#34;data/Exp4&#34;,
-                       train_root: str = &#34;data/train&#34;,
-                       test_root: str = &#34;data/test&#34;,
-                       train_ratio: float = 0.85) -&gt; Tuple[int, int]:
-    &#34;&#34;&#34;
-    Main function to prepare GAN training dataset.
-    Creates directories, collects images, splits data, and processes images.
-
-    Args:
-        source_root: Source data root directory
-        train_root: Training set directory
-        test_root: Testing set directory
-        train_ratio: Training set ratio
-
-    Returns:
-        (train_count, test_count): Number of samples in training and testing sets
-    &#34;&#34;&#34;
-    # Create directories
-    setup_directories(os.path.dirname(train_root))
-
-    # Collect image pairs
-    pairs = collect_image_pairs(source_root)
-
-    # Split dataset
-    train_pairs, test_pairs = split_pairs(pairs, train_ratio)
-
-    # Copy and process images
-    copy_pair(train_pairs, train_root)
-    copy_pair(test_pairs, test_root)
-
-    return len(train_pairs), len(test_pairs)</code></pre>
-</details>
-<div class="desc"><p>Main function to prepare GAN training dataset.
-Creates directories, collects images, splits data, and processes images.</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>source_root</code></strong></dt>
-<dd>Source data root directory</dd>
-<dt><strong><code>train_root</code></strong></dt>
-<dd>Training set directory</dd>
-<dt><strong><code>test_root</code></strong></dt>
-<dd>Testing set directory</dd>
-<dt><strong><code>train_ratio</code></strong></dt>
-<dd>Training set ratio</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<p>(train_count, test_count): Number of samples in training and testing sets</p></div>
-</dd>
-<dt id="ccai9012.gan_utils.process_and_save_image"><code class="name flex">
-<span>def <span class="ident">process_and_save_image</span></span>(<span>image_path: str, dst_path: str) ‑> None</span>
-</code></dt>
-<dd>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def process_and_save_image(image_path: str, dst_path: str) -&gt; None:
-    &#34;&#34;&#34;
-    Process and save a single image (handles RGBA/LA formats).
-
-    Args:
-        image_path: Source image path
-        dst_path: Destination save path
-    &#34;&#34;&#34;
-    img = Image.open(image_path)
-    if img.mode in (&#39;RGBA&#39;, &#39;LA&#39;):
-        background = Image.new(&#39;RGB&#39;, img.size, (255, 255, 255))
-        if img.mode == &#39;LA&#39;:
-            alpha = img.split()[1]
-        else:
-            alpha = img.split()[3]
-        background.paste(img.convert(&#39;RGB&#39;), mask=alpha)
-        img = background
-    img.save(dst_path)</code></pre>
-</details>
-<div class="desc"><p>Process and save a single image (handles RGBA/LA formats).</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>image_path</code></strong></dt>
-<dd>Source image path</dd>
-<dt><strong><code>dst_path</code></strong></dt>
-<dd>Destination save path</dd>
-</dl></div>
-</dd>
-<dt id="ccai9012.gan_utils.setup_directories"><code class="name flex">
-<span>def <span class="ident">setup_directories</span></span>(<span>base_path: str = 'data') ‑> None</span>
-</code></dt>
-<dd>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def setup_directories(base_path: str = &#34;data&#34;) -&gt; None:
-    &#34;&#34;&#34;
-    Create necessary directory structure for GAN training.
-
-    Args:
-        base_path: Base directory path for data
-    &#34;&#34;&#34;
-    for split in [&#39;train&#39;, &#39;test&#39;]:
-        for folder in [&#39;A&#39;, &#39;B&#39;]:
-            os.makedirs(os.path.join(base_path, split, folder), exist_ok=True)</code></pre>
-</details>
-<div class="desc"><p>Create necessary directory structure for GAN training.</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>base_path</code></strong></dt>
-<dd>Base directory path for data</dd>
-</dl></div>
-</dd>
-<dt id="ccai9012.gan_utils.split_pairs"><code class="name flex">
-<span>def <span class="ident">split_pairs</span></span>(<span>pairs: List[Tuple], train_ratio: float = 0.85, random_seed: int = 42) ‑> Tuple[List, List]</span>
-</code></dt>
-<dd>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def split_pairs(pairs: List[Tuple], train_ratio: float = 0.85, random_seed: int = 42) -&gt; Tuple[List, List]:
-    &#34;&#34;&#34;
-    Split image pairs into training and testing sets.
-
-    Args:
-        pairs: List of image pairs
-        train_ratio: Ratio of training set
-        random_seed: Random seed for reproducibility
-
-    Returns:
-        (train_pairs, test_pairs)
-    &#34;&#34;&#34;
-    random.seed(random_seed)
-    pairs_copy = pairs.copy()
-    random.shuffle(pairs_copy)
-    num_train = int(len(pairs_copy) * train_ratio)
-    return pairs_copy[:num_train], pairs_copy[num_train:]</code></pre>
-</details>
-<div class="desc"><p>Split image pairs into training and testing sets.</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>pairs</code></strong></dt>
-<dd>List of image pairs</dd>
-<dt><strong><code>train_ratio</code></strong></dt>
-<dd>Ratio of training set</dd>
-<dt><strong><code>random_seed</code></strong></dt>
-<dd>Random seed for reproducibility</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<p>(train_pairs, test_pairs)</p></div>
-</dd>
-<dt id="ccai9012.gan_utils.tensor2img"><code class="name flex">
-<span>def <span class="ident">tensor2img</span></span>(<span>t)</span>
-</code></dt>
-<dd>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">@torch.no_grad()
-# Helper function to convert tensor to image
-def tensor2img(t):
-    t = t.cpu().squeeze(0)
-    t = (t + 1) / 2.0  # [-1,1] -&gt; [0,1]
-    t = t.permute(1, 2, 0).numpy()
-    t = np.clip(t, 0, 1)
-    t = (t * 255).astype(np.uint8)
-    return t</code></pre>
-</details>
-<div class="desc"></div>
-</dd>
-<dt id="ccai9012.gan_utils.train_GAN"><code class="name flex">
-<span>def <span class="ident">train_GAN</span></span>(<span>G,<br>D,<br>train_loader,<br>num_epochs=50,<br>log_interval=10,<br>save_dir='checkpoints',<br>save_interval=20,<br>device=None,<br>lambda_L1=100,<br>lr=0.0002,<br>betas=(0.5, 0.999))</span>
-</code></dt>
-<dd>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def train_GAN(G, D, train_loader, num_epochs=50, log_interval=10,
-              save_dir=&#39;checkpoints&#39;, save_interval=20,
-              device=None, lambda_L1=100, lr=0.0002, betas=(0.5, 0.999)):
-    &#34;&#34;&#34;
-    Train a Pix2Pix GAN model with given Generator and Discriminator.
-    Losses, optimizers, and optional model checkpoint saving are handled internally.
-
-    Parameters:
-        G (nn.Module)             -- Pre-initialized Generator network
-        D (nn.Module)             -- Pre-initialized Discriminator network
-        train_loader (DataLoader) -- PyTorch DataLoader providing training data pairs (A, B)
-        num_epochs (int)          -- Number of training epochs
-        log_interval (int)        -- Steps between printing loss logs
-        save_dir (str or None)    -- Directory to save model checkpoints. If None, checkpoints are not saved
-        save_interval (int)       -- Save model every `save_interval` epochs
-        device (str or None)      -- &#39;cuda&#39;, &#39;cpu&#39;, or None for auto selection
-        lambda_L1 (float)         -- Weight for L1 loss relative to GAN loss
-        lr (float)                -- Learning rate for Adam optimizer
-        betas (tuple)             -- Beta parameters for Adam optimizer
-
-    Returns:
-        G (nn.Module)  -- Trained generator network
-        history (dict) -- Dictionary containing lists of discriminator and generator losses:
-                          history[&#39;loss_D&#39;], history[&#39;loss_G&#39;]
-    &#34;&#34;&#34;
-
-    if device is None:
-        device = torch.device(&#39;cuda&#39; if torch.cuda.is_available() else &#39;cpu&#39;)
-    else:
-        device = torch.device(device)
-
-    if save_dir is not None:
-        os.makedirs(save_dir, exist_ok=True)
-
-    history = {&#39;loss_D&#39;: [], &#39;loss_G&#39;: []}
-
-    G.to(device)
-    D.to(device)
-    G.train()
-    D.train()
-
-    # --- Loss functions ---
-    criterion_GAN = nn.MSELoss()
-    criterion_L1 = nn.L1Loss()
-
-    # --- Optimizers ---
-    optimizer_G = optim.Adam(G.parameters(), lr=lr, betas=betas)
-    optimizer_D = optim.Adam(D.parameters(), lr=lr, betas=betas)
-
-    for epoch in range(num_epochs):
-        for i, data in enumerate(train_loader):
-            real_A = data[&#39;A&#39;].to(device)
-            real_B = data[&#39;B&#39;].to(device)
-
-            # --- Train Discriminator ---
-            optimizer_D.zero_grad()
-            fake_B = G(real_A)
-            real_AB = torch.cat([real_A, real_B], 1)
-            fake_AB = torch.cat([real_A, fake_B.detach()], 1)
-
-            D_real_out = D(real_AB)
-            D_fake_out = D(fake_AB)
-            real_label = torch.ones_like(D_real_out)
-            fake_label = torch.zeros_like(D_fake_out)
-
-            loss_D_real = criterion_GAN(D_real_out, real_label)
-            loss_D_fake = criterion_GAN(D_fake_out, fake_label)
-            loss_D = (loss_D_real + loss_D_fake) * 0.5
-            loss_D.backward()
-            optimizer_D.step()
-
-            # --- Train Generator ---
-            optimizer_G.zero_grad()
-            fake_AB = torch.cat([real_A, fake_B], 1)
-            D_fake_out = D(fake_AB)
-            real_label_G = torch.ones_like(D_fake_out)
-
-            loss_G_GAN = criterion_GAN(D_fake_out, real_label_G)
-            loss_G_L1 = criterion_L1(fake_B, real_B) * lambda_L1
-            loss_G = loss_G_GAN + loss_G_L1
-            loss_G.backward()
-            optimizer_G.step()
-
-            # --- Logging ---
-            if i % log_interval == 0:
-                print(f&#34;Epoch [{epoch + 1}/{num_epochs}] Step [{i}/{len(train_loader)}] &#34;
-                      f&#34;Loss D: {loss_D.item():.4f}, Loss G: {loss_G.item():.4f}&#34;)
-
-            history[&#39;loss_D&#39;].append(loss_D.item())
-            history[&#39;loss_G&#39;].append(loss_G.item())
-
-        # --- Save model at intervals ---
-        if save_dir is not None and ((epoch + 1) % save_interval == 0 or (epoch + 1) == num_epochs):
-            torch.save(G.state_dict(), os.path.join(save_dir, f&#39;G_epoch_{epoch + 1}.pth&#39;))
-            torch.save(D.state_dict(), os.path.join(save_dir, f&#39;D_epoch_{epoch + 1}.pth&#39;))
-            print(f&#34;Models saved at epoch {epoch + 1}&#34;)
-
-    return G, history</code></pre>
-</details>
-<div class="desc"><p>Train a Pix2Pix GAN model with given Generator and Discriminator.
-Losses, optimizers, and optional model checkpoint saving are handled internally.</p>
-<h2 id="parameters">Parameters</h2>
-<p>G (nn.Module)
-&ndash; Pre-initialized Generator network
-D (nn.Module)
-&ndash; Pre-initialized Discriminator network
-train_loader (DataLoader) &ndash; PyTorch DataLoader providing training data pairs (A, B)
-num_epochs (int)
-&ndash; Number of training epochs
-log_interval (int)
-&ndash; Steps between printing loss logs
-save_dir (str or None)
-&ndash; Directory to save model checkpoints. If None, checkpoints are not saved
-save_interval (int)
-&ndash; Save model every <code>save_interval</code> epochs
-device (str or None)
-&ndash; 'cuda', 'cpu', or None for auto selection
-lambda_L1 (float)
-&ndash; Weight for L1 loss relative to GAN loss
-lr (float)
-&ndash; Learning rate for Adam optimizer
-betas (tuple)
-&ndash; Beta parameters for Adam optimizer</p>
-<h2 id="returns">Returns</h2>
-<p>G (nn.Module)
-&ndash; Trained generator network
-history (dict) &ndash; Dictionary containing lists of discriminator and generator losses:
-history['loss_D'], history['loss_G']</p></div>
-</dd>
-</dl>
-</section>
-<section>
-<h2 class="section-title" id="header-classes">Classes</h2>
-<dl>
-<dt id="ccai9012.gan_utils.PairedImageDataset"><code class="flex name class">
-<span>class <span class="ident">PairedImageDataset</span></span>
-<span>(</span><span>root_dir, transform=None)</span>
-</code></dt>
-<dd>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">class PairedImageDataset(Dataset):
-    &#34;&#34;&#34;
-    Custom Dataset class for paired images training.
-    Loads corresponding images from A/ and B/ directories.
-    Assumes both directories have matching filenames.
-    &#34;&#34;&#34;
-
-    def __init__(self, root_dir, transform=None):
-        self.A_paths = sorted(glob.glob(os.path.join(root_dir, &#39;A&#39;, &#39;*.png&#39;)))
-        self.B_paths = sorted(glob.glob(os.path.join(root_dir, &#39;B&#39;, &#39;*.png&#39;)))
-        assert len(self.A_paths) == len(self.B_paths), &#34;A/B image counts must match&#34;
-        self.transform = transform
-
-    def __len__(self):
-        return len(self.A_paths)
-
-    def __getitem__(self, idx):
-        A_img = Image.open(self.A_paths[idx]).convert(&#39;RGB&#39;)
-        B_img = Image.open(self.B_paths[idx]).convert(&#39;RGB&#39;)
-
-        if self.transform:
-            A_img = self.transform(A_img)
-            B_img = self.transform(B_img)
-
-        return {&#39;A&#39;: A_img, &#39;B&#39;: B_img}</code></pre>
-</details>
-<div class="desc"><p>Custom Dataset class for paired images training.
-Loads corresponding images from A/ and B/ directories.
-Assumes both directories have matching filenames.</p></div>
-<h3>Ancestors</h3>
-<ul class="hlist">
-<li>torch.utils.data.dataset.Dataset</li>
-<li>typing.Generic</li>
-</ul>
-</dd>
-<dt id="ccai9012.gan_utils.PatchDiscriminator"><code class="flex name class">
-<span>class <span class="ident">PatchDiscriminator</span></span>
-<span>(</span><span>in_channels=6, features=64)</span>
-</code></dt>
-<dd>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">class PatchDiscriminator(nn.Module):
-    def __init__(self, in_channels=6, features=64):
-        super().__init__()
-        self.model = nn.Sequential(
-            nn.Conv2d(in_channels, features, 4, 2, 1),
-            nn.LeakyReLU(0.2),
-            nn.Conv2d(features, features * 2, 4, 2, 1),
-            nn.BatchNorm2d(features * 2),
-            nn.LeakyReLU(0.2),
-            nn.Conv2d(features * 2, 1, 4, 1, 1)  # output 1-channel patch
-        )
-
-    def forward(self, x):
-        return self.model(x)</code></pre>
-</details>
-<div class="desc"><p>Base class for all neural network modules.</p>
-<p>Your models should also subclass this class.</p>
-<p>Modules can also contain other Modules, allowing them to be nested in
-a tree structure. You can assign the submodules as regular attributes::</p>
-<pre><code>import torch.nn as nn
-import torch.nn.functional as F
-
-
-class Model(nn.Module):
-    def __init__(self) -&gt; None:
-        super().__init__()
-        self.conv1 = nn.Conv2d(1, 20, 5)
-        self.conv2 = nn.Conv2d(20, 20, 5)
-
-    def forward(self, x):
-        x = F.relu(self.conv1(x))
-        return F.relu(self.conv2(x))
-</code></pre>
-<p>Submodules assigned in this way will be registered, and will also have their
-parameters converted when you call :meth:<code>to</code>, etc.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>As per the example above, an <code>__init__()</code> call to the parent class
-must be made before assignment on the child.</p>
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
 </div>
-<p>:ivar training: Boolean represents whether this module is in training or
-evaluation mode.
-:vartype training: bool</p>
-<p>Initialize internal Module state, shared by both nn.Module and ScriptModule.</p></div>
-<h3>Ancestors</h3>
-<ul class="hlist">
-<li>torch.nn.modules.module.Module</li>
-</ul>
-<h3>Methods</h3>
-<dl>
-<dt id="ccai9012.gan_utils.PatchDiscriminator.forward"><code class="name flex">
-<span>def <span class="ident">forward</span></span>(<span>self, x) ‑> Callable[..., Any]</span>
-</code></dt>
-<dd>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def forward(self, x):
-    return self.model(x)</code></pre>
-</details>
-<div class="desc"><p>Define the computation performed at every call.</p>
-<p>Should be overridden by all subclasses.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Although the recipe for forward pass needs to be defined within
-this function, one should call the :class:<code>Module</code> instance afterwards
-instead of this since the former takes care of running the
-registered hooks while the latter silently ignores them.</p>
-</div></div>
-</dd>
-</dl>
-</dd>
-<dt id="ccai9012.gan_utils.UNetGenerator"><code class="flex name class">
-<span>class <span class="ident">UNetGenerator</span></span>
-<span>(</span><span>in_channels=3, out_channels=3, features=64)</span>
-</code></dt>
-<dd>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">class UNetGenerator(nn.Module):
-    # Simple U-Net for demo purposes
-    def __init__(self, in_channels=3, out_channels=3, features=64):
-        super().__init__()
-        self.down1 = nn.Sequential(nn.Conv2d(in_channels, features, 4, 2, 1), nn.LeakyReLU(0.2))
-        self.down2 = nn.Sequential(nn.Conv2d(features, features * 2, 4, 2, 1), nn.BatchNorm2d(features * 2),
-                                   nn.LeakyReLU(0.2))
-        self.down3 = nn.Sequential(nn.Conv2d(features * 2, features * 4, 4, 2, 1), nn.BatchNorm2d(features * 4),
-                                   nn.LeakyReLU(0.2))
-
-        self.up1 = nn.Sequential(nn.ConvTranspose2d(features * 4, features * 2, 4, 2, 1), nn.BatchNorm2d(features * 2),
-                                 nn.ReLU())
-        self.up2 = nn.Sequential(nn.ConvTranspose2d(features * 2, features, 4, 2, 1), nn.BatchNorm2d(features),
-                                 nn.ReLU())
-        self.up3 = nn.Sequential(nn.ConvTranspose2d(features, out_channels, 4, 2, 1), nn.Tanh())
-
-    def forward(self, x):
-        d1 = self.down1(x)
-        d2 = self.down2(d1)
-        d3 = self.down3(d2)
-        u1 = self.up1(d3)
-        u2 = self.up2(u1 + d2)  # skip connection
-        u3 = self.up3(u2 + d1)
-        return u3</code></pre>
-</details>
-<div class="desc"><p>Base class for all neural network modules.</p>
-<p>Your models should also subclass this class.</p>
-<p>Modules can also contain other Modules, allowing them to be nested in
-a tree structure. You can assign the submodules as regular attributes::</p>
-<pre><code>import torch.nn as nn
-import torch.nn.functional as F
 
 
-class Model(nn.Module):
-    def __init__(self) -&gt; None:
-        super().__init__()
-        self.conv1 = nn.Conv2d(1, 20, 5)
-        self.conv2 = nn.Conv2d(20, 20, 5)
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
 
-    def forward(self, x):
-        x = F.relu(self.conv1(x))
-        return F.relu(self.conv2(x))
-</code></pre>
-<p>Submodules assigned in this way will be registered, and will also have their
-parameters converted when you call :meth:<code>to</code>, etc.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>As per the example above, an <code>__init__()</code> call to the parent class
-must be made before assignment on the child.</p>
-</div>
-<p>:ivar training: Boolean represents whether this module is in training or
-evaluation mode.
-:vartype training: bool</p>
-<p>Initialize internal Module state, shared by both nn.Module and ScriptModule.</p></div>
-<h3>Ancestors</h3>
-<ul class="hlist">
-<li>torch.nn.modules.module.Module</li>
-</ul>
-<h3>Methods</h3>
-<dl>
-<dt id="ccai9012.gan_utils.UNetGenerator.forward"><code class="name flex">
-<span>def <span class="ident">forward</span></span>(<span>self, x) ‑> Callable[..., Any]</span>
-</code></dt>
-<dd>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def forward(self, x):
-    d1 = self.down1(x)
-    d2 = self.down2(d1)
-    d3 = self.down3(d2)
-    u1 = self.up1(d3)
-    u2 = self.up2(u1 + d2)  # skip connection
-    u3 = self.up3(u2 + d1)
-    return u3</code></pre>
-</details>
-<div class="desc"><p>Define the computation performed at every call.</p>
-<p>Should be overridden by all subclasses.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Although the recipe for forward pass needs to be defined within
-this function, one should call the :class:<code>Module</code> instance afterwards
-instead of this since the former takes care of running the
-registered hooks while the latter silently ignores them.</p>
-</div></div>
-</dd>
-</dl>
-</dd>
-</dl>
-</section>
-</article>
-    </main>
+
+  <div class=" navbar-header-items__start">
+
+      <div class="navbar-item">
+
+
+
+
+
+<a class="navbar-brand logo" href="../index.html">
+
+
+
+
+
+
+    <p class="title logo__title">CCAI9012 API Reference</p>
+
+</a></div>
+
   </div>
-</body>
+
+  <div class=" navbar-header-items">
+
+    <div class="me-auto navbar-header-items__center">
+
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Modules
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+
+        <div class="navbar-item"><a class="nav-link course-home-link" href="../../index.html">Back to Course Website</a></div>
+
+    </div>
+
+
+    <div class="navbar-header-items__end">
+
+
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+
+    </div>
+
+  </div>
+
+
+
+
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+
+</div>
+
+    </header>
+
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+
+
+
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+
+
+
+  <div class="sidebar-header-items sidebar-primary__section">
+
+
+      <div class="sidebar-header-items__center">
+
+
+
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Modules
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+
+
+
+
+            <div class="navbar-item"><a class="nav-link course-home-link" href="../../index.html">Back to Course Website</a></div>
+
+
+      </div>
+
+
+
+      <div class="sidebar-header-items__end">
+
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+
+      </div>
+
+  </div>
+
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links" aria-label="API navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">API Reference</p>
+  <div class="bd-toc-item navbar-nav">
+    <ul class="nav bd-sidenav">
+      <li class="toctree-l1">
+        <a class="reference internal" href="../index.html">Overview</a>
+      </li>
+
+      <li class="toctree-l1 current active">
+        <a class="reference internal" href="gan_utils.html">gan_utils</a>
+
+        <ul class="nav bd-sidenav api-member-nav">
+
+
+          <li class="api-member-group">Classes</li>
+
+          <li class="toctree-l2">
+            <a class="reference internal" href="../generated/ccai9012.gan_utils.PairedImageDataset.html">PairedImageDataset</a>
+          </li>
+
+          <li class="toctree-l2">
+            <a class="reference internal" href="../generated/ccai9012.gan_utils.UNetGenerator.html">UNetGenerator</a>
+          </li>
+
+          <li class="toctree-l2">
+            <a class="reference internal" href="../generated/ccai9012.gan_utils.PatchDiscriminator.html">PatchDiscriminator</a>
+          </li>
+
+
+
+
+          <li class="api-member-group">Functions</li>
+
+          <li class="toctree-l2">
+            <a class="reference internal" href="../generated/ccai9012.gan_utils.setup_directories.html">setup_directories</a>
+          </li>
+
+          <li class="toctree-l2">
+            <a class="reference internal" href="../generated/ccai9012.gan_utils.collect_image_pairs.html">collect_image_pairs</a>
+          </li>
+
+          <li class="toctree-l2">
+            <a class="reference internal" href="../generated/ccai9012.gan_utils.split_pairs.html">split_pairs</a>
+          </li>
+
+          <li class="toctree-l2">
+            <a class="reference internal" href="../generated/ccai9012.gan_utils.process_and_save_image.html">process_and_save_image</a>
+          </li>
+
+          <li class="toctree-l2">
+            <a class="reference internal" href="../generated/ccai9012.gan_utils.copy_pair.html">copy_pair</a>
+          </li>
+
+          <li class="toctree-l2">
+            <a class="reference internal" href="../generated/ccai9012.gan_utils.prepare_gan_dataset.html">prepare_gan_dataset</a>
+          </li>
+
+          <li class="toctree-l2">
+            <a class="reference internal" href="../generated/ccai9012.gan_utils.augment_pair.html">augment_pair</a>
+          </li>
+
+          <li class="toctree-l2">
+            <a class="reference internal" href="../generated/ccai9012.gan_utils.create_paired_data_loader.html">create_paired_data_loader</a>
+          </li>
+
+          <li class="toctree-l2">
+            <a class="reference internal" href="../generated/ccai9012.gan_utils.train_GAN.html">train_GAN</a>
+          </li>
+
+          <li class="toctree-l2">
+            <a class="reference internal" href="../generated/ccai9012.gan_utils.tensor2img.html">tensor2img</a>
+          </li>
+
+          <li class="toctree-l2">
+            <a class="reference internal" href="../generated/ccai9012.gan_utils.inference_gan.html">inference_gan</a>
+          </li>
+
+          <li class="toctree-l2">
+            <a class="reference internal" href="../generated/ccai9012.gan_utils.load_model.html">load_model</a>
+          </li>
+
+
+
+
+          <li class="api-member-group">Methods</li>
+
+          <li class="toctree-l2">
+            <a class="reference internal" href="../generated/ccai9012.gan_utils.UNetGenerator.forward.html">UNetGenerator.forward</a>
+          </li>
+
+          <li class="toctree-l2">
+            <a class="reference internal" href="../generated/ccai9012.gan_utils.PatchDiscriminator.forward.html">PatchDiscriminator.forward</a>
+          </li>
+
+
+
+        </ul>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="llm_utils.html">llm_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="multi_modal_utils.html">multi_modal_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="nn_utils.html">nn_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="sd_utils.html">sd_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="svi_utils.html">svi_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="token_utils.html">token_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="viz_utils.html">viz_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="yolo_utils.html">yolo_utils</a>
+
+      </li>
+
+    </ul>
+  </div>
+</nav></div>
+    </div>
+
+
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+
+      <main id="main-content" class="bd-main" role="main">
+
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+
+    <div class="header-article-items__start">
+
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Modules</a></li>
+
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">gan_utils</span></li>
+  </ul>
+</nav>
+</div>
+
+    </div>
+
+
+</div>
+</div>
+
+
+
+
+<div id="searchbox"></div>
+                <article class="bd-article">
+
+  <section id="gan-utils">
+<h1>gan_utils<a class="headerlink" href="#gan-utils" title="Link to this heading">#</a></h1>
+<p>This module supports a complete paired image-to-image translation exercise using a compact Pix2Pix-style GAN. It connects the steps that students often see separately: organizing aligned images, loading them as tensors, defining the generator and discriminator, training, and inference.</p>
+<section id="what-this-module-helps-you-do">
+<h2>What this module helps you do<a class="headerlink" href="#what-this-module-helps-you-do" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>turn region-based Source/Target folders into reproducible train and test splits</p></li>
+<li><p>apply synchronized augmentation so an input image stays aligned with its target</p></li>
+<li><p>train a teaching-scale U-Net generator and PatchGAN discriminator</p></li>
+<li><p>load checkpoints and generate output images for a test folder</p></li>
+</ul>
+</section>
+<section id="when-to-use-it">
+<h2>When to use it<a class="headerlink" href="#when-to-use-it" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>You have paired images showing the same place or object in two domains, such as map-to-aerial, facade-to-segmentation, or sketch-to-image.</p></li>
+<li><p>You want to study the mechanics of adversarial and reconstruction losses before adopting a larger GAN framework.</p></li>
+<li><p>You need a transparent baseline for a course project; it is not intended as a production-scale GAN library.</p></li>
+</ul>
+</section>
+<section id="typical-workflow">
+<h2>Typical workflow<a class="headerlink" href="#typical-workflow" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Prepare aligned image pairs with <code class="docutils literal notranslate"><span class="pre">prepare_gan_dataset</span></code>.</p></li>
+<li><p>Create batches with <code class="docutils literal notranslate"><span class="pre">create_paired_data_loader</span></code>.</p></li>
+<li><p>Initialize <code class="docutils literal notranslate"><span class="pre">UNetGenerator</span></code> and <code class="docutils literal notranslate"><span class="pre">PatchDiscriminator</span></code>.</p></li>
+<li><p>Train with <code class="docutils literal notranslate"><span class="pre">train_GAN</span></code>, then use <code class="docutils literal notranslate"><span class="pre">load_model</span></code> and <code class="docutils literal notranslate"><span class="pre">inference_gan</span></code> for prediction.</p></li>
+</ol>
+</section>
+<section id="related-starter-kits">
+<h2>Related Starter Kits<a class="headerlink" href="#related-starter-kits" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="../../starter_kits/m1_gan.html">Generative AI: GANs</a></p></li>
+</ul>
+</section>
+<section id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/ccai9012.gan_utils.PairedImageDataset.html#ccai9012.gan_utils.PairedImageDataset" title="ccai9012.gan_utils.PairedImageDataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PairedImageDataset</span></code></a>(*args, **kwargs)</p></td>
+<td><p>PyTorch dataset that loads matching images from <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">B</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/ccai9012.gan_utils.UNetGenerator.html#ccai9012.gan_utils.UNetGenerator" title="ccai9012.gan_utils.UNetGenerator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UNetGenerator</span></code></a>(*args, **kwargs)</p></td>
+<td><p>Compact encoder-decoder generator with additive skip connections.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/ccai9012.gan_utils.PatchDiscriminator.html#ccai9012.gan_utils.PatchDiscriminator" title="ccai9012.gan_utils.PatchDiscriminator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PatchDiscriminator</span></code></a>(*args, **kwargs)</p></td>
+<td><p>PatchGAN discriminator for concatenated source-target image pairs.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/ccai9012.gan_utils.setup_directories.html#ccai9012.gan_utils.setup_directories" title="ccai9012.gan_utils.setup_directories"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setup_directories</span></code></a>([base_path])</p></td>
+<td><p>Create <code class="docutils literal notranslate"><span class="pre">train/A</span></code>, <code class="docutils literal notranslate"><span class="pre">train/B</span></code>, <code class="docutils literal notranslate"><span class="pre">test/A</span></code>, and <code class="docutils literal notranslate"><span class="pre">test/B</span></code> folders.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/ccai9012.gan_utils.collect_image_pairs.html#ccai9012.gan_utils.collect_image_pairs" title="ccai9012.gan_utils.collect_image_pairs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">collect_image_pairs</span></code></a>(source_root)</p></td>
+<td><p>Find source images that have a target image at the matching path.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/ccai9012.gan_utils.split_pairs.html#ccai9012.gan_utils.split_pairs" title="ccai9012.gan_utils.split_pairs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">split_pairs</span></code></a>(pairs[, train_ratio, random_seed])</p></td>
+<td><p>Shuffle image pairs reproducibly and split them into two lists.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/ccai9012.gan_utils.process_and_save_image.html#ccai9012.gan_utils.process_and_save_image" title="ccai9012.gan_utils.process_and_save_image"><code class="xref py py-obj docutils literal notranslate"><span class="pre">process_and_save_image</span></code></a>(image_path, dst_path)</p></td>
+<td><p>Save an image, compositing transparent pixels over white when needed.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/ccai9012.gan_utils.copy_pair.html#ccai9012.gan_utils.copy_pair" title="ccai9012.gan_utils.copy_pair"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy_pair</span></code></a>(pair_list, split_root)</p></td>
+<td><p>Copy paired images into matching <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">B</span></code> folders.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/ccai9012.gan_utils.prepare_gan_dataset.html#ccai9012.gan_utils.prepare_gan_dataset" title="ccai9012.gan_utils.prepare_gan_dataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">prepare_gan_dataset</span></code></a>([source_root, ...])</p></td>
+<td><p>Prepare train and test folders from a region-based paired dataset.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/ccai9012.gan_utils.augment_pair.html#ccai9012.gan_utils.augment_pair" title="ccai9012.gan_utils.augment_pair"><code class="xref py py-obj docutils literal notranslate"><span class="pre">augment_pair</span></code></a>(image_A, image_B[, flip_prob, ...])</p></td>
+<td><p>Apply the same random augmentation parameters to two paired images.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/ccai9012.gan_utils.create_paired_data_loader.html#ccai9012.gan_utils.create_paired_data_loader" title="ccai9012.gan_utils.create_paired_data_loader"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_paired_data_loader</span></code></a>(data_dir[, batch_size])</p></td>
+<td><p>Create a shuffled data loader for normalized 256 × 256 image pairs.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/ccai9012.gan_utils.train_GAN.html#ccai9012.gan_utils.train_GAN" title="ccai9012.gan_utils.train_GAN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">train_GAN</span></code></a>(G, D, train_loader[, num_epochs, ...])</p></td>
+<td><p>Train a generator and discriminator with Pix2Pix losses.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/ccai9012.gan_utils.tensor2img.html#ccai9012.gan_utils.tensor2img" title="ccai9012.gan_utils.tensor2img"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tensor2img</span></code></a>(t)</p></td>
+<td><p>Convert a normalized image tensor into an 8-bit RGB array.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/ccai9012.gan_utils.inference_gan.html#ccai9012.gan_utils.inference_gan" title="ccai9012.gan_utils.inference_gan"><code class="xref py py-obj docutils literal notranslate"><span class="pre">inference_gan</span></code></a>(G, test_A_dir[, results_dir, ...])</p></td>
+<td><p>Generate and save target images for every supported image in a folder.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/ccai9012.gan_utils.load_model.html#ccai9012.gan_utils.load_model" title="ccai9012.gan_utils.load_model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_model</span></code></a>(G, model_path[, device])</p></td>
+<td><p>Load generator weights and prepare the model for inference.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/ccai9012.gan_utils.UNetGenerator.forward.html#ccai9012.gan_utils.UNetGenerator.forward" title="ccai9012.gan_utils.UNetGenerator.forward"><code class="xref py py-obj docutils literal notranslate"><span class="pre">forward</span></code></a>(x)</p></td>
+<td><p>Generate a target-domain batch from a source-domain batch.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/ccai9012.gan_utils.PatchDiscriminator.forward.html#ccai9012.gan_utils.PatchDiscriminator.forward" title="ccai9012.gan_utils.PatchDiscriminator.forward"><code class="xref py py-obj docutils literal notranslate"><span class="pre">forward</span></code></a>(x)</p></td>
+<td><p>Score local patches in a concatenated image pair.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+
+
+                </article>
+
+
+
+
+
+                <footer class="prev-next-footer d-print-none">
+
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Modules</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../generated/ccai9012.gan_utils.PairedImageDataset.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">PairedImageDataset</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+
+            </div>
+
+
+
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-this-module-helps-you-do">What this module helps you do</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-to-use-it">When to use it</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#typical-workflow">Typical workflow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-starter-kits">Related Starter Kits</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods">Methods</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+
+
+          </div>
+          <footer class="bd-footer-content">
+
+          </footer>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+
+    <div class="footer-items__start">
+
+        <div class="footer-item">
+
+  <p class="copyright">
+
+      © Copyright 2026, CCAI9012.
+      <br/>
+
+  </p>
+</div>
+
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    <br/>
+  </p>
+</div>
+
+    </div>
+
+
+
+    <div class="footer-items__end">
+
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.20.0.
+</p></div>
+
+    </div>
+
+</div>
+
+  </footer>
+  </body>
 </html>
-<!-- END PDOC WRAPPER -->

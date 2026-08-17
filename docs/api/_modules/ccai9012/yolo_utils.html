@@ -1,0 +1,767 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ccai9012.yolo_utils &#8212; CCAI9012 API Reference</title>
+
+
+
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/api-theme.css?v=28db1ad0" />
+
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
+
+    <script src="../../_static/documentation_options.js?v=7f41d439"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/ccai9012/yolo_utils';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+
+
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+
+  </head>
+  <body data-default-mode="">
+
+
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+
+  <div id="pst-scroll-pixel-helper"></div>
+
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+
+
+
+  <dialog id="pst-search-dialog">
+
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+
+
+  <div class=" navbar-header-items__start">
+
+      <div class="navbar-item">
+
+
+
+
+
+<a class="navbar-brand logo" href="../../index.html">
+
+
+
+
+
+
+    <p class="title logo__title">CCAI9012 API Reference</p>
+
+</a></div>
+
+  </div>
+
+  <div class=" navbar-header-items">
+
+    <div class="me-auto navbar-header-items__center">
+
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../ccai9012/index.html">
+    Modules
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+
+        <div class="navbar-item"><a class="nav-link course-home-link" href="../../../index.html">Back to Course Website</a></div>
+
+    </div>
+
+
+    <div class="navbar-header-items__end">
+
+
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+
+    </div>
+
+  </div>
+
+
+
+
+</div>
+
+    </header>
+
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+
+
+
+
+
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+
+
+
+  <div class="sidebar-header-items sidebar-primary__section">
+
+
+      <div class="sidebar-header-items__center">
+
+
+
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../ccai9012/index.html">
+    Modules
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+
+
+
+
+            <div class="navbar-item"><a class="nav-link course-home-link" href="../../../index.html">Back to Course Website</a></div>
+
+
+      </div>
+
+
+
+      <div class="sidebar-header-items__end">
+
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+
+      </div>
+
+  </div>
+
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links" aria-label="API navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">API Reference</p>
+  <div class="bd-toc-item navbar-nav">
+    <ul class="nav bd-sidenav">
+      <li class="toctree-l1 current active">
+        <a class="reference internal" href="../index.html">Overview</a>
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="../ccai9012/gan_utils.html">gan_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="../ccai9012/llm_utils.html">llm_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="../ccai9012/multi_modal_utils.html">multi_modal_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="../ccai9012/nn_utils.html">nn_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="../ccai9012/sd_utils.html">sd_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="../ccai9012/svi_utils.html">svi_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="../ccai9012/token_utils.html">token_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="../ccai9012/viz_utils.html">viz_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="../ccai9012/yolo_utils.html">yolo_utils</a>
+
+      </li>
+
+    </ul>
+  </div>
+</nav></div>
+    </div>
+
+
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+
+      <main id="main-content" class="bd-main" role="main">
+
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+
+    <div class="header-article-items__start">
+
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
+
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">ccai9012.yolo_utils</span></li>
+  </ul>
+</nav>
+</div>
+
+    </div>
+
+
+</div>
+</div>
+
+
+
+
+<div id="searchbox"></div>
+                <article class="bd-article">
+
+  <h1>Source code for ccai9012.yolo_utils</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">YOLO Utilities Module</span>
+<span class="sd">====================</span>
+
+<span class="sd">This module provides utilities for object detection, tracking, and visualization using YOLO models.</span>
+<span class="sd">It offers a streamlined interface for processing videos with YOLO-based detection and tracking,</span>
+<span class="sd">along with tools for visualizing detection results as trajectories and heatmaps.</span>
+
+<span class="sd">The module is designed to simplify video analysis tasks for pedestrian tracking and crowd movement</span>
+<span class="sd">analysis, with support for real-time visualization in Jupyter notebooks and comprehensive result export.</span>
+
+<span class="sd">Main components:</span>
+<span class="sd">- Video processing: Functions for processing videos with YOLO models and object tracking</span>
+<span class="sd">- Trajectory visualization: Tools for visualizing tracked object paths and movement patterns</span>
+<span class="sd">- Heatmap generation: Functionality for creating density heatmaps from tracked object positions</span>
+<span class="sd">- Result export: Methods for saving processed videos and detection/tracking data</span>
+
+<span class="sd">Usage:</span>
+<span class="sd">    ### Load a pre-trained YOLO model</span>
+<span class="sd">    from ultralytics import YOLO</span>
+<span class="sd">    model = YOLO(&quot;yolov8n.pt&quot;)</span>
+
+<span class="sd">    ### Detect and track objects in a video</span>
+<span class="sd">    results_df = detect_and_track(</span>
+<span class="sd">        video_path=&quot;input_video.mp4&quot;,</span>
+<span class="sd">        model=model,</span>
+<span class="sd">        output_dir=&quot;results&quot;</span>
+<span class="sd">    )</span>
+
+<span class="sd">    ### Visualize trajectories and heatmap</span>
+<span class="sd">    visualize_video(</span>
+<span class="sd">        input_csv=&quot;results/input_video_results.csv&quot;,</span>
+<span class="sd">        input_video=&quot;input_video.mp4&quot;,</span>
+<span class="sd">        output_video=&quot;results/visualization.mp4&quot;</span>
+<span class="sd">    )</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cv2</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.ndimage</span><span class="w"> </span><span class="kn">import</span> <span class="n">gaussian_filter</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PIL</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">clear_output</span>
+
+
+<div class="viewcode-block" id="detect_and_track">
+<a class="viewcode-back" href="../../generated/ccai9012.yolo_utils.detect_and_track.html#ccai9012.yolo_utils.detect_and_track">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">detect_and_track</span><span class="p">(</span>
+        <span class="n">video_path</span><span class="p">,</span>
+        <span class="n">model</span><span class="p">,</span>
+        <span class="n">output_dir</span><span class="p">,</span>
+        <span class="n">save_video</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">show_in_notebook</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">tracker_config</span><span class="o">=</span><span class="s2">&quot;bytetrack.yaml&quot;</span><span class="p">,</span>
+        <span class="n">classes_to_track</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Detect and track objects in a video using a YOLO model with tracking (e.g., ByteTrack).</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        video_path (str): Path to the input video file.</span>
+<span class="sd">        model: YOLO model object with .track() method.</span>
+<span class="sd">        output_dir (str): Directory to save output video and CSV.</span>
+<span class="sd">        save_video (bool): Whether to save annotated output video.</span>
+<span class="sd">        show_in_notebook (bool): Whether to display frames in a notebook environment.</span>
+<span class="sd">        tracker_config (str): Tracker config file (e.g., &quot;bytetrack.yaml&quot;).</span>
+<span class="sd">        classes_to_track (list[int]): List of class IDs to track (default [0] for person).</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        pd.DataFrame: DataFrame of detection results.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">cap</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">VideoCapture</span><span class="p">(</span><span class="n">video_path</span><span class="p">)</span>
+    <span class="n">fps</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">cap</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">CAP_PROP_FPS</span><span class="p">))</span>
+    <span class="n">width</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">cap</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">CAP_PROP_FRAME_WIDTH</span><span class="p">))</span>
+    <span class="n">height</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">cap</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">CAP_PROP_FRAME_HEIGHT</span><span class="p">))</span>
+
+    <span class="n">video_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">video_path</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">output_video_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">video_name</span><span class="si">}</span><span class="s2">_output.mp4&quot;</span><span class="p">)</span>
+
+    <span class="n">out_writer</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">all_detections</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">frame_index</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">while</span> <span class="n">cap</span><span class="o">.</span><span class="n">isOpened</span><span class="p">():</span>
+        <span class="n">ret</span><span class="p">,</span> <span class="n">frame</span> <span class="o">=</span> <span class="n">cap</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">ret</span><span class="p">:</span>
+            <span class="k">break</span>
+
+        <span class="c1"># Tracking</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">track</span><span class="p">(</span>
+            <span class="n">frame</span><span class="p">,</span>
+            <span class="n">persist</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">classes</span><span class="o">=</span><span class="n">classes_to_track</span><span class="p">,</span>
+            <span class="n">tracker</span><span class="o">=</span><span class="n">tracker_config</span>
+        <span class="p">)</span>
+        <span class="n">annotated_frame</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+
+        <span class="c1"># Initialize VideoWriter</span>
+        <span class="k">if</span> <span class="n">save_video</span> <span class="ow">and</span> <span class="n">out_writer</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">h</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">annotated_frame</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
+            <span class="n">out_writer</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">VideoWriter</span><span class="p">(</span><span class="n">output_video_path</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">VideoWriter_fourcc</span><span class="p">(</span><span class="o">*</span><span class="s1">&#39;mp4v&#39;</span><span class="p">),</span> <span class="n">fps</span><span class="p">,</span> <span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">))</span>
+
+        <span class="c1"># Extract detection info</span>
+        <span class="n">bboxes</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">boxes</span><span class="o">.</span><span class="n">xyxy</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+        <span class="n">ids</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">boxes</span><span class="o">.</span><span class="n">id</span>
+        <span class="n">ids</span> <span class="o">=</span> <span class="n">ids</span><span class="o">.</span><span class="n">int</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="k">if</span> <span class="n">ids</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">bboxes</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">obj_id</span><span class="p">,</span> <span class="n">bbox</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">ids</span><span class="p">,</span> <span class="n">bboxes</span><span class="p">):</span>
+            <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span> <span class="o">=</span> <span class="n">bbox</span>
+            <span class="n">all_detections</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                <span class="s2">&quot;frame&quot;</span><span class="p">:</span> <span class="n">frame_index</span><span class="p">,</span>
+                <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">obj_id</span><span class="p">),</span>
+                <span class="s2">&quot;x1&quot;</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="n">x1</span><span class="p">),</span>
+                <span class="s2">&quot;y1&quot;</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="n">y1</span><span class="p">),</span>
+                <span class="s2">&quot;x2&quot;</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="n">x2</span><span class="p">),</span>
+                <span class="s2">&quot;y2&quot;</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="n">y2</span><span class="p">)</span>
+            <span class="p">})</span>
+
+        <span class="c1"># Notebook display</span>
+        <span class="k">if</span> <span class="n">show_in_notebook</span><span class="p">:</span>
+            <span class="n">img_rgb</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">annotated_frame</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2RGB</span><span class="p">)</span>
+            <span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">display</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">fromarray</span><span class="p">(</span><span class="n">img_rgb</span><span class="p">))</span>
+
+        <span class="c1"># Save frame</span>
+        <span class="k">if</span> <span class="n">save_video</span><span class="p">:</span>
+            <span class="n">out_writer</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">annotated_frame</span><span class="p">)</span>
+
+        <span class="n">frame_index</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="n">cap</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">out_writer</span><span class="p">:</span>
+        <span class="n">out_writer</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
+    <span class="n">cv2</span><span class="o">.</span><span class="n">destroyAllWindows</span><span class="p">()</span>
+
+    <span class="c1"># Save results to CSV</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">all_detections</span><span class="p">)</span>
+    <span class="n">csv_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">video_name</span><span class="si">}</span><span class="s2">_results.csv&quot;</span><span class="p">)</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">csv_path</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Tracking complete. Results saved to </span><span class="si">{</span><span class="n">output_dir</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">df</span></div>
+
+
+<div class="viewcode-block" id="visualize_video">
+<a class="viewcode-back" href="../../generated/ccai9012.yolo_utils.visualize_video.html#ccai9012.yolo_utils.visualize_video">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">visualize_video</span><span class="p">(</span>
+        <span class="n">input_csv</span><span class="p">,</span>
+        <span class="n">input_video</span><span class="p">,</span>
+        <span class="n">output_video</span><span class="p">,</span>
+        <span class="n">grid_size</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+        <span class="n">heatmap_alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span>
+        <span class="n">blur_sigma</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span>
+        <span class="n">trajectory_color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+        <span class="n">trajectory_width</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">max_trajectory_length</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+        <span class="n">min_move_distance</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+        <span class="n">max_connect_distance</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>
+        <span class="n">show_window</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">save_output</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Visualize pedestrian trajectories and heatmap from tracking CSV and video input.</span>
+
+<span class="sd">    This function combines the original video with overlays showing tracked object trajectories</span>
+<span class="sd">    and a density heatmap based on object positions. It&#39;s particularly useful for analyzing</span>
+<span class="sd">    pedestrian movement patterns, crowd flow, and identifying high-traffic areas.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        input_csv (str): Path to the CSV file containing tracking data, typically</span>
+<span class="sd">                        generated by the detect_and_track function.</span>
+<span class="sd">        input_video (str): Path to the original input video file.</span>
+<span class="sd">        output_video (str): Path where the visualization video will be saved.</span>
+<span class="sd">        grid_size (int): Size of grid cells in pixels for heatmap generation.</span>
+<span class="sd">                        Smaller values create more detailed heatmaps but may be slower.</span>
+<span class="sd">        heatmap_alpha (float): Opacity of the heatmap overlay (0.0 to 1.0).</span>
+<span class="sd">        blur_sigma (int): Gaussian blur sigma for smoothing the heatmap.</span>
+<span class="sd">                        Higher values create a more diffuse, smoother heatmap.</span>
+<span class="sd">        trajectory_color (tuple): BGR color for trajectory lines, as (B,G,R).</span>
+<span class="sd">        trajectory_width (int): Width of trajectory lines in pixels.</span>
+<span class="sd">        max_trajectory_length (int): Maximum number of points to keep in each trajectory.</span>
+<span class="sd">                                    Limits memory usage for long videos.</span>
+<span class="sd">        min_move_distance (int): Minimum distance in pixels that an object must move</span>
+<span class="sd">                                to register as a new trajectory point.</span>
+<span class="sd">        max_connect_distance (int): Maximum allowed distance in pixels between consecutive</span>
+<span class="sd">                                  trajectory points. Prevents connecting broken tracks.</span>
+<span class="sd">        show_window (bool): Whether to display the visualization in a Jupyter notebook</span>
+<span class="sd">                          during processing.</span>
+<span class="sd">        save_output (bool): Whether to save the visualization as a video file.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># ========== Initialization ==========</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">input_csv</span><span class="p">)</span>
+    <span class="n">cap</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">VideoCapture</span><span class="p">(</span><span class="n">input_video</span><span class="p">)</span>
+    <span class="n">width</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">cap</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">CAP_PROP_FRAME_WIDTH</span><span class="p">))</span>
+    <span class="n">height</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">cap</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">CAP_PROP_FRAME_HEIGHT</span><span class="p">))</span>
+    <span class="n">fps</span> <span class="o">=</span> <span class="n">cap</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">CAP_PROP_FPS</span><span class="p">)</span>
+
+    <span class="n">trajectories</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">grid_rows</span> <span class="o">=</span> <span class="n">height</span> <span class="o">//</span> <span class="n">grid_size</span>
+    <span class="n">grid_cols</span> <span class="o">=</span> <span class="n">width</span> <span class="o">//</span> <span class="n">grid_size</span>
+    <span class="n">cumulative_grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">grid_rows</span><span class="p">,</span> <span class="n">grid_cols</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint32</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">save_output</span><span class="p">:</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">output_video</span><span class="p">),</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">output_writer</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">VideoWriter</span><span class="p">(</span>
+            <span class="n">output_video</span><span class="p">,</span>
+            <span class="n">cv2</span><span class="o">.</span><span class="n">VideoWriter_fourcc</span><span class="p">(</span><span class="o">*</span><span class="s1">&#39;mp4v&#39;</span><span class="p">),</span>
+            <span class="n">fps</span><span class="p">,</span>
+            <span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+        <span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">output_writer</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_bottom_center</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">x1</span> <span class="o">+</span> <span class="n">w</span> <span class="o">/</span> <span class="mi">2</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">y1</span> <span class="o">+</span> <span class="n">h</span><span class="p">))</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">update_trajectories</span><span class="p">(</span><span class="n">frame_data</span><span class="p">):</span>
+        <span class="n">current_points</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">frame_data</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+            <span class="n">track_id</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span>
+            <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;x1&#39;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;y1&#39;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;x2&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;x1&#39;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;y2&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;y1&#39;</span><span class="p">]</span>
+            <span class="n">point</span> <span class="o">=</span> <span class="n">get_bottom_center</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
+            <span class="n">current_points</span><span class="p">[</span><span class="n">track_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">point</span>
+
+            <span class="k">if</span> <span class="n">track_id</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">trajectories</span><span class="p">:</span>
+                <span class="n">trajectories</span><span class="p">[</span><span class="n">track_id</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+
+            <span class="n">trajectories</span><span class="p">[</span><span class="n">track_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">trajectories</span><span class="p">[</span><span class="n">track_id</span><span class="p">][</span><span class="o">-</span><span class="n">max_trajectory_length</span><span class="p">:]</span>
+
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">trajectories</span><span class="p">[</span><span class="n">track_id</span><span class="p">])</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> \
+                    <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">point</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">trajectories</span><span class="p">[</span><span class="n">track_id</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span> <span class="o">&gt;</span> <span class="n">min_move_distance</span><span class="p">:</span>
+                <span class="n">trajectories</span><span class="p">[</span><span class="n">track_id</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">point</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">current_points</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">draw_trajectories</span><span class="p">(</span><span class="n">frame</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">track_id</span><span class="p">,</span> <span class="n">points</span> <span class="ow">in</span> <span class="n">trajectories</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">)):</span>
+                <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">points</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]))</span> <span class="o">&lt;=</span> <span class="n">max_connect_distance</span><span class="p">:</span>
+                    <span class="n">cv2</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="n">points</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span> <span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">trajectory_color</span><span class="p">,</span> <span class="n">trajectory_width</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">update_cumulative_grid</span><span class="p">(</span><span class="n">points_dict</span><span class="p">):</span>
+        <span class="n">current_grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">cumulative_grid</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">points_dict</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+            <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">point</span>
+            <span class="n">col</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">x</span> <span class="o">//</span> <span class="n">grid_size</span><span class="p">),</span> <span class="n">grid_cols</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">row</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span> <span class="o">//</span> <span class="n">grid_size</span><span class="p">),</span> <span class="n">grid_rows</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">current_grid</span><span class="p">[</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">current_grid</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">create_heatmap</span><span class="p">(</span><span class="n">grid</span><span class="p">):</span>
+        <span class="n">enhanced</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">),</span> <span class="mf">0.6</span><span class="p">)</span>
+        <span class="n">enlarged</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">enhanced</span><span class="p">,</span> <span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">),</span> <span class="n">interpolation</span><span class="o">=</span><span class="n">cv2</span><span class="o">.</span><span class="n">INTER_NEAREST</span><span class="p">)</span>
+        <span class="n">blurred</span> <span class="o">=</span> <span class="n">gaussian_filter</span><span class="p">(</span><span class="n">enlarged</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="n">blur_sigma</span><span class="p">)</span>
+        <span class="n">normalized</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">normalize</span><span class="p">(</span><span class="n">blurred</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">NORM_MINMAX</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">cv2</span><span class="o">.</span><span class="n">applyColorMap</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">(</span><span class="n">normalized</span><span class="p">),</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLORMAP_JET</span><span class="p">)</span>
+
+    <span class="c1"># ========== Processing Loop ==========</span>
+    <span class="k">while</span> <span class="n">cap</span><span class="o">.</span><span class="n">isOpened</span><span class="p">():</span>
+        <span class="n">ret</span><span class="p">,</span> <span class="n">frame</span> <span class="o">=</span> <span class="n">cap</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">ret</span><span class="p">:</span>
+            <span class="k">break</span>
+
+        <span class="n">current_frame</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">cap</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">CAP_PROP_POS_FRAMES</span><span class="p">))</span>
+        <span class="n">frame_data</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;frame&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">current_frame</span><span class="p">]</span>
+
+        <span class="n">current_points</span> <span class="o">=</span> <span class="n">update_trajectories</span><span class="p">(</span><span class="n">frame_data</span><span class="p">)</span>
+        <span class="n">draw_trajectories</span><span class="p">(</span><span class="n">frame</span><span class="p">)</span>
+        <span class="n">cumulative_grid</span> <span class="o">+=</span> <span class="n">update_cumulative_grid</span><span class="p">(</span><span class="n">current_points</span><span class="p">)</span>
+        <span class="n">heatmap</span> <span class="o">=</span> <span class="n">create_heatmap</span><span class="p">(</span><span class="n">cumulative_grid</span><span class="p">)</span>
+
+        <span class="n">blended</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">addWeighted</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">heatmap_alpha</span><span class="p">,</span> <span class="n">heatmap</span><span class="p">,</span> <span class="n">heatmap_alpha</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">save_output</span><span class="p">:</span>
+            <span class="n">output_writer</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">blended</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">show_window</span><span class="p">:</span>
+            <span class="c1"># Show in Jupyter Notebook</span>
+            <span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">clear_output</span>
+            <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+            <span class="n">rgb_frame</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">blended</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2RGB</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">9</span><span class="p">))</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">rgb_frame</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+            <span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">display</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">())</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">clf</span><span class="p">()</span>
+
+            <span class="c1"># Optionally support &#39;q&#39; to quit</span>
+            <span class="k">if</span> <span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xFF</span> <span class="o">==</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;q&#39;</span><span class="p">):</span>
+                <span class="k">break</span>
+
+    <span class="n">cap</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">output_writer</span><span class="p">:</span>
+        <span class="n">output_writer</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">show_window</span><span class="p">:</span>
+        <span class="n">cv2</span><span class="o">.</span><span class="n">destroyAllWindows</span><span class="p">()</span></div>
+
+</pre></div>
+
+                </article>
+
+
+
+
+
+                <footer class="prev-next-footer d-print-none">
+
+<div class="prev-next-area">
+</div>
+                </footer>
+
+            </div>
+
+
+
+
+          </div>
+          <footer class="bd-footer-content">
+
+          </footer>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+
+    <div class="footer-items__start">
+
+        <div class="footer-item">
+
+  <p class="copyright">
+
+      © Copyright 2026, CCAI9012.
+      <br/>
+
+  </p>
+</div>
+
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    <br/>
+  </p>
+</div>
+
+    </div>
+
+
+
+    <div class="footer-items__end">
+
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.20.0.
+</p></div>
+
+    </div>
+
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,1254 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ccai9012.llm_utils &#8212; CCAI9012 API Reference</title>
+
+
+
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/api-theme.css?v=28db1ad0" />
+
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
+
+    <script src="../../_static/documentation_options.js?v=7f41d439"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/ccai9012/llm_utils';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+
+
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+
+  </head>
+  <body data-default-mode="">
+
+
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+
+  <div id="pst-scroll-pixel-helper"></div>
+
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+
+
+
+  <dialog id="pst-search-dialog">
+
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+
+
+  <div class=" navbar-header-items__start">
+
+      <div class="navbar-item">
+
+
+
+
+
+<a class="navbar-brand logo" href="../../index.html">
+
+
+
+
+
+
+    <p class="title logo__title">CCAI9012 API Reference</p>
+
+</a></div>
+
+  </div>
+
+  <div class=" navbar-header-items">
+
+    <div class="me-auto navbar-header-items__center">
+
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../ccai9012/index.html">
+    Modules
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+
+        <div class="navbar-item"><a class="nav-link course-home-link" href="../../../index.html">Back to Course Website</a></div>
+
+    </div>
+
+
+    <div class="navbar-header-items__end">
+
+
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+
+    </div>
+
+  </div>
+
+
+
+
+</div>
+
+    </header>
+
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+
+
+
+
+
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+
+
+
+  <div class="sidebar-header-items sidebar-primary__section">
+
+
+      <div class="sidebar-header-items__center">
+
+
+
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../ccai9012/index.html">
+    Modules
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+
+
+
+
+            <div class="navbar-item"><a class="nav-link course-home-link" href="../../../index.html">Back to Course Website</a></div>
+
+
+      </div>
+
+
+
+      <div class="sidebar-header-items__end">
+
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+
+      </div>
+
+  </div>
+
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links" aria-label="API navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">API Reference</p>
+  <div class="bd-toc-item navbar-nav">
+    <ul class="nav bd-sidenav">
+      <li class="toctree-l1 current active">
+        <a class="reference internal" href="../index.html">Overview</a>
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="../ccai9012/gan_utils.html">gan_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="../ccai9012/llm_utils.html">llm_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="../ccai9012/multi_modal_utils.html">multi_modal_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="../ccai9012/nn_utils.html">nn_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="../ccai9012/sd_utils.html">sd_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="../ccai9012/svi_utils.html">svi_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="../ccai9012/token_utils.html">token_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="../ccai9012/viz_utils.html">viz_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="../ccai9012/yolo_utils.html">yolo_utils</a>
+
+      </li>
+
+    </ul>
+  </div>
+</nav></div>
+    </div>
+
+
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+
+      <main id="main-content" class="bd-main" role="main">
+
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+
+    <div class="header-article-items__start">
+
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
+
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">ccai9012.llm_utils</span></li>
+  </ul>
+</nav>
+</div>
+
+    </div>
+
+
+</div>
+</div>
+
+
+
+
+<div id="searchbox"></div>
+                <article class="bd-article">
+
+  <h1>Source code for ccai9012.llm_utils</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Large Language Model (LLM) Utilities Module</span>
+<span class="sd">===============================</span>
+
+<span class="sd">This module provides a comprehensive set of utilities for working with Large Language Models (LLMs),</span>
+<span class="sd">particularly focused on the DeepSeek API. It includes functions for API key management,</span>
+<span class="sd">model initialization, basic prompting, and advanced use cases such as structured output extraction</span>
+<span class="sd">and retrieval-augmented generation.</span>
+
+<span class="sd">Main components:</span>
+<span class="sd">- API key management: Secure handling of DeepSeek API keys</span>
+<span class="sd">- Basic LLM interaction: Functions to initialize models and send prompts</span>
+<span class="sd">- Structured output utilities: Functions to extract structured data from reviews</span>
+<span class="sd">- Retrieval utilities: Tools for document loading, chunking, embedding, and question answering</span>
+
+<span class="sd">This module aims to simplify common LLM workflows and provide consistent interfaces for</span>
+<span class="sd">various natural language processing tasks.</span>
+
+<span class="sd">Usage:</span>
+<span class="sd">    ### Basic usage</span>
+<span class="sd">    llm = initialize_llm()</span>
+<span class="sd">    ask_llm(&quot;What is the capital of France?&quot;, llm)</span>
+<span class="sd">    </span>
+<span class="sd">    ### Structured output extraction</span>
+<span class="sd">    analyze_reviews(reviews_data, llm, &quot;output.csv&quot;)</span>
+<span class="sd">    </span>
+<span class="sd">    ### Retrieval-based question answering</span>
+<span class="sd">    retriever = build_pdf_retriever(&quot;document.pdf&quot;)</span>
+<span class="sd">    run_qa_chain(&quot;What does the document say about climate change?&quot;, retriever, llm)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c1"># Remove unused imports after centralizing token retrieval</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Optional</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">langchain_deepseek</span><span class="w"> </span><span class="kn">import</span> <span class="n">ChatDeepSeek</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tqdm</span><span class="w"> </span><span class="kn">import</span> <span class="n">tqdm</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.token_utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_token</span>
+
+
+<span class="c1"># ==========================</span>
+<span class="c1"># Basic utilities</span>
+<span class="c1"># ==========================</span>
+
+<div class="viewcode-block" id="get_deepseek_api_key">
+<a class="viewcode-back" href="../../generated/ccai9012.llm_utils.get_deepseek_api_key.html#ccai9012.llm_utils.get_deepseek_api_key">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_deepseek_api_key</span><span class="p">(</span><span class="n">env_var</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;DEEPSEEK_API_KEY&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Ensure the DeepSeek API key is set, or prompt the user to input it securely.</span>
+
+<span class="sd">    This function first checks if the API key is available in the specified environment</span>
+<span class="sd">    variable. If not found, it prompts the user to input it securely (without showing the</span>
+<span class="sd">    keystrokes), and then sets it as an environment variable for future use.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        env_var (str, optional): The name of the environment variable to check for the API key.</span>
+<span class="sd">                               Defaults to &quot;DEEPSEEK_API_KEY&quot;.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str: The DeepSeek API key.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; api_key = get_deepseek_api_key()</span>
+<span class="sd">        &gt;&gt;&gt; # Or specify a custom environment variable</span>
+<span class="sd">        &gt;&gt;&gt; api_key = get_deepseek_api_key(&quot;MY_CUSTOM_DEEPSEEK_KEY&quot;)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Prefer `ccai9012/token.yaml` (key: env.&lt;ENV_VAR&gt;), then env vars, then prompt.</span>
+    <span class="k">return</span> <span class="n">get_token</span><span class="p">(</span><span class="n">env_var</span><span class="o">=</span><span class="n">env_var</span><span class="p">,</span> <span class="n">yaml_key</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;env.</span><span class="si">{</span><span class="n">env_var</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">prompt</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Enter your </span><span class="si">{</span><span class="n">env_var</span><span class="si">}</span><span class="s2">: &quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="initialize_llm">
+<a class="viewcode-back" href="../../generated/ccai9012.llm_utils.initialize_llm.html#ccai9012.llm_utils.initialize_llm">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">initialize_llm</span><span class="p">(</span>
+    <span class="n">model</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;deepseek-chat&quot;</span><span class="p">,</span>
+    <span class="n">temperature</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span>
+    <span class="n">max_tokens</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">2048</span><span class="p">,</span>
+    <span class="n">timeout</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span>
+    <span class="n">max_retries</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="n">api_key</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ChatDeepSeek</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Initialize and configure a DeepSeek Chat model with the specified parameters.</span>
+
+<span class="sd">    This function creates a ChatDeepSeek instance with the provided configuration,</span>
+<span class="sd">    handling API key management automatically if not explicitly provided.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        model (str, optional): The model identifier to use. Defaults to &quot;deepseek-chat&quot;.</span>
+<span class="sd">        temperature (float, optional): Controls randomness in generation. Higher values (e.g., 0.8)</span>
+<span class="sd">                                     make output more random, lower values (e.g., 0.2) make it more</span>
+<span class="sd">                                     deterministic. Defaults to 0.5.</span>
+<span class="sd">        max_tokens (int, optional): Maximum number of tokens to generate. Defaults to 2048.</span>
+<span class="sd">        timeout (int, optional): API request timeout in seconds. Defaults to 30.</span>
+<span class="sd">        max_retries (int, optional): Number of times to retry failed API calls. Defaults to 3.</span>
+<span class="sd">        api_key (str, optional): DeepSeek API key. If None, will be obtained using get_deepseek_api_key().</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        ChatDeepSeek: Initialized DeepSeek language model client.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; # Basic initialization with default parameters</span>
+<span class="sd">        &gt;&gt;&gt; llm = initialize_llm()</span>
+<span class="sd">        &gt;&gt;&gt;</span>
+<span class="sd">        &gt;&gt;&gt; # Custom configuration</span>
+<span class="sd">        &gt;&gt;&gt; llm = initialize_llm(</span>
+<span class="sd">        &gt;&gt;&gt;     model=&quot;deepseek-chat&quot;,</span>
+<span class="sd">        &gt;&gt;&gt;     temperature=0.7,</span>
+<span class="sd">        &gt;&gt;&gt;     max_tokens=4096</span>
+<span class="sd">        &gt;&gt;&gt; )</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">api_key</span><span class="p">:</span>
+        <span class="n">api_key</span> <span class="o">=</span> <span class="n">get_deepseek_api_key</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">ChatDeepSeek</span><span class="p">(</span>
+        <span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span>
+        <span class="n">temperature</span><span class="o">=</span><span class="n">temperature</span><span class="p">,</span>
+        <span class="n">max_tokens</span><span class="o">=</span><span class="n">max_tokens</span><span class="p">,</span>
+        <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">,</span>
+        <span class="n">max_retries</span><span class="o">=</span><span class="n">max_retries</span><span class="p">,</span>
+        <span class="n">api_key</span><span class="o">=</span><span class="n">api_key</span><span class="p">,</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="ask_llm">
+<a class="viewcode-back" href="../../generated/ccai9012.llm_utils.ask_llm.html#ccai9012.llm_utils.ask_llm">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">ask_llm</span><span class="p">(</span><span class="n">prompt</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">llm</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ChatDeepSeek</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Send a prompt to the language model and stream the response to the console.</span>
+
+<span class="sd">    This function provides a simple interface for interacting with a DeepSeek model.</span>
+<span class="sd">    It prints both the input prompt and the generated response in a user-friendly format.</span>
+<span class="sd">    If no LLM instance is provided, a default one will be initialized automatically.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        prompt (str): The text prompt to send to the language model.</span>
+<span class="sd">        llm (ChatDeepSeek, optional): An initialized DeepSeek language model client.</span>
+<span class="sd">                                    If None, a default model will be initialized.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        None: The response is printed to the console.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; ask_llm(&quot;Explain quantum computing in simple terms.&quot;)</span>
+<span class="sd">        &gt;&gt;&gt;</span>
+<span class="sd">        &gt;&gt;&gt; # With custom LLM instance</span>
+<span class="sd">        &gt;&gt;&gt; custom_llm = initialize_llm(temperature=0.7)</span>
+<span class="sd">        &gt;&gt;&gt; ask_llm(&quot;Write a short poem about AI.&quot;, custom_llm)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">llm</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">llm</span> <span class="o">=</span> <span class="n">initialize_llm</span><span class="p">()</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">📌 Prompt:</span><span class="se">\n</span><span class="si">{</span><span class="n">prompt</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">llm</span><span class="o">.</span><span class="n">stream</span><span class="p">(</span><span class="n">prompt</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">chunk</span><span class="o">.</span><span class="n">text</span><span class="p">(),</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="generate_multiple_outputs">
+<a class="viewcode-back" href="../../generated/ccai9012.llm_utils.generate_multiple_outputs.html#ccai9012.llm_utils.generate_multiple_outputs">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">generate_multiple_outputs</span><span class="p">(</span>
+    <span class="n">prompt</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">num_outputs</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="n">temperature</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span>
+    <span class="n">llm_params</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">dict</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Generate multiple responses to the same prompt, each with identical parameters.</span>
+
+<span class="sd">    This function is useful for exploring the variety of responses that can be generated</span>
+<span class="sd">    from a single prompt. It initializes a language model with the specified temperature</span>
+<span class="sd">    and other parameters, then generates multiple responses sequentially.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        prompt (str): The text prompt to send to the language model.</span>
+<span class="sd">        num_outputs (int, optional): Number of different outputs to generate. Defaults to 3.</span>
+<span class="sd">        temperature (float, optional): Temperature setting for generation. Higher values</span>
+<span class="sd">                                      produce more diverse outputs. Defaults to 1.0.</span>
+<span class="sd">        llm_params (dict, optional): Additional parameters to pass to initialize_llm().</span>
+<span class="sd">                                   Defaults to {}.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        None: The responses are printed to the console.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; # Generate 3 different outputs with high creativity</span>
+<span class="sd">        &gt;&gt;&gt; generate_multiple_outputs(</span>
+<span class="sd">        &gt;&gt;&gt;     &quot;Write a short marketing slogan for an AI product.&quot;,</span>
+<span class="sd">        &gt;&gt;&gt;     num_outputs=3,</span>
+<span class="sd">        &gt;&gt;&gt;     temperature=1.2</span>
+<span class="sd">        &gt;&gt;&gt; )</span>
+<span class="sd">        &gt;&gt;&gt;</span>
+<span class="sd">        &gt;&gt;&gt; # Generate more deterministic outputs with custom model settings</span>
+<span class="sd">        &gt;&gt;&gt; generate_multiple_outputs(</span>
+<span class="sd">        &gt;&gt;&gt;     &quot;List 5 facts about machine learning.&quot;,</span>
+<span class="sd">        &gt;&gt;&gt;     num_outputs=2,</span>
+<span class="sd">        &gt;&gt;&gt;     temperature=0.3,</span>
+<span class="sd">        &gt;&gt;&gt;     llm_params={&quot;max_tokens&quot;: 200, &quot;model&quot;: &quot;deepseek-chat&quot;}</span>
+<span class="sd">        &gt;&gt;&gt; )</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">llm_params</span> <span class="o">=</span> <span class="n">llm_params</span> <span class="ow">or</span> <span class="p">{}</span>
+    <span class="n">llm</span> <span class="o">=</span> <span class="n">initialize_llm</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="n">temperature</span><span class="p">,</span> <span class="o">**</span><span class="n">llm_params</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_outputs</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> Output #</span><span class="si">{</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2"> — Temperature </span><span class="si">{</span><span class="n">temperature</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;📌 Prompt:</span><span class="se">\n</span><span class="si">{</span><span class="n">prompt</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">llm</span><span class="o">.</span><span class="n">stream</span><span class="p">(</span><span class="n">prompt</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">chunk</span><span class="o">.</span><span class="n">text</span><span class="p">(),</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+
+<span class="c1"># ==========================</span>
+<span class="c1"># Structure output utilities</span>
+<span class="c1"># ==========================</span>
+
+<div class="viewcode-block" id="analyze_airbnb_reviews">
+<a class="viewcode-back" href="../../generated/ccai9012.llm_utils.analyze_airbnb_reviews.html#ccai9012.llm_utils.analyze_airbnb_reviews">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">analyze_airbnb_reviews</span><span class="p">(</span><span class="n">reviews_df</span><span class="p">,</span> <span class="n">llm</span><span class="p">,</span> <span class="n">output_csv</span><span class="p">,</span> <span class="n">max_reviews</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">sleep_time</span><span class="o">=</span><span class="mf">0.1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Analyze Airbnb reviews using a language model to extract structured opinion data.</span>
+
+<span class="sd">    This function processes a dataset of Airbnb reviews, using a language model to extract</span>
+<span class="sd">    structured information including overall impression, useful tags for potential guests,</span>
+<span class="sd">    and opinions about specific aspects (location, facilities, host). Results are saved</span>
+<span class="sd">    to a CSV file for further analysis.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        reviews_df (pd.DataFrame): DataFrame containing Airbnb reviews with at least the columns</span>
+<span class="sd">                                 &#39;comments&#39;, &#39;listing_id&#39;, &#39;id&#39;, and &#39;date&#39;.</span>
+<span class="sd">        llm (ChatDeepSeek): An initialized DeepSeek language model client.</span>
+<span class="sd">        output_csv (str): Path where the resulting CSV file will be saved.</span>
+<span class="sd">        max_reviews (int, optional): Maximum number of reviews to process. Defaults to 50.</span>
+<span class="sd">                                   A random sample is taken if the dataset is larger.</span>
+<span class="sd">        sleep_time (float, optional): Delay in seconds between API calls to avoid rate limits.</span>
+<span class="sd">                                    Defaults to 0.1.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        pd.DataFrame: The processed results as a DataFrame.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; reviews = pd.read_csv(&quot;airbnb_reviews.csv&quot;)</span>
+<span class="sd">        &gt;&gt;&gt; llm = initialize_llm()</span>
+<span class="sd">        &gt;&gt;&gt; results_df = analyze_airbnb_reviews(</span>
+<span class="sd">        &gt;&gt;&gt;     reviews,</span>
+<span class="sd">        &gt;&gt;&gt;     llm,</span>
+<span class="sd">        &gt;&gt;&gt;     &quot;analyzed_reviews.csv&quot;,</span>
+<span class="sd">        &gt;&gt;&gt;     max_reviews=100</span>
+<span class="sd">        &gt;&gt;&gt; )</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">reviews_df</span> <span class="o">=</span> <span class="n">reviews_df</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">max_reviews</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">reviews_df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">(),</span> <span class="n">total</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">reviews_df</span><span class="p">)):</span>
+        <span class="n">review_text</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;comments&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+        <span class="n">prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">You are analyzing Airbnb guest reviews to extract structured information.</span>
+
+<span class="s2">For each review, extract the following:</span>
+
+<span class="s2">1. overall_impression: One of &quot;positive&quot;, &quot;negative&quot;, or &quot;neutral&quot;.</span>
+<span class="s2">2. decision_tags: Generate 2 to 5 helpful tags for future guests (e.g., clean room, near MTR, great host).</span>
+<span class="s2">3. highlighted_aspects: For each of these aspects – location, facility, host – extract:</span>
+<span class="s2">   - aspect (one of &quot;location&quot;, &quot;facility&quot;, or &quot;host&quot;)</span>
+<span class="s2">   - opinion: &quot;positive&quot;, &quot;negative&quot;, or &quot;neutral&quot;</span>
+<span class="s2">   - comment: A short sentence describing the opinion</span>
+
+<span class="s2">Review: &quot;</span><span class="si">{</span><span class="n">review_text</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="s2">Return your answer strictly in the following JSON format:</span>
+<span class="se">{{</span>
+<span class="s2">  &quot;overall_impression&quot;: &quot;...&quot;,</span>
+<span class="s2">  &quot;decision_tags&quot;: [&quot;...&quot;, &quot;...&quot;],</span>
+<span class="s2">  &quot;highlighted_aspects&quot;: [</span>
+<span class="s2">    </span><span class="se">{{</span>
+<span class="s2">      &quot;aspect&quot;: &quot;location&quot;,</span>
+<span class="s2">      &quot;opinion&quot;: &quot;...&quot;,</span>
+<span class="s2">      &quot;comment&quot;: &quot;...&quot;</span>
+<span class="s2">    </span><span class="se">}}</span><span class="s2">,</span>
+<span class="s2">    </span><span class="se">{{</span>
+<span class="s2">      &quot;aspect&quot;: &quot;facility&quot;,</span>
+<span class="s2">      &quot;opinion&quot;: &quot;...&quot;,</span>
+<span class="s2">      &quot;comment&quot;: &quot;...&quot;</span>
+<span class="s2">    </span><span class="se">}}</span><span class="s2">,</span>
+<span class="s2">    </span><span class="se">{{</span>
+<span class="s2">      &quot;aspect&quot;: &quot;host&quot;,</span>
+<span class="s2">      &quot;opinion&quot;: &quot;...&quot;,</span>
+<span class="s2">      &quot;comment&quot;: &quot;...&quot;</span>
+<span class="s2">    </span><span class="se">}}</span>
+<span class="s2">  ]</span>
+<span class="se">}}</span>
+<span class="s2">        &quot;&quot;&quot;</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">full_response</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+            <span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">llm</span><span class="o">.</span><span class="n">stream</span><span class="p">(</span><span class="n">prompt</span><span class="p">):</span>
+                <span class="n">full_response</span> <span class="o">+=</span> <span class="n">chunk</span><span class="o">.</span><span class="n">text</span><span class="p">()</span>
+
+            <span class="n">json_start</span> <span class="o">=</span> <span class="n">full_response</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;{&#39;</span><span class="p">)</span>
+            <span class="n">json_end</span> <span class="o">=</span> <span class="n">full_response</span><span class="o">.</span><span class="n">rfind</span><span class="p">(</span><span class="s1">&#39;}&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="n">json_str</span> <span class="o">=</span> <span class="n">full_response</span><span class="p">[</span><span class="n">json_start</span><span class="p">:</span><span class="n">json_end</span><span class="p">]</span>
+
+            <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">json_str</span><span class="p">)</span>
+
+            <span class="n">result</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s2">&quot;listing_id&quot;</span><span class="p">:</span> <span class="n">row</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;listing_id&quot;</span><span class="p">),</span>
+                <span class="s2">&quot;review_id&quot;</span><span class="p">:</span> <span class="n">row</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">),</span>
+                <span class="s2">&quot;date&quot;</span><span class="p">:</span> <span class="n">row</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;date&quot;</span><span class="p">),</span>
+                <span class="s2">&quot;review_text&quot;</span><span class="p">:</span> <span class="n">review_text</span><span class="p">,</span>
+                <span class="s2">&quot;overall_impression&quot;</span><span class="p">:</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;overall_impression&quot;</span><span class="p">),</span>
+                <span class="s2">&quot;decision_tags&quot;</span><span class="p">:</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;decision_tags&quot;</span><span class="p">,</span> <span class="p">[]))</span>
+            <span class="p">}</span>
+
+            <span class="c1"># Add aspects individually</span>
+            <span class="k">for</span> <span class="n">aspect_data</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;highlighted_aspects&quot;</span><span class="p">,</span> <span class="p">[]):</span>
+                <span class="n">aspect</span> <span class="o">=</span> <span class="n">aspect_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;aspect&quot;</span><span class="p">)</span>
+                <span class="n">result</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">aspect</span><span class="si">}</span><span class="s2">_opinion&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">aspect_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;opinion&quot;</span><span class="p">)</span>
+                <span class="n">result</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">aspect</span><span class="si">}</span><span class="s2">_comment&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">aspect_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;comment&quot;</span><span class="p">)</span>
+
+            <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Error processing review: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">continue</span>
+
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">sleep_time</span><span class="p">)</span>
+
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">output_csv</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Saved </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="si">}</span><span class="s2"> analyzed reviews to </span><span class="si">{</span><span class="n">output_csv</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">df</span></div>
+
+
+
+<div class="viewcode-block" id="load_business_locations">
+<a class="viewcode-back" href="../../generated/ccai9012.llm_utils.load_business_locations.html#ccai9012.llm_utils.load_business_locations">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">load_business_locations</span><span class="p">(</span><span class="n">business_file</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Load all business entries with latitude and longitude from the Yelp dataset.</span>
+
+<span class="sd">    This function reads a Yelp business.json file line by line, extracting businesses</span>
+<span class="sd">    that have valid geographic coordinates. It&#39;s useful for applications requiring</span>
+<span class="sd">    location-based analysis or visualization of business data.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        business_file (str): Path to the Yelp business.json file.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        list: A list of dictionaries, where each dictionary contains business information:</span>
+<span class="sd">              - name: Business name</span>
+<span class="sd">              - latitude: Geographic latitude</span>
+<span class="sd">              - longitude: Geographic longitude</span>
+<span class="sd">              - city: City name (may be empty)</span>
+<span class="sd">              - state: State code (may be empty)</span>
+<span class="sd">              - categories: Business categories (may be empty)</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; businesses = load_business_locations(&quot;data/yelp_reviews/business.json&quot;)</span>
+<span class="sd">        &gt;&gt;&gt; print(f&quot;Loaded {len(businesses)} businesses with geographic coordinates&quot;)</span>
+<span class="sd">        &gt;&gt;&gt; # Plot businesses on a map</span>
+<span class="sd">        &gt;&gt;&gt; import folium</span>
+<span class="sd">        &gt;&gt;&gt; m = folium.Map(location=[businesses[0][&#39;latitude&#39;], businesses[0][&#39;longitude&#39;]])</span>
+<span class="sd">        &gt;&gt;&gt; for business in businesses[:100]:  # Plot first 100 businesses</span>
+<span class="sd">        &gt;&gt;&gt;     folium.Marker(</span>
+<span class="sd">        &gt;&gt;&gt;         [business[&#39;latitude&#39;], business[&#39;longitude&#39;]],</span>
+<span class="sd">        &gt;&gt;&gt;         tooltip=business[&#39;name&#39;]</span>
+<span class="sd">        &gt;&gt;&gt;     ).add_to(m)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">businesses</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">business_file</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s2">&quot;Loading businesses&quot;</span><span class="p">):</span>
+            <span class="n">biz</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">biz</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;latitude&#39;</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">biz</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;longitude&#39;</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">businesses</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                    <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="n">biz</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span>
+                    <span class="s1">&#39;latitude&#39;</span><span class="p">:</span> <span class="n">biz</span><span class="p">[</span><span class="s1">&#39;latitude&#39;</span><span class="p">],</span>
+                    <span class="s1">&#39;longitude&#39;</span><span class="p">:</span> <span class="n">biz</span><span class="p">[</span><span class="s1">&#39;longitude&#39;</span><span class="p">],</span>
+                    <span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="n">biz</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;city&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+                    <span class="s1">&#39;state&#39;</span><span class="p">:</span> <span class="n">biz</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;state&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+                    <span class="s1">&#39;categories&#39;</span><span class="p">:</span> <span class="n">biz</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;categories&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+                <span class="p">})</span>
+    <span class="k">return</span> <span class="n">businesses</span></div>
+
+
+
+<div class="viewcode-block" id="load_reviews_by_city">
+<a class="viewcode-back" href="../../generated/ccai9012.llm_utils.load_reviews_by_city.html#ccai9012.llm_utils.load_reviews_by_city">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">load_reviews_by_city</span><span class="p">(</span><span class="n">business_file</span><span class="p">,</span> <span class="n">review_file</span><span class="p">,</span> <span class="n">city_name</span><span class="p">,</span> <span class="n">max_reviews</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Load Yelp reviews for businesses located in a specific city.</span>
+
+<span class="sd">    This function performs a two-step process:</span>
+<span class="sd">    1. First, it filters businesses located in the specified city</span>
+<span class="sd">    2. Then, it loads reviews for those businesses, with additional location metadata</span>
+
+<span class="sd">    This is especially useful for city-specific sentiment analysis and geographic</span>
+<span class="sd">    visualization of review data.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        business_file (str): Path to the Yelp business.json file.</span>
+<span class="sd">        review_file (str): Path to the Yelp review.json file.</span>
+<span class="sd">        city_name (str): Target city name (case-insensitive matching).</span>
+<span class="sd">        max_reviews (int, optional): Maximum number of reviews to return. Defaults to 1000.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        list: A list of review dictionaries enriched with business location data:</span>
+<span class="sd">             - business_id: Unique business identifier</span>
+<span class="sd">             - business_name: Name of the business</span>
+<span class="sd">             - text: Review text content</span>
+<span class="sd">             - stars: Review rating (1-5)</span>
+<span class="sd">             - date: Review date</span>
+<span class="sd">             - latitude: Business geographic latitude</span>
+<span class="sd">             - longitude: Business geographic longitude</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; reviews = load_reviews_by_city(</span>
+<span class="sd">        &gt;&gt;&gt;     &quot;data/yelp_reviews/business.json&quot;,</span>
+<span class="sd">        &gt;&gt;&gt;     &quot;data/yelp_reviews/review.json&quot;,</span>
+<span class="sd">        &gt;&gt;&gt;     &quot;Las Vegas&quot;,</span>
+<span class="sd">        &gt;&gt;&gt;     max_reviews=500</span>
+<span class="sd">        &gt;&gt;&gt; )</span>
+<span class="sd">        &gt;&gt;&gt; print(f&quot;Loaded {len(reviews)} reviews from Las Vegas businesses&quot;)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">business_ids_in_city</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="c1"># First, load businesses in the target city</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">business_file</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">biz</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">biz</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;city&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="n">city_name</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+                <span class="n">business_ids_in_city</span><span class="p">[</span><span class="n">biz</span><span class="p">[</span><span class="s1">&#39;business_id&#39;</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="n">biz</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span>
+                    <span class="s1">&#39;latitude&#39;</span><span class="p">:</span> <span class="n">biz</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;latitude&#39;</span><span class="p">),</span>
+                    <span class="s1">&#39;longitude&#39;</span><span class="p">:</span> <span class="n">biz</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;longitude&#39;</span><span class="p">),</span>
+                    <span class="s1">&#39;categories&#39;</span><span class="p">:</span> <span class="n">biz</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;categories&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+                    <span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="n">biz</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;city&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+                <span class="p">}</span>
+
+    <span class="c1"># Then, load reviews for those businesses</span>
+    <span class="n">reviews</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">review_file</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">review</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+            <span class="n">biz_id</span> <span class="o">=</span> <span class="n">review</span><span class="p">[</span><span class="s1">&#39;business_id&#39;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">biz_id</span> <span class="ow">in</span> <span class="n">business_ids_in_city</span><span class="p">:</span>
+                <span class="c1"># Combine review with business info</span>
+                <span class="n">review_data</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="s1">&#39;business_id&#39;</span><span class="p">:</span> <span class="n">biz_id</span><span class="p">,</span>
+                    <span class="s1">&#39;business_name&#39;</span><span class="p">:</span> <span class="n">business_ids_in_city</span><span class="p">[</span><span class="n">biz_id</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">],</span>
+                    <span class="s1">&#39;text&#39;</span><span class="p">:</span> <span class="n">review</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">],</span>
+                    <span class="s1">&#39;stars&#39;</span><span class="p">:</span> <span class="n">review</span><span class="p">[</span><span class="s1">&#39;stars&#39;</span><span class="p">],</span>
+                    <span class="s1">&#39;date&#39;</span><span class="p">:</span> <span class="n">review</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">],</span>
+                    <span class="s1">&#39;latitude&#39;</span><span class="p">:</span> <span class="n">business_ids_in_city</span><span class="p">[</span><span class="n">biz_id</span><span class="p">][</span><span class="s1">&#39;latitude&#39;</span><span class="p">],</span>
+                    <span class="s1">&#39;longitude&#39;</span><span class="p">:</span> <span class="n">business_ids_in_city</span><span class="p">[</span><span class="n">biz_id</span><span class="p">][</span><span class="s1">&#39;longitude&#39;</span><span class="p">]</span>
+                <span class="p">}</span>
+                <span class="n">reviews</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">review_data</span><span class="p">)</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">reviews</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">max_reviews</span><span class="p">:</span>
+                    <span class="k">break</span>
+
+    <span class="k">return</span> <span class="n">reviews</span></div>
+
+
+
+<div class="viewcode-block" id="analyze_reviews">
+<a class="viewcode-back" href="../../generated/ccai9012.llm_utils.analyze_reviews.html#ccai9012.llm_utils.analyze_reviews">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">analyze_reviews</span><span class="p">(</span><span class="n">reviews</span><span class="p">,</span> <span class="n">llm</span><span class="p">,</span> <span class="n">output_csv</span><span class="p">,</span> <span class="n">max_reviews</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">sleep_time</span><span class="o">=</span><span class="mf">0.2</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Analyze Yelp reviews using LLM to extract sentiment polarity, emotion, and keywords.</span>
+
+<span class="sd">    This function processes Yelp reviews through a language model to extract structured</span>
+<span class="sd">    information about sentiment and content. Each review is analyzed to determine:</span>
+<span class="sd">    - Overall polarity (positive/negative/neutral)</span>
+<span class="sd">    - Specific emotional sentiment (e.g., delighted, disappointed)</span>
+<span class="sd">    - Key topics or aspects mentioned in the review</span>
+
+<span class="sd">    Results are saved to a CSV file for further analysis or visualization.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        reviews (list): List of review dictionaries, each containing at least a &#39;text&#39; key.</span>
+<span class="sd">                      May also contain metadata like &#39;stars&#39;, &#39;business_name&#39;, etc.</span>
+<span class="sd">        llm (ChatDeepSeek): An initialized DeepSeek language model client.</span>
+<span class="sd">        output_csv (str): Path where the resulting CSV file will be saved.</span>
+<span class="sd">        max_reviews (int, optional): Maximum number of reviews to process. Defaults to 50.</span>
+<span class="sd">        sleep_time (float, optional): Delay in seconds between API calls to avoid rate limits.</span>
+<span class="sd">                                    Defaults to 0.2.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        pd.DataFrame: The processed results as a DataFrame with columns for review text,</span>
+<span class="sd">                    polarity, sentiment, keywords, and any metadata from the original reviews.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; # First load reviews from a city</span>
+<span class="sd">        &gt;&gt;&gt; reviews = load_reviews_by_city(</span>
+<span class="sd">        &gt;&gt;&gt;     &quot;data/yelp_reviews/business.json&quot;,</span>
+<span class="sd">        &gt;&gt;&gt;     &quot;data/yelp_reviews/review.json&quot;,</span>
+<span class="sd">        &gt;&gt;&gt;     &quot;San Francisco&quot;,</span>
+<span class="sd">        &gt;&gt;&gt;     max_reviews=200</span>
+<span class="sd">        &gt;&gt;&gt; )</span>
+<span class="sd">        &gt;&gt;&gt; # Then analyze them</span>
+<span class="sd">        &gt;&gt;&gt; llm = initialize_llm()</span>
+<span class="sd">        &gt;&gt;&gt; results_df = analyze_reviews(reviews, llm, &quot;sf_review_analysis.csv&quot;, max_reviews=100)</span>
+<span class="sd">        &gt;&gt;&gt;</span>
+<span class="sd">        &gt;&gt;&gt; # Visualize results</span>
+<span class="sd">        &gt;&gt;&gt; import matplotlib.pyplot as plt</span>
+<span class="sd">        &gt;&gt;&gt; plt.figure(figsize=(10, 6))</span>
+<span class="sd">        &gt;&gt;&gt; results_df[&#39;polarity&#39;].value_counts().plot(kind=&#39;bar&#39;)</span>
+<span class="sd">        &gt;&gt;&gt; plt.title(&#39;Sentiment Distribution in San Francisco Reviews&#39;)</span>
+<span class="sd">        &gt;&gt;&gt; plt.ylabel(&#39;Number of Reviews&#39;)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">reviews</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">reviews</span><span class="p">)[:</span><span class="n">max_reviews</span><span class="p">]</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">review</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">reviews</span><span class="p">,</span> <span class="n">total</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">reviews</span><span class="p">)):</span>
+        <span class="n">review_text</span> <span class="o">=</span> <span class="n">review</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+        <span class="n">prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">You are an assistant performing structured sentiment analysis on Yelp reviews.</span>
+
+<span class="s2">Please analyze the following review and extract:</span>
+
+<span class="s2">1. polarity: One of &quot;positive&quot;, &quot;negative&quot;, or &quot;neutral&quot;.</span>
+<span class="s2">2. sentiment: Choose the most appropriate emotion from the list: &quot;delighted&quot;, &quot;content&quot;, &quot;surprise&quot;, &quot;indifferent&quot;, &quot;disappointed&quot;, &quot;angry&quot;, or &quot;frustrated&quot;.</span>
+<span class="s2">3. keywords: Extract 2 to 5 important keywords that describe the main topics or aspects mentioned (e.g., cleanliness, service, location, waiting time).</span>
+
+<span class="s2">Review: &quot;</span><span class="si">{</span><span class="n">review_text</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="s2">Return your answer strictly in the following JSON format:</span>
+<span class="se">{{</span>
+<span class="s2">  &quot;polarity&quot;: &quot;...&quot;,</span>
+<span class="s2">  &quot;sentiment&quot;: &quot;...&quot;,</span>
+<span class="s2">  &quot;keywords&quot;: [&quot;...&quot;, &quot;...&quot;, &quot;...&quot;]</span>
+<span class="se">}}</span>
+<span class="s2">        &quot;&quot;&quot;</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">full_response</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+            <span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">llm</span><span class="o">.</span><span class="n">stream</span><span class="p">(</span><span class="n">prompt</span><span class="p">):</span>
+                <span class="n">full_response</span> <span class="o">+=</span> <span class="n">chunk</span><span class="o">.</span><span class="n">text</span><span class="p">()</span>
+
+            <span class="c1"># find JSON and extract</span>
+            <span class="n">json_start</span> <span class="o">=</span> <span class="n">full_response</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;{&#39;</span><span class="p">)</span>
+            <span class="n">json_end</span> <span class="o">=</span> <span class="n">full_response</span><span class="o">.</span><span class="n">rfind</span><span class="p">(</span><span class="s1">&#39;}&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="n">json_str</span> <span class="o">=</span> <span class="n">full_response</span><span class="p">[</span><span class="n">json_start</span><span class="p">:</span><span class="n">json_end</span><span class="p">]</span>
+
+            <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">json_str</span><span class="p">)</span>
+
+            <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                <span class="s2">&quot;review_text&quot;</span><span class="p">:</span> <span class="n">review_text</span><span class="p">,</span>
+                <span class="s2">&quot;polarity&quot;</span><span class="p">:</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;polarity&quot;</span><span class="p">),</span>
+                <span class="s2">&quot;sentiment&quot;</span><span class="p">:</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;sentiment&quot;</span><span class="p">),</span>
+                <span class="s2">&quot;keywords&quot;</span><span class="p">:</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;keywords&quot;</span><span class="p">,</span> <span class="p">[])),</span>
+                <span class="s2">&quot;stars&quot;</span><span class="p">:</span> <span class="n">review</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;stars&quot;</span><span class="p">),</span>
+                <span class="s2">&quot;business_name&quot;</span><span class="p">:</span> <span class="n">review</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;business_name&quot;</span><span class="p">),</span>
+                <span class="s2">&quot;latitude&quot;</span><span class="p">:</span> <span class="n">review</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;latitude&quot;</span><span class="p">),</span>
+                <span class="s2">&quot;longitude&quot;</span><span class="p">:</span> <span class="n">review</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;longitude&quot;</span><span class="p">)</span>
+            <span class="p">})</span>
+
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> Error processing review: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">continue</span>
+
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">sleep_time</span><span class="p">)</span>
+
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">output_csv</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> Saved </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="si">}</span><span class="s2"> analyzed reviews to </span><span class="si">{</span><span class="n">output_csv</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">df</span></div>
+
+
+
+<span class="c1"># ==========================</span>
+<span class="c1"># Retrieval-related utilities</span>
+<span class="c1"># ==========================</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">langchain_community.document_loaders</span><span class="w"> </span><span class="kn">import</span> <span class="n">PyPDFLoader</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">langchain.text_splitter</span><span class="w"> </span><span class="kn">import</span> <span class="n">RecursiveCharacterTextSplitter</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">langchain_community.embeddings</span><span class="w"> </span><span class="kn">import</span> <span class="n">HuggingFaceEmbeddings</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">langchain_community.vectorstores</span><span class="w"> </span><span class="kn">import</span> <span class="n">FAISS</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">langchain.chains</span><span class="w"> </span><span class="kn">import</span> <span class="n">RetrievalQA</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">langchain_deepseek</span><span class="w"> </span><span class="kn">import</span> <span class="n">ChatDeepSeek</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">langchain.prompts</span><span class="w"> </span><span class="kn">import</span> <span class="n">PromptTemplate</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+
+<div class="viewcode-block" id="build_pdf_retriever">
+<a class="viewcode-back" href="../../generated/ccai9012.llm_utils.build_pdf_retriever.html#ccai9012.llm_utils.build_pdf_retriever">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">build_pdf_retriever</span><span class="p">(</span>
+    <span class="n">pdf_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">embedding_model_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;BAAI/bge-base-en-v1.5&quot;</span><span class="p">,</span>
+    <span class="n">chunk_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1500</span><span class="p">,</span>
+    <span class="n">chunk_overlap</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">200</span><span class="p">,</span>
+    <span class="n">top_k</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="n">exclude_last_n_pages</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Build a retriever for semantic search within PDF documents.</span>
+
+<span class="sd">    This function implements a complete pipeline for PDF-based retrieval:</span>
+<span class="sd">    1. Loading the PDF document and extracting text</span>
+<span class="sd">    2. Chunking text into manageable segments with appropriate overlap</span>
+<span class="sd">    3. Embedding text chunks using a vector embedding model</span>
+<span class="sd">    4. Creating a FAISS vector store for efficient similarity search</span>
+<span class="sd">    5. Returning a retriever that can find relevant document sections based on queries</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        pdf_path (str): Path to the PDF document to process.</span>
+<span class="sd">        embedding_model_name (str, optional): Name of the HuggingFace embedding model to use.</span>
+<span class="sd">                                           Defaults to &quot;BAAI/bge-base-en-v1.5&quot;.</span>
+<span class="sd">        chunk_size (int, optional): Maximum number of characters to process in a single chunk.</span>
+<span class="sd">                                  Defaults to 1500.</span>
+<span class="sd">        chunk_overlap (int, optional): Number of characters to overlap between consecutive chunks.</span>
+<span class="sd">                                     Defaults to 200.</span>
+<span class="sd">        top_k (int, optional): Number of top similar chunks to return for each query.</span>
+<span class="sd">                             Defaults to 10.</span>
+<span class="sd">        exclude_last_n_pages (int, optional): Number of pages to exclude from the end of the document</span>
+<span class="sd">                                           (useful for skipping references, bibliographies).</span>
+<span class="sd">                                           Defaults to 2.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        retriever: A LangChain retriever object ready for semantic search operations.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; # Build a retriever for a PDF document</span>
+<span class="sd">        &gt;&gt;&gt; retriever = build_pdf_retriever(</span>
+<span class="sd">        &gt;&gt;&gt;     pdf_path=&quot;data/energy-action-plan/1527001.pdf&quot;,</span>
+<span class="sd">        &gt;&gt;&gt;     chunk_size=2000,  # Larger chunks for more context</span>
+<span class="sd">        &gt;&gt;&gt;     top_k=5  # Return top 5 most relevant chunks</span>
+<span class="sd">        &gt;&gt;&gt; )</span>
+<span class="sd">        &gt;&gt;&gt;</span>
+<span class="sd">        &gt;&gt;&gt; # Use it with a language model for question answering</span>
+<span class="sd">        &gt;&gt;&gt; llm = initialize_llm()</span>
+<span class="sd">        &gt;&gt;&gt; run_qa_chain(</span>
+<span class="sd">        &gt;&gt;&gt;     &quot;What are the main goals of the energy plan?&quot;,</span>
+<span class="sd">        &gt;&gt;&gt;     retriever,</span>
+<span class="sd">        &gt;&gt;&gt;     llm</span>
+<span class="sd">        &gt;&gt;&gt; )</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+   <span class="c1"># Load PDF pages as documents</span>
+    <span class="n">loader</span> <span class="o">=</span> <span class="n">PyPDFLoader</span><span class="p">(</span><span class="n">pdf_path</span><span class="p">)</span>
+    <span class="n">pages</span> <span class="o">=</span> <span class="n">loader</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
+
+    <span class="c1"># Split each page into overlapping chunks</span>
+    <span class="n">text_splitter</span> <span class="o">=</span> <span class="n">RecursiveCharacterTextSplitter</span><span class="p">(</span>
+        <span class="n">chunk_size</span><span class="o">=</span><span class="n">chunk_size</span><span class="p">,</span>
+        <span class="n">chunk_overlap</span><span class="o">=</span><span class="n">chunk_overlap</span>
+    <span class="p">)</span>
+    <span class="n">docs</span> <span class="o">=</span> <span class="n">text_splitter</span><span class="o">.</span><span class="n">split_documents</span><span class="p">(</span><span class="n">pages</span><span class="p">)</span>
+
+    <span class="c1"># Clean metadata: keep only &#39;page&#39; and &#39;source&#39;</span>
+    <span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">docs</span><span class="p">:</span>
+        <span class="n">doc</span><span class="o">.</span><span class="n">metadata</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;page&quot;</span><span class="p">:</span> <span class="n">doc</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;page&quot;</span><span class="p">),</span>
+            <span class="s2">&quot;source&quot;</span><span class="p">:</span> <span class="n">doc</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;source&quot;</span><span class="p">)</span>
+        <span class="p">}</span>
+
+    <span class="c1"># Exclude the last N pages (e.g., references)</span>
+    <span class="k">if</span> <span class="n">exclude_last_n_pages</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">max_page</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">doc</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;page&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">docs</span><span class="p">)</span>
+        <span class="n">docs</span> <span class="o">=</span> <span class="p">[</span><span class="n">doc</span> <span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">docs</span> <span class="k">if</span> <span class="n">doc</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;page&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">max_page</span> <span class="o">-</span> <span class="n">exclude_last_n_pages</span><span class="p">]</span>
+
+    <span class="c1"># Initialize the embedding model</span>
+    <span class="n">embedding_model</span> <span class="o">=</span> <span class="n">HuggingFaceEmbeddings</span><span class="p">(</span><span class="n">model_name</span><span class="o">=</span><span class="n">embedding_model_name</span><span class="p">)</span>
+
+    <span class="c1"># Build FAISS vector store from document chunks</span>
+    <span class="n">vectorstore</span> <span class="o">=</span> <span class="n">FAISS</span><span class="o">.</span><span class="n">from_documents</span><span class="p">(</span><span class="n">docs</span><span class="p">,</span> <span class="n">embedding_model</span><span class="p">)</span>
+
+    <span class="c1"># Create retriever with similarity search</span>
+    <span class="n">retriever</span> <span class="o">=</span> <span class="n">vectorstore</span><span class="o">.</span><span class="n">as_retriever</span><span class="p">(</span>
+        <span class="n">search_type</span><span class="o">=</span><span class="s2">&quot;similarity&quot;</span><span class="p">,</span>
+        <span class="n">search_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;k&quot;</span><span class="p">:</span> <span class="n">top_k</span><span class="p">}</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">retriever</span></div>
+
+
+
+<div class="viewcode-block" id="run_qa_chain">
+<a class="viewcode-back" href="../../generated/ccai9012.llm_utils.run_qa_chain.html#ccai9012.llm_utils.run_qa_chain">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">run_qa_chain</span><span class="p">(</span>
+    <span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">retriever</span><span class="p">,</span>
+    <span class="n">llm</span><span class="p">,</span>
+    <span class="n">prompt_template</span><span class="p">:</span> <span class="n">PromptTemplate</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">return_sources</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">save_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Run a retrieval-based question answering chain on a given query.</span>
+
+<span class="sd">    This function combines a retriever (which finds relevant document chunks) with a</span>
+<span class="sd">    language model to generate answers based on the retrieved context. It provides</span>
+<span class="sd">    options for customizing the prompt, viewing source documents, and saving results.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        query (str): The question to be answered by the system.</span>
+<span class="sd">        retriever: A LangChain retriever object (e.g., from build_pdf_retriever).</span>
+<span class="sd">        llm: An initialized language model instance (e.g., from initialize_llm).</span>
+<span class="sd">        prompt_template (PromptTemplate, optional): Custom prompt template to override the default.</span>
+<span class="sd">                                                 Useful for specialized instructions or formatting.</span>
+<span class="sd">        return_sources (bool, optional): Whether to print the source documents used for the answer.</span>
+<span class="sd">                                      Defaults to False.</span>
+<span class="sd">        save_path (str, optional): File path to save the result as a .txt file.</span>
+<span class="sd">                                 If None, results are not saved. Defaults to None.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str: The generated answer to the query based on retrieved documents.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">chain_kwargs</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">if</span> <span class="n">prompt_template</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">chain_kwargs</span><span class="p">[</span><span class="s2">&quot;prompt&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">prompt_template</span>
+
+    <span class="n">qa_chain</span> <span class="o">=</span> <span class="n">RetrievalQA</span><span class="o">.</span><span class="n">from_chain_type</span><span class="p">(</span>
+        <span class="n">llm</span><span class="o">=</span><span class="n">llm</span><span class="p">,</span>
+        <span class="n">retriever</span><span class="o">=</span><span class="n">retriever</span><span class="p">,</span>
+        <span class="n">chain_type</span><span class="o">=</span><span class="s2">&quot;stuff&quot;</span><span class="p">,</span>
+        <span class="n">chain_type_kwargs</span><span class="o">=</span><span class="n">chain_kwargs</span><span class="p">,</span>
+        <span class="n">return_source_documents</span><span class="o">=</span><span class="n">return_sources</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">response</span> <span class="o">=</span> <span class="n">qa_chain</span><span class="o">.</span><span class="n">invoke</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">--- Final Answer ---&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">[</span><span class="s2">&quot;result&quot;</span><span class="p">])</span>
+
+    <span class="k">if</span> <span class="n">return_sources</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">doc</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">response</span><span class="p">[</span><span class="s2">&quot;source_documents&quot;</span><span class="p">]):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">-------------------- Document </span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2"> --------------------&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="o">.</span><span class="n">page_content</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">save_path</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">save_path</span><span class="p">),</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">save_path</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">response</span><span class="p">[</span><span class="s2">&quot;result&quot;</span><span class="p">])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> Answer saved to: </span><span class="si">{</span><span class="n">save_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">response</span><span class="p">[</span><span class="s2">&quot;result&quot;</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="parse_markdown_table">
+<a class="viewcode-back" href="../../generated/ccai9012.llm_utils.parse_markdown_table.html#ccai9012.llm_utils.parse_markdown_table">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">parse_markdown_table</span><span class="p">(</span><span class="n">md_text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Convert a markdown-formatted table string into a pandas DataFrame.</span>
+
+<span class="sd">    This function extracts and parses a markdown table from text input, handling special</span>
+<span class="sd">    formatting like &lt;br&gt; tags in cells.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        md_text (str): Text containing a markdown table (must include table rows starting with &#39;|&#39;)</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        pd.DataFrame: A pandas DataFrame containing the parsed table data</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: If no valid markdown table is found in the input text</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; markdown = &#39;&#39;&#39;</span>
+<span class="sd">        &gt;&gt;&gt; | Name | Age | Occupation |</span>
+<span class="sd">        &gt;&gt;&gt; | ---- | --- | ---------- |</span>
+<span class="sd">        &gt;&gt;&gt; | John | 32  | Engineer   |</span>
+<span class="sd">        &gt;&gt;&gt; | Mary | 28  | Designer&lt;br&gt;Consultant |</span>
+<span class="sd">        &gt;&gt;&gt; &#39;&#39;&#39;</span>
+<span class="sd">        &gt;&gt;&gt; df = parse_markdown_table(markdown)</span>
+<span class="sd">        &gt;&gt;&gt; print(df.columns)  # [&#39;Name&#39;, &#39;Age&#39;, &#39;Occupation&#39;]</span>
+<span class="sd">        &gt;&gt;&gt; print(df.loc[1, &#39;Occupation&#39;])  # &#39;Designer; Consultant&#39;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Extract markdown table (start from the first &#39;|&#39;)</span>
+    <span class="n">table_lines</span> <span class="o">=</span> <span class="p">[</span><span class="n">line</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">md_text</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span> <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;|&quot;</span><span class="p">)]</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">table_lines</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;No valid markdown table found.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Extract header and rows</span>
+    <span class="n">header_line</span> <span class="o">=</span> <span class="n">table_lines</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">column_names</span> <span class="o">=</span> <span class="p">[</span><span class="n">col</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">header_line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;|&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;|&#39;</span><span class="p">)]</span>
+
+    <span class="c1"># Parse rows</span>
+    <span class="n">data_rows</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">table_lines</span><span class="p">[</span><span class="mi">2</span><span class="p">:]:</span>  <span class="c1"># skip header and separator</span>
+        <span class="n">cells</span> <span class="o">=</span> <span class="p">[</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;&lt;br\s*/?&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;; &#39;</span><span class="p">,</span> <span class="n">cell</span><span class="o">.</span><span class="n">strip</span><span class="p">(),</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">IGNORECASE</span><span class="p">)</span> <span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;|&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;|&#39;</span><span class="p">)]</span>
+        <span class="c1"># If row is shorter than columns, pad</span>
+        <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">cells</span><span class="p">)</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">column_names</span><span class="p">):</span>
+            <span class="n">cells</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="n">data_rows</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cells</span><span class="p">)</span>
+
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data_rows</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">column_names</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">df</span></div>
+
+</pre></div>
+
+                </article>
+
+
+
+
+
+                <footer class="prev-next-footer d-print-none">
+
+<div class="prev-next-area">
+</div>
+                </footer>
+
+            </div>
+
+
+
+
+          </div>
+          <footer class="bd-footer-content">
+
+          </footer>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+
+    <div class="footer-items__start">
+
+        <div class="footer-item">
+
+  <p class="copyright">
+
+      © Copyright 2026, CCAI9012.
+      <br/>
+
+  </p>
+</div>
+
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    <br/>
+  </p>
+</div>
+
+    </div>
+
+
+
+    <div class="footer-items__end">
+
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.20.0.
+</p></div>
+
+    </div>
+
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,787 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ccai9012.multi_modal_utils &#8212; CCAI9012 API Reference</title>
+
+
+
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/api-theme.css?v=28db1ad0" />
+
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
+
+    <script src="../../_static/documentation_options.js?v=7f41d439"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/ccai9012/multi_modal_utils';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+
+
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+
+  </head>
+  <body data-default-mode="">
+
+
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+
+  <div id="pst-scroll-pixel-helper"></div>
+
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+
+
+
+  <dialog id="pst-search-dialog">
+
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+
+
+  <div class=" navbar-header-items__start">
+
+      <div class="navbar-item">
+
+
+
+
+
+<a class="navbar-brand logo" href="../../index.html">
+
+
+
+
+
+
+    <p class="title logo__title">CCAI9012 API Reference</p>
+
+</a></div>
+
+  </div>
+
+  <div class=" navbar-header-items">
+
+    <div class="me-auto navbar-header-items__center">
+
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../ccai9012/index.html">
+    Modules
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+
+        <div class="navbar-item"><a class="nav-link course-home-link" href="../../../index.html">Back to Course Website</a></div>
+
+    </div>
+
+
+    <div class="navbar-header-items__end">
+
+
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+
+    </div>
+
+  </div>
+
+
+
+
+</div>
+
+    </header>
+
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+
+
+
+
+
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+
+
+
+  <div class="sidebar-header-items sidebar-primary__section">
+
+
+      <div class="sidebar-header-items__center">
+
+
+
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../ccai9012/index.html">
+    Modules
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+
+
+
+
+            <div class="navbar-item"><a class="nav-link course-home-link" href="../../../index.html">Back to Course Website</a></div>
+
+
+      </div>
+
+
+
+      <div class="sidebar-header-items__end">
+
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+
+      </div>
+
+  </div>
+
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links" aria-label="API navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">API Reference</p>
+  <div class="bd-toc-item navbar-nav">
+    <ul class="nav bd-sidenav">
+      <li class="toctree-l1 current active">
+        <a class="reference internal" href="../index.html">Overview</a>
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="../ccai9012/gan_utils.html">gan_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="../ccai9012/llm_utils.html">llm_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="../ccai9012/multi_modal_utils.html">multi_modal_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="../ccai9012/nn_utils.html">nn_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="../ccai9012/sd_utils.html">sd_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="../ccai9012/svi_utils.html">svi_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="../ccai9012/token_utils.html">token_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="../ccai9012/viz_utils.html">viz_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="../ccai9012/yolo_utils.html">yolo_utils</a>
+
+      </li>
+
+    </ul>
+  </div>
+</nav></div>
+    </div>
+
+
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+
+      <main id="main-content" class="bd-main" role="main">
+
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+
+    <div class="header-article-items__start">
+
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
+
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">ccai9012.multi_modal_utils</span></li>
+  </ul>
+</nav>
+</div>
+
+    </div>
+
+
+</div>
+</div>
+
+
+
+
+<div id="searchbox"></div>
+                <article class="bd-article">
+
+  <h1>Source code for ccai9012.multi_modal_utils</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Multi-Modal Utilities Module</span>
+<span class="sd">============================</span>
+
+<span class="sd">This module provides utilities for working with multi-modal AI models, focusing on vision-language tasks.</span>
+<span class="sd">It includes tools for image classification using CLIP and visual question answering using Qwen2.5-VL.</span>
+
+<span class="sd">The module is organized into two main components:</span>
+<span class="sd">1. CLIPClassifier: A class for zero-shot image classification using OpenAI&#39;s CLIP model</span>
+<span class="sd">2. VisionQAProcessor: A class for visual question answering and image captioning using Qwen&#39;s VL model</span>
+
+<span class="sd">These utilities simplify working with pre-trained multi-modal models, handling model loading,</span>
+<span class="sd">inference, batch processing, and result visualization. The module is particularly useful for:</span>
+<span class="sd">- Automated image labeling and classification</span>
+<span class="sd">- Extracting semantic information from images using natural language</span>
+<span class="sd">- Material detection and attribute extraction from architectural/building images</span>
+<span class="sd">- Batch processing of image datasets with multi-modal models</span>
+
+<span class="sd">Usage:</span>
+<span class="sd">    ### Image classification with CLIP</span>
+<span class="sd">    classifier = CLIPClassifier(image_dir=&quot;path/to/images&quot;)</span>
+<span class="sd">    results = classifier.batch_classify([&quot;urban&quot;, &quot;rural&quot;, &quot;industrial&quot;])</span>
+
+<span class="sd">    ### Visual question answering with Qwen2.5-VL</span>
+<span class="sd">    vqa = VisionQAProcessor()</span>
+<span class="sd">    results = vqa.batch_image_qa(&quot;path/to/images&quot;, &quot;What materials are used in this building?&quot;)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PIL</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span>  <span class="c1"># Python Imaging Library for image processing</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tqdm</span><span class="w"> </span><span class="kn">import</span> <span class="n">tqdm</span>  <span class="c1"># Progress bar for tracking batch operations</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">transformers</span><span class="w"> </span><span class="kn">import</span> <span class="n">CLIPModel</span><span class="p">,</span> <span class="n">CLIPProcessor</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">transformers</span><span class="w"> </span><span class="kn">import</span> <span class="n">Qwen2_5_VLForConditionalGeneration</span><span class="p">,</span> <span class="n">AutoProcessor</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">qwen_vl_utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">process_vision_info</span>  <span class="c1"># Helper utility for Qwen model</span>
+
+
+<span class="c1"># === CLIP Image Classification ===</span>
+<div class="viewcode-block" id="CLIPClassifier">
+<a class="viewcode-back" href="../../generated/ccai9012.multi_modal_utils.CLIPClassifier.html#ccai9012.multi_modal_utils.CLIPClassifier">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">CLIPClassifier</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A class for performing zero-shot image classification using OpenAI&#39;s CLIP model.</span>
+
+<span class="sd">    CLIP (Contrastive Language-Image Pre-training) is a neural network trained on a variety</span>
+<span class="sd">    of image-text pairs, enabling it to associate images with natural language descriptions.</span>
+<span class="sd">    This class provides an interface for using CLIP to classify images based on arbitrary</span>
+<span class="sd">    text categories without requiring specific training for those categories.</span>
+
+<span class="sd">    The class supports:</span>
+<span class="sd">    - Single image classification with confidence scores</span>
+<span class="sd">    - Batch processing of multiple images</span>
+<span class="sd">    - Result visualization</span>
+<span class="sd">    - Saving classification results to CSV</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        model (CLIPModel): The pre-trained CLIP model from HuggingFace.</span>
+<span class="sd">        processor (CLIPProcessor): The CLIP processor for preparing inputs.</span>
+<span class="sd">        device (str): The computing device used for inference (&#39;cuda&#39; or &#39;cpu&#39;).</span>
+<span class="sd">        image_dir (str): Directory containing images to process.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model_name</span><span class="o">=</span><span class="s2">&quot;openai/clip-vit-base-patch32&quot;</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">image_dir</span><span class="o">=</span><span class="s2">&quot;images&quot;</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initialize the CLIP classifier with model, processor and device settings.</span>
+
+<span class="sd">        This method loads the CLIP model and processor from HuggingFace&#39;s model hub,</span>
+<span class="sd">        sets up the computing device (automatically selecting CUDA if available),</span>
+<span class="sd">        and configures the image directory for batch operations.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            model_name (str): HuggingFace model identifier for CLIP.</span>
+<span class="sd">                            Defaults to &quot;openai/clip-vit-base-patch32&quot;.</span>
+<span class="sd">            device (str, optional): Computing device for inference (&#39;cuda&#39; or &#39;cpu&#39;).</span>
+<span class="sd">                                  If None, automatically uses CUDA if available, else CPU.</span>
+<span class="sd">            image_dir (str, optional): Directory containing images to be processed.</span>
+<span class="sd">                                     Defaults to &quot;images&quot;.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">device</span> <span class="o">=</span> <span class="n">device</span> <span class="ow">or</span> <span class="p">(</span><span class="s2">&quot;cuda&quot;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s2">&quot;cpu&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">CLIPModel</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">model_name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">processor</span> <span class="o">=</span> <span class="n">CLIPProcessor</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">model_name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">image_dir</span> <span class="o">=</span> <span class="n">image_dir</span>
+
+<div class="viewcode-block" id="CLIPClassifier.classify_image">
+<a class="viewcode-back" href="../../generated/ccai9012.multi_modal_utils.CLIPClassifier.classify_image.html#ccai9012.multi_modal_utils.CLIPClassifier.classify_image">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">classify_image</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">image_path</span><span class="p">,</span> <span class="n">text_prompts</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Classify a single image against a set of text categories using CLIP.</span>
+
+<span class="sd">        This method loads an image, processes it with the CLIP model, and determines</span>
+<span class="sd">        which of the provided text categories best matches the image content. It performs</span>
+<span class="sd">        zero-shot classification by computing similarity scores between the image and text embeddings.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            image_path (str): Path to the image file to be classified.</span>
+<span class="sd">            text_prompts (list): List of text categories/prompts for zero-shot classification.</span>
+<span class="sd">                               Example: [&quot;urban landscape&quot;, &quot;rural countryside&quot;, &quot;industrial area&quot;]</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            dict: Classification result with ``filename``, ``label_id``,</span>
+<span class="sd">            ``label_text``, ``confidence``, and ``all_scores`` fields. Returns</span>
+<span class="sd">            ``None`` if image loading fails.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">image_path</span><span class="p">)</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="s2">&quot;RGB&quot;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to open image: </span><span class="si">{</span><span class="n">image_path</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">None</span>
+
+        <span class="n">inputs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">processor</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">text_prompts</span><span class="p">,</span> <span class="n">images</span><span class="o">=</span><span class="n">image</span><span class="p">,</span> <span class="n">return_tensors</span><span class="o">=</span><span class="s2">&quot;pt&quot;</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">)</span>
+
+        <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+            <span class="n">outputs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="o">**</span><span class="n">inputs</span><span class="p">)</span>
+            <span class="n">logits_per_image</span> <span class="o">=</span> <span class="n">outputs</span><span class="o">.</span><span class="n">logits_per_image</span>  <span class="c1"># Image-text similarity scores</span>
+            <span class="n">probs</span> <span class="o">=</span> <span class="n">logits_per_image</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Convert to probabilities</span>
+
+        <span class="n">top_idx</span> <span class="o">=</span> <span class="n">probs</span><span class="o">.</span><span class="n">argmax</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s2">&quot;filename&quot;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">image_path</span><span class="p">),</span>
+            <span class="s2">&quot;label_id&quot;</span><span class="p">:</span> <span class="n">top_idx</span><span class="p">,</span>
+            <span class="s2">&quot;label_text&quot;</span><span class="p">:</span> <span class="n">text_prompts</span><span class="p">[</span><span class="n">top_idx</span><span class="p">],</span>
+            <span class="s2">&quot;confidence&quot;</span><span class="p">:</span> <span class="n">probs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">top_idx</span><span class="p">]</span><span class="o">.</span><span class="n">item</span><span class="p">(),</span>
+            <span class="s2">&quot;all_scores&quot;</span><span class="p">:</span> <span class="n">probs</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+        <span class="p">}</span></div>
+
+
+<div class="viewcode-block" id="CLIPClassifier.batch_classify">
+<a class="viewcode-back" href="../../generated/ccai9012.multi_modal_utils.CLIPClassifier.batch_classify.html#ccai9012.multi_modal_utils.CLIPClassifier.batch_classify">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">batch_classify</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text_prompts</span><span class="p">,</span> <span class="n">save_csv</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Run inference on all images in the image directory.</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">            text_prompts (list): List of text categories for classification</span>
+<span class="sd">            save_csv (str, optional): Path to save results as CSV file</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            DataFrame: Results of classification for all images</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">image_paths</span> <span class="o">=</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">image_dir</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">image_dir</span><span class="p">)</span> <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.jpg&quot;</span><span class="p">)]</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">for</span> <span class="n">img_path</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">image_paths</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s2">&quot;Running inference&quot;</span><span class="p">):</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">classify_image</span><span class="p">(</span><span class="n">img_path</span><span class="p">,</span> <span class="n">text_prompts</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">save_csv</span><span class="p">:</span>
+            <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">save_csv</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Inference results saved to </span><span class="si">{</span><span class="n">save_csv</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">df</span></div>
+
+
+<div class="viewcode-block" id="CLIPClassifier.show_result">
+<a class="viewcode-back" href="../../generated/ccai9012.multi_modal_utils.CLIPClassifier.show_result.html#ccai9012.multi_modal_utils.CLIPClassifier.show_result">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">show_result</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Visualize an image with its predicted label and confidence.</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">            df (DataFrame): Results dataframe from batch_classify</span>
+<span class="sd">            index (int): Index of the image result to display</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">row</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+        <span class="n">img_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">image_dir</span><span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;filename&#39;</span><span class="p">])</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">img_path</span><span class="p">)</span>
+
+        <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Label: </span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;label_text&#39;</span><span class="p">]</span><span class="si">}</span><span class="se">\n</span><span class="s2">Confidence: </span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;confidence&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></div>
+</div>
+
+
+
+<span class="c1"># === Vision QA with Qwen2.5-VL ===</span>
+<div class="viewcode-block" id="VisionQAProcessor">
+<a class="viewcode-back" href="../../generated/ccai9012.multi_modal_utils.VisionQAProcessor.html#ccai9012.multi_modal_utils.VisionQAProcessor">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">VisionQAProcessor</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                 <span class="n">model_name</span><span class="o">=</span><span class="s2">&quot;Qwen/Qwen2.5-VL-3B-Instruct&quot;</span><span class="p">,</span>
+                 <span class="n">cache_dir</span><span class="o">=</span><span class="s2">&quot;../../../models&quot;</span><span class="p">,</span>
+                 <span class="n">keywords_list</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">device</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initialize the VisionQA processor with model, processor, and optional keyword list.</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">            model_name (str): HuggingFace model identifier for Qwen2.5-VL</span>
+<span class="sd">            cache_dir (str): Directory to cache downloaded models</span>
+<span class="sd">            keywords_list (list, optional): List of keywords to extract from responses</span>
+<span class="sd">            device (str): Computing device (&#39;cuda&#39; or &#39;cpu&#39;)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">device</span> <span class="o">=</span> <span class="n">device</span> <span class="ow">or</span> <span class="p">(</span><span class="s2">&quot;cuda&quot;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s2">&quot;cpu&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">Qwen2_5_VLForConditionalGeneration</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span>
+            <span class="n">model_name</span><span class="p">,</span> <span class="n">torch_dtype</span><span class="o">=</span><span class="s2">&quot;auto&quot;</span><span class="p">,</span> <span class="n">device_map</span><span class="o">=</span><span class="s2">&quot;auto&quot;</span><span class="p">,</span> <span class="n">cache_dir</span><span class="o">=</span><span class="n">cache_dir</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">processor</span> <span class="o">=</span> <span class="n">AutoProcessor</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">model_name</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">keywords_list</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="c1"># Default list of material keywords to extract from responses</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">keywords_list</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="s2">&quot;glass&quot;</span><span class="p">,</span> <span class="s2">&quot;concrete&quot;</span><span class="p">,</span> <span class="s2">&quot;brick&quot;</span><span class="p">,</span> <span class="s2">&quot;metal&quot;</span><span class="p">,</span> <span class="s2">&quot;wood&quot;</span><span class="p">,</span> <span class="s2">&quot;stone&quot;</span><span class="p">,</span> <span class="s2">&quot;ceramic&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;steel&quot;</span><span class="p">,</span> <span class="s2">&quot;aluminum&quot;</span><span class="p">,</span> <span class="s2">&quot;marble&quot;</span><span class="p">,</span> <span class="s2">&quot;plaster&quot;</span><span class="p">,</span> <span class="s2">&quot;cladding&quot;</span><span class="p">,</span> <span class="s2">&quot;tile&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;granite&quot;</span><span class="p">,</span> <span class="s2">&quot;copper&quot;</span><span class="p">,</span> <span class="s2">&quot;composite&quot;</span>
+            <span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">keywords_list</span> <span class="o">=</span> <span class="n">keywords_list</span>
+
+<div class="viewcode-block" id="VisionQAProcessor.extract_keywords">
+<a class="viewcode-back" href="../../generated/ccai9012.multi_modal_utils.VisionQAProcessor.extract_keywords.html#ccai9012.multi_modal_utils.VisionQAProcessor.extract_keywords">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">extract_keywords</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Extract material keywords from text by case-insensitive matching.</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">            text (str): The text to search for keywords</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            list: Found keywords in the text</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">text_lower</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="n">found</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">keywords_list</span> <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">rf</span><span class="s2">&quot;\b</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">\b&quot;</span><span class="p">,</span> <span class="n">text_lower</span><span class="p">)]</span>
+        <span class="k">return</span> <span class="n">found</span></div>
+
+
+<div class="viewcode-block" id="VisionQAProcessor.generate_caption_for_image">
+<a class="viewcode-back" href="../../generated/ccai9012.multi_modal_utils.VisionQAProcessor.generate_caption_for_image.html#ccai9012.multi_modal_utils.VisionQAProcessor.generate_caption_for_image">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">generate_caption_for_image</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">image</span><span class="p">,</span> <span class="n">prompt</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Generate a caption / answer for a single image given a prompt.</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">            image (PIL.Image): The input image to analyze</span>
+<span class="sd">            prompt (str): Text prompt/question about the image</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: Generated text response from the model</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">messages</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;image&quot;</span><span class="p">,</span> <span class="s2">&quot;image&quot;</span><span class="p">:</span> <span class="n">image</span><span class="p">},</span>
+                    <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;text&quot;</span><span class="p">,</span> <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="n">prompt</span><span class="p">}</span>
+                <span class="p">]</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+
+        <span class="n">text</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">processor</span><span class="o">.</span><span class="n">apply_chat_template</span><span class="p">(</span>
+            <span class="n">messages</span><span class="p">,</span> <span class="n">tokenize</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">add_generation_prompt</span><span class="o">=</span><span class="kc">True</span>
+        <span class="p">)</span>
+        <span class="n">image_inputs</span><span class="p">,</span> <span class="n">video_inputs</span> <span class="o">=</span> <span class="n">process_vision_info</span><span class="p">(</span><span class="n">messages</span><span class="p">)</span>
+        <span class="n">inputs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">processor</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="p">[</span><span class="n">text</span><span class="p">],</span>
+            <span class="n">images</span><span class="o">=</span><span class="n">image_inputs</span><span class="p">,</span>
+            <span class="n">videos</span><span class="o">=</span><span class="n">video_inputs</span><span class="p">,</span>
+            <span class="n">padding</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">return_tensors</span><span class="o">=</span><span class="s2">&quot;pt&quot;</span>
+        <span class="p">)</span>
+
+        <span class="n">model_device</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">())</span><span class="o">.</span><span class="n">device</span>
+        <span class="n">inputs</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">model_device</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">inputs</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+
+        <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+            <span class="n">generated_ids</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="o">**</span><span class="n">inputs</span><span class="p">,</span> <span class="n">max_new_tokens</span><span class="o">=</span><span class="mi">128</span><span class="p">)</span>
+
+        <span class="c1"># Remove input_ids prefix to get only the generated response</span>
+        <span class="n">generated_ids_trimmed</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">out_ids</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">in_ids</span><span class="p">):]</span> <span class="k">for</span> <span class="n">in_ids</span><span class="p">,</span> <span class="n">out_ids</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">inputs</span><span class="p">[</span><span class="s1">&#39;input_ids&#39;</span><span class="p">],</span> <span class="n">generated_ids</span><span class="p">)</span>
+        <span class="p">]</span>
+
+        <span class="n">output_text</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">processor</span><span class="o">.</span><span class="n">batch_decode</span><span class="p">(</span>
+            <span class="n">generated_ids_trimmed</span><span class="p">,</span> <span class="n">skip_special_tokens</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">clean_up_tokenization_spaces</span><span class="o">=</span><span class="kc">False</span>
+        <span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="k">return</span> <span class="n">output_text</span></div>
+
+
+<div class="viewcode-block" id="VisionQAProcessor.batch_image_qa">
+<a class="viewcode-back" href="../../generated/ccai9012.multi_modal_utils.VisionQAProcessor.batch_image_qa.html#ccai9012.multi_modal_utils.VisionQAProcessor.batch_image_qa">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">batch_image_qa</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">image_folder</span><span class="p">,</span> <span class="n">prompt</span><span class="p">,</span> <span class="n">save_csv_path</span><span class="o">=</span><span class="s2">&quot;output/results.csv&quot;</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Run inference on all images in a folder and save results to CSV.</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">            image_folder (str): Directory containing images to analyze</span>
+<span class="sd">            prompt (str): Text prompt/question to ask about each image</span>
+<span class="sd">            save_csv_path (str): Path to save the results CSV file</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            DataFrame: Results including image filenames, answers and extracted keywords</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">save_csv_path</span><span class="p">),</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">image_folder</span><span class="p">))):</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">filename</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">endswith</span><span class="p">((</span><span class="s2">&quot;.png&quot;</span><span class="p">,</span> <span class="s2">&quot;.jpg&quot;</span><span class="p">,</span> <span class="s2">&quot;.jpeg&quot;</span><span class="p">,</span> <span class="s2">&quot;.bmp&quot;</span><span class="p">,</span> <span class="s2">&quot;.webp&quot;</span><span class="p">)):</span>
+                <span class="k">continue</span>
+
+            <span class="n">image_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">image_folder</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+            <span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">image_path</span><span class="p">)</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="s2">&quot;RGB&quot;</span><span class="p">)</span>
+
+            <span class="n">output_text</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">generate_caption_for_image</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">prompt</span><span class="p">)</span>
+            <span class="n">keywords</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">extract_keywords</span><span class="p">(</span><span class="n">output_text</span><span class="p">)</span>
+
+            <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                <span class="s2">&quot;image&quot;</span><span class="p">:</span> <span class="n">filename</span><span class="p">,</span>
+                <span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="n">output_text</span><span class="p">,</span>
+                <span class="s2">&quot;materials&quot;</span><span class="p">:</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">keywords</span><span class="p">)</span> <span class="k">if</span> <span class="n">keywords</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span>
+            <span class="p">})</span>
+
+            <span class="n">tqdm</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Processed </span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2"> | Materials found: </span><span class="si">{</span><span class="n">keywords</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">save_csv_path</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8-sig&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;All results saved to </span><span class="si">{</span><span class="n">save_csv_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">df</span></div>
+</div>
+
+</pre></div>
+
+                </article>
+
+
+
+
+
+                <footer class="prev-next-footer d-print-none">
+
+<div class="prev-next-area">
+</div>
+                </footer>
+
+            </div>
+
+
+
+
+          </div>
+          <footer class="bd-footer-content">
+
+          </footer>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+
+    <div class="footer-items__start">
+
+        <div class="footer-item">
+
+  <p class="copyright">
+
+      © Copyright 2026, CCAI9012.
+      <br/>
+
+  </p>
+</div>
+
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    <br/>
+  </p>
+</div>
+
+    </div>
+
+
+
+    <div class="footer-items__end">
+
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.20.0.
+</p></div>
+
+    </div>
+
+</div>
+
+  </footer>
+  </body>
+</html>

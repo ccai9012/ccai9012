@@ -96,13 +96,9 @@ class CLIPClassifier:
                                Example: ["urban landscape", "rural countryside", "industrial area"]
 
         Returns:
-            dict: Classification results containing:
-                - filename: The base filename of the image
-                - label_id: Index of the best matching text prompt
-                - label_text: Text of the best matching prompt
-                - confidence: Probability score for the best match
-                - all_scores: List of probability scores for all prompts
-                Returns None if image loading fails.
+            dict: Classification result with ``filename``, ``label_id``,
+            ``label_text``, ``confidence``, and ``all_scores`` fields. Returns
+            ``None`` if image loading fails.
         """
         try:
             image = Image.open(image_path).convert("RGB")

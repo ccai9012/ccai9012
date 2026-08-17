@@ -1,0 +1,671 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ccai9012.sd_utils &#8212; CCAI9012 API Reference</title>
+
+
+
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/api-theme.css?v=28db1ad0" />
+
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
+
+    <script src="../../_static/documentation_options.js?v=7f41d439"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/ccai9012/sd_utils';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+
+
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+
+  </head>
+  <body data-default-mode="">
+
+
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+
+  <div id="pst-scroll-pixel-helper"></div>
+
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+
+
+
+  <dialog id="pst-search-dialog">
+
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+
+
+  <div class=" navbar-header-items__start">
+
+      <div class="navbar-item">
+
+
+
+
+
+<a class="navbar-brand logo" href="../../index.html">
+
+
+
+
+
+
+    <p class="title logo__title">CCAI9012 API Reference</p>
+
+</a></div>
+
+  </div>
+
+  <div class=" navbar-header-items">
+
+    <div class="me-auto navbar-header-items__center">
+
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../ccai9012/index.html">
+    Modules
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+
+        <div class="navbar-item"><a class="nav-link course-home-link" href="../../../index.html">Back to Course Website</a></div>
+
+    </div>
+
+
+    <div class="navbar-header-items__end">
+
+
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+
+    </div>
+
+  </div>
+
+
+
+
+</div>
+
+    </header>
+
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+
+
+
+
+
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+
+
+
+  <div class="sidebar-header-items sidebar-primary__section">
+
+
+      <div class="sidebar-header-items__center">
+
+
+
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../ccai9012/index.html">
+    Modules
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+
+
+
+
+            <div class="navbar-item"><a class="nav-link course-home-link" href="../../../index.html">Back to Course Website</a></div>
+
+
+      </div>
+
+
+
+      <div class="sidebar-header-items__end">
+
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+
+      </div>
+
+  </div>
+
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links" aria-label="API navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">API Reference</p>
+  <div class="bd-toc-item navbar-nav">
+    <ul class="nav bd-sidenav">
+      <li class="toctree-l1 current active">
+        <a class="reference internal" href="../index.html">Overview</a>
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="../ccai9012/gan_utils.html">gan_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="../ccai9012/llm_utils.html">llm_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="../ccai9012/multi_modal_utils.html">multi_modal_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="../ccai9012/nn_utils.html">nn_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="../ccai9012/sd_utils.html">sd_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="../ccai9012/svi_utils.html">svi_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="../ccai9012/token_utils.html">token_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="../ccai9012/viz_utils.html">viz_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="../ccai9012/yolo_utils.html">yolo_utils</a>
+
+      </li>
+
+    </ul>
+  </div>
+</nav></div>
+    </div>
+
+
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+
+      <main id="main-content" class="bd-main" role="main">
+
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+
+    <div class="header-article-items__start">
+
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
+
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">ccai9012.sd_utils</span></li>
+  </ul>
+</nav>
+</div>
+
+    </div>
+
+
+</div>
+</div>
+
+
+
+
+<div id="searchbox"></div>
+                <article class="bd-article">
+
+  <h1>Source code for ccai9012.sd_utils</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Stable Diffusion Utilities Module</span>
+<span class="sd">=================================</span>
+
+<span class="sd">This module provides utilities for text-to-image generation using Stable Diffusion models.</span>
+<span class="sd">It offers a flexible interface to generate images either through the Hugging Face Inference API</span>
+<span class="sd">(cloud-based) or locally using downloaded models.</span>
+
+<span class="sd">The module is designed to simplify the process of generating images from text prompts,</span>
+<span class="sd">handling authentication, model loading, and providing consistent interfaces regardless</span>
+<span class="sd">of the execution mode chosen.</span>
+
+<span class="sd">Main components:</span>
+<span class="sd">- API key management: Secure handling of Hugging Face API keys</span>
+<span class="sd">- SDClient: A versatile client that can operate in two modes:</span>
+<span class="sd">  - &quot;inference&quot;: Uses Hugging Face&#39;s Inference API (cloud-based, faster startup)</span>
+<span class="sd">  - &quot;local&quot;: Loads and runs models locally (higher throughput for multiple generations)</span>
+
+<span class="sd">Usage:</span>
+<span class="sd">    client = SDClient(mode=&quot;inference&quot;)  # Use Hugging Face Inference API</span>
+<span class="sd">    images = client.generate_images(&quot;a photo of a cat&quot;, num_images=2)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">huggingface_hub</span><span class="w"> </span><span class="kn">import</span> <span class="n">InferenceClient</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">diffusers</span><span class="w"> </span><span class="kn">import</span> <span class="n">StableDiffusionPipeline</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">display</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">.token_utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_token</span>
+
+
+<div class="viewcode-block" id="get_hf_api_key">
+<a class="viewcode-back" href="../../generated/ccai9012.sd_utils.get_hf_api_key.html#ccai9012.sd_utils.get_hf_api_key">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_hf_api_key</span><span class="p">(</span><span class="n">env_var</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;HUGGINGFACE_API_KEY&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Get Hugging Face API key from environment variables or prompt user securely.</span>
+
+<span class="sd">    This function first attempts to retrieve the API key from the specified environment variable.</span>
+<span class="sd">    If the key is not found, it prompts the user to enter it securely (without displaying it),</span>
+<span class="sd">    then stores it in the environment variable for future use within the session.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        env_var (str): The name of the environment variable to check for the API key.</span>
+<span class="sd">                      Defaults to &quot;HUGGINGFACE_API_KEY&quot;.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str: The Hugging Face API key.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Prefer `ccai9012/token.yaml` (key: env.&lt;ENV_VAR&gt;), then env vars, then prompt.</span>
+    <span class="k">return</span> <span class="n">get_token</span><span class="p">(</span><span class="n">env_var</span><span class="o">=</span><span class="n">env_var</span><span class="p">,</span> <span class="n">yaml_key</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;env.</span><span class="si">{</span><span class="n">env_var</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">prompt</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Enter your </span><span class="si">{</span><span class="n">env_var</span><span class="si">}</span><span class="s2">: &quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="SDClient">
+<a class="viewcode-back" href="../../generated/ccai9012.sd_utils.SDClient.html#ccai9012.sd_utils.SDClient">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">SDClient</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Stable Diffusion Client for text-to-image generation.</span>
+
+<span class="sd">    This class provides a unified interface for generating images from text prompts,</span>
+<span class="sd">    supporting two operational modes:</span>
+
+<span class="sd">    1. &quot;inference&quot; mode: Uses Hugging Face&#39;s Inference API (cloud-based)</span>
+<span class="sd">       - Advantages: Faster startup, no model downloads, lower memory requirements</span>
+<span class="sd">       - Use case: Quick testing, limited hardware resources</span>
+
+<span class="sd">    2. &quot;local&quot; mode: Loads and runs models locally via diffusers library</span>
+<span class="sd">       - Advantages: Higher throughput for multiple generations, more control</span>
+<span class="sd">       - Use case: Batch processing, offline usage, custom pipelines</span>
+
+<span class="sd">    The class handles model loading, device management, and API authentication</span>
+<span class="sd">    automatically, providing a simple interface for generating images.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        mode (str): Operating mode (&quot;inference&quot; or &quot;local&quot;).</span>
+<span class="sd">        model_id (str): Hugging Face model repository ID.</span>
+<span class="sd">        device (str): Torch device for computation (&quot;cuda&quot; or &quot;cpu&quot;).</span>
+<span class="sd">        api_key (str): Hugging Face API key for authentication.</span>
+<span class="sd">        client: Inference client (in &quot;inference&quot; mode).</span>
+<span class="sd">        pipe: StableDiffusionPipeline instance (in &quot;local&quot; mode).</span>
+<span class="sd">        cache_dir (str): Directory to cache downloaded models (in &quot;local&quot; mode).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">mode</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;inference&quot;</span><span class="p">,</span>  <span class="c1"># &quot;inference&quot; or &quot;local&quot;</span>
+        <span class="n">model_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;stabilityai/stable-diffusion-2-base&quot;</span><span class="p">,</span>
+        <span class="n">cache_dir</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">use_auth_token</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">device</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initialize the Stable Diffusion Client with specified configuration.</span>
+
+<span class="sd">        Sets up the client based on the chosen operational mode, handling authentication,</span>
+<span class="sd">        model loading, and device selection automatically.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            mode (str): Operational mode for image generation. Options:</span>
+<span class="sd">                       - &quot;inference&quot;: Use Hugging Face&#39;s cloud-based Inference API.</span>
+<span class="sd">                       - &quot;local&quot;: Load and run the model locally using diffusers library.</span>
+<span class="sd">                       Defaults to &quot;inference&quot;.</span>
+<span class="sd">            model_id (str): Hugging Face model repository ID for the Stable Diffusion model.</span>
+<span class="sd">                          Defaults to &quot;stabilityai/stable-diffusion-2-base&quot;.</span>
+<span class="sd">            cache_dir (str, optional): Local directory to cache downloaded models in &quot;local&quot; mode.</span>
+<span class="sd">                                     If None, defaults to &quot;./models&quot; as an absolute path.</span>
+<span class="sd">            use_auth_token (str, optional): Hugging Face API token for authentication.</span>
+<span class="sd">                                          If None, will attempt to retrieve or prompt for it.</span>
+<span class="sd">            device (str, optional): PyTorch device to use for computation.</span>
+<span class="sd">                                  If None, automatically selects CUDA if available, otherwise CPU.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            ValueError: If the specified mode is not &quot;inference&quot; or &quot;local&quot;.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mode</span> <span class="o">=</span> <span class="n">mode</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model_id</span> <span class="o">=</span> <span class="n">model_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">device</span> <span class="o">=</span> <span class="n">device</span> <span class="ow">or</span> <span class="p">(</span><span class="s2">&quot;cuda&quot;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s2">&quot;cpu&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">api_key</span> <span class="o">=</span> <span class="n">use_auth_token</span> <span class="ow">or</span> <span class="n">get_hf_api_key</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">mode</span> <span class="o">==</span> <span class="s2">&quot;inference&quot;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">client</span> <span class="o">=</span> <span class="n">InferenceClient</span><span class="p">(</span>
+                <span class="n">provider</span><span class="o">=</span><span class="s2">&quot;hf-inference&quot;</span><span class="p">,</span>
+                <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;X-Use-Cache&quot;</span><span class="p">:</span> <span class="s2">&quot;false&quot;</span><span class="p">},</span>
+                <span class="n">api_key</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">api_key</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">mode</span> <span class="o">==</span> <span class="s2">&quot;local&quot;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">cache_dir</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">cache_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s2">&quot;./models&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">cache_dir</span> <span class="o">=</span> <span class="n">cache_dir</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pipe</span> <span class="o">=</span> <span class="n">StableDiffusionPipeline</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">model_id</span><span class="p">,</span>
+                <span class="n">use_auth_token</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">api_key</span><span class="p">,</span>
+                <span class="n">cache_dir</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">cache_dir</span><span class="p">,</span>
+                <span class="n">torch_dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float16</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;cuda&quot;</span><span class="p">)</span> <span class="k">else</span> <span class="n">torch</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;mode must be &#39;inference&#39; or &#39;local&#39;&quot;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="SDClient.generate_images">
+<a class="viewcode-back" href="../../generated/ccai9012.sd_utils.SDClient.generate_images.html#ccai9012.sd_utils.SDClient.generate_images">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">generate_images</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">prompt</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">num_images</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="n">guidance_scale</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">7.5</span><span class="p">,</span>
+        <span class="n">num_inference_steps</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span>
+        <span class="n">seed</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">display_images</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Generate images from a text prompt using Stable Diffusion.</span>
+
+<span class="sd">        This method generates one or more images based on the provided text prompt,</span>
+<span class="sd">        using either the Hugging Face Inference API (in &quot;inference&quot; mode) or a locally</span>
+<span class="sd">        loaded model (in &quot;local&quot; mode). Generated images can optionally be displayed</span>
+<span class="sd">        inline in Jupyter notebooks.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            prompt (str): Text description of the image to generate.</span>
+<span class="sd">            num_images (int, optional): Number of images to generate. Defaults to 1.</span>
+<span class="sd">            guidance_scale (float, optional): Classifier-free guidance scale, controlling how</span>
+<span class="sd">                                           closely the image follows the prompt. Higher values</span>
+<span class="sd">                                           give more prompt adherence but less diversity.</span>
+<span class="sd">                                           Defaults to 7.5.</span>
+<span class="sd">            num_inference_steps (int, optional): Number of denoising steps in the diffusion process.</span>
+<span class="sd">                                              More steps typically yield higher quality images</span>
+<span class="sd">                                              but take longer to generate. Defaults to 50.</span>
+<span class="sd">            seed (int, optional): Random seed for reproducible generation.</span>
+<span class="sd">                                If None, a random seed is used. Defaults to None.</span>
+<span class="sd">            display_images (bool, optional): Whether to display generated images inline</span>
+<span class="sd">                                          in Jupyter notebook environments. Defaults to True.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            list: A list of PIL.Image objects representing the generated images.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">images</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">if</span> <span class="n">seed</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">generator</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">Generator</span><span class="p">(</span><span class="n">device</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">)</span><span class="o">.</span><span class="n">manual_seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">generator</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">mode</span> <span class="o">==</span> <span class="s2">&quot;inference&quot;</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_images</span><span class="p">):</span>
+                <span class="n">img</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">text_to_image</span><span class="p">(</span>
+                    <span class="n">prompt</span><span class="o">=</span><span class="n">prompt</span><span class="p">,</span>
+                    <span class="n">model</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">model_id</span><span class="p">,</span>
+                    <span class="n">guidance_scale</span><span class="o">=</span><span class="n">guidance_scale</span><span class="p">,</span>
+                    <span class="n">num_inference_steps</span><span class="o">=</span><span class="n">num_inference_steps</span><span class="p">,</span>
+                    <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span>
+                <span class="p">)</span>
+                <span class="n">images</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>  <span class="c1"># local mode</span>
+            <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_images</span><span class="p">):</span>
+                <span class="n">img</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pipe</span><span class="p">(</span>
+                    <span class="n">prompt</span><span class="p">,</span>
+                    <span class="n">guidance_scale</span><span class="o">=</span><span class="n">guidance_scale</span><span class="p">,</span>
+                    <span class="n">num_inference_steps</span><span class="o">=</span><span class="n">num_inference_steps</span><span class="p">,</span>
+                    <span class="n">generator</span><span class="o">=</span><span class="n">generator</span><span class="p">,</span>
+                <span class="p">)</span><span class="o">.</span><span class="n">images</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">images</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">display_images</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">img</span> <span class="ow">in</span> <span class="n">images</span><span class="p">:</span>
+                <span class="n">display</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">images</span></div>
+</div>
+
+</pre></div>
+
+                </article>
+
+
+
+
+
+                <footer class="prev-next-footer d-print-none">
+
+<div class="prev-next-area">
+</div>
+                </footer>
+
+            </div>
+
+
+
+
+          </div>
+          <footer class="bd-footer-content">
+
+          </footer>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+
+    <div class="footer-items__start">
+
+        <div class="footer-item">
+
+  <p class="copyright">
+
+      © Copyright 2026, CCAI9012.
+      <br/>
+
+  </p>
+</div>
+
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    <br/>
+  </p>
+</div>
+
+    </div>
+
+
+
+    <div class="footer-items__end">
+
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.20.0.
+</p></div>
+
+    </div>
+
+</div>
+
+  </footer>
+  </body>
+</html>

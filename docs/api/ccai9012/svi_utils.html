@@ -1,797 +1,666 @@
-<!-- START PDOC WRAPPER -->
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Module ccai9012.svi_utils</title>
-  <link rel="stylesheet" href="../../docs-style.css">
-</head>
-<body>
-  <div class="container">
-    <nav id="sidebar">
-      <div class="sidebar-header">
-        <h2>CCAI9012</h2>
-      </div>
-      <ul class="nav-menu">
-                <li><a href="../../index.html">Home</a></li>
-                <li><a href="../../timetable.html">Course Plan</a></li>
-                <li><a href="../../Assessment.html">Assessment</a></li>
-                <li class="sub-item"><a href="../../casestudy.html">Case Study</a></li>
-                <li class="sub-item"><a href="../../course_project.html">Course Project</a></li>
-                <li><a href="../../reading_material.html">Reading Materials</a></li>
-                <li><a href="../../pi_responsibility.html">I. Responsibility & AI</a></li>
-                <li><a href="../../pii_mechanics.html">II. Mechanics of AI</a></li>
-                <li><a href="../../piii_data_and_risks.html">III. Datasets & Risks of AI</a></li>
-                <li><a href="../../installation.html">Installation Guide</a></li>
-                <li><a href="../../starter_kits/index.html">Starter Kits</a></li>
-                <li><a href="../../datasets.html">Datasets Reference</a></li>
-      </ul>
-    </nav>
 
-    <main id="content" class="api-content">
-      <!-- API content extracted from pdoc -->
-<article class="api-doc">
-<header>
-<h1 class="title">Module <code>ccai9012.svi_utils</code></h1>
-</header>
-<!-- STARTERKIT_BACKLINKS_START -->
-<section class="api-related-block" style="margin:1rem 0; padding:1rem; border:1px solid #e5e7eb; border-left:6px solid #4f46e5; border-radius:10px; background:#fafafa">
-  <div class="api-related-block__title" style="font-weight:700; margin-bottom:0.5rem">Related Starter Kit(s)</div>
-  <ul style="margin:0; padding-left:1.2rem">
-<li><a href="../../starter_kits/m3_mm.html">Module 3 - Multimodal Reasoning</a></li>
-<li><a href="../../starter_kits/m4_cv.html">Module 4 - CV Models</a></li>
-  </ul>
-</section>
-<!-- STARTERKIT_BACKLINKS_END -->
-<section id="section-intro">
-<h1 id="street-view-imagery-svi-utilities">Street View Imagery (SVI) Utilities</h1>
-<p>This module provides tools for working with Google Street View Images (SVIs), including downloading,
-segmentation, and visualization functionalities. It enables users to download street view imagery
-using Google Maps API, perform semantic segmentation on these images using pre-trained models,
-and visualize the segmentation results.</p>
-<p>The module is organized into several components:
-- Google Street View downloader: Tools for fetching street view images using the Google Maps API
-- Segmentation utilities: Functions to perform semantic segmentation on street view images
-- Visualization utilities: Functions to visualize original images alongside their segmentations</p>
-<p>This is particularly useful for urban analysis, streetscape assessment, and understanding
-the composition of street-level imagery through semantic segmentation.</p>
-</section>
-<section>
-</section>
-<section>
-</section>
-<section>
-<h2 class="section-title" id="header-functions">Functions</h2>
-<dl>
-<dt id="ccai9012.svi_utils.batch_segment_and_visualize"><code class="name flex">
-<span>def <span class="ident">batch_segment_and_visualize</span></span>(<span>save_dir: str,<br>output_dir: str,<br>processor,<br>model,<br>max_visualize: int = 6,<br>image_extensions: tuple = ('.jpg', '.png', '.jpeg'))</span>
-</code></dt>
-<dd>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def batch_segment_and_visualize(
-    save_dir: str,
-    output_dir: str,
-    processor,
-    model,
-    max_visualize: int = 6,
-    image_extensions: tuple = (&#34;.jpg&#34;, &#34;.png&#34;, &#34;.jpeg&#34;)
-):
-    &#34;&#34;&#34;
-    Process and segment a batch of images, save the results, and visualize a subset of them.
+<!DOCTYPE html>
 
-    This function processes all images in the specified directory, performs semantic segmentation
-    on each one, saves the colored segmentation masks, and optionally visualizes the first few
-    results as side-by-side comparisons.
 
-    Args:
-        save_dir (str): Directory containing the input images to process.
-        output_dir (str): Directory where segmentation results will be saved.
-        processor: HuggingFace image processor for preparing inputs to the segmentation model.
-        model: HuggingFace segmentation model to use for inference.
-        max_visualize (int, optional): Maximum number of images to visualize. Defaults to 6.
-        image_extensions (tuple, optional): File extensions to identify images for processing.
-                                          Defaults to (&#34;.jpg&#34;, &#34;.png&#34;, &#34;.jpeg&#34;).
+<html lang="en" data-content_root="../" >
 
-    Returns:
-        None: This function does not return a value but saves segmentation masks to disk
-              and displays visualizations for the first max_visualize images.
-    &#34;&#34;&#34;
-    os.makedirs(output_dir, exist_ok=True)
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    image_filenames = [f for f in os.listdir(save_dir) if f.lower().endswith(image_extensions)]
+    <title>svi_utils &#8212; CCAI9012 API Reference</title>
 
-    for i, filename in enumerate(image_filenames):
-        image_path = os.path.join(save_dir, filename)
-        image_pil = Image.open(image_path).convert(&#34;RGB&#34;)
 
-        # Run segmentation and save masks
-        mask_np = segment_and_save_images(
-            image_pil=image_pil,
-            processor=processor,
-            model=model,
-            save_dir=output_dir,
-            filename_prefix=os.path.splitext(filename)[0]
-        )
 
-        # Visualize some of the images
-        if i &lt; max_visualize:
-            visualize_segmentation_pair(image_pil, mask_np, show_legend=True)</code></pre>
-</details>
-<div class="desc"><p>Process and segment a batch of images, save the results, and visualize a subset of them.</p>
-<p>This function processes all images in the specified directory, performs semantic segmentation
-on each one, saves the colored segmentation masks, and optionally visualizes the first few
-results as side-by-side comparisons.</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>save_dir</code></strong> :&ensp;<code>str</code></dt>
-<dd>Directory containing the input images to process.</dd>
-<dt><strong><code>output_dir</code></strong> :&ensp;<code>str</code></dt>
-<dd>Directory where segmentation results will be saved.</dd>
-<dt><strong><code>processor</code></strong></dt>
-<dd>HuggingFace image processor for preparing inputs to the segmentation model.</dd>
-<dt><strong><code>model</code></strong></dt>
-<dd>HuggingFace segmentation model to use for inference.</dd>
-<dt><strong><code>max_visualize</code></strong> :&ensp;<code>int</code>, optional</dt>
-<dd>Maximum number of images to visualize. Defaults to 6.</dd>
-<dt><strong><code>image_extensions</code></strong> :&ensp;<code>tuple</code>, optional</dt>
-<dd>File extensions to identify images for processing.
-Defaults to (".jpg", ".png", ".jpeg").</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>None</code></dt>
-<dd>This function does not return a value but saves segmentation masks to disk
-and displays visualizations for the first max_visualize images.</dd>
-</dl></div>
-</dd>
-<dt id="ccai9012.svi_utils.segment_and_save_images"><code class="name flex">
-<span>def <span class="ident">segment_and_save_images</span></span>(<span>image_pil: PIL.Image.Image,<br>processor,<br>model,<br>colors=None,<br>save_dir: str | None = None,<br>filename_prefix: str | None = None) ‑> numpy.ndarray</span>
-</code></dt>
-<dd>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def segment_and_save_images(
-    image_pil: Image.Image,
-    processor,
-    model,
-    colors = None,
-    save_dir: Optional[str] = None,
-    filename_prefix: Optional[str] = None
-) -&gt; np.ndarray:
-    &#34;&#34;&#34;
-    Perform semantic segmentation on an input image and optionally save the results.
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
 
-    This function takes a PIL image, runs it through a semantic segmentation model,
-    and creates a colored segmentation mask. The segmentation can be saved to disk
-    with a specified filename prefix.
+    </style>
+  </noscript>
 
-    Args:
-        image_pil (PIL.Image.Image): Input image to segment.
-        processor: HuggingFace image processor object for the segmentation model.
-        model: HuggingFace segmentation model (e.g., SegFormer).
-        colors (list, optional): List of RGB color tuples for visualization.
-                                If None, uses CITYSCAPES_COLORS. Defaults to None.
-        save_dir (str, optional): Directory to save segmentation results.
-                                 If None, no saving occurs. Defaults to None.
-        filename_prefix (str, optional): Prefix for the saved segmentation file.
-                                        Defaults to None.
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
 
-    Returns:
-        np.ndarray: Segmentation mask array with shape (H, W) containing class indices.
-    &#34;&#34;&#34;
-    if colors is None:
-        colors = CITYSCAPES_COLORS
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/api-theme.css?v=28db1ad0" />
 
-    inputs = processor(images=image_pil, return_tensors=&#34;pt&#34;)
-    with torch.no_grad():
-        outputs = model(**inputs)
-    pred_mask = outputs.logits.argmax(dim=1)[0].cpu().numpy()
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
 
-    # Resize mask to original image size
-    mask_img = Image.fromarray(pred_mask.astype(np.uint8))
-    mask_img = mask_img.resize(image_pil.size, resample=Image.NEAREST)
-    mask_np = np.array(mask_img)
+    <script src="../_static/documentation_options.js?v=7f41d439"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ccai9012/svi_utils';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="GoogleSVIDownloader" href="../generated/ccai9012.svi_utils.GoogleSVIDownloader.html" />
+    <link rel="prev" title="SDClient.generate_images" href="../generated/ccai9012.sd_utils.SDClient.generate_images.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
 
-    # Create color mask for visualization
-    color_mask = np.zeros((*mask_np.shape, 3), dtype=np.uint8)
-    for label_idx, color in enumerate(colors):
-        color_mask[mask_np == label_idx] = color
 
-    color_mask_img = Image.fromarray(color_mask)
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
 
-    # Save segmentation image if directory and prefix provided
-    if save_dir and filename_prefix:
-        os.makedirs(os.path.join(save_dir, &#34;segmentations&#34;), exist_ok=True)
-        color_mask_img.save(os.path.join(save_dir, &#34;segmentations&#34;, f&#34;{filename_prefix}_segmentation.png&#34;))
+  </head>
+  <body data-default-mode="">
 
-    return mask_np</code></pre>
-</details>
-<div class="desc"><p>Perform semantic segmentation on an input image and optionally save the results.</p>
-<p>This function takes a PIL image, runs it through a semantic segmentation model,
-and creates a colored segmentation mask. The segmentation can be saved to disk
-with a specified filename prefix.</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>image_pil</code></strong> :&ensp;<code>PIL.Image.Image</code></dt>
-<dd>Input image to segment.</dd>
-<dt><strong><code>processor</code></strong></dt>
-<dd>HuggingFace image processor object for the segmentation model.</dd>
-<dt><strong><code>model</code></strong></dt>
-<dd>HuggingFace segmentation model (e.g., SegFormer).</dd>
-<dt><strong><code>colors</code></strong> :&ensp;<code>list</code>, optional</dt>
-<dd>List of RGB color tuples for visualization.
-If None, uses CITYSCAPES_COLORS. Defaults to None.</dd>
-<dt><strong><code>save_dir</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd>Directory to save segmentation results.
-If None, no saving occurs. Defaults to None.</dd>
-<dt><strong><code>filename_prefix</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd>Prefix for the saved segmentation file.
-Defaults to None.</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>np.ndarray</code></dt>
-<dd>Segmentation mask array with shape (H, W) containing class indices.</dd>
-</dl></div>
-</dd>
-<dt id="ccai9012.svi_utils.visualize_segmentation_pair"><code class="name flex">
-<span>def <span class="ident">visualize_segmentation_pair</span></span>(<span>image_pil: PIL.Image.Image,<br>mask_np: numpy.ndarray,<br>show_legend: bool = True,<br>classes=None,<br>colors=None) ‑> None</span>
-</code></dt>
-<dd>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def visualize_segmentation_pair(
-    image_pil: Image.Image,
-    mask_np: np.ndarray,
-    show_legend: bool = True,
-    classes=None,
-    colors=None
-) -&gt; None:
-    &#34;&#34;&#34;
-    Visualize an original image alongside its semantic segmentation mask.
 
-    This function creates a side-by-side visualization of an input image and its
-    corresponding segmentation mask, with an optional legend showing the semantic
-    classes present in the segmentation.
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
 
-    Args:
-        image_pil (PIL.Image.Image): Original input image.
-        mask_np (np.ndarray): Segmentation mask with class label indices as values.
-        show_legend (bool, optional): Whether to display a legend with class names. Defaults to True.
-        classes (list, optional): List of class names for the legend.
-                                 If None, uses CITYSCAPES_CLASSES. Defaults to None.
-        colors (list, optional): List of RGB color tuples for visualizing the mask.
-                               If None, uses CITYSCAPES_COLORS. Defaults to None.
 
-    Returns:
-        None: This function displays the visualization but does not return any value.
-    &#34;&#34;&#34;
-    if classes is None:
-        classes = CITYSCAPES_CLASSES
-    if colors is None:
-        colors = CITYSCAPES_COLORS
+  <div id="pst-scroll-pixel-helper"></div>
 
-    # Map label indices to RGB color mask using Cityscapes palette
-    color_mask = np.zeros((*mask_np.shape, 3), dtype=np.uint8)
-    for label_idx, color in enumerate(colors):
-        color_mask[mask_np == label_idx] = color
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
-    plt.figure(figsize=(12, 6))
 
-    plt.subplot(1, 2, 1)
-    plt.imshow(image_pil)
-    plt.title(&#34;Original Image&#34;)
-    plt.axis(&#34;off&#34;)
 
-    plt.subplot(1, 2, 2)
-    plt.imshow(color_mask)
-    plt.title(&#34;Segmentation Prediction&#34;)
-    plt.axis(&#34;off&#34;)
 
-    if show_legend:
-        unique_labels = np.unique(mask_np)
-        handles = [
-            mpatches.Patch(color=np.array(colors[idx]) / 255.0, label=classes[idx])
-            for idx in unique_labels if idx &lt; len(classes)
-        ]
-        plt.legend(handles=handles, bbox_to_anchor=(1.05, 1), loc=&#34;upper left&#34;, borderaxespad=0., title=&#34;Cityscapes Classes&#34;)
+  <dialog id="pst-search-dialog">
 
-    plt.tight_layout()
-    plt.show()</code></pre>
-</details>
-<div class="desc"><p>Visualize an original image alongside its semantic segmentation mask.</p>
-<p>This function creates a side-by-side visualization of an input image and its
-corresponding segmentation mask, with an optional legend showing the semantic
-classes present in the segmentation.</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>image_pil</code></strong> :&ensp;<code>PIL.Image.Image</code></dt>
-<dd>Original input image.</dd>
-<dt><strong><code>mask_np</code></strong> :&ensp;<code>np.ndarray</code></dt>
-<dd>Segmentation mask with class label indices as values.</dd>
-<dt><strong><code>show_legend</code></strong> :&ensp;<code>bool</code>, optional</dt>
-<dd>Whether to display a legend with class names. Defaults to True.</dd>
-<dt><strong><code>classes</code></strong> :&ensp;<code>list</code>, optional</dt>
-<dd>List of class names for the legend.
-If None, uses CITYSCAPES_CLASSES. Defaults to None.</dd>
-<dt><strong><code>colors</code></strong> :&ensp;<code>list</code>, optional</dt>
-<dd>List of RGB color tuples for visualizing the mask.
-If None, uses CITYSCAPES_COLORS. Defaults to None.</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>None</code></dt>
-<dd>This function displays the visualization but does not return any value.</dd>
-</dl></div>
-</dd>
-</dl>
-</section>
-<section>
-<h2 class="section-title" id="header-classes">Classes</h2>
-<dl>
-<dt id="ccai9012.svi_utils.GoogleSVIDownloader"><code class="flex name class">
-<span>class <span class="ident">GoogleSVIDownloader</span></span>
-<span>(</span><span>api_key: str = None, save_dir: str = 'images')</span>
-</code></dt>
-<dd>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">class GoogleSVIDownloader:
-    &#34;&#34;&#34;
-    A utility class for downloading Google Street View Images (SVIs) using Google Maps API.
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
 
-    This class provides functionality to download SVIs at specific geographic coordinates,
-    check image availability, and download images in a grid pattern across an area.
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
 
-    Attributes:
-        api_key (str): Google Maps API key for authentication.
-        save_dir (str): Directory path to save downloaded images.
-        base_url (str): Base URL for the Google Street View API.
-        meta_url (str): URL for the metadata endpoint of the Google Street View API.
-    &#34;&#34;&#34;
 
-    def __init__(self, api_key: str = None, save_dir: str = &#34;images&#34;):
-        &#34;&#34;&#34;
-        Initialize the GoogleSVIDownloader with API key and save directory.
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
 
-        If no API key is provided, it attempts to get the key from the GOOGLEMAP_API_KEY
-        environment variable. If that fails, it prompts the user to enter the key.
 
-        Args:
-            api_key (str, optional): Google Maps API key. Defaults to None.
-            save_dir (str, optional): Directory to save downloaded images. Defaults to &#34;images&#34;.
-        &#34;&#34;&#34;
-        if api_key is None:
-            # Prefer `ccai9012/token.yaml` (key: env.GOOGLEMAP_API_KEY), then env vars, then prompt.
-            api_key = get_token(
-                env_var=&#34;GOOGLEMAP_API_KEY&#34;,
-                yaml_key=&#34;env.GOOGLEMAP_API_KEY&#34;,
-                prompt=&#34;Enter your Google Map API key: &#34;,
-            )
-        self.api_key = api_key
-        self.save_dir = save_dir
-        os.makedirs(self.save_dir, exist_ok=True)
-        self.base_url = &#34;https://maps.googleapis.com/maps/api/streetview&#34;
-        self.meta_url = &#34;https://maps.googleapis.com/maps/api/streetview/metadata&#34;
+  <div class=" navbar-header-items__start">
 
-    def is_svi_available(self, lat: float, lon: float) -&gt; bool:
-        &#34;&#34;&#34;
-        Check if Street View imagery is available at the given coordinates.
+      <div class="navbar-item">
 
-        This method queries the Google Street View metadata API to determine
-        whether street view imagery exists for the specified location.
 
-        Args:
-            lat (float): Latitude coordinate.
-            lon (float): Longitude coordinate.
 
-        Returns:
-            bool: True if street view imagery is available, False otherwise.
-        &#34;&#34;&#34;
-        params = {
-            &#34;location&#34;: f&#34;{lat},{lon}&#34;,
-            &#34;key&#34;: self.api_key
-        }
-        response = requests.get(self.meta_url, params=params)
-        data = response.json()
-        return data.get(&#34;status&#34;) == &#34;OK&#34; and data.get(&#34;pano_id&#34;) is not None
 
-    def download_svi(self, lat: float, lon: float, heading: int = 0,
-                     pitch: int = 0, fov: int = 90, size: str = &#34;640x640&#34;,
-                     save: bool = True) -&gt; Image.Image | None:
-        &#34;&#34;&#34;
-        Download a Street View image at the specified coordinates with given parameters.
 
-        Args:
-            lat (float): Latitude coordinate.
-            lon (float): Longitude coordinate.
-            heading (int, optional): Camera heading in degrees, 0-360. Defaults to 0 (north).
-            pitch (int, optional): Camera pitch in degrees, -90 to 90. Defaults to 0 (flat).
-            fov (int, optional): Field of view in degrees, 0-120. Defaults to 90.
-            size (str, optional): Image size in format &#34;WIDTHxHEIGHT&#34;. Defaults to &#34;640x640&#34;.
-            save (bool, optional): Whether to save the image to disk. Defaults to True.
+<a class="navbar-brand logo" href="../index.html">
 
-        Returns:
-            PIL.Image.Image | None: Downloaded image as PIL Image object, or None if download failed.
-        &#34;&#34;&#34;
-        params = {
-            &#34;location&#34;: f&#34;{lat},{lon}&#34;,
-            &#34;size&#34;: size,
-            &#34;heading&#34;: heading,
-            &#34;pitch&#34;: pitch,
-            &#34;fov&#34;: fov,
-            &#34;key&#34;: self.api_key
-        }
-        response = requests.get(self.base_url, params=params)
 
-        if response.status_code == 200:
-            image = Image.open(BytesIO(response.content))
-            if save:
-                filename = f&#34;lat{lat:.6f}_lon{lon:.6f}_hdg{heading}.jpg&#34;
-                filepath = os.path.join(self.save_dir, filename)
-                image.save(filepath)
-                print(f&#34;Saved SVI: {filepath}&#34;)
-            return image
-        else:
-            print(f&#34;Failed to download SVI at ({lat}, {lon}), status code: {response.status_code}&#34;)
-            return None
 
-    def generate_grid_coords(self, lat_start: float, lon_start: float,
-                             rows: int, cols: int, delta: float) -&gt; list[tuple[float, float]]:
-        &#34;&#34;&#34;
-        Generate a grid of geographic coordinates starting from a point.
 
-        Creates a rectangular grid of coordinates with the specified number of rows and columns,
-        where each point is separated by the delta value in degrees.
 
-        Args:
-            lat_start (float): Starting latitude for the grid.
-            lon_start (float): Starting longitude for the grid.
-            rows (int): Number of rows in the grid.
-            cols (int): Number of columns in the grid.
-            delta (float): Spacing between points in degrees.
 
-        Returns:
-            list[tuple[float, float]]: List of (latitude, longitude) coordinate pairs.
-        &#34;&#34;&#34;
-        coords = []
-        for i in range(rows):
-            for j in range(cols):
-                lat = lat_start + i * delta
-                lon = lon_start + j * delta
-                coords.append((lat, lon))
-        return coords
+    <p class="title logo__title">CCAI9012 API Reference</p>
 
-    def download_grid_svis(self, lat_start: float, lon_start: float, rows: int, cols: int,
-                           delta: float, heading: int = 0, pitch: int = 0,
-                           fov: int = 90, size: str = &#34;640x640&#34;) -&gt; list[dict]:
-        &#34;&#34;&#34;
-        Download Street View images for a grid of locations.
+</a></div>
 
-        This method generates a grid of coordinates and downloads SVIs for each location
-        where imagery is available.
-
-        Args:
-            lat_start (float): Starting latitude for the grid.
-            lon_start (float): Starting longitude for the grid.
-            rows (int): Number of rows in the grid.
-            cols (int): Number of columns in the grid.
-            delta (float): Spacing between grid points in degrees.
-            heading (int, optional): Camera heading in degrees. Defaults to 0.
-            pitch (int, optional): Camera pitch in degrees. Defaults to 0.
-            fov (int, optional): Field of view in degrees. Defaults to 90.
-            size (str, optional): Image size. Defaults to &#34;640x640&#34;.
-
-        Returns:
-            list[dict]: List of dictionaries, each containing &#39;lat&#39;, &#39;lon&#39;, and &#39;image&#39; keys
-                        for the downloaded images.
-        &#34;&#34;&#34;
-        coords = self.generate_grid_coords(lat_start, lon_start, rows, cols, delta)
-        svis = []
-
-        for lat, lon in coords:
-            if self.is_svi_available(lat, lon):
-                img = self.download_svi(lat, lon, heading, pitch, fov, size)
-                if img:
-                    svis.append({&#34;lat&#34;: lat, &#34;lon&#34;: lon, &#34;image&#34;: img})
-            else:
-                print(f&#34;No SVI available at ({lat}, {lon})&#34;)
-
-        return svis</code></pre>
-</details>
-<div class="desc"><p>A utility class for downloading Google Street View Images (SVIs) using Google Maps API.</p>
-<p>This class provides functionality to download SVIs at specific geographic coordinates,
-check image availability, and download images in a grid pattern across an area.</p>
-<h2 id="attributes">Attributes</h2>
-<dl>
-<dt><strong><code>api_key</code></strong> :&ensp;<code>str</code></dt>
-<dd>Google Maps API key for authentication.</dd>
-<dt><strong><code>save_dir</code></strong> :&ensp;<code>str</code></dt>
-<dd>Directory path to save downloaded images.</dd>
-<dt><strong><code>base_url</code></strong> :&ensp;<code>str</code></dt>
-<dd>Base URL for the Google Street View API.</dd>
-<dt><strong><code>meta_url</code></strong> :&ensp;<code>str</code></dt>
-<dd>URL for the metadata endpoint of the Google Street View API.</dd>
-</dl>
-<p>Initialize the GoogleSVIDownloader with API key and save directory.</p>
-<p>If no API key is provided, it attempts to get the key from the GOOGLEMAP_API_KEY
-environment variable. If that fails, it prompts the user to enter the key.</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>api_key</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd>Google Maps API key. Defaults to None.</dd>
-<dt><strong><code>save_dir</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd>Directory to save downloaded images. Defaults to "images".</dd>
-</dl></div>
-<h3>Methods</h3>
-<dl>
-<dt id="ccai9012.svi_utils.GoogleSVIDownloader.download_grid_svis"><code class="name flex">
-<span>def <span class="ident">download_grid_svis</span></span>(<span>self,<br>lat_start: float,<br>lon_start: float,<br>rows: int,<br>cols: int,<br>delta: float,<br>heading: int = 0,<br>pitch: int = 0,<br>fov: int = 90,<br>size: str = '640x640') ‑> list[dict]</span>
-</code></dt>
-<dd>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def download_grid_svis(self, lat_start: float, lon_start: float, rows: int, cols: int,
-                       delta: float, heading: int = 0, pitch: int = 0,
-                       fov: int = 90, size: str = &#34;640x640&#34;) -&gt; list[dict]:
-    &#34;&#34;&#34;
-    Download Street View images for a grid of locations.
-
-    This method generates a grid of coordinates and downloads SVIs for each location
-    where imagery is available.
-
-    Args:
-        lat_start (float): Starting latitude for the grid.
-        lon_start (float): Starting longitude for the grid.
-        rows (int): Number of rows in the grid.
-        cols (int): Number of columns in the grid.
-        delta (float): Spacing between grid points in degrees.
-        heading (int, optional): Camera heading in degrees. Defaults to 0.
-        pitch (int, optional): Camera pitch in degrees. Defaults to 0.
-        fov (int, optional): Field of view in degrees. Defaults to 90.
-        size (str, optional): Image size. Defaults to &#34;640x640&#34;.
-
-    Returns:
-        list[dict]: List of dictionaries, each containing &#39;lat&#39;, &#39;lon&#39;, and &#39;image&#39; keys
-                    for the downloaded images.
-    &#34;&#34;&#34;
-    coords = self.generate_grid_coords(lat_start, lon_start, rows, cols, delta)
-    svis = []
-
-    for lat, lon in coords:
-        if self.is_svi_available(lat, lon):
-            img = self.download_svi(lat, lon, heading, pitch, fov, size)
-            if img:
-                svis.append({&#34;lat&#34;: lat, &#34;lon&#34;: lon, &#34;image&#34;: img})
-        else:
-            print(f&#34;No SVI available at ({lat}, {lon})&#34;)
-
-    return svis</code></pre>
-</details>
-<div class="desc"><p>Download Street View images for a grid of locations.</p>
-<p>This method generates a grid of coordinates and downloads SVIs for each location
-where imagery is available.</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>lat_start</code></strong> :&ensp;<code>float</code></dt>
-<dd>Starting latitude for the grid.</dd>
-<dt><strong><code>lon_start</code></strong> :&ensp;<code>float</code></dt>
-<dd>Starting longitude for the grid.</dd>
-<dt><strong><code>rows</code></strong> :&ensp;<code>int</code></dt>
-<dd>Number of rows in the grid.</dd>
-<dt><strong><code>cols</code></strong> :&ensp;<code>int</code></dt>
-<dd>Number of columns in the grid.</dd>
-<dt><strong><code>delta</code></strong> :&ensp;<code>float</code></dt>
-<dd>Spacing between grid points in degrees.</dd>
-<dt><strong><code>heading</code></strong> :&ensp;<code>int</code>, optional</dt>
-<dd>Camera heading in degrees. Defaults to 0.</dd>
-<dt><strong><code>pitch</code></strong> :&ensp;<code>int</code>, optional</dt>
-<dd>Camera pitch in degrees. Defaults to 0.</dd>
-<dt><strong><code>fov</code></strong> :&ensp;<code>int</code>, optional</dt>
-<dd>Field of view in degrees. Defaults to 90.</dd>
-<dt><strong><code>size</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd>Image size. Defaults to "640x640".</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>list[dict]</code></dt>
-<dd>List of dictionaries, each containing 'lat', 'lon', and 'image' keys
-for the downloaded images.</dd>
-</dl></div>
-</dd>
-<dt id="ccai9012.svi_utils.GoogleSVIDownloader.download_svi"><code class="name flex">
-<span>def <span class="ident">download_svi</span></span>(<span>self,<br>lat: float,<br>lon: float,<br>heading: int = 0,<br>pitch: int = 0,<br>fov: int = 90,<br>size: str = '640x640',<br>save: bool = True) ‑> PIL.Image.Image | None</span>
-</code></dt>
-<dd>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def download_svi(self, lat: float, lon: float, heading: int = 0,
-                 pitch: int = 0, fov: int = 90, size: str = &#34;640x640&#34;,
-                 save: bool = True) -&gt; Image.Image | None:
-    &#34;&#34;&#34;
-    Download a Street View image at the specified coordinates with given parameters.
-
-    Args:
-        lat (float): Latitude coordinate.
-        lon (float): Longitude coordinate.
-        heading (int, optional): Camera heading in degrees, 0-360. Defaults to 0 (north).
-        pitch (int, optional): Camera pitch in degrees, -90 to 90. Defaults to 0 (flat).
-        fov (int, optional): Field of view in degrees, 0-120. Defaults to 90.
-        size (str, optional): Image size in format &#34;WIDTHxHEIGHT&#34;. Defaults to &#34;640x640&#34;.
-        save (bool, optional): Whether to save the image to disk. Defaults to True.
-
-    Returns:
-        PIL.Image.Image | None: Downloaded image as PIL Image object, or None if download failed.
-    &#34;&#34;&#34;
-    params = {
-        &#34;location&#34;: f&#34;{lat},{lon}&#34;,
-        &#34;size&#34;: size,
-        &#34;heading&#34;: heading,
-        &#34;pitch&#34;: pitch,
-        &#34;fov&#34;: fov,
-        &#34;key&#34;: self.api_key
-    }
-    response = requests.get(self.base_url, params=params)
-
-    if response.status_code == 200:
-        image = Image.open(BytesIO(response.content))
-        if save:
-            filename = f&#34;lat{lat:.6f}_lon{lon:.6f}_hdg{heading}.jpg&#34;
-            filepath = os.path.join(self.save_dir, filename)
-            image.save(filepath)
-            print(f&#34;Saved SVI: {filepath}&#34;)
-        return image
-    else:
-        print(f&#34;Failed to download SVI at ({lat}, {lon}), status code: {response.status_code}&#34;)
-        return None</code></pre>
-</details>
-<div class="desc"><p>Download a Street View image at the specified coordinates with given parameters.</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>lat</code></strong> :&ensp;<code>float</code></dt>
-<dd>Latitude coordinate.</dd>
-<dt><strong><code>lon</code></strong> :&ensp;<code>float</code></dt>
-<dd>Longitude coordinate.</dd>
-<dt><strong><code>heading</code></strong> :&ensp;<code>int</code>, optional</dt>
-<dd>Camera heading in degrees, 0-360. Defaults to 0 (north).</dd>
-<dt><strong><code>pitch</code></strong> :&ensp;<code>int</code>, optional</dt>
-<dd>Camera pitch in degrees, -90 to 90. Defaults to 0 (flat).</dd>
-<dt><strong><code>fov</code></strong> :&ensp;<code>int</code>, optional</dt>
-<dd>Field of view in degrees, 0-120. Defaults to 90.</dd>
-<dt><strong><code>size</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd>Image size in format "WIDTHxHEIGHT". Defaults to "640x640".</dd>
-<dt><strong><code>save</code></strong> :&ensp;<code>bool</code>, optional</dt>
-<dd>Whether to save the image to disk. Defaults to True.</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>PIL.Image.Image | None</code></dt>
-<dd>Downloaded image as PIL Image object, or None if download failed.</dd>
-</dl></div>
-</dd>
-<dt id="ccai9012.svi_utils.GoogleSVIDownloader.generate_grid_coords"><code class="name flex">
-<span>def <span class="ident">generate_grid_coords</span></span>(<span>self, lat_start: float, lon_start: float, rows: int, cols: int, delta: float) ‑> list[tuple[float, float]]</span>
-</code></dt>
-<dd>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def generate_grid_coords(self, lat_start: float, lon_start: float,
-                         rows: int, cols: int, delta: float) -&gt; list[tuple[float, float]]:
-    &#34;&#34;&#34;
-    Generate a grid of geographic coordinates starting from a point.
-
-    Creates a rectangular grid of coordinates with the specified number of rows and columns,
-    where each point is separated by the delta value in degrees.
-
-    Args:
-        lat_start (float): Starting latitude for the grid.
-        lon_start (float): Starting longitude for the grid.
-        rows (int): Number of rows in the grid.
-        cols (int): Number of columns in the grid.
-        delta (float): Spacing between points in degrees.
-
-    Returns:
-        list[tuple[float, float]]: List of (latitude, longitude) coordinate pairs.
-    &#34;&#34;&#34;
-    coords = []
-    for i in range(rows):
-        for j in range(cols):
-            lat = lat_start + i * delta
-            lon = lon_start + j * delta
-            coords.append((lat, lon))
-    return coords</code></pre>
-</details>
-<div class="desc"><p>Generate a grid of geographic coordinates starting from a point.</p>
-<p>Creates a rectangular grid of coordinates with the specified number of rows and columns,
-where each point is separated by the delta value in degrees.</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>lat_start</code></strong> :&ensp;<code>float</code></dt>
-<dd>Starting latitude for the grid.</dd>
-<dt><strong><code>lon_start</code></strong> :&ensp;<code>float</code></dt>
-<dd>Starting longitude for the grid.</dd>
-<dt><strong><code>rows</code></strong> :&ensp;<code>int</code></dt>
-<dd>Number of rows in the grid.</dd>
-<dt><strong><code>cols</code></strong> :&ensp;<code>int</code></dt>
-<dd>Number of columns in the grid.</dd>
-<dt><strong><code>delta</code></strong> :&ensp;<code>float</code></dt>
-<dd>Spacing between points in degrees.</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>list[tuple[float, float]]</code></dt>
-<dd>List of (latitude, longitude) coordinate pairs.</dd>
-</dl></div>
-</dd>
-<dt id="ccai9012.svi_utils.GoogleSVIDownloader.is_svi_available"><code class="name flex">
-<span>def <span class="ident">is_svi_available</span></span>(<span>self, lat: float, lon: float) ‑> bool</span>
-</code></dt>
-<dd>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def is_svi_available(self, lat: float, lon: float) -&gt; bool:
-    &#34;&#34;&#34;
-    Check if Street View imagery is available at the given coordinates.
-
-    This method queries the Google Street View metadata API to determine
-    whether street view imagery exists for the specified location.
-
-    Args:
-        lat (float): Latitude coordinate.
-        lon (float): Longitude coordinate.
-
-    Returns:
-        bool: True if street view imagery is available, False otherwise.
-    &#34;&#34;&#34;
-    params = {
-        &#34;location&#34;: f&#34;{lat},{lon}&#34;,
-        &#34;key&#34;: self.api_key
-    }
-    response = requests.get(self.meta_url, params=params)
-    data = response.json()
-    return data.get(&#34;status&#34;) == &#34;OK&#34; and data.get(&#34;pano_id&#34;) is not None</code></pre>
-</details>
-<div class="desc"><p>Check if Street View imagery is available at the given coordinates.</p>
-<p>This method queries the Google Street View metadata API to determine
-whether street view imagery exists for the specified location.</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>lat</code></strong> :&ensp;<code>float</code></dt>
-<dd>Latitude coordinate.</dd>
-<dt><strong><code>lon</code></strong> :&ensp;<code>float</code></dt>
-<dd>Longitude coordinate.</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>bool</code></dt>
-<dd>True if street view imagery is available, False otherwise.</dd>
-</dl></div>
-</dd>
-</dl>
-</dd>
-</dl>
-</section>
-</article>
-    </main>
   </div>
-</body>
+
+  <div class=" navbar-header-items">
+
+    <div class="me-auto navbar-header-items__center">
+
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Modules
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+
+        <div class="navbar-item"><a class="nav-link course-home-link" href="../../index.html">Back to Course Website</a></div>
+
+    </div>
+
+
+    <div class="navbar-header-items__end">
+
+
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+
+    </div>
+
+  </div>
+
+
+
+
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+
+</div>
+
+    </header>
+
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+
+
+
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+
+
+
+  <div class="sidebar-header-items sidebar-primary__section">
+
+
+      <div class="sidebar-header-items__center">
+
+
+
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Modules
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+
+
+
+
+            <div class="navbar-item"><a class="nav-link course-home-link" href="../../index.html">Back to Course Website</a></div>
+
+
+      </div>
+
+
+
+      <div class="sidebar-header-items__end">
+
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+
+      </div>
+
+  </div>
+
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links" aria-label="API navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">API Reference</p>
+  <div class="bd-toc-item navbar-nav">
+    <ul class="nav bd-sidenav">
+      <li class="toctree-l1">
+        <a class="reference internal" href="../index.html">Overview</a>
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="gan_utils.html">gan_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="llm_utils.html">llm_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="multi_modal_utils.html">multi_modal_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="nn_utils.html">nn_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="sd_utils.html">sd_utils</a>
+
+      </li>
+
+      <li class="toctree-l1 current active">
+        <a class="reference internal" href="svi_utils.html">svi_utils</a>
+
+        <ul class="nav bd-sidenav api-member-nav">
+
+
+          <li class="api-member-group">Classes</li>
+
+          <li class="toctree-l2">
+            <a class="reference internal" href="../generated/ccai9012.svi_utils.GoogleSVIDownloader.html">GoogleSVIDownloader</a>
+          </li>
+
+
+
+
+          <li class="api-member-group">Functions</li>
+
+          <li class="toctree-l2">
+            <a class="reference internal" href="../generated/ccai9012.svi_utils.segment_and_save_images.html">segment_and_save_images</a>
+          </li>
+
+          <li class="toctree-l2">
+            <a class="reference internal" href="../generated/ccai9012.svi_utils.visualize_segmentation_pair.html">visualize_segmentation_pair</a>
+          </li>
+
+          <li class="toctree-l2">
+            <a class="reference internal" href="../generated/ccai9012.svi_utils.batch_segment_and_visualize.html">batch_segment_and_visualize</a>
+          </li>
+
+
+
+
+          <li class="api-member-group">Methods</li>
+
+          <li class="toctree-l2">
+            <a class="reference internal" href="../generated/ccai9012.svi_utils.GoogleSVIDownloader.is_svi_available.html">GoogleSVIDownloader.is_svi_available</a>
+          </li>
+
+          <li class="toctree-l2">
+            <a class="reference internal" href="../generated/ccai9012.svi_utils.GoogleSVIDownloader.download_svi.html">GoogleSVIDownloader.download_svi</a>
+          </li>
+
+          <li class="toctree-l2">
+            <a class="reference internal" href="../generated/ccai9012.svi_utils.GoogleSVIDownloader.generate_grid_coords.html">GoogleSVIDownloader.generate_grid_coords</a>
+          </li>
+
+          <li class="toctree-l2">
+            <a class="reference internal" href="../generated/ccai9012.svi_utils.GoogleSVIDownloader.download_grid_svis.html">GoogleSVIDownloader.download_grid_svis</a>
+          </li>
+
+
+
+        </ul>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="token_utils.html">token_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="viz_utils.html">viz_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="yolo_utils.html">yolo_utils</a>
+
+      </li>
+
+    </ul>
+  </div>
+</nav></div>
+    </div>
+
+
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+
+      <main id="main-content" class="bd-main" role="main">
+
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+
+    <div class="header-article-items__start">
+
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Modules</a></li>
+
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">svi_utils</span></li>
+  </ul>
+</nav>
+</div>
+
+    </div>
+
+
+</div>
+</div>
+
+
+
+
+<div id="searchbox"></div>
+                <article class="bd-article">
+
+  <section id="svi-utils">
+<h1>svi_utils<a class="headerlink" href="#svi-utils" title="Link to this heading">#</a></h1>
+<p>This module supports urban computer-vision workflows that begin with Google Street View imagery. It can sample locations, check image availability, download views, and connect those images to segmentation and visualization steps.</p>
+<section id="what-this-module-helps-you-do">
+<h2>What this module helps you do<a class="headerlink" href="#what-this-module-helps-you-do" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>generate a coordinate grid for systematic street-view sampling</p></li>
+<li><p>check whether imagery is available before requesting a download</p></li>
+<li><p>download individual or batched street-view images with metadata</p></li>
+<li><p>run segmentation and visually compare source images with predicted classes</p></li>
+</ul>
+</section>
+<section id="when-to-use-it">
+<h2>When to use it<a class="headerlink" href="#when-to-use-it" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Your study links urban locations to visible streetscape characteristics.</p></li>
+<li><p>You need a repeatable sampling method rather than manually selecting screenshots.</p></li>
+<li><p>You have confirmed API terms, quota, credential, and privacy requirements before online collection.</p></li>
+</ul>
+</section>
+<section id="typical-workflow">
+<h2>Typical workflow<a class="headerlink" href="#typical-workflow" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Define the study extent and generate candidate coordinates.</p></li>
+<li><p>Check availability and download a small validation sample.</p></li>
+<li><p>Run segmentation on the saved images.</p></li>
+<li><p>Inspect source/prediction pairs before summarizing class coverage.</p></li>
+</ol>
+</section>
+<section id="related-starter-kits">
+<h2>Related Starter Kits<a class="headerlink" href="#related-starter-kits" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="../../starter_kits/m4_cv.html">Computer Vision</a></p></li>
+</ul>
+</section>
+<section id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/ccai9012.svi_utils.GoogleSVIDownloader.html#ccai9012.svi_utils.GoogleSVIDownloader" title="ccai9012.svi_utils.GoogleSVIDownloader"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GoogleSVIDownloader</span></code></a>([api_key, save_dir])</p></td>
+<td><p>A utility class for downloading Google Street View Images (SVIs) using Google Maps API.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/ccai9012.svi_utils.segment_and_save_images.html#ccai9012.svi_utils.segment_and_save_images" title="ccai9012.svi_utils.segment_and_save_images"><code class="xref py py-obj docutils literal notranslate"><span class="pre">segment_and_save_images</span></code></a>(image_pil, ...[, ...])</p></td>
+<td><p>Perform semantic segmentation on an input image and optionally save the results.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/ccai9012.svi_utils.visualize_segmentation_pair.html#ccai9012.svi_utils.visualize_segmentation_pair" title="ccai9012.svi_utils.visualize_segmentation_pair"><code class="xref py py-obj docutils literal notranslate"><span class="pre">visualize_segmentation_pair</span></code></a>(image_pil, mask_np)</p></td>
+<td><p>Visualize an original image alongside its semantic segmentation mask.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/ccai9012.svi_utils.batch_segment_and_visualize.html#ccai9012.svi_utils.batch_segment_and_visualize" title="ccai9012.svi_utils.batch_segment_and_visualize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">batch_segment_and_visualize</span></code></a>(save_dir, ...[, ...])</p></td>
+<td><p>Process and segment a batch of images, save the results, and visualize a subset of them.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="constants">
+<h2>Constants<a class="headerlink" href="#constants" title="Link to this heading">#</a></h2>
+<dl class="py data">
+<dt class="sig sig-object py" id="ccai9012.svi_utils.CITYSCAPES_CLASSES">
+<span class="sig-name descname"><span class="pre">CITYSCAPES_CLASSES</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['road',</span> <span class="pre">'sidewalk',</span> <span class="pre">'building',</span> <span class="pre">'wall',</span> <span class="pre">'fence',</span> <span class="pre">'pole',</span> <span class="pre">'traffic</span> <span class="pre">light',</span> <span class="pre">'traffic</span> <span class="pre">sign',</span> <span class="pre">'vegetation',</span> <span class="pre">'terrain',</span> <span class="pre">'sky',</span> <span class="pre">'person',</span> <span class="pre">'rider',</span> <span class="pre">'car',</span> <span class="pre">'truck',</span> <span class="pre">'bus',</span> <span class="pre">'train',</span> <span class="pre">'motorcycle',</span> <span class="pre">'bicycle']</span></span><a class="headerlink" href="#ccai9012.svi_utils.CITYSCAPES_CLASSES" title="Link to this definition">#</a></dt>
+<dd><p>Built-in mutable sequence.</p>
+<p>If no argument is given, the constructor creates a new empty list.
+The argument must be an iterable if specified.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="ccai9012.svi_utils.CITYSCAPES_COLORS">
+<span class="sig-name descname"><span class="pre">CITYSCAPES_COLORS</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[(128,</span> <span class="pre">64,</span> <span class="pre">128),</span> <span class="pre">(244,</span> <span class="pre">35,</span> <span class="pre">232),</span> <span class="pre">(70,</span> <span class="pre">70,</span> <span class="pre">70),</span> <span class="pre">(102,</span> <span class="pre">102,</span> <span class="pre">156),</span> <span class="pre">(190,</span> <span class="pre">153,</span> <span class="pre">153),</span> <span class="pre">(153,</span> <span class="pre">153,</span> <span class="pre">153),</span> <span class="pre">(250,</span> <span class="pre">170,</span> <span class="pre">30),</span> <span class="pre">(220,</span> <span class="pre">220,</span> <span class="pre">0),</span> <span class="pre">(107,</span> <span class="pre">142,</span> <span class="pre">35),</span> <span class="pre">(152,</span> <span class="pre">251,</span> <span class="pre">152),</span> <span class="pre">(70,</span> <span class="pre">130,</span> <span class="pre">180),</span> <span class="pre">(220,</span> <span class="pre">20,</span> <span class="pre">60),</span> <span class="pre">(255,</span> <span class="pre">0,</span> <span class="pre">0),</span> <span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">142),</span> <span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">70),</span> <span class="pre">(0,</span> <span class="pre">60,</span> <span class="pre">100),</span> <span class="pre">(0,</span> <span class="pre">80,</span> <span class="pre">100),</span> <span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">230),</span> <span class="pre">(119,</span> <span class="pre">11,</span> <span class="pre">32)]</span></span><a class="headerlink" href="#ccai9012.svi_utils.CITYSCAPES_COLORS" title="Link to this definition">#</a></dt>
+<dd><p>Built-in mutable sequence.</p>
+<p>If no argument is given, the constructor creates a new empty list.
+The argument must be an iterable if specified.</p>
+</dd></dl>
+
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/ccai9012.svi_utils.GoogleSVIDownloader.is_svi_available.html#ccai9012.svi_utils.GoogleSVIDownloader.is_svi_available" title="ccai9012.svi_utils.GoogleSVIDownloader.is_svi_available"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_svi_available</span></code></a>(lat, lon)</p></td>
+<td><p>Check if Street View imagery is available at the given coordinates.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/ccai9012.svi_utils.GoogleSVIDownloader.download_svi.html#ccai9012.svi_utils.GoogleSVIDownloader.download_svi" title="ccai9012.svi_utils.GoogleSVIDownloader.download_svi"><code class="xref py py-obj docutils literal notranslate"><span class="pre">download_svi</span></code></a>(lat, lon[, heading, pitch, ...])</p></td>
+<td><p>Download a Street View image at the specified coordinates with given parameters.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/ccai9012.svi_utils.GoogleSVIDownloader.generate_grid_coords.html#ccai9012.svi_utils.GoogleSVIDownloader.generate_grid_coords" title="ccai9012.svi_utils.GoogleSVIDownloader.generate_grid_coords"><code class="xref py py-obj docutils literal notranslate"><span class="pre">generate_grid_coords</span></code></a>(lat_start, lon_start, ...)</p></td>
+<td><p>Generate a grid of geographic coordinates starting from a point.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/ccai9012.svi_utils.GoogleSVIDownloader.download_grid_svis.html#ccai9012.svi_utils.GoogleSVIDownloader.download_grid_svis" title="ccai9012.svi_utils.GoogleSVIDownloader.download_grid_svis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">download_grid_svis</span></code></a>(lat_start, lon_start, ...)</p></td>
+<td><p>Download Street View images for a grid of locations.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+
+
+                </article>
+
+
+
+
+
+                <footer class="prev-next-footer d-print-none">
+
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../generated/ccai9012.sd_utils.SDClient.generate_images.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">SDClient.generate_images</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../generated/ccai9012.svi_utils.GoogleSVIDownloader.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">GoogleSVIDownloader</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+
+            </div>
+
+
+
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-this-module-helps-you-do">What this module helps you do</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-to-use-it">When to use it</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#typical-workflow">Typical workflow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-starter-kits">Related Starter Kits</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constants">Constants</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ccai9012.svi_utils.CITYSCAPES_CLASSES"><code class="docutils literal notranslate"><span class="pre">CITYSCAPES_CLASSES</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ccai9012.svi_utils.CITYSCAPES_COLORS"><code class="docutils literal notranslate"><span class="pre">CITYSCAPES_COLORS</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods">Methods</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+
+
+          </div>
+          <footer class="bd-footer-content">
+
+          </footer>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+
+    <div class="footer-items__start">
+
+        <div class="footer-item">
+
+  <p class="copyright">
+
+      © Copyright 2026, CCAI9012.
+      <br/>
+
+  </p>
+</div>
+
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    <br/>
+  </p>
+</div>
+
+    </div>
+
+
+
+    <div class="footer-items__end">
+
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.20.0.
+</p></div>
+
+    </div>
+
+</div>
+
+  </footer>
+  </body>
 </html>
-<!-- END PDOC WRAPPER -->

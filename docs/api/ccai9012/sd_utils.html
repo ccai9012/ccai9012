@@ -1,452 +1,607 @@
-<!-- START PDOC WRAPPER -->
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Module ccai9012.sd_utils</title>
-  <link rel="stylesheet" href="../../docs-style.css">
-</head>
-<body>
-  <div class="container">
-    <nav id="sidebar">
-      <div class="sidebar-header">
-        <h2>CCAI9012</h2>
-      </div>
-      <ul class="nav-menu">
-                <li><a href="../../index.html">Home</a></li>
-                <li><a href="../../timetable.html">Course Plan</a></li>
-                <li><a href="../../Assessment.html">Assessment</a></li>
-                <li class="sub-item"><a href="../../casestudy.html">Case Study</a></li>
-                <li class="sub-item"><a href="../../course_project.html">Course Project</a></li>
-                <li><a href="../../reading_material.html">Reading Materials</a></li>
-                <li><a href="../../pi_responsibility.html">I. Responsibility & AI</a></li>
-                <li><a href="../../pii_mechanics.html">II. Mechanics of AI</a></li>
-                <li><a href="../../piii_data_and_risks.html">III. Datasets & Risks of AI</a></li>
-                <li><a href="../../installation.html">Installation Guide</a></li>
-                <li><a href="../../starter_kits/index.html">Starter Kits</a></li>
-                <li><a href="../../datasets.html">Datasets Reference</a></li>
-      </ul>
-    </nav>
 
-    <main id="content" class="api-content">
-      <!-- API content extracted from pdoc -->
-<article class="api-doc">
-<header>
-<h1 class="title">Module <code>ccai9012.sd_utils</code></h1>
-</header>
-<section id="section-intro">
-<h1 id="stable-diffusion-utilities-module">Stable Diffusion Utilities Module</h1>
-<p>This module provides utilities for text-to-image generation using Stable Diffusion models.
-It offers a flexible interface to generate images either through the Hugging Face Inference API
-(cloud-based) or locally using downloaded models.</p>
-<p>The module is designed to simplify the process of generating images from text prompts,
-handling authentication, model loading, and providing consistent interfaces regardless
-of the execution mode chosen.</p>
-<p>Main components:
-- API key management: Secure handling of Hugging Face API keys
-- SDClient: A versatile client that can operate in two modes:
-- "inference": Uses Hugging Face's Inference API (cloud-based, faster startup)
-- "local": Loads and runs models locally (higher throughput for multiple generations)</p>
-<h2 id="usage">Usage</h2>
-<p>client = SDClient(mode="inference")
-# Use Hugging Face Inference API
-images = client.generate_images("a photo of a cat", num_images=2)</p>
-</section>
-<section>
-</section>
-<section>
-</section>
-<section>
-<h2 class="section-title" id="header-functions">Functions</h2>
-<dl>
-<dt id="ccai9012.sd_utils.get_hf_api_key"><code class="name flex">
-<span>def <span class="ident">get_hf_api_key</span></span>(<span>env_var: str = 'HUGGINGFACE_API_KEY') ‑> str</span>
-</code></dt>
-<dd>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def get_hf_api_key(env_var: str = &#34;HUGGINGFACE_API_KEY&#34;) -&gt; str:
-    &#34;&#34;&#34;
-    Get Hugging Face API key from environment variables or prompt user securely.
+<!DOCTYPE html>
 
-    This function first attempts to retrieve the API key from the specified environment variable.
-    If the key is not found, it prompts the user to enter it securely (without displaying it),
-    then stores it in the environment variable for future use within the session.
 
-    Args:
-        env_var (str): The name of the environment variable to check for the API key.
-                      Defaults to &#34;HUGGINGFACE_API_KEY&#34;.
+<html lang="en" data-content_root="../" >
 
-    Returns:
-        str: The Hugging Face API key.
-    &#34;&#34;&#34;
-    # Prefer `ccai9012/token.yaml` (key: env.&lt;ENV_VAR&gt;), then env vars, then prompt.
-    return get_token(env_var=env_var, yaml_key=f&#34;env.{env_var}&#34;, prompt=f&#34;Enter your {env_var}: &#34;)</code></pre>
-</details>
-<div class="desc"><p>Get Hugging Face API key from environment variables or prompt user securely.</p>
-<p>This function first attempts to retrieve the API key from the specified environment variable.
-If the key is not found, it prompts the user to enter it securely (without displaying it),
-then stores it in the environment variable for future use within the session.</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>env_var</code></strong> :&ensp;<code>str</code></dt>
-<dd>The name of the environment variable to check for the API key.
-Defaults to "HUGGINGFACE_API_KEY".</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>str</code></dt>
-<dd>The Hugging Face API key.</dd>
-</dl></div>
-</dd>
-</dl>
-</section>
-<section>
-<h2 class="section-title" id="header-classes">Classes</h2>
-<dl>
-<dt id="ccai9012.sd_utils.SDClient"><code class="flex name class">
-<span>class <span class="ident">SDClient</span></span>
-<span>(</span><span>mode: str = 'inference',<br>model_id: str = 'stabilityai/stable-diffusion-2-base',<br>cache_dir: str = None,<br>use_auth_token: str = None,<br>device: str = None)</span>
-</code></dt>
-<dd>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">class SDClient:
-    &#34;&#34;&#34;
-    Stable Diffusion Client for text-to-image generation.
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    This class provides a unified interface for generating images from text prompts,
-    supporting two operational modes:
+    <title>sd_utils &#8212; CCAI9012 API Reference</title>
 
-    1. &#34;inference&#34; mode: Uses Hugging Face&#39;s Inference API (cloud-based)
-       - Advantages: Faster startup, no model downloads, lower memory requirements
-       - Use case: Quick testing, limited hardware resources
 
-    2. &#34;local&#34; mode: Loads and runs models locally via diffusers library
-       - Advantages: Higher throughput for multiple generations, more control
-       - Use case: Batch processing, offline usage, custom pipelines
 
-    The class handles model loading, device management, and API authentication
-    automatically, providing a simple interface for generating images.
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
 
-    Attributes:
-        mode (str): Operating mode (&#34;inference&#34; or &#34;local&#34;).
-        model_id (str): Hugging Face model repository ID.
-        device (str): Torch device for computation (&#34;cuda&#34; or &#34;cpu&#34;).
-        api_key (str): Hugging Face API key for authentication.
-        client: Inference client (in &#34;inference&#34; mode).
-        pipe: StableDiffusionPipeline instance (in &#34;local&#34; mode).
-        cache_dir (str): Directory to cache downloaded models (in &#34;local&#34; mode).
-    &#34;&#34;&#34;
+    </style>
+  </noscript>
 
-    def __init__(
-        self,
-        mode: str = &#34;inference&#34;,  # &#34;inference&#34; or &#34;local&#34;
-        model_id: str = &#34;stabilityai/stable-diffusion-2-base&#34;,
-        cache_dir: str = None,
-        use_auth_token: str = None,
-        device: str = None,
-    ):
-        &#34;&#34;&#34;
-        Initialize the Stable Diffusion Client with specified configuration.
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
 
-        Sets up the client based on the chosen operational mode, handling authentication,
-        model loading, and device selection automatically.
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/api-theme.css?v=28db1ad0" />
 
-        Args:
-            mode (str): Operational mode for image generation. Options:
-                       - &#34;inference&#34;: Use Hugging Face&#39;s cloud-based Inference API.
-                       - &#34;local&#34;: Load and run the model locally using diffusers library.
-                       Defaults to &#34;inference&#34;.
-            model_id (str): Hugging Face model repository ID for the Stable Diffusion model.
-                          Defaults to &#34;stabilityai/stable-diffusion-2-base&#34;.
-            cache_dir (str, optional): Local directory to cache downloaded models in &#34;local&#34; mode.
-                                     If None, defaults to &#34;./models&#34; as an absolute path.
-            use_auth_token (str, optional): Hugging Face API token for authentication.
-                                          If None, will attempt to retrieve or prompt for it.
-            device (str, optional): PyTorch device to use for computation.
-                                  If None, automatically selects CUDA if available, otherwise CPU.
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
 
-        Raises:
-            ValueError: If the specified mode is not &#34;inference&#34; or &#34;local&#34;.
-        &#34;&#34;&#34;
-        self.mode = mode.lower()
-        self.model_id = model_id
-        self.device = device or (&#34;cuda&#34; if torch.cuda.is_available() else &#34;cpu&#34;)
-        self.api_key = use_auth_token or get_hf_api_key()
+    <script src="../_static/documentation_options.js?v=7f41d439"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ccai9012/sd_utils';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="SDClient" href="../generated/ccai9012.sd_utils.SDClient.html" />
+    <link rel="prev" title="evaluate_classification_model" href="../generated/ccai9012.nn_utils.evaluate_classification_model.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
 
-        if self.mode == &#34;inference&#34;:
-            self.client = InferenceClient(
-                provider=&#34;hf-inference&#34;,
-                headers={&#34;X-Use-Cache&#34;: &#34;false&#34;},
-                api_key=self.api_key,
-            )
-        elif self.mode == &#34;local&#34;:
-            if cache_dir is None:
-                cache_dir = os.path.abspath(&#34;./models&#34;)
-            self.cache_dir = cache_dir
-            self.pipe = StableDiffusionPipeline.from_pretrained(
-                self.model_id,
-                use_auth_token=self.api_key,
-                cache_dir=self.cache_dir,
-                torch_dtype=torch.float16 if self.device.startswith(&#34;cuda&#34;) else torch.float32,
-            ).to(self.device)
-        else:
-            raise ValueError(&#34;mode must be &#39;inference&#39; or &#39;local&#39;&#34;)
 
-    def generate_images(
-        self,
-        prompt: str,
-        num_images: int = 1,
-        guidance_scale: float = 7.5,
-        num_inference_steps: int = 50,
-        seed: int = None,
-        display_images: bool = True,
-    ):
-        &#34;&#34;&#34;
-        Generate images from a text prompt using Stable Diffusion.
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
 
-        This method generates one or more images based on the provided text prompt,
-        using either the Hugging Face Inference API (in &#34;inference&#34; mode) or a locally
-        loaded model (in &#34;local&#34; mode). Generated images can optionally be displayed
-        inline in Jupyter notebooks.
+  </head>
+  <body data-default-mode="">
 
-        Args:
-            prompt (str): Text description of the image to generate.
-            num_images (int, optional): Number of images to generate. Defaults to 1.
-            guidance_scale (float, optional): Classifier-free guidance scale, controlling how
-                                           closely the image follows the prompt. Higher values
-                                           give more prompt adherence but less diversity.
-                                           Defaults to 7.5.
-            num_inference_steps (int, optional): Number of denoising steps in the diffusion process.
-                                              More steps typically yield higher quality images
-                                              but take longer to generate. Defaults to 50.
-            seed (int, optional): Random seed for reproducible generation.
-                                If None, a random seed is used. Defaults to None.
-            display_images (bool, optional): Whether to display generated images inline
-                                          in Jupyter notebook environments. Defaults to True.
 
-        Returns:
-            list: A list of PIL.Image objects representing the generated images.
-        &#34;&#34;&#34;
-        images = []
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
 
-        if seed is not None:
-            generator = torch.Generator(device=self.device).manual_seed(seed)
-        else:
-            generator = None
 
-        if self.mode == &#34;inference&#34;:
-            for _ in range(num_images):
-                img = self.client.text_to_image(
-                    prompt=prompt,
-                    model=self.model_id,
-                    guidance_scale=guidance_scale,
-                    num_inference_steps=num_inference_steps,
-                    seed=seed,
-                )
-                images.append(img)
-        else:  # local mode
-            for _ in range(num_images):
-                img = self.pipe(
-                    prompt,
-                    guidance_scale=guidance_scale,
-                    num_inference_steps=num_inference_steps,
-                    generator=generator,
-                ).images[0]
-                images.append(img)
+  <div id="pst-scroll-pixel-helper"></div>
 
-        if display_images:
-            for img in images:
-                display(img)
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
-        return images</code></pre>
-</details>
-<div class="desc"><p>Stable Diffusion Client for text-to-image generation.</p>
-<p>This class provides a unified interface for generating images from text prompts,
-supporting two operational modes:</p>
-<ol>
-<li>"inference" mode: Uses Hugging Face's Inference API (cloud-based)</li>
-<li>Advantages: Faster startup, no model downloads, lower memory requirements</li>
-<li>
-<p>Use case: Quick testing, limited hardware resources</p>
-</li>
-<li>
-<p>"local" mode: Loads and runs models locally via diffusers library</p>
-</li>
-<li>Advantages: Higher throughput for multiple generations, more control</li>
-<li>Use case: Batch processing, offline usage, custom pipelines</li>
-</ol>
-<p>The class handles model loading, device management, and API authentication
-automatically, providing a simple interface for generating images.</p>
-<h2 id="attributes">Attributes</h2>
-<dl>
-<dt><strong><code>mode</code></strong> :&ensp;<code>str</code></dt>
-<dd>Operating mode ("inference" or "local").</dd>
-<dt><strong><code>model_id</code></strong> :&ensp;<code>str</code></dt>
-<dd>Hugging Face model repository ID.</dd>
-<dt><strong><code>device</code></strong> :&ensp;<code>str</code></dt>
-<dd>Torch device for computation ("cuda" or "cpu").</dd>
-<dt><strong><code>api_key</code></strong> :&ensp;<code>str</code></dt>
-<dd>Hugging Face API key for authentication.</dd>
-<dt><strong><code>client</code></strong></dt>
-<dd>Inference client (in "inference" mode).</dd>
-<dt><strong><code>pipe</code></strong></dt>
-<dd>StableDiffusionPipeline instance (in "local" mode).</dd>
-<dt><strong><code>cache_dir</code></strong> :&ensp;<code>str</code></dt>
-<dd>Directory to cache downloaded models (in "local" mode).</dd>
-</dl>
-<p>Initialize the Stable Diffusion Client with specified configuration.</p>
-<p>Sets up the client based on the chosen operational mode, handling authentication,
-model loading, and device selection automatically.</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>mode</code></strong> :&ensp;<code>str</code></dt>
-<dd>Operational mode for image generation. Options:
-- "inference": Use Hugging Face's cloud-based Inference API.
-- "local": Load and run the model locally using diffusers library.
-Defaults to "inference".</dd>
-<dt><strong><code>model_id</code></strong> :&ensp;<code>str</code></dt>
-<dd>Hugging Face model repository ID for the Stable Diffusion model.
-Defaults to "stabilityai/stable-diffusion-2-base".</dd>
-<dt><strong><code>cache_dir</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd>Local directory to cache downloaded models in "local" mode.
-If None, defaults to "./models" as an absolute path.</dd>
-<dt><strong><code>use_auth_token</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd>Hugging Face API token for authentication.
-If None, will attempt to retrieve or prompt for it.</dd>
-<dt><strong><code>device</code></strong> :&ensp;<code>str</code>, optional</dt>
-<dd>PyTorch device to use for computation.
-If None, automatically selects CUDA if available, otherwise CPU.</dd>
-</dl>
-<h2 id="raises">Raises</h2>
-<dl>
-<dt><code>ValueError</code></dt>
-<dd>If the specified mode is not "inference" or "local".</dd>
-</dl></div>
-<h3>Methods</h3>
-<dl>
-<dt id="ccai9012.sd_utils.SDClient.generate_images"><code class="name flex">
-<span>def <span class="ident">generate_images</span></span>(<span>self,<br>prompt: str,<br>num_images: int = 1,<br>guidance_scale: float = 7.5,<br>num_inference_steps: int = 50,<br>seed: int = None,<br>display_images: bool = True)</span>
-</code></dt>
-<dd>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def generate_images(
-    self,
-    prompt: str,
-    num_images: int = 1,
-    guidance_scale: float = 7.5,
-    num_inference_steps: int = 50,
-    seed: int = None,
-    display_images: bool = True,
-):
-    &#34;&#34;&#34;
-    Generate images from a text prompt using Stable Diffusion.
 
-    This method generates one or more images based on the provided text prompt,
-    using either the Hugging Face Inference API (in &#34;inference&#34; mode) or a locally
-    loaded model (in &#34;local&#34; mode). Generated images can optionally be displayed
-    inline in Jupyter notebooks.
 
-    Args:
-        prompt (str): Text description of the image to generate.
-        num_images (int, optional): Number of images to generate. Defaults to 1.
-        guidance_scale (float, optional): Classifier-free guidance scale, controlling how
-                                       closely the image follows the prompt. Higher values
-                                       give more prompt adherence but less diversity.
-                                       Defaults to 7.5.
-        num_inference_steps (int, optional): Number of denoising steps in the diffusion process.
-                                          More steps typically yield higher quality images
-                                          but take longer to generate. Defaults to 50.
-        seed (int, optional): Random seed for reproducible generation.
-                            If None, a random seed is used. Defaults to None.
-        display_images (bool, optional): Whether to display generated images inline
-                                      in Jupyter notebook environments. Defaults to True.
 
-    Returns:
-        list: A list of PIL.Image objects representing the generated images.
-    &#34;&#34;&#34;
-    images = []
+  <dialog id="pst-search-dialog">
 
-    if seed is not None:
-        generator = torch.Generator(device=self.device).manual_seed(seed)
-    else:
-        generator = None
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
 
-    if self.mode == &#34;inference&#34;:
-        for _ in range(num_images):
-            img = self.client.text_to_image(
-                prompt=prompt,
-                model=self.model_id,
-                guidance_scale=guidance_scale,
-                num_inference_steps=num_inference_steps,
-                seed=seed,
-            )
-            images.append(img)
-    else:  # local mode
-        for _ in range(num_images):
-            img = self.pipe(
-                prompt,
-                guidance_scale=guidance_scale,
-                num_inference_steps=num_inference_steps,
-                generator=generator,
-            ).images[0]
-            images.append(img)
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
 
-    if display_images:
-        for img in images:
-            display(img)
 
-    return images</code></pre>
-</details>
-<div class="desc"><p>Generate images from a text prompt using Stable Diffusion.</p>
-<p>This method generates one or more images based on the provided text prompt,
-using either the Hugging Face Inference API (in "inference" mode) or a locally
-loaded model (in "local" mode). Generated images can optionally be displayed
-inline in Jupyter notebooks.</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>prompt</code></strong> :&ensp;<code>str</code></dt>
-<dd>Text description of the image to generate.</dd>
-<dt><strong><code>num_images</code></strong> :&ensp;<code>int</code>, optional</dt>
-<dd>Number of images to generate. Defaults to 1.</dd>
-<dt><strong><code>guidance_scale</code></strong> :&ensp;<code>float</code>, optional</dt>
-<dd>Classifier-free guidance scale, controlling how
-closely the image follows the prompt. Higher values
-give more prompt adherence but less diversity.
-Defaults to 7.5.</dd>
-<dt><strong><code>num_inference_steps</code></strong> :&ensp;<code>int</code>, optional</dt>
-<dd>Number of denoising steps in the diffusion process.
-More steps typically yield higher quality images
-but take longer to generate. Defaults to 50.</dd>
-<dt><strong><code>seed</code></strong> :&ensp;<code>int</code>, optional</dt>
-<dd>Random seed for reproducible generation.
-If None, a random seed is used. Defaults to None.</dd>
-<dt><strong><code>display_images</code></strong> :&ensp;<code>bool</code>, optional</dt>
-<dd>Whether to display generated images inline
-in Jupyter notebook environments. Defaults to True.</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>list</code></dt>
-<dd>A list of PIL.Image objects representing the generated images.</dd>
-</dl></div>
-</dd>
-</dl>
-</dd>
-</dl>
-</section>
-</article>
-    </main>
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+
+
+  <div class=" navbar-header-items__start">
+
+      <div class="navbar-item">
+
+
+
+
+
+<a class="navbar-brand logo" href="../index.html">
+
+
+
+
+
+
+    <p class="title logo__title">CCAI9012 API Reference</p>
+
+</a></div>
+
   </div>
-</body>
+
+  <div class=" navbar-header-items">
+
+    <div class="me-auto navbar-header-items__center">
+
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Modules
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+
+        <div class="navbar-item"><a class="nav-link course-home-link" href="../../index.html">Back to Course Website</a></div>
+
+    </div>
+
+
+    <div class="navbar-header-items__end">
+
+
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+
+    </div>
+
+  </div>
+
+
+
+
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+
+</div>
+
+    </header>
+
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+
+
+
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+
+
+
+  <div class="sidebar-header-items sidebar-primary__section">
+
+
+      <div class="sidebar-header-items__center">
+
+
+
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Modules
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+
+
+
+
+            <div class="navbar-item"><a class="nav-link course-home-link" href="../../index.html">Back to Course Website</a></div>
+
+
+      </div>
+
+
+
+      <div class="sidebar-header-items__end">
+
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+
+      </div>
+
+  </div>
+
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links" aria-label="API navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">API Reference</p>
+  <div class="bd-toc-item navbar-nav">
+    <ul class="nav bd-sidenav">
+      <li class="toctree-l1">
+        <a class="reference internal" href="../index.html">Overview</a>
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="gan_utils.html">gan_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="llm_utils.html">llm_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="multi_modal_utils.html">multi_modal_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="nn_utils.html">nn_utils</a>
+
+      </li>
+
+      <li class="toctree-l1 current active">
+        <a class="reference internal" href="sd_utils.html">sd_utils</a>
+
+        <ul class="nav bd-sidenav api-member-nav">
+
+
+          <li class="api-member-group">Classes</li>
+
+          <li class="toctree-l2">
+            <a class="reference internal" href="../generated/ccai9012.sd_utils.SDClient.html">SDClient</a>
+          </li>
+
+
+
+
+          <li class="api-member-group">Functions</li>
+
+          <li class="toctree-l2">
+            <a class="reference internal" href="../generated/ccai9012.sd_utils.get_hf_api_key.html">get_hf_api_key</a>
+          </li>
+
+
+
+
+          <li class="api-member-group">Methods</li>
+
+          <li class="toctree-l2">
+            <a class="reference internal" href="../generated/ccai9012.sd_utils.SDClient.generate_images.html">SDClient.generate_images</a>
+          </li>
+
+
+
+        </ul>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="svi_utils.html">svi_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="token_utils.html">token_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="viz_utils.html">viz_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="yolo_utils.html">yolo_utils</a>
+
+      </li>
+
+    </ul>
+  </div>
+</nav></div>
+    </div>
+
+
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+
+      <main id="main-content" class="bd-main" role="main">
+
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+
+    <div class="header-article-items__start">
+
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Modules</a></li>
+
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">sd_utils</span></li>
+  </ul>
+</nav>
+</div>
+
+    </div>
+
+
+</div>
+</div>
+
+
+
+
+<div id="searchbox"></div>
+                <article class="bd-article">
+
+  <section id="sd-utils">
+<h1>sd_utils<a class="headerlink" href="#sd-utils" title="Link to this heading">#</a></h1>
+<p>This module offers a small interface for text-to-image generation with Stable Diffusion. It keeps credential retrieval, local pipeline setup, hosted inference, and image display behind one client so students can focus on prompt choices and outputs.</p>
+<section id="what-this-module-helps-you-do">
+<h2>What this module helps you do<a class="headerlink" href="#what-this-module-helps-you-do" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>retrieve a Hugging Face credential from the course token mechanism</p></li>
+<li><p>initialize either a local diffusion pipeline or hosted inference client</p></li>
+<li><p>generate multiple images from one prompt for comparison</p></li>
+<li><p>display and return outputs for notebook-based analysis</p></li>
+</ul>
+</section>
+<section id="when-to-use-it">
+<h2>When to use it<a class="headerlink" href="#when-to-use-it" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>You are studying how prompt wording changes generated visual content.</p></li>
+<li><p>You need a consistent interface for local and hosted diffusion workflows.</p></li>
+<li><p>You understand that model download, inference time, and hosted usage may require external resources.</p></li>
+</ul>
+</section>
+<section id="typical-workflow">
+<h2>Typical workflow<a class="headerlink" href="#typical-workflow" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Choose a model and local or hosted execution mode.</p></li>
+<li><p>Initialize <code class="docutils literal notranslate"><span class="pre">SDClient</span></code> with the required credential and cache settings.</p></li>
+<li><p>Generate a small set of images from a controlled prompt.</p></li>
+<li><p>Compare outputs and record prompt, model, and generation settings.</p></li>
+</ol>
+</section>
+<section id="related-starter-kits">
+<h2>Related Starter Kits<a class="headerlink" href="#related-starter-kits" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="../../starter_kits/m3_mm.html">Multimodal AI</a></p></li>
+</ul>
+</section>
+<section id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/ccai9012.sd_utils.SDClient.html#ccai9012.sd_utils.SDClient" title="ccai9012.sd_utils.SDClient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SDClient</span></code></a>([mode, model_id, cache_dir, ...])</p></td>
+<td><p>Stable Diffusion Client for text-to-image generation.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/ccai9012.sd_utils.get_hf_api_key.html#ccai9012.sd_utils.get_hf_api_key" title="ccai9012.sd_utils.get_hf_api_key"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_hf_api_key</span></code></a>([env_var])</p></td>
+<td><p>Get Hugging Face API key from environment variables or prompt user securely.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/ccai9012.sd_utils.SDClient.generate_images.html#ccai9012.sd_utils.SDClient.generate_images" title="ccai9012.sd_utils.SDClient.generate_images"><code class="xref py py-obj docutils literal notranslate"><span class="pre">generate_images</span></code></a>(prompt[, num_images, ...])</p></td>
+<td><p>Generate images from a text prompt using Stable Diffusion.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+
+
+                </article>
+
+
+
+
+
+                <footer class="prev-next-footer d-print-none">
+
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../generated/ccai9012.nn_utils.evaluate_classification_model.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">evaluate_classification_model</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../generated/ccai9012.sd_utils.SDClient.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">SDClient</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+
+            </div>
+
+
+
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-this-module-helps-you-do">What this module helps you do</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-to-use-it">When to use it</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#typical-workflow">Typical workflow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-starter-kits">Related Starter Kits</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods">Methods</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+
+
+          </div>
+          <footer class="bd-footer-content">
+
+          </footer>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+
+    <div class="footer-items__start">
+
+        <div class="footer-item">
+
+  <p class="copyright">
+
+      © Copyright 2026, CCAI9012.
+      <br/>
+
+  </p>
+</div>
+
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    <br/>
+  </p>
+</div>
+
+    </div>
+
+
+
+    <div class="footer-items__end">
+
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.20.0.
+</p></div>
+
+    </div>
+
+</div>
+
+  </footer>
+  </body>
 </html>
-<!-- END PDOC WRAPPER -->

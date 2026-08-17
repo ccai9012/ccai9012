@@ -1,0 +1,768 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index &#8212; CCAI9012 API Reference</title>
+
+
+
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/api-theme.css?v=28db1ad0" />
+
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
+
+    <script src="_static/documentation_options.js?v=7f41d439"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'genindex';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="#" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+
+
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+
+  </head>
+  <body data-default-mode="">
+
+
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+
+  <div id="pst-scroll-pixel-helper"></div>
+
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+
+
+
+  <dialog id="pst-search-dialog">
+
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+
+
+  <div class=" navbar-header-items__start">
+
+      <div class="navbar-item">
+
+
+
+
+
+<a class="navbar-brand logo" href="index.html">
+
+
+
+
+
+
+    <p class="title logo__title">CCAI9012 API Reference</p>
+
+</a></div>
+
+  </div>
+
+  <div class=" navbar-header-items">
+
+    <div class="me-auto navbar-header-items__center">
+
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="ccai9012/index.html">
+    Modules
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+
+        <div class="navbar-item"><a class="nav-link course-home-link" href="../index.html">Back to Course Website</a></div>
+
+    </div>
+
+
+    <div class="navbar-header-items__end">
+
+
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+
+    </div>
+
+  </div>
+
+
+
+
+</div>
+
+    </header>
+
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+
+
+
+
+
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+
+
+
+  <div class="sidebar-header-items sidebar-primary__section">
+
+
+      <div class="sidebar-header-items__center">
+
+
+
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="ccai9012/index.html">
+    Modules
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+
+
+
+
+            <div class="navbar-item"><a class="nav-link course-home-link" href="../index.html">Back to Course Website</a></div>
+
+
+      </div>
+
+
+
+      <div class="sidebar-header-items__end">
+
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+
+      </div>
+
+  </div>
+
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links" aria-label="API navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">API Reference</p>
+  <div class="bd-toc-item navbar-nav">
+    <ul class="nav bd-sidenav">
+      <li class="toctree-l1 current active">
+        <a class="reference internal" href="../index.html">Overview</a>
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="../ccai9012/gan_utils.html">gan_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="../ccai9012/llm_utils.html">llm_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="../ccai9012/multi_modal_utils.html">multi_modal_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="../ccai9012/nn_utils.html">nn_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="../ccai9012/sd_utils.html">sd_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="../ccai9012/svi_utils.html">svi_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="../ccai9012/token_utils.html">token_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="../ccai9012/viz_utils.html">viz_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="../ccai9012/yolo_utils.html">yolo_utils</a>
+
+      </li>
+
+    </ul>
+  </div>
+</nav></div>
+    </div>
+
+
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+
+      <main id="main-content" class="bd-main" role="main">
+
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+
+              <div class="bd-header-article d-print-none"></div>
+
+
+
+
+<div id="searchbox"></div>
+                <article class="bd-article">
+
+
+<h1 id="index">Index</h1>
+
+<div class="genindex-jumpbox">
+ <a href="#A"><strong>A</strong></a>
+ | <a href="#B"><strong>B</strong></a>
+ | <a href="#C"><strong>C</strong></a>
+ | <a href="#D"><strong>D</strong></a>
+ | <a href="#E"><strong>E</strong></a>
+ | <a href="#F"><strong>F</strong></a>
+ | <a href="#G"><strong>G</strong></a>
+ | <a href="#I"><strong>I</strong></a>
+ | <a href="#L"><strong>L</strong></a>
+ | <a href="#M"><strong>M</strong></a>
+ | <a href="#O"><strong>O</strong></a>
+ | <a href="#P"><strong>P</strong></a>
+ | <a href="#R"><strong>R</strong></a>
+ | <a href="#S"><strong>S</strong></a>
+ | <a href="#T"><strong>T</strong></a>
+ | <a href="#U"><strong>U</strong></a>
+ | <a href="#V"><strong>V</strong></a>
+
+</div>
+<h2 id="A">A</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="generated/ccai9012.llm_utils.analyze_airbnb_reviews.html#ccai9012.llm_utils.analyze_airbnb_reviews">analyze_airbnb_reviews() (in module ccai9012.llm_utils)</a>
+</li>
+      <li><a href="generated/ccai9012.llm_utils.analyze_reviews.html#ccai9012.llm_utils.analyze_reviews">analyze_reviews() (in module ccai9012.llm_utils)</a>
+</li>
+      <li><a href="generated/ccai9012.svi_utils.GoogleSVIDownloader.html#ccai9012.svi_utils.GoogleSVIDownloader.api_key">api_key (GoogleSVIDownloader attribute)</a>
+
+      <ul>
+        <li><a href="generated/ccai9012.sd_utils.SDClient.html#ccai9012.sd_utils.SDClient.api_key">(SDClient attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="generated/ccai9012.llm_utils.ask_llm.html#ccai9012.llm_utils.ask_llm">ask_llm() (in module ccai9012.llm_utils)</a>
+</li>
+      <li><a href="generated/ccai9012.gan_utils.augment_pair.html#ccai9012.gan_utils.augment_pair">augment_pair() (in module ccai9012.gan_utils)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="B">B</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="generated/ccai9012.svi_utils.GoogleSVIDownloader.html#ccai9012.svi_utils.GoogleSVIDownloader.base_url">base_url (GoogleSVIDownloader attribute)</a>
+</li>
+      <li><a href="generated/ccai9012.multi_modal_utils.CLIPClassifier.batch_classify.html#ccai9012.multi_modal_utils.CLIPClassifier.batch_classify">batch_classify() (CLIPClassifier method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="generated/ccai9012.multi_modal_utils.VisionQAProcessor.batch_image_qa.html#ccai9012.multi_modal_utils.VisionQAProcessor.batch_image_qa">batch_image_qa() (VisionQAProcessor method)</a>
+</li>
+      <li><a href="generated/ccai9012.svi_utils.batch_segment_and_visualize.html#ccai9012.svi_utils.batch_segment_and_visualize">batch_segment_and_visualize() (in module ccai9012.svi_utils)</a>
+</li>
+      <li><a href="generated/ccai9012.llm_utils.build_pdf_retriever.html#ccai9012.llm_utils.build_pdf_retriever">build_pdf_retriever() (in module ccai9012.llm_utils)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="C">C</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="generated/ccai9012.sd_utils.SDClient.html#ccai9012.sd_utils.SDClient.cache_dir">cache_dir (SDClient attribute)</a>
+</li>
+      <li><a href="ccai9012/svi_utils.html#ccai9012.svi_utils.CITYSCAPES_CLASSES">CITYSCAPES_CLASSES (in module ccai9012.svi_utils)</a>
+</li>
+      <li><a href="ccai9012/svi_utils.html#ccai9012.svi_utils.CITYSCAPES_COLORS">CITYSCAPES_COLORS (in module ccai9012.svi_utils)</a>
+</li>
+      <li><a href="generated/ccai9012.multi_modal_utils.CLIPClassifier.classify_image.html#ccai9012.multi_modal_utils.CLIPClassifier.classify_image">classify_image() (CLIPClassifier method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="generated/ccai9012.sd_utils.SDClient.html#ccai9012.sd_utils.SDClient.client">client (SDClient attribute)</a>
+</li>
+      <li><a href="generated/ccai9012.multi_modal_utils.CLIPClassifier.html#ccai9012.multi_modal_utils.CLIPClassifier">CLIPClassifier (class in ccai9012.multi_modal_utils)</a>
+</li>
+      <li><a href="generated/ccai9012.gan_utils.collect_image_pairs.html#ccai9012.gan_utils.collect_image_pairs">collect_image_pairs() (in module ccai9012.gan_utils)</a>
+</li>
+      <li><a href="generated/ccai9012.gan_utils.copy_pair.html#ccai9012.gan_utils.copy_pair">copy_pair() (in module ccai9012.gan_utils)</a>
+</li>
+      <li><a href="generated/ccai9012.gan_utils.create_paired_data_loader.html#ccai9012.gan_utils.create_paired_data_loader">create_paired_data_loader() (in module ccai9012.gan_utils)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="D">D</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="generated/ccai9012.yolo_utils.detect_and_track.html#ccai9012.yolo_utils.detect_and_track">detect_and_track() (in module ccai9012.yolo_utils)</a>
+</li>
+      <li><a href="generated/ccai9012.multi_modal_utils.CLIPClassifier.html#ccai9012.multi_modal_utils.CLIPClassifier.device">device (CLIPClassifier attribute)</a>
+
+      <ul>
+        <li><a href="generated/ccai9012.sd_utils.SDClient.html#ccai9012.sd_utils.SDClient.device">(SDClient attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="generated/ccai9012.svi_utils.GoogleSVIDownloader.download_grid_svis.html#ccai9012.svi_utils.GoogleSVIDownloader.download_grid_svis">download_grid_svis() (GoogleSVIDownloader method)</a>
+</li>
+      <li><a href="generated/ccai9012.svi_utils.GoogleSVIDownloader.download_svi.html#ccai9012.svi_utils.GoogleSVIDownloader.download_svi">download_svi() (GoogleSVIDownloader method)</a>
+</li>
+      <li><a href="generated/ccai9012.viz_utils.draw_simple_mlp.html#ccai9012.viz_utils.draw_simple_mlp">draw_simple_mlp() (in module ccai9012.viz_utils)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="E">E</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="generated/ccai9012.nn_utils.evaluate_classification_model.html#ccai9012.nn_utils.evaluate_classification_model">evaluate_classification_model() (in module ccai9012.nn_utils)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="generated/ccai9012.nn_utils.evaluate_regression_model.html#ccai9012.nn_utils.evaluate_regression_model">evaluate_regression_model() (in module ccai9012.nn_utils)</a>
+</li>
+      <li><a href="generated/ccai9012.multi_modal_utils.VisionQAProcessor.extract_keywords.html#ccai9012.multi_modal_utils.VisionQAProcessor.extract_keywords">extract_keywords() (VisionQAProcessor method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="F">F</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="generated/ccai9012.gan_utils.PatchDiscriminator.forward.html#ccai9012.gan_utils.PatchDiscriminator.forward">forward() (PatchDiscriminator method)</a>
+
+      <ul>
+        <li><a href="generated/ccai9012.gan_utils.UNetGenerator.forward.html#ccai9012.gan_utils.UNetGenerator.forward">(UNetGenerator method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="G">G</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="generated/ccai9012.multi_modal_utils.VisionQAProcessor.generate_caption_for_image.html#ccai9012.multi_modal_utils.VisionQAProcessor.generate_caption_for_image">generate_caption_for_image() (VisionQAProcessor method)</a>
+</li>
+      <li><a href="generated/ccai9012.svi_utils.GoogleSVIDownloader.generate_grid_coords.html#ccai9012.svi_utils.GoogleSVIDownloader.generate_grid_coords">generate_grid_coords() (GoogleSVIDownloader method)</a>
+</li>
+      <li><a href="generated/ccai9012.sd_utils.SDClient.generate_images.html#ccai9012.sd_utils.SDClient.generate_images">generate_images() (SDClient method)</a>
+</li>
+      <li><a href="generated/ccai9012.llm_utils.generate_multiple_outputs.html#ccai9012.llm_utils.generate_multiple_outputs">generate_multiple_outputs() (in module ccai9012.llm_utils)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="generated/ccai9012.nn_utils.get_best_device.html#ccai9012.nn_utils.get_best_device">get_best_device() (in module ccai9012.nn_utils)</a>
+</li>
+      <li><a href="generated/ccai9012.llm_utils.get_deepseek_api_key.html#ccai9012.llm_utils.get_deepseek_api_key">get_deepseek_api_key() (in module ccai9012.llm_utils)</a>
+</li>
+      <li><a href="generated/ccai9012.sd_utils.get_hf_api_key.html#ccai9012.sd_utils.get_hf_api_key">get_hf_api_key() (in module ccai9012.sd_utils)</a>
+</li>
+      <li><a href="generated/ccai9012.token_utils.get_token.html#ccai9012.token_utils.get_token">get_token() (in module ccai9012.token_utils)</a>
+</li>
+      <li><a href="generated/ccai9012.svi_utils.GoogleSVIDownloader.html#ccai9012.svi_utils.GoogleSVIDownloader">GoogleSVIDownloader (class in ccai9012.svi_utils)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="I">I</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="generated/ccai9012.multi_modal_utils.CLIPClassifier.html#ccai9012.multi_modal_utils.CLIPClassifier.image_dir">image_dir (CLIPClassifier attribute)</a>
+</li>
+      <li><a href="generated/ccai9012.gan_utils.inference_gan.html#ccai9012.gan_utils.inference_gan">inference_gan() (in module ccai9012.gan_utils)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="generated/ccai9012.llm_utils.initialize_llm.html#ccai9012.llm_utils.initialize_llm">initialize_llm() (in module ccai9012.llm_utils)</a>
+</li>
+      <li><a href="generated/ccai9012.svi_utils.GoogleSVIDownloader.is_svi_available.html#ccai9012.svi_utils.GoogleSVIDownloader.is_svi_available">is_svi_available() (GoogleSVIDownloader method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="L">L</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="generated/ccai9012.llm_utils.load_business_locations.html#ccai9012.llm_utils.load_business_locations">load_business_locations() (in module ccai9012.llm_utils)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="generated/ccai9012.gan_utils.load_model.html#ccai9012.gan_utils.load_model">load_model() (in module ccai9012.gan_utils)</a>
+</li>
+      <li><a href="generated/ccai9012.llm_utils.load_reviews_by_city.html#ccai9012.llm_utils.load_reviews_by_city">load_reviews_by_city() (in module ccai9012.llm_utils)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="M">M</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="generated/ccai9012.nn_utils.mean_absolute_percentage_error.html#ccai9012.nn_utils.mean_absolute_percentage_error">mean_absolute_percentage_error() (in module ccai9012.nn_utils)</a>
+</li>
+      <li><a href="generated/ccai9012.svi_utils.GoogleSVIDownloader.html#ccai9012.svi_utils.GoogleSVIDownloader.meta_url">meta_url (GoogleSVIDownloader attribute)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="generated/ccai9012.sd_utils.SDClient.html#ccai9012.sd_utils.SDClient.mode">mode (SDClient attribute)</a>
+</li>
+      <li><a href="generated/ccai9012.multi_modal_utils.CLIPClassifier.html#ccai9012.multi_modal_utils.CLIPClassifier.model">model (CLIPClassifier attribute)</a>
+</li>
+      <li><a href="generated/ccai9012.sd_utils.SDClient.html#ccai9012.sd_utils.SDClient.model_id">model_id (SDClient attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="O">O</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="generated/ccai9012.viz_utils.occupation_comparison.html#ccai9012.viz_utils.occupation_comparison">occupation_comparison() (in module ccai9012.viz_utils)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="P">P</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="generated/ccai9012.gan_utils.PairedImageDataset.html#ccai9012.gan_utils.PairedImageDataset">PairedImageDataset (class in ccai9012.gan_utils)</a>
+</li>
+      <li><a href="generated/ccai9012.llm_utils.parse_markdown_table.html#ccai9012.llm_utils.parse_markdown_table">parse_markdown_table() (in module ccai9012.llm_utils)</a>
+</li>
+      <li><a href="generated/ccai9012.gan_utils.PatchDiscriminator.html#ccai9012.gan_utils.PatchDiscriminator">PatchDiscriminator (class in ccai9012.gan_utils)</a>
+</li>
+      <li><a href="generated/ccai9012.sd_utils.SDClient.html#ccai9012.sd_utils.SDClient.pipe">pipe (SDClient attribute)</a>
+</li>
+      <li><a href="generated/ccai9012.viz_utils.plot_bar_bias.html#ccai9012.viz_utils.plot_bar_bias">plot_bar_bias() (in module ccai9012.viz_utils)</a>
+</li>
+      <li><a href="generated/ccai9012.viz_utils.plot_cooccurrence_heatmap.html#ccai9012.viz_utils.plot_cooccurrence_heatmap">plot_cooccurrence_heatmap() (in module ccai9012.viz_utils)</a>
+</li>
+      <li><a href="generated/ccai9012.viz_utils.plot_heatmap.html#ccai9012.viz_utils.plot_heatmap">plot_heatmap() (in module ccai9012.viz_utils)</a>
+</li>
+      <li><a href="generated/ccai9012.viz_utils.plot_loss_curve.html#ccai9012.viz_utils.plot_loss_curve">plot_loss_curve() (in module ccai9012.viz_utils)</a>
+</li>
+      <li><a href="generated/ccai9012.viz_utils.plot_pca_words.html#ccai9012.viz_utils.plot_pca_words">plot_pca_words() (in module ccai9012.viz_utils)</a>
+</li>
+      <li><a href="generated/ccai9012.viz_utils.plot_poi_sampled.html#ccai9012.viz_utils.plot_poi_sampled">plot_poi_sampled() (in module ccai9012.viz_utils)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="generated/ccai9012.viz_utils.plot_points.html#ccai9012.viz_utils.plot_points">plot_points() (in module ccai9012.viz_utils)</a>
+</li>
+      <li><a href="generated/ccai9012.viz_utils.plot_review_heatmap.html#ccai9012.viz_utils.plot_review_heatmap">plot_review_heatmap() (in module ccai9012.viz_utils)</a>
+</li>
+      <li><a href="generated/ccai9012.viz_utils.plot_review_map.html#ccai9012.viz_utils.plot_review_map">plot_review_map() (in module ccai9012.viz_utils)</a>
+</li>
+      <li><a href="generated/ccai9012.viz_utils.plot_star_distribution.html#ccai9012.viz_utils.plot_star_distribution">plot_star_distribution() (in module ccai9012.viz_utils)</a>
+</li>
+      <li><a href="generated/ccai9012.viz_utils.plot_wordclouds.html#ccai9012.viz_utils.plot_wordclouds">plot_wordclouds() (in module ccai9012.viz_utils)</a>
+</li>
+      <li><a href="generated/ccai9012.viz_utils.plot_wordclouds_by_aspect_opinion.html#ccai9012.viz_utils.plot_wordclouds_by_aspect_opinion">plot_wordclouds_by_aspect_opinion() (in module ccai9012.viz_utils)</a>
+</li>
+      <li><a href="generated/ccai9012.nn_utils.prepare_dataloaders.html#ccai9012.nn_utils.prepare_dataloaders">prepare_dataloaders() (in module ccai9012.nn_utils)</a>
+</li>
+      <li><a href="generated/ccai9012.gan_utils.prepare_gan_dataset.html#ccai9012.gan_utils.prepare_gan_dataset">prepare_gan_dataset() (in module ccai9012.gan_utils)</a>
+</li>
+      <li><a href="generated/ccai9012.gan_utils.process_and_save_image.html#ccai9012.gan_utils.process_and_save_image">process_and_save_image() (in module ccai9012.gan_utils)</a>
+</li>
+      <li><a href="generated/ccai9012.multi_modal_utils.CLIPClassifier.html#ccai9012.multi_modal_utils.CLIPClassifier.processor">processor (CLIPClassifier attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="R">R</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="generated/ccai9012.llm_utils.run_qa_chain.html#ccai9012.llm_utils.run_qa_chain">run_qa_chain() (in module ccai9012.llm_utils)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="S">S</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="generated/ccai9012.viz_utils.sample_street_points_map.html#ccai9012.viz_utils.sample_street_points_map">sample_street_points_map() (in module ccai9012.viz_utils)</a>
+</li>
+      <li><a href="generated/ccai9012.svi_utils.GoogleSVIDownloader.html#ccai9012.svi_utils.GoogleSVIDownloader.save_dir">save_dir (GoogleSVIDownloader attribute)</a>
+</li>
+      <li><a href="generated/ccai9012.sd_utils.SDClient.html#ccai9012.sd_utils.SDClient">SDClient (class in ccai9012.sd_utils)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="generated/ccai9012.svi_utils.segment_and_save_images.html#ccai9012.svi_utils.segment_and_save_images">segment_and_save_images() (in module ccai9012.svi_utils)</a>
+</li>
+      <li><a href="generated/ccai9012.gan_utils.setup_directories.html#ccai9012.gan_utils.setup_directories">setup_directories() (in module ccai9012.gan_utils)</a>
+</li>
+      <li><a href="generated/ccai9012.multi_modal_utils.CLIPClassifier.show_result.html#ccai9012.multi_modal_utils.CLIPClassifier.show_result">show_result() (CLIPClassifier method)</a>
+</li>
+      <li><a href="generated/ccai9012.gan_utils.split_pairs.html#ccai9012.gan_utils.split_pairs">split_pairs() (in module ccai9012.gan_utils)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="T">T</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="generated/ccai9012.gan_utils.tensor2img.html#ccai9012.gan_utils.tensor2img">tensor2img() (in module ccai9012.gan_utils)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="generated/ccai9012.gan_utils.train_GAN.html#ccai9012.gan_utils.train_GAN">train_GAN() (in module ccai9012.gan_utils)</a>
+</li>
+      <li><a href="generated/ccai9012.nn_utils.train_model.html#ccai9012.nn_utils.train_model">train_model() (in module ccai9012.nn_utils)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="U">U</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="generated/ccai9012.gan_utils.UNetGenerator.html#ccai9012.gan_utils.UNetGenerator">UNetGenerator (class in ccai9012.gan_utils)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="V">V</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="generated/ccai9012.multi_modal_utils.VisionQAProcessor.html#ccai9012.multi_modal_utils.VisionQAProcessor">VisionQAProcessor (class in ccai9012.multi_modal_utils)</a>
+</li>
+      <li><a href="generated/ccai9012.svi_utils.visualize_segmentation_pair.html#ccai9012.svi_utils.visualize_segmentation_pair">visualize_segmentation_pair() (in module ccai9012.svi_utils)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="generated/ccai9012.yolo_utils.visualize_video.html#ccai9012.yolo_utils.visualize_video">visualize_video() (in module ccai9012.yolo_utils)</a>
+</li>
+      <li><a href="generated/ccai9012.viz_utils.viz_keywords_freq.html#ccai9012.viz_utils.viz_keywords_freq">viz_keywords_freq() (in module ccai9012.viz_utils)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+
+
+                </article>
+
+
+
+
+
+                <footer class="prev-next-footer d-print-none">
+
+<div class="prev-next-area">
+</div>
+                </footer>
+
+            </div>
+
+
+
+
+          </div>
+          <footer class="bd-footer-content">
+
+          </footer>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+
+    <div class="footer-items__start">
+
+        <div class="footer-item">
+
+  <p class="copyright">
+
+      © Copyright 2026, CCAI9012.
+      <br/>
+
+  </p>
+</div>
+
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    <br/>
+  </p>
+</div>
+
+    </div>
+
+
+
+    <div class="footer-items__end">
+
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.20.0.
+</p></div>
+
+    </div>
+
+</div>
+
+  </footer>
+  </body>
+</html>

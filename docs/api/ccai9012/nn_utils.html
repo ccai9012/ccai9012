@@ -1,696 +1,597 @@
-<!-- START PDOC WRAPPER -->
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Module ccai9012.nn_utils</title>
-  <link rel="stylesheet" href="../../docs-style.css">
-</head>
-<body>
-  <div class="container">
-    <nav id="sidebar">
-      <div class="sidebar-header">
-        <h2>CCAI9012</h2>
-      </div>
-      <ul class="nav-menu">
-                <li><a href="../../index.html">Home</a></li>
-                <li><a href="../../timetable.html">Course Plan</a></li>
-                <li><a href="../../Assessment.html">Assessment</a></li>
-                <li class="sub-item"><a href="../../casestudy.html">Case Study</a></li>
-                <li class="sub-item"><a href="../../course_project.html">Course Project</a></li>
-                <li><a href="../../reading_material.html">Reading Materials</a></li>
-                <li><a href="../../pi_responsibility.html">I. Responsibility & AI</a></li>
-                <li><a href="../../pii_mechanics.html">II. Mechanics of AI</a></li>
-                <li><a href="../../piii_data_and_risks.html">III. Datasets & Risks of AI</a></li>
-                <li><a href="../../installation.html">Installation Guide</a></li>
-                <li><a href="../../starter_kits/index.html">Starter Kits</a></li>
-                <li><a href="../../datasets.html">Datasets Reference</a></li>
-      </ul>
-    </nav>
 
-    <main id="content" class="api-content">
-      <!-- API content extracted from pdoc -->
-<article class="api-doc">
-<header>
-<h1 class="title">Module <code>ccai9012.nn_utils</code></h1>
-</header>
-<section id="section-intro">
-<h1 id="neural-network-utilities-module">Neural Network Utilities Module</h1>
-<p>This module provides a comprehensive set of utilities for building, training, and evaluating
-neural network models using PyTorch. It includes functions for data preprocessing, model training,
-and performance evaluation for both regression and classification tasks.</p>
-<p>Main components:
-- Data preparation: Functions to prepare DataLoaders with proper train/val/test splits
-- Device management: Automatic detection of optimal compute device (CPU/CUDA/MPS)
-- Model training: Streamlined training loop with validation and progress tracking
-- Model evaluation: Comprehensive metrics and visualization for regression and classification tasks</p>
-<p>This module aims to simplify common PyTorch workflows and provide consistent interfaces for
-neural network experimentation and evaluation.</p>
-<h2 id="usage">Usage</h2>
-<h3 id="prepare-data">Prepare data</h3>
-<p>train_loader, val_loader, test_loader, scaler = prepare_dataloaders(X, y)</p>
-<h3 id="create-and-train-model">Create and train model</h3>
-<p>model = YourNeuralNetwork()
-optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
-criterion = torch.nn.MSELoss()
-train_losses, val_losses = train_model(model, train_loader, val_loader, optimizer, criterion, num_epochs=100)</p>
-<h3 id="evaluate-model">Evaluate model</h3>
-<p>metrics = evaluate_regression_model(model, test_loader)</p>
-</section>
-<section>
-</section>
-<section>
-</section>
-<section>
-<h2 class="section-title" id="header-functions">Functions</h2>
-<dl>
-<dt id="ccai9012.nn_utils.evaluate_classification_model"><code class="name flex">
-<span>def <span class="ident">evaluate_classification_model</span></span>(<span>model,<br>loader,<br>device=None,<br>show_examples=True,<br>class_names=None,<br>num_examples=10,<br>example_plot_title='Prediction Examples',<br>cmap='gray')</span>
-</code></dt>
-<dd>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def evaluate_classification_model(
-    model,
-    loader,
-    device=None,
-    show_examples=True,
-    class_names=None,
-    num_examples=10,
-    example_plot_title=&#34;Prediction Examples&#34;,
-    cmap=&#34;gray&#34;
-):
-    &#34;&#34;&#34;
-    Evaluate a classification model on a dataset and visualize predictions.
+<!DOCTYPE html>
 
-    This function performs a comprehensive evaluation of classification models by:
-    - Computing accuracy and generating a detailed classification report
-    - Printing performance statistics including precision, recall, and f1-score
-    - Optionally visualizing example predictions with their true labels
 
-    Parameters:
-        model (torch.nn.Module): The PyTorch model to evaluate.
-        loader (torch.utils.data.DataLoader): DataLoader providing (inputs, labels).
-        device (torch.device, optional): Device to run evaluation on. If None,
-                                        the best available device is automatically selected.
-        show_examples (bool, optional): Whether to display example predictions. Defaults to True.
-        class_names (list, optional): List of class names for display purposes. Required if
-                                     show_examples=True.
-        num_examples (int, optional): Number of example predictions to show. Defaults to 10.
-        example_plot_title (str, optional): Title for the examples plot. Defaults to &#34;Prediction Examples&#34;.
-        cmap (str, optional): Colormap for image display. Defaults to &#34;gray&#34;.
+<html lang="en" data-content_root="../" >
 
-    Returns:
-        dict: A dictionary containing:
-            - &#39;accuracy&#39;: Classification accuracy as a percentage.
-            - &#39;classification_report&#39;: Detailed classification report as a string,
-                                      including precision, recall, and f1-score.
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    Example:
-        &gt;&gt;&gt; model = MyClassificationModel()
-        &gt;&gt;&gt; class_names = [&#39;cat&#39;, &#39;dog&#39;, &#39;bird&#39;]
-        &gt;&gt;&gt; results = evaluate_classification_model(model, test_loader, class_names=class_names)
-        &gt;&gt;&gt; print(f&#34;Accuracy: {results[&#39;accuracy&#39;]:.2f}%&#34;)
-    &#34;&#34;&#34;
-    if device is None:
-        device = get_best_device()
+    <title>nn_utils &#8212; CCAI9012 API Reference</title>
 
-    model.eval()
-    all_preds = []
-    all_labels = []
-    correct = 0
-    total = 0
 
-    with torch.no_grad():
-        for inputs, labels in loader:
-            inputs = inputs.to(device)
-            labels = labels.to(device)
-            outputs = model(inputs)
-            _, preds = torch.max(outputs, 1)
-            all_preds.extend(preds.cpu().numpy())
-            all_labels.extend(labels.cpu().numpy())
-            correct += (preds == labels).sum().item()
-            total += labels.size(0)
 
-    accuracy = 100 * correct / total
-    print(f&#34;Accuracy: {accuracy:.2f}%&#34;)
-    report = classification_report(all_labels, all_preds)
-    print(&#34;\nClassification Report:\n&#34;, report)
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
 
-    results = {
-        &#39;accuracy&#39;: accuracy,
-        &#39;classification_report&#39;: report
-    }
+    </style>
+  </noscript>
 
-    if show_examples and class_names is not None:
-        import math
-        import matplotlib.pyplot as plt
-        num_cols = min(num_examples, 5)
-        num_rows = math.ceil(num_examples / num_cols)
-        fig, axs = plt.subplots(num_rows, num_cols, figsize=(3*num_cols, 3*num_rows))
-        axs = axs.flatten() if num_examples &gt; 1 else [axs]
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
 
-        data_iter = iter(loader)
-        inputs, labels = next(data_iter)
-        outputs = model(inputs.to(device))
-        _, preds = torch.max(outputs, 1)
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/api-theme.css?v=28db1ad0" />
 
-        for i in range(num_examples):
-            img = inputs[i].cpu()
-            label = labels[i].item()
-            pred = preds[i].cpu().item()
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
 
-            ax = axs[i]
-            # If image has channel dim at front, e.g. (C,H,W), convert to (H,W,C)
-            if img.ndim == 3 and img.shape[0] in [1,3]:
-                img_disp = img.permute(1, 2, 0)
-                # If grayscale (1 channel), squeeze last dim
-                if img_disp.shape[2] == 1:
-                    img_disp = img_disp.squeeze(2)
-            else:
-                img_disp = img
+    <script src="../_static/documentation_options.js?v=7f41d439"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ccai9012/nn_utils';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="prepare_dataloaders" href="../generated/ccai9012.nn_utils.prepare_dataloaders.html" />
+    <link rel="prev" title="VisionQAProcessor.batch_image_qa" href="../generated/ccai9012.multi_modal_utils.VisionQAProcessor.batch_image_qa.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
 
-            ax.imshow(img_disp, cmap=cmap)
-            ax.set_title(f&#34;P: {class_names[pred]}\nT: {class_names[label]}&#34;)
-            ax.axis(&#39;off&#39;)
 
-        for j in range(num_examples, len(axs)):
-            axs[j].axis(&#39;off&#39;)
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
 
-        plt.suptitle(example_plot_title, fontsize=16)
-        plt.tight_layout()
-        plt.show()
+  </head>
+  <body data-default-mode="">
 
-    return results</code></pre>
-</details>
-<div class="desc"><p>Evaluate a classification model on a dataset and visualize predictions.</p>
-<p>This function performs a comprehensive evaluation of classification models by:
-- Computing accuracy and generating a detailed classification report
-- Printing performance statistics including precision, recall, and f1-score
-- Optionally visualizing example predictions with their true labels</p>
-<h2 id="parameters">Parameters</h2>
-<p>model (torch.nn.Module): The PyTorch model to evaluate.
-loader (torch.utils.data.DataLoader): DataLoader providing (inputs, labels).
-device (torch.device, optional): Device to run evaluation on. If None,
-the best available device is automatically selected.
-show_examples (bool, optional): Whether to display example predictions. Defaults to True.
-class_names (list, optional): List of class names for display purposes. Required if
-show_examples=True.
-num_examples (int, optional): Number of example predictions to show. Defaults to 10.
-example_plot_title (str, optional): Title for the examples plot. Defaults to "Prediction Examples".
-cmap (str, optional): Colormap for image display. Defaults to "gray".</p>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>dict</code></dt>
-<dd>A dictionary containing:
-- 'accuracy': Classification accuracy as a percentage.
-- 'classification_report': Detailed classification report as a string,
-including precision, recall, and f1-score.</dd>
-</dl>
-<h2 id="example">Example</h2>
-<pre><code class="language-python-repl">&gt;&gt;&gt; model = MyClassificationModel()
-&gt;&gt;&gt; class_names = ['cat', 'dog', 'bird']
-&gt;&gt;&gt; results = evaluate_classification_model(model, test_loader, class_names=class_names)
-&gt;&gt;&gt; print(f&quot;Accuracy: {results['accuracy']:.2f}%&quot;)
-</code></pre></div>
-</dd>
-<dt id="ccai9012.nn_utils.evaluate_regression_model"><code class="name flex">
-<span>def <span class="ident">evaluate_regression_model</span></span>(<span>model,<br>loader,<br>device=None,<br>show_examples=True,<br>metrics=['rmse', 'mse', 'mae', 'mape'],<br>title='Predicted vs Actual on Test Set',<br>xlabel='Actual Values',<br>ylabel='Predicted Values')</span>
-</code></dt>
-<dd>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def evaluate_regression_model(
-    model,
-    loader,
-    device=None,
-    show_examples=True,
-    metrics=[&#39;rmse&#39;, &#39;mse&#39;, &#39;mae&#39;, &#39;mape&#39;],
-    title=&#34;Predicted vs Actual on Test Set&#34;,
-    xlabel=&#34;Actual Values&#34;,
-    ylabel=&#34;Predicted Values&#34;
-):
-    &#34;&#34;&#34;
-    Evaluate a regression model on a dataset loader and compute selected metrics.
 
-    This function performs a comprehensive evaluation of regression models by:
-    - Computing standard regression metrics (MSE, RMSE, MAE, MAPE, R²)
-    - Printing performance statistics
-    - Optionally visualizing predictions against actual values
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
 
-    Parameters:
-        model (torch.nn.Module): The PyTorch model to evaluate.
-        loader (torch.utils.data.DataLoader): DataLoader providing (features, labels).
-        device (torch.device, optional): Device to run evaluation on. If None,
-                                       the best available device is automatically selected.
-        show_examples (bool, optional): Whether to plot a scatter plot of predictions
-                                      vs actual values. Defaults to True.
-        metrics (list, optional): List of metrics to compute. Options include &#39;mse&#39;, &#39;rmse&#39;,
-                                &#39;mae&#39;, and &#39;mape&#39;. Defaults to all of them.
-        title (str, optional): Title for the scatter plot. Defaults to &#34;Predicted vs Actual on Test Set&#34;.
-        xlabel (str, optional): X-axis label for the scatter plot. Defaults to &#34;Actual Values&#34;.
-        ylabel (str, optional): Y-axis label for the scatter plot. Defaults to &#34;Predicted Values&#34;.
 
-    Returns:
-        dict: A dictionary containing computed metrics. Always includes &#39;r2&#39; (R² score),
-              and includes other metrics as specified in the &#39;metrics&#39; parameter.
+  <div id="pst-scroll-pixel-helper"></div>
 
-    Example:
-        &gt;&gt;&gt; model = MyRegressionModel()
-        &gt;&gt;&gt; results = evaluate_regression_model(model, test_loader)
-        &gt;&gt;&gt; print(f&#34;R² Score: {results[&#39;r2&#39;]:.4f}&#34;)
-        &gt;&gt;&gt; print(f&#34;RMSE: {results[&#39;rmse&#39;]:.4f}&#34;)
-    &#34;&#34;&#34;
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
-    model.eval()
-    if device is None:
-        device = get_best_device()
 
-    all_preds = []
-    all_labels = []
 
-    with torch.no_grad():
-        for features, labels in loader:
-            features = features.to(device)
-            labels = labels.to(device)
-            outputs = model(features)
-            all_preds.append(outputs.cpu())
-            all_labels.append(labels.cpu())
 
-    all_preds = torch.cat(all_preds).numpy()
-    all_labels = torch.cat(all_labels).numpy()
+  <dialog id="pst-search-dialog">
 
-    results = {}
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
 
-    if &#39;mse&#39; in metrics:
-        results[&#39;mse&#39;] = mean_squared_error(all_labels, all_preds)
-        print(f&#34;MSE: {results[&#39;mse&#39;]:.4f}&#34;)
-    if &#39;rmse&#39; in metrics:
-        results[&#39;rmse&#39;] = root_mean_squared_error(all_labels, all_preds)
-        print(f&#34;RMSE: {results[&#39;rmse&#39;]:.4f}&#34;)
-    if &#39;mae&#39; in metrics:
-        results[&#39;mae&#39;] = mean_absolute_error(all_labels, all_preds)
-        print(f&#34;MAE: {results[&#39;mae&#39;]:.4f}&#34;)
-    if &#39;mape&#39; in metrics:
-        results[&#39;mape&#39;] = mean_absolute_percentage_error(all_labels, all_preds)
-        print(f&#34;MAPE: {results[&#39;mape&#39;]:.2f}%&#34;)
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
 
-    r2 = r2_score(all_labels, all_preds)
-    results[&#39;r2&#39;] = r2
-    print(f&#34;R^2 Score: {r2:.4f}&#34;)
 
-    if show_examples:
-        plt.figure(figsize=(6,6))
-        plt.scatter(all_labels, all_preds, alpha=0.5)
-        min_val, max_val = all_labels.min(), all_labels.max()
-        plt.plot([min_val, max_val], [min_val, max_val], &#39;r--&#39;)
-        plt.xlabel(xlabel)
-        plt.ylabel(ylabel)
-        plt.title(title)
-        plt.grid(True)
-        plt.show()
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
 
-    return results</code></pre>
-</details>
-<div class="desc"><p>Evaluate a regression model on a dataset loader and compute selected metrics.</p>
-<p>This function performs a comprehensive evaluation of regression models by:
-- Computing standard regression metrics (MSE, RMSE, MAE, MAPE, R²)
-- Printing performance statistics
-- Optionally visualizing predictions against actual values</p>
-<h2 id="parameters">Parameters</h2>
-<p>model (torch.nn.Module): The PyTorch model to evaluate.
-loader (torch.utils.data.DataLoader): DataLoader providing (features, labels).
-device (torch.device, optional): Device to run evaluation on. If None,
-the best available device is automatically selected.
-show_examples (bool, optional): Whether to plot a scatter plot of predictions
-vs actual values. Defaults to True.
-metrics (list, optional): List of metrics to compute. Options include 'mse', 'rmse',
-'mae', and 'mape'. Defaults to all of them.
-title (str, optional): Title for the scatter plot. Defaults to "Predicted vs Actual on Test Set".
-xlabel (str, optional): X-axis label for the scatter plot. Defaults to "Actual Values".
-ylabel (str, optional): Y-axis label for the scatter plot. Defaults to "Predicted Values".</p>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>dict</code></dt>
-<dd>A dictionary containing computed metrics. Always includes 'r2' (R² score),
-and includes other metrics as specified in the 'metrics' parameter.</dd>
-</dl>
-<h2 id="example">Example</h2>
-<pre><code class="language-python-repl">&gt;&gt;&gt; model = MyRegressionModel()
-&gt;&gt;&gt; results = evaluate_regression_model(model, test_loader)
-&gt;&gt;&gt; print(f&quot;R² Score: {results['r2']:.4f}&quot;)
-&gt;&gt;&gt; print(f&quot;RMSE: {results['rmse']:.4f}&quot;)
-</code></pre></div>
-</dd>
-<dt id="ccai9012.nn_utils.get_best_device"><code class="name flex">
-<span>def <span class="ident">get_best_device</span></span>(<span>)</span>
-</code></dt>
-<dd>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def get_best_device():
-    &#34;&#34;&#34;
-    Determines the best available computational device for PyTorch operations.
 
-    This function checks for the availability of CUDA (NVIDIA GPUs), MPS (Apple Silicon),
-    or falls back to CPU. Using the appropriate device can significantly speed up
-    neural network training and inference.
+  <div class=" navbar-header-items__start">
 
-    Returns:
-        torch.device: The best available device in the following priority order:
-                     1. CUDA (if NVIDIA GPU is available)
-                     2. MPS (if Apple Silicon GPU is available)
-                     3. CPU (as fallback)
+      <div class="navbar-item">
 
-    Example:
-        device = get_best_device()
-        model.to(device)  # Move model to optimal device
-    &#34;&#34;&#34;
-    if torch.cuda.is_available():
-        return torch.device(&#34;cuda&#34;)
-    elif torch.backends.mps.is_available():
-        return torch.device(&#34;mps&#34;)
-    else:
-        return torch.device(&#34;cpu&#34;)</code></pre>
-</details>
-<div class="desc"><p>Determines the best available computational device for PyTorch operations.</p>
-<p>This function checks for the availability of CUDA (NVIDIA GPUs), MPS (Apple Silicon),
-or falls back to CPU. Using the appropriate device can significantly speed up
-neural network training and inference.</p>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>torch.device</code></dt>
-<dd>The best available device in the following priority order:
-1. CUDA (if NVIDIA GPU is available)
-2. MPS (if Apple Silicon GPU is available)
-3. CPU (as fallback)</dd>
-</dl>
-<h2 id="example">Example</h2>
-<p>device = get_best_device()
-model.to(device)
-# Move model to optimal device</p></div>
-</dd>
-<dt id="ccai9012.nn_utils.mean_absolute_percentage_error"><code class="name flex">
-<span>def <span class="ident">mean_absolute_percentage_error</span></span>(<span>y_true, y_pred)</span>
-</code></dt>
-<dd>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def mean_absolute_percentage_error(y_true, y_pred):
-    &#34;&#34;&#34;
-    Calculate Mean Absolute Percentage Error (MAPE) while avoiding division by zero.
 
-    MAPE measures the size of error in percentage terms, providing an intuitive measure
-    of prediction error for regression tasks. This implementation handles zero values
-    in the true labels by excluding them from the calculation.
 
-    Parameters:
-        y_true (numpy.ndarray or list): True target values.
-        y_pred (numpy.ndarray or list): Predicted target values.
 
-    Returns:
-        float: MAPE value as a percentage (not as a fraction). Lower values indicate
-              better model performance.
 
-    Example:
-        &gt;&gt;&gt; y_true = [10, 20, 30, 0, 40]  # Note the zero value
-        &gt;&gt;&gt; y_pred = [11, 18, 33, 1, 38]
-        &gt;&gt;&gt; error = mean_absolute_percentage_error(y_true, y_pred)
-        &gt;&gt;&gt; print(f&#34;MAPE: {error:.2f}%&#34;)
-    &#34;&#34;&#34;
-    y_true, y_pred = np.array(y_true), np.array(y_pred)
-    non_zero_idx = y_true != 0
-    return np.mean(np.abs((y_true[non_zero_idx] - y_pred[non_zero_idx]) / y_true[non_zero_idx])) * 100</code></pre>
-</details>
-<div class="desc"><p>Calculate Mean Absolute Percentage Error (MAPE) while avoiding division by zero.</p>
-<p>MAPE measures the size of error in percentage terms, providing an intuitive measure
-of prediction error for regression tasks. This implementation handles zero values
-in the true labels by excluding them from the calculation.</p>
-<h2 id="parameters">Parameters</h2>
-<p>y_true (numpy.ndarray or list): True target values.
-y_pred (numpy.ndarray or list): Predicted target values.</p>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>float</code></dt>
-<dd>MAPE value as a percentage (not as a fraction). Lower values indicate
-better model performance.</dd>
-</dl>
-<h2 id="example">Example</h2>
-<pre><code class="language-python-repl">&gt;&gt;&gt; y_true = [10, 20, 30, 0, 40]  # Note the zero value
-&gt;&gt;&gt; y_pred = [11, 18, 33, 1, 38]
-&gt;&gt;&gt; error = mean_absolute_percentage_error(y_true, y_pred)
-&gt;&gt;&gt; print(f&quot;MAPE: {error:.2f}%&quot;)
-</code></pre></div>
-</dd>
-<dt id="ccai9012.nn_utils.prepare_dataloaders"><code class="name flex">
-<span>def <span class="ident">prepare_dataloaders</span></span>(<span>X, y, batch_size=64, train_ratio=0.7, val_ratio=0.15)</span>
-</code></dt>
-<dd>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def prepare_dataloaders(
-    X,
-    y,
-    batch_size=64,
-    train_ratio=0.7,
-    val_ratio=0.15
-):
-    &#34;&#34;&#34;
-    Prepare train/validation/test DataLoaders from raw features and labels.
+<a class="navbar-brand logo" href="../index.html">
 
-    This function standardizes features, creates PyTorch tensors, splits the dataset
-    into training, validation, and test sets, and returns DataLoader objects for each set.
-    It handles the entire data preparation pipeline for neural network training.
 
-    Parameters:
-        X (numpy.ndarray): Input features matrix with shape (n_samples, n_features).
-        y (numpy.ndarray): Target labels with shape (n_samples,) or (n_samples, n_targets).
-        batch_size (int, optional): Number of samples per batch. Defaults to 64.
-        train_ratio (float, optional): Proportion of data to use for training. Defaults to 0.7.
-        val_ratio (float, optional): Proportion of data to use for validation. Defaults to 0.15.
-                                     The remaining proportion (1 - train_ratio - val_ratio)
-                                     will be used for testing.
 
-    Returns:
-        tuple: A tuple containing:
-            - train_loader (DataLoader): DataLoader for the training set.
-            - val_loader (DataLoader): DataLoader for the validation set.
-            - test_loader (DataLoader): DataLoader for the test set.
-            - scaler (StandardScaler): Fitted scaler used to standardize the features.
 
-    Example:
-        &gt;&gt;&gt; train_loader, val_loader, test_loader, scaler = prepare_dataloaders(X, y)
-        &gt;&gt;&gt; # Use the loaders for model training and evaluation
-        &gt;&gt;&gt; for features, targets in train_loader:
-        &gt;&gt;&gt;     # Training loop code
-    &#34;&#34;&#34;
 
-    # Standardize features
-    scaler = StandardScaler()
-    X_scaled = scaler.fit_transform(X)
 
-    # Convert to tensors
-    X_tensor = torch.tensor(X_scaled, dtype=torch.float32)
-    y_tensor = torch.tensor(y, dtype=torch.float32).view(-1, 1)
+    <p class="title logo__title">CCAI9012 API Reference</p>
 
-    # Create full dataset
-    full_dataset = TensorDataset(X_tensor, y_tensor)
+</a></div>
 
-    # Calculate split sizes
-    total_len = len(full_dataset)
-    train_size = int(train_ratio * total_len)
-    val_size = int(val_ratio * total_len)
-    test_size = total_len - train_size - val_size
-
-    # Split dataset
-    train_dataset, val_dataset, test_dataset = random_split(full_dataset, [train_size, val_size, test_size])
-
-    # If custom dataset_class provided, usually transform applies inside dataset, no need to wrap again.
-    # But if you want to wrap splits again with transform, you can do it here.
-
-    # Create DataLoaders
-    train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
-    val_loader = DataLoader(val_dataset, batch_size=batch_size)
-    test_loader = DataLoader(test_dataset, batch_size=batch_size)
-
-    return train_loader, val_loader, test_loader, scaler</code></pre>
-</details>
-<div class="desc"><p>Prepare train/validation/test DataLoaders from raw features and labels.</p>
-<p>This function standardizes features, creates PyTorch tensors, splits the dataset
-into training, validation, and test sets, and returns DataLoader objects for each set.
-It handles the entire data preparation pipeline for neural network training.</p>
-<h2 id="parameters">Parameters</h2>
-<p>X (numpy.ndarray): Input features matrix with shape (n_samples, n_features).
-y (numpy.ndarray): Target labels with shape (n_samples,) or (n_samples, n_targets).
-batch_size (int, optional): Number of samples per batch. Defaults to 64.
-train_ratio (float, optional): Proportion of data to use for training. Defaults to 0.7.
-val_ratio (float, optional): Proportion of data to use for validation. Defaults to 0.15.
-The remaining proportion (1 - train_ratio - val_ratio)
-will be used for testing.</p>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>tuple</code></dt>
-<dd>A tuple containing:
-- train_loader (DataLoader): DataLoader for the training set.
-- val_loader (DataLoader): DataLoader for the validation set.
-- test_loader (DataLoader): DataLoader for the test set.
-- scaler (StandardScaler): Fitted scaler used to standardize the features.</dd>
-</dl>
-<h2 id="example">Example</h2>
-<pre><code class="language-python-repl">&gt;&gt;&gt; train_loader, val_loader, test_loader, scaler = prepare_dataloaders(X, y)
-&gt;&gt;&gt; # Use the loaders for model training and evaluation
-&gt;&gt;&gt; for features, targets in train_loader:
-&gt;&gt;&gt;     # Training loop code
-</code></pre></div>
-</dd>
-<dt id="ccai9012.nn_utils.train_model"><code class="name flex">
-<span>def <span class="ident">train_model</span></span>(<span>model,<br>train_loader,<br>val_loader,<br>optimizer,<br>criterion,<br>num_epochs,<br>device=None,<br>verbose=True)</span>
-</code></dt>
-<dd>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def train_model(model, train_loader, val_loader, optimizer, criterion, num_epochs, device=None, verbose=True):
-    &#34;&#34;&#34;
-    Train a PyTorch neural network model with validation.
-
-    This function implements a complete training loop for neural networks, including:
-    - Moving the model and data to the appropriate device (GPU/CPU)
-    - Forward and backward passes
-    - Optimization steps
-    - Loss tracking for both training and validation sets
-    - Progress reporting
-
-    Parameters:
-        model (torch.nn.Module): The PyTorch model to train.
-        train_loader (torch.utils.data.DataLoader): DataLoader for training data.
-        val_loader (torch.utils.data.DataLoader): DataLoader for validation data.
-        optimizer (torch.optim.Optimizer): Optimizer for updating model weights.
-        criterion (callable): Loss function to minimize.
-        num_epochs (int): Number of complete passes through the training dataset.
-        device (torch.device, optional): Device to run the training on. If None,
-                                        the best available device is automatically selected.
-        verbose (bool, optional): Whether to print progress updates. Defaults to True.
-
-    Returns:
-        tuple: A tuple containing:
-            - train_losses (list): Average training loss for each epoch.
-            - val_losses (list): Average validation loss for each epoch.
-
-    Example:
-        &gt;&gt;&gt; model = MyNeuralNetwork()
-        &gt;&gt;&gt; optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
-        &gt;&gt;&gt; criterion = torch.nn.MSELoss()
-        &gt;&gt;&gt; train_losses, val_losses = train_model(
-        &gt;&gt;&gt;     model, train_loader, val_loader,
-        &gt;&gt;&gt;     optimizer, criterion, num_epochs=50
-        &gt;&gt;&gt; )
-        &gt;&gt;&gt; # Plot learning curves
-        &gt;&gt;&gt; plt.plot(train_losses, label=&#39;Training Loss&#39;)
-        &gt;&gt;&gt; plt.plot(val_losses, label=&#39;Validation Loss&#39;)
-    &#34;&#34;&#34;
-    if device is None:
-        device = get_best_device()
-    model.to(device)
-
-    train_losses = []
-    val_losses = []
-
-    train_size = len(train_loader.dataset)
-    val_size = len(val_loader.dataset)
-
-    for epoch in range(num_epochs):
-        model.train()
-        running_loss = 0.0
-        for features, targets in train_loader:
-            features = features.to(device)
-            targets = targets.to(device)
-
-            optimizer.zero_grad()
-            outputs = model(features)
-            loss = criterion(outputs, targets)
-            loss.backward()
-            optimizer.step()
-
-            running_loss += loss.item() * features.size(0)
-
-        train_loss = running_loss / train_size
-        train_losses.append(train_loss)
-
-        model.eval()
-        val_running_loss = 0.0
-        with torch.no_grad():
-            for val_features, val_targets in val_loader:
-                val_features = val_features.to(device)
-                val_targets = val_targets.to(device)
-                val_outputs = model(val_features)
-                val_loss = criterion(val_outputs, val_targets)
-                val_running_loss += val_loss.item() * val_features.size(0)
-
-        val_loss_epoch = val_running_loss / val_size
-        val_losses.append(val_loss_epoch)
-
-        if verbose:
-            print(f&#34;Epoch [{epoch+1}/{num_epochs}] - Train Loss: {train_loss:.4f}, Val Loss: {val_loss_epoch:.4f}&#34;)
-
-    return train_losses, val_losses</code></pre>
-</details>
-<div class="desc"><p>Train a PyTorch neural network model with validation.</p>
-<p>This function implements a complete training loop for neural networks, including:
-- Moving the model and data to the appropriate device (GPU/CPU)
-- Forward and backward passes
-- Optimization steps
-- Loss tracking for both training and validation sets
-- Progress reporting</p>
-<h2 id="parameters">Parameters</h2>
-<p>model (torch.nn.Module): The PyTorch model to train.
-train_loader (torch.utils.data.DataLoader): DataLoader for training data.
-val_loader (torch.utils.data.DataLoader): DataLoader for validation data.
-optimizer (torch.optim.Optimizer): Optimizer for updating model weights.
-criterion (callable): Loss function to minimize.
-num_epochs (int): Number of complete passes through the training dataset.
-device (torch.device, optional): Device to run the training on. If None,
-the best available device is automatically selected.
-verbose (bool, optional): Whether to print progress updates. Defaults to True.</p>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>tuple</code></dt>
-<dd>A tuple containing:
-- train_losses (list): Average training loss for each epoch.
-- val_losses (list): Average validation loss for each epoch.</dd>
-</dl>
-<h2 id="example">Example</h2>
-<pre><code class="language-python-repl">&gt;&gt;&gt; model = MyNeuralNetwork()
-&gt;&gt;&gt; optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
-&gt;&gt;&gt; criterion = torch.nn.MSELoss()
-&gt;&gt;&gt; train_losses, val_losses = train_model(
-&gt;&gt;&gt;     model, train_loader, val_loader,
-&gt;&gt;&gt;     optimizer, criterion, num_epochs=50
-&gt;&gt;&gt; )
-&gt;&gt;&gt; # Plot learning curves
-&gt;&gt;&gt; plt.plot(train_losses, label='Training Loss')
-&gt;&gt;&gt; plt.plot(val_losses, label='Validation Loss')
-</code></pre></div>
-</dd>
-</dl>
-</section>
-<section>
-</section>
-</article>
-    </main>
   </div>
-</body>
+
+  <div class=" navbar-header-items">
+
+    <div class="me-auto navbar-header-items__center">
+
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Modules
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+
+        <div class="navbar-item"><a class="nav-link course-home-link" href="../../index.html">Back to Course Website</a></div>
+
+    </div>
+
+
+    <div class="navbar-header-items__end">
+
+
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+
+    </div>
+
+  </div>
+
+
+
+
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+
+</div>
+
+    </header>
+
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+
+
+
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+
+
+
+  <div class="sidebar-header-items sidebar-primary__section">
+
+
+      <div class="sidebar-header-items__center">
+
+
+
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Modules
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+
+
+
+
+            <div class="navbar-item"><a class="nav-link course-home-link" href="../../index.html">Back to Course Website</a></div>
+
+
+      </div>
+
+
+
+      <div class="sidebar-header-items__end">
+
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+
+      </div>
+
+  </div>
+
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links" aria-label="API navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">API Reference</p>
+  <div class="bd-toc-item navbar-nav">
+    <ul class="nav bd-sidenav">
+      <li class="toctree-l1">
+        <a class="reference internal" href="../index.html">Overview</a>
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="gan_utils.html">gan_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="llm_utils.html">llm_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="multi_modal_utils.html">multi_modal_utils</a>
+
+      </li>
+
+      <li class="toctree-l1 current active">
+        <a class="reference internal" href="nn_utils.html">nn_utils</a>
+
+        <ul class="nav bd-sidenav api-member-nav">
+
+
+
+
+          <li class="api-member-group">Functions</li>
+
+          <li class="toctree-l2">
+            <a class="reference internal" href="../generated/ccai9012.nn_utils.prepare_dataloaders.html">prepare_dataloaders</a>
+          </li>
+
+          <li class="toctree-l2">
+            <a class="reference internal" href="../generated/ccai9012.nn_utils.get_best_device.html">get_best_device</a>
+          </li>
+
+          <li class="toctree-l2">
+            <a class="reference internal" href="../generated/ccai9012.nn_utils.train_model.html">train_model</a>
+          </li>
+
+          <li class="toctree-l2">
+            <a class="reference internal" href="../generated/ccai9012.nn_utils.mean_absolute_percentage_error.html">mean_absolute_percentage_error</a>
+          </li>
+
+          <li class="toctree-l2">
+            <a class="reference internal" href="../generated/ccai9012.nn_utils.evaluate_regression_model.html">evaluate_regression_model</a>
+          </li>
+
+          <li class="toctree-l2">
+            <a class="reference internal" href="../generated/ccai9012.nn_utils.evaluate_classification_model.html">evaluate_classification_model</a>
+          </li>
+
+
+
+
+
+        </ul>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="sd_utils.html">sd_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="svi_utils.html">svi_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="token_utils.html">token_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="viz_utils.html">viz_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="yolo_utils.html">yolo_utils</a>
+
+      </li>
+
+    </ul>
+  </div>
+</nav></div>
+    </div>
+
+
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+
+      <main id="main-content" class="bd-main" role="main">
+
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+
+    <div class="header-article-items__start">
+
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Modules</a></li>
+
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">nn_utils</span></li>
+  </ul>
+</nav>
+</div>
+
+    </div>
+
+
+</div>
+</div>
+
+
+
+
+<div id="searchbox"></div>
+                <article class="bd-article">
+
+  <section id="nn-utils">
+<h1>nn_utils<a class="headerlink" href="#nn-utils" title="Link to this heading">#</a></h1>
+<p>This module gathers the repeated data preparation, training, and evaluation steps used in the course’s introductory neural-network examples. It keeps the training loop available for study while reducing notebook boilerplate.</p>
+<section id="what-this-module-helps-you-do">
+<h2>What this module helps you do<a class="headerlink" href="#what-this-module-helps-you-do" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>split and standardize tabular features before creating PyTorch data loaders</p></li>
+<li><p>select an available CPU, CUDA, or Apple Silicon device</p></li>
+<li><p>train a supplied model while recording loss history</p></li>
+<li><p>evaluate regression and classification predictions with familiar metrics</p></li>
+</ul>
+</section>
+<section id="when-to-use-it">
+<h2>When to use it<a class="headerlink" href="#when-to-use-it" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>You are training a small supervised model on tabular or already-vectorized data.</p></li>
+<li><p>Several notebooks need the same split, loader, and evaluation conventions.</p></li>
+<li><p>You want to compare model behavior rather than rewrite infrastructure in each exercise.</p></li>
+</ul>
+</section>
+<section id="typical-workflow">
+<h2>Typical workflow<a class="headerlink" href="#typical-workflow" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Separate features and targets, then call <code class="docutils literal notranslate"><span class="pre">prepare_dataloaders</span></code>.</p></li>
+<li><p>Define a PyTorch model and choose a device with <code class="docutils literal notranslate"><span class="pre">get_best_device</span></code>.</p></li>
+<li><p>Train the model with <code class="docutils literal notranslate"><span class="pre">train_model</span></code>.</p></li>
+<li><p>Use the matching regression or classification evaluator to interpret performance.</p></li>
+</ol>
+</section>
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/ccai9012.nn_utils.prepare_dataloaders.html#ccai9012.nn_utils.prepare_dataloaders" title="ccai9012.nn_utils.prepare_dataloaders"><code class="xref py py-obj docutils literal notranslate"><span class="pre">prepare_dataloaders</span></code></a>(X, y[, batch_size, ...])</p></td>
+<td><p>Prepare train/validation/test DataLoaders from raw features and labels.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/ccai9012.nn_utils.get_best_device.html#ccai9012.nn_utils.get_best_device" title="ccai9012.nn_utils.get_best_device"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_best_device</span></code></a>()</p></td>
+<td><p>Determines the best available computational device for PyTorch operations.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/ccai9012.nn_utils.train_model.html#ccai9012.nn_utils.train_model" title="ccai9012.nn_utils.train_model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">train_model</span></code></a>(model, train_loader, val_loader, ...)</p></td>
+<td><p>Train a PyTorch neural network model with validation.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/ccai9012.nn_utils.mean_absolute_percentage_error.html#ccai9012.nn_utils.mean_absolute_percentage_error" title="ccai9012.nn_utils.mean_absolute_percentage_error"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mean_absolute_percentage_error</span></code></a>(y_true, y_pred)</p></td>
+<td><p>Calculate Mean Absolute Percentage Error (MAPE) while avoiding division by zero.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../generated/ccai9012.nn_utils.evaluate_regression_model.html#ccai9012.nn_utils.evaluate_regression_model" title="ccai9012.nn_utils.evaluate_regression_model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">evaluate_regression_model</span></code></a>(model, loader[, ...])</p></td>
+<td><p>Evaluate a regression model on a dataset loader and compute selected metrics.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../generated/ccai9012.nn_utils.evaluate_classification_model.html#ccai9012.nn_utils.evaluate_classification_model" title="ccai9012.nn_utils.evaluate_classification_model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">evaluate_classification_model</span></code></a>(model, loader)</p></td>
+<td><p>Evaluate a classification model on a dataset and visualize predictions.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+
+
+                </article>
+
+
+
+
+
+                <footer class="prev-next-footer d-print-none">
+
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../generated/ccai9012.multi_modal_utils.VisionQAProcessor.batch_image_qa.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">VisionQAProcessor.batch_image_qa</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../generated/ccai9012.nn_utils.prepare_dataloaders.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">prepare_dataloaders</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+
+            </div>
+
+
+
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-this-module-helps-you-do">What this module helps you do</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-to-use-it">When to use it</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#typical-workflow">Typical workflow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+
+
+          </div>
+          <footer class="bd-footer-content">
+
+          </footer>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+
+    <div class="footer-items__start">
+
+        <div class="footer-item">
+
+  <p class="copyright">
+
+      © Copyright 2026, CCAI9012.
+      <br/>
+
+  </p>
+</div>
+
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    <br/>
+  </p>
+</div>
+
+    </div>
+
+
+
+    <div class="footer-items__end">
+
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.20.0.
+</p></div>
+
+    </div>
+
+</div>
+
+  </footer>
+  </body>
 </html>
-<!-- END PDOC WRAPPER -->

@@ -13,6 +13,7 @@ docs/figs/flowchart/*.xml.bkp
 docs/figs/flowchart/*.xml
 docs/md/weekly_syllabus.md
 docs/temp/
+docs/api_source/generated/
 
 ccai9012/token.yaml
 

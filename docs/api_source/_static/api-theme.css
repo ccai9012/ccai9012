@@ -1,0 +1,78 @@
+:root {
+  --pst-color-primary: #2563eb;
+  --pst-color-link: #2563eb;
+  --pst-color-link-hover: #1d4ed8;
+  --pst-font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --pst-font-family-heading: var(--pst-font-family-base);
+  --pst-border-radius: 0.5rem;
+}
+
+html[data-theme="dark"] {
+  --pst-color-primary: #60a5fa;
+  --pst-color-link: #60a5fa;
+  --pst-color-link-hover: #93c5fd;
+}
+
+.bd-header {
+  background: #1e293b !important;
+}
+
+.bd-header .navbar-brand,
+.bd-header .nav-link {
+  color: #e2e8f0 !important;
+}
+
+.bd-header .navbar-brand .logo__title {
+  color: #e2e8f0 !important;
+}
+
+.bd-main .bd-content .bd-article-container {
+  max-width: 960px;
+}
+
+.api-member-nav {
+  margin-top: 0.25rem;
+  margin-left: 0.35rem;
+  padding-left: 0.65rem;
+  border-left: 1px solid var(--pst-color-border);
+}
+
+.api-member-nav .api-member-group {
+  margin: 0.75rem 0 0.2rem;
+  color: var(--pst-color-text-muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.api-member-nav .toctree-l2 > a {
+  display: block;
+  padding: 0.2rem 0.4rem;
+  overflow-wrap: anywhere;
+  border-radius: 0.3rem;
+  font-size: 0.86rem;
+}
+
+.api-member-nav .toctree-l2.current > a {
+  color: var(--pst-color-primary);
+  background: color-mix(in srgb, var(--pst-color-primary) 10%, transparent);
+  font-weight: 600;
+}
+
+.autosummary.longtable td,
+.autosummary.longtable th {
+  vertical-align: top;
+}
+
+dl.py dt.sig {
+  overflow-x: auto;
+  border-radius: 0.5rem;
+}
+
+@media (max-width: 576px) {
+  dl.py dt.sig {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+}

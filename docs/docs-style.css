@@ -9,6 +9,7 @@
     --content-bg: #ffffff;
     --text-color: #1e293b;
     --border-color: #e2e8f0;
+    --section-divider-color: #cbd5e1;
     --code-bg: #f8fafc;
     --card-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
 }
@@ -29,6 +30,22 @@ body {
 .container {
     display: flex;
     min-height: 100vh;
+}
+
+.skip-link {
+    position: fixed;
+    left: 1rem;
+    top: -4rem;
+    z-index: 1000;
+    padding: 0.65rem 1rem;
+    border-radius: 6px;
+    background: #ffffff;
+    color: var(--primary-color);
+    box-shadow: var(--card-shadow);
+}
+
+.skip-link:focus {
+    top: 1rem;
 }
 
 /* Sidebar Styles */
@@ -115,11 +132,145 @@ body {
 }
 
 /* Main Content Styles */
-#content {
-    flex: 1;
+.page-shell {
+    width: calc(100% - 280px);
     margin-left: 280px;
+    display: grid;
+    grid-template-columns: minmax(0, 900px) 240px;
+    justify-content: center;
+    gap: 2.5rem;
     padding: 3rem;
-    max-width: 1200px;
+}
+
+.page-shell--no-toc {
+    grid-template-columns: minmax(0, 1100px);
+}
+
+.page-shell--no-toc #content {
+    max-width: 1100px;
+}
+
+#content {
+    min-width: 0;
+    max-width: 900px;
+}
+
+#content img {
+    max-width: 100%;
+    height: auto;
+}
+
+#content h1 {
+    margin-bottom: 0.75rem;
+    font-size: 2.5rem;
+    line-height: 1.2;
+}
+
+#content h2,
+#content h3 {
+    scroll-margin-top: 1.5rem;
+}
+
+#content h2 {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--section-divider-color);
+    font-size: 1.75rem;
+}
+
+/* A Markdown h2 immediately after the page title is a subtitle, not a section. */
+#content h1 + h2 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0;
+    border-bottom: 0;
+    font-size: 1.6rem;
+}
+
+#content h3 {
+    margin-top: 1.75rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.35rem;
+}
+
+.page-toc {
+    align-self: start;
+    position: sticky;
+    top: 2rem;
+    max-height: calc(100vh - 4rem);
+    overflow-y: auto;
+    padding-left: 1.25rem;
+    border-left: 1px solid var(--border-color);
+}
+
+.page-toc-title {
+    margin-bottom: 0.75rem;
+    color: #475569;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.page-toc ul,
+.page-toc-mobile ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.page-toc li,
+.page-toc-mobile li {
+    margin: 0;
+}
+
+.page-toc a,
+.page-toc-mobile a {
+    display: block;
+    padding: 0.35rem 0.5rem;
+    border-left: 2px solid transparent;
+    color: #64748b;
+    font-size: 0.875rem;
+    line-height: 1.35;
+}
+
+.page-toc .toc-level-3 a,
+.page-toc-mobile .toc-level-3 a {
+    padding-left: 1.25rem;
+}
+
+.page-toc a:hover,
+.page-toc a.active,
+.page-toc-mobile a:hover,
+.page-toc-mobile a.active {
+    border-left-color: var(--primary-color);
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.page-toc a.active,
+.page-toc-mobile a.active {
+    font-weight: 600;
+}
+
+.page-toc-mobile {
+    display: none;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--content-bg);
+}
+
+.page-toc-mobile summary {
+    cursor: pointer;
+    padding: 0.75rem 1rem;
+    color: #475569;
+    font-weight: 600;
+}
+
+.page-toc-mobile nav {
+    padding: 0 0.75rem 0.75rem;
 }
 
 header h1 {
@@ -174,20 +325,63 @@ li {
 
 */
 
-ul, ol {
-    margin-left: 1.25rem;
+#content ul,
+#content ol {
     margin-top: 0.4rem;
     margin-bottom: 0.4rem;
+    padding-left: 1.5rem;
 }
 
-li {
+/* Keep nested Markdown lists visually distinct and stable through four levels. */
+#content ul {
+    list-style-type: disc;
+}
+
+#content ul ul {
+    list-style-type: circle;
+}
+
+#content ul ul ul {
+    list-style-type: square;
+}
+
+#content ul ul ul ul {
+    list-style-type: disc;
+}
+
+#content ol {
+    list-style-type: decimal;
+}
+
+#content ol ol {
+    list-style-type: lower-alpha;
+}
+
+#content ol ol ol {
+    list-style-type: lower-roman;
+}
+
+#content ol ol ol ol {
+    list-style-type: decimal;
+}
+
+#content ul ul,
+#content ul ol,
+#content ol ul,
+#content ol ol {
+    margin-top: 0.4rem;
+    margin-bottom: 0.4rem;
+    padding-left: 1.5rem;
+}
+
+#content li {
     margin-top: 0.15rem;
     margin-bottom: 0.15rem;
     line-height: 1.35;
 }
 
 /* Prevent extra spacing if Markdown wraps list items in <p> */
-li p {
+#content li p {
     margin: 0;
 }
 /* Code Styles */
@@ -219,7 +413,7 @@ pre code {
 /* Card Grid */
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1.5rem;
     margin-top: 1.5rem;
 }
@@ -413,6 +607,24 @@ a:hover {
 }
 
 /* Responsive Design */
+@media (max-width: 1199px) {
+    .page-shell {
+        grid-template-columns: minmax(0, 900px);
+    }
+
+    .page-toc {
+        display: none;
+    }
+
+    .page-toc-mobile {
+        display: block;
+    }
+
+    .card-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
 @media (max-width: 768px) {
     #sidebar {
         width: 100%;
@@ -420,7 +632,8 @@ a:hover {
         position: relative;
     }
 
-    #content {
+    .page-shell {
+        width: 100%;
         margin-left: 0;
         padding: 1.5rem;
     }

@@ -1,0 +1,1141 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ccai9012.gan_utils &#8212; CCAI9012 API Reference</title>
+
+
+
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=90905a2f556bf617f1a9" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/api-theme.css?v=28db1ad0" />
+
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
+
+    <script src="../../_static/documentation_options.js?v=7f41d439"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/ccai9012/gan_utils';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+
+
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+
+  </head>
+  <body data-default-mode="">
+
+
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+
+  <div id="pst-scroll-pixel-helper"></div>
+
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+
+
+
+  <dialog id="pst-search-dialog">
+
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+
+
+  <div class=" navbar-header-items__start">
+
+      <div class="navbar-item">
+
+
+
+
+
+<a class="navbar-brand logo" href="../../index.html">
+
+
+
+
+
+
+    <p class="title logo__title">CCAI9012 API Reference</p>
+
+</a></div>
+
+  </div>
+
+  <div class=" navbar-header-items">
+
+    <div class="me-auto navbar-header-items__center">
+
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../ccai9012/index.html">
+    Modules
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+
+        <div class="navbar-item"><a class="nav-link course-home-link" href="../../../index.html">Back to Course Website</a></div>
+
+    </div>
+
+
+    <div class="navbar-header-items__end">
+
+
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+
+    </div>
+
+  </div>
+
+
+
+
+</div>
+
+    </header>
+
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+
+
+
+
+
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+
+
+
+  <div class="sidebar-header-items sidebar-primary__section">
+
+
+      <div class="sidebar-header-items__center">
+
+
+
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../ccai9012/index.html">
+    Modules
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+
+
+
+
+            <div class="navbar-item"><a class="nav-link course-home-link" href="../../../index.html">Back to Course Website</a></div>
+
+
+      </div>
+
+
+
+      <div class="sidebar-header-items__end">
+
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+
+      </div>
+
+  </div>
+
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links" aria-label="API navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">API Reference</p>
+  <div class="bd-toc-item navbar-nav">
+    <ul class="nav bd-sidenav">
+      <li class="toctree-l1 current active">
+        <a class="reference internal" href="../index.html">Overview</a>
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="../ccai9012/gan_utils.html">gan_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="../ccai9012/llm_utils.html">llm_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="../ccai9012/multi_modal_utils.html">multi_modal_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="../ccai9012/nn_utils.html">nn_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="../ccai9012/sd_utils.html">sd_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="../ccai9012/svi_utils.html">svi_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="../ccai9012/token_utils.html">token_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="../ccai9012/viz_utils.html">viz_utils</a>
+
+      </li>
+
+      <li class="toctree-l1">
+        <a class="reference internal" href="../ccai9012/yolo_utils.html">yolo_utils</a>
+
+      </li>
+
+    </ul>
+  </div>
+</nav></div>
+    </div>
+
+
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+
+      <main id="main-content" class="bd-main" role="main">
+
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+
+    <div class="header-article-items__start">
+
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
+
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">ccai9012.gan_utils</span></li>
+  </ul>
+</nav>
+</div>
+
+    </div>
+
+
+</div>
+</div>
+
+
+
+
+<div id="searchbox"></div>
+                <article class="bd-article">
+
+  <h1>Source code for ccai9012.gan_utils</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Utilities for paired image-to-image translation with Pix2Pix-style GANs.</span>
+
+<span class="sd">The module covers dataset preparation, synchronized augmentation, data loading,</span>
+<span class="sd">compact teaching models, training, checkpoint loading, and folder-based</span>
+<span class="sd">inference.</span>
+
+<span class="sd">Example:</span>
+<span class="sd">    Prepare a paired dataset and create its training loader::</span>
+
+<span class="sd">        train_count, test_count = prepare_gan_dataset(&quot;source_data&quot;)</span>
+<span class="sd">        train_loader = create_paired_data_loader(&quot;data/train&quot;, batch_size=4)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">glob</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PIL</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">ImageOps</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Tuple</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch.nn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nn</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch.optim</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">optim</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torchvision.transforms.functional</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">TF</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">torchvision</span><span class="w"> </span><span class="kn">import</span> <span class="n">transforms</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">torch.utils.data</span><span class="w"> </span><span class="kn">import</span> <span class="n">Dataset</span><span class="p">,</span> <span class="n">DataLoader</span>
+
+<span class="c1"># =================================================================</span>
+<span class="c1"># Part 1: Data Preparation and Processing</span>
+<span class="c1"># Functions for preparing and organizing the dataset structure</span>
+<span class="c1"># =================================================================</span>
+
+<div class="viewcode-block" id="setup_directories">
+<a class="viewcode-back" href="../../generated/ccai9012.gan_utils.setup_directories.html#ccai9012.gan_utils.setup_directories">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">setup_directories</span><span class="p">(</span><span class="n">base_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;data&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create ``train/A``, ``train/B``, ``test/A``, and ``test/B`` folders.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        base_path: Parent directory in which the train and test folders are</span>
+<span class="sd">            created. Existing folders are preserved.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        None.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">split</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;train&#39;</span><span class="p">,</span> <span class="s1">&#39;test&#39;</span><span class="p">]:</span>
+        <span class="k">for</span> <span class="n">folder</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">]:</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="n">split</span><span class="p">,</span> <span class="n">folder</span><span class="p">),</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="collect_image_pairs">
+<a class="viewcode-back" href="../../generated/ccai9012.gan_utils.collect_image_pairs.html#ccai9012.gan_utils.collect_image_pairs">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">collect_image_pairs</span><span class="p">(</span><span class="n">source_root</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Find source images that have a target image at the matching path.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        source_root: Directory containing region folders. Each region must</span>
+<span class="sd">            contain ``Source`` and ``Target`` subdirectories.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Tuples containing the region name, relative image path, source path,</span>
+<span class="sd">        and matching target path. Source images without a target are omitted.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">pairs</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">valid_exts</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;.png&#39;</span><span class="p">,</span> <span class="s1">&#39;.jpg&#39;</span><span class="p">,</span> <span class="s1">&#39;.jpeg&#39;</span><span class="p">,</span> <span class="s1">&#39;.bmp&#39;</span><span class="p">,</span> <span class="s1">&#39;.tiff&#39;</span><span class="p">]</span>
+
+    <span class="k">for</span> <span class="n">region</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">source_root</span><span class="p">):</span>
+        <span class="n">region_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">source_root</span><span class="p">,</span> <span class="n">region</span><span class="p">)</span>
+        <span class="n">source_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">region_path</span><span class="p">,</span> <span class="s2">&quot;Source&quot;</span><span class="p">)</span>
+        <span class="n">target_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">region_path</span><span class="p">,</span> <span class="s2">&quot;Target&quot;</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">source_dir</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="n">ext</span><span class="p">)</span> <span class="k">for</span> <span class="n">ext</span> <span class="ow">in</span> <span class="n">valid_exts</span><span class="p">):</span>
+                    <span class="k">continue</span>
+                <span class="n">source_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
+                <span class="n">relative_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">relpath</span><span class="p">(</span><span class="n">source_path</span><span class="p">,</span> <span class="n">source_dir</span><span class="p">)</span>
+                <span class="n">target_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">target_dir</span><span class="p">,</span> <span class="n">relative_path</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">target_path</span><span class="p">):</span>
+                    <span class="n">pairs</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">region</span><span class="p">,</span> <span class="n">relative_path</span><span class="p">,</span> <span class="n">source_path</span><span class="p">,</span> <span class="n">target_path</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">pairs</span></div>
+
+
+<div class="viewcode-block" id="split_pairs">
+<a class="viewcode-back" href="../../generated/ccai9012.gan_utils.split_pairs.html#ccai9012.gan_utils.split_pairs">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">split_pairs</span><span class="p">(</span>
+    <span class="n">pairs</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">],</span> <span class="n">train_ratio</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.85</span><span class="p">,</span> <span class="n">random_seed</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">List</span><span class="p">,</span> <span class="n">List</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Shuffle image pairs reproducibly and split them into two lists.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        pairs: Image-pair records such as those returned by</span>
+<span class="sd">            :func:`collect_image_pairs`.</span>
+<span class="sd">        train_ratio: Fraction assigned to the training list.</span>
+<span class="sd">        random_seed: Seed used for the local split order.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        The training pairs followed by the remaining test pairs.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">random_seed</span><span class="p">)</span>
+    <span class="n">pairs_copy</span> <span class="o">=</span> <span class="n">pairs</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">pairs_copy</span><span class="p">)</span>
+    <span class="n">num_train</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">pairs_copy</span><span class="p">)</span> <span class="o">*</span> <span class="n">train_ratio</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">pairs_copy</span><span class="p">[:</span><span class="n">num_train</span><span class="p">],</span> <span class="n">pairs_copy</span><span class="p">[</span><span class="n">num_train</span><span class="p">:]</span></div>
+
+
+<div class="viewcode-block" id="process_and_save_image">
+<a class="viewcode-back" href="../../generated/ccai9012.gan_utils.process_and_save_image.html#ccai9012.gan_utils.process_and_save_image">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">process_and_save_image</span><span class="p">(</span><span class="n">image_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">dst_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Save an image, compositing transparent pixels over white when needed.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        image_path: Path to the source image.</span>
+<span class="sd">        dst_path: Path at which the processed image is saved.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        None.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">image_path</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">img</span><span class="o">.</span><span class="n">mode</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;RGBA&#39;</span><span class="p">,</span> <span class="s1">&#39;LA&#39;</span><span class="p">):</span>
+        <span class="n">background</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;RGB&#39;</span><span class="p">,</span> <span class="n">img</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">img</span><span class="o">.</span><span class="n">mode</span> <span class="o">==</span> <span class="s1">&#39;LA&#39;</span><span class="p">:</span>
+            <span class="n">alpha</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">alpha</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">3</span><span class="p">]</span>
+        <span class="n">background</span><span class="o">.</span><span class="n">paste</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="s1">&#39;RGB&#39;</span><span class="p">),</span> <span class="n">mask</span><span class="o">=</span><span class="n">alpha</span><span class="p">)</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="n">background</span>
+    <span class="n">img</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">dst_path</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="copy_pair">
+<a class="viewcode-back" href="../../generated/ccai9012.gan_utils.copy_pair.html#ccai9012.gan_utils.copy_pair">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">copy_pair</span><span class="p">(</span><span class="n">pair_list</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">],</span> <span class="n">split_root</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Copy paired images into matching ``A`` and ``B`` folders.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        pair_list: Pair records containing region, relative path, source path,</span>
+<span class="sd">            and target path.</span>
+<span class="sd">        split_root: Destination split directory, such as ``data/train``.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        None.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Ensure destination directories exist even if the caller didn&#39;t run setup_directories</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">split_root</span><span class="p">,</span> <span class="s2">&quot;A&quot;</span><span class="p">),</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">split_root</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">),</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">region</span><span class="p">,</span> <span class="n">rel_path</span><span class="p">,</span> <span class="n">source_path</span><span class="p">,</span> <span class="n">target_path</span> <span class="ow">in</span> <span class="n">pair_list</span><span class="p">:</span>
+        <span class="n">parts</span> <span class="o">=</span> <span class="n">rel_path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">)</span>
+        <span class="n">new_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">region</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="s1">&#39;_&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parts</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+
+        <span class="n">dst_A</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">split_root</span><span class="p">,</span> <span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="n">new_name</span><span class="p">)</span>
+        <span class="n">dst_B</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">split_root</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="n">new_name</span><span class="p">)</span>
+
+        <span class="c1"># Be defensive: make sure parent dirs exist right before saving</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">dst_A</span><span class="p">),</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">dst_B</span><span class="p">),</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="n">process_and_save_image</span><span class="p">(</span><span class="n">source_path</span><span class="p">,</span> <span class="n">dst_A</span><span class="p">)</span>
+        <span class="n">process_and_save_image</span><span class="p">(</span><span class="n">target_path</span><span class="p">,</span> <span class="n">dst_B</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="prepare_gan_dataset">
+<a class="viewcode-back" href="../../generated/ccai9012.gan_utils.prepare_gan_dataset.html#ccai9012.gan_utils.prepare_gan_dataset">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">prepare_gan_dataset</span><span class="p">(</span><span class="n">source_root</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;data/Exp4&quot;</span><span class="p">,</span>
+                       <span class="n">train_root</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;data/train&quot;</span><span class="p">,</span>
+                       <span class="n">test_root</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;data/test&quot;</span><span class="p">,</span>
+                       <span class="n">train_ratio</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.85</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Prepare train and test folders from a region-based paired dataset.</span>
+
+<span class="sd">    This convenience function collects matching images, splits the pairs, and</span>
+<span class="sd">    copies processed images into ``A`` and ``B`` folders.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        source_root: Root containing region folders with ``Source`` and</span>
+<span class="sd">            ``Target`` subdirectories.</span>
+<span class="sd">        train_root: Destination directory for training pairs.</span>
+<span class="sd">        test_root: Destination directory for test pairs.</span>
+<span class="sd">        train_ratio: Fraction of pairs assigned to training.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Number of training pairs and number of test pairs.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Create directories</span>
+    <span class="n">setup_directories</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">train_root</span><span class="p">))</span>
+
+    <span class="c1"># Collect image pairs</span>
+    <span class="n">pairs</span> <span class="o">=</span> <span class="n">collect_image_pairs</span><span class="p">(</span><span class="n">source_root</span><span class="p">)</span>
+
+    <span class="c1"># Split dataset</span>
+    <span class="n">train_pairs</span><span class="p">,</span> <span class="n">test_pairs</span> <span class="o">=</span> <span class="n">split_pairs</span><span class="p">(</span><span class="n">pairs</span><span class="p">,</span> <span class="n">train_ratio</span><span class="p">)</span>
+
+    <span class="c1"># Copy and process images</span>
+    <span class="n">copy_pair</span><span class="p">(</span><span class="n">train_pairs</span><span class="p">,</span> <span class="n">train_root</span><span class="p">)</span>
+    <span class="n">copy_pair</span><span class="p">(</span><span class="n">test_pairs</span><span class="p">,</span> <span class="n">test_root</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">train_pairs</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">test_pairs</span><span class="p">)</span></div>
+
+
+<span class="c1"># =================================================================</span>
+<span class="c1"># Part 2: Data Loading and Augmentation</span>
+<span class="c1"># Dataset and DataLoader classes for training</span>
+<span class="c1"># =================================================================</span>
+
+<div class="viewcode-block" id="augment_pair">
+<a class="viewcode-back" href="../../generated/ccai9012.gan_utils.augment_pair.html#ccai9012.gan_utils.augment_pair">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">augment_pair</span><span class="p">(</span><span class="n">image_A</span><span class="p">:</span> <span class="n">Image</span><span class="o">.</span><span class="n">Image</span><span class="p">,</span>
+                <span class="n">image_B</span><span class="p">:</span> <span class="n">Image</span><span class="o">.</span><span class="n">Image</span><span class="p">,</span>
+                <span class="n">flip_prob</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span>
+                <span class="n">rotate_prob</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">,</span>
+                <span class="n">max_rotation</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span>
+                <span class="n">brightness</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span>
+                <span class="n">contrast</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Image</span><span class="o">.</span><span class="n">Image</span><span class="p">,</span> <span class="n">Image</span><span class="o">.</span><span class="n">Image</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Apply the same random augmentation parameters to two paired images.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        image_A: Source-domain image.</span>
+<span class="sd">        image_B: Target-domain image.</span>
+<span class="sd">        flip_prob: Probability of a horizontal flip.</span>
+<span class="sd">        rotate_prob: Probability of rotation.</span>
+<span class="sd">        max_rotation: Maximum absolute rotation angle in degrees.</span>
+<span class="sd">        brightness: Maximum brightness-factor deviation from 1.</span>
+<span class="sd">        contrast: Maximum contrast-factor deviation from 1.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        The augmented source and target images.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># --------------------------</span>
+    <span class="c1"># Horizontal flip</span>
+    <span class="c1"># --------------------------</span>
+    <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">flip_prob</span><span class="p">:</span>
+        <span class="n">image_A</span> <span class="o">=</span> <span class="n">ImageOps</span><span class="o">.</span><span class="n">mirror</span><span class="p">(</span><span class="n">image_A</span><span class="p">)</span>
+        <span class="n">image_B</span> <span class="o">=</span> <span class="n">ImageOps</span><span class="o">.</span><span class="n">mirror</span><span class="p">(</span><span class="n">image_B</span><span class="p">)</span>
+
+    <span class="c1"># --------------------------</span>
+    <span class="c1"># Random rotation</span>
+    <span class="c1"># --------------------------</span>
+    <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">rotate_prob</span><span class="p">:</span>
+        <span class="n">angle</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="n">max_rotation</span><span class="p">,</span> <span class="n">max_rotation</span><span class="p">)</span>
+        <span class="n">image_A</span> <span class="o">=</span> <span class="n">image_A</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">angle</span><span class="p">,</span> <span class="n">resample</span><span class="o">=</span><span class="n">Image</span><span class="o">.</span><span class="n">BILINEAR</span><span class="p">)</span>
+        <span class="n">image_B</span> <span class="o">=</span> <span class="n">image_B</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">angle</span><span class="p">,</span> <span class="n">resample</span><span class="o">=</span><span class="n">Image</span><span class="o">.</span><span class="n">BILINEAR</span><span class="p">)</span>
+
+    <span class="c1"># --------------------------</span>
+    <span class="c1"># Brightness adjustment</span>
+    <span class="c1"># --------------------------</span>
+    <span class="k">if</span> <span class="n">brightness</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">factor</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">brightness</span><span class="p">,</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">brightness</span><span class="p">)</span>
+        <span class="n">image_A</span> <span class="o">=</span> <span class="n">TF</span><span class="o">.</span><span class="n">adjust_brightness</span><span class="p">(</span><span class="n">image_A</span><span class="p">,</span> <span class="n">factor</span><span class="p">)</span>
+        <span class="n">image_B</span> <span class="o">=</span> <span class="n">TF</span><span class="o">.</span><span class="n">adjust_brightness</span><span class="p">(</span><span class="n">image_B</span><span class="p">,</span> <span class="n">factor</span><span class="p">)</span>
+
+    <span class="c1"># --------------------------</span>
+    <span class="c1"># Contrast adjustment</span>
+    <span class="c1"># --------------------------</span>
+    <span class="k">if</span> <span class="n">contrast</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">factor</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">contrast</span><span class="p">,</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">contrast</span><span class="p">)</span>
+        <span class="n">image_A</span> <span class="o">=</span> <span class="n">TF</span><span class="o">.</span><span class="n">adjust_contrast</span><span class="p">(</span><span class="n">image_A</span><span class="p">,</span> <span class="n">factor</span><span class="p">)</span>
+        <span class="n">image_B</span> <span class="o">=</span> <span class="n">TF</span><span class="o">.</span><span class="n">adjust_contrast</span><span class="p">(</span><span class="n">image_B</span><span class="p">,</span> <span class="n">factor</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">image_A</span><span class="p">,</span> <span class="n">image_B</span></div>
+
+
+
+<div class="viewcode-block" id="PairedImageDataset">
+<a class="viewcode-back" href="../../generated/ccai9012.gan_utils.PairedImageDataset.html#ccai9012.gan_utils.PairedImageDataset">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">PairedImageDataset</span><span class="p">(</span><span class="n">Dataset</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;PyTorch dataset that loads matching images from ``A`` and ``B``.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        root_dir: Directory containing ``A`` and ``B`` subdirectories.</span>
+<span class="sd">        transform: Optional callable applied independently to both images.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        AssertionError: If the two directories contain different image counts.</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">        Images are paired by their sorted path order. Use matching filenames in</span>
+<span class="sd">        both folders to avoid accidental misalignment.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">A_paths</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root_dir</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;*.png&#39;</span><span class="p">)))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">B_paths</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root_dir</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;*.png&#39;</span><span class="p">)))</span>
+        <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">A_paths</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">B_paths</span><span class="p">),</span> <span class="s2">&quot;A/B image counts must match&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">transform</span> <span class="o">=</span> <span class="n">transform</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the number of image pairs.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">A_paths</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">object</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Load and transform one source-target image pair.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            idx: Zero-based pair index.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            A mapping with the transformed source under ``A`` and target under</span>
+<span class="sd">            ``B``.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">A_img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">A_paths</span><span class="p">[</span><span class="n">idx</span><span class="p">])</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="s1">&#39;RGB&#39;</span><span class="p">)</span>
+        <span class="n">B_img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">B_paths</span><span class="p">[</span><span class="n">idx</span><span class="p">])</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="s1">&#39;RGB&#39;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">transform</span><span class="p">:</span>
+            <span class="n">A_img</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">A_img</span><span class="p">)</span>
+            <span class="n">B_img</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">B_img</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="n">A_img</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">:</span> <span class="n">B_img</span><span class="p">}</span></div>
+
+
+<div class="viewcode-block" id="create_paired_data_loader">
+<a class="viewcode-back" href="../../generated/ccai9012.gan_utils.create_paired_data_loader.html#ccai9012.gan_utils.create_paired_data_loader">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">create_paired_data_loader</span><span class="p">(</span><span class="n">data_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">32</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataLoader</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a shuffled data loader for normalized 256 × 256 image pairs.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        data_dir: Directory containing paired ``A`` and ``B`` subdirectories.</span>
+<span class="sd">        batch_size: Number of image pairs per batch.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        A data loader with resize, tensor conversion, and ``[-1, 1]``</span>
+<span class="sd">        normalization transforms.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Define standard transformations</span>
+    <span class="n">transform_list</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">transforms</span><span class="o">.</span><span class="n">Resize</span><span class="p">((</span><span class="mi">256</span><span class="p">,</span> <span class="mi">256</span><span class="p">)),</span>
+        <span class="n">transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">(),</span>
+        <span class="n">transforms</span><span class="o">.</span><span class="n">Normalize</span><span class="p">((</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">))</span>
+    <span class="p">]</span>
+
+    <span class="c1"># Create transformation pipeline</span>
+    <span class="n">transform</span> <span class="o">=</span> <span class="n">transforms</span><span class="o">.</span><span class="n">Compose</span><span class="p">(</span><span class="n">transform_list</span><span class="p">)</span>
+
+    <span class="c1"># Create dataset</span>
+    <span class="n">dataset</span> <span class="o">=</span> <span class="n">PairedImageDataset</span><span class="p">(</span><span class="n">data_dir</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">transform</span><span class="p">)</span>
+
+    <span class="c1"># Create data loader</span>
+    <span class="n">loader</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span>
+        <span class="n">dataset</span><span class="p">,</span>
+        <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span>
+        <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">num_workers</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+        <span class="n">pin_memory</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">loader</span></div>
+
+
+<span class="c1"># =================================================================</span>
+<span class="c1"># Part 3: Model Definition</span>
+<span class="c1"># Neural network architectures for Generator and Discriminator</span>
+<span class="c1"># =================================================================</span>
+
+<div class="viewcode-block" id="UNetGenerator">
+<a class="viewcode-back" href="../../generated/ccai9012.gan_utils.UNetGenerator.html#ccai9012.gan_utils.UNetGenerator">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">UNetGenerator</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compact encoder-decoder generator with additive skip connections.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        in_channels: Number of channels in each source image.</span>
+<span class="sd">        out_channels: Number of channels generated for each output image.</span>
+<span class="sd">        features: Channel count in the first encoder block.</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">        This is a small teaching architecture rather than a full production</span>
+<span class="sd">        U-Net.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">in_channels</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">out_channels</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">features</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">64</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">down1</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="n">in_channels</span><span class="p">,</span> <span class="n">features</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">nn</span><span class="o">.</span><span class="n">LeakyReLU</span><span class="p">(</span><span class="mf">0.2</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">down2</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">features</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">nn</span><span class="o">.</span><span class="n">BatchNorm2d</span><span class="p">(</span><span class="n">features</span> <span class="o">*</span> <span class="mi">2</span><span class="p">),</span>
+                                   <span class="n">nn</span><span class="o">.</span><span class="n">LeakyReLU</span><span class="p">(</span><span class="mf">0.2</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">down3</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="n">features</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="n">features</span> <span class="o">*</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">nn</span><span class="o">.</span><span class="n">BatchNorm2d</span><span class="p">(</span><span class="n">features</span> <span class="o">*</span> <span class="mi">4</span><span class="p">),</span>
+                                   <span class="n">nn</span><span class="o">.</span><span class="n">LeakyReLU</span><span class="p">(</span><span class="mf">0.2</span><span class="p">))</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">up1</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">ConvTranspose2d</span><span class="p">(</span><span class="n">features</span> <span class="o">*</span> <span class="mi">4</span><span class="p">,</span> <span class="n">features</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">nn</span><span class="o">.</span><span class="n">BatchNorm2d</span><span class="p">(</span><span class="n">features</span> <span class="o">*</span> <span class="mi">2</span><span class="p">),</span>
+                                 <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">up2</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">ConvTranspose2d</span><span class="p">(</span><span class="n">features</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="n">features</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">nn</span><span class="o">.</span><span class="n">BatchNorm2d</span><span class="p">(</span><span class="n">features</span><span class="p">),</span>
+                                 <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">up3</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">ConvTranspose2d</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">out_channels</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">nn</span><span class="o">.</span><span class="n">Tanh</span><span class="p">())</span>
+
+<div class="viewcode-block" id="UNetGenerator.forward">
+<a class="viewcode-back" href="../../generated/ccai9012.gan_utils.UNetGenerator.forward.html#ccai9012.gan_utils.UNetGenerator.forward">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Generate a target-domain batch from a source-domain batch.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            x: Tensor shaped ``(batch, in_channels, height, width)``.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Generated tensor with values bounded by the final ``tanh`` layer.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">d1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">down1</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">d2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">down2</span><span class="p">(</span><span class="n">d1</span><span class="p">)</span>
+        <span class="n">d3</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">down3</span><span class="p">(</span><span class="n">d2</span><span class="p">)</span>
+        <span class="n">u1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">up1</span><span class="p">(</span><span class="n">d3</span><span class="p">)</span>
+        <span class="n">u2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">up2</span><span class="p">(</span><span class="n">u1</span> <span class="o">+</span> <span class="n">d2</span><span class="p">)</span>  <span class="c1"># skip connection</span>
+        <span class="n">u3</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">up3</span><span class="p">(</span><span class="n">u2</span> <span class="o">+</span> <span class="n">d1</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">u3</span></div>
+</div>
+
+
+
+<span class="c1"># Define Discriminator (PatchGAN)</span>
+<div class="viewcode-block" id="PatchDiscriminator">
+<a class="viewcode-back" href="../../generated/ccai9012.gan_utils.PatchDiscriminator.html#ccai9012.gan_utils.PatchDiscriminator">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">PatchDiscriminator</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;PatchGAN discriminator for concatenated source-target image pairs.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        in_channels: Combined channel count of the source and target images.</span>
+<span class="sd">        features: Channel count in the first convolutional block.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">in_channels</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">6</span><span class="p">,</span> <span class="n">features</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">64</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="n">in_channels</span><span class="p">,</span> <span class="n">features</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">LeakyReLU</span><span class="p">(</span><span class="mf">0.2</span><span class="p">),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">features</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">BatchNorm2d</span><span class="p">(</span><span class="n">features</span> <span class="o">*</span> <span class="mi">2</span><span class="p">),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">LeakyReLU</span><span class="p">(</span><span class="mf">0.2</span><span class="p">),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="n">features</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># output 1-channel patch</span>
+        <span class="p">)</span>
+
+<div class="viewcode-block" id="PatchDiscriminator.forward">
+<a class="viewcode-back" href="../../generated/ccai9012.gan_utils.PatchDiscriminator.forward.html#ccai9012.gan_utils.PatchDiscriminator.forward">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Score local patches in a concatenated image pair.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            x: Concatenated source-target tensor.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            A one-channel grid of patch scores.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></div>
+</div>
+
+
+<span class="c1"># =================================================================</span>
+<span class="c1"># Part 4: Training Functions</span>
+<span class="c1"># Loss functions and training step implementation</span>
+<span class="c1"># =================================================================</span>
+
+<div class="viewcode-block" id="train_GAN">
+<a class="viewcode-back" href="../../generated/ccai9012.gan_utils.train_GAN.html#ccai9012.gan_utils.train_GAN">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">train_GAN</span><span class="p">(</span>
+    <span class="n">G</span><span class="p">:</span> <span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">,</span>
+    <span class="n">D</span><span class="p">:</span> <span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">,</span>
+    <span class="n">train_loader</span><span class="p">:</span> <span class="n">DataLoader</span><span class="p">,</span>
+    <span class="n">num_epochs</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span>
+    <span class="n">log_interval</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="n">save_dir</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="s1">&#39;checkpoints&#39;</span><span class="p">,</span>
+    <span class="n">save_interval</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span>
+    <span class="n">device</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">lambda_L1</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span>
+    <span class="n">lr</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0002</span><span class="p">,</span>
+    <span class="n">betas</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.999</span><span class="p">),</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">,</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">]]]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Train a generator and discriminator with Pix2Pix losses.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        G: Initialized generator network.</span>
+<span class="sd">        D: Initialized discriminator network.</span>
+<span class="sd">        train_loader: Batches containing source tensor ``A`` and target tensor</span>
+<span class="sd">            ``B``.</span>
+<span class="sd">        num_epochs: Number of complete passes through the loader.</span>
+<span class="sd">        log_interval: Batch interval between printed loss messages.</span>
+<span class="sd">        save_dir: Checkpoint directory, or ``None`` to disable saving.</span>
+<span class="sd">        save_interval: Epoch interval between checkpoints.</span>
+<span class="sd">        device: PyTorch device or device name. ``None`` selects CUDA when</span>
+<span class="sd">            available and otherwise uses CPU.</span>
+<span class="sd">        lambda_L1: Weight of the pixel-wise L1 term.</span>
+<span class="sd">        lr: Adam learning rate for both networks.</span>
+<span class="sd">        betas: Adam beta coefficients.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        The trained generator and a history containing ``loss_D`` and</span>
+<span class="sd">        ``loss_G`` values for every batch.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">device</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s1">&#39;cuda&#39;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s1">&#39;cpu&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">save_dir</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">save_dir</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">history</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;loss_D&#39;</span><span class="p">:</span> <span class="p">[],</span> <span class="s1">&#39;loss_G&#39;</span><span class="p">:</span> <span class="p">[]}</span>
+
+    <span class="n">G</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+    <span class="n">D</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+    <span class="n">G</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+    <span class="n">D</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+
+    <span class="c1"># --- Loss functions ---</span>
+    <span class="n">criterion_GAN</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">MSELoss</span><span class="p">()</span>
+    <span class="n">criterion_L1</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">L1Loss</span><span class="p">()</span>
+
+    <span class="c1"># --- Optimizers ---</span>
+    <span class="n">optimizer_G</span> <span class="o">=</span> <span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="n">lr</span><span class="p">,</span> <span class="n">betas</span><span class="o">=</span><span class="n">betas</span><span class="p">)</span>
+    <span class="n">optimizer_D</span> <span class="o">=</span> <span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">D</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="n">lr</span><span class="p">,</span> <span class="n">betas</span><span class="o">=</span><span class="n">betas</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_epochs</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">train_loader</span><span class="p">):</span>
+            <span class="n">real_A</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+            <span class="n">real_B</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+            <span class="c1"># --- Train Discriminator ---</span>
+            <span class="n">optimizer_D</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+            <span class="n">fake_B</span> <span class="o">=</span> <span class="n">G</span><span class="p">(</span><span class="n">real_A</span><span class="p">)</span>
+            <span class="n">real_AB</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">([</span><span class="n">real_A</span><span class="p">,</span> <span class="n">real_B</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">fake_AB</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">([</span><span class="n">real_A</span><span class="p">,</span> <span class="n">fake_B</span><span class="o">.</span><span class="n">detach</span><span class="p">()],</span> <span class="mi">1</span><span class="p">)</span>
+
+            <span class="n">D_real_out</span> <span class="o">=</span> <span class="n">D</span><span class="p">(</span><span class="n">real_AB</span><span class="p">)</span>
+            <span class="n">D_fake_out</span> <span class="o">=</span> <span class="n">D</span><span class="p">(</span><span class="n">fake_AB</span><span class="p">)</span>
+            <span class="n">real_label</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">D_real_out</span><span class="p">)</span>
+            <span class="n">fake_label</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">D_fake_out</span><span class="p">)</span>
+
+            <span class="n">loss_D_real</span> <span class="o">=</span> <span class="n">criterion_GAN</span><span class="p">(</span><span class="n">D_real_out</span><span class="p">,</span> <span class="n">real_label</span><span class="p">)</span>
+            <span class="n">loss_D_fake</span> <span class="o">=</span> <span class="n">criterion_GAN</span><span class="p">(</span><span class="n">D_fake_out</span><span class="p">,</span> <span class="n">fake_label</span><span class="p">)</span>
+            <span class="n">loss_D</span> <span class="o">=</span> <span class="p">(</span><span class="n">loss_D_real</span> <span class="o">+</span> <span class="n">loss_D_fake</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.5</span>
+            <span class="n">loss_D</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+            <span class="n">optimizer_D</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+
+            <span class="c1"># --- Train Generator ---</span>
+            <span class="n">optimizer_G</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+            <span class="n">fake_AB</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">([</span><span class="n">real_A</span><span class="p">,</span> <span class="n">fake_B</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">D_fake_out</span> <span class="o">=</span> <span class="n">D</span><span class="p">(</span><span class="n">fake_AB</span><span class="p">)</span>
+            <span class="n">real_label_G</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">D_fake_out</span><span class="p">)</span>
+
+            <span class="n">loss_G_GAN</span> <span class="o">=</span> <span class="n">criterion_GAN</span><span class="p">(</span><span class="n">D_fake_out</span><span class="p">,</span> <span class="n">real_label_G</span><span class="p">)</span>
+            <span class="n">loss_G_L1</span> <span class="o">=</span> <span class="n">criterion_L1</span><span class="p">(</span><span class="n">fake_B</span><span class="p">,</span> <span class="n">real_B</span><span class="p">)</span> <span class="o">*</span> <span class="n">lambda_L1</span>
+            <span class="n">loss_G</span> <span class="o">=</span> <span class="n">loss_G_GAN</span> <span class="o">+</span> <span class="n">loss_G_L1</span>
+            <span class="n">loss_G</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+            <span class="n">optimizer_G</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+
+            <span class="c1"># --- Logging ---</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="n">log_interval</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Epoch [</span><span class="si">{</span><span class="n">epoch</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">num_epochs</span><span class="si">}</span><span class="s2">] Step [</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">train_loader</span><span class="p">)</span><span class="si">}</span><span class="s2">] &quot;</span>
+                      <span class="sa">f</span><span class="s2">&quot;Loss D: </span><span class="si">{</span><span class="n">loss_D</span><span class="o">.</span><span class="n">item</span><span class="p">()</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">, Loss G: </span><span class="si">{</span><span class="n">loss_G</span><span class="o">.</span><span class="n">item</span><span class="p">()</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+            <span class="n">history</span><span class="p">[</span><span class="s1">&#39;loss_D&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">loss_D</span><span class="o">.</span><span class="n">item</span><span class="p">())</span>
+            <span class="n">history</span><span class="p">[</span><span class="s1">&#39;loss_G&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">loss_G</span><span class="o">.</span><span class="n">item</span><span class="p">())</span>
+
+        <span class="c1"># --- Save model at intervals ---</span>
+        <span class="k">if</span> <span class="n">save_dir</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="p">((</span><span class="n">epoch</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="n">save_interval</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="p">(</span><span class="n">epoch</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="n">num_epochs</span><span class="p">):</span>
+            <span class="n">torch</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">state_dict</span><span class="p">(),</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">save_dir</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;G_epoch_</span><span class="si">{</span><span class="n">epoch</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s1">.pth&#39;</span><span class="p">))</span>
+            <span class="n">torch</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">D</span><span class="o">.</span><span class="n">state_dict</span><span class="p">(),</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">save_dir</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;D_epoch_</span><span class="si">{</span><span class="n">epoch</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s1">.pth&#39;</span><span class="p">))</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Models saved at epoch </span><span class="si">{</span><span class="n">epoch</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">G</span><span class="p">,</span> <span class="n">history</span></div>
+
+
+<span class="c1"># =================================================================</span>
+<span class="c1"># Part 5: Inference Functions</span>
+<span class="c1"># Utilities for model inference and visualization</span>
+<span class="c1"># =================================================================</span>
+
+<div class="viewcode-block" id="tensor2img">
+<a class="viewcode-back" href="../../generated/ccai9012.gan_utils.tensor2img.html#ccai9012.gan_utils.tensor2img">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">tensor2img</span><span class="p">(</span><span class="n">t</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert a normalized image tensor into an 8-bit RGB array.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        t: Tensor with values expected in ``[-1, 1]``. A leading singleton</span>
+<span class="sd">            batch dimension is removed.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        NumPy array shaped ``(height, width, channels)`` with ``uint8`` values.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="n">t</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.0</span>  <span class="c1"># [-1,1] -&gt; [0,1]</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">permute</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="n">t</span> <span class="o">*</span> <span class="mi">255</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">t</span></div>
+
+
+
+<div class="viewcode-block" id="inference_gan">
+<a class="viewcode-back" href="../../generated/ccai9012.gan_utils.inference_gan.html#ccai9012.gan_utils.inference_gan">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">inference_gan</span><span class="p">(</span>
+    <span class="n">G</span><span class="p">:</span> <span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">,</span>
+    <span class="n">test_A_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">results_dir</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;results/&#39;</span><span class="p">,</span>
+    <span class="n">device</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Image</span><span class="o">.</span><span class="n">Image</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Generate and save target images for every supported image in a folder.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        G: Trained generator network.</span>
+<span class="sd">        test_A_dir: Directory containing source-domain PNG or JPEG images.</span>
+<span class="sd">        results_dir: Directory in which generated images are saved.</span>
+<span class="sd">        device: PyTorch device or device name. ``None`` selects CUDA when</span>
+<span class="sd">            available and otherwise uses CPU.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        The last generated image. All generated images are also written to</span>
+<span class="sd">        ``results_dir`` with their input filenames.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        UnboundLocalError: If ``test_A_dir`` contains no supported image files.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">device</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s1">&#39;cuda&#39;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s1">&#39;cpu&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+    <span class="n">G</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+    <span class="n">G</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">results_dir</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># Transform (same as training)</span>
+    <span class="n">transform</span> <span class="o">=</span> <span class="n">transforms</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span>
+        <span class="n">transforms</span><span class="o">.</span><span class="n">Resize</span><span class="p">((</span><span class="mi">256</span><span class="p">,</span> <span class="mi">256</span><span class="p">)),</span>
+        <span class="n">transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">(),</span>
+        <span class="n">transforms</span><span class="o">.</span><span class="n">Normalize</span><span class="p">((</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">))</span>
+    <span class="p">])</span>
+
+    <span class="c1"># Iterate over test images</span>
+    <span class="k">for</span> <span class="n">img_name</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">test_A_dir</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">img_name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">endswith</span><span class="p">((</span><span class="s1">&#39;.png&#39;</span><span class="p">,</span> <span class="s1">&#39;.jpg&#39;</span><span class="p">,</span> <span class="s1">&#39;.jpeg&#39;</span><span class="p">)):</span>
+            <span class="k">continue</span>
+        <span class="n">A_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">test_A_dir</span><span class="p">,</span> <span class="n">img_name</span><span class="p">)</span>
+        <span class="n">A_img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">A_path</span><span class="p">)</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="s2">&quot;RGB&quot;</span><span class="p">)</span>
+        <span class="n">A_tensor</span> <span class="o">=</span> <span class="n">transform</span><span class="p">(</span><span class="n">A_img</span><span class="p">)</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+        <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+            <span class="n">fake_B</span> <span class="o">=</span> <span class="n">G</span><span class="p">(</span><span class="n">A_tensor</span><span class="p">)</span>
+
+        <span class="c1"># Convert to image and save</span>
+        <span class="n">fake_B_img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">fromarray</span><span class="p">(</span><span class="n">tensor2img</span><span class="p">(</span><span class="n">fake_B</span><span class="p">))</span>
+        <span class="n">fake_B_img</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">results_dir</span><span class="p">,</span> <span class="n">img_name</span><span class="p">))</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Inference done! Results saved to&quot;</span><span class="p">,</span> <span class="n">results_dir</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">fake_B_img</span></div>
+
+
+<div class="viewcode-block" id="load_model">
+<a class="viewcode-back" href="../../generated/ccai9012.gan_utils.load_model.html#ccai9012.gan_utils.load_model">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">load_model</span><span class="p">(</span>
+    <span class="n">G</span><span class="p">:</span> <span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">,</span>
+    <span class="n">model_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">device</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Load generator weights and prepare the model for inference.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        G: Initialized generator architecture compatible with the checkpoint.</span>
+<span class="sd">        model_path: Path to a saved PyTorch state dictionary.</span>
+<span class="sd">        device: PyTorch device or device name. ``None`` selects CUDA when</span>
+<span class="sd">            available and otherwise uses CPU.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        The supplied generator in evaluation mode on the selected device.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        RuntimeError: If the checkpoint is incompatible with the generator.</span>
+<span class="sd">        FileNotFoundError: If ``model_path`` does not exist.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">device</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s1">&#39;cuda&#39;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s1">&#39;cpu&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+    <span class="n">G</span><span class="o">.</span><span class="n">load_state_dict</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">model_path</span><span class="p">,</span> <span class="n">map_location</span><span class="o">=</span><span class="n">device</span><span class="p">))</span>
+    <span class="n">G</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+    <span class="n">G</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">G</span></div>
+
+</pre></div>
+
+                </article>
+
+
+
+
+
+                <footer class="prev-next-footer d-print-none">
+
+<div class="prev-next-area">
+</div>
+                </footer>
+
+            </div>
+
+
+
+
+          </div>
+          <footer class="bd-footer-content">
+
+          </footer>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+
+    <div class="footer-items__start">
+
+        <div class="footer-item">
+
+  <p class="copyright">
+
+      © Copyright 2026, CCAI9012.
+      <br/>
+
+  </p>
+</div>
+
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    <br/>
+  </p>
+</div>
+
+    </div>
+
+
+
+    <div class="footer-items__end">
+
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.20.0.
+</p></div>
+
+    </div>
+
+</div>
+
+  </footer>
+  </body>
+</html>

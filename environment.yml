@@ -86,4 +86,5 @@ dependencies:
       - huggingface_hub>=0.16
       - qwen_vl_utils
       - pypdf>=6.0.0
-      - pdoc3
+      - sphinx==9.1.0
+      - pydata-sphinx-theme==0.20.0
