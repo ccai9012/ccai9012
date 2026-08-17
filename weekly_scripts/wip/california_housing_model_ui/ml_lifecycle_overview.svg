@@ -16,6 +16,7 @@
       .flow { fill: none; stroke: #111111; stroke-width: 1.2; stroke-linecap: round; stroke-linejoin: round; marker-end: url(#arrow); }
       .box { fill: #050505; stroke: #050505; stroke-width: 1.4; }
       .focus { fill: none; stroke: #ef1c88; stroke-width: 3; stroke-dasharray: 9 7; }
+      .icon { fill: none; stroke: #00b5e2; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
     </style>
   </defs>
 
@@ -26,10 +27,11 @@
   <rect class="phase" x="42" y="110" width="426" height="470" rx="20"/>
   <text class="ink" x="68" y="144">1. Training</text>
   <text class="muted" x="68" y="167">Learn model weights from examples.</text>
-  <rect class="box" x="95" y="215" width="168" height="90" rx="18"/>
-  <text class="label" x="179" y="249" text-anchor="middle">Training dataset</text>
-  <text class="small" x="179" y="275" text-anchor="middle"><tspan class="cyan">features</tspan><tspan> + labels</tspan></text>
-  <path class="flow" d="M 270 260 H 326"/>
+  <rect class="box" x="85" y="215" width="205" height="90" rx="18"/>
+  <g fill="#00b5e2"><rect x="103" y="239" width="7" height="7" rx="1"/><rect x="114" y="239" width="7" height="7" rx="1"/><rect x="103" y="250" width="7" height="7" rx="1"/><rect x="114" y="250" width="7" height="7" rx="1"/></g>
+  <text class="label" x="210" y="249" text-anchor="middle">Training dataset</text>
+  <text class="small" x="210" y="275" text-anchor="middle"><tspan class="cyan">features</tspan><tspan> + labels</tspan></text>
+  <path class="flow" d="M 297 260 H 326"/>
   <rect class="box" x="334" y="215" width="99" height="90" rx="18"/>
   <text class="label" x="383" y="249" text-anchor="middle">Train</text>
   <text class="small" x="383" y="275" text-anchor="middle">update weights</text>
@@ -45,10 +47,11 @@
   <rect class="phase" x="503" y="110" width="426" height="470" rx="20"/>
   <text class="ink" x="529" y="144">2. Validation</text>
   <text class="muted" x="529" y="167">Choose and check the candidate model.</text>
-  <rect class="box" x="552" y="215" width="176" height="90" rx="18"/>
-  <text class="label" x="640" y="249" text-anchor="middle">Validation dataset</text>
-  <text class="small" x="640" y="275" text-anchor="middle"><tspan class="cyan">features</tspan><tspan> + labels</tspan></text>
-  <path class="flow" d="M 735 260 H 785"/>
+  <rect class="box" x="542" y="215" width="215" height="90" rx="18"/>
+  <g fill="#00b5e2"><rect x="560" y="239" width="7" height="7" rx="1"/><rect x="571" y="239" width="7" height="7" rx="1"/><rect x="560" y="250" width="7" height="7" rx="1"/><rect x="571" y="250" width="7" height="7" rx="1"/></g>
+  <text class="label" x="670" y="249" text-anchor="middle">Validation dataset</text>
+  <text class="small" x="670" y="275" text-anchor="middle"><tspan class="cyan">features</tspan><tspan> + labels</tspan></text>
+  <path class="flow" d="M 764 260 H 785"/>
   <rect class="box" x="793" y="215" width="104" height="90" rx="18"/>
   <text class="label" x="845" y="249" text-anchor="middle">Validate</text>
   <text class="small" x="845" y="275" text-anchor="middle">compare error</text>
@@ -61,14 +64,16 @@
   <rect class="focus" x="964" y="102" width="594" height="486" rx="22"/>
   <text class="ink" x="991" y="144">3. Testing and inference</text>
   <text class="muted" x="991" y="167">Test once, then apply the same checked model to a new case.</text>
-  <rect class="box" x="1005" y="214" width="155" height="84" rx="18"/>
-  <text class="label" x="1082" y="246" text-anchor="middle">Test dataset</text>
-  <text class="small" x="1082" y="271" text-anchor="middle"><tspan class="cyan">features</tspan><tspan> + labels</tspan></text>
-  <path class="flow" d="M 1167 256 H 1213"/>
-  <rect class="box" x="1221" y="214" width="146" height="84" rx="18"/>
-  <text class="label" x="1294" y="246" text-anchor="middle">Test model</text>
-  <text class="small" x="1294" y="271" text-anchor="middle">final check</text>
-  <path class="flow" d="M 1374 256 H 1421"/>
+  <rect class="box" x="995" y="214" width="195" height="84" rx="18"/>
+  <g fill="#00b5e2"><rect x="1013" y="237" width="7" height="7" rx="1"/><rect x="1024" y="237" width="7" height="7" rx="1"/><rect x="1013" y="248" width="7" height="7" rx="1"/><rect x="1024" y="248" width="7" height="7" rx="1"/></g>
+  <text class="label" x="1110" y="246" text-anchor="middle">Test dataset</text>
+  <text class="small" x="1110" y="271" text-anchor="middle"><tspan class="cyan">features</tspan><tspan> + labels</tspan></text>
+  <path class="flow" d="M 1197 256 H 1204"/>
+  <rect class="box" x="1212" y="214" width="175" height="84" rx="18"/>
+  <circle cx="1230" cy="257" r="4" fill="#00b5e2"/><circle cx="1242" cy="247" r="4" fill="#00b5e2"/><circle cx="1242" cy="267" r="4" fill="#00b5e2"/><path class="icon" d="M1234 255l5-6m-5 5l5 10"/>
+  <text class="label" x="1329" y="246" text-anchor="middle">Test model</text>
+  <text class="small" x="1329" y="271" text-anchor="middle">final check</text>
+  <path class="flow" d="M 1394 256 H 1421"/>
   <rect x="1428" y="215" width="96" height="82" rx="16" fill="#f8f8f8" stroke="#111111" stroke-width="1.4"/>
   <line x1="1445" y1="274" x2="1507" y2="232" stroke="#00b5e2" stroke-width="2.5" stroke-linecap="round"/>
   <circle cx="1460" cy="264" r="4" fill="#ef1c88"/><circle cx="1480" cy="250" r="4" fill="#ef1c88"/><circle cx="1498" cy="239" r="4" fill="#ef1c88"/>
@@ -76,16 +81,19 @@
 
   <line x1="992" y1="348" x2="1531" y2="348" stroke="#222222" stroke-width="1.2" stroke-dasharray="6 6"/>
   <text class="ink" x="1005" y="383">Notebook focus: inference</text>
-  <rect class="box" x="1010" y="414" width="145" height="84" rx="18"/>
-  <text class="label" x="1082" y="446" text-anchor="middle">New input</text>
-  <text class="small" x="1082" y="471" text-anchor="middle">8 <tspan class="cyan">features</tspan>, no label</text>
-  <path class="flow" d="M 1162 456 H 1205"/>
-  <rect class="box" x="1213" y="414" width="131" height="84" rx="18"/>
-  <text class="label" x="1278" y="446" text-anchor="middle">Preprocess</text>
-  <text class="small" x="1278" y="471" text-anchor="middle">same scaling</text>
-  <path class="flow" d="M 1351 456 H 1391"/>
-  <rect class="box" x="1399" y="414" width="126" height="84" rx="18"/>
-  <text class="label" x="1462" y="446" text-anchor="middle">Predict</text>
-  <text class="small" x="1462" y="471" text-anchor="middle">house value</text>
+  <rect class="box" x="1002" y="414" width="175" height="84" rx="18"/>
+  <path d="M1020 432h14l6 6v14h-20zM1034 432v7h6M1025 444h10" fill="none" stroke="#00b5e2" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+  <text class="label" x="1110" y="446" text-anchor="middle">New input</text>
+  <text class="small" x="1110" y="471" text-anchor="middle">8 <tspan class="cyan">features</tspan>, no label</text>
+  <path class="flow" d="M 1184 456 H 1198"/>
+  <rect class="box" x="1205" y="414" width="155" height="84" rx="18"/>
+  <path class="icon" d="M1223 438h22m-22 10h22m-22 10h22M1230 434v8m9 2v8m-12 2v8"/>
+  <text class="label" x="1309" y="446" text-anchor="middle">Preprocess</text>
+  <text class="small" x="1309" y="471" text-anchor="middle">same scaling</text>
+  <path class="flow" d="M 1367 456 H 1384"/>
+  <rect class="box" x="1391" y="414" width="145" height="84" rx="18"/>
+  <path d="M1409 461h7v-10h7v10h7v-18h7v18" fill="none" stroke="#00b5e2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text class="label" x="1488" y="446" text-anchor="middle">Predict</text>
+  <text class="small" x="1488" y="471" text-anchor="middle">house value</text>
   <text class="muted" x="1008" y="543">Weights do not change during inference.</text>
 </svg>

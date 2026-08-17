@@ -16,6 +16,7 @@
       .box { fill: #050505; stroke: #050505; stroke-width: 1.4; }
       .dash { fill: none; stroke: #222222; stroke-width: 1.4; stroke-dasharray: 8 7; }
       .focus { fill: none; stroke: #ef1c88; stroke-width: 3; stroke-dasharray: 9 7; }
+      .icon { fill: none; stroke: #00b5e2; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
     </style>
   </defs>
 
@@ -26,8 +27,9 @@
   <rect class="focus" x="48" y="113" width="488" height="432" rx="20"/>
   <text class="ink" x="76" y="147">Change this: system prompt</text>
   <rect class="box" x="111" y="191" width="288" height="88" rx="18"/>
-  <text class="label" x="255" y="225" text-anchor="middle">System prompt</text>
-  <text class="small" x="255" y="251" text-anchor="middle"><tspan class="cyan">role</tspan><tspan> · tone · focus</tspan></text>
+  <circle cx="145" cy="229" r="13" fill="none" stroke="#00b5e2" stroke-width="2"/><circle cx="145" cy="225" r="4" fill="#00b5e2"/><path class="icon" d="M137 239c2-7 14-7 16 0"/>
+  <text class="label" x="270" y="225" text-anchor="middle">System prompt</text>
+  <text class="small" x="270" y="251" text-anchor="middle"><tspan class="cyan">role</tspan><tspan> · tone · focus</tspan></text>
   <text class="muted" x="85" y="328">Try a different role while keeping the question unchanged:</text>
   <rect class="box" x="85" y="356" width="118" height="68" rx="15"/>
   <text class="small" x="144" y="384" text-anchor="middle">Urban Planning</text><text class="small" x="144" y="406" text-anchor="middle">Advisor</text>
@@ -40,22 +42,25 @@
   <rect class="dash" x="592" y="286" width="386" height="166" rx="20"/>
   <text class="ink" x="620" y="321">Hold this fixed: user input</text>
   <rect class="box" x="639" y="348" width="292" height="72" rx="17"/>
-  <text class="label" x="785" y="378" text-anchor="middle">User message</text>
-  <text class="small" x="785" y="402" text-anchor="middle">the current question or task</text>
+  <path d="M659 364h30a7 7 0 0 1 7 7v14a7 7 0 0 1-7 7h-14l-8 7v-7h-8a7 7 0 0 1-7-7v-14a7 7 0 0 1 7-7z" fill="none" stroke="#00b5e2" stroke-width="2" stroke-linejoin="round"/>
+  <text class="label" x="800" y="378" text-anchor="middle">User message</text>
+  <text class="small" x="800" y="402" text-anchor="middle">the current question or task</text>
 
   <rect class="dash" x="1080" y="201" width="257" height="221" rx="20"/>
   <text class="muted" x="1105" y="232">model service</text>
-  <rect class="box" x="1120" y="264" width="178" height="113" rx="19"/>
-  <text class="label" x="1209" y="307" text-anchor="middle">LLM</text>
-  <text class="small" x="1209" y="334" text-anchor="middle">processes both inputs</text>
+  <rect class="box" x="1105" y="264" width="210" height="113" rx="19"/>
+  <circle cx="1152" cy="312" r="15" fill="#d9f2f9"/><circle cx="1147" cy="310" r="2.5" fill="#050505"/><circle cx="1157" cy="310" r="2.5" fill="#050505"/><path d="M1144 319h16" stroke="#050505" stroke-width="2" stroke-linecap="round"/>
+  <text class="label" x="1240" y="307" text-anchor="middle">LLM</text>
+  <text class="small" x="1240" y="334" text-anchor="middle">processes both inputs</text>
 
   <path class="flow" d="M 400 235 H 1036 Q 1052 235 1052 251 V 276 Q 1052 288 1064 288 H 1111"/>
   <path class="flow" d="M 938 384 H 1037 Q 1052 384 1052 369 V 337 Q 1052 327 1062 327 H 1111"/>
 
-  <path class="flow" d="M 1305 320 H 1401"/>
-  <rect class="box" x="1409" y="264" width="142" height="113" rx="19"/>
-  <text class="label" x="1480" y="307" text-anchor="middle">Response</text>
-  <text class="small" x="1480" y="334" text-anchor="middle">generated text</text>
+  <path class="flow" d="M 1323 320 H 1384"/>
+  <rect class="box" x="1392" y="264" width="176" height="113" rx="19"/>
+  <path d="M1427 290h20l9 9v30h-29zM1447 290v10h9M1434 310h15M1434 320h15" fill="none" stroke="#00b5e2" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+  <text class="label" x="1515" y="307" text-anchor="middle">Response</text>
+  <text class="small" x="1515" y="334" text-anchor="middle">generated text</text>
 
   <rect class="dash" x="605" y="495" width="716" height="106" rx="18"/>
   <text class="ink" x="635" y="531">Observe and compare</text>
