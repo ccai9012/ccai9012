@@ -14,6 +14,8 @@ docs/figs/flowchart/*.xml
 docs/md/weekly_syllabus.md
 docs/temp/
 docs/api_source/generated/
+docs/api/.buildinfo
+tools/render_notebook_screenshots.js
 
 ccai9012/token.yaml
 
