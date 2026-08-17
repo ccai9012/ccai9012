@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 790" role="img" aria-labelledby="title desc">
+  <title id="title">LLM-assisted retrieval and structured comparison of technical documents</title>
+  <desc id="desc">Technical PDFs are prepared as searchable evidence passages. A researcher asks a question, the system retrieves relevant passages, and an LLM turns them into a comparable evidence note and table.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#2374A5"/></marker>
+    <style>.title{font-family:Georgia,serif;font-size:27px;font-weight:700;fill:#0b1f33}.subtitle{font-family:Georgia,serif;font-size:16px;fill:#4d6273}.h{font-family:Georgia,serif;font-size:18px;font-weight:700;fill:#0b1f33}.body{font-family:Georgia,serif;font-size:15px;fill:#34495a}.tiny{font-family:Georgia,serif;font-size:13px;fill:#526777}.white{font-family:Georgia,serif;font-size:16px;font-weight:700;fill:#fff}.cyan{fill:#00b5e2;font-weight:700}.lane{fill:#fff9fc;stroke:#ef1c88;stroke-width:3;stroke-dasharray:9 7}.focus{fill:#fff9fc;stroke:#ef1c88;stroke-width:3;stroke-dasharray:9 7}.card{fill:#fff;stroke:#6e9ab4;stroke-width:1.5}.accent{fill:#0b1f33}.flow{fill:none;stroke:#2374a5;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#arrow)}.thin{fill:none;stroke:#00b5e2;stroke-width:2;stroke-linecap:round}</style>
+  </defs>
+  <rect width="1600" height="790" fill="#fff"/>
+  <text class="title" x="52" y="48">LLM-Assisted Retrieval and Structured Comparison of Technical Documents</text>
+
+  <rect class="lane" x="45" y="120" width="1510" height="270" rx="24"/>
+  <text class="h" x="75" y="157">Prepare the document collection once</text>
+  <text class="body" x="75" y="182">Goal: turn a stack of long PDFs into a searchable collection of local evidence passages.</text>
+  <g transform="translate(88 218)">
+    <rect x="14" y="10" width="52" height="72" rx="6" fill="#ef3e45"/><path d="M49 10v20h17" fill="#ffadb0"/><text class="white" x="40" y="57" text-anchor="middle">PDF</text><rect x="0" y="0" width="52" height="72" rx="6" fill="#d92637"/><path d="M35 0v20h17" fill="#ffadb0"/><text class="white" x="26" y="47" text-anchor="middle">PDF</text>
+  </g>
+  <text class="h" x="92" y="326">Technical PDFs</text><text class="tiny" x="92" y="349">plans, reports, manuals</text>
+  <path class="flow" d="M228 278H302"/>
+  <g transform="translate(320 216)">
+    <rect x="0" y="8" width="62" height="76" rx="7" fill="#eaf5fa" stroke="#6e9ab4"/><path d="M42 8v20h20" fill="#b7ddec"/><path d="M14 42h35M14 54h35M14 66h26" class="thin"/>
+  </g>
+  <text class="h" x="314" y="326">Extract text</text><text class="tiny" x="314" y="349">keep document metadata</text>
+  <path class="flow" d="M450 278H526"/>
+  <g transform="translate(545 219)"><rect x="0" y="0" width="84" height="20" rx="8" fill="#e7f6fb" stroke="#00b5e2"/><rect x="8" y="27" width="84" height="20" rx="8" fill="#d4eff8" stroke="#00b5e2"/><rect x="0" y="54" width="84" height="20" rx="8" fill="#e7f6fb" stroke="#00b5e2"/></g>
+  <text class="h" x="538" y="326">Make passages</text><text class="tiny" x="538" y="349">small sections with overlap</text>
+  <path class="flow" d="M672 278H748"/>
+  <g transform="translate(766 217)"><circle cx="25" cy="18" r="13" fill="#d9f2f9" stroke="#00b5e2"/><circle cx="59" cy="18" r="13" fill="#d9f2f9" stroke="#00b5e2"/><circle cx="42" cy="52" r="13" fill="#d9f2f9" stroke="#00b5e2"/><path d="M38 28l-7 12m29-12l-8 12" stroke="#2374a5" stroke-width="2"/></g>
+  <text class="h" x="758" y="326">Represent meaning</text><text class="tiny" x="758" y="349">convert passages to vectors</text>
+  <path class="flow" d="M962 278H1036"/>
+  <g transform="translate(1055 215)"><ellipse cx="43" cy="16" rx="42" ry="13" fill="#f5a623"/><path d="M1 16v48c0 18 84 18 84 0V16M1 39c0 18 84 18 84 0" fill="#f9c568" stroke="#d98300" stroke-width="1.5"/><ellipse cx="43" cy="64" rx="42" ry="13" fill="#f5a623"/></g>
+  <text class="h" x="1047" y="326">Searchable index</text><text class="tiny" x="1047" y="349">passages ready to retrieve</text>
+  <text class="body" x="1277" y="242">Why passages?</text><text class="tiny" x="1277" y="267">A question usually needs a few</text><text class="tiny" x="1277" y="287">relevant sections, not every page.</text><text class="tiny" x="1277" y="315">Overlap keeps nearby context together.</text>
+
+  <rect class="focus" x="45" y="430" width="1510" height="280" rx="24"/>
+  <text class="h" x="75" y="468">Use the collection for a research question</text>
+  <text class="body" x="75" y="493">Example: “What actions, actors, and timelines does each Energy Action Plan describe?”</text>
+  <g transform="translate(95 535)"><circle cx="31" cy="18" r="18" fill="#ffd5e7" stroke="#ef1c88" stroke-width="2"/><path d="M3 67c4-22 52-22 56 0" fill="#ffd5e7" stroke="#ef1c88" stroke-width="2"/><rect x="66" y="25" width="94" height="53" rx="8" fill="#fff" stroke="#6e9ab4"/><path d="M74 66h77M86 77v-11" stroke="#2374a5" stroke-width="2"/></g>
+  <text class="h" x="83" y="646">Researcher asks</text><text class="tiny" x="83" y="669">a comparison question</text>
+  <path class="flow" d="M285 585H359"/>
+  <g transform="translate(375 532)"><circle cx="38" cy="37" r="26" fill="#e4f6fb" stroke="#00b5e2" stroke-width="3"/><path d="M58 57l24 24" stroke="#00b5e2" stroke-width="7" stroke-linecap="round"/><text class="tiny" x="38" y="41" text-anchor="middle">find</text></g>
+  <text class="h" x="365" y="646">Retrieve passages</text><text class="tiny" x="365" y="669">most related to the question</text>
+  <path class="flow" d="M585 585H659"/>
+  <g transform="translate(675 528)"><rect x="0" y="0" width="130" height="97" rx="14" fill="#0b1f33"/><circle cx="38" cy="34" r="18" fill="#d9f2f9"/><circle cx="32" cy="33" r="3" fill="#0b1f33"/><circle cx="44" cy="33" r="3" fill="#0b1f33"/><path d="M27 44h22" stroke="#0b1f33" stroke-width="3"/><path d="M23 5l5-12 5 12m43 0 5-12 5 12" stroke="#00b5e2" stroke-width="3"/><rect x="65" y="23" width="47" height="11" rx="5" fill="#00b5e2"/><rect x="65" y="46" width="38" height="8" rx="4" fill="#b7ddec"/></g>
+  <text class="h" x="677" y="646">LLM organises</text><text class="tiny" x="677" y="669">the retrieved evidence</text>
+  <path class="flow" d="M870 585H943"/>
+  <g transform="translate(960 526)"><rect x="0" y="0" width="176" height="103" rx="10" fill="#fff" stroke="#6e9ab4" stroke-width="2"/><path d="M0 27h176M0 52h176M0 77h176M58 0v103M117 0v103" stroke="#6e9ab4" stroke-width="1.5"/><rect x="7" y="33" width="43" height="13" rx="3" fill="#d9f2f9"/><rect x="65" y="58" width="43" height="13" rx="3" fill="#ffd5e7"/><rect x="124" y="83" width="43" height="13" rx="3" fill="#d9f2f9"/></g>
+  <text class="h" x="970" y="646">Compare evidence notes</text><text class="tiny" x="970" y="669">same fields across documents</text>
+  <path class="flow" d="M1180 585H1256"/>
+  <g transform="translate(1272 532)"><circle cx="34" cy="25" r="21" fill="#f9c568"/><path d="M16 57h36M20 69h28" stroke="#d98300" stroke-width="4" stroke-linecap="round"/><path d="M77 22l9 9 18-22" fill="none" stroke="#00b5e2" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <text class="h" x="1250" y="646">Interpret patterns</text><text class="tiny" x="1250" y="669">use the table for review</text>
+  <path class="flow" d="M1098 361V407H480V569H442"/>
+</svg>

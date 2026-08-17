@@ -55,11 +55,30 @@
   <em>Airbnb Review keywords wordcloud.</em>
 </p>
 
-#### Energy Action Plan PDF Structuring
-**Content:**
-- Extract building/energy info from Energy Action Plans (PDFs)
-- Summarize content into JSON format for analysis
-- Enable comparison across tribal regions over time
+#### LLM-Assisted Retrieval and Structured Comparison of Technical Documents
+
+**Goal:** Reduce repeated searching when comparing many long Energy Action Plans, reports, or technical manuals. Prepare the collection once as searchable passages, then use an LLM to organise retrieved evidence into the same comparison fields for every document.
+
+<p align="center">
+  <img src="../figs/energy_plan_flow.svg" alt="LLM-assisted technical-document comparison workflow. A collection of PDFs is extracted, split into passages, represented in a searchable index, then a researcher asks a question. Relevant passages are retrieved, an LLM organises them into evidence notes, and the notes are compared in a table." width="100%"><br>
+  <em>Prepare the collection once; reuse it for many document-review questions.</em>
+</p>
+
+**Four-stage workflow:**
+1. Prepare PDFs as overlapping, searchable passages.
+2. Ask a document-review question and retrieve the most relevant passages.
+3. Use the same evidence fields—location, objectives, actions, stakeholders, and timeline—for every document.
+4. Compare the completed evidence notes and summarise patterns across the collection.
+
+**Inputs and outputs:** technical PDF collection and review question → searchable passages → retrieved evidence → LLM-organised evidence notes → cross-document comparison table. In the starter kit, overlapping passages help keep neighbouring context together; scans, tables, and figures can still be missed.
+
+**How to use the results:** use the table to see recurring goals, distinct actions, different responsibilities, and missing timing information across documents. Blank values, repeated boilerplate, and inconsistent formats are useful prompts for follow-up reading. Retain filenames when fuller context is needed.
+
+**Suitable applications:** compare climate, energy, or housing policy documents across cities, or compare methods and results fields across a focused set of research-paper PDFs.
+
+**Extension:** this prepare → retrieve → generate pattern is often called retrieval-augmented generation (RAG). For additional material, see [IBM's PDF preparation tutorial](https://developer.ibm.com/tutorials/dpk-rag-llms/) and [AWS's RAG overview](https://docs.aws.amazon.com/prescriptive-guidance/latest/retrieval-augmented-generation-options/what-is-rag.html).
+
+**Practical note:** retrieval can omit content, LLMs can flatten uncertainty, and table parsing can fail. Preserve filenames and evidence locations, protect sensitive documents and credentials, and consider API cost and data-handling rules.
 
 **Dataset:**
 - Energy Action Plans documents
@@ -75,5 +94,3 @@
 - Catalogue & represent findings
 
 **Dataset:** Collection of literatures from specific topic
-
----

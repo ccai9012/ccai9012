@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 410" role="img" aria-labelledby="title desc">
+  <title id="title">Text to image to text: examining material associations in generated building images</title>
+  <desc id="desc">A neutral building prompt goes to Stable Diffusion to produce a controlled set of images. BLIP and Qwen-VL then turn the images into captions for comparison with the original prompt.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#2374a5"/></marker>
+    <style>
+      .title{font-family:Georgia,serif;font-size:31px;font-weight:700;fill:#0b1f33}.h{font-family:Georgia,serif;font-size:21px;font-weight:700;fill:#0b1f33}.body{font-family:Georgia,serif;font-size:17px;fill:#34495a}.tiny{font-family:Georgia,serif;font-size:15px;fill:#526777}.white{font-family:Georgia,serif;font-size:19px;font-weight:700;fill:#fff}.lane{fill:#fff9fc;stroke:#ef1c88;stroke-width:3;stroke-dasharray:9 7}.card{fill:#fff;stroke:#6e9ab4;stroke-width:2}.flow{fill:none;stroke:#2374a5;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1600" height="410" fill="#fff"/>
+  <text class="title" x="52" y="51">What material associations appear when AI generates a neutral building prompt?</text>
+
+  <rect class="lane" x="45" y="88" width="1510" height="274" rx="24"/>
+  <text class="h" x="78" y="132">Text → image → text</text>
+  <text class="body" x="78" y="158">Generate controlled building variations, then ask vision models to caption what they see.</text>
+
+  <g transform="translate(91 202)">
+    <rect class="card" x="0" y="0" width="210" height="94" rx="15"/>
+    <text class="h" x="105" y="35" text-anchor="middle">Neutral prompt</text>
+    <text class="tiny" x="105" y="62" text-anchor="middle">“contemporary building”</text>
+    <text class="tiny" x="105" y="82" text-anchor="middle">no material word</text>
+  </g>
+  <path class="flow" d="M311 249H367"/>
+
+  <g transform="translate(387 192)">
+    <rect x="0" y="0" width="215" height="114" rx="17" fill="#0b1f33"/>
+    <circle cx="47" cy="57" r="25" fill="#d9f2f9"/><path d="M21 57h52M47 31v52" stroke="#0b1f33" stroke-width="3.5"/>
+    <text class="white" x="140" y="53" text-anchor="middle">Stable</text><text class="white" x="140" y="78" text-anchor="middle">Diffusion</text>
+  </g>
+  <text class="tiny" x="494" y="334" text-anchor="middle">text → image</text>
+  <path class="flow" d="M612 249H668"/>
+
+  <g transform="translate(690 196)">
+    <rect x="18" y="13" width="112" height="84" rx="7" fill="#d9f2f9" stroke="#00b5e2" stroke-width="1.8"/>
+    <rect x="0" y="0" width="112" height="84" rx="7" fill="#e7f6fb" stroke="#00b5e2" stroke-width="1.8"/>
+    <path d="M11 63l30-27 20 17 18-14 22 22" fill="none" stroke="#2374a5" stroke-width="3.5"/><circle cx="81" cy="21" r="8" fill="#f5a623"/>
+  </g>
+  <text class="h" x="746" y="312" text-anchor="middle">Generated images</text>
+  <path class="flow" d="M830 249H887"/>
+
+  <g transform="translate(907 184)">
+    <rect x="0" y="0" width="265" height="130" rx="17" fill="#0b1f33"/>
+    <circle cx="45" cy="51" r="24" fill="#d9f2f9"/><path d="M29 59l14-14 11 11 11-14" fill="none" stroke="#0b1f33" stroke-width="3.5"/>
+    <text class="white" x="160" y="52" text-anchor="middle">BLIP + Qwen-VL</text>
+    <text class="white" x="160" y="81" text-anchor="middle">caption the images</text>
+  </g>
+  <text class="tiny" x="1040" y="339" text-anchor="middle">image → text</text>
+  <path class="flow" d="M1182 249H1239"/>
+
+  <g transform="translate(1259 202)">
+    <rect class="card" x="0" y="0" width="218" height="94" rx="15"/>
+    <path d="M24 27h41a9 9 0 0 1 9 9v24a9 9 0 0 1-9 9H45L32 80V69h-8a9 9 0 0 1-9-9V36a9 9 0 0 1 9-9z" fill="#d9f2f9" stroke="#00b5e2" stroke-width="2"/>
+    <text class="h" x="147" y="55" text-anchor="middle">Caption</text>
+  </g>
+</svg>
