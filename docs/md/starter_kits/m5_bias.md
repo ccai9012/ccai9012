@@ -26,4 +26,3 @@
 - COMPAS dataset (pre-prepared from https://www.kaggle.com/datasets/danofer/compass)
 
 **Required Packages:** Fairlearn, SHAP, pandas, scikit-learn, transformers
-

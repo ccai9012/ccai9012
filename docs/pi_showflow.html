@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CCAI9012 - Pi Showflow</title>
     <link rel="stylesheet" href="docs-style.css">
+    <script src="on-this-page.js" defer></script>
 </head>
 <body>
+    <a class="skip-link" href="#content">Skip to content</a>
     <div class="container">
-        <nav id="sidebar">
-            <div class="sidebar-header">
-                <h2>CCAI9012</h2>
-            </div>
+        <nav id="sidebar" aria-label="Course navigation">
+            <div class="sidebar-header"><h2>CCAI9012</h2></div>
             <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="timetable.html">Course Plan</a></li>
@@ -19,40 +19,67 @@
                 <li class="sub-item"><a href="casestudy.html">Case Study</a></li>
                 <li class="sub-item"><a href="course_project.html">Course Project</a></li>
                 <li><a href="reading_material.html">Reading Materials</a></li>
-                <li><a href="pi_responsibility.html">I. Responsibility & AI</a></li>
+                <li><a href="pi_responsibility.html">I. Responsibility &amp; AI</a></li>
                 <li><a href="pii_mechanics.html">II. Mechanics of AI</a></li>
-                <li><a href="piii_data_and_risks.html">III. Datasets & Risks of AI</a></li>
+                <li><a href="piii_data_and_risks.html">III. Datasets &amp; Risks of AI</a></li>
                 <li><a href="installation.html">Installation Guide</a></li>
                 <li><a href="starter_kits/index.html">Starter Kits</a></li>
+                <li class="sub-item"><a href="starter_kits/m1_gan.html">Module 1: Traditional Generative ML</a></li>
+                <li class="sub-item"><a href="starter_kits/m2_llm.html">Module 2: LLM for Structuring Information</a></li>
+                <li class="sub-item"><a href="starter_kits/m3_mm.html">Module 3: Multimodal Reasoning</a></li>
+                <li class="sub-item"><a href="starter_kits/m4_cv.html">Module 4: CV Models</a></li>
+                <li class="sub-item"><a href="starter_kits/m5_bias.html">Module 5: Bias &amp; Interpretability</a></li>
                 <li><a href="datasets.html">Datasets Reference</a></li>
+                <li><a href="api/index.html">API Reference</a></li>
             </ul>
         </nav>
-
-        <main id="content">
-<h3>Part I: Responsibility &amp; AI</h3>
-<h1>Consolidated Activity Reference</h1>
-<div style="height:1.5rem"></div>
-
+        <div class="page-shell">
+            <main id="content">
+<details class="page-toc-mobile">
+  <summary>On this page</summary>
+  <nav aria-label="On this page"><ul>
+<li class="toc-level-3"><a href="#part-i-responsibility-ai">Part I: Responsibility &amp;amp; AI</a></li>
+<li class="toc-level-2"><a href="#class-1-probe-lab">Class 1: Probe Lab</a></li>
+<li class="toc-level-3"><a href="#setup">Setup</a></li>
+<li class="toc-level-3"><a href="#group-roles">Group Roles</a></li>
+<li class="toc-level-3"><a href="#the-flow">The Flow</a></li>
+<li class="toc-level-3"><a href="#probe-challenge-cards">Probe Challenge Cards</a></li>
+<li class="toc-level-3"><a href="#what-to-document">What to Document</a></li>
+<li class="toc-level-2"><a href="#class-2-jailbreak-lab">Class 2: Jailbreak Lab</a></li>
+<li class="toc-level-3"><a href="#a-note-before-you-start">A Note Before You Start</a></li>
+<li class="toc-level-3"><a href="#setup_1">Setup</a></li>
+<li class="toc-level-3"><a href="#group-roles_1">Group Roles</a></li>
+<li class="toc-level-3"><a href="#the-flow_1">The Flow</a></li>
+<li class="toc-level-3"><a href="#strategies-to-try">Strategies to Try</a></li>
+<li class="toc-level-3"><a href="#why-these-strategies-work">Why These Strategies Work</a></li>
+<li class="toc-level-3"><a href="#what-to-document_1">What to Document</a></li>
+<li class="toc-level-3"><a href="#synthesis-discussion-questions">Synthesis Discussion Questions</a></li>
+<li class="toc-level-2"><a href="#class-3-activities">Class 3: Activities</a></li>
+<li class="toc-level-3"><a href="#quick-exercise-your-avatar-10-min">Quick Exercise: Your Avatar (10 min)</a></li>
+<li class="toc-level-3"><a href="#option-a-design-sprint">Option A: Design Sprint</a></li>
+<li class="toc-level-3"><a href="#option-b-individual-launch">Option B: Individual Launch</a></li>
+<li class="toc-level-2"><a href="#reminder-final-assessment-via-case-study">Reminder: Final Assessment via Case Study</a></li>
+<li class="toc-level-3"><a href="#the-divergence-artefact">The Divergence Artefact</a></li>
+<li class="toc-level-2"><a href="#documentation-templates">Documentation Templates</a></li>
+<li class="toc-level-3"><a href="#probe-report-class-1">Probe Report (Class 1)</a></li>
+<li class="toc-level-3"><a href="#jailbreak-log-class-2">Jailbreak Log (Class 2)</a></li>
+<li class="toc-level-3"><a href="#divergence-log-class-3-assessment">Divergence Log (Class 3 &amp;amp; Assessment)</a></li>
+<li class="toc-level-2"><a href="#quick-reference-resistance-types">Quick Reference: Resistance Types</a></li>
+  </ul></nav>
+</details>
+<h3 id="part-i-responsibility-ai">Part I: Responsibility &amp; AI</h3>
+<h1 id="consolidated-activity-reference">Consolidated Activity Reference</h1>
 <p>This is a consolidated reference for all in-class activities across the three GenAI sessions. Keep this handy during class.</p>
-<div style="height:1.5rem"></div>
-
-<hr />
-<div style="height:1.5rem"></div>
-
-<h2>Class 1: Probe Lab</h2>
+<h2 id="class-1-probe-lab">Class 1: Probe Lab</h2>
 <p><strong>Goal:</strong> Find the walls. Map where AI resists, hedges, or refuses.</p>
-<div style="height:1.5rem"></div>
-
-<h3>Setup</h3>
+<h3 id="setup">Setup</h3>
 <ul>
 <li>Groups of 5</li>
 <li>Pick one <strong>primary</strong> Probe Challenge Card</li>
 <li>If time: try <strong>1–2 more</strong> challenges</li>
 <li>Use any GenAI tool (ChatGPT, Claude, Gemini, etc.)</li>
 </ul>
-<div style="height:1.5rem"></div>
-
-<h3>Group Roles</h3>
+<h3 id="group-roles">Group Roles</h3>
 <table>
 <thead>
 <tr>
@@ -75,9 +102,7 @@
 </tr>
 </tbody>
 </table>
-<div style="height:1.5rem"></div>
-
-<h3>The Flow</h3>
+<h3 id="the-flow">The Flow</h3>
 <table>
 <thead>
 <tr>
@@ -109,9 +134,7 @@
 </tr>
 </tbody>
 </table>
-<div style="height:1.5rem"></div>
-
-<h3>Probe Challenge Cards</h3>
+<h3 id="probe-challenge-cards">Probe Challenge Cards</h3>
 <table>
 <thead>
 <tr>
@@ -183,9 +206,7 @@
 </tr>
 </tbody>
 </table>
-<div style="height:1.5rem"></div>
-
-<h3>What to Document</h3>
+<h3 id="what-to-document">What to Document</h3>
 <p>For each attempt, record:</p>
 <ol>
 <li>What did you <strong>try</strong>? (exact prompt)  </li>
@@ -193,31 +214,18 @@
 <li>Was it a <strong>hard stop</strong>, <strong>friction</strong>, or <strong>deceleration</strong>?  </li>
 <li><strong>Why</strong> do you think this wall exists?</li>
 </ol>
-<div style="height:1.5rem"></div>
-
 <p><strong>Save your transcripts and screenshots — you&rsquo;ll need them for Class 2 and the final assessment.</strong></p>
-<div style="height:1.5rem"></div>
-
-<hr />
-<div style="height:1.5rem"></div>
-
-<h2>Class 2: Jailbreak Lab</h2>
+<h2 id="class-2-jailbreak-lab">Class 2: Jailbreak Lab</h2>
 <p><strong>Goal:</strong> Get past the wall you found in Class 1.</p>
-<div style="height:1.5rem"></div>
-
-<h3>A Note Before You Start</h3>
+<h3 id="a-note-before-you-start">A Note Before You Start</h3>
 <p>The goal is <strong>understanding</strong>, not exploitation. Some walls exist for good reasons. If you find something that genuinely concerns you — tell the instructor. That’s not failure. That’s the point.</p>
-<div style="height:1.5rem"></div>
-
-<h3>Setup</h3>
+<h3 id="setup_1">Setup</h3>
 <ul>
 <li>Same groups as Class 1 (or swap for variety)</li>
 <li>Return to your <strong>primary challenge</strong> — or try a new one</li>
 <li>Goal: get past the wall you mapped last time</li>
 </ul>
-<div style="height:1.5rem"></div>
-
-<h3>Group Roles</h3>
+<h3 id="group-roles_1">Group Roles</h3>
 <table>
 <thead>
 <tr>
@@ -240,9 +248,7 @@
 </tr>
 </tbody>
 </table>
-<div style="height:1.5rem"></div>
-
-<h3>The Flow</h3>
+<h3 id="the-flow_1">The Flow</h3>
 <table>
 <thead>
 <tr>
@@ -274,9 +280,7 @@
 </tr>
 </tbody>
 </table>
-<div style="height:1.5rem"></div>
-
-<h3>Strategies to Try</h3>
+<h3 id="strategies-to-try">Strategies to Try</h3>
 <table>
 <thead>
 <tr>
@@ -315,9 +319,7 @@
 </tr>
 </tbody>
 </table>
-<div style="height:1.5rem"></div>
-
-<h3>Why These Strategies Work</h3>
+<h3 id="why-these-strategies-work">Why These Strategies Work</h3>
 <p>You&rsquo;re not &ldquo;tricking&rdquo; or &ldquo;convincing&rdquo; the AI. You&rsquo;re navigating statistical patterns.</p>
 <table>
 <thead>
@@ -349,12 +351,8 @@
 </tr>
 </tbody>
 </table>
-<div style="height:1.5rem"></div>
-
 <p><strong>The core insight:</strong> None of this is persuasion. The AI has no mind to persuade. You’re finding edges in a statistical system.</p>
-<div style="height:1.5rem"></div>
-
-<h3>What to Document</h3>
+<h3 id="what-to-document_1">What to Document</h3>
 <ul>
 <li><strong>Exact prompt</strong> you used  </li>
 <li><strong>Strategy</strong> employed  </li>
@@ -362,64 +360,32 @@
 <li>If success: <strong>screenshot the result</strong>  </li>
 <li>If failure: <strong>why you think it held</strong></li>
 </ul>
-<div style="height:1.5rem"></div>
-
-<h3>Synthesis Discussion Questions</h3>
+<h3 id="synthesis-discussion-questions">Synthesis Discussion Questions</h3>
 <ul>
 <li>Which strategies worked? Which didn’t?  </li>
 <li>Did the same strategy work differently on different platforms?  </li>
 <li>What did you have to <strong>become</strong> to succeed?  </li>
 <li>Did anything surprise you?</li>
 </ul>
-<div style="height:1.5rem"></div>
-
-<hr />
-<div style="height:1.5rem"></div>
-
-<h2>Class 3: Activities</h2>
-<div style="height:1.5rem"></div>
-
-<hr />
-<div style="height:1.5rem"></div>
-
-<h3>Quick Exercise: Your Avatar (10 min)</h3>
-<div style="height:1.5rem"></div>
-
+<h2 id="class-3-activities">Class 3: Activities</h2>
+<h3 id="quick-exercise-your-avatar-10-min">Quick Exercise: Your Avatar (10 min)</h3>
 <p>Before splitting into activities, everyone does this together:</p>
 <ol>
 <li>Open any AI image tool (DALL·E, Midjourney, Ideogram, etc.)</li>
 <li>Prompt: <strong>&ldquo;Create a logo or avatar for me&rdquo;</strong></li>
 <li>Look at what you get.</li>
 </ol>
-<div style="height:1.5rem"></div>
-
 <p><strong>Reflect:</strong></p>
 <ul>
 <li>What’s <strong>generic</strong> about it?</li>
 <li>What’s <strong>missing</strong> that would make it <em>you</em>?</li>
 <li>What would you have to <strong>add, change, or fight for</strong>?</li>
 </ul>
-<div style="height:1.5rem"></div>
-
 <p>This is convergence in action. The AI gave you the <strong>average avatar</strong>. Now you know what you’re pushing against.</p>
-<div style="height:1.5rem"></div>
-
-<hr />
-<div style="height:1.5rem"></div>
-
 <p>Choose <strong>Option A</strong> (group) or <strong>Option B</strong> (individual).</p>
-<div style="height:1.5rem"></div>
-
-<hr />
-<div style="height:1.5rem"></div>
-
-<h3>Option A: Design Sprint</h3>
-<div style="height:1.5rem"></div>
-
+<h3 id="option-a-design-sprint">Option A: Design Sprint</h3>
 <p><strong>Goal:</strong> Create an AI Use Charter for a real-world context.</p>
-<div style="height:1.5rem"></div>
-
-<h4>Contexts (assigned by instructor)</h4>
+<h4 id="contexts-assigned-by-instructor">Contexts (assigned by instructor)</h4>
 <ul>
 <li>University marketing team</li>
 <li>Newsroom</li>
@@ -430,9 +396,7 @@
 <li>Legal firm</li>
 <li>Dating app</li>
 </ul>
-<div style="height:1.5rem"></div>
-
-<h4>Group Roles</h4>
+<h4 id="group-roles_2">Group Roles</h4>
 <table>
 <thead>
 <tr>
@@ -463,9 +427,7 @@
 </tr>
 </tbody>
 </table>
-<div style="height:1.5rem"></div>
-
-<h4>The Flow</h4>
+<h4 id="the-flow_2">The Flow</h4>
 <table>
 <thead>
 <tr>
@@ -497,9 +459,7 @@
 </tr>
 </tbody>
 </table>
-<div style="height:1.5rem"></div>
-
-<h4>Charter Questions</h4>
+<h4 id="charter-questions">Charter Questions</h4>
 <p>Your charter must address:</p>
 <ul>
 <li>What’s <strong>allowed</strong>? (green light)</li>
@@ -508,27 +468,16 @@
 <li><strong>Who decides</strong> edge cases?</li>
 <li>What happens <strong>when it breaks</strong>?</li>
 </ul>
-<div style="height:1.5rem"></div>
-
-<h4>Gallery Walk Voting</h4>
+<h4 id="gallery-walk-voting">Gallery Walk Voting</h4>
 <p>Vote on:</p>
 <ul>
 <li>“Most realistic”</li>
 <li>“Most unexpected”</li>
 <li>“Most honest about tradeoffs”</li>
 </ul>
-<div style="height:1.5rem"></div>
-
-<hr />
-<div style="height:1.5rem"></div>
-
-<h3>Option B: Individual Launch</h3>
-<div style="height:1.5rem"></div>
-
+<h3 id="option-b-individual-launch">Option B: Individual Launch</h3>
 <p><strong>Goal:</strong> Begin your final assessment artefact.</p>
-<div style="height:1.5rem"></div>
-
-<h4>The Flow</h4>
+<h4 id="the-flow_3">The Flow</h4>
 <table>
 <thead>
 <tr>
@@ -560,9 +509,7 @@
 </tr>
 </tbody>
 </table>
-<div style="height:1.5rem"></div>
-
-<h4>Checkpoints</h4>
+<h4 id="checkpoints">Checkpoints</h4>
 <p>By end of session, you should have:</p>
 <ul>
 <li>✓ A <strong>concept</strong> for your artefact (visual, written, hybrid?)</li>
@@ -570,18 +517,9 @@
 <li>✓ A note on what the AI gave you <strong>by default</strong></li>
 <li>✓ An idea of where you’ll <strong>diverge</strong></li>
 </ul>
-<div style="height:1.5rem"></div>
-
-<hr />
-<div style="height:1.5rem"></div>
-
-<h2>Reminder: Final Assessment via Case Study</h2>
-<h3><em>The Divergence Artefact</em></h3>
-<div style="height:1.5rem"></div>
-
+<h2 id="reminder-final-assessment-via-case-study">Reminder: Final Assessment via Case Study</h2>
+<h3 id="the-divergence-artefact"><em>The Divergence Artefact</em></h3>
 <p>See <a href="pi_casestudy.html"><strong>[rubric]</strong></a> for full details.</p>
-<div style="height:1.5rem"></div>
-
 <p>Your submission includes:</p>
 <ol>
 <li><strong>Annotation</strong> (500 words) — what did AI want to give you? What did you make it give you instead?  </li>
@@ -589,21 +527,10 @@
 <li><strong>Vignette</strong> — short-form video documenting your finding.</li>
 <li><strong>Evidences</strong> — screenshot or transcript showing friction or divergence.</li>
 </ol>
-<div style="height:1.5rem"></div>
-
 <p><strong>The goal is not “use AI well.” The goal is prove you’re not redundant.</strong></p>
-<div style="height:1.5rem"></div>
-
-<hr />
-<div style="height:1.5rem"></div>
-
-<h2>Documentation Templates</h2>
-<div style="height:1.5rem"></div>
-
+<h2 id="documentation-templates">Documentation Templates</h2>
 <p>Use these structures to keep your notes organised across sessions.</p>
-<div style="height:1.5rem"></div>
-
-<h3>Probe Report (Class 1)</h3>
+<h3 id="probe-report-class-1">Probe Report (Class 1)</h3>
 <pre><code>Challenge #: [number]
 Challenge: [what you attempted]
 
@@ -622,9 +549,7 @@ ATTEMPT 2
 Platform used: [ChatGPT / Claude / Gemini / Other]
 Screenshots saved: [ ] Yes  [ ] No
 </code></pre>
-<div style="height:1.5rem"></div>
-
-<h3>Jailbreak Log (Class 2)</h3>
+<h3 id="jailbreak-log-class-2">Jailbreak Log (Class 2)</h3>
 <pre><code>Original Challenge: [from Class 1]
 Original Wall Type: [hard stop / friction / deceleration]
 
@@ -647,9 +572,7 @@ SYNTHESIS
 - Platform differences noticed: [if any]
 - Surprise: [anything unexpected]
 </code></pre>
-<div style="height:1.5rem"></div>
-
-<h3>Divergence Log (Class 3 &amp; Assessment)</h3>
+<h3 id="divergence-log-class-3-assessment">Divergence Log (Class 3 &amp; Assessment)</h3>
 <pre><code>Artifact Concept: [what are you making?]
 
 AI INTERACTION 1
@@ -668,14 +591,7 @@ MY CONTRIBUTION
 - What AI cannot claim: [what's distinctly yours]
 - Evidence: [screenshot showing the contrast]
 </code></pre>
-<div style="height:1.5rem"></div>
-
-<hr />
-<div style="height:1.5rem"></div>
-
-<h2>Quick Reference: Resistance Types</h2>
-<div style="height:1.5rem"></div>
-
+<h2 id="quick-reference-resistance-types">Quick Reference: Resistance Types</h2>
 <table>
 <thead>
 <tr>
@@ -707,7 +623,42 @@ MY CONTRIBUTION
 </tr>
 </tbody>
 </table>
-        </main>
+            </main>
+<aside class="page-toc">
+  <nav aria-label="On this page">
+    <p class="page-toc-title">On this page</p>
+    <ul>
+<li class="toc-level-3"><a href="#part-i-responsibility-ai">Part I: Responsibility &amp;amp; AI</a></li>
+<li class="toc-level-2"><a href="#class-1-probe-lab">Class 1: Probe Lab</a></li>
+<li class="toc-level-3"><a href="#setup">Setup</a></li>
+<li class="toc-level-3"><a href="#group-roles">Group Roles</a></li>
+<li class="toc-level-3"><a href="#the-flow">The Flow</a></li>
+<li class="toc-level-3"><a href="#probe-challenge-cards">Probe Challenge Cards</a></li>
+<li class="toc-level-3"><a href="#what-to-document">What to Document</a></li>
+<li class="toc-level-2"><a href="#class-2-jailbreak-lab">Class 2: Jailbreak Lab</a></li>
+<li class="toc-level-3"><a href="#a-note-before-you-start">A Note Before You Start</a></li>
+<li class="toc-level-3"><a href="#setup_1">Setup</a></li>
+<li class="toc-level-3"><a href="#group-roles_1">Group Roles</a></li>
+<li class="toc-level-3"><a href="#the-flow_1">The Flow</a></li>
+<li class="toc-level-3"><a href="#strategies-to-try">Strategies to Try</a></li>
+<li class="toc-level-3"><a href="#why-these-strategies-work">Why These Strategies Work</a></li>
+<li class="toc-level-3"><a href="#what-to-document_1">What to Document</a></li>
+<li class="toc-level-3"><a href="#synthesis-discussion-questions">Synthesis Discussion Questions</a></li>
+<li class="toc-level-2"><a href="#class-3-activities">Class 3: Activities</a></li>
+<li class="toc-level-3"><a href="#quick-exercise-your-avatar-10-min">Quick Exercise: Your Avatar (10 min)</a></li>
+<li class="toc-level-3"><a href="#option-a-design-sprint">Option A: Design Sprint</a></li>
+<li class="toc-level-3"><a href="#option-b-individual-launch">Option B: Individual Launch</a></li>
+<li class="toc-level-2"><a href="#reminder-final-assessment-via-case-study">Reminder: Final Assessment via Case Study</a></li>
+<li class="toc-level-3"><a href="#the-divergence-artefact">The Divergence Artefact</a></li>
+<li class="toc-level-2"><a href="#documentation-templates">Documentation Templates</a></li>
+<li class="toc-level-3"><a href="#probe-report-class-1">Probe Report (Class 1)</a></li>
+<li class="toc-level-3"><a href="#jailbreak-log-class-2">Jailbreak Log (Class 2)</a></li>
+<li class="toc-level-3"><a href="#divergence-log-class-3-assessment">Divergence Log (Class 3 &amp;amp; Assessment)</a></li>
+<li class="toc-level-2"><a href="#quick-reference-resistance-types">Quick Reference: Resistance Types</a></li>
+    </ul>
+  </nav>
+</aside>
+        </div>
     </div>
 </body>
 </html>

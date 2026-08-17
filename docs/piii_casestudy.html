@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CCAI9012 - Piii Casestudy</title>
     <link rel="stylesheet" href="docs-style.css">
+    <script src="on-this-page.js" defer></script>
 </head>
 <body>
+    <a class="skip-link" href="#content">Skip to content</a>
     <div class="container">
-        <nav id="sidebar">
-            <div class="sidebar-header">
-                <h2>CCAI9012</h2>
-            </div>
+        <nav id="sidebar" aria-label="Course navigation">
+            <div class="sidebar-header"><h2>CCAI9012</h2></div>
             <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="timetable.html">Course Plan</a></li>
@@ -19,193 +19,186 @@
                 <li class="sub-item"><a href="casestudy.html">Case Study</a></li>
                 <li class="sub-item"><a href="course_project.html">Course Project</a></li>
                 <li><a href="reading_material.html">Reading Materials</a></li>
-                <li><a href="pi_responsibility.html">I. Responsibility & AI</a></li>
+                <li><a href="pi_responsibility.html">I. Responsibility &amp; AI</a></li>
                 <li><a href="pii_mechanics.html">II. Mechanics of AI</a></li>
-                <li><a href="piii_data_and_risks.html">III. Datasets & Risks of AI</a></li>
+                <li><a href="piii_data_and_risks.html">III. Datasets &amp; Risks of AI</a></li>
                 <li><a href="installation.html">Installation Guide</a></li>
                 <li><a href="starter_kits/index.html">Starter Kits</a></li>
+                <li class="sub-item"><a href="starter_kits/m1_gan.html">Module 1: Traditional Generative ML</a></li>
+                <li class="sub-item"><a href="starter_kits/m2_llm.html">Module 2: LLM for Structuring Information</a></li>
+                <li class="sub-item"><a href="starter_kits/m3_mm.html">Module 3: Multimodal Reasoning</a></li>
+                <li class="sub-item"><a href="starter_kits/m4_cv.html">Module 4: CV Models</a></li>
+                <li class="sub-item"><a href="starter_kits/m5_bias.html">Module 5: Bias &amp; Interpretability</a></li>
                 <li><a href="datasets.html">Datasets Reference</a></li>
+                <li><a href="api/index.html">API Reference</a></li>
             </ul>
         </nav>
-
-        <main id="content">
-<h1>A.1.3: Case Study #3: Datasets &amp; Risks</h1>
-<h2><em>The Building Blocks &amp; Guardrails</em></h2>
-<div style="height:1.5rem"></div>
-
-<p><em>Note 1: This outline provides guidance specific to Case Study #3, complementing the <strong>general case study rubric</strong></em> <a href="casestudy.html"><strong>[link]</strong></a>.<br />
+        <div class="page-shell">
+            <main id="content">
+<details class="page-toc-mobile">
+  <summary>On this page</summary>
+  <nav aria-label="On this page"><ul>
+<li class="toc-level-2"><a href="#the-building-blocks-guardrails">The Building Blocks &amp;amp; Guardrails</a></li>
+<li class="toc-level-2"><a href="#the-brief">The Brief</a></li>
+<li class="toc-level-3"><a href="#1-what-is-the-domain-specific-task">1. What is the domain-specific task?</a></li>
+<li class="toc-level-3"><a href="#2-what-models-do-you-use-for-the-task">2. What models do you use for the task?</a></li>
+<li class="toc-level-3"><a href="#3-is-the-genai-model-or-llm-powerful-in-fulfilling-the-domain-specific-task">3. Is the GenAI model (or LLM) powerful in fulfilling the domain-specific task?</a></li>
+<li class="toc-level-3"><a href="#4-how-do-you-improve-it">4. How do you improve it?</a></li>
+<li class="toc-level-3"><a href="#what-a-strong-submission-demonstrates">What a Strong Submission Demonstrates</a></li>
+<li class="toc-level-2"><a href="#deliverables">Deliverables</a></li>
+<li class="toc-level-3"><a href="#i-annotation-500-words">i. Annotation (≈500 words)</a></li>
+<li class="toc-level-3"><a href="#ii-the-artefact">ii. The Artefact</a></li>
+<li class="toc-level-3"><a href="#iii-vignette">iii. Vignette</a></li>
+<li class="toc-level-3"><a href="#iv-evidences-optional">iv. Evidences (Optional)</a></li>
+<li class="toc-level-2"><a href="#grading-criteria">Grading Criteria</a></li>
+<li class="toc-level-3"><a href="#in-a-nutshell">In a nutshell</a></li>
+<li class="toc-level-3"><a href="#rubric">Rubric</a></li>
+<li class="toc-level-2"><a href="#submission-deadline">Submission Deadline</a></li>
+<li class="toc-level-2"><a href="#the-standard">The Standard</a></li>
+  </ul></nav>
+</details>
+<h1 id="a13-case-study-3-datasets-risks">A.1.3: Case Study #3: Datasets &amp; Risks</h1>
+<h2 id="the-building-blocks-guardrails"><em>The Building Blocks &amp; Guardrails</em></h2>
+<p><em>Note 1: This outline provides guidance specific to Case Study #3, complementing the <strong>general case study rubric</strong></em> <a href="casestudy.html"><strong>[link]</strong></a>.
 <em>Note 2: See lecture note 3.1 <strong>Datasets &amp; Risks of AI</strong> <a href="piii_data_and_risks.html"><strong>[link]</strong></a> for some illustrative examples of the tasks.</em></p>
-<div style="height:4rem"></div>
-
-<hr style="height: 6px; border: none; background-color: #000;">
-
-<div style="height:1.5rem"></div>
-
-<h2>The Brief</h2>
-<div style="height:1.5rem"></div>
-
+<h2 id="the-brief">The Brief</h2>
 <p>Understand how the training dataset guides the <strong>capability and boundary</strong> of a Generative AI model.</p>
 <p>Investigate how specific training datasets can differentiate the capability of Generative AI (GenAI) models or LLMs.</p>
-<p>You are <strong>NOT training customized Generative AI models.</strong><br />
+<p>You are <strong>NOT training customized Generative AI models.</strong>
 You are <strong>exploring the boundaries of market-ready GenAI/LLMs in specific tasks</strong> (domain knowledge).</p>
-<div style="height:1.0rem"></div>
-
 <p><strong>Examples:</strong></p>
-<p>• It can be asking a pre-trained LLM to generate <strong>&ldquo;realistic&rdquo; nighttime images</strong> based on given input daytime images (download daytime images from the <a href="https://drive.google.com/drive/folders/1m0xVRvCSXI9uI1zXKCypMNZ5-kXnNF4-?usp=sharing"><strong>[link]</strong></a>)</p>
-<p>• Or you can think about <strong>another specific task in your domain of study</strong> that you notice current LLMs on the market cannot handle well, but through very specific prompts or better datasets, they might improve their capabilities.</p>
+<ul>
+<li>
+<p>It can be asking a pre-trained LLM to generate <strong>&ldquo;realistic&rdquo; nighttime images</strong> based on given input daytime images (download daytime images from the <a href="https://drive.google.com/drive/folders/1m0xVRvCSXI9uI1zXKCypMNZ5-kXnNF4-?usp=sharing"><strong>[link]</strong></a>)</p>
+</li>
+<li>
+<p>Or you can think about <strong>another specific task in your domain of study</strong> that you notice current LLMs on the market cannot handle well, but through very specific prompts or better datasets, they might improve their capabilities.</p>
+</li>
+</ul>
 <p>Your analysis should address the following questions.</p>
-<div style="height:0.5rem"></div>
-
-<hr style="height: 3px; border: none; background-color: #000;">
-
-<div style="height:1.0rem"></div>
-
-<h3>1. What is the domain-specific task?</h3>
+<h3 id="1-what-is-the-domain-specific-task">1. What is the domain-specific task?</h3>
 <p>(E.g., creating realistic nighttime street view images from daytime ones instead of generating a fancy rendering or fantasy-like visions)</p>
-<div style="height:1.0rem"></div>
-
-<p>• <strong>Problem / Function</strong></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;– What is the <strong>main objective</strong> of the task?<br />
-&nbsp;&nbsp;&nbsp;&nbsp;– Why is this problem important?<br />
-&nbsp;&nbsp;&nbsp;&nbsp;– Why LLM (or GenAI) might be useful?</p>
-<div style="height:0.5rem"></div>
-
-<hr />
-<div style="height:1.0rem"></div>
-
-<h3>2. What models do you use for the task?</h3>
+<ul>
+<li>
+<p><strong>Problem / Function</strong></p>
+<ul>
+<li>What is the <strong>main objective</strong> of the task?</li>
+<li>Why is this problem important?</li>
+<li>Why LLM (or GenAI) might be useful?</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-what-models-do-you-use-for-the-task">2. What models do you use for the task?</h3>
 <p>(E.g., Do you generate the nighttime images with StableDiffusion, Nano Banana, Midjourney, etc.?)</p>
-<div style="height:1.0rem"></div>
-
-<p>• <strong>Model Dependency</strong></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;– Describe clearly how it <strong>operates</strong>.<br />
-&nbsp;&nbsp;&nbsp;&nbsp;– Explain how the overall task breaks down into <strong>input data preparation, prompt (or algorithmic steps), and output steps</strong>.</p>
-<p>• <strong>Your explanation should show</strong></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;– The <strong>overall workflow</strong><br />
-&nbsp;&nbsp;&nbsp;&nbsp;– The <strong>specific model&rsquo;s mechanism</strong> you are leveraging (E.g., if you are using StableDiffusion, explain how the Diffusion architecture works)<br />
-&nbsp;&nbsp;&nbsp;&nbsp;– The full <strong>Inputs → transformations → outputs link</strong></p>
-<div style="height:0.5rem"></div>
-
-<hr />
-<div style="height:1.0rem"></div>
-
-<h3>3. Is the GenAI model (or LLM) powerful in fulfilling the domain-specific task?</h3>
+<ul>
+<li>
+<p><strong>Model Dependency</strong></p>
+<ul>
+<li>Describe clearly how it <strong>operates</strong>.</li>
+<li>Explain how the overall task breaks down into <strong>input data preparation, prompt (or algorithmic steps), and output steps</strong>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Your explanation should show</strong></p>
+<ul>
+<li>The <strong>overall workflow</strong></li>
+<li>The <strong>specific model&rsquo;s mechanism</strong> you are leveraging (E.g., if you are using StableDiffusion, explain how the Diffusion architecture works)</li>
+<li>The full <strong>Inputs → transformations → outputs link</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="3-is-the-genai-model-or-llm-powerful-in-fulfilling-the-domain-specific-task">3. Is the GenAI model (or LLM) powerful in fulfilling the domain-specific task?</h3>
 <p>(E.g., mimicking a realistic nighttime urban environment?)</p>
-<div style="height:1.0rem"></div>
-
-<p>• <strong>Capabilities</strong></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;– What strengths or behaviors does the model enable?</p>
-<p>• <strong>Limitations</strong></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;– What problems or dysfunctionality do you spot/diagnose from the pre-trained model?</p>
-<div style="height:0.5rem"></div>
-
-<hr />
-<div style="height:1.0rem"></div>
-
-<h3>4. How do you improve it?</h3>
-<div style="height:1.0rem"></div>
-
-<p>• <strong>Causal reasoning</strong></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;– Explain how training dataset quality, and/or prompt engineering might (or might not) improve the model&rsquo;s ability for the domain-specific task.</p>
-<p>• <strong>Comparison</strong></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;– Where helpful, compare the <strong>&ldquo;initial results&rdquo;</strong> to an <strong>&ldquo;improved result&rdquo;</strong> from an alternative model, or an improved prompt, or feeding in specific training data.</p>
+<ul>
+<li>
+<p><strong>Capabilities</strong></p>
+<ul>
+<li>What strengths or behaviors does the model enable?</li>
+</ul>
+</li>
+<li>
+<p><strong>Limitations</strong></p>
+<ul>
+<li>What problems or dysfunctionality do you spot/diagnose from the pre-trained model?</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-how-do-you-improve-it">4. How do you improve it?</h3>
+<ul>
+<li>
+<p><strong>Causal reasoning</strong></p>
+<ul>
+<li>Explain how training dataset quality, and/or prompt engineering might (or might not) improve the model&rsquo;s ability for the domain-specific task.</li>
+</ul>
+</li>
+<li>
+<p><strong>Comparison</strong></p>
+<ul>
+<li>Where helpful, compare the <strong>&ldquo;initial results&rdquo;</strong> to an <strong>&ldquo;improved result&rdquo;</strong> from an alternative model, or an improved prompt, or feeding in specific training data.</li>
+</ul>
+</li>
+</ul>
 <p>Your analysis should reveal <strong>one key insight</strong> about how the domain-specific training dataset/prompt/harness reshapes model performance.</p>
-<div style="height:1.0rem"></div>
-
-<hr style="height: 3px; border: none; background-color: #000;">
-
-<div style="height:1.0rem"></div>
-
-<h3>What a Strong Submission Demonstrates</h3>
-<div style="height:1.0rem"></div>
-
+<h3 id="what-a-strong-submission-demonstrates">What a Strong Submission Demonstrates</h3>
 <p>A strong submission will:</p>
 <ul>
-<li>Isolate the role of the <strong>training dataset quality</strong> from the mechanism clearly  </li>
-<li>Diagram the <strong>overall workflow of the model</strong>  </li>
-<li>Zoom into the <strong>selected module</strong> (training dataset/prompt/etc)  </li>
-<li>Identify <strong>inputs → transformations → outputs</strong>  </li>
+<li>Isolate the role of the <strong>training dataset quality</strong> from the mechanism clearly</li>
+<li>Diagram the <strong>overall workflow of the model</strong></li>
+<li>Zoom into the <strong>selected module</strong> (training dataset/prompt/etc)</li>
+<li>Identify <strong>inputs → transformations → outputs</strong></li>
 <li>Explain how the <strong>training dataset matters to behavioral outcomes</strong></li>
 </ul>
 <p>Your writing should demonstrate <strong>training dataset engineering thinking or prompt engineering thinking</strong>.</p>
-<div style="height:1.5rem"></div>
-
-<hr style="height: 3px; border: none; background-color: #000;">
-
-<div style="height:1.5rem"></div>
-
-<h2>Deliverables</h2>
-<div style="height:1.5rem"></div>
-
+<h2 id="deliverables">Deliverables</h2>
 <p>Your submission must include <strong>four parts</strong>.</p>
-<div style="height:0.5rem"></div>
-
-<hr style="height: 3px; border: none; background-color: #000;">
-
-<div style="height:1.0rem"></div>
-
-<h3>i. Annotation (≈500 words)</h3>
-<div style="height:1.0rem"></div>
-
+<h3 id="i-annotation-500-words">i. Annotation (≈500 words)</h3>
 <p>Provide a short written annotation accompanying your case study.</p>
-<p>• <strong>Title</strong><br />
-&nbsp;&nbsp;&nbsp;&nbsp;– A clear title identifying the system or mechanism studied.</p>
-<p>• <strong>Caption / Description</strong><br />
-&nbsp;&nbsp;&nbsp;&nbsp;– A brief written explanation summarising the focus of your case study.</p>
-<div style="height:0.5rem"></div>
-
-<hr style="height: 3px; border: none; background-color: #000;">
-
-<div style="height:1.0rem"></div>
-
-<h3>ii. The Artefact</h3>
-<div style="height:1.0rem"></div>
-
+<ul>
+<li>
+<p><strong>Title</strong></p>
+<ul>
+<li>A clear title identifying the system or mechanism studied.</li>
+</ul>
+</li>
+<li>
+<p><strong>Caption / Description</strong></p>
+<ul>
+<li>A brief written explanation summarising the focus of your case study.</li>
+</ul>
+</li>
+</ul>
+<h3 id="ii-the-artefact">ii. The Artefact</h3>
 <p>Your artefact consists of <strong>two components</strong>:</p>
-<p>• <strong>Supporting Explanation</strong> — contextual material that frames the domain specific task you explore<br />
-• <strong>Input → Model → Output Representation</strong> — the core explanation showing how the whole input-output flow operates.</p>
-<div style="height:1.0rem"></div>
-
-<hr />
-<div style="height:1.0rem"></div>
-
-<h3>iii. Vignette</h3>
-<div style="height:1.0rem"></div>
-
+<ul>
+<li><strong>Supporting Explanation</strong> — contextual material that frames the domain specific task you explore</li>
+<li><strong>Input → Model → Output Representation</strong> — the core explanation showing how the whole input-output flow operates.</li>
+</ul>
+<h3 id="iii-vignette">iii. Vignette</h3>
 <p>The vignette is a <strong>short-form video presentation</strong> summarising your case study.</p>
-<p>• Duration: <strong>approximately 60 seconds</strong></p>
+<ul>
+<li>Duration: <strong>approximately 60 seconds</strong></li>
+</ul>
 <p>Your video should clearly communicate:</p>
-<p>• The <strong>GenAI or LLM model studied</strong><br />
-• The <strong>domain-specific task you investigated</strong><br />
-• Your <strong>key insight about how the training dataset or prompt reshapes AI model behaviour</strong></p>
-<div style="height:1.0rem"></div>
-
-<hr />
-<div style="height:1.0rem"></div>
-
-<h3>iv. Evidences (Optional)</h3>
-<div style="height:1.0rem"></div>
-
+<ul>
+<li>The <strong>GenAI or LLM model studied</strong></li>
+<li>The <strong>domain-specific task you investigated</strong></li>
+<li>Your <strong>key insight about how the training dataset or prompt reshapes AI model behaviour</strong></li>
+</ul>
+<h3 id="iv-evidences-optional">iv. Evidences (Optional)</h3>
 <p>You may include <strong>supplementary materials in an appendix</strong>, such as:</p>
-<p>• Code snippets<br />
-• Parameter sweeps<br />
-• Prompt comparisons<br />
-• Additional diagrams or tables<br />
-• Experimental results</p>
-<div style="height:1.5rem"></div>
-
-<hr style="height: 3px; border: none; background-color: #000;">
-
-<div style="height:1.5rem"></div>
-
-<h2>Grading Criteria</h2>
-<div style="height:1.0rem"></div>
-
-<h3>In a nutshell</h3>
+<ul>
+<li>Code snippets</li>
+<li>Parameter sweeps</li>
+<li>Prompt comparisons</li>
+<li>Additional diagrams or tables</li>
+<li>Experimental results</li>
+</ul>
+<h2 id="grading-criteria">Grading Criteria</h2>
+<h3 id="in-a-nutshell">In a nutshell</h3>
 <p><strong>We are not grading:</strong></p>
 <ul>
-<li>Advanced mathematics  </li>
-<li>Sophisticated coding  </li>
+<li>Advanced mathematics</li>
+<li>Sophisticated coding</li>
 <li>Exhaustive technical coverage</li>
 </ul>
 <p><strong>We are grading:</strong></p>
@@ -239,7 +232,7 @@ You are <strong>exploring the boundaries of market-ready GenAI/LLMs in specific 
 </tr>
 </tbody>
 </table>
-<h3>Rubric</h3>
+<h3 id="rubric">Rubric</h3>
 <table>
 <thead>
 <tr>
@@ -282,37 +275,41 @@ You are <strong>exploring the boundaries of market-ready GenAI/LLMs in specific 
 </tr>
 </tbody>
 </table>
-<div style="height:1.5rem"></div>
-
-<hr style="height: 3px; border: none; background-color: #000;">
-
-<div style="height:1.5rem"></div>
-
-<h2>Submission Deadline</h2>
-<div style="height:1.0rem"></div>
-
+<h2 id="submission-deadline">Submission Deadline</h2>
 <p>Original: <strong>2026.04.29 00:00</strong></p>
-<div style="height:1.5rem"></div>
-
-<hr style="height: 3px; border: none; background-color: #000;">
-
-<div style="height:1.5rem"></div>
-
-<h2>The Standard</h2>
-<div style="height:1.0rem"></div>
-
-<p>The goal is not to <strong>describe AI</strong>.<br />
-The goal is to <strong>understand how it works</strong>.<br />
-Do not remain at the surface of outputs.<br />
-Demonstrate that you can think in <strong>mechanisms, modules, and pipelines</strong>.<br />
-Don&rsquo;t just use AI.<br />
+<h2 id="the-standard">The Standard</h2>
+<p>The goal is not to <strong>describe AI</strong>.
+The goal is to <strong>understand how it works</strong>.
+Do not remain at the surface of outputs.
+Demonstrate that you can think in <strong>mechanisms, modules, and pipelines</strong>.
+Don&rsquo;t just use AI.
 <strong>Explain it.</strong></p>
-<div style="height:1.5rem"></div>
-
-<hr style="height: 3px; border: none; background-color: #000;">
-
-<div style="height:1.5rem"></div>
-        </main>
+            </main>
+<aside class="page-toc">
+  <nav aria-label="On this page">
+    <p class="page-toc-title">On this page</p>
+    <ul>
+<li class="toc-level-2"><a href="#the-building-blocks-guardrails">The Building Blocks &amp;amp; Guardrails</a></li>
+<li class="toc-level-2"><a href="#the-brief">The Brief</a></li>
+<li class="toc-level-3"><a href="#1-what-is-the-domain-specific-task">1. What is the domain-specific task?</a></li>
+<li class="toc-level-3"><a href="#2-what-models-do-you-use-for-the-task">2. What models do you use for the task?</a></li>
+<li class="toc-level-3"><a href="#3-is-the-genai-model-or-llm-powerful-in-fulfilling-the-domain-specific-task">3. Is the GenAI model (or LLM) powerful in fulfilling the domain-specific task?</a></li>
+<li class="toc-level-3"><a href="#4-how-do-you-improve-it">4. How do you improve it?</a></li>
+<li class="toc-level-3"><a href="#what-a-strong-submission-demonstrates">What a Strong Submission Demonstrates</a></li>
+<li class="toc-level-2"><a href="#deliverables">Deliverables</a></li>
+<li class="toc-level-3"><a href="#i-annotation-500-words">i. Annotation (≈500 words)</a></li>
+<li class="toc-level-3"><a href="#ii-the-artefact">ii. The Artefact</a></li>
+<li class="toc-level-3"><a href="#iii-vignette">iii. Vignette</a></li>
+<li class="toc-level-3"><a href="#iv-evidences-optional">iv. Evidences (Optional)</a></li>
+<li class="toc-level-2"><a href="#grading-criteria">Grading Criteria</a></li>
+<li class="toc-level-3"><a href="#in-a-nutshell">In a nutshell</a></li>
+<li class="toc-level-3"><a href="#rubric">Rubric</a></li>
+<li class="toc-level-2"><a href="#submission-deadline">Submission Deadline</a></li>
+<li class="toc-level-2"><a href="#the-standard">The Standard</a></li>
+    </ul>
+  </nav>
+</aside>
+        </div>
     </div>
 </body>
 </html>

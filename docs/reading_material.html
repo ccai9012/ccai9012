@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CCAI9012 - Reading Materials</title>
     <link rel="stylesheet" href="docs-style.css">
+    <script src="on-this-page.js" defer></script>
 </head>
 <body>
+    <a class="skip-link" href="#content">Skip to content</a>
     <div class="container">
-        <nav id="sidebar">
-            <div class="sidebar-header">
-                <h2>CCAI9012</h2>
-            </div>
+        <nav id="sidebar" aria-label="Course navigation">
+            <div class="sidebar-header"><h2>CCAI9012</h2></div>
             <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="timetable.html">Course Plan</a></li>
@@ -19,25 +19,35 @@
                 <li class="sub-item"><a href="casestudy.html">Case Study</a></li>
                 <li class="sub-item"><a href="course_project.html">Course Project</a></li>
                 <li><a href="reading_material.html" class="active">Reading Materials</a></li>
-                <li><a href="pi_responsibility.html">I. Responsibility & AI</a></li>
+                <li><a href="pi_responsibility.html">I. Responsibility &amp; AI</a></li>
                 <li><a href="pii_mechanics.html">II. Mechanics of AI</a></li>
-                <li><a href="piii_data_and_risks.html">III. Datasets & Risks of AI</a></li>
+                <li><a href="piii_data_and_risks.html">III. Datasets &amp; Risks of AI</a></li>
                 <li><a href="installation.html">Installation Guide</a></li>
                 <li><a href="starter_kits/index.html">Starter Kits</a></li>
+                <li class="sub-item"><a href="starter_kits/m1_gan.html">Module 1: Traditional Generative ML</a></li>
+                <li class="sub-item"><a href="starter_kits/m2_llm.html">Module 2: LLM for Structuring Information</a></li>
+                <li class="sub-item"><a href="starter_kits/m3_mm.html">Module 3: Multimodal Reasoning</a></li>
+                <li class="sub-item"><a href="starter_kits/m4_cv.html">Module 4: CV Models</a></li>
+                <li class="sub-item"><a href="starter_kits/m5_bias.html">Module 5: Bias &amp; Interpretability</a></li>
                 <li><a href="datasets.html">Datasets Reference</a></li>
+                <li><a href="api/index.html">API Reference</a></li>
             </ul>
         </nav>
-
-        <main id="content">
-<h1>Reading Material</h1>
-<div style="height:1.5rem"></div>
-
-<hr />
-<div style="height:1.5rem"></div>
-
-<h2>General</h2>
-<div style="height:1.5rem"></div>
-
+        <div class="page-shell">
+            <main id="content">
+<details class="page-toc-mobile">
+  <summary>On this page</summary>
+  <nav aria-label="On this page"><ul>
+<li class="toc-level-2"><a href="#general">General</a></li>
+<li class="toc-level-2"><a href="#part-i-responsiblity-ai">Part I: Responsiblity &amp;amp; AI</a></li>
+<li class="toc-level-2"><a href="#part-ii-mechanics-of-ai">Part II: Mechanics of AI</a></li>
+<li class="toc-level-2"><a href="#part-iii-datasets-risks-of-ai">Part III: Datasets &amp;amp; Risks of AI</a></li>
+<li class="toc-level-3"><a href="#datasets-of-ai">Datasets of AI:</a></li>
+<li class="toc-level-3"><a href="#risks-of-ai">Risks of AI:</a></li>
+  </ul></nav>
+</details>
+<h1 id="reading-material">Reading Material</h1>
+<h2 id="general">General</h2>
 <ul>
 <li>
 <p>The Economist. (2024, July 16). <em>A short history of AI</em>.<br />
@@ -48,12 +58,7 @@ Source Article: <a href="https://www.economist.com/schools-brief/2024/07/16/a-sh
 Source Article: <a href="https://dl.acm.org/doi/10.1145/3442188.3445922"><strong>[link]</strong></a> | File Upload: <a href="https://github.com/ccai9012/ccai9012/raw/main/reading/general/bender-stochastic-parrots.pdf"><strong>[link]</strong></a>  </p>
 </li>
 </ul>
-<div style="height:1.5rem"></div>
-
-<hr />
-<div style="height:1.5rem"></div>
-
-<h2>Part I: Responsiblity &amp; AI</h2>
+<h2 id="part-i-responsiblity-ai">Part I: Responsiblity &amp; AI</h2>
 <ul>
 <li>
 <p>Murrell, A. (2023). <em>The Age of Average</em>. Source Article: <a href="https://www.alexmurrell.co.uk/articles/the-age-of-average"><strong>[link]</strong></a> </p>
@@ -63,12 +68,7 @@ Source Article: <a href="https://dl.acm.org/doi/10.1145/3442188.3445922"><strong
 Source Article: <a href="https://www.newyorker.com/tech/annals-of-technology/chatgpt-is-a-blurry-jpeg-of-the-web"><strong>[link]</strong></a> | File Upload: <a href="https://github.com/ccai9012/ccai9012/raw/main/reading/p1/chiang-gpt-blurry-jpeg.pdf"><strong>[link]</strong></a>  </p>
 </li>
 </ul>
-<div style="height:1.5rem"></div>
-
-<hr />
-<div style="height:1.5rem"></div>
-
-<h2>Part II: Mechanics of AI</h2>
+<h2 id="part-ii-mechanics-of-ai">Part II: Mechanics of AI</h2>
 <ul>
 <li>LeCun, Y., Bengio, Y., &amp; Hinton, G. (2015). <em>Deep Learning</em>. <em>Nature</em>, 521, 436–444.<br />
   Source Article: <a href="https://www.nature.com/articles/nature14539"><strong>[link]</strong></a> | File Upload: <a href="https://github.com/ccai9012/ccai9012/raw/main/reading/p2/nature14539.pdf"><strong>[link]</strong></a>. </li>
@@ -83,14 +83,9 @@ Source Article: <a href="https://www.newyorker.com/tech/annals-of-technology/cha
 - **Week 8: Randomness of AI (LLM)**  
   Floridi, L. and Chiriatti, M. (2020) ‘GPT-3: Its Nature, Scope, Limits, and Consequences’, *Minds and Machines*, 30(4), pp. 681–694. Available at: https://doi.org/10.1007/s11023-020-09548-1. -->
 
-<div style="height:1.5rem"></div>
-
-<hr />
-<div style="height:1.5rem"></div>
-
-<h2>Part III: Datasets &amp; Risks of AI</h2>
+<h2 id="part-iii-datasets-risks-of-ai">Part III: Datasets &amp; Risks of AI</h2>
 <p>Please view your reading material <a href="https://drive.google.com/drive/folders/1mmM4n6IR7e9HXRLq_WI7uPWG3NlEgGkv?usp=sharing"><strong>here</strong></a>.</p>
-<h3>Datasets of AI:</h3>
+<h3 id="datasets-of-ai">Datasets of AI:</h3>
 <ul>
 <li>
 <p>Kaplan, J., McCandlish, S., Henighan, T., Brown, T. B., Chess, B., Child, R., Gray, S., Radford, A., Wu, J., &amp; Amodei, D. (2020). <em>Scaling Laws for Neural Language Models</em> (arXiv:2001.08361). arXiv. https://doi.org/10.48550/arXiv.2001.08361</p>
@@ -99,7 +94,7 @@ Source Article: <a href="https://www.newyorker.com/tech/annals-of-technology/cha
 <p>Shumailov, I., Shumaylov, Z., Zhao, Y., Papernot, N., Anderson, R., &amp; Gal, Y. (2024). AI models collapse when trained on recursively generated data. <em>Nature</em>, 631(8022), 755–759. https://doi.org/10.1038/s41586-024-07566-y</p>
 </li>
 </ul>
-<h3>Risks of AI:</h3>
+<h3 id="risks-of-ai">Risks of AI:</h3>
 <ul>
 <li>Kosmyna, N., Hauptmann, E., Yuan, Y. T., Situ, J., Liao, X.-H., Beresnitzky, A. V., Braunstein, I., &amp; Maes, P. (2025). <em>Your Brain on ChatGPT: Accumulation of Cognitive Debt when Using an AI Assistant for Essay Writing Task</em> (arXiv:2506.08872). arXiv. https://doi.org/10.48550/arXiv.2506.08872</li>
 </ul>
@@ -117,7 +112,21 @@ Source Article: <a href="https://www.newyorker.com/tech/annals-of-technology/cha
   Buolamwini, J. and Gebru, T. (2018) ‘Gender Shades: Intersectional Accuracy Disparities in Commercial Gender Classification’, in *Proceedings of the 1st Conference on Fairness, Accountability and Transparency*. PMLR, pp. 77–91. Available at: https://proceedings.mlr.press/v81/buolamwini18a.html
 
  -->
-        </main>
+            </main>
+<aside class="page-toc">
+  <nav aria-label="On this page">
+    <p class="page-toc-title">On this page</p>
+    <ul>
+<li class="toc-level-2"><a href="#general">General</a></li>
+<li class="toc-level-2"><a href="#part-i-responsiblity-ai">Part I: Responsiblity &amp;amp; AI</a></li>
+<li class="toc-level-2"><a href="#part-ii-mechanics-of-ai">Part II: Mechanics of AI</a></li>
+<li class="toc-level-2"><a href="#part-iii-datasets-risks-of-ai">Part III: Datasets &amp;amp; Risks of AI</a></li>
+<li class="toc-level-3"><a href="#datasets-of-ai">Datasets of AI:</a></li>
+<li class="toc-level-3"><a href="#risks-of-ai">Risks of AI:</a></li>
+    </ul>
+  </nav>
+</aside>
+        </div>
     </div>
 </body>
 </html>

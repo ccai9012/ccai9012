@@ -1,6 +1,5 @@
 # A.2: Course Project
 
-<div style="height:1.5rem"></div> 
 
 The course project is a **team-based, design-oriented assignment** in which students develop, prototype, and analyse an AI-assisted proposal addressing a concrete real-world problem. In contrast to the case studies, which focus on analysing existing systems or practices, the course project emphasises **making**, evaluation through use, and critical reflection through implementation.
 
@@ -8,11 +7,8 @@ Projects may take analytical, tool-based, or design-oriented forms, but all must
 
 The project is completed in teams of **4–6 students**. Tutorials provide structured opportunities for skills development, feedback, and team formation.
 
-<div style="height:4.0rem"></div> 
 
-<hr style="height: 2px; border: none; background-color: #000;">
 
-<div style="height:1.5rem"></div> 
 
 ## Project Structure & Deliverables
 
@@ -29,15 +25,11 @@ The course project consists of the following assessed components:
 - **Individual Reflection**: An individually assessed reflective statement documenting contributions and learning. Requirements are specified in the course outline.
 - **Peer Assessment**: Advisory peer feedback on group work and individual contributions. Further details are provided in the course outline.
 
-<div style="height:4.0rem"></div> 
 
-<hr style="height: 2px; border: none; background-color: #000;">
 
-<div style="height:1.5rem"></div> 
 
 ## Milestones
 
-<div style="height:1.0rem"></div> 
 
 | Item | Description | Date | Individual (%) | Group (%) |
 |------|-------------|------|----------------|-----------|
@@ -50,15 +42,11 @@ The course project consists of the following assessed components:
 | **Peer Assessment** | Advisory peer feedback on group process and individual contributions, used to inform moderation where appropriate. | 2026.05.06 | – | – |
 
 
-<div style="height:4.0rem"></div> 
 
-<hr style="height: 2px; border: none; background-color: #000;">
 
-<div style="height:1.5rem"></div> 
 
 ## Learning Focus
 
-<div style="height:1.0rem"></div> 
 
 Through the course project, students are expected to demonstrate the ability to:
 
@@ -71,19 +59,14 @@ Through the course project, students are expected to demonstrate the ability to:
 The course project serves as the **capstone assignment** for the course, integrating technical understanding, critical judgement, and professional communication into a single, coherent body of work.
 
 
-<div style="height:4.0rem"></div>  
 
-<hr style="height: 2px; border: none; background-color: #000;">
 
-<div style="height:1.5rem"></div> 
 
 ## Possible Directions
 
-<div style="height:2.0rem"></div> 
 
 ### Methodology
 
-<div style="height:1.0rem"></div> 
 
 CCAI 9012 encourages students to conduct their Course Project using programming, enabling systematic data collection and analysis, and unlocking scalable opportunities that would be cumbersome—if not intractable—to execute and control via ChatBot/UI-based GenAI alone.
 
@@ -99,11 +82,9 @@ For students interested in developing programming-based solutions, a number of s
 
 _Note: The documentation for starter kits is being actively expanded and refined._
 
-<div style="height:2.0rem"></div> 
 
 ### Thinking Algorithmically 
 
-<div style="height:1.0rem"></div> 
 
 Whether you are generating data manually or programmatically, it is helpful to break down your problem and methods into modular mappings, such as:
 
@@ -134,11 +115,9 @@ Similarly, to study whether multimodal, image-generation–enabled LLMs exhibit 
 
 The key is to think in terms of these modular transformations and then compose them into end-to-end pipelines tailored to your research question.
 
-<div style="height:2.0rem"></div> 
 
 ### Example Ideas
 
-<div style="height:1.0rem"></div> 
 
 Listed below are example directions (analysing AI, using AI for analysis, developing AI‑powered tools) are illustrative rather than exhaustive.  Note that many other directions are also possible.
 
@@ -153,4 +132,3 @@ Listed below are example directions (analysing AI, using AI for analysis, develo
 - **Developing AI‑Powered Tools**
     - **Problem Statement**: In a first-year visual communication course, tutors must give feedback on many poster designs in short studio sessions. Time pressure and differing critique styles lead to inconsistent, often vague comments, leaving students unsure how to improve or how their work maps to assessment criteria. This makes it difficult for students to understand expectations and track their progress.
     - **Possible Project Response**: Prototype an AI-assisted feedback tool that helps tutors quickly generate structured, criteria-based comments on poster designs.
-

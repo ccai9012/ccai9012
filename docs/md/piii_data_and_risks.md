@@ -5,11 +5,8 @@
 ## _Building Blocks & Guardrails of AI_
 ### _A 2-Class Module on Critical Principles for Training and Using AI Models_
 
-<div style="height:1.5rem"></div>
 
----
 
-<div style="height:1.5rem"></div>
 
 ## What This Module Is
 
@@ -30,11 +27,8 @@ Once you see the training process & potential risks, you can begin to reason abo
 - How do we balance model and dataset size
 - And how should we use AI critically
 
-<div style="height:1.5rem"></div>
 
----
 
-<div style="height:1.5rem"></div>
 
 ## The Arc
 
@@ -43,11 +37,8 @@ Once you see the training process & potential risks, you can begin to reason abo
 | 1 | [Datasets of AI](https://drive.google.com/file/d/1KkBdUrgzwfMJFp8sNloNrgU7kPoPM3NN/view?usp=sharing) | We dive into the training process of AI models | Scaling laws of AI, training data processing, and evaluating data quality |
 | 2 | [Risks of AI](https://drive.google.com/file/d/1GhbNKIpVr_AkjbrRZWDlbI7Xm5Hu07NZ/view?usp=sharing) | We examine the multifaceted impacts and risks of AI | Ethics and risks of AI in business, socioeconomics, environments, and most importantly, on human beings |
 
-<div style="height:1.5rem"></div>
 
----
 
-<div style="height:1.5rem"></div>
 
 ## What We're Asking You to Do
 
@@ -67,11 +58,8 @@ Your task is to:
 3. **Reflect the risks.**  
    Criticize how AI models may create concerns and threats to society, the environment, and humanity.
 
-<div style="height:1.5rem"></div>
 
----
 
-<div style="height:1.5rem"></div>
 
 ## Learning Outcomes
 
@@ -83,11 +71,8 @@ By the end of this module, you will be able to:
 4. Analyze how training inputs change AI model behavior
 5. Reflect on how datasets, ethics, and risks interact
 
-<div style="height:1.5rem"></div>
 
----
 
-<div style="height:1.5rem"></div>
 
 ## How You'll Be Assessed
 
@@ -102,11 +87,8 @@ You will analyze a pre-trained GenAI/LLM system and show:
 **Full requirements and deliverables are provided in the A1.3 assignment-specific outline [link](piii_casestudy.html).**  
 This should be read alongside the general case study rubric [link](casestudy.html).
 
-<div style="height:1.5rem"></div>
 
----
 
-<div style="height:1.5rem"></div>
 
 ## Resources
 
@@ -122,13 +104,9 @@ This should be read alongside the general case study rubric [link](casestudy.htm
 
 - Kosmyna, N., Hauptmann, E., Yuan, Y. T., Situ, J., Liao, X.-H., Beresnitzky, A. V., Braunstein, I., & Maes, P. (2025). _Your Brain on ChatGPT: Accumulation of Cognitive Debt when Using an AI Assistant for Essay Writing Task_ (arXiv:2506.08872). arXiv. https://doi.org/10.48550/arXiv.2506.08872
 
-<div style="height:1.5rem"></div>
 
----
 
-<div style="height:1.5rem"></div>
 
 ## The One-Liner
 
 > "The anatomy of data is the building blocks of all AI models: garbage data in, garbage model out."
-

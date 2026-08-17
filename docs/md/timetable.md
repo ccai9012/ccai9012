@@ -1,30 +1,22 @@
 
 # Course Plan
 
-<div style="height:1.5rem"></div>
 
 The course combines a weekly **plenary lecture** with a programme of **small-group tutorials**. Lectures establish shared concepts, frameworks, and case material, while tutorials provide structured, hands-on engagement with both technical and professional competencies. Together, they are designed to support progressive skill development across the semester.
 
-<div style="height:1.5rem"></div>
 
----
 
-<div style="height:1.5rem"></div>
 
 ## Lectures
 
 The overall **sequencing of lectures, tutorials, and assessment milestones** is outlined in the **course plan** [**[link]**](https://docs.google.com/spreadsheets/d/1-a0Wgr8zA2lIl8lOQ-Hn6dda7kueW6XznnyS7PzHf-0/edit?usp=sharing), which indicates when key topics are introduced and how tutorial activities align with assessed work.
 
-<div style="height:1.5rem"></div>
 
----
 
-<div style="height:1.5rem"></div>
 
 
 ## Tutorials
 
-<div style="height:1.5rem"></div>
 
 ### Structure and Requirements
 
@@ -86,7 +78,6 @@ Attendance beyond the requirements specified above is not mandatory. However, su
 
 Please view the current schedule of planned tutorials [**[here]**](https://docs.google.com/spreadsheets/d/1-a0Wgr8zA2lIl8lOQ-Hn6dda7kueW6XznnyS7PzHf-0/edit?usp=sharing).
 
-<div style="height:1.0rem"></div>
 
 #### Note ####
 Although there is a minimum attendance requirement for both streams of tutorials:  
@@ -94,13 +85,11 @@ Although there is a minimum attendance requirement for both streams of tutorials
 - The total number of modules required for minimum completion is fewer than the total number of weeks in the course.
 - The flexible structure allows students to attend and complete one tutorial per week, enabling them to tailor their engagement throughout the semester.
 
-<div style="height:1.5rem"></div>
 
 ### Tutorial Timing & Registration
 
 Tutorial places are allocated through an online registration system [**[link]**](https://docs.google.com/spreadsheets/d/1jbZjv_6N-_M5EDLRxXp56FYtf4_CbxLQvfy51GavZZ4/edit?gid=0#gid=0). Registration typically opens on the **Friday preceding each tutorial week**, allowing students to select sessions aligned with their needs and availability.
 
-<div style="height:1.5rem"></div>
 
 ### Tutorial Outlines
 

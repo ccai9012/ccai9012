@@ -3,11 +3,8 @@
 ## _*Make AI work for you*_   
 _A 4-Class Module on AI Systems, Mechanisms, and Behaviour_
 
-<div style="height:1.5rem"></div>
 
----
 
-<div style="height:1.5rem"></div>
 
 ## What This Module Is
 
@@ -29,15 +26,11 @@ Once you see the structure, you can begin to reason about:
 - where it fails  
 - and why.
 
-<div style="height:1.5rem"></div>
 
----
 
-<div style="height:1.5rem"></div>
 
 ## The Arc
 
-<div style="height:1.5rem"></div>
 
 
 | Class | Title | What Happens | What You Learn |
@@ -48,11 +41,8 @@ Once you see the structure, you can begin to reason about:
 | 4 | [Wrapping Up](https://docs.google.com/presentation/d/1fTpgSs07Ab1cPtAfwJwL6r43G0rNy98e/edit?usp=sharing&ouid=110843421025662715021&rtpof=true&sd=true) | We review past contents and supported course project development. | Recap of key concepts related to the mechanisms of ML/AI. | 
 
 
-<div style="height:1.5rem"></div>
 
----
 
-<div style="height:1.5rem"></div>
 
 ## What We're Asking You to Do
 
@@ -73,11 +63,8 @@ Your task is to:
 3. **Explain the behaviour.**  
    Show how structural design decisions create strengths, limits, and failure patterns.
 
-<div style="height:1.5rem"></div>
 
----
 
-<div style="height:1.5rem"></div>
 
 ## Learning Outcomes
 
@@ -89,15 +76,11 @@ By the end of this module, you will be able to:
 4. Reason about how **mechanisms, datasets, and responsibility considerations interact**
 5. Communicate system behaviour through **clear diagrams and structured explanation**
 
-<div style="height:1.5rem"></div>
 
----
 
-<div style="height:1.5rem"></div>
 
 ## How You’ll Be Assessed
 
-<div style="height:1.5rem"></div>
 
 This module is assessed through **A1.2 — Case Study 2: The Revealing Mechanism**, an individual case study focused on explaining how a specific AI mechanism works.
 
@@ -111,23 +94,16 @@ Full requirements and deliverables are provided in the **assignment-specific out
 
 This should be read alongside the **general case study rubric** [**[link]**](casestudy.html).
 
-<div style="height:1.5rem"></div>
 
----
 
-<div style="height:1.5rem"></div>
 
 ## Resources
 
-<div style="height:1.5rem"></div>
 
 - **Reading Material**: see _Part II: Mechanics of AI_ under [**[link]**](reading_material.html).
 
-<div style="height:1.5rem"></div>
 
----
 
-<div style="height:1.5rem"></div>
 
 
 ## The One-Liner

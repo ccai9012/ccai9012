@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CCAI9012 - Pii Examples</title>
     <link rel="stylesheet" href="docs-style.css">
+    <script src="on-this-page.js" defer></script>
 </head>
 <body>
+    <a class="skip-link" href="#content">Skip to content</a>
     <div class="container">
-        <nav id="sidebar">
-            <div class="sidebar-header">
-                <h2>CCAI9012</h2>
-            </div>
+        <nav id="sidebar" aria-label="Course navigation">
+            <div class="sidebar-header"><h2>CCAI9012</h2></div>
             <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="timetable.html">Course Plan</a></li>
@@ -19,134 +19,221 @@
                 <li class="sub-item"><a href="casestudy.html">Case Study</a></li>
                 <li class="sub-item"><a href="course_project.html">Course Project</a></li>
                 <li><a href="reading_material.html">Reading Materials</a></li>
-                <li><a href="pi_responsibility.html">I. Responsibility & AI</a></li>
+                <li><a href="pi_responsibility.html">I. Responsibility &amp; AI</a></li>
                 <li><a href="pii_mechanics.html">II. Mechanics of AI</a></li>
-                <li><a href="piii_data_and_risks.html">III. Datasets & Risks of AI</a></li>
+                <li><a href="piii_data_and_risks.html">III. Datasets &amp; Risks of AI</a></li>
                 <li><a href="installation.html">Installation Guide</a></li>
                 <li><a href="starter_kits/index.html">Starter Kits</a></li>
+                <li class="sub-item"><a href="starter_kits/m1_gan.html">Module 1: Traditional Generative ML</a></li>
+                <li class="sub-item"><a href="starter_kits/m2_llm.html">Module 2: LLM for Structuring Information</a></li>
+                <li class="sub-item"><a href="starter_kits/m3_mm.html">Module 3: Multimodal Reasoning</a></li>
+                <li class="sub-item"><a href="starter_kits/m4_cv.html">Module 4: CV Models</a></li>
+                <li class="sub-item"><a href="starter_kits/m5_bias.html">Module 5: Bias &amp; Interpretability</a></li>
                 <li><a href="datasets.html">Datasets Reference</a></li>
+                <li><a href="api/index.html">API Reference</a></li>
             </ul>
         </nav>
-
-        <main id="content">
-<h1>Illustrative Mechanisms You Could Study</h1>
-<div style="height:1.5rem"></div>
-
+        <div class="page-shell">
+            <main id="content">
+<details class="page-toc-mobile">
+  <summary>On this page</summary>
+  <nav aria-label="On this page"><ul>
+<li class="toc-level-2"><a href="#application-based-mechanisms">Application-Based Mechanisms</a></li>
+<li class="toc-level-2"><a href="#model-architecture-mechanisms">Model Architecture Mechanisms</a></li>
+<li class="toc-level-2"><a href="#technique-based-mechanisms">Technique-Based Mechanisms</a></li>
+<li class="toc-level-2"><a href="#key-advice">Key Advice</a></li>
+  </ul></nav>
+</details>
+<h1 id="illustrative-mechanisms-you-could-study">Illustrative Mechanisms You Could Study</h1>
 <p>Below are <strong>illustrative examples of mechanisms</strong> you might investigate.</p>
-<p>These are <strong>suggestions, not restrictions</strong>.<br />
+<p>These are <strong>suggestions, not restrictions</strong>.
 You may choose other systems if the mechanism is <strong>clearly defined and structurally identifiable</strong>.</p>
-<div style="height:1.5rem"></div>
-
-<hr style="height: 6px; border: none; background-color: #000;">
-
-<div style="height:1.5rem"></div>
-
-<h2>Application-Based Mechanisms</h2>
-<div style="height:1.0rem"></div>
-
-<p>■ <strong>Social Media Feeds</strong> <em>(e.g. TikTok / Instagram)</em></p>
-<p>▪ <strong>Ranking systems</strong></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;• Content in your feed is <strong>ranked before being shown</strong>.<br />
-&nbsp;&nbsp;&nbsp;&nbsp;• Platforms prioritise posts using signals such as <strong>engagement, recency, or predicted interest</strong>.<br />
-&nbsp;&nbsp;&nbsp;&nbsp;• Study how ranking determines <strong>what appears first</strong> and what becomes visible.</p>
-<p>▪ <strong>Engagement feedback loops</strong></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;• User actions (likes, watch time, shares) reshape what the system shows next.<br />
-&nbsp;&nbsp;&nbsp;&nbsp;• Study how interaction data <strong>updates and reinforces future recommendations</strong>.</p>
-<div style="height:1.0rem"></div>
-
-<p>■ <strong>Streaming Platforms</strong> <em>(e.g. Spotify / Netflix / YouTube)</em></p>
-<p>▪ <strong>Similarity-based recommendation</strong></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;• The system suggests content <strong>similar to what users previously consumed</strong>.<br />
-&nbsp;&nbsp;&nbsp;&nbsp;• Study how similarity is computed using <strong>behaviour patterns or learned embeddings</strong>.</p>
-<p>▪ <strong>Exploration vs reinforcement</strong></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;• Platforms must balance recommending <strong>familiar content</strong> and introducing <strong>new items</strong>.<br />
-&nbsp;&nbsp;&nbsp;&nbsp;• Study how systems prevent feeds from becoming <strong>too repetitive or predictable</strong>.</p>
-<div style="height:1.0rem"></div>
-
-<p>■ <strong>Conversational AI</strong> <em>(e.g. ChatGPT)</em></p>
-<p>▪ <strong>Response selection</strong></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;• Language models generate many possible continuations and must <strong>select one to output</strong>.<br />
-&nbsp;&nbsp;&nbsp;&nbsp;• Study how <strong>probability ranking or sampling</strong> influences the final response.</p>
-<p>▪ <strong>Reasoning vs standard generation</strong></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;• Some systems introduce <strong>reasoning steps or structured prompting</strong> instead of direct completion.<br />
-&nbsp;&nbsp;&nbsp;&nbsp;• Study how reasoning pipelines differ from <strong>simple next-token generation</strong>.</p>
-<p>▪ <strong>Context window limits</strong></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;• Conversational systems remember <strong>only a limited amount of prior text</strong>.<br />
-&nbsp;&nbsp;&nbsp;&nbsp;• Study how limited context affects <strong>long conversations and response quality</strong>.</p>
-<div style="height:1.5rem"></div>
-
-<hr style="height: 3px; border: none; background-color: #000;">
-
-<div style="height:1.5rem"></div>
-
-<h2>Model Architecture Mechanisms</h2>
-<div style="height:1.0rem"></div>
-
-<p>■ <strong>Attention-based models (Transformers)</strong></p>
-<p>▪ <strong>Learning relationships across information</strong></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;• Some models analyse input by allowing different parts of the data to <strong>attend to one another</strong>.<br />
-&nbsp;&nbsp;&nbsp;&nbsp;• Study how this structure helps models capture <strong>long-range relationships in language or data</strong>.</p>
-<div style="height:1.0rem"></div>
-
-<p>■ <strong>Adversarial models (GANs)</strong></p>
-<p>▪ <strong>Learning through competition</strong></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;• One model <strong>generates outputs</strong>, while another <strong>evaluates them</strong>.<br />
-&nbsp;&nbsp;&nbsp;&nbsp;• Study how this competitive interaction improves the <strong>realism of generated images or media</strong>.</p>
-<div style="height:1.0rem"></div>
-
-<p>■ <strong>Encoder–decoder models</strong></p>
-<p>▪ <strong>Compressing and reconstructing information</strong></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;• One component converts input into a <strong>compact internal representation</strong>, while another reconstructs the output.<br />
-&nbsp;&nbsp;&nbsp;&nbsp;• Study how this structure enables tasks such as <strong>translation, summarisation, or reconstruction</strong>.</p>
-<div style="height:1.0rem"></div>
-
-<p>■ <strong>Diffusion-style models</strong></p>
-<p>▪ <strong>Gradual refinement</strong></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;• Some generative systems create outputs through <strong>many small refinement steps</strong> rather than a single prediction.<br />
-&nbsp;&nbsp;&nbsp;&nbsp;• Study how iterative refinement produces <strong>detailed images or media</strong>.</p>
-<div style="height:1.5rem"></div>
-
-<hr style="height: 3px; border: none; background-color: #000;">
-
-<div style="height:1.5rem"></div>
-
-<h2>Technique-Based Mechanisms</h2>
-<div style="height:1.0rem"></div>
-
-<p>■ <strong>How systems represent information</strong></p>
-<p>▪ <strong>Encoding meaning into numbers</strong></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;• AI systems convert text, images, or behaviour into <strong>numerical representations</strong>.<br />
-&nbsp;&nbsp;&nbsp;&nbsp;• Study how vector representations enable <strong>similarity search, clustering, or retrieval</strong>.</p>
-<div style="height:1.0rem"></div>
-
-<p>■ <strong>How systems learn what to prioritise</strong></p>
-<p>▪ <strong>Training signals and objectives</strong></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;• AI models improve by adjusting themselves to <strong>reduce error or maximise a reward signal</strong>.<br />
-&nbsp;&nbsp;&nbsp;&nbsp;• Study how different objectives influence <strong>what the system becomes good at</strong>.</p>
-<div style="height:1.0rem"></div>
-
-<p>■ <strong>How systems update themselves during learning</strong></p>
-<p>▪ <strong>Iterative improvement</strong></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;• Models repeatedly adjust internal parameters based on <strong>feedback from previous predictions</strong>.<br />
-&nbsp;&nbsp;&nbsp;&nbsp;• Study how repeated updates gradually improve system performance.</p>
-<div style="height:1.0rem"></div>
-
-<p>■ <strong>How systems generate outputs step-by-step</strong></p>
-<p>▪ <strong>Sequential generation</strong></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;• Many AI systems produce results <strong>one step at a time rather than all at once</strong>.<br />
-&nbsp;&nbsp;&nbsp;&nbsp;• Study how sequential generation influences <strong>creativity, randomness, or consistency</strong>.</p>
-<div style="height:1.5rem"></div>
-
-<hr style="height: 3px; border: none; background-color: #000;">
-
-<div style="height:1.5rem"></div>
-
-<h2>Key Advice</h2>
-<div style="height:1.0rem"></div>
-
+<h2 id="application-based-mechanisms">Application-Based Mechanisms</h2>
+<ul>
+<li>
+<p><strong>Social Media Feeds</strong> <em>(e.g. TikTok / Instagram)</em></p>
+<ul>
+<li>
+<p><strong>Ranking systems</strong></p>
+<ul>
+<li>Content in your feed is <strong>ranked before being shown</strong>.</li>
+<li>Platforms prioritise posts using signals such as <strong>engagement, recency, or predicted interest</strong>.</li>
+<li>Study how ranking determines <strong>what appears first</strong> and what becomes visible.</li>
+</ul>
+</li>
+<li>
+<p><strong>Engagement feedback loops</strong></p>
+<ul>
+<li>User actions (likes, watch time, shares) reshape what the system shows next.</li>
+<li>Study how interaction data <strong>updates and reinforces future recommendations</strong>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Streaming Platforms</strong> <em>(e.g. Spotify / Netflix / YouTube)</em></p>
+<ul>
+<li>
+<p><strong>Similarity-based recommendation</strong></p>
+<ul>
+<li>The system suggests content <strong>similar to what users previously consumed</strong>.</li>
+<li>Study how similarity is computed using <strong>behaviour patterns or learned embeddings</strong>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Exploration vs reinforcement</strong></p>
+<ul>
+<li>Platforms must balance recommending <strong>familiar content</strong> and introducing <strong>new items</strong>.</li>
+<li>Study how systems prevent feeds from becoming <strong>too repetitive or predictable</strong>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Conversational AI</strong> <em>(e.g. ChatGPT)</em></p>
+<ul>
+<li>
+<p><strong>Response selection</strong></p>
+<ul>
+<li>Language models generate many possible continuations and must <strong>select one to output</strong>.</li>
+<li>Study how <strong>probability ranking or sampling</strong> influences the final response.</li>
+</ul>
+</li>
+<li>
+<p><strong>Reasoning vs standard generation</strong></p>
+<ul>
+<li>Some systems introduce <strong>reasoning steps or structured prompting</strong> instead of direct completion.</li>
+<li>Study how reasoning pipelines differ from <strong>simple next-token generation</strong>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Context window limits</strong></p>
+<ul>
+<li>Conversational systems remember <strong>only a limited amount of prior text</strong>.</li>
+<li>Study how limited context affects <strong>long conversations and response quality</strong>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="model-architecture-mechanisms">Model Architecture Mechanisms</h2>
+<ul>
+<li>
+<p><strong>Attention-based models (Transformers)</strong></p>
+<ul>
+<li>
+<p><strong>Learning relationships across information</strong></p>
+<ul>
+<li>Some models analyse input by allowing different parts of the data to <strong>attend to one another</strong>.</li>
+<li>Study how this structure helps models capture <strong>long-range relationships in language or data</strong>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Adversarial models (GANs)</strong></p>
+<ul>
+<li>
+<p><strong>Learning through competition</strong></p>
+<ul>
+<li>One model <strong>generates outputs</strong>, while another <strong>evaluates them</strong>.</li>
+<li>Study how this competitive interaction improves the <strong>realism of generated images or media</strong>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Encoder–decoder models</strong></p>
+<ul>
+<li>
+<p><strong>Compressing and reconstructing information</strong></p>
+<ul>
+<li>One component converts input into a <strong>compact internal representation</strong>, while another reconstructs the output.</li>
+<li>Study how this structure enables tasks such as <strong>translation, summarisation, or reconstruction</strong>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Diffusion-style models</strong></p>
+<ul>
+<li>
+<p><strong>Gradual refinement</strong></p>
+<ul>
+<li>Some generative systems create outputs through <strong>many small refinement steps</strong> rather than a single prediction.</li>
+<li>Study how iterative refinement produces <strong>detailed images or media</strong>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="technique-based-mechanisms">Technique-Based Mechanisms</h2>
+<ul>
+<li>
+<p><strong>How systems represent information</strong></p>
+<ul>
+<li>
+<p><strong>Encoding meaning into numbers</strong></p>
+<ul>
+<li>AI systems convert text, images, or behaviour into <strong>numerical representations</strong>.</li>
+<li>Study how vector representations enable <strong>similarity search, clustering, or retrieval</strong>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>How systems learn what to prioritise</strong></p>
+<ul>
+<li>
+<p><strong>Training signals and objectives</strong></p>
+<ul>
+<li>AI models improve by adjusting themselves to <strong>reduce error or maximise a reward signal</strong>.</li>
+<li>Study how different objectives influence <strong>what the system becomes good at</strong>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>How systems update themselves during learning</strong></p>
+<ul>
+<li>
+<p><strong>Iterative improvement</strong></p>
+<ul>
+<li>Models repeatedly adjust internal parameters based on <strong>feedback from previous predictions</strong>.</li>
+<li>Study how repeated updates gradually improve system performance.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>How systems generate outputs step-by-step</strong></p>
+<ul>
+<li>
+<p><strong>Sequential generation</strong></p>
+<ul>
+<li>Many AI systems produce results <strong>one step at a time rather than all at once</strong>.</li>
+<li>Study how sequential generation influences <strong>creativity, randomness, or consistency</strong>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="key-advice">Key Advice</h2>
 <p>Do <strong>not attempt to analyse everything</strong>.</p>
 <p>A strong submission focuses on <strong>one clearly identifiable mechanism</strong> and explains <strong>how it shapes system behaviour</strong>.</p>
-        </main>
+            </main>
+<aside class="page-toc">
+  <nav aria-label="On this page">
+    <p class="page-toc-title">On this page</p>
+    <ul>
+<li class="toc-level-2"><a href="#application-based-mechanisms">Application-Based Mechanisms</a></li>
+<li class="toc-level-2"><a href="#model-architecture-mechanisms">Model Architecture Mechanisms</a></li>
+<li class="toc-level-2"><a href="#technique-based-mechanisms">Technique-Based Mechanisms</a></li>
+<li class="toc-level-2"><a href="#key-advice">Key Advice</a></li>
+    </ul>
+  </nav>
+</aside>
+        </div>
     </div>
 </body>
 </html>

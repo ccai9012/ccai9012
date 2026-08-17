@@ -2,25 +2,18 @@
 
 ## _The Divergence Artefact_
 
-<div style="height:1.5rem"></div>
 
 _Note: This outline provides guidance specific to Case Study #1, complementing the **general case study rubric**_ [**[link]**](casestudy.html).
 
-<div style="height:1.5rem"></div> 
 
----
 
-<div style="height:1.5rem"></div>
 
 ## The Prompt
 
 Create an artefact using GenAI — visual, written, or hybrid.
 
-<div style="height:1.5rem"></div>
 
----
 
-<div style="height:1.5rem"></div>
 
 ## Deliverables
 
@@ -58,14 +51,10 @@ The short-form video is a concise audiovisual presentation of no more than 90 se
 
 Include at least one screenshot or transcript showing a moment of friction, resistance, or divergence in your process.
 
-<div style="height:1.5rem"></div>
 
----
 
-<div style="height:1.5rem"></div>
 
 ## Grading Criteria  
-<div style="height:1.5rem"></div>
 
 ### In a nutshell
 
@@ -84,7 +73,6 @@ Include at least one screenshot or transcript showing a moment of friction, resi
 | **Divergence** | Is there evidence that the work could not have come from the machine alone? |
 | **Honesty** | Are you clear about where the AI ends and you begin? |
 
-<div style="height:1.5rem"></div> 
 
 ### Rubric
 
@@ -95,7 +83,6 @@ Include at least one screenshot or transcript showing a moment of friction, resi
 | **Divergence** | Clear moments of override; artefact requires human input | Some divergence, but limited | Artefact indistinguishable from raw AI output |
 | **Honesty** | Precise attribution of human and AI roles | Partial clarity | Boundary unclear or obscured |
 
-<div style="height:1.5rem"></div> 
 
 ### Submission
 
@@ -103,15 +90,11 @@ Include at least one screenshot or transcript showing a moment of friction, resi
 <s>Original: 📅2026.02.25 ⏰00.00</s>  
 Extended: <span style="background-color:#a00000;color:#fff;">📅2026.02.27 ⏰12:00</span>  
 
-<div style="height:1.5rem"></div> 
 
----
 
-<div style="height:1.5rem"></div> 
 
 ## The Standard
 
-<div style="height:1.5rem"></div> 
 
 The goal is not to *use AI well*.  
 The goal is to **prove you are not redundant**.

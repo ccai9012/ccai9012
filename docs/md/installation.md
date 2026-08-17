@@ -2,6 +2,30 @@
 
 This guide will help you set up the toolkit on your computer, even if you're new to programming or AI.
 
+## Before You Start
+
+Allow about 30–60 minutes for the first setup. You need an internet connection, permission to install software, and approximately **2.5 GB of free disk space** in total. Keep this page open while you work, and run one command at a time.
+
+You will use four pieces that work together:
+
+- **Python** is the programming language used by the course materials.
+- **Conda** installs Python and the course dependencies inside an isolated environment, so they do not interfere with other projects on your computer.
+- **Jupyter Notebook** is the browser-based interface in which you open and run the course notebooks.
+- **The `ccai9012` package** contains reusable course functions that the notebooks import.
+
+The setup sequence is therefore: install Anaconda → download this repository → create and activate the `ccai9012` Conda environment → install the course package → launch Jupyter with the `ccai9012` kernel.
+
+### Terminal Basics: Open the Course Folder
+
+The installation commands must be run inside the downloaded `ccai9012` folder. The only folder command you need is `cd`, which means **change directory**. It tells the terminal to move into another folder.
+
+The path is written differently on macOS and Windows. In the examples below, `xxx` represents a work directory that you choose. Replace it with the real name of your folder.
+
+| What you want to do | macOS Terminal | Windows Anaconda Prompt |
+| --- | --- | --- |
+| Open the command application | Press `Command + Space`, then open **Terminal** | Press `Win + S`, then open **Anaconda Prompt** |
+| Move to your work directory before downloading the repository | `cd ~/xxx` | `cd "%USERPROFILE%\xxx"` |
+
 ## 1. Install Anaconda
 
 First, install Anaconda, a Python data science platform that includes necessary tools and package management.
@@ -16,7 +40,7 @@ First, install Anaconda, a Python data science platform that includes necessary 
 
 <p align="center">
   <img src="figs/install/SCR-20251218-moef.png" width="600"><br>
-  <em>Choose the Anaconda installation package according to your system</em>
+  <em>Choose the installer that matches your operating system and processor.</em>
 </p>
 
 ### Run the Installer
@@ -55,21 +79,29 @@ Clone the project repository or download it as a ZIP file, then create the conda
 
 ### Option 1: Using Git (Recommended)
 
-```bash
-# Navigate to your desired directory
-cd ~/Desktop  # Or any directory where you want to store the project
+First use the table above to move to the work directory where you want to keep the repository. Then run these commands on either macOS or Windows:
 
+```bash
 # Clone repository (you need Git installed)
 git clone https://github.com/ccai9012/ccai9012.git
 cd ccai9012
+```
 
-# Create environment from environment.yml
+After `cd ccai9012`, the path shown before the cursor should end in `ccai9012`. Do not worry if the rest of the path looks different.
+
+Now create the environment:
+
+```bash
 conda env create -f environment.yml
 ```
 
+<div class="info-box">
+If this command says that <code>environment.yml</code> cannot be found, the terminal is probably outside the repository. Run <code>cd ccai9012</code>, then try the command again.
+</div>
+
 <p align="center">
   <img src="figs/install/SCR-20251218-mxmc.png" width="600"><br>
-  <em>After install the environment. If you use the default configuration, the name will display as "ccai9012". </em>
+  <em>A successful environment creation ends without an error and identifies the environment as “ccai9012”.</em>
 </p>
 
 ### Option 2: Download ZIP
@@ -79,13 +111,22 @@ If you don't have Git installed:
 - Visit the GitHub repository page
 - Click the green "Code" button and select "Download ZIP"
 - Extract the ZIP file to your desired location
-- Open terminal and navigate to the extracted folder:
+- Open Terminal or Anaconda Prompt and use the second row of the table above to enter the work directory containing the extracted folder.
+- Enter the extracted folder. Replace `ccai9012` if its actual folder name is different:
 
 ```bash
-cd path/to/extracted/ccai9012 # use your own path, for example: cd ~/Desktop/ccai9012
-# Create environment from environment.yml
+cd ccai9012
+```
+
+After entering the extracted folder, the path shown before the cursor should end in that folder's name. Then run:
+
+```bash
 conda env create -f environment.yml
 ```
+
+<div class="info-box">
+If this command says that <code>environment.yml</code> cannot be found, return to the extracted repository folder and try the command again.
+</div>
 
 This command will:
 
@@ -103,7 +144,7 @@ Your command prompt should now show `(ccai9012)` at the beginning of the line, i
 
 <p align="center">
   <img src="figs/install/SCR-20251218-myst.png" width="600"><br>
-  <em>Make sure you are in the project directory (displayed in the red box). </em>
+  <em>The prompt shows the active environment as “(ccai9012)”; the highlighted path is the project directory.</em>
 </p>
 
 ### Install the ccai9012 Package
@@ -119,7 +160,7 @@ This installs the ccai9012 utilities as a package, allowing you to `import ccai9
 
 <p align="center">
   <img src="figs/install/SCR-20251218-mzpj.png" width="600"><br>
-  <em>After installing package. </em>
+  <em>A successful editable install ends with a “Successfully installed” message.</em>
 </p>
 
 ## 3. Test Your Environment
@@ -152,7 +193,7 @@ The test script will check multiple categories of packages:
 
 <p align="center">
   <img src="figs/install/SCR-20251218-naog.png" width="600"><br>
-  <em>Package imported successfully. </em>
+  <em>Checkmarks confirm that the corresponding package imported successfully.</em>
 </p>
 
 ### Verbose Testing
@@ -200,12 +241,10 @@ python -m ipykernel install --user --name ccai9012 --display-name "ccai9012"
 
 Now you can start Jupyter Notebook and access all course materials:
 
-```bash
-# Make sure you're in the project directory and environment is activated
-conda activate ccai9012 # activate the environment if not already done
-cd path/to/ccai9012  # Navigate to the project directory if not already there
+If your terminal is not already inside the repository, use the appropriate command in the table above first. Then run:
 
-# Launch Jupyter Notebook
+```bash
+conda activate ccai9012 # activate the environment if not already done
 jupyter notebook
 ```
 
@@ -220,7 +259,7 @@ jupyter notebook
 3. **Navigate to course materials**:
    - `weekly_scripts/` - for weekly course materials
    - `starter_kits/` - for project starter kits
-   - `docs/ccai9012/` - for documentation (open index.html in browser)
+   - `docs/` - for the generated course website and API documentation
 
 ## Common Issues
 

@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CCAI9012 - Installation Guide</title>
     <link rel="stylesheet" href="docs-style.css">
+    <script src="on-this-page.js" defer></script>
 </head>
 <body>
+    <a class="skip-link" href="#content">Skip to content</a>
     <div class="container">
-        <nav id="sidebar">
-            <div class="sidebar-header">
-                <h2>CCAI9012</h2>
-            </div>
+        <nav id="sidebar" aria-label="Course navigation">
+            <div class="sidebar-header"><h2>CCAI9012</h2></div>
             <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="timetable.html">Course Plan</a></li>
@@ -19,21 +19,88 @@
                 <li class="sub-item"><a href="casestudy.html">Case Study</a></li>
                 <li class="sub-item"><a href="course_project.html">Course Project</a></li>
                 <li><a href="reading_material.html">Reading Materials</a></li>
-                <li><a href="pi_responsibility.html">I. Responsibility & AI</a></li>
+                <li><a href="pi_responsibility.html">I. Responsibility &amp; AI</a></li>
                 <li><a href="pii_mechanics.html">II. Mechanics of AI</a></li>
-                <li><a href="piii_data_and_risks.html">III. Datasets & Risks of AI</a></li>
+                <li><a href="piii_data_and_risks.html">III. Datasets &amp; Risks of AI</a></li>
                 <li><a href="installation.html" class="active">Installation Guide</a></li>
                 <li><a href="starter_kits/index.html">Starter Kits</a></li>
+                <li class="sub-item"><a href="starter_kits/m1_gan.html">Module 1: Traditional Generative ML</a></li>
+                <li class="sub-item"><a href="starter_kits/m2_llm.html">Module 2: LLM for Structuring Information</a></li>
+                <li class="sub-item"><a href="starter_kits/m3_mm.html">Module 3: Multimodal Reasoning</a></li>
+                <li class="sub-item"><a href="starter_kits/m4_cv.html">Module 4: CV Models</a></li>
+                <li class="sub-item"><a href="starter_kits/m5_bias.html">Module 5: Bias &amp; Interpretability</a></li>
                 <li><a href="datasets.html">Datasets Reference</a></li>
+                <li><a href="api/index.html">API Reference</a></li>
             </ul>
         </nav>
-
-        <main id="content">
-<h1>Installation Guide</h1>
+        <div class="page-shell">
+            <main id="content">
+<details class="page-toc-mobile">
+  <summary>On this page</summary>
+  <nav aria-label="On this page"><ul>
+<li class="toc-level-2"><a href="#before-you-start">Before You Start</a></li>
+<li class="toc-level-3"><a href="#terminal-basics-open-the-course-folder">Terminal Basics: Open the Course Folder</a></li>
+<li class="toc-level-2"><a href="#1-install-anaconda">1. Install Anaconda</a></li>
+<li class="toc-level-3"><a href="#download-anaconda">Download Anaconda</a></li>
+<li class="toc-level-3"><a href="#run-the-installer">Run the Installer</a></li>
+<li class="toc-level-3"><a href="#verify-installation">Verify Installation</a></li>
+<li class="toc-level-2"><a href="#2-download-the-project-and-create-environment">2. Download the Project and Create Environment</a></li>
+<li class="toc-level-3"><a href="#option-1-using-git-recommended">Option 1: Using Git (Recommended)</a></li>
+<li class="toc-level-3"><a href="#option-2-download-zip">Option 2: Download ZIP</a></li>
+<li class="toc-level-3"><a href="#activate-the-environment">Activate the Environment</a></li>
+<li class="toc-level-3"><a href="#install-the-ccai9012-package">Install the ccai9012 Package</a></li>
+<li class="toc-level-2"><a href="#3-test-your-environment">3. Test Your Environment</a></li>
+<li class="toc-level-3"><a href="#understanding-test-results">Understanding Test Results</a></li>
+<li class="toc-level-3"><a href="#verbose-testing">Verbose Testing</a></li>
+<li class="toc-level-3"><a href="#what-to-do-if-tests-fail">What to Do If Tests Fail</a></li>
+<li class="toc-level-2"><a href="#4-set-up-jupyter-notebook-kernel">4. Set Up Jupyter Notebook Kernel</a></li>
+<li class="toc-level-2"><a href="#5-launch-jupyter-notebook">5. Launch Jupyter Notebook</a></li>
+<li class="toc-level-3"><a href="#important-jupyter-setup-steps">Important Jupyter Setup Steps</a></li>
+<li class="toc-level-2"><a href="#common-issues">Common Issues</a></li>
+<li class="toc-level-3"><a href="#cuda-setup">CUDA Setup</a></li>
+<li class="toc-level-3"><a href="#common-error-messages">Common Error Messages</a></li>
+<li class="toc-level-2"><a href="#support-feedback">Support &amp;amp; Feedback</a></li>
+  </ul></nav>
+</details>
+<h1 id="installation-guide">Installation Guide</h1>
 <p>This guide will help you set up the toolkit on your computer, even if you&rsquo;re new to programming or AI.</p>
-<h2>1. Install Anaconda</h2>
+<h2 id="before-you-start">Before You Start</h2>
+<p>Allow about 30–60 minutes for the first setup. You need an internet connection, permission to install software, and approximately <strong>2.5 GB of free disk space</strong> in total. Keep this page open while you work, and run one command at a time.</p>
+<p>You will use four pieces that work together:</p>
+<ul>
+<li><strong>Python</strong> is the programming language used by the course materials.</li>
+<li><strong>Conda</strong> installs Python and the course dependencies inside an isolated environment, so they do not interfere with other projects on your computer.</li>
+<li><strong>Jupyter Notebook</strong> is the browser-based interface in which you open and run the course notebooks.</li>
+<li><strong>The <code>ccai9012</code> package</strong> contains reusable course functions that the notebooks import.</li>
+</ul>
+<p>The setup sequence is therefore: install Anaconda → download this repository → create and activate the <code>ccai9012</code> Conda environment → install the course package → launch Jupyter with the <code>ccai9012</code> kernel.</p>
+<h3 id="terminal-basics-open-the-course-folder">Terminal Basics: Open the Course Folder</h3>
+<p>The installation commands must be run inside the downloaded <code>ccai9012</code> folder. The only folder command you need is <code>cd</code>, which means <strong>change directory</strong>. It tells the terminal to move into another folder.</p>
+<p>The path is written differently on macOS and Windows. In the examples below, <code>xxx</code> represents a work directory that you choose. Replace it with the real name of your folder.</p>
+<table>
+<thead>
+<tr>
+<th>What you want to do</th>
+<th>macOS Terminal</th>
+<th>Windows Anaconda Prompt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Open the command application</td>
+<td>Press <code>Command + Space</code>, then open <strong>Terminal</strong></td>
+<td>Press <code>Win + S</code>, then open <strong>Anaconda Prompt</strong></td>
+</tr>
+<tr>
+<td>Move to your work directory before downloading the repository</td>
+<td><code>cd ~/xxx</code></td>
+<td><code>cd "%USERPROFILE%\xxx"</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="1-install-anaconda">1. Install Anaconda</h2>
 <p>First, install Anaconda, a Python data science platform that includes necessary tools and package management.</p>
-<h3>Download Anaconda</h3>
+<h3 id="download-anaconda">Download Anaconda</h3>
 <ol>
 <li>Visit <a href="https://www.anaconda.com/products/distribution">Anaconda&rsquo;s website</a></li>
 <li>Download the installer for your operating system:
@@ -43,10 +110,10 @@
 </ol>
 <p align="center">
   <img src="figs/install/SCR-20251218-moef.png" width="600"><br>
-  <em>Choose the Anaconda installation package according to your system</em>
+  <em>Choose the installer that matches your operating system and processor.</em>
 </p>
 
-<h3>Run the Installer</h3>
+<h3 id="run-the-installer">Run the Installer</h3>
 <ul>
 <li><strong>Windows</strong>: Double-click the .exe file and follow the prompts. <strong>Important</strong>: Select &ldquo;Add Anaconda to my PATH environment variable&rdquo; during installation.</li>
 <li><strong>macOS</strong>: Double-click the .pkg file and follow the installation wizard.</li>
@@ -54,7 +121,7 @@
   <code>bash
   bash Anaconda3-xxxx.xx-Linux-x86_64.sh # replace xxxx.xx with the version you downloaded</code></li>
 </ul>
-<h3>Verify Installation</h3>
+<h3 id="verify-installation">Verify Installation</h3>
 <p><strong>1. Open Terminal:</strong></p>
 <ul>
 <li>On <strong>Windows</strong>: Press <code>Win + S</code>, type <code>Anaconda Prompt</code>, and select &ldquo;Anaconda Prompt (anaconda3)&rdquo;.</li>
@@ -70,52 +137,61 @@
   <em>Anaconda installation confirmation.</em>
 </p>
 
-<h2>2. Download the Project and Create Environment</h2>
+<h2 id="2-download-the-project-and-create-environment">2. Download the Project and Create Environment</h2>
 <p>Clone the project repository or download it as a ZIP file, then create the conda environment:</p>
-<h3>Option 1: Using Git (Recommended)</h3>
-<pre><code class="language-bash"># Navigate to your desired directory
-cd ~/Desktop  # Or any directory where you want to store the project
-
-# Clone repository (you need Git installed)
+<h3 id="option-1-using-git-recommended">Option 1: Using Git (Recommended)</h3>
+<p>First use the table above to move to the work directory where you want to keep the repository. Then run these commands on either macOS or Windows:</p>
+<pre><code class="language-bash"># Clone repository (you need Git installed)
 git clone https://github.com/ccai9012/ccai9012.git
 cd ccai9012
-
-# Create environment from environment.yml
-conda env create -f environment.yml
 </code></pre>
+<p>After <code>cd ccai9012</code>, the path shown before the cursor should end in <code>ccai9012</code>. Do not worry if the rest of the path looks different.</p>
+<p>Now create the environment:</p>
+<pre><code class="language-bash">conda env create -f environment.yml
+</code></pre>
+<div class="info-box">
+If this command says that <code>environment.yml</code> cannot be found, the terminal is probably outside the repository. Run <code>cd ccai9012</code>, then try the command again.
+</div>
+
 <p align="center">
   <img src="figs/install/SCR-20251218-mxmc.png" width="600"><br>
-  <em>After install the environment. If you use the default configuration, the name will display as "ccai9012". </em>
+  <em>A successful environment creation ends without an error and identifies the environment as “ccai9012”.</em>
 </p>
 
-<h3>Option 2: Download ZIP</h3>
+<h3 id="option-2-download-zip">Option 2: Download ZIP</h3>
 <p>If you don&rsquo;t have Git installed:</p>
 <ul>
 <li>Visit the GitHub repository page</li>
 <li>Click the green &ldquo;Code&rdquo; button and select &ldquo;Download ZIP&rdquo;</li>
 <li>Extract the ZIP file to your desired location</li>
-<li>Open terminal and navigate to the extracted folder:</li>
+<li>Open Terminal or Anaconda Prompt and use the second row of the table above to enter the work directory containing the extracted folder.</li>
+<li>Enter the extracted folder. Replace <code>ccai9012</code> if its actual folder name is different:</li>
 </ul>
-<pre><code class="language-bash">cd path/to/extracted/ccai9012 # use your own path, for example: cd ~/Desktop/ccai9012
-# Create environment from environment.yml
-conda env create -f environment.yml
+<pre><code class="language-bash">cd ccai9012
 </code></pre>
+<p>After entering the extracted folder, the path shown before the cursor should end in that folder&rsquo;s name. Then run:</p>
+<pre><code class="language-bash">conda env create -f environment.yml
+</code></pre>
+<div class="info-box">
+If this command says that <code>environment.yml</code> cannot be found, return to the extracted repository folder and try the command again.
+</div>
+
 <p>This command will:</p>
 <ul>
 <li>Create a new conda environment named <code>ccai9012</code></li>
 <li>Install Python and all required packages</li>
 <li>Set up all dependencies for the course materials</li>
 </ul>
-<h3>Activate the Environment</h3>
+<h3 id="activate-the-environment">Activate the Environment</h3>
 <pre><code class="language-bash">conda activate ccai9012 # ensuring you're in the project directory
 </code></pre>
 <p>Your command prompt should now show <code>(ccai9012)</code> at the beginning of the line, indicating the environment is active.</p>
 <p align="center">
   <img src="figs/install/SCR-20251218-myst.png" width="600"><br>
-  <em>Make sure you are in the project directory (displayed in the red box). </em>
+  <em>The prompt shows the active environment as “(ccai9012)”; the highlighted path is the project directory.</em>
 </p>
 
-<h3>Install the ccai9012 Package</h3>
+<h3 id="install-the-ccai9012-package">Install the ccai9012 Package</h3>
 <p>Install the ccai9012 package in development mode:</p>
 <pre><code class="language-bash"># Make sure you're in the project directory and environment is activated
 pip install -e .
@@ -123,10 +199,10 @@ pip install -e .
 <p>This installs the ccai9012 utilities as a package, allowing you to <code>import ccai9012</code> from anywhere.</p>
 <p align="center">
   <img src="figs/install/SCR-20251218-mzpj.png" width="600"><br>
-  <em>After installing package. </em>
+  <em>A successful editable install ends with a “Successfully installed” message.</em>
 </p>
 
-<h2>3. Test Your Environment</h2>
+<h2 id="3-test-your-environment">3. Test Your Environment</h2>
 <p>After installation, it&rsquo;s important to verify that all required packages are properly installed. Run the provided test script:</p>
 <pre><code class="language-bash"># Make sure the ccai9012 environment is activated
 conda activate ccai9012
@@ -134,7 +210,7 @@ conda activate ccai9012
 # Run the test script
 python test_environment.py
 </code></pre>
-<h3>Understanding Test Results</h3>
+<h3 id="understanding-test-results">Understanding Test Results</h3>
 <p>The test script will check multiple categories of packages:</p>
 <ul>
 <li><strong>Core Scientific Packages</strong>: numpy, pandas, matplotlib, scipy, scikit-learn</li>
@@ -150,15 +226,15 @@ python test_environment.py
 - ✗ (cross) = Package failed to import (needs troubleshooting)</p>
 <p align="center">
   <img src="figs/install/SCR-20251218-naog.png" width="600"><br>
-  <em>Package imported successfully. </em>
+  <em>Checkmarks confirm that the corresponding package imported successfully.</em>
 </p>
 
-<h3>Verbose Testing</h3>
+<h3 id="verbose-testing">Verbose Testing</h3>
 <p>For detailed information about each test:</p>
 <pre><code class="language-bash">python test_environment.py --verbose
 </code></pre>
 <p>This will show each package being tested in real-time and provide more detailed error messages if any issues occur.</p>
-<h3>What to Do If Tests Fail</h3>
+<h3 id="what-to-do-if-tests-fail">What to Do If Tests Fail</h3>
 <p>If you see ✗ marks for any packages:</p>
 <ol>
 <li><strong>Check the error message</strong> - It usually indicates what&rsquo;s missing</li>
@@ -174,7 +250,7 @@ python test_environment.py
    pip install package-name</code></li>
 <li><strong>Check the Common Issues section</strong> below for platform-specific problems</li>
 </ol>
-<h2>4. Set Up Jupyter Notebook Kernel</h2>
+<h2 id="4-set-up-jupyter-notebook-kernel">4. Set Up Jupyter Notebook Kernel</h2>
 <p>To use the course materials in Jupyter notebooks, you need to add the conda environment as a Jupyter kernel:</p>
 <pre><code class="language-bash"># Make sure the ccai9012 environment is activated
 conda activate ccai9012
@@ -182,16 +258,13 @@ conda activate ccai9012
 # Install the environment as a Jupyter kernel
 python -m ipykernel install --user --name ccai9012 --display-name &quot;ccai9012&quot;
 </code></pre>
-<h2>5. Launch Jupyter Notebook</h2>
+<h2 id="5-launch-jupyter-notebook">5. Launch Jupyter Notebook</h2>
 <p>Now you can start Jupyter Notebook and access all course materials:</p>
-<pre><code class="language-bash"># Make sure you're in the project directory and environment is activated
-conda activate ccai9012 # activate the environment if not already done
-cd path/to/ccai9012  # Navigate to the project directory if not already there
-
-# Launch Jupyter Notebook
+<p>If your terminal is not already inside the repository, use the appropriate command in the table above first. Then run:</p>
+<pre><code class="language-bash">conda activate ccai9012 # activate the environment if not already done
 jupyter notebook
 </code></pre>
-<h3>Important Jupyter Setup Steps</h3>
+<h3 id="important-jupyter-setup-steps">Important Jupyter Setup Steps</h3>
 <ol>
 <li><strong>Jupyter will open in your web browser</strong> (usually at http://localhost:8888)</li>
 <li><strong>Select the correct kernel</strong>: When you open any notebook (.ipynb file):
@@ -202,32 +275,62 @@ jupyter notebook
 <li><strong>Navigate to course materials</strong>:
    - <code>weekly_scripts/</code> - for weekly course materials
    - <code>starter_kits/</code> - for project starter kits
-   - <code>docs/ccai9012/</code> - for documentation (open index.html in browser)</li>
+   - <code>docs/</code> - for the generated course website and API documentation</li>
 </ol>
-<h2>Common Issues</h2>
-<h3>CUDA Setup</h3>
+<h2 id="common-issues">Common Issues</h2>
+<h3 id="cuda-setup">CUDA Setup</h3>
 <p>If you have an NVIDIA GPU, it&rsquo;s recommended to set up CUDA for GPU acceleration:</p>
-<h4>1. Check CUDA compatibility:</h4>
+<h4 id="1-check-cuda-compatibility">1. Check CUDA compatibility:</h4>
 <pre><code class="language-bash">nvidia-smi
 </code></pre>
 <p>This will display your GPU and driver information.</p>
-<h4>2. Install matching CUDA version:</h4>
+<h4 id="2-install-matching-cuda-version">2. Install matching CUDA version:</h4>
 <pre><code class="language-bash">conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
 </code></pre>
-<h3>Common Error Messages</h3>
+<h3 id="common-error-messages">Common Error Messages</h3>
 <ol>
-<li><strong>ModuleNotFoundError</strong>: If you see &ldquo;No module named &lsquo;xyz&rsquo;&ldquo;, run: <code>pip install xyz</code></li>
+<li><strong>ModuleNotFoundError</strong>: If you see &ldquo;No module named &lsquo;xyz&rsquo;&rdquo;, run: <code>pip install xyz</code></li>
 <li><strong>DLL Load Failed</strong>: On Windows, reinstall PyTorch with the correct CUDA version</li>
 <li><strong>Out of Memory</strong>: Reduce batch sizes in your code or use CPU mode</li>
 </ol>
-<h2>Support &amp; Feedback</h2>
+<h2 id="support-feedback">Support &amp; Feedback</h2>
 <p>For questions or suggestions:</p>
 <ol>
 <li>Submit an issue on our GitHub repository</li>
 <li>Email [course_email]</li>
 <li>Post in the course forum</li>
 </ol>
-        </main>
+            </main>
+<aside class="page-toc">
+  <nav aria-label="On this page">
+    <p class="page-toc-title">On this page</p>
+    <ul>
+<li class="toc-level-2"><a href="#before-you-start">Before You Start</a></li>
+<li class="toc-level-3"><a href="#terminal-basics-open-the-course-folder">Terminal Basics: Open the Course Folder</a></li>
+<li class="toc-level-2"><a href="#1-install-anaconda">1. Install Anaconda</a></li>
+<li class="toc-level-3"><a href="#download-anaconda">Download Anaconda</a></li>
+<li class="toc-level-3"><a href="#run-the-installer">Run the Installer</a></li>
+<li class="toc-level-3"><a href="#verify-installation">Verify Installation</a></li>
+<li class="toc-level-2"><a href="#2-download-the-project-and-create-environment">2. Download the Project and Create Environment</a></li>
+<li class="toc-level-3"><a href="#option-1-using-git-recommended">Option 1: Using Git (Recommended)</a></li>
+<li class="toc-level-3"><a href="#option-2-download-zip">Option 2: Download ZIP</a></li>
+<li class="toc-level-3"><a href="#activate-the-environment">Activate the Environment</a></li>
+<li class="toc-level-3"><a href="#install-the-ccai9012-package">Install the ccai9012 Package</a></li>
+<li class="toc-level-2"><a href="#3-test-your-environment">3. Test Your Environment</a></li>
+<li class="toc-level-3"><a href="#understanding-test-results">Understanding Test Results</a></li>
+<li class="toc-level-3"><a href="#verbose-testing">Verbose Testing</a></li>
+<li class="toc-level-3"><a href="#what-to-do-if-tests-fail">What to Do If Tests Fail</a></li>
+<li class="toc-level-2"><a href="#4-set-up-jupyter-notebook-kernel">4. Set Up Jupyter Notebook Kernel</a></li>
+<li class="toc-level-2"><a href="#5-launch-jupyter-notebook">5. Launch Jupyter Notebook</a></li>
+<li class="toc-level-3"><a href="#important-jupyter-setup-steps">Important Jupyter Setup Steps</a></li>
+<li class="toc-level-2"><a href="#common-issues">Common Issues</a></li>
+<li class="toc-level-3"><a href="#cuda-setup">CUDA Setup</a></li>
+<li class="toc-level-3"><a href="#common-error-messages">Common Error Messages</a></li>
+<li class="toc-level-2"><a href="#support-feedback">Support &amp;amp; Feedback</a></li>
+    </ul>
+  </nav>
+</aside>
+        </div>
     </div>
 </body>
 </html>

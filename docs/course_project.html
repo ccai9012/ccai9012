@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CCAI9012 - Course Project</title>
     <link rel="stylesheet" href="docs-style.css">
+    <script src="on-this-page.js" defer></script>
 </head>
 <body>
+    <a class="skip-link" href="#content">Skip to content</a>
     <div class="container">
-        <nav id="sidebar">
-            <div class="sidebar-header">
-                <h2>CCAI9012</h2>
-            </div>
+        <nav id="sidebar" aria-label="Course navigation">
+            <div class="sidebar-header"><h2>CCAI9012</h2></div>
             <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="timetable.html">Course Plan</a></li>
@@ -19,29 +19,39 @@
                 <li class="sub-item"><a href="casestudy.html">Case Study</a></li>
                 <li class="sub-item"><a href="course_project.html" class="active">Course Project</a></li>
                 <li><a href="reading_material.html">Reading Materials</a></li>
-                <li><a href="pi_responsibility.html">I. Responsibility & AI</a></li>
+                <li><a href="pi_responsibility.html">I. Responsibility &amp; AI</a></li>
                 <li><a href="pii_mechanics.html">II. Mechanics of AI</a></li>
-                <li><a href="piii_data_and_risks.html">III. Datasets & Risks of AI</a></li>
+                <li><a href="piii_data_and_risks.html">III. Datasets &amp; Risks of AI</a></li>
                 <li><a href="installation.html">Installation Guide</a></li>
                 <li><a href="starter_kits/index.html">Starter Kits</a></li>
+                <li class="sub-item"><a href="starter_kits/m1_gan.html">Module 1: Traditional Generative ML</a></li>
+                <li class="sub-item"><a href="starter_kits/m2_llm.html">Module 2: LLM for Structuring Information</a></li>
+                <li class="sub-item"><a href="starter_kits/m3_mm.html">Module 3: Multimodal Reasoning</a></li>
+                <li class="sub-item"><a href="starter_kits/m4_cv.html">Module 4: CV Models</a></li>
+                <li class="sub-item"><a href="starter_kits/m5_bias.html">Module 5: Bias &amp; Interpretability</a></li>
                 <li><a href="datasets.html">Datasets Reference</a></li>
+                <li><a href="api/index.html">API Reference</a></li>
             </ul>
         </nav>
-
-        <main id="content">
-<h1>A.2: Course Project</h1>
-<div style="height:1.5rem"></div>
-
+        <div class="page-shell">
+            <main id="content">
+<details class="page-toc-mobile">
+  <summary>On this page</summary>
+  <nav aria-label="On this page"><ul>
+<li class="toc-level-2"><a href="#project-structure-deliverables">Project Structure &amp;amp; Deliverables</a></li>
+<li class="toc-level-2"><a href="#milestones">Milestones</a></li>
+<li class="toc-level-2"><a href="#learning-focus">Learning Focus</a></li>
+<li class="toc-level-2"><a href="#possible-directions">Possible Directions</a></li>
+<li class="toc-level-3"><a href="#methodology">Methodology</a></li>
+<li class="toc-level-3"><a href="#thinking-algorithmically">Thinking Algorithmically</a></li>
+<li class="toc-level-3"><a href="#example-ideas">Example Ideas</a></li>
+  </ul></nav>
+</details>
+<h1 id="a2-course-project">A.2: Course Project</h1>
 <p>The course project is a <strong>team-based, design-oriented assignment</strong> in which students develop, prototype, and analyse an AI-assisted proposal addressing a concrete real-world problem. In contrast to the case studies, which focus on analysing existing systems or practices, the course project emphasises <strong>making</strong>, evaluation through use, and critical reflection through implementation.</p>
 <p>Projects may take analytical, tool-based, or design-oriented forms, but all must demonstrate a considered synthesis of <strong>responsibility and ethics</strong>, <strong>mechanisms and model behaviour</strong>, and <strong>datasets and data practices</strong>, reflecting how these dimensions interact in real-world AI applications. The emphasis is on reasoned experimentation, explicit assumptions, and reflective judgement rather than technical novelty or performance optimisation.</p>
 <p>The project is completed in teams of <strong>4–6 students</strong>. Tutorials provide structured opportunities for skills development, feedback, and team formation.</p>
-<div style="height:4.0rem"></div>
-
-<hr style="height: 2px; border: none; background-color: #000;">
-
-<div style="height:1.5rem"></div>
-
-<h2>Project Structure &amp; Deliverables</h2>
+<h2 id="project-structure-deliverables">Project Structure &amp; Deliverables</h2>
 <p>The course project consists of the following assessed components:</p>
 <ul>
 <li>
@@ -61,15 +71,7 @@
 </li>
 <li><strong>Peer Assessment</strong>: Advisory peer feedback on group work and individual contributions. Further details are provided in the course outline.</li>
 </ul>
-<div style="height:4.0rem"></div>
-
-<hr style="height: 2px; border: none; background-color: #000;">
-
-<div style="height:1.5rem"></div>
-
-<h2>Milestones</h2>
-<div style="height:1.0rem"></div>
-
+<h2 id="milestones">Milestones</h2>
 <table>
 <thead>
 <tr>
@@ -132,15 +134,7 @@
 </tr>
 </tbody>
 </table>
-<div style="height:4.0rem"></div>
-
-<hr style="height: 2px; border: none; background-color: #000;">
-
-<div style="height:1.5rem"></div>
-
-<h2>Learning Focus</h2>
-<div style="height:1.0rem"></div>
-
+<h2 id="learning-focus">Learning Focus</h2>
 <p>Through the course project, students are expected to demonstrate the ability to:</p>
 <ul>
 <li><strong>Problem Statement:</strong> define and bound a real-world problem with clear context and relevance;</li>
@@ -150,18 +144,8 @@
 <li><strong>Effective Communication:</strong> communicate intent, methods, results, and limitations clearly and coherently.</li>
 </ul>
 <p>The course project serves as the <strong>capstone assignment</strong> for the course, integrating technical understanding, critical judgement, and professional communication into a single, coherent body of work.</p>
-<div style="height:4.0rem"></div>
-
-<hr style="height: 2px; border: none; background-color: #000;">
-
-<div style="height:1.5rem"></div>
-
-<h2>Possible Directions</h2>
-<div style="height:2.0rem"></div>
-
-<h3>Methodology</h3>
-<div style="height:1.0rem"></div>
-
+<h2 id="possible-directions">Possible Directions</h2>
+<h3 id="methodology">Methodology</h3>
 <p>CCAI 9012 encourages students to conduct their Course Project using programming, enabling systematic data collection and analysis, and unlocking scalable opportunities that would be cumbersome—if not intractable—to execute and control via ChatBot/UI-based GenAI alone.</p>
 <p>While programming is strongly encouraged, we recognize that skill levels vary across the student body and welcome projects in any format, as long as they are grounded in:</p>
 <ul>
@@ -172,11 +156,7 @@
 <p>Accordingly, it is also acceptable to construct a dataset manually through direct interaction with LLMs, provided you take appropriate precautions to avoid unintentionally biasing your results.</p>
 <p>For students interested in developing programming-based solutions, a number of starter kits <a href="starter_kits/index.html"><strong>[link]</strong></a> are available. These include example code that already performs canonical ML and AI tasks. Often, simple modifications—such as swapping in a different text or image dataset—are sufficient to support exploration of new research questions.</p>
 <p><em>Note: The documentation for starter kits is being actively expanded and refined.</em></p>
-<div style="height:2.0rem"></div>
-
-<h3>Thinking Algorithmically</h3>
-<div style="height:1.0rem"></div>
-
+<h3 id="thinking-algorithmically">Thinking Algorithmically</h3>
 <p>Whether you are generating data manually or programmatically, it is helpful to break down your problem and methods into modular mappings, such as:</p>
 <ul>
 <li><strong>text → text</strong> – input text, get new text (answering questions, summarising, translating)</li>
@@ -204,11 +184,7 @@
 <li>Quantify bias by aggregating these attributes: <strong>vectors (attribute scores across images) → scalars (bias metrics)</strong></li>
 </ol>
 <p>The key is to think in terms of these modular transformations and then compose them into end-to-end pipelines tailored to your research question.</p>
-<div style="height:2.0rem"></div>
-
-<h3>Example Ideas</h3>
-<div style="height:1.0rem"></div>
-
+<h3 id="example-ideas">Example Ideas</h3>
 <p>Listed below are example directions (analysing AI, using AI for analysis, developing AI‑powered tools) are illustrative rather than exhaustive.  Note that many other directions are also possible.</p>
 <ul>
 <li>
@@ -233,7 +209,22 @@
 </ul>
 </li>
 </ul>
-        </main>
+            </main>
+<aside class="page-toc">
+  <nav aria-label="On this page">
+    <p class="page-toc-title">On this page</p>
+    <ul>
+<li class="toc-level-2"><a href="#project-structure-deliverables">Project Structure &amp;amp; Deliverables</a></li>
+<li class="toc-level-2"><a href="#milestones">Milestones</a></li>
+<li class="toc-level-2"><a href="#learning-focus">Learning Focus</a></li>
+<li class="toc-level-2"><a href="#possible-directions">Possible Directions</a></li>
+<li class="toc-level-3"><a href="#methodology">Methodology</a></li>
+<li class="toc-level-3"><a href="#thinking-algorithmically">Thinking Algorithmically</a></li>
+<li class="toc-level-3"><a href="#example-ideas">Example Ideas</a></li>
+    </ul>
+  </nav>
+</aside>
+        </div>
     </div>
 </body>
 </html>

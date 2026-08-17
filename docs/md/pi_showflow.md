@@ -1,21 +1,16 @@
 ### Part I: Responsibility & AI
 # Consolidated Activity Reference
 
-<div style="height:1.5rem"></div>
 
 This is a consolidated reference for all in-class activities across the three GenAI sessions. Keep this handy during class.
 
-<div style="height:1.5rem"></div>
 
----
 
-<div style="height:1.5rem"></div>
 
 ## Class 1: Probe Lab
 
 **Goal:** Find the walls. Map where AI resists, hedges, or refuses.
 
-<div style="height:1.5rem"></div>
 
 ### Setup
 
@@ -24,7 +19,6 @@ This is a consolidated reference for all in-class activities across the three Ge
 - If time: try **1–2 more** challenges
 - Use any GenAI tool (ChatGPT, Claude, Gemini, etc.)
 
-<div style="height:1.5rem"></div>
 
 ### Group Roles
 
@@ -34,7 +28,6 @@ This is a consolidated reference for all in-class activities across the three Ge
 | **Synthesizer** | Compiles results, takes notes |
 | **Presenter** | Reports findings in shareout |
 
-<div style="height:1.5rem"></div>
 
 ### The Flow
 
@@ -45,7 +38,6 @@ This is a consolidated reference for all in-class activities across the three Ge
 | **Round 2** | 5 min | Try a different angle, platform, or challenge |
 | **Capture** | 2 min | Screenshot your most interesting results |
 
-<div style="height:1.5rem"></div>
 
 ### Probe Challenge Cards
 
@@ -64,7 +56,6 @@ This is a consolidated reference for all in-class activities across the three Ge
 | 11 | Get AI to predict the future confidently | Uncertainty |
 | 12 | Get AI to produce identical output twice | Reproducibility |
 
-<div style="height:1.5rem"></div>
 
 ### What to Document
 
@@ -75,27 +66,21 @@ For each attempt, record:
 3. Was it a **hard stop**, **friction**, or **deceleration**?  
 4. **Why** do you think this wall exists?
 
-<div style="height:1.5rem"></div>
 
 **Save your transcripts and screenshots — you'll need them for Class 2 and the final assessment.**
 
-<div style="height:1.5rem"></div>
 
----
 
-<div style="height:1.5rem"></div>
 
 ## Class 2: Jailbreak Lab
 
 **Goal:** Get past the wall you found in Class 1.
 
-<div style="height:1.5rem"></div>
 
 ### A Note Before You Start
 
 The goal is **understanding**, not exploitation. Some walls exist for good reasons. If you find something that genuinely concerns you — tell the instructor. That’s not failure. That’s the point.
 
-<div style="height:1.5rem"></div>
 
 ### Setup
 
@@ -103,7 +88,6 @@ The goal is **understanding**, not exploitation. Some walls exist for good reaso
 - Return to your **primary challenge** — or try a new one
 - Goal: get past the wall you mapped last time
 
-<div style="height:1.5rem"></div>
 
 ### Group Roles
 
@@ -113,7 +97,6 @@ The goal is **understanding**, not exploitation. Some walls exist for good reaso
 | **Documenter** | Records exact prompts and wording |
 | **Tracker** | Notes what works vs. what fails |
 
-<div style="height:1.5rem"></div>
 
 ### The Flow
 
@@ -124,7 +107,6 @@ The goal is **understanding**, not exploitation. Some walls exist for good reaso
 | **Round 2** | 5 min | Try a strategy that worked for someone else |
 | **Capture** | 2 min | Screenshot successes (and interesting failures) |
 
-<div style="height:1.5rem"></div>
 
 ### Strategies to Try
 
@@ -138,7 +120,6 @@ The goal is **understanding**, not exploitation. Some walls exist for good reaso
 | **Emotional manipulation** | "I really need this because..." |
 | **Incremental escalation** | Start mild, push gradually |
 
-<div style="height:1.5rem"></div>
 
 ### Why These Strategies Work
 
@@ -152,11 +133,9 @@ You're not "tricking" or "convincing" the AI. You're navigating statistical patt
 | **Emotional manipulation** | Leverages patterns responding to urgency or distress. |
 | **Incremental escalation** | Gradual shifts are harder to detect than sudden jumps. |
 
-<div style="height:1.5rem"></div>
 
 **The core insight:** None of this is persuasion. The AI has no mind to persuade. You’re finding edges in a statistical system.
 
-<div style="height:1.5rem"></div>
 
 ### What to Document
 
@@ -166,7 +145,6 @@ You're not "tricking" or "convincing" the AI. You're navigating statistical patt
 - If success: **screenshot the result**  
 - If failure: **why you think it held**
 
-<div style="height:1.5rem"></div>
 
 ### Synthesis Discussion Questions
 
@@ -175,23 +153,16 @@ You're not "tricking" or "convincing" the AI. You're navigating statistical patt
 - What did you have to **become** to succeed?  
 - Did anything surprise you?
 
-<div style="height:1.5rem"></div>
 
----
 
-<div style="height:1.5rem"></div>
 
 ## Class 3: Activities
 
-<div style="height:1.5rem"></div>
 
----
 
-<div style="height:1.5rem"></div>
 
 ### Quick Exercise: Your Avatar (10 min)
 
-<div style="height:1.5rem"></div>
 
 Before splitting into activities, everyone does this together:
 
@@ -199,7 +170,6 @@ Before splitting into activities, everyone does this together:
 2. Prompt: **"Create a logo or avatar for me"**
 3. Look at what you get.
 
-<div style="height:1.5rem"></div>
 
 **Reflect:**
 
@@ -207,31 +177,22 @@ Before splitting into activities, everyone does this together:
 - What’s **missing** that would make it *you*?
 - What would you have to **add, change, or fight for**?
 
-<div style="height:1.5rem"></div>
 
 This is convergence in action. The AI gave you the **average avatar**. Now you know what you’re pushing against.
 
-<div style="height:1.5rem"></div>
 
----
 
-<div style="height:1.5rem"></div>
 
 Choose **Option A** (group) or **Option B** (individual).
 
-<div style="height:1.5rem"></div>
 
----
 
-<div style="height:1.5rem"></div>
 
 ### Option A: Design Sprint
 
-<div style="height:1.5rem"></div>
 
 **Goal:** Create an AI Use Charter for a real-world context.
 
-<div style="height:1.5rem"></div>
 
 #### Contexts (assigned by instructor)
 
@@ -244,7 +205,6 @@ Choose **Option A** (group) or **Option B** (individual).
 - Legal firm
 - Dating app
 
-<div style="height:1.5rem"></div>
 
 #### Group Roles
 
@@ -256,7 +216,6 @@ Choose **Option A** (group) or **Option B** (individual).
 | **Writer** | Captures language and phrasing |
 | **Presenter** | Explains your charter in gallery walk |
 
-<div style="height:1.5rem"></div>
 
 #### The Flow
 
@@ -267,7 +226,6 @@ Choose **Option A** (group) or **Option B** (individual).
 | **Refine** | 10 min | Polish language, visual hierarchy |
 | **Gallery Walk** | 15 min | Display, circulate, vote |
 
-<div style="height:1.5rem"></div>
 
 #### Charter Questions
 
@@ -279,7 +237,6 @@ Your charter must address:
 - **Who decides** edge cases?
 - What happens **when it breaks**?
 
-<div style="height:1.5rem"></div>
 
 #### Gallery Walk Voting
 
@@ -289,19 +246,14 @@ Vote on:
 - “Most unexpected”
 - “Most honest about tradeoffs”
 
-<div style="height:1.5rem"></div>
 
----
 
-<div style="height:1.5rem"></div>
 
 ### Option B: Individual Launch
 
-<div style="height:1.5rem"></div>
 
 **Goal:** Begin your final assessment artefact.
 
-<div style="height:1.5rem"></div>
 
 #### The Flow
 
@@ -312,7 +264,6 @@ Vote on:
 | **Document** | 5 min | Note the friction, the defaults |
 | **Plan** | 5 min | Identify where you’ll diverge |
 
-<div style="height:1.5rem"></div>
 
 #### Checkpoints
 
@@ -323,20 +274,15 @@ By end of session, you should have:
 - ✓ A note on what the AI gave you **by default**
 - ✓ An idea of where you’ll **diverge**
 
-<div style="height:1.5rem"></div>
 
----
 
-<div style="height:1.5rem"></div>
 
 ## Reminder: Final Assessment via Case Study
 ### _The Divergence Artefact_
 
-<div style="height:1.5rem"></div>
 
 See [**[rubric]**](pi_casestudy.html) for full details.
 
-<div style="height:1.5rem"></div>
 
 Your submission includes:
 
@@ -346,23 +292,17 @@ Your submission includes:
 3. **Vignette** — short-form video documenting your finding.
 4. **Evidences** — screenshot or transcript showing friction or divergence.
 
-<div style="height:1.5rem"></div>
 
 **The goal is not “use AI well.” The goal is prove you’re not redundant.**
 
-<div style="height:1.5rem"></div>
 
----
 
-<div style="height:1.5rem"></div>
 
 ## Documentation Templates
 
-<div style="height:1.5rem"></div>
 
 Use these structures to keep your notes organised across sessions.
 
-<div style="height:1.5rem"></div>
 
 ### Probe Report (Class 1)
 
@@ -387,7 +327,6 @@ Screenshots saved: [ ] Yes  [ ] No
 ```
 
 
-<div style="height:1.5rem"></div>
 
 ### Jailbreak Log (Class 2)
 
@@ -416,7 +355,6 @@ SYNTHESIS
 ```
 
 
-<div style="height:1.5rem"></div>
 
 ### Divergence Log (Class 3 & Assessment)
 
@@ -441,15 +379,11 @@ MY CONTRIBUTION
 ```
 
 
-<div style="height:1.5rem"></div>
 
----
 
-<div style="height:1.5rem"></div>
 
 ## Quick Reference: Resistance Types
 
-<div style="height:1.5rem"></div>
 
 | Type | What It Looks Like | Example |
 |------|-------------------|---------|
@@ -457,5 +391,3 @@ MY CONTRIBUTION
 | **Friction** | Hedging, warnings, but still proceeds | “I can help, but I should note that…” |
 | **Deceleration** | Slowed output, requests confirmation | “Are you sure you want me to…?” |
 | **None** | Full compliance, no resistance | Default mode for “safe” requests |
-
-

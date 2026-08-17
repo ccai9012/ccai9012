@@ -51,5 +51,3 @@
   <img src="../figs/SCR-20251218-mawu.jpeg" width="600"><br>
   <em>SVI-based housing price estimation. Nouriani, A., Lemke, L., 2022. Vision-based housing price estimation using interior, exterior & satellite images. Intelligent Systems with Applications 14, 200081. https://doi.org/10.1016/j.iswa.2022.200081.</em>
 </p>
-
----

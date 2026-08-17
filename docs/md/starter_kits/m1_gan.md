@@ -40,5 +40,3 @@
 - Source: https://github.com/ualsg/GANmapper
 
 **Required Packages:** PyTorch, torchvision, CycleGAN, Pillow, matplotlib
-
----

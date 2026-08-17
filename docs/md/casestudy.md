@@ -1,6 +1,5 @@
 # A.1: Case Studies
 
-<div style="height:1.5rem"></div> 
 
 The independent case studies are a sequence of individual analytical assignments designed to develop critical, technical, and ethical literacy in contemporary AI systems. Rather than assessing tool proficiency or output quality in isolation, the case studies focus on judgement, agency, and the ability to reason about how AI systems behave, where risks arise, and where responsibility ultimately lies.
 
@@ -9,11 +8,8 @@ Each case targets a distinct layer of the AI stack. Taken together, they move fr
 Before beginning any case study, students must review the general structure, expectations, and submission requirements outlined here.
 
 
-<div style="height:1.5rem"></div> 
 
----
 
-<div style="height:1.5rem"></div> 
 
 ## Case Study Structure
 
@@ -46,8 +42,3 @@ This document contains the:
 <p align="center">
   <img src="figs/case_study_submission.png" width="300"><br>
 </p>
-
-
-
-
-

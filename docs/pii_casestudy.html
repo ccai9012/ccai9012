@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CCAI9012 - Pii Casestudy</title>
     <link rel="stylesheet" href="docs-style.css">
+    <script src="on-this-page.js" defer></script>
 </head>
 <body>
+    <a class="skip-link" href="#content">Skip to content</a>
     <div class="container">
-        <nav id="sidebar">
-            <div class="sidebar-header">
-                <h2>CCAI9012</h2>
-            </div>
+        <nav id="sidebar" aria-label="Course navigation">
+            <div class="sidebar-header"><h2>CCAI9012</h2></div>
             <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="timetable.html">Course Plan</a></li>
@@ -19,132 +19,135 @@
                 <li class="sub-item"><a href="casestudy.html">Case Study</a></li>
                 <li class="sub-item"><a href="course_project.html">Course Project</a></li>
                 <li><a href="reading_material.html">Reading Materials</a></li>
-                <li><a href="pi_responsibility.html">I. Responsibility & AI</a></li>
+                <li><a href="pi_responsibility.html">I. Responsibility &amp; AI</a></li>
                 <li><a href="pii_mechanics.html">II. Mechanics of AI</a></li>
-                <li><a href="piii_data_and_risks.html">III. Datasets & Risks of AI</a></li>
+                <li><a href="piii_data_and_risks.html">III. Datasets &amp; Risks of AI</a></li>
                 <li><a href="installation.html">Installation Guide</a></li>
                 <li><a href="starter_kits/index.html">Starter Kits</a></li>
+                <li class="sub-item"><a href="starter_kits/m1_gan.html">Module 1: Traditional Generative ML</a></li>
+                <li class="sub-item"><a href="starter_kits/m2_llm.html">Module 2: LLM for Structuring Information</a></li>
+                <li class="sub-item"><a href="starter_kits/m3_mm.html">Module 3: Multimodal Reasoning</a></li>
+                <li class="sub-item"><a href="starter_kits/m4_cv.html">Module 4: CV Models</a></li>
+                <li class="sub-item"><a href="starter_kits/m5_bias.html">Module 5: Bias &amp; Interpretability</a></li>
                 <li><a href="datasets.html">Datasets Reference</a></li>
+                <li><a href="api/index.html">API Reference</a></li>
             </ul>
         </nav>
-
-        <main id="content">
-<h1>A.1.2: Case Study #2: Mechanics &amp; Application</h1>
-<h2><em>The Revealing Mechanism</em></h2>
-<div style="height:1.5rem"></div>
-
-<p><em>Note 1: This outline provides guidance specific to Case Study #2, complementing the <strong>general case study rubric</strong></em> <a href="casestudy.html"><strong>[link]</strong></a>.<br />
+        <div class="page-shell">
+            <main id="content">
+<details class="page-toc-mobile">
+  <summary>On this page</summary>
+  <nav aria-label="On this page"><ul>
+<li class="toc-level-2"><a href="#the-revealing-mechanism">The Revealing Mechanism</a></li>
+<li class="toc-level-2"><a href="#the-brief">The Brief</a></li>
+<li class="toc-level-3"><a href="#1-what-problem-or-function-is-the-system-designed-to-address">1. What problem or function is the system designed to address?</a></li>
+<li class="toc-level-3"><a href="#2-what-is-the-mechanism">2. What is the mechanism?</a></li>
+<li class="toc-level-3"><a href="#3-what-does-this-mechanism-enable-and-what-does-it-limit">3. What does this mechanism enable — and what does it limit?</a></li>
+<li class="toc-level-3"><a href="#4-if-the-mechanism-changed-what-would-change">4. If the mechanism changed, what would change?</a></li>
+<li class="toc-level-3"><a href="#what-a-strong-submission-demonstrates">What a Strong Submission Demonstrates</a></li>
+<li class="toc-level-3"><a href="#choosing-your-mechanism">Choosing Your Mechanism</a></li>
+<li class="toc-level-2"><a href="#deliverables">Deliverables</a></li>
+<li class="toc-level-3"><a href="#i-annotation-500-words">i. Annotation (≈500 words)</a></li>
+<li class="toc-level-3"><a href="#ii-the-artefact">ii. The Artefact</a></li>
+<li class="toc-level-3"><a href="#iii-vignette">iii. Vignette</a></li>
+<li class="toc-level-3"><a href="#iv-evidences-optional">iv. Evidences (Optional)</a></li>
+<li class="toc-level-2"><a href="#grading-criteria">Grading Criteria</a></li>
+<li class="toc-level-3"><a href="#in-a-nutshell">In a nutshell</a></li>
+<li class="toc-level-3"><a href="#rubric">Rubric</a></li>
+<li class="toc-level-3"><a href="#submission-deadline">Submission Deadline</a></li>
+<li class="toc-level-2"><a href="#the-standard">The Standard</a></li>
+  </ul></nav>
+</details>
+<h1 id="a12-case-study-2-mechanics-application">A.1.2: Case Study #2: Mechanics &amp; Application</h1>
+<h2 id="the-revealing-mechanism"><em>The Revealing Mechanism</em></h2>
+<p><em>Note 1: This outline provides guidance specific to Case Study #2, complementing the <strong>general case study rubric</strong></em> <a href="casestudy.html"><strong>[link]</strong></a>.
 <em>Note 2: See <a href="pii_examples.html"><strong>[link]</strong></a> for some illustrative examples of mechanisms.</em></p>
-<div style="height:4rem"></div>
-
-<hr style="height: 6px; border: none; background-color: #000;">
-
-<div style="height:1.5rem"></div>
-
-<h2>The Brief</h2>
-<div style="height:1.5rem"></div>
-
+<h2 id="the-brief">The Brief</h2>
 <p>Understand the <strong>high-level algorithmic structure</strong> of an AI-powered method, function, or system.</p>
 <p>Investigate how it operates and analyse how its design shapes behaviour.</p>
-<p>You are <strong>not analysing surface outputs.</strong><br />
+<p>You are <strong>not analysing surface outputs.</strong>
 You are analysing the <strong>underlying process</strong>.</p>
 <p>Your analysis should address the following questions.</p>
-<div style="height:0.5rem"></div>
-
-<hr style="height: 3px; border: none; background-color: #000;">
-
-<div style="height:1.0rem"></div>
-
-<h3>1. What problem or function is the system designed to address?</h3>
-<div style="height:1.0rem"></div>
-
-<p>• <strong>Problem / Function</strong></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;– What is the <strong>main objective</strong> of the task?<br />
-&nbsp;&nbsp;&nbsp;&nbsp;– Why is this problem important?<br />
-&nbsp;&nbsp;&nbsp;&nbsp;– Why does this mechanism exist within the system?</p>
-<div style="height:0.5rem"></div>
-
-<hr />
-<div style="height:1.0rem"></div>
-
-<h3>2. What is the mechanism?</h3>
-<div style="height:1.0rem"></div>
-
-<p>• <strong>Mechanism Explanation</strong></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;– Describe clearly <strong>how it operates</strong>.<br />
-&nbsp;&nbsp;&nbsp;&nbsp;– Explain how the overall task breaks down into <strong>algorithmic steps or modules</strong>.</p>
-<p>• <strong>Your explanation should show</strong></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;– The <strong>overall workflow of the system</strong><br />
-&nbsp;&nbsp;&nbsp;&nbsp;– The <strong>specific mechanism</strong> you are analysing<br />
-&nbsp;&nbsp;&nbsp;&nbsp;– <strong>Inputs → transformations → outputs</strong></p>
-<p>Avoid unnecessary jargon.<br />
+<h3 id="1-what-problem-or-function-is-the-system-designed-to-address">1. What problem or function is the system designed to address?</h3>
+<ul>
+<li><strong>Problem / Function</strong><ul>
+<li>What is the <strong>main objective</strong> of the task?</li>
+<li>Why is this problem important?</li>
+<li>Why does this mechanism exist within the system?</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-what-is-the-mechanism">2. What is the mechanism?</h3>
+<ul>
+<li><strong>Mechanism Explanation</strong><ul>
+<li>Describe clearly <strong>how it operates</strong>.</li>
+<li>Explain how the overall task breaks down into <strong>algorithmic steps or modules</strong>.</li>
+</ul>
+</li>
+<li><strong>Your explanation should show</strong><ul>
+<li>The <strong>overall workflow of the system</strong>.</li>
+<li>The <strong>specific mechanism</strong> you are analysing.</li>
+<li><strong>Inputs → transformations → outputs</strong>.</li>
+</ul>
+</li>
+</ul>
+<p>Avoid unnecessary jargon.
 Focus on <strong>structural clarity</strong>.</p>
-<div style="height:0.5rem"></div>
-
-<hr />
-<div style="height:1.0rem"></div>
-
-<h3>3. What does this mechanism enable — and what does it limit?</h3>
-<div style="height:1.0rem"></div>
-
-<p>• <strong>Capabilities</strong></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;– What strengths or behaviours does the mechanism enable?</p>
-<p>• <strong>Limitations</strong></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;– What trade-offs, distortions, or failure patterns arise from its design?</p>
-<div style="height:0.5rem"></div>
-
-<hr />
-<div style="height:1.0rem"></div>
-
-<h3>4. If the mechanism changed, what would change?</h3>
-<div style="height:1.0rem"></div>
-
-<p>• <strong>Causal reasoning</strong></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;– Explain how structural design choices create the system’s <strong>strengths, limits, and failure patterns</strong>.</p>
-<p>• <strong>Comparison</strong></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;– Where helpful, compare your mechanism to an <strong>alternative design or configuration</strong>.</p>
+<h3 id="3-what-does-this-mechanism-enable-and-what-does-it-limit">3. What does this mechanism enable — and what does it limit?</h3>
+<ul>
+<li><strong>Capabilities</strong><ul>
+<li>What strengths or behaviours does the mechanism enable?</li>
+</ul>
+</li>
+<li><strong>Limitations</strong><ul>
+<li>What trade-offs, distortions, or failure patterns arise from its design?</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-if-the-mechanism-changed-what-would-change">4. If the mechanism changed, what would change?</h3>
+<ul>
+<li><strong>Causal reasoning</strong><ul>
+<li>Explain how structural design choices create:<ul>
+<li>strengths;</li>
+<li>limits; and</li>
+<li>failure patterns.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Comparison</strong><ul>
+<li>Where helpful, compare your mechanism to an <strong>alternative design or configuration</strong>.</li>
+</ul>
+</li>
+</ul>
 <p>Your analysis should reveal <strong>one key insight</strong> about how the mechanism shapes system behaviour.</p>
-<div style="height:1.0rem"></div>
-
-<hr style="height: 3px; border: none; background-color: #000;">
-
-<div style="height:1.0rem"></div>
-
-<h3>What a Strong Submission Demonstrates</h3>
-<div style="height:1.0rem"></div>
-
+<h3 id="what-a-strong-submission-demonstrates">What a Strong Submission Demonstrates</h3>
 <p>A strong submission will:</p>
 <ul>
-<li>Isolate <strong>one mechanism clearly</strong>  </li>
-<li>Diagram the <strong>overall workflow of the system</strong>  </li>
-<li>Zoom into the <strong>selected module</strong>  </li>
-<li>Identify <strong>inputs → transformations → outputs</strong>  </li>
+<li>Isolate <strong>one mechanism clearly</strong></li>
+<li>Diagram the <strong>overall workflow of the system</strong></li>
+<li>Zoom into the <strong>selected module</strong></li>
+<li>Identify <strong>inputs → transformations → outputs</strong></li>
 <li>Explain how <strong>structural design leads to behavioural outcomes</strong></li>
 </ul>
 <p>Your writing should demonstrate <strong>algorithmic thinking and structural clarity</strong>.</p>
-<div style="height:1.5rem"></div>
-
-<hr style="height: 3px; border: none; background-color: #000;">
-
-<div style="height:1.5rem"></div>
-
-<h3>Choosing Your Mechanism</h3>
+<h3 id="choosing-your-mechanism">Choosing Your Mechanism</h3>
 <p>Your mechanism should be:</p>
 <ul>
-<li><strong>Specific</strong>  </li>
-<li><strong>Structurally identifiable</strong>  </li>
-<li><strong>Narrow enough to analyse clearly</strong>  </li>
+<li><strong>Specific</strong></li>
+<li><strong>Structurally identifiable</strong></li>
+<li><strong>Narrow enough to analyse clearly</strong></li>
 <li><strong>Causally linked to system behaviour</strong></li>
 </ul>
-<p>Do not choose something broad like <strong>“AI”</strong> or <strong>“machine learning.”</strong><br />
+<p>Do not choose something broad like <strong>“AI”</strong> or <strong>“machine learning.”</strong>
 Focus on <strong>one clearly defined mechanism</strong> within a system.</p>
-<p>Explain the mechanism <strong>conceptually</strong>.<br />
+<p>Explain the mechanism <strong>conceptually</strong>.
 You may reference specific techniques where necessary to clarify how it works.</p>
 <p>Do <strong>not</strong> turn this into a technical manual.</p>
-<p><strong>Clarity over breadth.<br />
+<p><strong>Clarity over breadth.
 Mechanism over surface.</strong></p>
 <p>See <a href="pii_examples.html"><strong>[link]</strong></a> for some illustrative examples of mechanisms.</p>
-<!-- 
+<!--
 **Application-Based Mechanisms**
 
 <pre><code>  ■ Social Media Feeds (e.g. TikTok / Instagram)
@@ -190,156 +193,135 @@ Mechanism over surface.</strong></p>
 
 
 
----
 
 ### What You Must Do
 
-1. Show the overall workflow of the system  
-2. Isolate the specific mechanism you are analysing  
-3. Trace inputs → transformations → outputs  
-4. Explain how structural design choices create strengths, limits, and failure patterns  
+1. Show the overall workflow of the system
+2. Isolate the specific mechanism you are analysing
+3. Trace inputs → transformations → outputs
+4. Explain how structural design choices create strengths, limits, and failure patterns
 
 
-Use technique only to clarify structure.  
+Use technique only to clarify structure.
 Do not turn this into a technical manual.
 
-Clarity over breadth.  
+Clarity over breadth.
 Mechanism over surface.   -->
 
-<div style="height:4.0rem"></div>
-
-<hr style="height: 6px; border: none; background-color: #000;">
-
-<div style="height:2.0rem"></div>
-
-<h2>Deliverables</h2>
-<div style="height:1.5rem"></div>
-
+<h2 id="deliverables">Deliverables</h2>
 <p>Your submission must include <strong>four parts</strong>.</p>
-<div style="height:0.5rem"></div>
-
-<hr style="height: 3px; border: none; background-color: #000;">
-
-<div style="height:1.0rem"></div>
-
-<h3>i. Annotation (≈500 words)</h3>
-<div style="height:1.0rem"></div>
-
+<h3 id="i-annotation-500-words">i. Annotation (≈500 words)</h3>
 <p>Provide a short written annotation accompanying your case study.</p>
-<p>• <strong>Title</strong><br />
-&nbsp;&nbsp;&nbsp;&nbsp;– A clear title identifying the system or mechanism studied.</p>
-<p>• <strong>Caption / Description</strong><br />
-&nbsp;&nbsp;&nbsp;&nbsp;– A brief written explanation summarising the focus of your case study.</p>
-<div style="height:0.5rem"></div>
-
-<hr style="height: 3px; border: none; background-color: #000;">
-
-<div style="height:1.0rem"></div>
-
-<h3>ii. The Artefact</h3>
-<div style="height:1.0rem"></div>
-
+<ul>
+<li>
+<p><strong>Title</strong></p>
+<ul>
+<li>A clear title identifying the system or mechanism studied.</li>
+</ul>
+</li>
+<li>
+<p><strong>Caption / Description</strong></p>
+<ul>
+<li>A brief written explanation summarising the focus of your case study.</li>
+</ul>
+</li>
+</ul>
+<h3 id="ii-the-artefact">ii. The Artefact</h3>
 <p>Your artefact consists of <strong>two components</strong>:</p>
-<p>• <strong>Supporting Explanation</strong> — contextual material that frames the system and the mechanism you analyse<br />
-• <strong>Mechanism Representation</strong> — the core explanation showing how the mechanism operates  </p>
+<ul>
+<li><strong>Supporting Explanation</strong> — contextual material that frames the system and the mechanism you analyse</li>
+<li><strong>Mechanism Representation</strong> — the core explanation showing how the mechanism operates</li>
+</ul>
 <p>Think of this as <strong>telling the story of the system first, then revealing how the mechanism works</strong>.</p>
-<div style="height:1.0rem"></div>
-
-<hr />
-<div style="height:1.0rem"></div>
-
-<h4>Explanation Layer (Supporting Context)</h4>
-<div style="height:1.0rem"></div>
-
-<p>This section provides the <strong>context needed to understand the mechanism under study</strong>.<br />
+<h4 id="explanation-layer-supporting-context">Explanation Layer (Supporting Context)</h4>
+<p>This section provides the <strong>context needed to understand the mechanism under study</strong>.
 It is essentially the <strong>story or narrative that frames your mechanism</strong>.</p>
 <p>It may include slides, visual examples, short demonstrations, or other explanatory material.</p>
 <p>Your explanation layer should generally follow the sequence below.</p>
-<p>• <strong>Problem</strong><br />
-&nbsp;&nbsp;&nbsp;&nbsp;– Illustrate the real-world task or use case the system is designed to address.</p>
-<p>• <strong>System Context</strong><br />
-&nbsp;&nbsp;&nbsp;&nbsp;– Provide brief background on the system or application being studied.</p>
-<p>• <strong>Mechanism (Overview)</strong><br />
-&nbsp;&nbsp;&nbsp;&nbsp;– Identify the mechanism you will analyse.<br />
-&nbsp;&nbsp;&nbsp;&nbsp;– The detailed explanation follows in the next section.</p>
-<p>• <strong>Assessment</strong><br />
-&nbsp;&nbsp;&nbsp;&nbsp;– Provide preliminary observations about what the system does well and where it struggles.</p>
-<p>• <strong>Comparison (if relevant)</strong><br />
-&nbsp;&nbsp;&nbsp;&nbsp;– Introduce any alternative approaches or configurations that may be referenced later.</p>
+<ul>
+<li>
+<p><strong>Problem</strong></p>
+<ul>
+<li>Illustrate the real-world task or use case the system is designed to address.</li>
+</ul>
+</li>
+<li>
+<p><strong>System Context</strong></p>
+<ul>
+<li>Provide brief background on the system or application being studied.</li>
+</ul>
+</li>
+<li>
+<p><strong>Mechanism (Overview)</strong></p>
+<ul>
+<li>Identify the mechanism you will analyse.</li>
+<li>The detailed explanation follows in the next section.</li>
+</ul>
+</li>
+<li>
+<p><strong>Assessment</strong></p>
+<ul>
+<li>Provide preliminary observations about what the system does well and where it struggles.</li>
+</ul>
+</li>
+<li>
+<p><strong>Comparison (if relevant)</strong></p>
+<ul>
+<li>Introduce any alternative approaches or configurations that may be referenced later.</li>
+</ul>
+</li>
+</ul>
 <p>The goal of this section is to <strong>frame the system and prepare the reader for the detailed mechanism explanation</strong>.</p>
 <p>This corresponds to the <strong>contextual slides or images</strong> that accompany your core artefact in the online gallery documentation.</p>
-<div style="height:1.0rem"></div>
-
-<hr />
-<div style="height:1.0rem"></div>
-
-<h4>Mechanism (Core Artefact)</h4>
-<div style="height:0.3rem"></div>
-
+<h4 id="mechanism-core-artefact">Mechanism (Core Artefact)</h4>
 <p>This section is the <strong>central focus of the artefact</strong>.</p>
 <p>Explain how the mechanism operates using <strong>clear diagrammatic representations</strong>.</p>
 <p>Your explanation should make visible:</p>
-<p>• The <strong>overall workflow of the system</strong><br />
-• The <strong>specific module or mechanism</strong> you are analysing<br />
-• <strong>Inputs → transformations → outputs</strong><br />
-• How information <strong>changes across the pipeline</strong></p>
+<ul>
+<li>The <strong>overall workflow of the system</strong></li>
+<li>The <strong>specific module or mechanism</strong> you are analysing</li>
+<li><strong>Inputs → transformations → outputs</strong></li>
+<li>How information <strong>changes across the pipeline</strong></li>
+</ul>
 <p>Where relevant, present <strong>multiple levels of abstraction</strong>:</p>
-<p>• <strong>System-level overview</strong> — the overall pipeline<br />
-• <strong>Module-level breakdown</strong> — the mechanism you selected<br />
-• <strong>Internal functional logic</strong> — how the mechanism operates  </p>
+<ul>
+<li><strong>System-level overview</strong> — the overall pipeline</li>
+<li><strong>Module-level breakdown</strong> — the mechanism you selected</li>
+<li><strong>Internal functional logic</strong> — how the mechanism operates</li>
+</ul>
 <p>If the system is complex, focus on the <strong>overall structure plus one clearly analysed sub-mechanism</strong>.</p>
 <p>The goal is to make the <strong>hidden architecture legible</strong>.</p>
 <p>This is <strong>not a demo of outputs</strong> and <strong>not an exercise in aesthetic polish</strong>.</p>
 <p>Your priority is <strong>clarity of algorithmic structure</strong> and explaining how system behaviour emerges from design choices.</p>
-<div style="height:0.5rem"></div>
-
-<hr style="height: 3px; border: none; background-color: #000;">
-
-<div style="height:1.0rem"></div>
-
-<h3>iii. Vignette</h3>
-<div style="height:1.0rem"></div>
-
+<h3 id="iii-vignette">iii. Vignette</h3>
 <p>The vignette is a <strong>short-form video presentation</strong> summarising your case study.</p>
-<p>• Duration: <strong>approximately 90 seconds</strong></p>
-<p>Your video should clearly communicate:</p>
-<p>• The <strong>system or application studied</strong><br />
-• The <strong>mechanism you investigated</strong><br />
-• Your <strong>key insight about how the mechanism shapes behaviour</strong></p>
-<div style="height:0.5rem"></div>
-
-<hr style="height: 3px; border: none; background-color: #000;">
-
-<div style="height:1.0rem"></div>
-
-<h3>iv. Evidences (Optional)</h3>
-<div style="height:1.0rem"></div>
-
-<p>You may include <strong>supplementary materials</strong> in an appendix, such as:</p>
-<p>• Code snippets<br />
-• Parameter sweeps<br />
-• Prompt comparisons<br />
-• Additional diagrams or tables<br />
-• Experimental results</p>
-<div style="height:4rem"></div>
-
-<hr style="height: 6px; border: none; background-color: #000;">
-
-<div style="height:1.5rem"></div>
-
-<h2>Grading Criteria</h2>
-<div style="height:1.5rem"></div>
-
-<h3>In a nutshell</h3>
-<h4>We are <strong>not</strong> grading:</h4>
 <ul>
-<li>Advanced mathematics  </li>
-<li>Sophisticated coding  </li>
-<li>Exhaustive technical coverage  </li>
+<li>Duration: <strong>approximately 90 seconds</strong></li>
 </ul>
-<div style="height:1.5rem"></div>
-
-<h4>We <strong>are</strong> grading:</h4>
+<p>Your video should clearly communicate:</p>
+<ul>
+<li>The <strong>system or application studied</strong></li>
+<li>The <strong>mechanism you investigated</strong></li>
+<li>Your <strong>key insight about how the mechanism shapes behaviour</strong></li>
+</ul>
+<h3 id="iv-evidences-optional">iv. Evidences (Optional)</h3>
+<p>You may include <strong>supplementary materials</strong> in an appendix, such as:</p>
+<ul>
+<li>Code snippets</li>
+<li>Parameter sweeps</li>
+<li>Prompt comparisons</li>
+<li>Additional diagrams or tables</li>
+<li>Experimental results</li>
+</ul>
+<h2 id="grading-criteria">Grading Criteria</h2>
+<h3 id="in-a-nutshell">In a nutshell</h3>
+<h4 id="we-are-not-grading">We are <strong>not</strong> grading:</h4>
+<ul>
+<li>Advanced mathematics</li>
+<li>Sophisticated coding</li>
+<li>Exhaustive technical coverage</li>
+</ul>
+<h4 id="we-are-grading">We <strong>are</strong> grading:</h4>
 <table>
 <thead>
 <tr>
@@ -370,9 +352,7 @@ It is essentially the <strong>story or narrative that frames your mechanism</str
 </tr>
 </tbody>
 </table>
-<div style="height:1.5rem"></div>
-
-<h3>Rubric</h3>
+<h3 id="rubric">Rubric</h3>
 <table>
 <thead>
 <tr>
@@ -415,25 +395,43 @@ It is essentially the <strong>story or narrative that frames your mechanism</str
 </tr>
 </tbody>
 </table>
-<h3>Submission Deadline</h3>
-<p><s>Original: 📅2026.04.01 ⏰00:00</s><br />
-Extended: <span style="background-color:#a00000;color:#fff;">📅2026.04.08 ⏰00:00</span>  </p>
-<div style="height:1.5rem"></div>
-
-<hr style="height: 3px; border: none; background-color: #000;">
-
-<div style="height:1.5rem"></div>
-
-<h2>The Standard</h2>
-<div style="height:1.5rem"></div>
-
-<p>The goal is not to <em>describe AI</em>.<br />
+<h3 id="submission-deadline">Submission Deadline</h3>
+<p><s>Original: 📅2026.04.01 ⏰00:00</s>
+Extended: <span style="background-color:#a00000;color:#fff;">📅2026.04.08 ⏰00:00</span></p>
+<h2 id="the-standard">The Standard</h2>
+<p>The goal is not to <em>describe AI</em>.
 The goal is to <strong>understand how it works</strong>.</p>
-<p>Do not remain at the surface of outputs.<br />
+<p>Do not remain at the surface of outputs.
 Demonstrate that you can think in mechanisms, modules, and pipelines.</p>
-<p>Don’t just use AI.<br />
+<p>Don’t just use AI.
 <strong>Explain it.</strong></p>
-        </main>
+            </main>
+<aside class="page-toc">
+  <nav aria-label="On this page">
+    <p class="page-toc-title">On this page</p>
+    <ul>
+<li class="toc-level-2"><a href="#the-revealing-mechanism">The Revealing Mechanism</a></li>
+<li class="toc-level-2"><a href="#the-brief">The Brief</a></li>
+<li class="toc-level-3"><a href="#1-what-problem-or-function-is-the-system-designed-to-address">1. What problem or function is the system designed to address?</a></li>
+<li class="toc-level-3"><a href="#2-what-is-the-mechanism">2. What is the mechanism?</a></li>
+<li class="toc-level-3"><a href="#3-what-does-this-mechanism-enable-and-what-does-it-limit">3. What does this mechanism enable — and what does it limit?</a></li>
+<li class="toc-level-3"><a href="#4-if-the-mechanism-changed-what-would-change">4. If the mechanism changed, what would change?</a></li>
+<li class="toc-level-3"><a href="#what-a-strong-submission-demonstrates">What a Strong Submission Demonstrates</a></li>
+<li class="toc-level-3"><a href="#choosing-your-mechanism">Choosing Your Mechanism</a></li>
+<li class="toc-level-2"><a href="#deliverables">Deliverables</a></li>
+<li class="toc-level-3"><a href="#i-annotation-500-words">i. Annotation (≈500 words)</a></li>
+<li class="toc-level-3"><a href="#ii-the-artefact">ii. The Artefact</a></li>
+<li class="toc-level-3"><a href="#iii-vignette">iii. Vignette</a></li>
+<li class="toc-level-3"><a href="#iv-evidences-optional">iv. Evidences (Optional)</a></li>
+<li class="toc-level-2"><a href="#grading-criteria">Grading Criteria</a></li>
+<li class="toc-level-3"><a href="#in-a-nutshell">In a nutshell</a></li>
+<li class="toc-level-3"><a href="#rubric">Rubric</a></li>
+<li class="toc-level-3"><a href="#submission-deadline">Submission Deadline</a></li>
+<li class="toc-level-2"><a href="#the-standard">The Standard</a></li>
+    </ul>
+  </nav>
+</aside>
+        </div>
     </div>
 </body>
 </html>

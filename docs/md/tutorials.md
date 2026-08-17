@@ -3,11 +3,8 @@
 You will find basic information regarding tutorials below:
 
 
-<div style="height:1.5rem"></div>
 
-<hr style="height: 8px; border: none; background-color: #000;">
 
-<div style="height:4.0rem"></div>
 
 
 <!-- ========================  SECTION DIVIDER  ======================== -->
@@ -16,51 +13,38 @@ You will find basic information regarding tutorials below:
 
 ## Stream 1
 
-<div style="height:2.0rem"></div>
 
 <!-- ========================  SECTION DIVIDER  ======================== -->
 
 <h3 id="python-initialisation">&lt;&lt;💻🔧 <strong>Python Initialisation</strong>&gt;&gt;</h3>
-<div style="height:0.5rem"></div>
 - Set up your computer for programming and running AI/ML models.  
 - Learn the basic workflow for starting code development.
 
-<div style="height:0.5rem"></div>
 
-<hr style="height: 2px; border: none; background-color: #000;">
 
-<div style="height:2.0rem"></div>
 
 <!-- ========================  SECTION DIVIDER  ======================== -->
 
 <h3 id="getting-started">&lt;&lt;💻📝🧠 <strong>Getting Started</strong>&gt;&gt;</h3>
-<div style="height:0.5rem"></div>
 - Learn basic programming principles using Python.  
 - Understand the fundamentals of LLM interaction through programming and online UI.
 
 Please find code covered by tutorial [**[here]**](https://github.com/ccai9012/ccai9012/tree/main/weekly_scripts/S1_getting_started).  
 
-<div style="height:0.5rem"></div>
 
-<hr style="height: 2px; border: none; background-color: #000;">
 
-<div style="height:2.0rem"></div>
 
 <!-- ======================== SECTION DIVIDER ======================== -->
 
 <h3 id="advancing-python">&lt;&lt;💻📝🧠 <strong>Advancing in Python</strong>&gt;&gt;</h3> 
-<div style="height:0.5rem"></div>
 - Apply Python to basic scientific computing with NumPy.
 - Load and manipulate data using pandas.
 - Create and customise basic visualisations with Matplotlib.
 
 Please find code covered by tutorial [**[here]**](https://github.com/ccai9012/ccai9012/tree/main/weekly_scripts/S2_advancing_in_python).  
 
-<div style="height:1.5rem"></div>
 
-<hr style="height: 8px; border: none; background-color: #000;">
 
-<div style="height:4.0rem"></div>
 
 
 <!-- ========================  SECTION DIVIDER  ======================== -->
@@ -69,46 +53,36 @@ Please find code covered by tutorial [**[here]**](https://github.com/ccai9012/cc
 
 ## Stream 2
 
-<div style="height:2.0rem"></div>
 
 <!-- ========================  SECTION DIVIDER  ======================== -->
 
 <h3 id="basic-movie-editing">&lt;&lt;🎬 <strong>Basic Movie Editing</strong>&gt;&gt;</h3>
 
-<div style="height:1.0rem"></div>
 
 - Acquire fundamental movie editing skills.  
 - Please come with CapCut installed.  
 
 Please view the recorded session [**[here]**](https://drive.google.com/file/d/1367vJ7tcNmYMyKj_LSdA5mY8erCXETZ_/view?usp=sharing) and related material [**[here]**](https://github.com/ccai9012/ccai9012/tree/main/weekly_scripts/S2_basic_movie_editing).  
 
-<div style="height:0.5rem"></div>
 
-<hr style="height: 2px; border: none; background-color: #000;">
 
-<div style="height:2.0rem"></div>
 
 <!-- ========================  SECTION DIVIDER  ======================== -->
 
 <h3 id="precis-writing">&lt;&lt;✍️ <strong>Précis Writing</strong>&gt;&gt;</h3>
 
-<div style="height:1.0rem"></div> 
 
 Please bring an article of no more than 1,000 words, fiction or non-fiction, on a subject that matters to you. Choose the article with care; it should be one you have already read and can examine critically. It will form the basis of the Précis Writing Exercise. Please bring both a printed copy and a digital version of the text. The exercise includes both AI and non-AI components; please bring a laptop.
 
 Please view slides [**[here]**](https://docs.google.com/presentation/d/12bl9g-PpgfbYQSod774hPgw9LuG6vANpfcfbwmmzCyo/edit?usp=sharing).
 
-<div style="height:0.5rem"></div>
 
-<hr style="height: 2px; border: none; background-color: #000;">
 
-<div style="height:2.0rem"></div>
 
 <!-- ========================  SECTION DIVIDER  ======================== -->
 
 <h3 id="problem-statement">&lt;&lt;✍️ <strong>Problem Statement</strong>&gt;&gt;</h3> 
 
-<div style="height:1.0rem"></div>
 
 #### (1) Key Idea
 
@@ -134,7 +108,6 @@ Your problem should either:
 - concern the use or effects of AI, or  
 - be something that could meaningfully be investigated using AI.  
 
-<div style="height:0.5rem"></div>
 
 #### (2) Preparation
 
@@ -146,7 +119,6 @@ Bring to the tutorial one draft problem statement (about 150–200 words) that i
 
 You are not expected to propose a solution, tool, or methodology at this stage.
 
-<div style="height:0.5rem"></div>
 
 #### (3) Example Statements
 
@@ -171,47 +143,33 @@ _Note: These example directions (analysing AI, using AI for analysis, developing
     - **Possible Direction**: Prototype an AI-assisted feedback tool that helps tutors quickly generate structured, criteria-based comments on poster designs.
 
 
-<div style="height:0.5rem"></div>
 
 #### (4) Tutorial Plan
 
 In the session, we will **share and discuss draft problem statements** in small groups, **check that each one states a clear, well‑scoped problem** (not a solution, method, or vague topic), and **tighten scope, context, and stakeholders** while loosely connecting problems to possible **AI‑related directions**; by the end, you should have a **clearer, more focused problem statement** and a rough sense of how it might develop later in the module.
 
-<div style="height:0.5rem"></div>
 
-<hr style="height: 2px; border: none; background-color: #000;">
 
-<div style="height:2.0rem"></div>
 
 <!-- ========================  SECTION DIVIDER  ======================== -->
 
 <h3 id="presentation-workshop">&lt;&lt;🎤 <strong>Presentation Workshop</strong>&gt;&gt;</h3>
 
-<div style="height:1.0rem"></div> 
 
 This session introduces key strategies for communicating ideas clearly, effectively, and with confidence across different formats. Students will explore structure, visual storytelling, and delivery techniques through guided examples and discussion.
 
-<div style="height:0.5rem"></div>
 
 Please view slides [**[here]**](https://docs.google.com/presentation/d/1Ij5b8vw3nJZGBi3mW-94R5cV8lwLGZ01NRiwIFunjvA/edit?usp=sharing).
 
-<div style="height:0.5rem"></div>
 
-<hr style="height: 2px; border: none; background-color: #000;">
 
-<div style="height:2.0rem"></div>
 
 <!-- ========================  SECTION DIVIDER  ======================== -->
 
 <h3 id="design-crits">&lt;&lt;🧠 <strong>Crit-Syle Peer-to-Peer Review</strong>&gt;&gt;</h3>
 
-<div style="height:1.0rem"></div> 
 
 This session introduces the practice of design crits, a core component of architectural studio culture that fosters critical thinking through structured dialogue and reflection. Students will learn to give and receive constructive feedback, applying these skills during midterm Pecha Kucha presentations to evaluate course projects, refine ideas, and develop more thoughtful and rigorous design responses.
 
-<div style="height:0.5rem"></div>
 
 Please view slides [**[here]**](https://docs.google.com/presentation/d/1Zr6KoyIpSoM1jLcRbewOQtDb1LO7kaeeeygYicRcvO0/edit?usp=sharing).
-
-
-

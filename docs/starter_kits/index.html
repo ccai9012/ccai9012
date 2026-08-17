@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CCAI9012 - Starter Kits</title>
     <link rel="stylesheet" href="../docs-style.css">
+    <script src="../on-this-page.js" defer></script>
 </head>
 <body>
+    <a class="skip-link" href="#content">Skip to content</a>
     <div class="container">
-        <nav id="sidebar">
-            <div class="sidebar-header">
-                <h2>CCAI9012</h2>
-            </div>
+        <nav id="sidebar" aria-label="Course navigation">
+            <div class="sidebar-header"><h2>CCAI9012</h2></div>
             <ul class="nav-menu">
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="../timetable.html">Course Plan</a></li>
@@ -19,43 +19,58 @@
                 <li class="sub-item"><a href="../casestudy.html">Case Study</a></li>
                 <li class="sub-item"><a href="../course_project.html">Course Project</a></li>
                 <li><a href="../reading_material.html">Reading Materials</a></li>
-                <li><a href="../pi_responsibility.html">I. Responsibility & AI</a></li>
+                <li><a href="../pi_responsibility.html">I. Responsibility &amp; AI</a></li>
                 <li><a href="../pii_mechanics.html">II. Mechanics of AI</a></li>
-                <li><a href="../piii_data_and_risks.html">III. Datasets & Risks of AI</a></li>
+                <li><a href="../piii_data_and_risks.html">III. Datasets &amp; Risks of AI</a></li>
                 <li><a href="../installation.html">Installation Guide</a></li>
                 <li><a href="../starter_kits/index.html" class="active">Starter Kits</a></li>
+                <li class="sub-item"><a href="../starter_kits/m1_gan.html">Module 1: Traditional Generative ML</a></li>
+                <li class="sub-item"><a href="../starter_kits/m2_llm.html">Module 2: LLM for Structuring Information</a></li>
+                <li class="sub-item"><a href="../starter_kits/m3_mm.html">Module 3: Multimodal Reasoning</a></li>
+                <li class="sub-item"><a href="../starter_kits/m4_cv.html">Module 4: CV Models</a></li>
+                <li class="sub-item"><a href="../starter_kits/m5_bias.html">Module 5: Bias &amp; Interpretability</a></li>
                 <li><a href="../datasets.html">Datasets Reference</a></li>
+                <li><a href="../api/index.html">API Reference</a></li>
             </ul>
         </nav>
-
-        <main id="content">
-<h1>Starter Kits Documentation</h1>
+        <div class="page-shell">
+            <main id="content">
+<details class="page-toc-mobile">
+  <summary>On this page</summary>
+  <nav aria-label="On this page"><ul>
+<li class="toc-level-2"><a href="#module-1-traditional-generative-ml">Module 1: Traditional Generative ML</a></li>
+<li class="toc-level-2"><a href="#module-2-llm-for-structuring-information">Module 2: LLM for Structuring Information</a></li>
+<li class="toc-level-2"><a href="#module-3-multimodal-reasoning">Module 3: Multimodal Reasoning</a></li>
+<li class="toc-level-2"><a href="#module-4-cv-models-segmentation-detection-tracking">Module 4: CV Models (Segmentation, Detection, Tracking)</a></li>
+<li class="toc-level-2"><a href="#module-5-bias-detection-interpretability">Module 5: Bias Detection &amp;amp; Interpretability</a></li>
+<li class="toc-level-2"><a href="#getting-started">Getting Started</a></li>
+  </ul></nav>
+</details>
+<h1 id="starter-kits-documentation">Starter Kits Documentation</h1>
 <p>This document provides detailed information about all five starter kit modules available for your final projects. Each module includes comprehensive components, example use cases, and required packages.</p>
 <p align="center">
-  <img src="../figs/flowchart/sk_overview.drawio.png" width="1100"><br>
+  <img src="../figs/flowchart/sk_overview.drawio.png" width="1000"><br>
   <em> Starter Kits Overview
 </em>
 </p>
 
-<hr />
 <p>Pick one module to view details and starter code.</p>
-<h2>Module 1: Traditional Generative ML</h2>
+<h2 id="module-1-traditional-generative-ml">Module 1: Traditional Generative ML</h2>
 <p>Traditional generative ML for synthetic data generation and prediction.</p>
 <p><a href="m1_gan.html">Open Module →</a></p>
-<h2>Module 2: LLM for Structuring Information</h2>
+<h2 id="module-2-llm-for-structuring-information">Module 2: LLM for Structuring Information</h2>
 <p>LLMs to structure unstructured text into analyzable formats.</p>
 <p><a href="m2_llm.html">Open Module →</a></p>
-<h2>Module 3: Multimodal Reasoning</h2>
+<h2 id="module-3-multimodal-reasoning">Module 3: Multimodal Reasoning</h2>
 <p>Multimodal (vision-language) reasoning over images and text.</p>
 <p><a href="m3_mm.html">Open Module →</a></p>
-<h2>Module 4: CV Models (Segmentation, Detection, Tracking)</h2>
+<h2 id="module-4-cv-models-segmentation-detection-tracking">Module 4: CV Models (Segmentation, Detection, Tracking)</h2>
 <p>Computer vision: detection, segmentation, tracking, and visual analytics.</p>
 <p><a href="m4_cv.html">Open Module →</a></p>
-<h2>Module 5: Bias Detection &amp; Interpretability</h2>
+<h2 id="module-5-bias-detection-interpretability">Module 5: Bias Detection &amp; Interpretability</h2>
 <p>Bias detection, fairness evaluation, and interpretability tooling.</p>
 <p><a href="m5_bias.html">Open Module →</a></p>
-<hr />
-<h2>Getting Started</h2>
+<h2 id="getting-started">Getting Started</h2>
 <ol>
 <li><strong>Choose your module</strong> based on your interests and project goals</li>
 <li><strong>Review the use cases</strong> to understand potential applications</li>
@@ -63,7 +78,21 @@
 <li><strong>Download the datasets</strong> from the provided sources</li>
 <li><strong>Follow the code examples</strong> to understand the implementation approach</li>
 </ol>
-        </main>
+            </main>
+<aside class="page-toc">
+  <nav aria-label="On this page">
+    <p class="page-toc-title">On this page</p>
+    <ul>
+<li class="toc-level-2"><a href="#module-1-traditional-generative-ml">Module 1: Traditional Generative ML</a></li>
+<li class="toc-level-2"><a href="#module-2-llm-for-structuring-information">Module 2: LLM for Structuring Information</a></li>
+<li class="toc-level-2"><a href="#module-3-multimodal-reasoning">Module 3: Multimodal Reasoning</a></li>
+<li class="toc-level-2"><a href="#module-4-cv-models-segmentation-detection-tracking">Module 4: CV Models (Segmentation, Detection, Tracking)</a></li>
+<li class="toc-level-2"><a href="#module-5-bias-detection-interpretability">Module 5: Bias Detection &amp;amp; Interpretability</a></li>
+<li class="toc-level-2"><a href="#getting-started">Getting Started</a></li>
+    </ul>
+  </nav>
+</aside>
+        </div>
     </div>
 </body>
 </html>

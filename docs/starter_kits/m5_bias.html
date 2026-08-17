@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CCAI9012 - M5 Bias</title>
+    <title>CCAI9012 - Bias Detection &amp; Interpretability</title>
     <link rel="stylesheet" href="../docs-style.css">
+    <script src="../on-this-page.js" defer></script>
 </head>
 <body>
+    <a class="skip-link" href="#content">Skip to content</a>
     <div class="container">
-        <nav id="sidebar">
-            <div class="sidebar-header">
-                <h2>CCAI9012</h2>
-            </div>
+        <nav id="sidebar" aria-label="Course navigation">
+            <div class="sidebar-header"><h2>CCAI9012</h2></div>
             <ul class="nav-menu">
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="../timetable.html">Course Plan</a></li>
@@ -19,36 +19,45 @@
                 <li class="sub-item"><a href="../casestudy.html">Case Study</a></li>
                 <li class="sub-item"><a href="../course_project.html">Course Project</a></li>
                 <li><a href="../reading_material.html">Reading Materials</a></li>
-                <li><a href="../pi_responsibility.html">I. Responsibility & AI</a></li>
+                <li><a href="../pi_responsibility.html">I. Responsibility &amp; AI</a></li>
                 <li><a href="../pii_mechanics.html">II. Mechanics of AI</a></li>
-                <li><a href="../piii_data_and_risks.html">III. Datasets & Risks of AI</a></li>
+                <li><a href="../piii_data_and_risks.html">III. Datasets &amp; Risks of AI</a></li>
                 <li><a href="../installation.html">Installation Guide</a></li>
                 <li><a href="../starter_kits/index.html" class="active">Starter Kits</a></li>
                 <li class="sub-item"><a href="../starter_kits/m1_gan.html">Module 1: Traditional Generative ML</a></li>
                 <li class="sub-item"><a href="../starter_kits/m2_llm.html">Module 2: LLM for Structuring Information</a></li>
                 <li class="sub-item"><a href="../starter_kits/m3_mm.html">Module 3: Multimodal Reasoning</a></li>
                 <li class="sub-item"><a href="../starter_kits/m4_cv.html">Module 4: CV Models</a></li>
-                <li class="sub-item"><a href="../starter_kits/m5_bias.html" class="active">Module 5: Bias & Interpretability</a></li>
+                <li class="sub-item"><a href="../starter_kits/m5_bias.html" class="active">Module 5: Bias &amp; Interpretability</a></li>
                 <li><a href="../datasets.html">Datasets Reference</a></li>
+                <li><a href="../api/index.html">API Reference</a></li>
             </ul>
         </nav>
-
-        <main id="content">
-<h1>Bias Detection &amp; Interpretability</h1>
-<h3>Overview</h3>
+        <div class="page-shell">
+            <main id="content">
+<details class="page-toc-mobile">
+  <summary>On this page</summary>
+  <nav aria-label="On this page"><ul>
+<li class="toc-level-3"><a href="#overview">Overview</a></li>
+<li class="toc-level-3"><a href="#use-cases">Use Cases</a></li>
+<li class="toc-level-3"><a href="#code-example-credit-decision-bias-auditing">Code Example: Credit Decision Bias Auditing</a></li>
+  </ul></nav>
+</details>
+<h1 id="bias-detection-interpretability">Bias Detection &amp; Interpretability</h1>
+<h3 id="overview">Overview</h3>
 <p><strong>Category:</strong> Bias Detection</p>
 <p><strong>Modular Components:</strong>
 - Fairness Metrics Evaluator
 - Model Explainer (SHAP/LIME)
 - Feature Attribution Visualizer</p>
-<h3>Use Cases</h3>
+<h3 id="use-cases">Use Cases</h3>
 <ul>
 <li>Do public service recommendation models (e.g., bus stop placement, streetlight allocation) tend to ignore low-density or low-income areas?</li>
 <li>Why citizens&rsquo; application for housing subsidies or public services was deprioritized?</li>
 <li>Do predictive maintenance systems for infrastructure (e.g., water leaks, power outages) prioritize certain zones? Is this optimization fair?</li>
 <li>In citizen feedback systems (e.g., 311 complaints), are certain types of reports more likely to trigger response recommendations than others? Why?</li>
 </ul>
-<h3>Code Example: Credit Decision Bias Auditing</h3>
+<h3 id="code-example-credit-decision-bias-auditing">Code Example: Credit Decision Bias Auditing</h3>
 <p><strong>Content:</strong>
 - Analyze credit data using LLM and interpretable ML
 - Detect bias in approval logic (e.g., income, gender)
@@ -57,7 +66,18 @@
 - German Dataset (credit data) from AIF Fairness 360
 - COMPAS dataset (pre-prepared from https://www.kaggle.com/datasets/danofer/compass)</p>
 <p><strong>Required Packages:</strong> Fairlearn, SHAP, pandas, scikit-learn, transformers</p>
-        </main>
+            </main>
+<aside class="page-toc">
+  <nav aria-label="On this page">
+    <p class="page-toc-title">On this page</p>
+    <ul>
+<li class="toc-level-3"><a href="#overview">Overview</a></li>
+<li class="toc-level-3"><a href="#use-cases">Use Cases</a></li>
+<li class="toc-level-3"><a href="#code-example-credit-decision-bias-auditing">Code Example: Credit Decision Bias Auditing</a></li>
+    </ul>
+  </nav>
+</aside>
+        </div>
     </div>
 </body>
 </html>

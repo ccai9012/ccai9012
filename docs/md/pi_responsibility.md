@@ -3,11 +3,8 @@
 ## _*Make AI responsible to you*_  
 _A 3-Class Module on GenAI, Constraints, and Creative Survival_
 
-<div style="height:1.5rem"></div>
 
----
 
-<div style="height:1.5rem"></div>
 
 
 ## What This Module Is
@@ -18,15 +15,11 @@ This module teaches something different: **AI has no responsibility. It has no a
 
 Your job is to understand its walls, break through them, and make it answer to you—or disappear into the average.
 
-<div style="height:1.5rem"></div>
 
----
 
-<div style="height:1.5rem"></div>
 
 ## The Arc
 
-<div style="height:1.5rem"></div>
 
 | Class | Title | What Happens | What You Learn |
 |-------|-------|--------------|----------------|
@@ -35,11 +28,8 @@ Your job is to understand its walls, break through them, and make it answer to y
 | 3 | [Your Signature](class3.html) | You create something that couldn't come from the machine alone | "AI follows patterns. If I don't fight, I become average. The responsibility is mine." |
 
 
-<div style="height:1.5rem"></div>
 
----
 
-<div style="height:1.5rem"></div>
 
 ## What We're Asking You to Do
 
@@ -50,11 +40,8 @@ I'm not asking you to learn "best practices." I'm asking you to:
 3. **Fight the current.** Create something that proves you're not redundant.
 
 
-<div style="height:1.5rem"></div>
 
----
 
-<div style="height:1.5rem"></div>
 
 ## Learning Outcomes
 
@@ -67,16 +54,12 @@ By the end of this module, you will be able to:
 5. Produce creative work that demonstrates personal divergence from AI defaults
 
 
-<div style="height:1.5rem"></div>
-
----
 
 
-<div style="height:1.5rem"></div>
+
 
 ## How You’ll Be Assessed
 
-<div style="height:1.5rem"></div>
 
 This module is assessed through **A1.1 — Case Study 1: The Divergence Artefact**, an individual case study that evaluates how deliberately and critically you engage with generative AI.
 
@@ -89,26 +72,19 @@ This should be read alongside the **general case study rubric** [**[here]**](cas
 - The goal is not "use AI well."  
 - The goal is "prove you're not redundant."  
 
-<div style="height:1.5rem"></div>
 
----
 
-<div style="height:1.5rem"></div>
 
 ## Resources
 
-<div style="height:1.5rem"></div>
 
 - **Reading Material**: see _Part I: Responsibility & AI_ under [**[link]**](reading_material.html).
 - **Consolidated Handout**: for all in-class activities [**[link]**](pi_showflow.html).
 - **Additional Resources**: Tools, cases, and further reading [**[link]**](pi_resources.html).
 
 
-<div style="height:1.5rem"></div>
 
----
 
-<div style="height:1.5rem"></div>
 
 ## The One-Liner
 

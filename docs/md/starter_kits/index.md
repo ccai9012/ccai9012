@@ -3,12 +3,11 @@
 This document provides detailed information about all five starter kit modules available for your final projects. Each module includes comprehensive components, example use cases, and required packages.
 
 <p align="center">
-  <img src="../figs/flowchart/sk_overview.drawio.png" width="1100"><br>
+  <img src="../figs/flowchart/sk_overview.drawio.png" width="1000"><br>
   <em> Starter Kits Overview
 </em>
 </p>
 
----
 
 Pick one module to view details and starter code.
 
@@ -42,7 +41,6 @@ Bias detection, fairness evaluation, and interpretability tooling.
 
 [Open Module →](m5_bias.html)
 
----
 
 ## Getting Started
 
