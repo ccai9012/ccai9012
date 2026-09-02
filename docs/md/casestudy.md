@@ -29,15 +29,37 @@ Before beginning any case study, students must review the general structure, exp
 
 ## Case Study Structure
 
-Case studies should be conceived as a **portrait-format visual story suitable for social media posting**, supported by a concise abstract, short-form video, and summary poster. Together, the submission consists of four required components:
 
-- **(i) Abstract**: A concise written abstraction of **no more than 300 words** that distils the case study’s central question, approach, key findings, and principal insight. The abstract should make the core argument explicit and reflect the evidence developed across the submission.
+Each case study should be built around a carefully selected body of **artefacts and evidence** that demonstrates your investigation and supports your argument.
 
-- **(ii) Slides — Artefacts & Evidence**: The primary visual and evidentiary output of the case study. Develop a sequence of **portrait-format slides** that progressively communicates the investigation by connecting key evidence, such as prompts, intermediate outputs, comparisons, screenshots, diagrams, annotations, quantitative observations, or other relevant documentation. Together, the slides should construct a clear and coherent visual narrative.
+These materials may take many forms depending on the case study, including:
 
-- **(iii) Video — Connecting the Story**: A concise **short-form video presentation of no more than 90 seconds** using the slides and artefacts as its visual foundation. Use narration, sequencing, animation, and transitions to connect the evidence and communicate the case study’s core argument, findings, and insights as a coherent and accessible story.
+- AI-generated outputs
+- Prompts and responses
+- Intermediate or rejected outputs
+- Screenshots or transcripts
+- Comparisons and controlled tests
+- Diagrams and workflows
+- Annotated images
+- Tables and quantitative observations
+- Dataset excerpts or documentation
+- Code or computational results
+- References to policies, regulations, or external sources
+- Other relevant documentation of your process, decisions, and findings
 
-- **(iv) Poster - Distilling the Story**: Develop a complete **A2-format poster** that presents the case study as a self-contained visual argument. The poster should distil the strongest material from the slides and communicate the central question, key evidence, principal findings, and conclusion clearly enough to be understood independently.
+The important point is not the particular medium, but that each piece of evidence is **purposefully selected and captioned to explain what it shows and why it matters**.
+
+Think of these artefacts as the **backbone of the case study**. The same underlying evidence should then be curated, connected, and distilled across four complementary formats:
+
+- **(i) Abstract — Distilling the Argument**: A concise written abstraction of **no more than 300 words** that distils the case study’s central question, approach, key findings, and principal insight. The abstract should state the core argument clearly rather than introduce material not supported elsewhere in the submission.
+
+- **(ii) Slides — Curated & Captioned Stills**: Develop a series of **portrait-format slides suitable for social media posting**, selecting and arranging your strongest artefacts and evidence into a clear visual narrative. Each slide should communicate a meaningful part of the investigation through concise captions, annotations, comparisons, or diagrams.
+
+- **(iii) Video — Connecting the Story**: A concise **short-form video presentation of no more than 90 seconds** using the slides and artefacts as its visual foundation. Use narration, sequencing, animation, and transitions where appropriate to connect the evidence and communicate the case study’s argument, findings, and insights as a coherent story.
+
+- **(iv) Poster — Distilling the Story**: Develop a complete **A2-format poster** that brings together the strongest artefacts and evidence into a self-contained visual argument. The poster should communicate the central question, key evidence, principal findings, and conclusion clearly enough to be understood independently.
+
+
 
 <!-- > Students are expected to begin by reviewing the **general case study outline** [**[link]**](https://drive.google.com/file/d/1yD89ksBETDk4dHD8TsuDCXRXOX-S1onD/view?usp=sharing), which sets out shared structure, submission requirements, and assessment criteria.  -->
 

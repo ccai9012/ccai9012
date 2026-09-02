@@ -5,6 +5,9 @@
 
 The course combines a weekly **plenary lecture** with a programme of **small-group tutorials**. Lectures establish shared concepts, frameworks, and case material, while tutorials provide structured, hands-on engagement with both technical and professional competencies. Together, they are designed to support progressive skill development across the semester.
 
+Please view the summary course outline [**[here]**](https://drive.google.com/file/d/1lTPxU--blo0tgNth-HrbRQ1N8jfDrh8z/view?usp=sharing).
+
+
 <div style="height:1.5rem"></div>
 
 ---

@@ -12,7 +12,9 @@ Teaching is organised around lectures, tutorials, and case studies, alongside a 
 
 This document links the various course components, including weekly lecture materials, tutorial resources, readings, case study briefs, and project starter kits. Content will continue to evolve over the semester as tools, examples, and risks around AI change. 
 
-Your patience is appreciated as materials are refined and updated to reflect changes in AI practice.   If you notice any issues or inconsistencies, please contact us at via [**[email]**](mailto:ccai9012@gmail.com).
+Please view the summary course outline [**[here]**](https://drive.google.com/file/d/1lTPxU--blo0tgNth-HrbRQ1N8jfDrh8z/view?usp=sharing).
+
+<!-- Your patience is appreciated as materials are refined and updated to reflect changes in AI practice.   If you notice any issues or inconsistencies, please contact us at via [**[email]**](mailto:ccai9012@gmail.com). -->
 
 <p align="center">
   <img src="figs/three_parts.png" width="1000"><br>

@@ -4,6 +4,7 @@
 # /Users/tamk/Documents/GitHub/HKU/ccai9012/docs/index.html
 
 python md_to_html.py
+python md_to_html.py md/appexer.md
 python md_to_html.py md/pii_responsibility.md
 # python md_to_html.py md/pii_resources.md
 # python md_to_html.py md/pii_showflow.md
