@@ -32,9 +32,6 @@ The overall **sequencing of lectures, tutorials, and assessment milestones** is 
 <div style="height:1.5rem"></div>
 
 
-Tutorials will begin in **Week 3**.
-
-
 ### Structure and Requirements
 
 
@@ -112,6 +109,8 @@ Please view the current schedule of planned tutorials [**[here]**](https://docs.
 Tutorials will begin in **Week 3**.
 
 Students may register directly for their preferred tutorial session each week through the online sign-up sheet [**[link]**](https://docs.google.com/spreadsheets/d/1-IZp2ZOT_mBhITrlvXxjpd7Fv1luljklvUd6RRtSrgg/edit?usp=sharing). Students may choose different tutorial sessions from week to week according to their availability.  
+
+Tutorial attendance will contribute to your participation grade. You are required to attend at least **80% of the 10 tutorial sessions** — though, of course, we would be very happy to see you at all of them!
 
 Each tutorial session has **12 places available for sign-up**, allocated on a first-come, first-served basis. When registering, please provide your **UID and full name**, and please be courteous to your classmates by signing up only for sessions you intend to attend and updating your entry if your plans change.
 
