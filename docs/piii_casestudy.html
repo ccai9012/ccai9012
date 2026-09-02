@@ -16,11 +16,12 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="timetable.html">Course Plan</a></li>
                 <li><a href="Assessment.html">Assessment</a></li>
+                <li class="sub-item"><a href="appexer.html">Applied Exercise</a></li>
                 <li class="sub-item"><a href="casestudy.html">Case Study</a></li>
                 <li class="sub-item"><a href="course_project.html">Course Project</a></li>
                 <li><a href="reading_material.html">Reading Materials</a></li>
-                <li><a href="pi_responsibility.html">I. Responsibility & AI</a></li>
-                <li><a href="pii_mechanics.html">II. Mechanics of AI</a></li>
+                <li><a href="pi_mechanics.html">I. Mechanics of AI</a></li>
+                <li><a href="pii_responsibility.html">II. Responsibility & AI</a></li>
                 <li><a href="piii_data_and_risks.html">III. Datasets & Risks of AI</a></li>
                 <li><a href="installation.html">Installation Guide</a></li>
                 <li><a href="starter_kits/index.html">Starter Kits</a></li>
@@ -29,12 +30,12 @@
         </nav>
 
         <main id="content">
-<h1>A.1.3: Case Study #3: Datasets &amp; Risks</h1>
-<h2><em>The Building Blocks &amp; Guardrails</em></h2>
+<h1>A.1.3: Case Study Topic Area #3: Datasets &amp; Risks</h1>
+<h2><em>The Building Blocks, Blind Spots &amp; Consequences</em></h2>
 <div style="height:1.5rem"></div>
 
 <p><em>Note 1: This outline provides guidance specific to Case Study #3, complementing the <strong>general case study rubric</strong></em> <a href="casestudy.html"><strong>[link]</strong></a>.<br />
-<em>Note 2: See lecture note 3.1 <strong>Datasets &amp; Risks of AI</strong> <a href="piii_data_and_risks.html"><strong>[link]</strong></a> for some illustrative examples of the tasks.</em></p>
+<em>Note 2: See lecture note 3.1 <strong>Datasets &amp; Risks of AI</strong> <a href="piii_data_and_risks.html"><strong>[link]</strong></a> for illustrative examples.</em></p>
 <div style="height:4rem"></div>
 
 <hr style="height: 6px; border: none; background-color: #000;">
@@ -44,15 +45,29 @@
 <h2>The Brief</h2>
 <div style="height:1.5rem"></div>
 
-<p>Understand how the training dataset guides the <strong>capability and boundary</strong> of a Generative AI model.</p>
-<p>Investigate how specific training datasets can differentiate the capability of Generative AI (GenAI) models or LLMs.</p>
-<p>You are <strong>NOT training customized Generative AI models.</strong><br />
-You are <strong>exploring the boundaries of market-ready GenAI/LLMs in specific tasks</strong> (domain knowledge).</p>
+<p>Generative AI systems learn from data. What they can generate, recognise, or reason about is therefore shaped by <strong>what is represented in that data, what is missing, and how the data has been collected and curated</strong>.</p>
+<p>In this case study, you will investigate:</p>
+<p><strong>Data → Model Behaviour → Risk → Response</strong></p>
+<p>Select a <strong>specific domain or task</strong> and use a market-ready Generative AI model or LLM to explore:</p>
+<ul>
+<li>What the model does well</li>
+<li>Where its capability begins to break down</li>
+<li>What these patterns might reveal about its underlying data</li>
+<li>What risks arise from these limitations</li>
+<li>What could be improved</li>
+</ul>
+<p>You are <strong>NOT training a customised Generative AI model.</strong></p>
+<p>You are using controlled tests, comparisons, and available information about datasets to <strong>probe the boundaries of an existing AI system</strong>.</p>
 <div style="height:1.0rem"></div>
 
 <p><strong>Examples:</strong></p>
-<p>• It can be asking a pre-trained LLM to generate <strong>&ldquo;realistic&rdquo; nighttime images</strong> based on given input daytime images (download daytime images from the <a href="https://drive.google.com/drive/folders/1m0xVRvCSXI9uI1zXKCypMNZ5-kXnNF4-?usp=sharing"><strong>[link]</strong></a>)</p>
-<p>• Or you can think about <strong>another specific task in your domain of study</strong> that you notice current LLMs on the market cannot handle well, but through very specific prompts or better datasets, they might improve their capabilities.</p>
+<p>• Ask a Generative AI model to transform <strong>daytime Hong Kong street images into realistic nighttime scenes</strong>, and investigate where local characteristics are preserved, distorted, or replaced by generic imagery.</p>
+<p>• Test whether an LLM performs equally well across <strong>different locations, languages, cultures, disciplines, or types of knowledge</strong>.</p>
+<p>• Identify <strong>another specific task in your own domain</strong> where you suspect the model&rsquo;s performance may depend on what is well or poorly represented in its training data.</p>
+<p>The goal is not simply to show that AI makes mistakes.</p>
+<p>The goal is to investigate <strong>what those mistakes or boundaries may reveal about the data behind the system, and why this matters</strong>.</p>
+<div style="height:1.0rem"></div>
+
 <p>Your analysis should address the following questions.</p>
 <div style="height:0.5rem"></div>
 
@@ -61,55 +76,120 @@ You are <strong>exploring the boundaries of market-ready GenAI/LLMs in specific 
 <div style="height:1.0rem"></div>
 
 <h3>1. What is the domain-specific task?</h3>
-<p>(E.g., creating realistic nighttime street view images from daytime ones instead of generating a fancy rendering or fantasy-like visions)</p>
+<div style="height:1.0rem"></div>
+
+<p>Define a <strong>specific and testable task</strong>.</p>
+<p>(E.g., creating a realistic nighttime Hong Kong street scene from a daytime photograph, rather than simply generating an attractive nighttime image.)</p>
 <div style="height:1.0rem"></div>
 
 <p>• <strong>Problem / Function</strong></p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;– What is the <strong>main objective</strong> of the task?<br />
+&nbsp;&nbsp;&nbsp;&nbsp;– What would count as a successful result?<br />
 &nbsp;&nbsp;&nbsp;&nbsp;– Why is this problem important?<br />
-&nbsp;&nbsp;&nbsp;&nbsp;– Why LLM (or GenAI) might be useful?</p>
+&nbsp;&nbsp;&nbsp;&nbsp;– Why might the available data matter?</p>
 <div style="height:0.5rem"></div>
 
 <hr />
 <div style="height:1.0rem"></div>
 
-<h3>2. What models do you use for the task?</h3>
-<p>(E.g., Do you generate the nighttime images with StableDiffusion, Nano Banana, Midjourney, etc.?)</p>
+<h3>2. What data might shape the model&rsquo;s behaviour?</h3>
 <div style="height:1.0rem"></div>
 
-<p>• <strong>Model Dependency</strong></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;– Describe clearly how it <strong>operates</strong>.<br />
-&nbsp;&nbsp;&nbsp;&nbsp;– Explain how the overall task breaks down into <strong>input data preparation, prompt (or algorithmic steps), and output steps</strong>.</p>
-<p>• <strong>Your explanation should show</strong></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;– The <strong>overall workflow</strong><br />
-&nbsp;&nbsp;&nbsp;&nbsp;– The <strong>specific model&rsquo;s mechanism</strong> you are leveraging (E.g., if you are using StableDiffusion, explain how the Diffusion architecture works)<br />
-&nbsp;&nbsp;&nbsp;&nbsp;– The full <strong>Inputs → transformations → outputs link</strong></p>
+<p>Investigate what is known about the data behind the selected AI system and identify the aspects most relevant to your task.</p>
+<p>• <strong>Data &amp; Representation</strong></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;– What is publicly known about the model&rsquo;s training data?<br />
+&nbsp;&nbsp;&nbsp;&nbsp;– Where might the data have come from?<br />
+&nbsp;&nbsp;&nbsp;&nbsp;– What kinds of examples are likely to be well represented?<br />
+&nbsp;&nbsp;&nbsp;&nbsp;– What might be missing or underrepresented?</p>
+<p>• <strong>Data Quality</strong></p>
+<p>Consider where relevant:</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;– Coverage and diversity<br />
+&nbsp;&nbsp;&nbsp;&nbsp;– Accuracy and labelling<br />
+&nbsp;&nbsp;&nbsp;&nbsp;– Geographic or cultural representation<br />
+&nbsp;&nbsp;&nbsp;&nbsp;– Recency<br />
+&nbsp;&nbsp;&nbsp;&nbsp;– Filtering and curation<br />
+&nbsp;&nbsp;&nbsp;&nbsp;– Privacy, consent, copyright, or provenance</p>
 <div style="height:0.5rem"></div>
 
 <hr />
 <div style="height:1.0rem"></div>
 
-<h3>3. Is the GenAI model (or LLM) powerful in fulfilling the domain-specific task?</h3>
-<p>(E.g., mimicking a realistic nighttime urban environment?)</p>
+<h3>3. What does the model know, miss, or distort?</h3>
 <div style="height:1.0rem"></div>
 
+<p>Systematically test the model on your chosen task.</p>
+<p>Do not rely on only one successful and one unsuccessful example. Look for <strong>repeatable patterns</strong>.</p>
 <p>• <strong>Capabilities</strong></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;– What strengths or behaviors does the model enable?</p>
-<p>• <strong>Limitations</strong></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;– What problems or dysfunctionality do you spot/diagnose from the pre-trained model?</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;– What does the model consistently handle well?<br />
+&nbsp;&nbsp;&nbsp;&nbsp;– What knowledge or patterns appear to be well represented?</p>
+<p>• <strong>Boundaries</strong></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;– Where does the model begin to fail?<br />
+&nbsp;&nbsp;&nbsp;&nbsp;– What does it omit, simplify, substitute, hallucinate, or misrepresent?<br />
+&nbsp;&nbsp;&nbsp;&nbsp;– Are these failures random or systematic?</p>
+<p>• <strong>Evidence</strong></p>
+<p>You may use:</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;– Controlled prompt changes<br />
+&nbsp;&nbsp;&nbsp;&nbsp;– Controlled input changes<br />
+&nbsp;&nbsp;&nbsp;&nbsp;– Repeated generations<br />
+&nbsp;&nbsp;&nbsp;&nbsp;– Comparisons across categories or conditions<br />
+&nbsp;&nbsp;&nbsp;&nbsp;– Comparisons between different models<br />
+&nbsp;&nbsp;&nbsp;&nbsp;– Real-world or documented reference material</p>
+<p>Prompts may be used as an <strong>experimental probe</strong>, but the goal is not simply to demonstrate better prompt engineering.</p>
 <div style="height:0.5rem"></div>
 
 <hr />
 <div style="height:1.0rem"></div>
 
-<h3>4. How do you improve it?</h3>
+<h3>4. What risk does this create?</h3>
 <div style="height:1.0rem"></div>
 
-<p>• <strong>Causal reasoning</strong></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;– Explain how training dataset quality, and/or prompt engineering might (or might not) improve the model&rsquo;s ability for the domain-specific task.</p>
-<p>• <strong>Comparison</strong></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;– Where helpful, compare the <strong>&ldquo;initial results&rdquo;</strong> to an <strong>&ldquo;improved result&rdquo;</strong> from an alternative model, or an improved prompt, or feeding in specific training data.</p>
-<p>Your analysis should reveal <strong>one key insight</strong> about how the domain-specific training dataset/prompt/harness reshapes model performance.</p>
+<p>Connect the behaviour you observed to at least <strong>one meaningful downstream risk</strong>.</p>
+<p>Possible risks include:</p>
+<ul>
+<li>Representational bias</li>
+<li>Missing or unreliable knowledge</li>
+<li>Stereotyping</li>
+<li>Geographic or cultural misrepresentation</li>
+<li>Privacy or consent</li>
+<li>Copyright or provenance</li>
+<li>Unsafe or misleading outputs</li>
+<li>Exclusion of underrepresented users or contexts</li>
+</ul>
+<div style="height:1.0rem"></div>
+
+<p>• <strong>Consequences</strong></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;– Who or what could be affected?<br />
+&nbsp;&nbsp;&nbsp;&nbsp;– When does the limitation become consequential?<br />
+&nbsp;&nbsp;&nbsp;&nbsp;– Could it influence judgement, representation, access, or decision-making?</p>
+<p>Your analysis should connect a <strong>specific model behaviour</strong> to a <strong>specific consequence</strong>.</p>
+<div style="height:0.5rem"></div>
+
+<hr />
+<div style="height:1.0rem"></div>
+
+<h3>5. How might it be improved?</h3>
+<div style="height:1.0rem"></div>
+
+<p>Propose a reasonable response to the limitation you identified.</p>
+<p>Possible approaches include:</p>
+<ul>
+<li>Adding more diverse or representative data</li>
+<li>Improving labels or metadata</li>
+<li>Introducing specialised domain data</li>
+<li>Improving geographic, cultural, or linguistic coverage</li>
+<li>Filtering poor-quality or problematic data</li>
+<li>Retrieving information from trusted external sources</li>
+<li>Fine-tuning or adapting a model</li>
+<li>Introducing human review or verification</li>
+<li>Using prompts or guardrails where the underlying model cannot be changed</li>
+</ul>
+<div style="height:1.0rem"></div>
+
+<p>• <strong>Causal Reasoning</strong></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;– What would you change?<br />
+&nbsp;&nbsp;&nbsp;&nbsp;– Why might this improve the behaviour you observed?<br />
+&nbsp;&nbsp;&nbsp;&nbsp;– What trade-offs or new risks might it introduce?</p>
+<p>Your analysis should reveal <strong>one clear insight about how data shapes model behaviour and risk</strong>.</p>
 <div style="height:1.0rem"></div>
 
 <hr style="height: 3px; border: none; background-color: #000;">
@@ -121,80 +201,131 @@ You are <strong>exploring the boundaries of market-ready GenAI/LLMs in specific 
 
 <p>A strong submission will:</p>
 <ul>
-<li>Isolate the role of the <strong>training dataset quality</strong> from the mechanism clearly  </li>
-<li>Diagram the <strong>overall workflow of the model</strong>  </li>
-<li>Zoom into the <strong>selected module</strong> (training dataset/prompt/etc)  </li>
-<li>Identify <strong>inputs → transformations → outputs</strong>  </li>
-<li>Explain how the <strong>training dataset matters to behavioral outcomes</strong></li>
+<li>Define a clear <strong>domain-specific task</strong></li>
+<li>Identify a meaningful issue related to <strong>data quality, coverage, or representation</strong></li>
+<li>Use evidence to reveal a <strong>capability, bias, gap, or boundary</strong></li>
+<li>Distinguish clearly between <strong>what is known, observed, and inferred</strong></li>
+<li>Connect model behaviour to a meaningful <strong>risk or consequence</strong></li>
+<li>Propose a plausible <strong>response or improvement</strong></li>
+<li>Communicate the relationship clearly:</li>
 </ul>
-<p>Your writing should demonstrate <strong>training dataset engineering thinking or prompt engineering thinking</strong>.</p>
-<div style="height:1.5rem"></div>
+<p><strong>Data → Behaviour → Risk → Response</strong></p>
+<p>Your work should demonstrate <strong>data-centric AI thinking</strong>, not simply better use of an AI tool.</p>
+<div style="height:4.0rem"></div>
 
-<hr style="height: 3px; border: none; background-color: #000;">
+<hr style="height: 6px; border: none; background-color: #000;">
 
-<div style="height:1.5rem"></div>
+<div style="height:2.0rem"></div>
 
 <h2>Deliverables</h2>
 <div style="height:1.5rem"></div>
 
-<p>Your submission must include <strong>four parts</strong>.</p>
+<p>Your submission is built around a central <strong>artefact</strong>, which forms the backbone of the case study and provides the evidence from which your abstract, slides, video, and poster are constructed.</p>
 <div style="height:0.5rem"></div>
 
 <hr style="height: 3px; border: none; background-color: #000;">
 
 <div style="height:1.0rem"></div>
 
-<h3>i. Annotation (≈500 words)</h3>
+<h3>The Artefact — Data, Behaviour &amp; Risk</h3>
 <div style="height:1.0rem"></div>
 
-<p>Provide a short written annotation accompanying your case study.</p>
-<p>• <strong>Title</strong><br />
-&nbsp;&nbsp;&nbsp;&nbsp;– A clear title identifying the system or mechanism studied.</p>
-<p>• <strong>Caption / Description</strong><br />
-&nbsp;&nbsp;&nbsp;&nbsp;– A brief written explanation summarising the focus of your case study.</p>
+<p>The artefact is the <strong>core analytical and evidentiary material</strong> developed through your investigation.</p>
+<p>Think of it as the body of evidence that makes the relationship between <strong>data, model behaviour, risk, and response</strong> visible.</p>
+<p>Your artefact should make clear:</p>
+<p>• <strong>Task &amp; Context</strong></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;– What specific task are you testing?<br />
+&nbsp;&nbsp;&nbsp;&nbsp;– What would count as successful or credible performance?</p>
+<p>• <strong>Data &amp; Representation</strong></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;– What is known about the relevant training data or data pipeline?<br />
+&nbsp;&nbsp;&nbsp;&nbsp;– What kinds of information appear well represented, missing, or underrepresented?<br />
+&nbsp;&nbsp;&nbsp;&nbsp;– Where necessary, distinguish clearly between <strong>what is known and what is inferred</strong>.</p>
+<p>• <strong>Testing &amp; Evidence</strong></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;– Use controlled tests, comparisons, repeated outputs, or reference material to reveal patterns in model behaviour.<br />
+&nbsp;&nbsp;&nbsp;&nbsp;– Show both <strong>capabilities and boundaries</strong>, rather than relying on isolated examples.</p>
+<p>• <strong>Risk &amp; Consequence</strong></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;– Connect an observed behaviour to a meaningful downstream risk.<br />
+&nbsp;&nbsp;&nbsp;&nbsp;– Explain <strong>who or what may be affected, and why the behaviour matters</strong>.</p>
+<p>• <strong>Response</strong></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;– Propose a plausible intervention addressing the limitation you identified.<br />
+&nbsp;&nbsp;&nbsp;&nbsp;– Explain why the intervention might improve the behaviour, and what trade-offs it may introduce.</p>
+<div style="height:1.0rem"></div>
+
+<p>Use <strong>evidence from your investigation</strong> to support these claims.</p>
+<p>This may include:</p>
+<p>• Input examples<br />
+• Prompts and outputs<br />
+• Controlled comparisons<br />
+• Repeated generations<br />
+• Dataset documentation<br />
+• Screenshots<br />
+• Diagrams<br />
+• Tables or quantitative observations<br />
+• Real-world reference material<br />
+• Model comparisons<br />
+• Annotations identifying specific patterns or failures  </p>
+<p>Each piece of evidence should be carefully selected and <strong>captioned to explain what it shows, what you infer from it, and why it matters</strong>.</p>
+<p>The artefact should allow the reader to follow the central chain:</p>
+<p><strong>What data? → What did you test? → What happened? → What risk does it create? → What could change?</strong></p>
 <div style="height:0.5rem"></div>
 
 <hr style="height: 3px; border: none; background-color: #000;">
 
 <div style="height:1.0rem"></div>
 
-<h3>ii. The Artefact</h3>
+<h3>i. Abstract</h3>
 <div style="height:1.0rem"></div>
 
-<p>Your artefact consists of <strong>two components</strong>:</p>
-<p>• <strong>Supporting Explanation</strong> — contextual material that frames the domain specific task you explore<br />
-• <strong>Input → Model → Output Representation</strong> — the core explanation showing how the whole input-output flow operates.</p>
+<p>Provide a concise written abstraction of <strong>no more than 300 words</strong>.</p>
+<p>Distil the task investigated, the relevant data issue, your method of testing, the key behavioural finding, the resulting risk, and your principal insight about <strong>how data shapes AI behaviour</strong>.</p>
+<div style="height:0.5rem"></div>
+
+<hr style="height: 3px; border: none; background-color: #000;">
+
 <div style="height:1.0rem"></div>
 
-<hr />
+<h3>ii. Slides</h3>
 <div style="height:1.0rem"></div>
 
-<h3>iii. Vignette</h3>
+<p>Develop a sequence of <strong>portrait-format slides</strong> that uses your artefact and supporting evidence to construct a clear visual story.</p>
+<p>The sequence should make the progression from <strong>data → testing → behaviour → risk → response</strong> legible.</p>
+<div style="height:0.5rem"></div>
+
+<hr style="height: 3px; border: none; background-color: #000;">
+
 <div style="height:1.0rem"></div>
 
-<p>The vignette is a <strong>short-form video presentation</strong> summarising your case study.</p>
-<p>• Duration: <strong>approximately 60 seconds</strong></p>
-<p>Your video should clearly communicate:</p>
-<p>• The <strong>GenAI or LLM model studied</strong><br />
-• The <strong>domain-specific task you investigated</strong><br />
-• Your <strong>key insight about how the training dataset or prompt reshapes AI model behaviour</strong></p>
+<h3>iii. Video</h3>
 <div style="height:1.0rem"></div>
 
-<hr />
+<p>Develop a <strong>short-form video presentation of no more than 90 seconds</strong> using your slides and artefact as its visual foundation.</p>
+<p>Use the video to connect the strongest evidence and communicate your central insight about <strong>how data shapes what the AI system can, cannot, or should not be trusted to do</strong>.</p>
+<div style="height:0.5rem"></div>
+
+<hr style="height: 3px; border: none; background-color: #000;">
+
 <div style="height:1.0rem"></div>
 
-<h3>iv. Evidences (Optional)</h3>
+<h3>iv. Poster</h3>
+<div style="height:1.0rem"></div>
+
+<p>Bring the strongest elements of your artefact and evidence together into a <strong>complete A2-format poster</strong>.</p>
+<p>The poster should function as a <strong>self-contained visual argument</strong>, making the relevant data issue, observed model behaviour, resulting risk, and principal insight clearly legible.</p>
 <div style="height:1.0rem"></div>
 
 <p>You may include <strong>supplementary materials in an appendix</strong>, such as:</p>
-<p>• Code snippets<br />
-• Parameter sweeps<br />
-• Prompt comparisons<br />
-• Additional diagrams or tables<br />
-• Experimental results</p>
-<div style="height:1.5rem"></div>
+<ul>
+<li>Additional test cases</li>
+<li>Prompt comparisons</li>
+<li>Model comparisons</li>
+<li>Dataset documentation</li>
+<li>Code snippets</li>
+<li>Additional diagrams or tables</li>
+<li>Experimental results</li>
+</ul>
+<div style="height:4rem"></div>
 
-<hr style="height: 3px; border: none; background-color: #000;">
+<hr style="height: 6px; border: none; background-color: #000;">
 
 <div style="height:1.5rem"></div>
 
@@ -202,13 +333,17 @@ You are <strong>exploring the boundaries of market-ready GenAI/LLMs in specific 
 <div style="height:1.0rem"></div>
 
 <h3>In a nutshell</h3>
-<p><strong>We are not grading:</strong></p>
+<h4>We are <strong>not</strong> grading:</h4>
 <ul>
-<li>Advanced mathematics  </li>
-<li>Sophisticated coding  </li>
-<li>Exhaustive technical coverage</li>
+<li>Advanced mathematics</li>
+<li>Sophisticated coding</li>
+<li>The complexity of the AI tool</li>
+<li>The aesthetic quality of AI outputs in isolation</li>
+<li>Complete knowledge of a proprietary training dataset</li>
 </ul>
-<p><strong>We are grading:</strong></p>
+<div style="height:1.5rem"></div>
+
+<h4>We <strong>are</strong> grading:</h4>
 <table>
 <thead>
 <tr>
@@ -218,27 +353,29 @@ You are <strong>exploring the boundaries of market-ready GenAI/LLMs in specific 
 </thead>
 <tbody>
 <tr>
-<td><strong>Understanding</strong></td>
-<td>Do you correctly explain how the mechanism works?</td>
+<td><strong>Data Understanding</strong></td>
+<td>Do you understand how data quality, coverage, or representation may shape the model?</td>
 </tr>
 <tr>
-<td><strong>Causal Reasoning / Comparison</strong></td>
-<td>Do you link structural design choices to observable system behaviour, including how behaviour might change under alternative designs?</td>
+<td><strong>Evidence &amp; Reasoning</strong></td>
+<td>Do you support your argument with observable evidence and distinguish evidence from speculation?</td>
 </tr>
 <tr>
-<td><strong>Limitations</strong></td>
-<td>Do you identify meaningful trade-offs, constraints, or failure modes introduced by the mechanism?</td>
+<td><strong>Risk Analysis</strong></td>
+<td>Do you explain why the behaviour matters and what consequences may follow?</td>
 </tr>
 <tr>
-<td><strong>Clarity</strong></td>
-<td>Can you explain complex ideas in a precise and accessible manner?</td>
+<td><strong>Response</strong></td>
+<td>Do you propose a plausible way to address the identified issue?</td>
 </tr>
 <tr>
-<td><strong>Visual Explanation</strong></td>
-<td>Do your diagrams or visual representations clearly communicate the mechanism and information flow?</td>
+<td><strong>Communication</strong></td>
+<td>Can you construct a clear and visually coherent argument?</td>
 </tr>
 </tbody>
 </table>
+<div style="height:1.5rem"></div>
+
 <h3>Rubric</h3>
 <table>
 <thead>
@@ -251,34 +388,34 @@ You are <strong>exploring the boundaries of market-ready GenAI/LLMs in specific 
 </thead>
 <tbody>
 <tr>
-<td><strong>Mechanism Accuracy</strong></td>
-<td>Structurally correct and clearly articulated explanation of how the mechanism operates</td>
-<td>Mostly correct explanation with minor gaps or simplifications</td>
-<td>Superficial, vague, or incorrect description of the mechanism</td>
+<td><strong>Data Understanding</strong></td>
+<td>Clearly identifies and explains a meaningful issue in data quality, coverage, representation, or provenance</td>
+<td>Identifies a relevant data issue but with limited depth</td>
+<td>Data is treated superficially or its relevance is unclear</td>
 </tr>
 <tr>
-<td><strong>Causal Analysis</strong></td>
-<td>Clear linkage between structural design and system behaviour, with thoughtful comparison or reasoning</td>
-<td>Some connection between structure and behaviour, but underdeveloped</td>
-<td>Describes outputs or observations without structural reasoning</td>
+<td><strong>Evidence &amp; Reasoning</strong></td>
+<td>Uses systematic evidence to connect data-related factors to model behaviour while distinguishing observation from inference</td>
+<td>Provides some evidence but the connection is underdeveloped</td>
+<td>Makes unsupported claims or relies on isolated outputs</td>
 </tr>
 <tr>
-<td><strong>Failure Awareness</strong></td>
-<td>Identifies meaningful trade-offs, limitations, or structural constraints</td>
-<td>Mentions limitations but without depth or explanation</td>
-<td>No meaningful discussion of limitations</td>
+<td><strong>Risk Analysis</strong></td>
+<td>Clearly connects observed behaviour to a specific and meaningful downstream risk</td>
+<td>Identifies a relevant risk but connection is weak</td>
+<td>Mentions generic risks without linking them to the investigation</td>
 </tr>
 <tr>
-<td><strong>Clarity of Communication</strong></td>
-<td>Complex mechanism explained clearly and accessibly to non-specialists</td>
-<td>Explanation understandable but dense or uneven</td>
-<td>Obscure, overly technical, or difficult to follow</td>
+<td><strong>Response</strong></td>
+<td>Proposes a convincing response and explains why it could address the identified issue</td>
+<td>Suggests a plausible response with limited justification</td>
+<td>Suggests generic fixes without addressing the underlying issue</td>
 </tr>
 <tr>
-<td><strong>Visual Explanation</strong></td>
-<td>Diagrams clearly reveal the system workflow, mechanism, and information flow</td>
-<td>Visuals present but only partially clarify the mechanism</td>
-<td>Visuals absent, confusing, or decorative rather than explanatory</td>
+<td><strong>Clarity &amp; Visual Argument</strong></td>
+<td>Evidence is carefully selected and organised into a clear visual narrative</td>
+<td>Argument is understandable but uneven</td>
+<td>Submission is difficult to follow or visually disconnected</td>
 </tr>
 </tbody>
 </table>
@@ -288,25 +425,18 @@ You are <strong>exploring the boundaries of market-ready GenAI/LLMs in specific 
 
 <div style="height:1.5rem"></div>
 
-<h2>Submission Deadline</h2>
-<div style="height:1.0rem"></div>
-
-<p>Original: <strong>2026.04.29 00:00</strong></p>
-<div style="height:1.5rem"></div>
-
-<hr style="height: 3px; border: none; background-color: #000;">
-
-<div style="height:1.5rem"></div>
-
 <h2>The Standard</h2>
 <div style="height:1.0rem"></div>
 
-<p>The goal is not to <strong>describe AI</strong>.<br />
-The goal is to <strong>understand how it works</strong>.<br />
-Do not remain at the surface of outputs.<br />
-Demonstrate that you can think in <strong>mechanisms, modules, and pipelines</strong>.<br />
-Don&rsquo;t just use AI.<br />
-<strong>Explain it.</strong></p>
+<p>The goal is not simply to show that <strong>AI sometimes gets things wrong</strong>.</p>
+<p>The goal is to ask:</p>
+<p><strong>What does the system appear to know?</strong><br />
+<strong>What is missing or distorted?</strong><br />
+<strong>What might the data have to do with this?</strong><br />
+<strong>What risk does this create?</strong></p>
+<p>Distinguish <strong>what you know, what you observe, and what you infer</strong>.</p>
+<p>Don&rsquo;t just use AI.</p>
+<p><strong>Probe what it has learned—and what it has not.</strong></p>
 <div style="height:1.5rem"></div>
 
 <hr style="height: 3px; border: none; background-color: #000;">

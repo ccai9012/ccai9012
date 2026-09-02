@@ -22,20 +22,7 @@ Source Article: [**[link]**](https://dl.acm.org/doi/10.1145/3442188.3445922) | F
 
 <div style="height:1.5rem"></div>
 
-## Part I: Responsiblity & AI
-
-- Murrell, A. (2023). _The Age of Average_. Source Article: [**[link]**](https://www.alexmurrell.co.uk/articles/the-age-of-average) 
-
-- Chiang, T. (2023). _ChatGPT Is a Blurry JPEG of the Web_. *The New Yorker*.  
-Source Article: [**[link]**](https://www.newyorker.com/tech/annals-of-technology/chatgpt-is-a-blurry-jpeg-of-the-web) | File Upload: [**[link]**](https://github.com/ccai9012/ccai9012/raw/main/reading/p1/chiang-gpt-blurry-jpeg.pdf)  
-
-<div style="height:1.5rem"></div>
-
----
-
-<div style="height:1.5rem"></div>
-
-## Part II: Mechanics of AI
+## Part I: Mechanics of AI
 
 - LeCun, Y., Bengio, Y., & Hinton, G. (2015). _Deep Learning_. *Nature*, 521, 436–444.  
   Source Article: [**[link]**](https://www.nature.com/articles/nature14539) | File Upload: [**[link]**](https://github.com/ccai9012/ccai9012/raw/main/reading/p2/nature14539.pdf). 
@@ -50,6 +37,19 @@ _Articles will be released progressively throughout the lecture series..._
 
 - **Week 8: Randomness of AI (LLM)**  
   Floridi, L. and Chiriatti, M. (2020) ‘GPT-3: Its Nature, Scope, Limits, and Consequences’, *Minds and Machines*, 30(4), pp. 681–694. Available at: https://doi.org/10.1007/s11023-020-09548-1. -->
+
+<div style="height:1.5rem"></div>
+
+---
+
+<div style="height:1.5rem"></div>
+
+## Part II: Responsiblity & AI
+
+- Murrell, A. (2023). _The Age of Average_. Source Article: [**[link]**](https://www.alexmurrell.co.uk/articles/the-age-of-average) 
+
+- Chiang, T. (2023). _ChatGPT Is a Blurry JPEG of the Web_. *The New Yorker*.  
+Source Article: [**[link]**](https://www.newyorker.com/tech/annals-of-technology/chatgpt-is-a-blurry-jpeg-of-the-web) | File Upload: [**[link]**](https://github.com/ccai9012/ccai9012/raw/main/reading/p1/chiang-gpt-blurry-jpeg.pdf)  
 
 <div style="height:1.5rem"></div>
 

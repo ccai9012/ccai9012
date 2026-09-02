@@ -1,5 +1,5 @@
 
-# Part II: Mechanics & Application
+# Part I: Mechanics & Application
 ## _*Make AI work for you*_   
 _A 4-Class Module on AI Systems, Mechanisms, and Behaviour_
 
@@ -37,18 +37,19 @@ Once you see the structure, you can begin to reason about:
 
 ## The Arc
 
-<div style="height:1.5rem"></div>
 
+<div style="height:1.5rem"></div>
 
 | Class | Title | What Happens | What You Learn |
 |------|------|--------------|----------------|
-| 1 | [Machine Learning 101](https://docs.google.com/presentation/d/1WsaKzyXBToEf9KiaM1DGHP138O0AmdsA/edit?usp=sharing&ouid=110843421025662715021&rtpof=true&sd=true) | We translate real problems into AI workflows | Basic lay of the land and key principles of machine learning |
-| 2 | [Neural Network & Generative Modelling](https://docs.google.com/presentation/d/1msU3xp_C4MF7p1htg3Om-5NLQPGaVcuR/edit?usp=sharing&ouid=110843421025662715021&rtpof=true&sd=true) | We examine how models transform inputs into outputs | Neural networks, extensions (images and graphs), and the role of probability & randomness in generative modelling |
-| 3 | [Extending LLMs](https://docs.google.com/presentation/d/1Kw8qJ44ZrJ5wraIVfDqhArtlaScNp-rh/edit?usp=sharing&ouid=110843421025662715021&rtpof=true&sd=true) | We examine how LLMs can be augmented into powerful agents, and supported course project development | Components and principles of LLM-powered applications | 
-| 4 | [Wrapping Up](https://docs.google.com/presentation/d/1fTpgSs07Ab1cPtAfwJwL6r43G0rNy98e/edit?usp=sharing&ouid=110843421025662715021&rtpof=true&sd=true) | We review past contents and supported course project development. | Recap of key concepts related to the mechanisms of ML/AI. | 
+| 1 | [Machine Learning 101*](https://docs.google.com/presentation/d/1WsaKzyXBToEf9KiaM1DGHP138O0AmdsA/edit?usp=sharing&ouid=110843421025662715021&rtpof=true&sd=true) | We translate real problems into AI workflows | Basic lay of the land and key principles of machine learning |
+| 2 | [Neural Network & Generative Modelling*](https://docs.google.com/presentation/d/1msU3xp_C4MF7p1htg3Om-5NLQPGaVcuR/edit?usp=sharing&ouid=110843421025662715021&rtpof=true&sd=true) | We examine how models transform inputs into outputs | Neural networks, extensions (images and graphs), and the role of probability & randomness in generative modelling |
+| 3 | [Extending LLMs*](https://docs.google.com/presentation/d/1Kw8qJ44ZrJ5wraIVfDqhArtlaScNp-rh/edit?usp=sharing&ouid=110843421025662715021&rtpof=true&sd=true) | We examine how LLMs can be augmented into powerful agents, and support course project development | Components and principles of LLM-powered applications |
 
+<div style="height:1.0rem"></div>
 
-<div style="height:1.5rem"></div>
+\* **Note:** Earlier versions of the lecture materials are included here for reference. These slides will be updated as the semester progresses.
+
 
 ---
 

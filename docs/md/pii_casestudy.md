@@ -1,45 +1,43 @@
-# A.1.2: Case Study #2: Mechanics & Application
 
-## _The Revealing Mechanism_
+# A.1.2: Case Study Topic Area #2: Responsibility & AI
+
+## _The Divergence Artefact_
 
 <div style="height:1.5rem"></div>
 
-_Note 1: This outline provides guidance specific to Case Study #2, complementing the **general case study rubric**_ [**[link]**](casestudy.html).  
-_Note 2: See [**[link]**](pii_examples.html) for some illustrative examples of mechanisms._
-
-<div style="height:4rem"></div> 
-
-<hr style="height: 6px; border: none; background-color: #000;">
+_Note: This outline provides guidance specific to Case Study #1, complementing the **general case study rubric**_ [**[link]**](casestudy.html).
 
 <div style="height:1.5rem"></div> 
 
-## The Brief
+---
 
-<div style="height:1.5rem"></div> 
+<div style="height:1.5rem"></div>
 
-Understand the **high-level algorithmic structure** of an AI-powered method, function, or system.
+## The Prompt
 
-Investigate how it operates and analyse how its design shapes behaviour.
+Create something using Generative AI — **visual, written, computational, or hybrid** — but do not simply accept what the AI gives you.
 
-You are **not analysing surface outputs.**  
-You are analysing the **underlying process**.
+Your task is to demonstrate **deliberate human judgement and agency** by identifying the model's defaults, pushing beyond them, and making consequential decisions about what should be accepted, changed, rejected, or created differently.
 
-Your analysis should address the following questions.
-<div style="height:0.5rem"></div>
+The central question is:
+
+**Where does the machine's contribution end, and yours begin?**
+
+<div style="height:1.5rem"></div>
 
 <hr style="height: 3px; border: none; background-color: #000;">
 
 <div style="height:1.0rem"></div>
 
-### 1. What problem or function is the system designed to address?
+### 1. What did the AI want to give you?
 
 <div style="height:1.0rem"></div>
 
-• **Problem / Function**
+Identify the model's **default response or path of least resistance**.
 
-&nbsp;&nbsp;&nbsp;&nbsp;– What is the **main objective** of the task?  
-&nbsp;&nbsp;&nbsp;&nbsp;– Why is this problem important?  
-&nbsp;&nbsp;&nbsp;&nbsp;– Why does this mechanism exist within the system?
+• What patterns appeared repeatedly?  
+• What seemed generic, average, conventional, or expected?  
+• What assumptions did the model appear to make for you?
 
 <div style="height:0.5rem"></div>
 
@@ -47,23 +45,19 @@ Your analysis should address the following questions.
 
 <div style="height:1.0rem"></div>
 
-### 2. What is the mechanism?
+### 2. What did you make it give you instead?
 
 <div style="height:1.0rem"></div>
 
-• **Mechanism Explanation**
+Document where you deliberately **redirected, rejected, modified, or overrode** the machine.
 
-&nbsp;&nbsp;&nbsp;&nbsp;– Describe clearly **how it operates**.  
-&nbsp;&nbsp;&nbsp;&nbsp;– Explain how the overall task breaks down into **algorithmic steps or modules**.
+• What choices did you make?  
+• Why did you make them?  
+• What changed because of your intervention?
 
-• **Your explanation should show**
+Your goal is not simply to improve the output.
 
-&nbsp;&nbsp;&nbsp;&nbsp;– The **overall workflow of the system**  
-&nbsp;&nbsp;&nbsp;&nbsp;– The **specific mechanism** you are analysing  
-&nbsp;&nbsp;&nbsp;&nbsp;– **Inputs → transformations → outputs**
-
-Avoid unnecessary jargon.  
-Focus on **structural clarity**.
+Your goal is to demonstrate **meaningful divergence from the model's default**.
 
 <div style="height:0.5rem"></div>
 
@@ -71,17 +65,22 @@ Focus on **structural clarity**.
 
 <div style="height:1.0rem"></div>
 
-### 3. What does this mechanism enable — and what does it limit?
+### 3. What risks did you navigate?
 
 <div style="height:1.0rem"></div>
 
-• **Capabilities**
+Identify at least **two meaningful risks** encountered through the development of your work.
 
-&nbsp;&nbsp;&nbsp;&nbsp;– What strengths or behaviours does the mechanism enable?
+These may include:
 
-• **Limitations**
+- **Legal** — copyright, intellectual property, ownership, liability
+- **Regulatory** — institutional rules, platform policies, terms of use
+- **Moral / Ethical** — harm, deception, manipulation, misrepresentation
+- **Creative** — convergence, mediocrity, imitation, loss of authorship or voice
 
-&nbsp;&nbsp;&nbsp;&nbsp;– What trade-offs, distortions, or failure patterns arise from its design?
+Do not simply list risks.
+
+Explain **where they arose, what decision they required from you, and how you responded**.
 
 <div style="height:0.5rem"></div>
 
@@ -89,19 +88,20 @@ Focus on **structural clarity**.
 
 <div style="height:1.0rem"></div>
 
-### 4. If the mechanism changed, what would change?
+### 4. Where is the line?
 
 <div style="height:1.0rem"></div>
 
-• **Causal reasoning**
+Identify specific moments where the relationship between **human and machine contribution** becomes visible.
 
-&nbsp;&nbsp;&nbsp;&nbsp;– Explain how structural design choices create the system’s **strengths, limits, and failure patterns**.
+Ask:
 
-• **Comparison**
+• What came directly from the AI?  
+• What did you select, reject, combine, transform, or reinterpret?  
+• Which decisions required judgement that the AI could not make for you?  
+• Who should ultimately be responsible for the resulting artefact?
 
-&nbsp;&nbsp;&nbsp;&nbsp;– Where helpful, compare your mechanism to an **alternative design or configuration**.
-
-Your analysis should reveal **one key insight** about how the mechanism shapes system behaviour.
+Your analysis should reveal **one key insight about responsibility, authorship, or human agency when working with Generative AI**.
 
 <div style="height:1.0rem"></div>
 
@@ -115,101 +115,14 @@ Your analysis should reveal **one key insight** about how the mechanism shapes s
 
 A strong submission will:
 
-- Isolate **one mechanism clearly**  
-- Diagram the **overall workflow of the system**  
-- Zoom into the **selected module**  
-- Identify **inputs → transformations → outputs**  
-- Explain how **structural design leads to behavioural outcomes**
+- Identify the **default behaviour** of the AI
+- Demonstrate clear moments of **human intervention and divergence**
+- Document the **decisions and reasoning** behind those interventions
+- Identify meaningful **risks and responsibilities**
+- Make the boundary between **human and machine contribution** legible
+- Use evidence from the process rather than relying only on the final output
 
-Your writing should demonstrate **algorithmic thinking and structural clarity**.
-
-<div style="height:1.5rem"></div>
-
-<hr style="height: 3px; border: none; background-color: #000;">
-
-<div style="height:1.5rem"></div>
-
-### Choosing Your Mechanism
-
-Your mechanism should be:
-
-- **Specific**  
-- **Structurally identifiable**  
-- **Narrow enough to analyse clearly**  
-- **Causally linked to system behaviour**
-
-Do not choose something broad like **“AI”** or **“machine learning.”**  
-Focus on **one clearly defined mechanism** within a system.
-
-Explain the mechanism **conceptually**.  
-You may reference specific techniques where necessary to clarify how it works.
-
-Do **not** turn this into a technical manual.
-
-**Clarity over breadth.  
-Mechanism over surface.**
-
-See [**[link]**](pii_examples.html) for some illustrative examples of mechanisms.
-
-<!-- 
-**Application-Based Mechanisms**
-```
-  ■ Social Media Feeds (e.g. TikTok / Instagram)
-    ▪ Ranking logic
-      • What determines what appears first?
-      • What behaviour is being optimised?
-    ▪ Feedback loop
-      • How does user interaction reshape future content?
-
-  ■ Streaming Platforms (e.g. Spotify / Netflix / YouTube)
-    ▪ Similarity logic
-      • How does the system define “similar”?
-      • (e.g. collaborative filtering, embedding similarity)
-    ▪ Novelty vs repetition balance
-      • How does the system balance exploration and reinforcement?
-
-  ■ Conversational AI (e.g. ChatGPT)
-    ▪ Response selection
-      • How does the system choose one answer among many possibilities?
-      • (e.g. probability ranking, sampling control)
-    ▪ Context limitation
-      • What happens when memory runs out?
-```
-**Technique-Based Mechanisms**
-```
-  ■ Representation
-    ▪ How information is internally structured or compressed
-      • (e.g. vector representation, latent space)
-
-  ■ Optimisation
-    ▪ What the system is trying to maximise or minimise
-      • (e.g. loss function, reward objective)
-
-  ■ Learning dynamics
-    ▪ How the system updates itself over time
-      • (e.g. gradient-based adjustment)
-
-  ■ Generation process
-    ▪ How outputs are produced step by step
-      • (e.g. iterative refinement, controlled randomness)
-```
-
-
----
-
-### What You Must Do
-
-1. Show the overall workflow of the system  
-2. Isolate the specific mechanism you are analysing  
-3. Trace inputs → transformations → outputs  
-4. Explain how structural design choices create strengths, limits, and failure patterns  
-
-
-Use technique only to clarify structure.  
-Do not turn this into a technical manual.
-
-Clarity over breadth.  
-Mechanism over surface.   -->
+Your work should demonstrate **judgement, agency, and critical responsibility**.
 
 <div style="height:4.0rem"></div> 
 
@@ -217,12 +130,11 @@ Mechanism over surface.   -->
 
 <div style="height:2.0rem"></div> 
 
-
 ## Deliverables
 
 <div style="height:1.5rem"></div>
 
-Your submission must include **four parts**.
+Your submission is built around a central **artefact**, which forms the backbone of the case study and provides the evidence from which your abstract, slides, video, and poster are constructed.
 
 <div style="height:0.5rem"></div>
 
@@ -230,17 +142,72 @@ Your submission must include **four parts**.
 
 <div style="height:1.0rem"></div>
 
-### i. Annotation (≈500 words)
+### The Artefact — Divergence & Evidence
 
 <div style="height:1.0rem"></div>
 
-Provide a short written annotation accompanying your case study.
+The artefact is the **primary object of investigation** in this case study.
 
-• **Title**  
-&nbsp;&nbsp;&nbsp;&nbsp;– A clear title identifying the system or mechanism studied.
+It may be **visual, written, computational, or hybrid**, depending on what best allows you to investigate responsibility and human agency in Generative AI.
 
-• **Caption / Description**  
-&nbsp;&nbsp;&nbsp;&nbsp;– A brief written explanation summarising the focus of your case study.
+Examples might include:
+
+• An image or visual composition  
+• A piece of writing  
+• A designed object or proposal  
+• A website or interactive experience  
+• A computational or generative experiment  
+• A sequence of outputs or transformations  
+• Another appropriate creative or analytical form
+
+The artefact should not simply demonstrate that you can produce something with AI.
+
+It should provide evidence of **how you made decisions while working with AI**.
+
+<div style="height:1.0rem"></div>
+
+Your artefact and supporting documentation should make visible:
+
+• **Default**
+
+&nbsp;&nbsp;&nbsp;&nbsp;– **What did the AI want to give you?**  
+&nbsp;&nbsp;&nbsp;&nbsp;– Document the default, the average, or the path of least resistance.
+
+• **Divergence**
+
+&nbsp;&nbsp;&nbsp;&nbsp;– **What did you make it give you instead?**  
+&nbsp;&nbsp;&nbsp;&nbsp;– Show where you pushed, redirected, rejected, combined, or overrode the AI.
+
+• **Risk & Decision**
+
+&nbsp;&nbsp;&nbsp;&nbsp;– **What risks did you navigate?**  
+&nbsp;&nbsp;&nbsp;&nbsp;– Identify at least two legal, regulatory, ethical, or creative risks.  
+&nbsp;&nbsp;&nbsp;&nbsp;– Show what decisions these risks required from you.
+
+• **Human–Machine Boundary**
+
+&nbsp;&nbsp;&nbsp;&nbsp;– **Where is the line?**  
+&nbsp;&nbsp;&nbsp;&nbsp;– Identify specific moments where the AI's contribution ends and your judgement begins.
+
+<div style="height:1.0rem"></div>
+
+Use **evidence from your process** to support these claims.
+
+This might include:
+
+• Prompts and responses  
+• Screenshots or transcripts  
+• Initial and revised outputs  
+• Rejected alternatives  
+• Comparisons  
+• Annotations  
+• Diagrams of your process  
+• Evidence of editing, selection, combination, or transformation  
+• Other documentation of moments of friction, resistance, or divergence
+
+Include at least **one clear example of friction or divergence** where you did not accept the machine's initial direction.
+
+Each piece of evidence should be carefully selected and **captioned to explain what happened, what decision you made, and why it matters**.
 
 <div style="height:0.5rem"></div>
 
@@ -248,88 +215,13 @@ Provide a short written annotation accompanying your case study.
 
 <div style="height:1.0rem"></div>
 
-### ii. The Artefact
+### i. Abstract
 
 <div style="height:1.0rem"></div>
 
-Your artefact consists of **two components**:
+Provide a concise written abstraction of **no more than 300 words**.
 
-• **Supporting Explanation** — contextual material that frames the system and the mechanism you analyse  
-• **Mechanism Representation** — the core explanation showing how the mechanism operates  
-
-Think of this as **telling the story of the system first, then revealing how the mechanism works**.
-
-<div style="height:1.0rem"></div>
-
----
-
-<div style="height:1.0rem"></div>
-
-#### Explanation Layer (Supporting Context)
-
-<div style="height:1.0rem"></div>
-
-This section provides the **context needed to understand the mechanism under study**.  
-It is essentially the **story or narrative that frames your mechanism**.
-
-It may include slides, visual examples, short demonstrations, or other explanatory material.
-
-Your explanation layer should generally follow the sequence below.
-
-• **Problem**  
-&nbsp;&nbsp;&nbsp;&nbsp;– Illustrate the real-world task or use case the system is designed to address.
-
-• **System Context**  
-&nbsp;&nbsp;&nbsp;&nbsp;– Provide brief background on the system or application being studied.
-
-• **Mechanism (Overview)**  
-&nbsp;&nbsp;&nbsp;&nbsp;– Identify the mechanism you will analyse.  
-&nbsp;&nbsp;&nbsp;&nbsp;– The detailed explanation follows in the next section.
-
-• **Assessment**  
-&nbsp;&nbsp;&nbsp;&nbsp;– Provide preliminary observations about what the system does well and where it struggles.
-
-• **Comparison (if relevant)**  
-&nbsp;&nbsp;&nbsp;&nbsp;– Introduce any alternative approaches or configurations that may be referenced later.
-
-The goal of this section is to **frame the system and prepare the reader for the detailed mechanism explanation**.
-
-This corresponds to the **contextual slides or images** that accompany your core artefact in the online gallery documentation.
-
-<div style="height:1.0rem"></div>
-
----
-
-<div style="height:1.0rem"></div>
-
-#### Mechanism (Core Artefact)
-
-<div style="height:0.3rem"></div>
-
-This section is the **central focus of the artefact**.
-
-Explain how the mechanism operates using **clear diagrammatic representations**.
-
-Your explanation should make visible:
-
-• The **overall workflow of the system**  
-• The **specific module or mechanism** you are analysing  
-• **Inputs → transformations → outputs**  
-• How information **changes across the pipeline**
-
-Where relevant, present **multiple levels of abstraction**:
-
-• **System-level overview** — the overall pipeline  
-• **Module-level breakdown** — the mechanism you selected  
-• **Internal functional logic** — how the mechanism operates  
-
-If the system is complex, focus on the **overall structure plus one clearly analysed sub-mechanism**.
-
-The goal is to make the **hidden architecture legible**.
-
-This is **not a demo of outputs** and **not an exercise in aesthetic polish**.
-
-Your priority is **clarity of algorithmic structure** and explaining how system behaviour emerges from design choices.
+Distil the artefact's central question, your approach, the key moment of divergence, the risks or responsibilities examined, and your principal insight about **human agency when working with AI**.
 
 <div style="height:0.5rem"></div>
 
@@ -337,19 +229,13 @@ Your priority is **clarity of algorithmic structure** and explaining how system 
 
 <div style="height:1.0rem"></div>
 
-### iii. Vignette
+### ii. Slides
 
 <div style="height:1.0rem"></div>
 
-The vignette is a **short-form video presentation** summarising your case study.
+Develop a sequence of **portrait-format slides** that uses your artefact and supporting evidence to construct a clear visual story.
 
-• Duration: **approximately 90 seconds**
-
-Your video should clearly communicate:
-
-• The **system or application studied**  
-• The **mechanism you investigated**  
-• Your **key insight about how the mechanism shapes behaviour**
+The sequence should make the progression from **AI default → human intervention → divergence → responsibility** legible.
 
 <div style="height:0.5rem"></div>
 
@@ -357,71 +243,71 @@ Your video should clearly communicate:
 
 <div style="height:1.0rem"></div>
 
-
-### iv. Evidences (Optional)
+### iii. Video
 
 <div style="height:1.0rem"></div>
 
-You may include **supplementary materials** in an appendix, such as:
+Develop a **short-form video presentation of no more than 90 seconds** using your slides and artefact as its visual foundation.
 
-• Code snippets  
-• Parameter sweeps  
-• Prompt comparisons  
-• Additional diagrams or tables  
-• Experimental results
+Use the video to connect the strongest evidence and communicate your central argument about **choice, divergence, and responsibility**.
 
+<div style="height:0.5rem"></div>
+
+<hr style="height: 3px; border: none; background-color: #000;">
+
+<div style="height:1.0rem"></div>
+
+### iv. Poster
+
+<div style="height:1.0rem"></div>
+
+Bring the strongest elements of your artefact and evidence together into a **complete A2-format poster**.
+
+The poster should function as a **self-contained visual argument**, making the AI default, your intervention, the resulting divergence, and your principal insight clearly legible.
 
 <div style="height:4rem"></div> 
 
 <hr style="height: 6px; border: none; background-color: #000;">
 
-<div style="height:1.5rem"></div> 
-
+<div style="height:1.5rem"></div>
 
 ## Grading Criteria  
+
 <div style="height:1.5rem"></div>
 
 ### In a nutshell
 
 #### We are **not** grading:
 
-- Advanced mathematics  
-- Sophisticated coding  
-- Exhaustive technical coverage  
+- Polish
+- Technical sophistication
+- “Correct” use of AI
 
 <div style="height:1.5rem"></div>
 
 #### We **are** grading:
 
 | Criterion | What It Means |
-|-----------|---------------|
-| **Understanding** | Do you correctly explain how the mechanism works? |
-| **Causal Reasoning / Comparison** | Do you link structural design choices to observable system behaviour, including how behaviour might change under alternative designs? |
-| **Limitations** | Do you identify meaningful trade-offs, constraints, or failure modes introduced by the mechanism? |
-| **Clarity** | Can you explain complex ideas in a precise and accessible way? |
-| **Visual Explanation** | Do your diagrams or visual representations clearly communicate the mechanism and information flow? |
+|---------|---------------|
+| **Deliberateness** | Did you make meaningful choices, or did you accept defaults? |
+| **Awareness** | Can you identify and articulate the risks and responsibilities you navigated? |
+| **Divergence** | Is there evidence that the work required meaningful human intervention? |
+| **Honesty** | Are you clear about the respective contributions of the AI and yourself? |
 
 <div style="height:1.5rem"></div> 
 
 ### Rubric
 
 | Criterion | Excellent | Adequate | Insufficient |
-|-----------|-----------|-----------|--------------|
-| **Mechanism Accuracy** | Structurally correct and clearly articulated explanation of how the mechanism operates | Mostly correct explanation with minor gaps or simplifications | Superficial, vague, or incorrect description of the mechanism |
-| **Causal Analysis** | Clear linkage between structural design and system behaviour, with thoughtful comparison or reasoning | Some connection between structure and behaviour, but underdeveloped | Describes outputs or observations without structural reasoning |
-| **Failure Awareness** | Identifies meaningful trade-offs, limitations, or structural constraints | Mentions limitations but without depth or explanation | No meaningful discussion of limitations |
-| **Clarity of Communication** | Complex mechanism explained clearly and accessibly to non-specialists | Explanation understandable but dense or uneven | Obscure, overly technical, or difficult to follow |
-| **Visual Explanation** | Diagrams clearly reveal the system workflow, mechanism, and information flow | Visuals present but only partially clarify the mechanism | Visuals absent, confusing, or decorative rather than explanatory |
-
-
-### Submission Deadline
-<s>Original: 📅2026.04.01 ⏰00:00</s>  
-Extended: <span style="background-color:#a00000;color:#fff;">📅2026.04.08 ⏰00:00</span>  
-
+|---------|-----------|----------|--------------|
+| **Deliberateness** | Clear, specific choices are documented with convincing rationale | Some choices are documented, but reasoning is limited | Defaults are largely accepted with little evidence of deliberate choice |
+| **Risk Awareness** | Multiple meaningful risks are identified and connected to specific decisions | Relevant risks are identified but treated superficially | Little or no meaningful consideration of risk |
+| **Divergence** | Clear evidence of intervention, resistance, or transformation that materially changes the work | Some divergence from AI defaults is demonstrated | Artefact remains largely indistinguishable from uncritical AI output |
+| **Honesty** | Human and AI contributions are clearly and precisely distinguished | Roles are generally identifiable but boundaries remain partly unclear | Human–AI boundary is unclear or obscured |
 
 <div style="height:1.5rem"></div> 
 
-<hr style="height: 3px; border: none; background-color: #000;">
+---
 
 <div style="height:1.5rem"></div> 
 
@@ -429,11 +315,14 @@ Extended: <span style="background-color:#a00000;color:#fff;">📅2026.04.08 ⏰0
 
 <div style="height:1.5rem"></div> 
 
-The goal is not to *describe AI*.  
-The goal is to **understand how it works**.
+The goal is not to *use AI well*.  
+The goal is to demonstrate **judgement in deciding when to accept it, challenge it, or override it**.
 
-Do not remain at the surface of outputs.  
-Demonstrate that you can think in mechanisms, modules, and pipelines.
+Do not simply present the final output.  
+Make your **choices, risks, interventions, and responsibility** visible.
 
-Don’t just use AI.  
-**Explain it.**
+Don't let the machine make every decision for you.
+
+**Prove you are not redundant.**
+
+<div style="height:1.5rem"></div>

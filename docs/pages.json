@@ -48,6 +48,18 @@
       },
       "children": [
         {
+          "key": "Applied Exercise",
+          "label": "Applied Exercise",
+          "source": "appexer.md",
+          "output": "appexer.html",
+          "href": "appexer.html",
+          "module": {
+            "number": 1,
+            "page_title": "Applied Exercise",
+            "index_summary": "Applied Exercise"
+            }
+        },
+        {
           "key": "Case Study",
           "label": "Case Study",
           "source": "casestudy.md",
@@ -88,33 +100,34 @@
         }
     },
     {
-      "key": "I. Responsibility & AI",
-      "label": "I. Responsibility & AI",
-      "title": "I. Responsibility & AI",
-      "source": "pi_responsibility.md",
-      "output": "pi_responsibility.html",
+      "key": "I. Mechanics of AI",
+      "label": "I. Mechanics of AI",
+      "title": "I. Mechanics of AI",
+      "source": "pi_mechanics.md",
+      "output": "pi_mechanics.html",
       "home_card": {
         "show": true,
         "order": 4,
-        "icon": "🛡️",
-        "description": "Make AI responsible to you.",
-        "button": "Get Started →"
-        }
-    },
-    {
-      "key": "II. Mechanics of AI",
-      "label": "II. Mechanics of AI",
-      "title": "II. Mechanics of AI",
-      "source": "pii_mechanics.md",
-      "output": "pii_mechanics.html",
-      "home_card": {
-        "show": true,
-        "order": 5,
         "icon": "⚙️",
         "description": "Make AI work for you.",
         "button": "Get Started →"
       }
     },
+    {
+      "key": "II. Responsibility & AI",
+      "label": "II. Responsibility & AI",
+      "title": "II. Responsibility & AI",
+      "source": "pii_responsibility.md",
+      "output": "pii_responsibility.html",
+      "home_card": {
+        "show": true,
+        "order": 5,
+        "icon": "🛡️",
+        "description": "Make AI responsible to you.",
+        "button": "Get Started →"
+        }
+    },
+
     {
       "key": "III. Datasets & Risks of AI",
       "label": "III. Datasets & Risks of AI",

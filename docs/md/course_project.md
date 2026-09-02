@@ -1,6 +1,12 @@
 # A.2: Course Project
 
+<div style="height:4.0rem"></div> 
+
+<hr style="height: 2px; border: none; background-color: #000;">
+
 <div style="height:1.5rem"></div> 
+
+## Overview
 
 The course project is a **team-based, design-oriented assignment** in which students develop, prototype, and analyse an AI-assisted proposal addressing a concrete real-world problem. In contrast to the case studies, which focus on analysing existing systems or practices, the course project emphasises **making**, evaluation through use, and critical reflection through implementation.
 
@@ -18,16 +24,20 @@ The project is completed in teams of **4–6 students**. Tutorials provide struc
 
 The course project consists of the following assessed components:
 
-- **Mid-term Pecha Kucha Presentation**: A structured, time-limited presentation of work in progress, used to articulate the project direction and receive formative feedback.
+- **Mid-term Pecha Kucha Presentation**: A 4-minute time-limited presentation of work in progress, used to articulate the project direction and receive formative feedback.  
 
-- **Final Project Submission**, comprising:
-    - **(i) Annotation & Title**: A concise written framing of the project and its treatment of responsibility, mechanisms, and data.
-    - **(ii) Paper**: A design-oriented paper documenting the project’s motivation, system design, implementation, results, and critical reflection (maximum 1500 words and 10 pages).
-    - **(iii) Vignette**: A short-form video (approximately 5-8 minutes) communicating the project’s core argument and insights.
-    - **(iv) Evidence** _(Optional Appendices)_: Optional supplementary documentation of process, such as intermediate outputs, experiments, logs, or design iterations. Note that the **paper and vignette must remain self-contained** and should not rely on appendices to communicate core arguments or findings.
+- **Final Project Submission**: Think of your project as developing a set of **artefacts and evidence that form the backbone of your work**. These may include outputs, experiments, comparisons, screenshots, diagrams, workflows, quantitative observations, intermediate results, prototypes, and other documentation of your process and findings. Each should be carefully selected, organised, and **captioned to explain what it shows and why it matters**. These artefacts should correspond directly to your **slides**, and then become the common ingredients from which you construct your **video and paper**. The same evidence should therefore support a coherent project story across all formats. The submission comprises:
+    - **(i) Abstract — Distilling the Story**: Write a concise abstraction of the project's **central question, approach, key result, and principal insight**. Rather than introducing new material, the abstract should distil the most important argument emerging from the work.
+    - **(ii) Slides — Artefacts & Evidence**: Develop a sequence of **portrait-format slides** that organises and connects your key artefacts into a clear visual narrative. Each slide should communicate a meaningful part of the project through appropriately captioned evidence, such as intermediate outputs, comparisons, screenshots, diagrams, annotations, quantitative observations, or other relevant documentation.
+    - **(iii) Video — Connecting the Story**: Develop a **4 minute video** using the slides and artefacts as its visual foundation. Use **narration, sequencing, animation, and transitions** to connect the evidence and communicate the project's motivation, development, findings, and key insights as a coherent story.
+    - **(iv) Paper — Documenting the Story**: Develop a **paper** using the same artefacts and evidence, connecting them through written argument, explanation, and critical reflection. The paper should document the project's motivation, system design, implementation, results, and implications (**maximum 1500 words and 10 pages**).
 
-- **Individual Reflection**: An individually assessed reflective statement documenting contributions and learning. Requirements are specified in the course outline.
+
+- **Individual Reflection**: An individually assessed reflective statement documenting contributions and learning.
+
+
 - **Peer Assessment**: Advisory peer feedback on group work and individual contributions. Further details are provided in the course outline.
+
 
 <div style="height:4.0rem"></div> 
 
@@ -41,13 +51,13 @@ The course project consists of the following assessed components:
 
 | Item | Description | Date | Individual (%) | Group (%) |
 |------|-------------|------|----------------|-----------|
-| **Project Team Formation Form** | Early indication of potential project partners to support team formation and initial scoping as a 100-200 word statement.  Submit via Moodle. | 2026.02.22 | – | – |
-| [[**Mid-term Pecha Kucha Presentation**]](cp_pechakucha.html) | Time-limited presentation of project framing, proposed AI-assisted approach, and preliminary considerations on data, mechanisms, and responsibility. | 2026.03.18 | – | 10 |
-| **Crit-Style Peer Review (Post-Midterm)** | Structured studio-style peer critique conducted during tutorial slots, focused on problem definition, methodological coherence, assumptions, and responsible AI positioning. Formative and non-graded. | 2026.03.19-24 | – | – |
-| [[**Final Project Submission**]](cp_final.html)  | Submission of all core deliverables. Projects are presented through the screening of the vignette component. | 2026.04.22 | – | 35 |
-| **Crit-Style Peer Review (Post-Final)** | Reflective peer critique of completed projects (via tutorial slots), emphasising evaluative judgement, strengths, limitations, and comparative learning. Formative and non-graded. | 2026.04.23-28 | – | – |
-| [[**Individual Reflection**]](cp_reflect.html) | Individually assessed reflective statement on contributions, learning process, and key design decisions. | 2026.05.06 | 10 | – |
-| **Peer Assessment** | Advisory peer feedback on group process and individual contributions, used to inform moderation where appropriate. | 2026.05.06 | – | – |
+| **Project Team Formation Form** | Early indication of potential project partners to support team formation and initial scoping as a 100-200 word statement.  Submit via Moodle. | 2026.09.30 | – | – |
+| [[**Mid-term Pecha Kucha Presentation**]](cp_pechakucha.html) | Time-limited presentation of project framing, proposed AI-assisted approach, and preliminary considerations on data, mechanisms, and responsibility. | 2026.10.21 | – | 15 |
+| **Crit-Style Peer Review (Post-Midterm)** | Structured studio-style peer critique conducted during tutorial slots, focused on problem definition, methodological coherence, assumptions, and responsible AI positioning. Formative and non-graded. | 2026.10.19-23 | – | – |
+| [[**Final Project Submission**]](cp_final.html)  | Submission of all core deliverables. Projects are presented through the screening of the vignette component. | 2026.12.09 | – | 25 |
+| **Crit-Style Peer Review (Post-Final)** | Reflective peer critique of completed projects (via tutorial slots), emphasising evaluative judgement, strengths, limitations, and comparative learning. Formative and non-graded. | 2026.12.07-11 | – | – |
+| [[**Individual Reflection**]](cp_reflect.html) | Individually assessed reflective statement on contributions, learning process, and key design decisions. | 2026.12.16 | 5 | – |
+| **Peer Assessment** | Advisory peer feedback on group process and individual contributions, used to inform moderation where appropriate. | 2026.12.16| – | – |
 
 
 <div style="height:4.0rem"></div> 
