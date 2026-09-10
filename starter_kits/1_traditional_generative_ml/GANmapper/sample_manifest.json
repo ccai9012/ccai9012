@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "dataset_name": "GANmapper paired road-network and building-profile tiles",
+  "source": "https://github.com/ualsg/GANmapper",
+  "license": "MIT (repository dataset listing; verify upstream terms before redistribution)",
+  "selection_rule": "24 pairs selected from the tracked Exp4 paired tiles after lexicographic sorting and deterministic sampling with random_seed=9012.",
+  "random_seed": 9012,
+  "source_root": "data/Exp4",
+  "schema": {
+    "region": "city folder",
+    "relative_path": "tile path under the city Source/Target folders",
+    "source": "road-network tile path relative to source_root",
+    "target": "building-profile tile path relative to source_root"
+  },
+  "pair_count": 24,
+  "expected_runtime": "under one minute for manifest validation and one CPU inference using the tracked checkpoint; training is opt-in and hardware-dependent",
+  "pairs": [
+    {"region": "Jakarta17", "relative_path": "17/104440/67785.png", "source": "Jakarta17/Source/17/104440/67785.png", "target": "Jakarta17/Target/17/104440/67785.png"},
+    {"region": "Jakarta17", "relative_path": "17/104442/67785.png", "source": "Jakarta17/Source/17/104442/67785.png", "target": "Jakarta17/Target/17/104442/67785.png"},
+    {"region": "Jakarta17", "relative_path": "17/104443/67793.png", "source": "Jakarta17/Source/17/104443/67793.png", "target": "Jakarta17/Target/17/104443/67793.png"},
+    {"region": "Jakarta17", "relative_path": "17/104444/67791.png", "source": "Jakarta17/Source/17/104444/67791.png", "target": "Jakarta17/Target/17/104444/67791.png"},
+    {"region": "Jakarta17", "relative_path": "17/104445/67787.png", "source": "Jakarta17/Source/17/104445/67787.png", "target": "Jakarta17/Target/17/104445/67787.png"},
+    {"region": "Jakarta17", "relative_path": "17/104445/67789.png", "source": "Jakarta17/Source/17/104445/67789.png", "target": "Jakarta17/Target/17/104445/67789.png"},
+    {"region": "Jakarta17", "relative_path": "17/104445/67791.png", "source": "Jakarta17/Source/17/104445/67791.png", "target": "Jakarta17/Target/17/104445/67791.png"},
+    {"region": "Jakarta17", "relative_path": "17/104446/67785.png", "source": "Jakarta17/Source/17/104446/67785.png", "target": "Jakarta17/Target/17/104446/67785.png"},
+    {"region": "LA", "relative_path": "16/11238/26168.png", "source": "LA/Source/16/11238/26168.png", "target": "LA/Target/16/11238/26168.png"},
+    {"region": "LA", "relative_path": "16/11238/26169.png", "source": "LA/Source/16/11238/26169.png", "target": "LA/Target/16/11238/26169.png"},
+    {"region": "LA", "relative_path": "16/11240/26169.png", "source": "LA/Source/16/11240/26169.png", "target": "LA/Target/16/11240/26169.png"},
+    {"region": "Paris", "relative_path": "16/33198/22542.png", "source": "Paris/Source/16/33198/22542.png", "target": "Paris/Target/16/33198/22542.png"},
+    {"region": "Paris", "relative_path": "16/33198/22547.png", "source": "Paris/Source/16/33198/22547.png", "target": "Paris/Target/16/33198/22547.png"},
+    {"region": "Paris", "relative_path": "16/33199/22542.png", "source": "Paris/Source/16/33199/22542.png", "target": "Paris/Target/16/33199/22542.png"},
+    {"region": "Paris", "relative_path": "16/33199/22550.png", "source": "Paris/Source/16/33199/22550.png", "target": "Paris/Target/16/33199/22550.png"},
+    {"region": "Paris", "relative_path": "16/33200/22543.png", "source": "Paris/Source/16/33200/22543.png", "target": "Paris/Target/16/33200/22543.png"},
+    {"region": "Paris", "relative_path": "16/33201/22544.png", "source": "Paris/Source/16/33201/22544.png", "target": "Paris/Target/16/33201/22544.png"},
+    {"region": "Paris", "relative_path": "16/33202/22548.png", "source": "Paris/Source/16/33202/22548.png", "target": "Paris/Target/16/33202/22548.png"},
+    {"region": "Paris", "relative_path": "16/33203/22543.png", "source": "Paris/Source/16/33203/22543.png", "target": "Paris/Target/16/33203/22543.png"},
+    {"region": "Paris", "relative_path": "16/33205/22543.png", "source": "Paris/Source/16/33205/22543.png", "target": "Paris/Target/16/33205/22543.png"},
+    {"region": "Paris", "relative_path": "16/33205/22548.png", "source": "Paris/Source/16/33205/22548.png", "target": "Paris/Target/16/33205/22548.png"},
+    {"region": "Singapore", "relative_path": "16/51690/32519.png", "source": "Singapore/Source/16/51690/32519.png", "target": "Singapore/Target/16/51690/32519.png"},
+    {"region": "Singapore", "relative_path": "16/51692/32521.png", "source": "Singapore/Source/16/51692/32521.png", "target": "Singapore/Target/16/51692/32521.png"},
+    {"region": "Singapore", "relative_path": "16/51692/32523.png", "source": "Singapore/Source/16/51692/32523.png", "target": "Singapore/Target/16/51692/32523.png"}
+  ]
+}

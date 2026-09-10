@@ -16,8 +16,9 @@ from __future__ import annotations
 import os
 import random
 import glob
+from pathlib import Path
 from PIL import Image, ImageOps
-from typing import List, Tuple
+from typing import Iterable, List, Tuple
 import numpy as np
 
 import torch
@@ -91,11 +92,56 @@ def split_pairs(
     Returns:
         The training pairs followed by the remaining test pairs.
     """
-    random.seed(random_seed)
     pairs_copy = pairs.copy()
-    random.shuffle(pairs_copy)
+    random.Random(random_seed).shuffle(pairs_copy)
     num_train = int(len(pairs_copy) * train_ratio)
     return pairs_copy[:num_train], pairs_copy[num_train:]
+
+
+def build_pair_manifest(
+    source_root: str | os.PathLike,
+    max_pairs: int | None = None,
+    random_seed: int = 42,
+    regions: Iterable[str] | None = None,
+) -> list[dict[str, str]]:
+    """Return a deterministic manifest of aligned source-target images.
+
+    The manifest stores paths relative to ``source_root`` and does not copy or
+    modify any image.  When ``max_pairs`` is set, a reproducible subset is
+    selected after sorting the complete pair list.  ``regions`` can be used to
+    restrict the selection to named city folders.
+
+    Args:
+        source_root: Region-based dataset containing ``Source`` and ``Target``.
+        max_pairs: Optional upper bound for the returned number of pairs.
+        random_seed: Seed used only for deterministic subset selection.
+        regions: Optional region names to include.
+
+    Returns:
+        JSON-serialisable records with ``region``, ``relative_path``,
+        ``source``, and ``target`` fields.
+    """
+    source_root_path = Path(source_root).expanduser().resolve()
+    allowed_regions = set(regions) if regions is not None else None
+    pairs = collect_image_pairs(str(source_root_path))
+    if allowed_regions is not None:
+        pairs = [pair for pair in pairs if pair[0] in allowed_regions]
+    pairs.sort(key=lambda pair: (pair[0], pair[1]))
+    if max_pairs is not None:
+        if max_pairs < 1:
+            raise ValueError("max_pairs must be positive when provided")
+        if max_pairs < len(pairs):
+            indices = sorted(random.Random(random_seed).sample(range(len(pairs)), max_pairs))
+            pairs = [pairs[index] for index in indices]
+    return [
+        {
+            "region": region,
+            "relative_path": relative_path,
+            "source": str(Path(region) / "Source" / relative_path),
+            "target": str(Path(region) / "Target" / relative_path),
+        }
+        for region, relative_path, _, _ in pairs
+    ]
 
 def process_and_save_image(image_path: str, dst_path: str) -> None:
     """Save an image, compositing transparent pixels over white when needed.
@@ -286,6 +332,39 @@ class PairedImageDataset(Dataset):
 
         return {'A': A_img, 'B': B_img}
 
+
+class ManifestPairedImageDataset(Dataset):
+    """Dataset for source-target paths recorded in a pair manifest."""
+
+    def __init__(
+        self,
+        pairs: Iterable[dict[str, str]],
+        source_root: str | os.PathLike,
+        transform=None,
+    ) -> None:
+        self.source_root = Path(source_root).expanduser().resolve()
+        self.pairs = list(pairs)
+        self.transform = transform
+        if not self.pairs:
+            raise ValueError("The pair manifest must contain at least one pair")
+        for pair in self.pairs:
+            for field in ("source", "target"):
+                path = self.source_root / pair[field]
+                if not path.is_file():
+                    raise FileNotFoundError(f"Manifest {field} image does not exist: {path}")
+
+    def __len__(self) -> int:
+        return len(self.pairs)
+
+    def __getitem__(self, idx: int) -> dict[str, object]:
+        pair = self.pairs[idx]
+        source = Image.open(self.source_root / pair["source"]).convert("RGB")
+        target = Image.open(self.source_root / pair["target"]).convert("RGB")
+        if self.transform:
+            source = self.transform(source)
+            target = self.transform(target)
+        return {"A": source, "B": target, "pair": pair}
+
 def create_paired_data_loader(data_dir: str, batch_size: int = 32) -> DataLoader:
     """Create a shuffled data loader for normalized 256 × 256 image pairs.
 
@@ -320,6 +399,22 @@ def create_paired_data_loader(data_dir: str, batch_size: int = 32) -> DataLoader
     )
 
     return loader
+
+
+def create_manifest_data_loader(
+    pairs: Iterable[dict[str, str]],
+    source_root: str | os.PathLike,
+    batch_size: int = 4,
+    shuffle: bool = False,
+) -> DataLoader:
+    """Create a loader directly from a manifest without staging image copies."""
+    transform = transforms.Compose([
+        transforms.Resize((256, 256)),
+        transforms.ToTensor(),
+        transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5)),
+    ])
+    dataset = ManifestPairedImageDataset(pairs, source_root, transform=transform)
+    return DataLoader(dataset, batch_size=batch_size, shuffle=shuffle, num_workers=0)
 
 # =================================================================
 # Part 3: Model Definition
@@ -577,6 +672,7 @@ def inference_gan(
         transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
     ])
 
+    fake_B_img = None
     # Iterate over test images
     for img_name in sorted(os.listdir(test_A_dir)):
         if not img_name.lower().endswith(('.png', '.jpg', '.jpeg')):
@@ -594,7 +690,39 @@ def inference_gan(
 
     print("Inference done! Results saved to", results_dir)
 
+    if fake_B_img is None:
+        raise ValueError(f"No supported images found in {test_A_dir}")
     return fake_B_img
+
+
+def inference_single_image(
+    G: nn.Module,
+    image_path: str | os.PathLike,
+    output_path: str | os.PathLike | None = None,
+    device: str | torch.device | None = None,
+) -> Image.Image:
+    """Run one source image through a generator and optionally save it."""
+    image_path = Path(image_path).expanduser().resolve()
+    if not image_path.is_file():
+        raise FileNotFoundError(f"Source image does not exist: {image_path}")
+    if device is None:
+        device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    else:
+        device = torch.device(device)
+    transform = transforms.Compose([
+        transforms.Resize((256, 256)),
+        transforms.ToTensor(),
+        transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5)),
+    ])
+    G.to(device).eval()
+    source = transform(Image.open(image_path).convert("RGB")).unsqueeze(0).to(device)
+    with torch.no_grad():
+        generated = Image.fromarray(tensor2img(G(source)))
+    if output_path is not None:
+        output_path = Path(output_path).expanduser().resolve()
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        generated.save(output_path)
+    return generated
 
 def load_model(
     G: nn.Module,

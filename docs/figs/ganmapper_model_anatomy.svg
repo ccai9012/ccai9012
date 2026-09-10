@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="430" viewBox="0 0 1100 430" role="img" aria-labelledby="title desc">
+  <title id="title">Paired Pix2Pix model anatomy for GANmapper</title>
+  <desc id="desc">A road-network tile enters a U-Net generator, which predicts a building-profile tile. A PatchGAN discriminator receives either the real source-target pair or the source-generated pair. The generator is trained with adversarial and pixel-wise L1 losses.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#168aad"/>
+    </marker>
+    <pattern id="roads" width="28" height="28" patternUnits="userSpaceOnUse">
+      <rect width="28" height="28" fill="#eef7fb"/>
+      <path d="M-5 18 L12 -4 M8 32 L32 8" stroke="#168aad" stroke-width="4"/>
+      <path d="M0 7 H28 M0 24 H28" stroke="#9bd7e8" stroke-width="2"/>
+    </pattern>
+    <pattern id="buildings" width="30" height="30" patternUnits="userSpaceOnUse">
+      <rect width="30" height="30" fill="#fff7ed"/>
+      <rect x="3" y="4" width="9" height="7" fill="#f28f3b"/>
+      <rect x="17" y="4" width="10" height="10" fill="#d96c2c"/>
+      <rect x="5" y="18" width="15" height="8" fill="#f5b26b"/>
+    </pattern>
+  </defs>
+  <rect width="1100" height="430" fill="#fbfdfe"/>
+  <text x="44" y="42" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#17324d">How the paired Pix2Pix exercise learns a spatial mapping</text>
+  <text x="44" y="70" font-family="Arial, sans-serif" font-size="15" fill="#4c6275">Each aligned road/profile tile pair supplies both a conditioning signal and a training target.</text>
+
+  <rect x="34" y="98" width="1032" height="286" rx="16" fill="#f5f9fb" stroke="#d5e5ec"/>
+  <rect x="58" y="126" width="150" height="112" rx="10" fill="url(#roads)" stroke="#168aad" stroke-width="2"/>
+  <text x="133" y="263" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="700" fill="#17324d">Input A</text>
+  <text x="133" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#4c6275">road-network tile</text>
+
+  <path d="M220 182 H278" stroke="#168aad" stroke-width="3" marker-end="url(#arrow)"/>
+  <rect x="290" y="126" width="220" height="112" rx="10" fill="#dff3f8" stroke="#168aad" stroke-width="2"/>
+  <path d="M314 154 H352 V210 H314 M368 154 H406 V210 H368 M422 154 H460 V210 H422" fill="none" stroke="#168aad" stroke-width="7"/>
+  <text x="400" y="263" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="700" fill="#17324d">Generator G</text>
+  <text x="400" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#4c6275">U-Net: encode → decode</text>
+
+  <path d="M522 182 H580" stroke="#168aad" stroke-width="3" marker-end="url(#arrow)"/>
+  <rect x="592" y="126" width="150" height="112" rx="10" fill="url(#buildings)" stroke="#f28f3b" stroke-width="2"/>
+  <text x="667" y="263" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="700" fill="#17324d">Fake B = G(A)</text>
+  <text x="667" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#4c6275">predicted profile tile</text>
+
+  <rect x="778" y="112" width="258" height="144" rx="12" fill="#fff7ed" stroke="#d96c2c" stroke-width="2" stroke-dasharray="7 5"/>
+  <text x="907" y="143" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="700" fill="#17324d">Discriminator D</text>
+  <text x="907" y="168" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#4c6275">PatchGAN scores local patches</text>
+  <rect x="810" y="188" width="78" height="38" rx="5" fill="url(#roads)" stroke="#168aad"/>
+  <rect x="900" y="188" width="78" height="38" rx="5" fill="url(#buildings)" stroke="#f28f3b"/>
+  <path d="M888 207 H900" stroke="#168aad" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="849" y="246" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#4c6275">A</text>
+  <text x="939" y="246" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#4c6275">B or G(A)</text>
+
+  <path d="M133 306 V342 H823 V264" fill="none" stroke="#168aad" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <path d="M667 306 V342 H823" fill="none" stroke="#f28f3b" stroke-width="2.5"/>
+  <rect x="280" y="321" width="360" height="45" rx="9" fill="#eaf5f8" stroke="#168aad"/>
+  <text x="460" y="349" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#17324d">G loss = adversarial loss + λ · L1(A target)</text>
+</svg>
