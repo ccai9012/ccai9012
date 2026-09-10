@@ -8,6 +8,8 @@ __pycache__/
 !data/german_credits/
 models/
 tmp/
+output/
+anaconda_projects/
 
 docs/figs/flowchart/*.xml.bkp
 docs/figs/flowchart/*.xml
