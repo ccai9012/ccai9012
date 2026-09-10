@@ -2,7 +2,7 @@
   <img src="figs/brand_identity/banner.png" width="1000"><br>
 </p>
 
-# CCAI 9012 Course Online Documentation
+# CCAI 9012 
 
 ## **Lecture:** Wednesdays, **17:00–18:50**, **LE4**
 
