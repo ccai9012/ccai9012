@@ -19,6 +19,20 @@ Each module contains specialized functions and classes to simplify common AI tas
 from data preparation to model training, evaluation, and visualization.
 """
 
+# Import stable repository paths before the optional utility modules.  These
+# names are intentionally available from ``ccai9012`` for notebook use.
+from .paths import (
+    CACHE_DIR,
+    DATA_DIR,
+    MODELS_DIR,
+    OUTPUT_DIR,
+    PACKAGE_ROOT,
+    REPOSITORY_ROOT,
+    STARTER_KITS_DIR,
+    WEEKLY_SCRIPTS_DIR,
+    ensure_output_dir,
+)
+
 # Import all submodules
 from . import llm_utils
 from . import nn_utils
@@ -39,6 +53,15 @@ __all__ = [
     "yolo_utils",
     "multi_modal_utils",
     "gan_utils",
+    "PACKAGE_ROOT",
+    "REPOSITORY_ROOT",
+    "STARTER_KITS_DIR",
+    "WEEKLY_SCRIPTS_DIR",
+    "DATA_DIR",
+    "MODELS_DIR",
+    "CACHE_DIR",
+    "OUTPUT_DIR",
+    "ensure_output_dir",
 ]
 
 # Define version
