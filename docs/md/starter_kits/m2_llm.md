@@ -6,13 +6,18 @@
 **Category:** Unstructured Text Analysis & Knowledge Structuring
 
 **Modular Components:**
-- Text Preprocessing Pipeline
-- LLM API Calling
-- LLM Embedding Extractor
-- Vector Clustering
-- Q&A over Documents
-- Heatmap Visualization
-- Wordcloud generation
+
+- **Text to structure**
+  - Text preprocessing
+  - LLM API calling
+  - Structured field extraction
+- **Evidence retrieval**
+  - Embedding and searchable index
+  - Question answering over documents
+  - Cross-document comparison
+- **Interpretation**
+  - Heatmap visualisation
+  - Word-cloud generation
 
 ### Use Cases
 - How do short-term rental reviews reflect neighborhood livability over time?

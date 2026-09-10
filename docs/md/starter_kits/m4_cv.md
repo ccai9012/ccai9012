@@ -6,10 +6,16 @@
 **Category:** Perception & Prediction from Visual Data
 
 **Modular Components:**
-- Object Detection/Tracking with YOLO
-- Semantic Segmentation Model
-- Trajectory Extraction
-- Visualization
+
+- **Image to perception**
+  - Object detection and tracking with YOLO
+  - Semantic segmentation model
+- **Perception to measures**
+  - Trajectory extraction
+  - Housing-price feature construction
+- **Measures to interpretation**
+  - Frame, map, and trajectory visualisation
+  - Regression or spatial summary
 
 ### Use Cases
 - What factors influence walking behavior?

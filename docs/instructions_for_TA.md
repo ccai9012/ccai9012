@@ -9,14 +9,25 @@
 > 4) How to update the documentation system.
 > 5) Other checklist.
 
+The public collaboration workflow and maintainer-only authoring details now
+live in separate Course Docs pages:
+
+- `docs/collaboration_workflow.md`
+- `docs/maintainer_authoring.md` (local only; not part of the public site)
+
+Use the collaboration page for clone/edit/inspect/commit/pull-before-push,
+conflict escalation, and public verification. Use the maintainer page for the
+repository map, worked Markdown-page example, navigation registration, asset
+diagnosis, and responsive checks. This local file remains a handover index.
+
 ---
 
 ## 0. Quick Navigation (the 5 entry points you’ll use most)
 
 1. **Environment setup (for students/TAs)**: `docs/installation.md` (the same content is also converted to `docs/installation.html`)
 2. **Repository overview**: root `README.md`
-3. **Weekly exercises / in-class code**: `weekly_scripts/week*/`
-4. **Final project Starter Kits**: `starter_kits/` (overview doc: `docs/starter_kits.md`)
+3. **Weekly exercises / in-class code**: `weekly_scripts/wip/`
+4. **Final project Starter Kits**: `starter_kits/` (overview doc: `docs/md/starter_kits/index.md`)
 5. **Toolkit API**: `ccai9012/` source; corresponding HTML: `docs/api/*.html`
 
 ---
@@ -214,4 +225,3 @@ For more detailed directory conventions, execution order, and notes, refer to: `
   - [ ] `python docs/md_to_html.py`
 
 ---
-

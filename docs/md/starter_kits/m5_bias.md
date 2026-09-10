@@ -5,9 +5,16 @@
 **Category:** Bias Detection
 
 **Modular Components:**
-- Fairness Metrics Evaluator
-- Model Explainer (SHAP/LIME)
-- Feature Attribution Visualizer
+
+- **Audit inputs**
+  - Protected and outcome attributes
+  - Privileged and unprivileged group definitions
+- **Fairness and performance**
+  - Fairness metrics evaluator
+  - Predictive-performance comparison
+- **Interpretation**
+  - Model explainer (SHAP/LIME)
+  - Feature-attribution visualiser
 
 ### Use Cases
 - Do public service recommendation models (e.g., bus stop placement, streetlight allocation) tend to ignore low-density or low-income areas?

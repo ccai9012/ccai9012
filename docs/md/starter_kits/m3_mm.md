@@ -6,9 +6,16 @@
 **Category:** Visual-Language Reasoning
 
 **Modular Components:**
-- Model Initialization (API calling/Local implementation)
-- Image Captioning
-- Keyword Extraction from Text
+
+- **Image generation and loading**
+  - Local model or API initialisation
+  - Controlled prompt and seed inputs
+- **Image to text**
+  - Image captioning
+  - Vision-language question answering
+- **Text to evidence**
+  - Keyword extraction
+  - Candidate-label frequency and co-occurrence summaries
 
 ### Use Cases
 - Do AI models associate certain architectural styles with particular geographic regions unfairly?

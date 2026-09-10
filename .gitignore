@@ -39,6 +39,7 @@ docs/figs/brand_identity/*
 
 *.md
 !docs/*.md
+!docs/md/*.md
 !README.md
 
 ____*

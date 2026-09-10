@@ -6,10 +6,16 @@
 **Category:** Synthetic Data Generation & Prediction
 
 **Modular Components:**
-- CycleGAN Training Pipeline
-- Custom Dataset Loader
-- Image Augmentation
-- Text2Image Prompt Interface
+
+- **Paired image workflow**
+  - Road-network tile input
+  - Building-profile tile target
+- **Model preparation**
+  - Paired dataset loader
+  - Image augmentation
+- **Generation and inspection**
+  - Conditional GAN training/inference
+  - Visual comparison of input, target, and generated output
 
 <p align="center">
   <img src="../figs/SCR-20251218-lfxu.jpeg" width="600"><br>
