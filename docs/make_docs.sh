@@ -2,7 +2,6 @@
 
 python md_to_html.py
 
-
 python md_to_html.py md/participation.md
 
 python md_to_html.py md/a0_overview.md
