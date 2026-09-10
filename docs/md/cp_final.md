@@ -2,7 +2,7 @@
 
 <div style="height:2.0rem"></div>
 
-<span style="background-color:#a00000;color:#fff;">📅 Submit by: 2026.04.22 ⏰ 00:00 (Midnight before class)</span>  
+<span style="background-color:#a00000;color:#fff;">📅 Submit by: 2026.12.09 ⏰ 00:00 (Midnight before class)</span>  
 
 <div style="height:1rem"></div>
 
