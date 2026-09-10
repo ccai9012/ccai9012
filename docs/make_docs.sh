@@ -2,7 +2,11 @@
 
 python md_to_html.py
 
-python md_to_html.py md/appexer.md
+
+python md_to_html.py md/participation.md
+
+
+python md_to_html.py md/a0_overview.md
 python md_to_html.py md/a0/a0_notes.md
 python md_to_html.py md/a0/a0_submission.md
 python md_to_html.py md/a0/a0_gather.md

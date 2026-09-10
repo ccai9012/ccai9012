@@ -24,7 +24,7 @@ The exercise moves through:
 
 <div style="height:2.0rem"></div>
 
-<img src="figs/applied_exercise/fig_artefact.png" style="width:100%; height:auto;">
+<img src="a0/figs/fig_artefact.png" style="width:100%; height:auto;">
 
 *Figure 1. Illustrative examples of possible subjects and visual artefacts. Image generated with ChatGPT / OpenAI.*
 
@@ -115,7 +115,7 @@ Use selected collections as starting points for iterative transformation, then a
 
 <div style="height:2.0rem"></div>
 
-<img src="figs/applied_exercise/fig_steps.png" style="width:100%; height:auto;">
+<img src="a0/figs/fig_steps.png" style="width:100%; height:auto;">
 
 *Figure 2. Overview of the Applied Exercise process. Image generated with ChatGPT / OpenAI.*
 
