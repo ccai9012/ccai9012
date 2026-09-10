@@ -1,101 +1,65 @@
-# LLM for Structuring Information
+# Module 2: LLM for Structuring Information
 
+**Starter kits:** four notebooks under `starter_kits/2_llm_structure_output/`<br>
 **Related API:** [`ccai9012.llm_utils`](../api/ccai9012/llm_utils.html) · [`ccai9012.viz_utils`](../api/ccai9012/viz_utils.html)
 
-### Overview
-**Category:** Unstructured Text Analysis & Knowledge Structuring
+## What problem does this module solve?
 
-**Modular Components:**
+Large language models are useful here as structuring assistants: they can turn review text or retrieved document passages into fields that can be inspected, compared, and visualised. The output remains provisional evidence. Raw text, source locations, prompts, model metadata, and uncertainty should be retained whenever a result supports a real claim.
 
-- **Text to structure**
-  - Text preprocessing
-  - LLM API calling
-  - Structured field extraction
-- **Evidence retrieval**
-  - Embedding and searchable index
-  - Question answering over documents
-  - Cross-document comparison
-- **Interpretation**
-  - Heatmap visualisation
-  - Word-cloud generation
+**Modular mapping:** unstructured text or PDF passages → structured fields → tables, maps, distributions, and research questions.
 
-### Use Cases
-- How do short-term rental reviews reflect neighborhood livability over time?
-- Can we detect major sentiment shifts before and after a major policy announcement or public event?
-- How is generative AI affecting job market? (Job market analysis across industry and time)
-- Can we use LLMs to detect gaps between declared policy priorities and proposed implementation measures in urban planning documents?
-- How are terms like "resilience", "sustainability", or "equity" defined and operationalized differently across documents?
+**Shared prerequisites:** Python and pandas, basic JSON/CSV handling, and critical reading of model outputs. Live API calls are optional and are not required for the default notebook paths.
 
-### Code Examples
+## Choose a learning path
 
-#### Urban Sentiment Classification
-**Content:**
-- Extract structured sentiment (location, themes, polarity) from reviews using LLM
-- Use NER + classification
-- Create sentiment maps to inform urban design
+| Notebook | Question | Offline default | Main output |
+| --- | --- | --- | --- |
+| `airbnb_hk.ipynb` | How do location, ratings, and review text provide different evidence about a stay? | Two Inside Airbnb samples + deterministic mock labels | Aspect-level review table, map, rating distribution, and word clouds |
+| `lit_review.ipynb` | How can a research question become a traceable evidence matrix? | Local PDF text + tracked cached LLM tables | Paper/field/value matrix with passage, page, and uncertainty |
+| `energy_plan.ipynb` | How can repeated PDF questions become comparable policy notes? | Existing four-stage workflow + cached outputs | Location/objectives/actions/stakeholders/timeline comparison |
+| `urban_sentiment.ipynb` | How can sampled Yelp reviews become a cautious city scorecard? | 60 cached Indianapolis labels | Polarity-by-star scorecard, maps, and keyword inspection |
 
-**Dataset:**
-- Yelp open dataset
-- Source: https://business.yelp.com/data/resources/open-dataset/ (Please press the **Download JSON** red button to get the dataset, and put the file under `starter_kits/2_llm_structure_output/urban_sentiment/data` folder.)
+## Data and access
 
-**Required Packages:** LangChain, DeepSeek, transformers, pandas, json
+The module-level [`sample_manifest.json`](../../starter_kits/2_llm_structure_output/sample_manifest.json) records sample sources, licence notes, selection rules, schemas, and row counts. The Airbnb sample files are derived from the tracked Inside Airbnb Hong Kong snapshot and provide `central_western` and `yau_tsim_mong` configurations. The urban sentiment sample is derived from tracked cached Yelp-labelled output; it is not human ground truth.
 
-<p align="center">
-  <img src="../figs/yelp.png" width="400"><br>
-  <em>Yelp Review heatmap.</em>
-</p>
+The default notebooks do not download data, request an API key, or call a paid model. Each notebook exposes a clearly marked live branch. Before enabling it, record the model, date, prompt, output path, cost boundary, and data-handling decision. For full Yelp data, obtain the current dataset and terms yourself; the repository does not silently download or extract an archive.
 
-#### Airbnb Reviews Analysis
-**Content:**
-- Collect Airbnb housing and review data (public dataset Inside Airbnb)
-- Classification of reviews' sentiments of different aspects (location, host, facility)
-- Create Airbnb aspect-wise impression heatmap and wordcloud
+## Airbnb reviews: map-to-sentiment evidence trail
 
-**Dataset:**
-- Airbnb review dataset
-- Source: https://insideairbnb.com/get-the-data/
+![Listings and neighbourhood geometry branch to maps, while review text branches to structured sentiment; both support comparison.](../figs/airbnb_evidence_trail.svg)
 
-<p align="center">
-  <img src="../figs/wordcloud.png" width="400"><br>
-  <em>Airbnb Review keywords wordcloud.</em>
-</p>
+The notebook joins listings, neighbourhood geometry, and review text. GeoPandas supplies polygon context, Folium turns coordinates into an interactive map, and `llm_utils.analyze_airbnb_reviews` optionally converts review text into `overall_impression`, `decision_tags`, and location/facility/host fields. The mock path keeps the input/output contract visible without pretending to be an LLM evaluation.
 
-#### LLM-Assisted Retrieval and Structured Comparison of Technical Documents
+After each map, rating histogram, and word cloud, ask what the visual encodes and what it cannot establish. Review samples are not population estimates, ratings and text are not interchangeable endpoints, and spatial concentration is not causation.
 
-**Goal:** Reduce repeated searching when comparing many long Energy Action Plans, reports, or technical manuals. Prepare the collection once as searchable passages, then use an LLM to organise retrieved evidence into the same comparison fields for every document.
+## Literature review: question-to-evidence matrix
 
-<p align="center">
-  <img src="../figs/energy_plan_flow.svg" alt="LLM-assisted technical-document comparison workflow. A collection of PDFs is extracted, split into passages, represented in a searchable index, then a researcher asks a question. Relevant passages are retrieved, an LLM organises them into evidence notes, and the notes are compared in a table." width="100%"><br>
-  <em>Prepare the collection once; reuse it for many document-review questions.</em>
-</p>
+![A research question retrieves passages, which become an evidence matrix with paper, page, field, value, and uncertainty before synthesis.](../figs/literature_evidence_matrix.svg)
 
-**Four-stage workflow:**
-1. Prepare PDFs as overlapping, searchable passages.
-2. Ask a document-review question and retrieve the most relevant passages.
-3. Use the same evidence fields—location, objectives, actions, stakeholders, and timeline—for every document.
-4. Compare the completed evidence notes and summarise patterns across the collection.
+This path separates retrieval, summarisation, structured extraction, and synthesis. Each field retains a paper, retrieved passage, source location, and uncertainty note; missing information is written as `N/A` rather than silently inferred. The tracked cached tables are used for offline parsing, while local PDF text provides a transparent page-level evidence lookup.
 
-**Inputs and outputs:** technical PDF collection and review question → searchable passages → retrieved evidence → LLM-organised evidence notes → cross-document comparison table. In the starter kit, overlapping passages help keep neighbouring context together; scans, tables, and figures can still be missed.
+Use the matrix to formulate follow-up reading questions. It is a comparison aid, not a substitute for opening the original paper.
 
-**How to use the results:** use the table to see recurring goals, distinct actions, different responsibilities, and missing timing information across documents. Blank values, repeated boilerplate, and inconsistent formats are useful prompts for follow-up reading. Retain filenames when fuller context is needed.
+## Energy plans: preserve the four-stage RAG workflow
 
-**Suitable applications:** compare climate, energy, or housing policy documents across cities, or compare methods and results fields across a focused set of research-paper PDFs.
+The Energy Plan notebook retains the accepted prepare → retrieve → structure → compare narrative and its step-highlight SVGs. The default run reads local PDFs and tracked cached outputs; the optional semantic retriever and LLM branch remain explicit. Its comparison fields are `Location`, `Main Objectives`, `Key Actions`, `Stakeholders`, and `Timeline`, with `N/A` for missing evidence.
 
-**Extension:** this prepare → retrieve → generate pattern is often called retrieval-augmented generation (RAG). For additional material, see [IBM's PDF preparation tutorial](https://developer.ibm.com/tutorials/dpk-rag-llms/) and [AWS's RAG overview](https://docs.aws.amazon.com/prescriptive-guidance/latest/retrieval-augmented-generation-options/what-is-rag.html).
+The workflow is useful for cross-city policy documents or a focused methods/results review, provided filenames and page context survive into the evidence record. Retrieval can miss scans, tables, or neighbouring context, and an LLM can flatten uncertainty.
 
-**Practical note:** retrieval can omit content, LLMs can flatten uncertainty, and table parsing can fail. Preserve filenames and evidence locations, protect sensitive documents and credentials, and consider API cost and data-handling rules.
+## Urban sentiment: reviews-to-city scorecard
 
-**Dataset:**
-- Energy Action Plans documents
-- Source: https://cchrc.org/
+![Sampled Yelp reviews retain raw text and ratings, receive cached or LLM labels, and become a cautious city scorecard.](../figs/urban_sentiment_scorecard.svg)
 
-**Required Packages:** LangChain, PyMuPDF, pdfplumber, transformers, pandas
+The notebook keeps raw review text, stars, coordinates, polarity, emotion, and keywords together before aggregation. `viz_utils.plot_review_heatmap` and `plot_review_map` show sampled spatial patterns; scorecards and distributions show how labels relate to stars. Neither establishes population sentiment or causal urban conditions.
 
-#### Literature Review of Topics
-**Content:**
-- Webcrawl website for relevant papers
-- Go through document by document with specific questions
-- Identify insights & keywords
-- Catalogue & represent findings
+## Common glossary and extensions
 
-**Dataset:** Collection of literatures from specific topic
+- **Retrieval:** selecting passages relevant to a question; it is not summarisation.
+- **Structured extraction:** assigning evidence to a fixed schema; it is not verification.
+- **Cached/mock output:** an offline teaching fixture used to test parsing and visualisation, not a new model run.
+- **Source location:** the filename and page/section needed to reopen the original evidence.
+- **`N/A`:** the field is absent from the retained evidence; it is not permission to guess.
+
+Extensions include human-checking a labelled subset, comparing two prompts or models, retaining raw JSON responses, adding confidence/error audits, and linking every aggregate back to source rows. Related paths are [Module 1: paired generative ML](m1_gan.html), [Module 3: multimodal reasoning](m3_mm.html), and the [`llm_utils` API](../api/ccai9012/llm_utils.html).

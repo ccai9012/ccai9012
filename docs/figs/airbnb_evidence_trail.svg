@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="370" viewBox="0 0 1100 370" role="img" aria-labelledby="title desc">
+  <title id="title">Airbnb review evidence trail</title>
+  <desc id="desc">Listings and neighbourhood geometry produce a location map, while review text is converted into structured sentiment and aspect notes. Both outputs support an interpretable comparison.</desc>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10Z" fill="#168aad"/></marker></defs>
+  <rect width="1100" height="370" fill="#fbfdfe"/>
+  <text x="40" y="38" font-family="Arial,sans-serif" font-size="24" font-weight="700" fill="#17324d">One stay, three evidence streams</text>
+  <text x="40" y="65" font-family="Arial,sans-serif" font-size="15" fill="#4c6275">Location, ratings, and review text answer related—but different—questions.</text>
+  <rect x="35" y="90" width="1030" height="245" rx="16" fill="#f5f9fb" stroke="#d5e5ec"/>
+  <rect x="65" y="130" width="210" height="70" rx="10" fill="#eaf5f8" stroke="#168aad"/>
+  <text x="170" y="158" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" font-weight="700" fill="#17324d">Listings</text>
+  <text x="170" y="182" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" fill="#4c6275">coordinates + ratings</text>
+  <rect x="65" y="230" width="210" height="70" rx="10" fill="#eaf5f8" stroke="#168aad"/>
+  <text x="170" y="258" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" font-weight="700" fill="#17324d">Neighbourhoods</text>
+  <text x="170" y="282" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" fill="#4c6275">geometry context</text>
+  <path d="M290 165 H430" stroke="#168aad" stroke-width="3" marker-end="url(#arrow)"/><path d="M290 265 H430" stroke="#168aad" stroke-width="3" marker-end="url(#arrow)"/>
+  <rect x="445" y="190" width="210" height="70" rx="10" fill="#fff7ed" stroke="#f28f3b"/>
+  <text x="550" y="218" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" font-weight="700" fill="#17324d">Review text</text>
+  <text x="550" y="242" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" fill="#4c6275">LLM or mock → fields</text>
+  <path d="M285 165 C350 165 360 210 435 220" fill="none" stroke="#168aad" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="700" y="115" width="300" height="75" rx="10" fill="#eaf5f8" stroke="#168aad"/>
+  <text x="850" y="144" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" font-weight="700" fill="#17324d">Map + rating distribution</text>
+  <text x="850" y="168" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" fill="#4c6275">where listings are and how they score</text>
+  <rect x="700" y="230" width="300" height="75" rx="10" fill="#fbeaf5" stroke="#b23a8a" stroke-dasharray="7 5"/>
+  <text x="850" y="259" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" font-weight="700" fill="#17324d">Aspect evidence</text>
+  <text x="850" y="283" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" fill="#4c6275">location, facility, host, and caveats</text>
+  <path d="M665 220 H690" stroke="#168aad" stroke-width="3" marker-end="url(#arrow)"/><path d="M550 270 C550 300 660 285 690 270" fill="none" stroke="#f28f3b" stroke-width="2" marker-end="url(#arrow)"/>
+</svg>

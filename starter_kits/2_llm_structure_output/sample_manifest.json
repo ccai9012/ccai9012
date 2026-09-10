@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "created_from": "tracked repository data on 2026-09-10",
+  "airbnb": {
+    "source": "Inside Airbnb Hong Kong snapshot",
+    "source_url": "https://insideairbnb.com/get-the-data/",
+    "license": "CC0 1.0 (as recorded in docs/md/datasets.md)",
+    "selection_rule": "24 review rows selected with random_state=9012 from each named neighbourhood; listing rows are the distinct referenced listings.",
+    "configs": [
+      {
+        "name": "central_western",
+        "neighbourhood": "Central & Western",
+        "reviews": "starter_kits/2_llm_structure_output/airbnb_reviews/data/samples/reviews_central_western_sample.csv",
+        "listings": "starter_kits/2_llm_structure_output/airbnb_reviews/data/samples/listings_central_western_sample.csv",
+        "review_rows": 24,
+        "listing_rows": 22
+      },
+      {
+        "name": "yau_tsim_mong",
+        "neighbourhood": "Yau Tsim Mong",
+        "reviews": "starter_kits/2_llm_structure_output/airbnb_reviews/data/samples/reviews_yau_tsim_mong_sample.csv",
+        "listings": "starter_kits/2_llm_structure_output/airbnb_reviews/data/samples/listings_yau_tsim_mong_sample.csv",
+        "review_rows": 24,
+        "listing_rows": 24
+      }
+    ],
+    "schema": {
+      "reviews": ["listing_id", "id", "date", "comments"],
+      "listings": ["id", "name", "neighbourhood_cleansed", "latitude", "longitude", "room_type", "property_type", "price", "review_scores_rating", "number_of_reviews"]
+    }
+  },
+  "urban_sentiment": {
+    "source": "Cached structured output derived from the Yelp Academic Dataset",
+    "source_url": "https://business.yelp.com/data/resources/open-dataset/",
+    "license": "Academic-use dataset; obtain and check current Yelp terms before using the full data",
+    "selection_rule": "60 rows sampled with random_state=9012 from the tracked 300-row Indianapolis output; labels are cached model outputs, not human ground truth.",
+    "path": "starter_kits/2_llm_structure_output/urban_sentiment/data/indy_reviews_sample.csv",
+    "rows": 60,
+    "schema": ["review_text", "polarity", "sentiment", "keywords", "stars", "business_name", "latitude", "longitude"]
+  }
+}

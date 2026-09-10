@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="350" viewBox="0 0 1100 350" role="img" aria-labelledby="title desc">
+  <title id="title">Literature review evidence matrix</title>
+  <desc id="desc">A research question is used to retrieve passages from papers. Each passage is retained with a source page, extraction field, and uncertainty note before provisional synthesis.</desc>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10Z" fill="#168aad"/></marker></defs>
+  <rect width="1100" height="350" fill="#fbfdfe"/>
+  <text x="40" y="38" font-family="Arial,sans-serif" font-size="24" font-weight="700" fill="#17324d">Question → evidence → provisional synthesis</text>
+  <text x="40" y="65" font-family="Arial,sans-serif" font-size="15" fill="#4c6275">Keep the passage and its location attached to every extracted field.</text>
+  <rect x="35" y="92" width="1030" height="220" rx="16" fill="#f5f9fb" stroke="#d5e5ec"/>
+  <rect x="65" y="155" width="175" height="70" rx="10" fill="#eaf5f8" stroke="#168aad"/><text x="152" y="184" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" font-weight="700" fill="#17324d">Research question</text><text x="152" y="207" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" fill="#4c6275">e.g. model + result</text>
+  <path d="M255 190 H320" stroke="#168aad" stroke-width="3" marker-end="url(#arrow)"/>
+  <rect x="335" y="125" width="205" height="140" rx="10" fill="#dff3f8" stroke="#168aad"/><text x="437" y="155" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" font-weight="700" fill="#17324d">Retrieved passage</text><text x="437" y="184" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" fill="#4c6275">paper + page</text><text x="437" y="207" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" fill="#4c6275">quoted context</text><text x="437" y="230" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" fill="#4c6275">relevance score / method</text>
+  <path d="M555 190 H620" stroke="#168aad" stroke-width="3" marker-end="url(#arrow)"/>
+  <rect x="635" y="125" width="205" height="140" rx="10" fill="#fff7ed" stroke="#f28f3b"/><text x="737" y="155" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" font-weight="700" fill="#17324d">Evidence matrix</text><text x="737" y="184" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" fill="#4c6275">field + value</text><text x="737" y="207" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" fill="#4c6275">source_location</text><text x="737" y="230" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" fill="#4c6275">uncertainty / N/A</text>
+  <path d="M855 190 H920" stroke="#168aad" stroke-width="3" marker-end="url(#arrow)"/>
+  <rect x="935" y="155" width="105" height="70" rx="10" fill="#fbeaf5" stroke="#b23a8a" stroke-dasharray="7 5"/><text x="987" y="184" text-anchor="middle" font-family="Arial,sans-serif" font-size="15" font-weight="700" fill="#17324d">Synthesis</text><text x="987" y="207" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#4c6275">draft only</text>
+</svg>
