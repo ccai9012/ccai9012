@@ -15,10 +15,10 @@ General participation reflects your **ongoing engagement with the course** throu
 
 Attendance consists of two parts:
 
-- **Lecture Attendance — 1 point**
+- **Lecture Attendance**
     - Attendance will be recorded from **Week 3 onwards**.
 
-- **Tutorial Attendance — 2 points**
+- **Tutorial Attendance**
     - Students should attend at least **8 of the 10 tutorials**.
     - Each student should take part in at least one **Crit-Style Peer Review**, where you present your project individually to another student in your tutorial session.
 

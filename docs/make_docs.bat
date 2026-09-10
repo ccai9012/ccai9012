@@ -1,7 +1,4 @@
-#!/bin/bash
-
 python md_to_html.py
-
 
 python md_to_html.py md/participation.md
 
@@ -31,5 +28,3 @@ python md_to_html.py md/piii_data_and_risks.md
 python md_to_html.py md/piii_casestudy.md
 
 python md_to_html.py md/tutorials.md
-
-#./make_docs.sh
