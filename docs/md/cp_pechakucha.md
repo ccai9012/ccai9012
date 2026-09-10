@@ -2,12 +2,12 @@
 
 <div style="height:2.0rem"></div>
 
-<span style="background-color:#a00000;color:#fff;">📅 Submit by: 2026.03.18 ⏰ 00:00 (Midnight before class)</span>  
+<span style="background-color:#a00000;color:#fff;">📅 Submit by: 2026.10.21 ⏰ 00:00 (Midnight before class)</span>  
 
 <div style="height:1rem"></div>
-
+<!-- 
 > **📤 Upload your slides here:**  
-> [CCAI9012 Pecha Kucha Submission Form](https://forms.gle/j8WPsnpbsP24hVZT8)
+> [CCAI9012 Pecha Kucha Submission Form](https://forms.gle/j8WPsnpbsP24hVZT8) -->
 
 **Slides must be submitted in PowerPoint format so we can combine all presentations into a single deck before class. Late submissions may delay the setup of the session.**
 

@@ -246,7 +246,7 @@ Your reflection will be submitted as a `*.docx` or `*.pdf` via `Moodle`.
 
 ### Submission Deadline
 
-📅2026.05.06 ⏰23:59
+📅2026.12.16 ⏰23:59
 
 <div style="height:1.5rem"></div> 
 
