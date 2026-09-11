@@ -79,7 +79,7 @@ For example, if your assigned category is **Bamboo Scaffolds & Connections**, yo
 - **Purpose:** Capture the principal object of study as fully and clearly as possible.
 - **Show:** The main artefact you are documenting—for example, an entire bamboo scaffold, building massing, large coherent façade, individual floor plan, complete room, truss, or frame.
 - **For three-dimensional Systems:** Use different viewpoints; make sure the System appears as completely as reasonably possible; and provide enough variation for its overall form to be understood.
-- **Target:** Approximately **2–3 System views or representations** per collection.
+- **Target:** Approximately **4–5 System views or representations** per collection.
 
 <div style="height:1.0rem"></div>
 
@@ -88,7 +88,7 @@ For example, if your assigned category is **Bamboo Scaffolds & Connections**, yo
 - **Purpose:** Isolate meaningful parts, components, features, or local conditions within the System.
 - **Show:** Joints and connections; individual members; façade panels and openings; material interfaces; rooms or local spatial conditions; furniture, objects, or other features that caught your attention.
 - **For plan-based collections:** A Detail does not need to be a close-up photograph. It may instead be a particular room, unit, corridor, threshold, or spatial condition represented through a plan crop, photograph, rendering, or annotation.
-- **Target:** Approximately **3–5 Detail views or representations** per collection.
+- **Target:** Approximately **4–5 Detail views or representations** per collection.
 
 <div style="height:1.0rem"></div>
 
@@ -144,7 +144,7 @@ Photographs should be **purposeful rather than repetitive**. Aim for a compact s
 
 #### System photographs
 
-For each collection, take approximately **2–3 useful System photographs** where photography is relevant.
+For each collection, take approximately **4-5 useful System photographs** where photography is relevant.
 
 For systems with an important three-dimensional configuration, these views should come from sufficiently different positions to help describe the system's overall form.
 
@@ -170,7 +170,7 @@ When taking System photographs:
 
 #### Detail photographs
 
-For each collection, take approximately **3–5 purposeful Detail photographs or representations**.
+For each collection, take approximately **4–5 purposeful Detail photographs or representations**.
 
 These might include:
 

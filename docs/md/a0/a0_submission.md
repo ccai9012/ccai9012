@@ -16,8 +16,8 @@ The following are the working artefacts you should **produce and retain througho
 For each of your approximately **5 collections**, produce:
 
 - Approximately **1–2 Context views or representations**.
-- Approximately **2–3 System views or representations**.
-- Approximately **3–5 Detail views or representations**.
+- Approximately **4–5 System views or representations**.
+- Approximately **4–5 Detail views or representations**.
 - **One nested visual explanation per collection** showing how selected Detail view(s) relate to the System, and how the System relates to its wider Context.
 - The **original photographs / visual material** and associated metadata where applicable.
 

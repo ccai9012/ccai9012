@@ -37,13 +37,15 @@ When photographing three-dimensional Systems:
 - Capture the System as completely as reasonably possible across the set of photographs.
 - Keep lighting and exposure conditions reasonably consistent where possible.
 
+<img src="figs/system.png" style="width:80%; height:auto;">
+
 <div style="
     border-left: 5px solid #000;
     padding: 0.8rem 1rem;
     margin: 1.5rem 0;
     background: #f2f2f2;
 ">
-<strong>IMPORTANT:</strong> Keep the <strong>original photograph</strong>. Do not resize, compress, crop, convert, screenshot, or otherwise re-save the image before preserving its metadata.
+<strong>IMPORTANT:</strong> Keep the <strong>original photograph</strong>. Do not transfer, resize, compress, crop, convert, screenshot, or otherwise re-save the image before preserving its metadata.
 </div>
 
 #### Export camera / EXIF information
@@ -55,6 +57,8 @@ For photographs you collect yourself:
 3. Export the available metadata as a **CSV file**.
 4. Save the CSV together with the corresponding photograph.
 5. Keep both files as part of your original collection.
+
+<img src="figs/camera information.png" style="width:90%; height:auto;">
 
 The exported information may include device, image dimensions, capture settings, date/time, and location information where these are available.
 
@@ -78,24 +82,24 @@ Use:
 
 For example:
 
-- `C01_Context_01.jpg`
-- `C01_System_01.jpg`
-- `C01_System_02.jpg`
-- `C01_Detail_01.jpg`
-- `C01_Detail_02.jpg`
+- `C01_Context_01.HEIC`
+- `C01_System_01.HEIC`
+- `C01_System_02.HEIC`
+- `C01_Detail_01.HEIC`
+- `C01_Detail_02.HEIC`
 
 For Collection 02:
 
-- `C02_Context_01.jpg`
-- `C02_System_01.jpg`
-- `C02_Detail_01.jpg`
+- `C02_Context_01.HEIC`
+- `C02_System_01.HEIC`
+- `C02_Detail_01.HEIC`
 
 Use the same base name for the corresponding metadata file:
 
-- `C01_System_01.jpg`
+- `C01_System_01.HEIC`
 - `C01_System_01_EXIF.csv`
 
-Where your device produces another original format such as `.HEIC`, **keep that original format** rather than converting it simply to match the examples above.
+Where your device produces another original format such as `.DNG`, **keep that original format** rather than converting it simply to match the examples above.
 
 Rename files if necessary, but **do not re-save or re-export the photograph** simply to rename it.
 
@@ -162,6 +166,8 @@ When uploading:
 3. Do not resize, compress, crop, convert, or re-save photographs before uploading.
 4. Check that the collection number and filenames are correct.
 5. Keep your own copy of everything you submit.
+
+<img src="figs/uploading.png" style="width:90%; height:auto;">
 
 Avoid transferring the only copy of your photographs through services that may automatically compress or modify the images.
 
