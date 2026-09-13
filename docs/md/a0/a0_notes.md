@@ -24,9 +24,17 @@ The aim is to preserve your original evidence carefully and to make your later A
 
 Whenever you are collecting photographs, preserve the **original image files and their available camera metadata**.
 
+<div style="
+    border-left: 5px solid #000;
+    padding: 0.8rem 1rem;
+    margin: 1.5rem 0;
+    background: #f2f2f2;
+">
+<strong>IMPORTANT:</strong> Please turn on <strong>Location Services</strong> on your phone before collecting photographs. This helps preserve GPS information in the image metadata and supports later georeferencing of your collections.
+</div>
+
 Before collecting photographs:
 
-- Turn on **Location Services** for your phone / camera application so that available GPS information can be stored with the image.
 - Use the normal **high-resolution setting** of your device.
 - Avoid fisheye modes and, where possible, extreme wide-angle settings that introduce substantial distortion.
 - Do not deliberately reduce image resolution or quality.
@@ -147,13 +155,18 @@ A useful rule is:
 
 This makes it possible to return to the original evidence and check what information was actually available.
 
-<div style="height:1.5rem"></div>
+<!-- <div style="height:1.5rem"></div> -->
 
-<hr>
+<div style="
+    border-left: 5px solid #000;
+    padding: 0.8rem 1rem;
+    margin: 1.5rem 0;
+    background: #f2f2f2;
+">
+<strong>SUBMISSION:</strong> Submission will be made through the course’s designated <strong>Google Form / Google Drive workflow</strong>. The final submission link and upload instructions will be provided in due course.
+</div>
 
-<div style="height:1.5rem"></div>
-
-### 4. Uploading & Submission
+<!-- ### 4. Uploading & Submission
 
 Submission will be made through the course's designated **Google Form / Google Drive workflow**.
 
@@ -171,7 +184,7 @@ When uploading:
 
 Avoid transferring the only copy of your photographs through services that may automatically compress or modify the images.
 
-Until the submission form is released, simply keep your files organised using the naming convention above.
+Until the submission form is released, simply keep your files organised using the naming convention above. -->
 
 <div style="height:1.5rem"></div>
 
@@ -179,7 +192,8 @@ Until the submission form is released, simply keep your files organised using th
 
 <div style="height:1.5rem"></div>
 
-### 5. Choosing an LLM Platform
+
+### 4. Choosing an LLM Platform
 
 You will use a multimodal LLM to examine your visual collections.
 
@@ -215,7 +229,7 @@ If you deliberately want to compare two LLMs, treat them as **separate experimen
 
 <div style="height:1.5rem"></div>
 
-### 6. LLM Procedure for INTERROGATE
+### 5. LLM Procedure for INTERROGATE
 
 During **INTERROGATE**, you are trying to understand what the model can infer from the evidence you provide.
 
@@ -273,7 +287,7 @@ Start fresh for each independent test. After recording the first response, use f
 
 <div style="height:1.5rem"></div>
 
-### 7. LLM Procedure for TRANSFORM
+### 6. LLM Procedure for TRANSFORM
 
 During **TRANSFORM**, the objective changes.
 
@@ -311,7 +325,7 @@ Context, feedback, correction, references, and accumulated conversation are now 
 
 <div style="height:1.5rem"></div>
 
-### 8. Keep a Traceable Record
+### 7. Keep a Traceable Record
 
 Throughout the exercise, keep enough information that another person could understand **what you did and what evidence the AI received**.
 

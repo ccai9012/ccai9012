@@ -52,8 +52,6 @@ For example, if your assigned category is **Bamboo Scaffolds & Connections**, yo
 
 ### 1.2. Document at three scales
 
-
-
 <div style="
     border-left: 5px solid #000;
     padding: 0.8rem 1rem;
@@ -62,7 +60,6 @@ For example, if your assigned category is **Bamboo Scaffolds & Connections**, yo
 ">
 <strong>IMPORTANT:</strong> Please turn on <strong>Location Services</strong> on your phone before collecting photographs. This helps preserve GPS information in the image metadata and supports later georeferencing of your collections.
 </div>
-
 
 <div style="height:1.0rem"></div>
 
@@ -99,6 +96,17 @@ For each collection, prepare **one nested visual explanation** that clearly conn
 Show where the **System** sits within the wider **Context**, and where selected **Details** belong within the System. Use simple crops, boxes, arrows, labels, or other annotations to make these relationships immediately understandable.
 
 The aim is to show that the three scales form **one connected visual record**, rather than a set of unrelated images.
+
+<div style="height:1.0rem"></div>
+
+<div style="
+    border-left: 5px solid #000;
+    padding: 0.8rem 1rem;
+    margin: 1.5rem 0;
+    background: #f2f2f2;
+">
+<strong>PHOTOGRAPHY:</strong> For <strong>System</strong> and <strong>Detail</strong> levels, you are generally expected to collect your own photographs <em>(for anything plan-based, gathering or scanning the plan is enough)</em>. You may complement your collection with externally sourced images—such as Google Maps Street View, satellite imagery, or other online references—particularly where they help establish the <strong>Context</strong> level.
+</div>
 
 <div style="height:1.0rem"></div>
 
