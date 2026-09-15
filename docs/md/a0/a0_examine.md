@@ -39,11 +39,29 @@ Before moving on:
 * Note important uncertainties or ambiguities.
 * Identify conditions that may be worth testing.
 
+
 <div style="height:1.5rem"></div>
+
+<hr>
+
+<div style="height:1.5rem"></div>
+
+The following guidelines will help you prepare this part of the assignment:
+
+<div style="height:1rem"></div>
+
+<div style="padding:1rem 1.25rem; background-color:#f2f2f2; border-left:5px solid #000;">
+  🗂️ <strong>Raw Artefacts</strong><br>
+  Check what evidence, files, outputs, and supporting material you need to produce and retain.
+  <a href="a0_artefacts.html#examine"><strong>[link]</strong></a>
+</div>
+
+<div style="height:3.0rem"></div>
 
 <hr style="height: 6px; border: none; background-color: #000;">
 
-<div style="height:1.5rem"></div>
+<div style="height:3.0rem"></div>
+
 
 ## 3. IDENTIFY
 
@@ -110,3 +128,20 @@ For example:
 * What additional view or information would be needed to answer confidently?
 
 The aim is not simply to catch the AI making mistakes. It is to identify **where its visual understanding works, where it breaks down, and whether it recognises the limits of the available evidence.**
+
+<div style="height:1.5rem"></div>
+
+<hr>
+
+<div style="height:1.5rem"></div>
+
+The following guidelines will help you prepare this part of the assignment:
+
+<div style="height:1rem"></div>
+
+<div style="padding:1rem 1.25rem; background-color:#f2f2f2; border-left:5px solid #000;">
+  🗂️ <strong>Raw Artefacts</strong><br>
+  Check what evidence, files, outputs, and supporting material you need to produce and retain.
+  <a href="a0_artefacts.html#identify"><strong>[link]</strong></a>
+</div>
+

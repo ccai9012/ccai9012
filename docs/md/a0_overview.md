@@ -119,12 +119,60 @@ Use selected collections as starting points for iterative transformation, then a
 
 *Figure 2. Overview of the Applied Exercise process. Image generated with ChatGPT / OpenAI.*
 
+
 <div style="height:1.5rem"></div>
 
 <hr style="height: 6px; border: none; background-color: #000;">
 
 <div style="height:1.5rem"></div>
 
+## Some helpful references...
+
+<div style="height:1.5rem"></div>
+
+<div style="padding:1rem 1.25rem; background-color:#f2f2f2; border-left:5px solid #000;">
+  📷 <strong>Photography Notes</strong><br>
+  Set up Location Services, preserve original files and metadata, and collect photographs consistently.
+  <a href="a0/a0_photo_notes.html"><strong>[link]</strong></a>
+</div>
+
+<div style="height:1rem"></div>
+
+<div style="padding:1rem 1.25rem; background-color:#f2f2f2; border-left:5px solid #000;">
+  💬 <strong>LLM Interaction Notes</strong><br>
+  Structure conversations, test models consistently, and preserve useful evidence from your AI experiments.
+  <a href="a0/a0_llm_notes.html"><strong>[link]</strong></a>
+</div>
+
+<div style="height:1rem"></div>
+
+<div style="padding:1rem 1.25rem; background-color:#f2f2f2; border-left:5px solid #000;">
+
+  📦 <strong>Submission Notes</strong><br>
+  Produce and retain <strong>raw artefacts</strong>, then select and distil them into <strong>curated presentable content</strong>.
+
+  <br><br>
+
+  • 🗂️ <strong>Raw Artefacts</strong><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;Check what evidence, files, outputs, and supporting material to retain.
+  <a href="a0/a0_artefacts.html"><strong>[link]</strong></a><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;📤 Submit here:
+  <a href="https://www.dropbox.com/request/fq5ktgls7cynia54o7c6"><strong>[link]</strong></a>
+
+  <br><br>
+
+  • 🎬 <strong>Presentables</strong><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;Prepare the final abstract, slides, and short video.
+  <a href="a0/a0_presentables.html"><strong>[link]</strong></a><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;📤 Submit here:
+  <a href="https://www.dropbox.com/request/u7m4z8tt3a9sm4siibua"><strong>[link]</strong></a>
+
+</div>
+
+
+
+
+<!-- 
 ## Before You Start
 
 Read the practical notes **before collecting photographs or beginning your AI experiments**.
@@ -159,4 +207,4 @@ The Submission page lists:
 - **Short Video**;
 - and **Supporting Documentation**.
 
-[**→ SUBMISSION REQUIREMENTS & CHECKLIST**](a0/a0_submission.html)
+[**→ SUBMISSION REQUIREMENTS & CHECKLIST**](a0/a0_submission.html) -->

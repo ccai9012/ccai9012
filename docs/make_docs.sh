@@ -4,8 +4,18 @@ python md_to_html.py
 
 python md_to_html.py md/participation.md
 
+
+
+
 python md_to_html.py md/a0_overview.md
 python md_to_html.py md/a0/a0_notes.md
+
+python md_to_html.py md/a0/a0_presentables.md
+python md_to_html.py md/a0/a0_artefacts.md
+python md_to_html.py md/a0/a0_photo_notes.md
+python md_to_html.py md/a0/a0_llm_notes.md
+python md_to_html.py md/a0/a0_presentables.md
+
 python md_to_html.py md/a0/a0_submission.md
 python md_to_html.py md/a0/a0_gather.md
 python md_to_html.py md/a0/a0_examine.md

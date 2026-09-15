@@ -20,10 +20,11 @@ The aim is not simply to generate more alternatives, but to develop a **coherent
 ### 6.1. Develop selected collections
 
 - Select at least **3 collections** from your earlier investigations.
-- For each collection, define a clear **transformation intention**: what are you trying to change, improve, explore, or challenge?
+- Define **one transformation intention / transformation strategy** that can be applied consistently across all 3 selected collections: what are you trying to change, improve, explore, or challenge?
+- Apply this same transformation strategy to each selected collection.
 - Produce approximately **10 variations per collection**.
-- Develop the alternatives as part of a coherent investigation rather than as unrelated generations.
-- Maintain enough continuity with the starting artefact that the transformation can be understood and compared.
+- Develop the alternatives as a coherent comparative investigation rather than as unrelated generations.
+- Maintain enough continuity with each starting artefact that the effects of the transformation can be understood and compared across the 3 collections.
 
 <div style="height:1.5rem"></div>
 
@@ -76,6 +77,28 @@ For each selected collection:
 <hr>
 
 <div style="height:1.5rem"></div>
+
+The following guidelines will help you prepare this part of the assignment:
+
+<div style="padding:1rem 1.25rem; background-color:#f2f2f2; border-left:5px solid #000;">
+  🤖 <strong>LLM Interaction Notes</strong><br>
+  Read the guidelines on how to interact with LLMs during <strong>TRANSFORMS</strong>.
+  <a href="a0_llm_notes.html#transform"><strong>[link]</strong></a>
+</div>
+
+<div style="height:1rem"></div>
+
+<div style="padding:1rem 1.25rem; background-color:#f2f2f2; border-left:5px solid #000;">
+  🗂️ <strong>Raw Artefacts</strong><br>
+  Check what evidence, files, outputs, and supporting material you need to produce and retain.
+  <a href="a0_artefacts.html#transform"><strong>[link]</strong></a>
+</div>
+
+<div style="height:3.0rem"></div>
+
+<hr>
+
+<div style="height:3.0rem"></div>
 
 ## 7. SELECT
 
@@ -135,3 +158,17 @@ For each collection:
 
 Your final selection should demonstrate not only what the AI generated, but **how you evaluated, directed, and made decisions about what it generated**.
 
+
+<div style="height:1.5rem"></div>
+
+<hr>
+
+<div style="height:1.5rem"></div>
+
+The following guidelines will help you prepare this part of the assignment:
+
+<div style="padding:1rem 1.25rem; background-color:#f2f2f2; border-left:5px solid #000;">
+  🗂️ <strong>Raw Artefacts</strong><br>
+  Check what evidence, files, outputs, and supporting material you need to produce and retain.
+  <a href="a0_artefacts.html#select"><strong>[link]</strong></a>
+</div>

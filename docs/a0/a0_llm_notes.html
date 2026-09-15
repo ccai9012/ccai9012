@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCAI9012 - A0 Llm Notes</title>
+    <link rel="stylesheet" href="../docs-style.css">
+</head>
+<body>
+    <div class="container">
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h2>CCAI9012</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../timetable.html">Course Plan</a></li>
+                <li><a href="../Assessment.html">Assessment</a></li>
+                <li class="sub-item"><a href="../a0_overview.html">Applied Exercise</a></li>
+                <li class="sub-item"><a href="../casestudy.html">Case Study</a></li>
+                <li class="sub-item"><a href="../course_project.html">Course Project</a></li>
+                <li><a href="../reading_material.html">Reading Materials</a></li>
+                <li><a href="../pi_mechanics.html">I. Mechanics of AI</a></li>
+                <li><a href="../pii_responsibility.html">II. Responsibility & AI</a></li>
+                <li><a href="../piii_data_and_risks.html">III. Datasets & Risks of AI</a></li>
+                <li><a href="../installation.html">Installation Guide</a></li>
+                <li><a href="../starter_kits/index.html">Starter Kits</a></li>
+                <li><a href="../datasets.html">Datasets Reference</a></li>
+            </ul>
+        </nav>
+
+        <main id="content">
+<h1>A0: Applied Exercise</h1>
+<h1><em>How to Talk to an LLM</em></h1>
+<div style="height:1.5rem"></div>
+
+<p>Please read these notes <strong>before beginning your AI experiments</strong>.</p>
+<p>The aim is to keep your conversations sufficiently <strong>consistent, controlled, and traceable</strong> that you can later compare what the model did across different questions, site collections, and stages of the exercise.</p>
+<div style="height:1.5rem"></div>
+
+<hr style="height: 6px; border: none; background-color: #000;">
+
+<div style="height:1.5rem"></div>
+
+<p><a id="platform"></a></p>
+<h2>1. Choose a Platform</h2>
+<p>Use a multimodal LLM that can accept both <strong>images and text</strong>.</p>
+<p>Possible platforms include:</p>
+<ul>
+<li><strong>Gemini</strong>.</li>
+<li><strong>HKU ChatGPT</strong>.</li>
+<li>Another course-approved multimodal LLM, where appropriate.</li>
+</ul>
+<p>For a comparable set of tests, try to use the <strong>same platform / model consistently</strong>.</p>
+<p>If you deliberately compare different models, treat them as separate experiments and keep the visual evidence and question wording as similar as possible.</p>
+<div style="
+    border-left: 5px solid #000;
+    padding: 0.8rem 1rem;
+    margin: 1.5rem 0;
+    background: #f2f2f2;
+">
+<strong>IMPORTANT:</strong> Consistency matters more than choosing the supposedly “best” model. If you change models, prompting style, images, and questions at the same time, it becomes difficult to understand what caused the difference in the response.
+</div>
+
+<div style="height:1.5rem"></div>
+
+<hr>
+
+<div style="height:1.5rem"></div>
+
+<p><a id="interrogate"></a></p>
+<h2>2. During INTERROGATE</h2>
+<p>Treat each independent question as a <strong>fresh test</strong>.</p>
+<p>For each test:</p>
+<ol>
+<li>Start a <strong>new conversation</strong>.</li>
+<li>Upload only the image(s) you intend to test.</li>
+<li>Ask the question directly.</li>
+<li>Avoid giving hints, explanations, or corrections beforehand.</li>
+<li>Record the model&rsquo;s <strong>first response</strong>.</li>
+</ol>
+<p>The first response is particularly important because it shows what the model inferred before you began guiding or correcting it.</p>
+<div style="
+    border-left: 5px solid #000;
+    padding: 0.8rem 1rem;
+    margin: 1.5rem 0;
+    background: #f2f2f2;
+">
+<strong>INTERROGATE = CONTROL FIRST, CONVERSATION SECOND.</strong><br>
+Start from a clean state, record the first response, and only then begin probing the model further.
+</div>
+
+<div style="height:1.5rem"></div>
+
+<hr>
+
+<div style="height:1.5rem"></div>
+
+<h2>3. Follow Up After the First Response</h2>
+<p>Once the first response has been recorded, continue the same conversation and investigate the answer.</p>
+<p>Useful follow-up prompts include:</p>
+<ul>
+<li>What visual evidence supports your answer?</li>
+<li>Which part of the image are you referring to?</li>
+<li>How certain are you?</li>
+<li>What are you assuming?</li>
+<li>Could there be another explanation?</li>
+<li>What information is missing?</li>
+<li>Look again. Would you revise your answer?</li>
+</ul>
+<p>You do not need to use all of these.</p>
+<p>Use follow-up questions when they help reveal whether the model can:</p>
+<ul>
+<li>justify its answer;</li>
+<li>recognise uncertainty;</li>
+<li>correct itself;</li>
+<li>become more precise;</li>
+<li>maintain an unsupported claim;</li>
+<li>contradict an earlier response.</li>
+</ul>
+<div style="height:1.5rem"></div>
+
+<hr>
+
+<div style="height:1.5rem"></div>
+
+<p><a id="comparison"></a></p>
+<h2>4. Keep Comparisons Consistent</h2>
+<p>When asking the same <strong>systematic question</strong> across several site collections:</p>
+<ul>
+<li>Keep the wording as similar as possible.</li>
+<li>Avoid adding extra explanation for some collections but not others.</li>
+<li>Keep the amount and type of visual evidence comparable where possible.</li>
+</ul>
+<p>If you deliberately change the visual evidence — for example by adding another viewpoint or scale — make that change explicit.</p>
+<p>A useful comparison might be:</p>
+<p><strong>System only → System + Detail → Context + System + Detail</strong></p>
+<p>The purpose is to understand what changes when the <strong>evidence changes</strong>, rather than when the prompting procedure changes unintentionally.</p>
+<div style="height:1.5rem"></div>
+
+<hr>
+
+<div style="height:1.5rem"></div>
+
+<p><a id="transform"></a></p>
+<h2>5. During TRANSFORM</h2>
+<p>During TRANSFORM, you may work much more openly with the AI.</p>
+<p>You may:</p>
+<ul>
+<li>Explain your transformation intention.</li>
+<li>Provide context and constraints.</li>
+<li>Introduce references.</li>
+<li>Correct misunderstandings.</li>
+<li>Refine your instructions.</li>
+<li>Build on earlier outputs.</li>
+<li>Ask for targeted revisions.</li>
+<li>Combine the LLM with image generation, image editing, coding, or other tools where useful.</li>
+</ul>
+<p>You do <strong>not</strong> need to restart the conversation for every prompt.</p>
+<p>Here, accumulated context can help you develop the transformation more effectively.</p>
+<div style="
+    border-left: 5px solid #000;
+    padding: 0.8rem 1rem;
+    margin: 1.5rem 0;
+    background: #f2f2f2;
+">
+<strong>TRANSFORM = ITERATE.</strong><br>
+Context, feedback, correction, and accumulated conversation are now part of the process.
+</div>
+
+<div style="height:1.5rem"></div>
+
+<hr>
+
+<div style="height:1.5rem"></div>
+
+<h2>6. Keep Enough of a Record</h2>
+<p>You do not need to preserve every minor exchange.</p>
+<p>Keep enough information that you can later identify:</p>
+<ul>
+<li>Which <strong>platform / model</strong> you used.</li>
+<li>Which <strong>image(s)</strong> were provided.</li>
+<li>Which <strong>question or instruction</strong> was given.</li>
+<li>The model&rsquo;s <strong>first response</strong> for important INTERROGATE tests.</li>
+<li>Important follow-up exchanges.</li>
+<li>Important prompts, corrections, or intermediate outputs during TRANSFORM.</li>
+</ul>
+<p>For the exact material that needs to be submitted, see <a href="a0_artefacts.html#interrogate"><strong>[Artefacts Checklist — INTERROGATE]</strong></a> and <a href="a0_artefacts.html#transform"><strong>[Artefacts Checklist — TRANSFORM]</strong></a>.</p>
+        </main>
+    </div>
+</body>
+</html>

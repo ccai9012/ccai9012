@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCAI9012 - A0 Checklist</title>
+    <link rel="stylesheet" href="../docs-style.css">
+</head>
+<body>
+    <div class="container">
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h2>CCAI9012</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../timetable.html">Course Plan</a></li>
+                <li><a href="../Assessment.html">Assessment</a></li>
+                <li class="sub-item"><a href="../a0_overview.html">Applied Exercise</a></li>
+                <li class="sub-item"><a href="../casestudy.html">Case Study</a></li>
+                <li class="sub-item"><a href="../course_project.html">Course Project</a></li>
+                <li><a href="../reading_material.html">Reading Materials</a></li>
+                <li><a href="../pi_mechanics.html">I. Mechanics of AI</a></li>
+                <li><a href="../pii_responsibility.html">II. Responsibility & AI</a></li>
+                <li><a href="../piii_data_and_risks.html">III. Datasets & Risks of AI</a></li>
+                <li><a href="../installation.html">Installation Guide</a></li>
+                <li><a href="../starter_kits/index.html">Starter Kits</a></li>
+                <li><a href="../datasets.html">Datasets Reference</a></li>
+            </ul>
+        </nav>
+
+        <main id="content">
+<h1>A0: Applied Exercise</h1>
+<div style="height:1.5rem"></div>
+
+<hr style="height: 6px; border: none; background-color: #000;">
+
+<div style="height:1.5rem"></div>
+
+<h2>1. GATHER</h2>
+<p>For each of your approximately <strong>5 site collections</strong>, submit:</p>
+<ul>
+<li>Approximately <strong>1–2 Context views / representations</strong>.</li>
+<li>Approximately <strong>4–5 System views / representations</strong>.</li>
+<li>Approximately <strong>4–5 Detail views / representations</strong>.</li>
+<li><strong>1 nested visual explanation</strong> showing how selected Details relate to the System, and how the System relates to its wider Context.</li>
+<li>The <strong>original photographs / visual material</strong> used to form the collection.</li>
+</ul>
+<div style="height:1.5rem"></div>
+
+<hr>
+
+<div style="height:1.5rem"></div>
+
+<h3>Visual Collection</h3>
+<p>Across approximately <strong>5 collections</strong>, you should therefore have:</p>
+<table>
+<thead>
+<tr>
+<th>Material</th>
+<th style="text-align: right;">Per collection</th>
+<th style="text-align: right;">Approx. total</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Context views</strong></td>
+<td style="text-align: right;">1–2</td>
+<td style="text-align: right;"><strong>5–10</strong></td>
+</tr>
+<tr>
+<td><strong>System views</strong></td>
+<td style="text-align: right;">4–5</td>
+<td style="text-align: right;"><strong>20–25</strong></td>
+</tr>
+<tr>
+<td><strong>Detail views</strong></td>
+<td style="text-align: right;">4–5</td>
+<td style="text-align: right;"><strong>20–25</strong></td>
+</tr>
+<tr>
+<td><strong>Total Context + System + Detail views</strong></td>
+<td style="text-align: right;">9–12</td>
+<td style="text-align: right;"><strong>45–60</strong></td>
+</tr>
+<tr>
+<td><strong>Nested visual explanations</strong></td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"><strong>5</strong></td>
+</tr>
+</tbody>
+</table>
+<p>In total, your GATHER material should contain approximately <strong>45–60 views / representations</strong>, together with <strong>5 nested visual explanations</strong>.</p>
+<div style="height:1.0rem"></div>
+
+<p>For photographs:</p>
+<ul>
+<li><strong>System photographs:</strong> provide the corresponding <strong>EXIF CSV file</strong> for each photograph.</li>
+<li><strong>Detail photographs:</strong> EXIF CSV files are <strong>optional</strong>.</li>
+<li><strong>Context photographs:</strong> EXIF CSV files are <strong>not required</strong>.</li>
+</ul>
+<p>For plans, scans, drawings, screenshots, renderings, or other non-camera material, EXIF extraction is not required.</p>
+<p>Always retain and submit the <strong>original image or source file</strong>. Do not resize, compress, crop, convert, screenshot, or otherwise re-save original photographs before preserving them.</p>
+<p>For detailed instructions on taking, exporting, and preserving photographs, see <a href="a0_photo_notes.html"><strong>[Taking &amp; Exporting Photos]</strong></a>.</p>
+<div style="height:1.5rem"></div>
+
+<hr>
+
+<div style="height:1.5rem"></div>
+
+<h3>Nested Visual Explanations</h3>
+<p>Combine your <strong>5 nested visual explanations</strong> into a single PDF:</p>
+<p><code>UID_A0_Gather_Nested.pdf</code></p>
+<p>Use approximately <strong>one page per collection</strong>.</p>
+<p>Each page should clearly show the relationship:</p>
+<p><strong>Context → System → Detail</strong></p>
+<p>Use simple crops, boxes, arrows, labels, or annotations so that selected Details can be located within the System, and the System within its wider Context.</p>
+<div style="height:1.5rem"></div>
+
+<hr>
+
+<div style="height:1.5rem"></div>
+
+<h3>File Structure</h3>
+<p>Organise your GATHER material as follows:</p>
+<pre><code class="language-text">01_GATHER/
+│
+├── C01/
+│   │
+│   ├── C01_Context_01.HEIC
+│   ├── C01_Context_02.HEIC
+│   │
+│   ├── C01_System_01.HEIC
+│   ├── C01_System_01_EXIF.csv
+│   ├── C01_System_02.HEIC
+│   ├── C01_System_02_EXIF.csv
+│   ├── ...
+│   │
+│   ├── C01_Detail_01.HEIC
+│   ├── C01_Detail_02.HEIC
+│   └── ...
+│
+├── C02/
+│   └── ...
+│
+├── C03/
+│   └── ...
+│
+├── C04/
+│   └── ...
+│
+├── C05/
+│   └── ...
+│
+└── UID_A0_Gather_Nested.pdf
+</code></pre>
+<p>If you choose to include EXIF metadata for a Detail photograph, use the same base filename:</p>
+<pre><code class="language-text">C01_Detail_01.HEIC
+C01_Detail_01_EXIF.csv
+</code></pre>
+<p>Keep the <strong>original file format</strong> produced by your device or source. <code>.HEIC</code> is shown only as an example.</p>
+<hr style="height: 4px; border: none; background-color: #000;">
+
+<div style="height:1.5rem"></div>
+
+<p><a id="examine"></a></p>
+<h2>2. EXAMINE</h2>
+<p>Submit <strong>one DOCX or PDF</strong> containing your observations.</p>
+<div style="height:1.0rem"></div>
+
+<hr>
+
+<div style="height:1.0rem"></div>
+
+<h3>General Observations</h3>
+<p>Briefly note:</p>
+<ul>
+<li>Important or recurring features.</li>
+<li>Common uncertainties, ambiguities, or missing information.</li>
+<li>Conditions that may be interesting to test with the AI.</li>
+</ul>
+<div style="height:1.0rem"></div>
+
+<hr>
+
+<div style="height:1.0rem"></div>
+
+<h3>Individual Site Collections</h3>
+<p>For each site collection (<strong>C01–C05</strong>), briefly record:</p>
+<ul>
+<li>What you think you are seeing.</li>
+<li>Important features or conditions.</li>
+<li>What remains uncertain or difficult to understand.</li>
+<li>What may be worth testing with the AI.</li>
+</ul>
+<p>You may include <strong>cropped images or simple annotations</strong> where helpful.</p>
+<div style="height:1.0rem"></div>
+
+<hr>
+
+<div style="height:1.0rem"></div>
+
+<h3>File Structure</h3>
+<p>Submit your file as <code>.DOC</code> or <code>.PDF</code>:</p>
+<pre><code class="language-text">02_EXAMINE/
+└── UID_A0_Examine.pdf
+</code></pre>
+<div style="height:1.5rem"></div>
+
+<hr style="height: 4px; border: none; background-color: #000;">
+
+<div style="height:1.5rem"></div>
+
+<p><a id="identify"></a></p>
+<h2>3. IDENTIFY</h2>
+<p>Submit <strong>one DOCX or PDF</strong> containing the questions you developed.</p>
+<div style="height:1.0rem"></div>
+
+<hr>
+
+<div style="height:1.0rem"></div>
+
+<h3>Systematic Questions</h3>
+<p>Develop approximately <strong>5 questions</strong> that can be asked across multiple site collections.</p>
+<p>Across these questions, include at least:</p>
+<ul>
+<li><strong>1 relationships / connectivity question</strong>.</li>
+<li><strong>1 interpretation / reasoning question</strong>.</li>
+<li><strong>1 uncertainty / missing information question</strong>.</li>
+</ul>
+<p>Number them clearly:</p>
+<ol>
+<li><strong>Q01:</strong> &hellip;</li>
+<li><strong>Q02:</strong> &hellip;</li>
+<li><strong>Q03:</strong> &hellip;</li>
+<li><strong>Q04:</strong> &hellip;</li>
+<li><strong>Q05:</strong> &hellip;</li>
+</ol>
+<div style="height:1.0rem"></div>
+
+<hr>
+
+<div style="height:1.0rem"></div>
+
+<h3>Site Collection-Specific Questions</h3>
+<p>For each site collection (<strong>C01–C05</strong>), develop approximately <strong>1–2 additional questions</strong> responding to something distinctive in that collection.</p>
+<p>Across approximately <strong>5 sites collections</strong>, this gives approximately <strong>5–10 collection-specific questions</strong>, in addition to the <strong>5 systematic questions</strong>.</p>
+<p>You may include a <strong>cropped image or simple annotation</strong> where helpful.</p>
+<div style="height:1.0rem"></div>
+
+<hr>
+
+<div style="height:1.0rem"></div>
+
+<h3>File Structure</h3>
+<p>Submit your file as <code>.DOC</code> or <code>.PDF</code>:</p>
+<pre><code class="language-text">03_IDENTIFY/
+└── UID_A0_Identify.pdf
+</code></pre>
+<hr style="height: 4px; border: none; background-color: #000;">
+
+<p><a id="interrogate"></a></p>
+<div style="height:1.5rem"></div>
+
+<h2>4. INTERROGATE</h2>
+<p>Submit <strong>one PDF</strong> documenting how the <strong>same systematic question</strong> performs across your approximately <strong>5 site collections</strong>.</p>
+<div style="height:1.0rem"></div>
+
+<hr>
+
+<div style="height:1.0rem"></div>
+
+<h3>Systematic Question Across Collections</h3>
+<p>Choose <strong>one of your systematic questions</strong> and test it independently across approximately <strong>5 collections</strong>.</p>
+<p>For each collection, show:</p>
+<ul>
+<li>The relevant image(s) provided.</li>
+<li>The question asked.</li>
+<li>The model&rsquo;s <strong>first response</strong>.</li>
+</ul>
+<p>Keep the question wording as consistent as possible across the five collections.</p>
+<p>Your PDF should therefore make the comparison easy to follow:</p>
+<p><strong>C01 → C02 → C03 → C04 → C05</strong></p>
+<div style="height:1.0rem"></div>
+
+<hr>
+
+<div style="height:1.0rem"></div>
+
+<h3>File Structure</h3>
+<p>Submit your record as a <strong>PDF</strong>:</p>
+<pre><code class="language-text">04_INTERROGATE/
+└── UID_A0_Interrogate.pdf
+</code></pre>
+<div style="height:1.5rem"></div>
+
+<p><a id="evaluate"></a></p>
+<hr style="height: 4px; border: none; background-color: #000;">
+
+<div style="height:1.5rem"></div>
+
+<h2>5. EVALUATE</h2>
+<p>Submit <strong>one DOCX or PDF</strong> summarising how the model performed across your tests.</p>
+<div style="height:1.0rem"></div>
+
+<hr>
+
+<div style="height:1.0rem"></div>
+
+<h3>Systematic Questions</h3>
+<p>For each of your approximately <strong>5 systematic questions</strong>, briefly summarise how the model performed across the collections.</p>
+<p>You may use:</p>
+<ul>
+<li>A few words or short notes.</li>
+<li>Tables or simple charts.</li>
+<li>Check marks or other visual comparisons.</li>
+<li><strong>Correct / Partially Correct / Incorrect</strong>, where useful.</li>
+</ul>
+<p>Focus on the main <strong>patterns you observed across collections</strong>, rather than describing every individual response in detail.</p>
+<p>A simple comparison table may be useful:</p>
+<table>
+<thead>
+<tr>
+<th>Systematic Question</th>
+<th style="text-align: right;">C01</th>
+<th style="text-align: right;">C02</th>
+<th style="text-align: right;">C03</th>
+<th style="text-align: right;">C04</th>
+<th style="text-align: right;">C05</th>
+<th>Overall Pattern</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Q01</strong></td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">~</td>
+<td style="text-align: right;">✗</td>
+<td style="text-align: right;">✓</td>
+<td>Generally reliable, but struggled where evidence was partially occluded.</td>
+</tr>
+<tr>
+<td><strong>Q02</strong></td>
+<td style="text-align: right;">~</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">~</td>
+<td style="text-align: right;">~</td>
+<td style="text-align: right;">✗</td>
+<td>Performance depended strongly on viewpoint and available visual information.</td>
+</tr>
+<tr>
+<td><strong>Q03</strong></td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+<td>Consistently recognised when information was insufficient.</td>
+</tr>
+<tr>
+<td><strong>Q04</strong></td>
+<td style="text-align: right;">✗</td>
+<td style="text-align: right;">~</td>
+<td style="text-align: right;">✗</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">~</td>
+<td>Tended to make unsupported interpretations in ambiguous cases.</td>
+</tr>
+<tr>
+<td><strong>Q05</strong></td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">~</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">~</td>
+<td>Improved when multiple views or scales were available.</td>
+</tr>
+</tbody>
+</table>
+<p>You may adapt the table, symbols, or categories to suit your questions. The aim is simply to make the <strong>performance of each systematic question across the site collections easy to compare</strong>.</p>
+<div style="height:1.0rem"></div>
+
+<hr>
+
+<div style="height:1.0rem"></div>
+
+<h3>Individual Collections</h3>
+<p>For each collection (<strong>C01–C05</strong>), briefly assess how the model performed on the questions you tested.</p>
+<p>Note the most important:</p>
+<ul>
+<li>Successes or errors.</li>
+<li>Uncertainties.</li>
+<li>Unsupported assumptions.</li>
+<li>Important changes or corrections in the model&rsquo;s responses.</li>
+</ul>
+<p>Keep this concise. Small images, tables, or examples may be included where useful.</p>
+<div style="height:1.0rem"></div>
+
+<hr>
+
+<div style="height:1.0rem"></div>
+
+<h3>File Structure</h3>
+<p>Submit your evaluation as <strong>DOCX or PDF</strong>:</p>
+<pre><code class="language-text">05_EVALUATE/
+└── UID_A0_Evaluate.pdf
+</code></pre>
+<hr style="height: 4px; border: none; background-color: #000;">
+
+<p><a id="transform"></a></p>
+<div style="height:1.5rem"></div>
+
+<h2>6. TRANSFORM</h2>
+<p>Apply <strong>one shared transformation strategy</strong> across at least <strong>3 selected site collections</strong>.</p>
+<div style="height:1.0rem"></div>
+
+<hr>
+
+<div style="height:1.0rem"></div>
+
+<h3>Transformation Criteria</h3>
+<p>Submit a short <strong>DOCX or PDF</strong> stating, in a few words:</p>
+<ul>
+<li>The shared <strong>transformation intention / strategy</strong>.</li>
+<li>What you are trying to <strong>change, improve, explore, or challenge</strong>.</li>
+<li>Any important <strong>constraints or qualities to preserve</strong>.</li>
+</ul>
+<p>This should define one consistent transformation approach that can be applied across all 3 selected collections.</p>
+<div style="height:1.0rem"></div>
+
+<hr>
+
+<div style="height:1.0rem"></div>
+
+<h3>Transformed Outputs</h3>
+<p>For each selected collection:</p>
+<ul>
+<li>Retain the <strong>starting artefact</strong>.</li>
+<li>Produce approximately <strong>10 transformed variations</strong> using the shared transformation strategy.</li>
+<li>Save the transformed outputs <strong>individually</strong>.</li>
+</ul>
+<p>Across at least <strong>3 collections</strong>, you should therefore produce approximately <strong>30 transformed outputs</strong> in total.</p>
+<p>You do not need to submit every conversational exchange or intermediate prompt here.</p>
+<div style="height:1.0rem"></div>
+
+<hr>
+
+<div style="height:1.0rem"></div>
+
+<h3>File Structure</h3>
+<p>Submit the transformation criteria as <strong>DOCX or PDF</strong>, with transformed outputs organised by collection:</p>
+<pre><code class="language-text">06_TRANSFORM/
+│
+├── UID_A0_Transform.pdf
+│
+├── C01/
+│   ├── C01_Transform_01.png
+│   ├── C01_Transform_02.png
+│   ├── C01_Transform_03.png
+│   ├── ...
+│   └── C01_Transform_10.png
+│
+├── C02/
+│   ├── C02_Transform_01.png
+│   ├── C02_Transform_02.png
+│   └── ...
+│
+└── C03/
+    ├── C03_Transform_01.png
+    ├── C03_Transform_02.png
+    └── ...
+</code></pre>
+<p><a id="select"></a></p>
+<hr style="height: 4px; border: none; background-color: #000;">
+
+<div style="height:1.5rem"></div>
+
+<h2>7. SELECT</h2>
+<p>Submit <strong>one DOCX or PDF</strong> documenting how you evaluated and selected the final transformed outputs.</p>
+<div style="height:1.0rem"></div>
+
+<hr>
+
+<div style="height:1.0rem"></div>
+
+<h3>Selection Criteria</h3>
+<p>Define a small set of <strong>shared criteria</strong> that you will use across all transformed outputs.</p>
+<p>Keep this concise.</p>
+<div style="height:1.0rem"></div>
+
+<hr>
+
+<div style="height:1.0rem"></div>
+
+<h3>Compare &amp; Select</h3>
+<p>Evaluate the transformed outputs against the shared criteria.</p>
+<p>A simple table is sufficient. Include:</p>
+<ul>
+<li>The transformed image.</li>
+<li>Its <strong>exact filename</strong>.</li>
+<li>Your selection criteria.</li>
+<li>Check marks, short notes, or simple scores.</li>
+<li>A clear indication of the approximately <strong>3 selected outputs per collection</strong>.</li>
+</ul>
+<p>For example:</p>
+<table>
+<thead>
+<tr>
+<th>Output</th>
+<th style="text-align: right;">Criterion 1</th>
+<th style="text-align: right;">Criterion 2</th>
+<th style="text-align: right;">Criterion 3</th>
+<th style="text-align: right;">Selected</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>C01/C01_Transform_01.png</code></td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr>
+<td><code>C01/C01_Transform_02.png</code></td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;"><strong>✓</strong></td>
+</tr>
+<tr>
+<td><code>C01/C01_Transform_03.png</code></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;">✓</td>
+<td style="text-align: right;"></td>
+</tr>
+</tbody>
+</table>
+<p>Across at least <strong>3 transformed collections</strong>, you should select approximately <strong>9 final variations</strong> in total.</p>
+<div style="height:1.0rem"></div>
+
+<hr>
+
+<div style="height:1.0rem"></div>
+
+<h3>Selected File List</h3>
+<p>Also submit a plain-text file listing the <strong>exact filenames of all selected outputs</strong>, one per line.</p>
+<p>For example:</p>
+<pre><code class="language-text">C01/C01_Transform_02.png
+C01/C01_Transform_06.png
+C01/C01_Transform_09.png
+C02/C02_Transform_01.png
+C02/C02_Transform_05.png
+C02/C02_Transform_08.png
+C03/C03_Transform_03.png
+C03/C03_Transform_07.png
+C03/C03_Transform_10.png
+</code></pre>
+<p>Save this as a standard plain-text <code>.txt</code> file.</p>
+<div style="height:1.0rem"></div>
+
+<hr>
+
+<div style="height:1.0rem"></div>
+
+<h3>File Structure</h3>
+<pre><code class="language-text">07_SELECT/
+├── UID_A0_Select.pdf
+└── UID_A0_Selected_Files.txt
+</code></pre>
+<p>The transformed outputs themselves remain in <code>06_TRANSFORM/</code>.</p>
+        </main>
+    </div>
+</body>
+</html>

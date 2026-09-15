@@ -146,7 +146,26 @@ Think of each collection as a **nested visual record**, rather than a set of unr
 
 <div style="height:1.5rem"></div>
 
-### 1.3. Photography tips
+The following guidelines will help you prepare this part of the assignment:
+
+<div style="padding:1rem 1.25rem; background-color:#f2f2f2; border-left:5px solid #000;">
+  📷 <strong>Photography Notes</strong><br>
+  Set up Location Services, preserve original files and metadata, and collect photographs consistently.
+  <a href="a0_photo_notes.html"><strong>[link]</strong></a>
+</div>
+
+<div style="height:1rem"></div>
+
+<div style="padding:1rem 1.25rem; background-color:#f2f2f2; border-left:5px solid #000;">
+  🗂️ <strong>Raw Artefacts</strong><br>
+  Check what evidence, files, outputs, and supporting material you need to produce and retain.
+  <a href="a0_artefacts.html#gather"><strong>[link]</strong></a>
+</div>
+
+
+
+
+<!-- ### 1.3. Photography tips
 
 Photographs should be **purposeful rather than repetitive**. Aim for a compact set of images that collectively describe the artefact and provide useful variation in viewpoint and scale.
 
@@ -195,7 +214,8 @@ Avoid collecting many nearly identical close-ups.
 
 Most importantly, try to make each Detail **refer back to a recognisable location within the System**.
 
-
+Click [**[here]**](a0_artefacts.html#gather) to see submission notes.
+ -->
 <!-- <div style="
     border-left: 5px solid #000;
     padding: 0.8rem 1rem;

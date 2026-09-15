@@ -65,12 +65,34 @@ For example:
 
 Keep the wording of the question as consistent as possible. This allows you to examine how changing the **visual evidence** affects the model's answer.
 
+<div style="height:1.5rem"></div>
+
+<hr>
 
 <div style="height:1.5rem"></div>
+
+The following guidelines will help you prepare this part of the assignment:
+
+<div style="padding:1rem 1.25rem; background-color:#f2f2f2; border-left:5px solid #000;">
+  🤖 <strong>LLM Interaction Notes</strong><br>
+  Read the guidelines on how to interact with LLMs during <strong>INTERROGATE</strong>.
+  <a href="a0_llm_notes.html"><strong>[link]</strong></a>
+</div>
+
+<div style="height:1rem"></div>
+
+<div style="padding:1rem 1.25rem; background-color:#f2f2f2; border-left:5px solid #000;">
+  🗂️ <strong>Raw Artefacts</strong><br>
+  Check what evidence, files, outputs, and supporting material you need to produce and retain.
+  <a href="a0_artefacts.html#interrogate"><strong>[link]</strong></a>
+</div>
+
+
+<div style="height:3.0rem"></div>
 
 <hr style="height: 6px; border: none; background-color: #000;">
 
-<div style="height:1.5rem"></div>
+<div style="height:3.0rem"></div>
 
 
 ## 5. EVALUATE
@@ -114,3 +136,18 @@ Identify:
 
 The aim is to understand **patterns of capability and limitation**, rather than simply count correct and incorrect answers.
 
+<div style="height:1.5rem"></div>
+
+<hr>
+
+<div style="height:1.5rem"></div>
+
+The following guidelines will help you prepare this part of the assignment:
+
+<div style="height:1rem"></div>
+
+<div style="padding:1rem 1.25rem; background-color:#f2f2f2; border-left:5px solid #000;">
+  🗂️ <strong>Raw Artefacts</strong><br>
+  Check what evidence, files, outputs, and supporting material you need to produce and retain.
+  <a href="a0_artefacts.html#evaluate"><strong>[link]</strong></a>
+</div>
