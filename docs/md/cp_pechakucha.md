@@ -24,8 +24,11 @@
 The midterm presentation follows a **Pecha Kucha format**.
 
 • **20 slides**  
-• **20 seconds per slide** (auto-advance)  
-• **Total duration: approximately 6 minutes 40 seconds**
+• **10-20 seconds per slide** (auto-advance)  
+• **Total duration: approximately 3 minutes 20 seconds to 6 minutes 40 seconds**
+
+The shorter your Pecha Kucha the better it is!  Great if you could keep it to just below *5 minutes*.
+
 
 Slides should be **primarily visual**, with **minimal text**.  
 Each presentation will be followed by a **short discussion and peer feedback session**.  

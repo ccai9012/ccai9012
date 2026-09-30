@@ -535,7 +535,7 @@ C03/C03_Transform_10.png
 
 Save this as a standard plain-text `.txt` file.
 
-<div style="height:1.0rem"></div>
+<div stzyle="height:1.0rem"></div>
 
 <hr>
 
