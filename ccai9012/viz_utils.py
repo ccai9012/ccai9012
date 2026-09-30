@@ -684,81 +684,63 @@ from wordcloud import WordCloud
 
 
 def plot_wordclouds(df, target_col='overall_impression', tag_col='decision_tags', delimiter=','):
-    """
-    Plot word clouds of decision_tags grouped by overall_impression categories.
+    """Plot text from the tag column for each category in the target column.
+
+    The same helper handles comma-separated tags and free-text comments.
+    Pass delimiter=None for comments. Empty groups are labelled rather
+    than causing WordCloud to fail.
 
     Args:
-        df (pd.DataFrame): DataFrame containing overall impression and tags columns.
-        target_col (str): Column name for overall impression (categorical).
-        tag_col (str): Column name for decision tags.
-        delimiter (str): Delimiter separating multiple tags in one entry.
+        df (pd.DataFrame): Source table with grouping and text columns.
+        target_col (str): Categorical column used to group the text.
+        tag_col (str): Column containing tags or comments.
+        delimiter (str | None): Tag separator, or None for free text.
+
+    Returns:
+        matplotlib.figure.Figure: One panel per category.
     """
-    overall_values = df[target_col].dropna().unique()
-    num_categories = len(overall_values)
+    categories = sorted(df[target_col].dropna().unique(), key=str)
+    if not categories:
+        raise ValueError(f"No non-empty categories found in {target_col!r}")
 
-    plt.figure(figsize=(8, 4 * num_categories))
+    fig, axes = plt.subplots(len(categories), 1, figsize=(8, 4 * len(categories)))
+    axes = np.atleast_1d(axes)
 
-    for i, val in enumerate(sorted(overall_values)):
-        # Filter rows for this overall impression
-        subset = df[df[target_col] == val]
-        # Combine all tags, split and clean
-        all_tags = subset[tag_col].dropna().astype(str)
-        tags_list = all_tags.str.split(delimiter).explode().str.strip()
-        text = ' '.join(tags_list)
+    for ax, category in zip(axes, categories):
+        values = df.loc[df[target_col] == category, tag_col].dropna().astype(str)
+        if delimiter is not None:
+            values = values.str.split(delimiter).explode()
+        text = ' '.join(value.strip() for value in values if value.strip())
 
-        wc = WordCloud(
-            width=600, height=300,
-            background_color='white',
-            collocations=False
-        ).generate(text)
+        if text:
+            cloud = WordCloud(
+                width=600, height=300, background_color='white', collocations=False
+            ).generate(text)
+            ax.imshow(cloud, interpolation='bilinear')
+        else:
+            ax.text(0.5, 0.5, 'No text in this group', ha='center', va='center')
+        ax.axis('off')
+        ax.set_title(f"{target_col.replace('_', ' ').title()}: {category}")
 
-        plt.subplot(num_categories, 1, i + 1)
-        plt.imshow(wc, interpolation='bilinear')
-        plt.axis('off')
-        plt.title(f"Decision Tags Word Cloud\nOverall Impression: {val}")
-
-    plt.tight_layout()
+    fig.tight_layout()
     plt.show()
+    return fig
 
 
 def plot_wordclouds_by_aspect_opinion(df, aspect_cols, comment_col_prefix='{}_comment'):
+    """Keep older notebooks working through the shared word-cloud helper.
+
+    New notebooks should call ``plot_wordclouds`` with the opinion and comment
+    column names directly. This wrapper contains no plotting implementation.
     """
-    Plot word clouds of comments grouped by opinions for each given aspect.
-
-    Args:
-        df (pd.DataFrame): DataFrame containing opinion columns and comment columns.
-        aspect_cols (list of str): List of aspect column names, e.g. ['location_opinion', 'facility_opinion', 'host_opinion'].
-        comment_col_prefix (str): Pattern to get comment column name from aspect name, default '{}_comment'.
-                                  For example, if aspect is 'location_opinion', comment_col is 'location_comment'.
-    """
-    for aspect in aspect_cols:
-        opinions = df[aspect].dropna().unique()
-        num_opinions = len(opinions)
-
-        plt.figure(figsize=(6, 3 * num_opinions))
-        plt.suptitle(f"Word Clouds of {aspect.replace('_', ' ').capitalize()} Comments by Opinion", fontsize=16)
-
-        comment_col = comment_col_prefix.format(aspect.split('_')[0])  # e.g. 'location_comment'
-
-        for i, opinion in enumerate(sorted(opinions)):
-            # Select rows matching the opinion and drop missing comments
-            comments = df[df[aspect] == opinion][comment_col].dropna().astype(str)
-            text = ' '.join(comments)
-
-            wc = WordCloud(
-                width=600,
-                height=300,
-                background_color='white',
-                collocations=False
-            ).generate(text)
-
-            plt.subplot(num_opinions, 1, i + 1)
-            plt.imshow(wc, interpolation='bilinear')
-            plt.axis('off')
-            plt.title(f"{opinion.capitalize()}")
-
-        plt.tight_layout(rect=[0, 0, 1, 0.96])  # leave space for suptitle
-        plt.show()
+    for aspect_col in aspect_cols:
+        aspect_name = aspect_col.removesuffix('_opinion')
+        plot_wordclouds(
+            df,
+            target_col=aspect_col,
+            tag_col=comment_col_prefix.format(aspect_name),
+            delimiter=None,
+        )
 
 
 # ==========================
