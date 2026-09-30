@@ -13,9 +13,10 @@ dependencies:
 
   - matplotlib
   - seaborn
-  - shap
+  - shap>=0.52,<0.53
   - statsmodels
-  - numba
+  # SHAP 0.52 imports Numba; 0.62.1 supports NumPy 2.3.
+  - numba>=0.62.1,<0.63
 
   - folium
   - geopy
