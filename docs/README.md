@@ -63,6 +63,38 @@ This step will:
 - Generate a unified sidebar, stable `h2`/`h3` anchors, and responsive “On this page” navigation
 - Leave the independently generated API subsite unchanged
 
+## Publish the course site with GitHub Pages
+
+GitHub Pages serves the generated HTML files; it does not run the Python site
+builder for you. Follow these steps after editing Markdown or API docstrings:
+
+1. For course-page edits, run `python docs/md_to_html.py` from the repository
+   root in the `ccai9012` environment. Confirm that `docs/index.html` and the
+   pages you changed exist. Rebuild the API Reference separately when its
+   Python source or documentation changes.
+2. Create an empty `docs/.nojekyll` file with `touch docs/.nojekyll` before the
+   first publication. This lets GitHub Pages serve Sphinx assets under
+   `docs/api/_static/`, whose underscore-prefixed folder Jekyll would skip.
+3. Commit and push the Markdown sources, any `pages.json` changes, the generated
+   HTML, its CSS and images, and `docs/.nojekyll` to the branch you want to
+   publish. Include generated API files when you have rebuilt them. Updating
+   only `docs/md/` will not update the website.
+4. On GitHub, open the repository's **Settings → Pages**. Under **Build and
+   deployment**, choose **Deploy from a branch**, select that branch and the
+   **`/docs`** folder, then click **Save**. You need repository admin or
+   maintainer access to change this setting.
+5. When GitHub reports the site URL in **Settings → Pages**, open its homepage
+   and an API page. For a project repository the URL is usually
+   `https://<owner>.github.io/<repository>/`; GitHub shows the exact URL for
+   your repository. Check that navigation, images, and API styles load.
+
+For later edits, rebuild locally, commit the updated source and generated
+files, and push to the same publishing branch. GitHub Pages publishes changes
+from that branch automatically. See GitHub's official
+[Pages quickstart](https://docs.github.com/en/pages/quickstart),
+[publishing-source instructions](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site),
+and [static-site guidance](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site).
+
 ## Adding new pages (supports multi-level directories, e.g., starter-kits)
 
 There are two types of course page:
