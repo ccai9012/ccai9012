@@ -18,6 +18,7 @@ docs/temp/
 docs/api_source/generated/
 docs/api/.buildinfo
 tools/render_notebook_screenshots.js
+tests/
 
 ccai9012/token.yaml
 
@@ -43,3 +44,4 @@ docs/figs/brand_identity/*
 !README.md
 
 ____*
+.vscode/
