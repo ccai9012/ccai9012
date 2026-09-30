@@ -74,8 +74,8 @@ and output locations offline.</p>
 <h4 id="pedestrian-behavior-analysis-in-public-spaces">Pedestrian Behavior Analysis in Public Spaces</h4>
 <p><strong>Content:</strong>
 - Detect pedestrians using YOLO
-- Track movement using DeepSORT
-- Analyze flow, dwell time, and walkability</p>
+- Track boxes across frames using ByteTrack
+- Inspect track rows, trajectories, and sample heatmaps</p>
 <p><strong>Dataset:</strong>
 - A short local video clip when available (<code>video/closed_test_15.mp4</code> or
   another user-provided clip)
@@ -97,7 +97,7 @@ message if it is absent; it does not silently replace it with a newer YOLO
 generation. Video, CSV, heatmap, and rendered-clip outputs belong under the
 ignored local <code>output/</code> directory.</p>
 <p align="center">
-  <img src="../figs/yolo_tracking_storyboard.svg" alt="Storyboard from per-frame pedestrian detection through persistent track IDs, trajectory table and heatmap, to a local rendered clip." width="100%"><br>
+  <img src="../figs/yolo_tracking_storyboard.svg" alt="A real video frame with tracked boxes leads to CSV rows, trajectory paths, and a heatmap." width="100%"><br>
   <em>Frame-to-trajectory storyboard. Every downstream visualisation depends on the detection table.</em>
 </p>
 
@@ -108,12 +108,12 @@ ignored local <code>output/</code> directory.</p>
 
 <h4 id="svi-based-housing-price-prediction">SVI-Based Housing Price Prediction</h4>
 <p><strong>Content:</strong>
-- Use subjective perception scores (e.g., cleanliness, greenery) on SVI
-- Combine CV scoring with regression to predict housing price
-- Visual quality → real estate value linkage</p>
+- Use colour and edge statistics from local SVI images
+- Compare tabular, image, and combined regression features
+- Read held-out MAE without claiming a causal price effect</p>
 <p><strong>Datasets:</strong>
 - Google Street View Imagery (SVI) from Google Map API
-- California housing price dataset from sklearn.datasets</p>
+- Tracked California housing CSV in <code>data/</code></p>
 <p><strong>Required Packages:</strong> OpenCV, scikit-learn, pandas, matplotlib, PyTorch</p>
 <p>The default path uses a deterministic sample from the 151 tracked SVI images
 and the matching California housing rows. Because the source CSV can contain

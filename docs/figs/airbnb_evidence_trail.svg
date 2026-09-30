@@ -1,27 +1,55 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="370" viewBox="0 0 1100 370" role="img" aria-labelledby="title desc">
-  <title id="title">Airbnb review evidence trail</title>
-  <desc id="desc">Listings and neighbourhood geometry produce a location map, while review text is converted into structured sentiment and aspect notes. Both outputs support an interpretable comparison.</desc>
-  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10Z" fill="#168aad"/></marker></defs>
-  <rect width="1100" height="370" fill="#fbfdfe"/>
-  <text x="40" y="38" font-family="Arial,sans-serif" font-size="24" font-weight="700" fill="#17324d">One stay, three evidence streams</text>
-  <text x="40" y="65" font-family="Arial,sans-serif" font-size="15" fill="#4c6275">Location, ratings, and review text answer related—but different—questions.</text>
-  <rect x="35" y="90" width="1030" height="245" rx="16" fill="#f5f9fb" stroke="#d5e5ec"/>
-  <rect x="65" y="130" width="210" height="70" rx="10" fill="#eaf5f8" stroke="#168aad"/>
-  <text x="170" y="158" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" font-weight="700" fill="#17324d">Listings</text>
-  <text x="170" y="182" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" fill="#4c6275">coordinates + ratings</text>
-  <rect x="65" y="230" width="210" height="70" rx="10" fill="#eaf5f8" stroke="#168aad"/>
-  <text x="170" y="258" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" font-weight="700" fill="#17324d">Neighbourhoods</text>
-  <text x="170" y="282" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" fill="#4c6275">geometry context</text>
-  <path d="M290 165 H430" stroke="#168aad" stroke-width="3" marker-end="url(#arrow)"/><path d="M290 265 H430" stroke="#168aad" stroke-width="3" marker-end="url(#arrow)"/>
-  <rect x="445" y="190" width="210" height="70" rx="10" fill="#fff7ed" stroke="#f28f3b"/>
-  <text x="550" y="218" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" font-weight="700" fill="#17324d">Review text</text>
-  <text x="550" y="242" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" fill="#4c6275">LLM or mock → fields</text>
-  <path d="M285 165 C350 165 360 210 435 220" fill="none" stroke="#168aad" stroke-width="2" marker-end="url(#arrow)"/>
-  <rect x="700" y="115" width="300" height="75" rx="10" fill="#eaf5f8" stroke="#168aad"/>
-  <text x="850" y="144" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" font-weight="700" fill="#17324d">Map + rating distribution</text>
-  <text x="850" y="168" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" fill="#4c6275">where listings are and how they score</text>
-  <rect x="700" y="230" width="300" height="75" rx="10" fill="#fbeaf5" stroke="#b23a8a" stroke-dasharray="7 5"/>
-  <text x="850" y="259" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" font-weight="700" fill="#17324d">Aspect evidence</text>
-  <text x="850" y="283" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" fill="#4c6275">location, facility, host, and caveats</text>
-  <path d="M665 220 H690" stroke="#168aad" stroke-width="3" marker-end="url(#arrow)"/><path d="M550 270 C550 300 660 285 690 270" fill="none" stroke="#f28f3b" stroke-width="2" marker-end="url(#arrow)"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="390" viewBox="0 0 1200 390" role="img" aria-labelledby="title desc">
+  <title id="title">Four steps in the Airbnb review tutorial</title>
+  <desc id="desc">Choose a small Hong Kong dataset, locate listings and read ratings, ask an LLM for aspect labels, then compare the map and label summaries. Icons show a table, a map, a speech bubble, and a comparison chart.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10Z" fill="#2374a5"/></marker>
+    <style>
+      .title{font-family:Georgia,serif;font-size:27px;font-weight:700;fill:#0b1f33}
+      .subtitle{font-family:Georgia,serif;font-size:16px;fill:#4d6273}
+      .step{font-family:Georgia,serif;font-size:14px;font-weight:700;fill:#087da5}
+      .head{font-family:Georgia,serif;font-size:18px;font-weight:700;fill:#0b1f33}
+      .body{font-family:Georgia,serif;font-size:15px;fill:#34495a}
+      .card{fill:#fff9fc;stroke:#ef1c88;stroke-width:2;stroke-dasharray:9 7}
+      .icon{fill:none;stroke:#00b5e2;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+    </style>
+  </defs>
+  <rect width="1200" height="390" fill="#ffffff"/>
+  <text x="40" y="44" class="title">From Airbnb reviews to a careful comparison</text>
+  <text x="40" y="72" class="subtitle">Follow one neighbourhood sample through four questions. Each step produces something you can inspect.</text>
+  <g transform="translate(35 105)">
+    <rect class="card" width="260" height="230" rx="16"/>
+    <rect x="24" y="22" width="58" height="58" rx="12" fill="#e7f6fb"/>
+    <rect x="38" y="35" width="30" height="32" rx="2" class="icon"/><path d="M38 45h30M38 56h30M50 45v22" class="icon"/>
+    <text x="96" y="42" class="step">1 · INPUT</text><text x="24" y="111" class="head">Choose a sample</text>
+    <text x="24" y="140" class="body">Listing table + review table</text><text x="24" y="163" class="body">Join each review to its stay.</text>
+    <text x="24" y="199" class="step">OUTPUT: rows with</text><text x="24" y="220" class="step">location + text</text>
+  </g>
+  <path d="M303 220h29" stroke="#2374a5" stroke-width="3" marker-end="url(#arrow)"/>
+  <g transform="translate(338 105)">
+    <rect class="card" width="260" height="230" rx="16"/>
+    <rect x="24" y="22" width="58" height="58" rx="12" fill="#e7f6fb"/>
+    <path d="M53 34c-9 0-15 6-15 15 0 12 15 25 15 25s15-13 15-25c0-9-6-15-15-15z" class="icon"/><circle cx="53" cy="49" r="5" class="icon"/>
+    <text x="96" y="42" class="step">2 · CONTEXT</text><text x="24" y="111" class="head">Locate and rate</text>
+    <text x="24" y="140" class="body">Map the listings; plot ratings.</text><text x="24" y="163" class="body">Where are the sampled stays?</text>
+    <text x="24" y="199" class="step">OUTPUT: map +</text><text x="24" y="220" class="step">histogram</text>
+  </g>
+  <path d="M606 220h29" stroke="#2374a5" stroke-width="3" marker-end="url(#arrow)"/>
+  <g transform="translate(641 105)">
+    <rect class="card" width="260" height="230" rx="16"/>
+    <rect x="24" y="22" width="58" height="58" rx="12" fill="#e7f6fb"/>
+    <path d="M35 38h36v26H48l-10 8v-8h-3zM43 46h20M43 54h13" class="icon"/>
+    <text x="96" y="42" class="step">3 · TEXT</text><text x="24" y="111" class="head">Label review text</text>
+    <text x="24" y="140" class="body">DeepSeek reads each comment.</text><text x="24" y="163" class="body">Returns JSON aspect fields.</text>
+    <text x="24" y="199" class="step">OUTPUT: aspect label</text><text x="24" y="220" class="step">+ source</text>
+  </g>
+  <path d="M909 220h29" stroke="#2374a5" stroke-width="3" marker-end="url(#arrow)"/>
+  <g transform="translate(944 105)">
+    <rect class="card" width="220" height="230" rx="16"/>
+    <rect x="24" y="22" width="58" height="58" rx="12" fill="#e7f6fb"/>
+    <path d="M38 66V51h8v15M50 66V39h8v27M62 66V47h8v19M35 66h39" class="icon"/>
+    <text x="96" y="42" class="step">4 · READ</text><text x="24" y="111" class="head">Compare evidence</text>
+    <text x="24" y="140" class="body">Check maps &amp; label counts.</text><text x="24" y="163" class="body">Return to raw comments.</text>
+    <text x="24" y="199" class="step">OUTPUT: qualified</text><text x="24" y="220" class="step">finding</text>
+  </g>
+  <text x="40" y="370" class="subtitle">The sample is small and labels are model outputs. Check individual reviews before drawing a claim about guests or neighbourhoods.</text>
 </svg>

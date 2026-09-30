@@ -33,8 +33,8 @@ and output locations offline.
 #### Pedestrian Behavior Analysis in Public Spaces
 **Content:**
 - Detect pedestrians using YOLO
-- Track movement using DeepSORT
-- Analyze flow, dwell time, and walkability
+- Track boxes across frames using ByteTrack
+- Inspect track rows, trajectories, and sample heatmaps
 
 **Dataset:**
 - A short local video clip when available (`video/closed_test_15.mp4` or
@@ -61,7 +61,7 @@ generation. Video, CSV, heatmap, and rendered-clip outputs belong under the
 ignored local `output/` directory.
 
 <p align="center">
-  <img src="../figs/yolo_tracking_storyboard.svg" alt="Storyboard from per-frame pedestrian detection through persistent track IDs, trajectory table and heatmap, to a local rendered clip." width="100%"><br>
+  <img src="../figs/yolo_tracking_storyboard.svg" alt="A real video frame with tracked boxes leads to CSV rows, trajectory paths, and a heatmap." width="100%"><br>
   <em>Frame-to-trajectory storyboard. Every downstream visualisation depends on the detection table.</em>
 </p>
 
@@ -72,13 +72,13 @@ ignored local `output/` directory.
 
 #### SVI-Based Housing Price Prediction
 **Content:**
-- Use subjective perception scores (e.g., cleanliness, greenery) on SVI
-- Combine CV scoring with regression to predict housing price
-- Visual quality → real estate value linkage
+- Use colour and edge statistics from local SVI images
+- Compare tabular, image, and combined regression features
+- Read held-out MAE without claiming a causal price effect
 
 **Datasets:**
 - Google Street View Imagery (SVI) from Google Map API
-- California housing price dataset from sklearn.datasets
+- Tracked California housing CSV in `data/`
 
 **Required Packages:** OpenCV, scikit-learn, pandas, matplotlib, PyTorch
 

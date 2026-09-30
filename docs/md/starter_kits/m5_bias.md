@@ -1,35 +1,22 @@
-# Bias Detection & Interpretability
+# Bias Detection: Credit Decision Audit
 
+**Starter kit:** `starter_kits/5_bias_detection_interpretability/credit_audit/credit_decision.ipynb`
 
-### Overview
-**Category:** Bias Detection
+## Question and learning goals
 
-**Modular Components:**
+Can a classifier perform well on a held-out set while its favourable predictions differ by age group? The lesson uses the tracked `data/german_credits/german.data` file directly.
 
-- **Audit inputs**
-  - Protected and outcome attributes
-  - Privileged and unprivileged group definitions
-- **Fairness and performance**
-  - Fairness metrics evaluator
-  - Predictive-performance comparison
-- **Interpretation**
-  - Model explainer (SHAP/LIME)
-  - Feature-attribution visualiser
+- Define good credit and the under-25 versus age-25+ groups.
+- Explain how reweighing changes training weights.
+- Compare accuracy and AUC on one test split.
+- Interpret signed statistical parity and equal opportunity differences.
 
-### Use Cases
-- Do public service recommendation models (e.g., bus stop placement, streetlight allocation) tend to ignore low-density or low-income areas?
-- Why citizens' application for housing subsidies or public services was deprioritized?
-- Do predictive maintenance systems for infrastructure (e.g., water leaks, power outages) prioritize certain zones? Is this optimization fair?
-- In citizen feedback systems (e.g., 311 complaints), are certain types of reports more likely to trigger response recommendations than others? Why?
+![Credit records feed reweighted training, two prediction models, and separate performance and fairness views.](../figs/credit_teaching_flow.svg)
 
-### Code Example: Credit Decision Bias Auditing
-**Content:**
-- Analyze credit data using LLM and interpretable ML
-- Detect bias in approval logic (e.g., income, gender)
-- Apply SHAP and counterfactual fairness methods
+## Workflow
 
-**Datasets:**
-- German Dataset (credit data) from AIF Fairness 360
-- COMPAS dataset (pre-prepared from https://www.kaggle.com/datasets/danofer/compass)
+The notebook loads German credit records through `credit_utils`, splits them once, and compares original and reweighted training. Two LightGBM models are evaluated on the same test records. AIF360 calculates fairness metrics. Reweighing acts on training data; it does not alter the test outcomes.
 
-**Required Packages:** Fairlearn, SHAP, pandas, scikit-learn, transformers
+Read performance and fairness separately. For both signed gaps, **under 25 minus age 25+** is the direction: a negative value means a lower favourable prediction rate, or a lower true-positive rate for equal opportunity, among under-25 applicants. The charts preserve negative values and display the zero line. The numeric result depends on the actual run.
+
+This example uses AIF360 and LightGBM. It does not run an LLM, SHAP, LIME, or a counterfactual fairness analysis. One sample and split cannot establish deployment or legal fairness.

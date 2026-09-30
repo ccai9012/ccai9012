@@ -38,50 +38,32 @@
 <details class="page-toc-mobile">
   <summary>On this page</summary>
   <nav aria-label="On this page"><ul>
-<li class="toc-level-3"><a href="#overview">Overview</a></li>
-<li class="toc-level-3"><a href="#use-cases">Use Cases</a></li>
-<li class="toc-level-3"><a href="#code-example-credit-decision-bias-auditing">Code Example: Credit Decision Bias Auditing</a></li>
+<li class="toc-level-2"><a href="#question-and-learning-goals">Question and learning goals</a></li>
+<li class="toc-level-2"><a href="#workflow">Workflow</a></li>
   </ul></nav>
 </details>
-<h1 id="bias-detection-interpretability">Bias Detection &amp; Interpretability</h1>
-<h3 id="overview">Overview</h3>
-<p><strong>Category:</strong> Bias Detection</p>
-<p><strong>Modular Components:</strong></p>
+<h1 id="bias-detection-credit-decision-audit">Bias Detection: Credit Decision Audit</h1>
+<p><strong>Starter kit:</strong> <code>starter_kits/5_bias_detection_interpretability/credit_audit/credit_decision.ipynb</code></p>
+<h2 id="question-and-learning-goals">Question and learning goals</h2>
+<p>Can a classifier perform well on a held-out set while its favourable predictions differ by age group? The lesson uses the tracked <code>data/german_credits/german.data</code> file directly.</p>
 <ul>
-<li><strong>Audit inputs</strong></li>
-<li>Protected and outcome attributes</li>
-<li>Privileged and unprivileged group definitions</li>
-<li><strong>Fairness and performance</strong></li>
-<li>Fairness metrics evaluator</li>
-<li>Predictive-performance comparison</li>
-<li><strong>Interpretation</strong></li>
-<li>Model explainer (SHAP/LIME)</li>
-<li>Feature-attribution visualiser</li>
+<li>Define good credit and the under-25 versus age-25+ groups.</li>
+<li>Explain how reweighing changes training weights.</li>
+<li>Compare accuracy and AUC on one test split.</li>
+<li>Interpret signed statistical parity and equal opportunity differences.</li>
 </ul>
-<h3 id="use-cases">Use Cases</h3>
-<ul>
-<li>Do public service recommendation models (e.g., bus stop placement, streetlight allocation) tend to ignore low-density or low-income areas?</li>
-<li>Why citizens&rsquo; application for housing subsidies or public services was deprioritized?</li>
-<li>Do predictive maintenance systems for infrastructure (e.g., water leaks, power outages) prioritize certain zones? Is this optimization fair?</li>
-<li>In citizen feedback systems (e.g., 311 complaints), are certain types of reports more likely to trigger response recommendations than others? Why?</li>
-</ul>
-<h3 id="code-example-credit-decision-bias-auditing">Code Example: Credit Decision Bias Auditing</h3>
-<p><strong>Content:</strong>
-- Analyze credit data using LLM and interpretable ML
-- Detect bias in approval logic (e.g., income, gender)
-- Apply SHAP and counterfactual fairness methods</p>
-<p><strong>Datasets:</strong>
-- German Dataset (credit data) from AIF Fairness 360
-- COMPAS dataset (pre-prepared from https://www.kaggle.com/datasets/danofer/compass)</p>
-<p><strong>Required Packages:</strong> Fairlearn, SHAP, pandas, scikit-learn, transformers</p>
+<p><img alt="Credit records feed reweighted training, two prediction models, and separate performance and fairness views." src="../figs/credit_teaching_flow.svg" /></p>
+<h2 id="workflow">Workflow</h2>
+<p>The notebook loads German credit records through <code>credit_utils</code>, splits them once, and compares original and reweighted training. Two LightGBM models are evaluated on the same test records. AIF360 calculates fairness metrics. Reweighing acts on training data; it does not alter the test outcomes.</p>
+<p>Read performance and fairness separately. For both signed gaps, <strong>under 25 minus age 25+</strong> is the direction: a negative value means a lower favourable prediction rate, or a lower true-positive rate for equal opportunity, among under-25 applicants. The charts preserve negative values and display the zero line. The numeric result depends on the actual run.</p>
+<p>This example uses AIF360 and LightGBM. It does not run an LLM, SHAP, LIME, or a counterfactual fairness analysis. One sample and split cannot establish deployment or legal fairness.</p>
             </main>
 <aside class="page-toc">
   <nav aria-label="On this page">
     <p class="page-toc-title">On this page</p>
     <ul>
-<li class="toc-level-3"><a href="#overview">Overview</a></li>
-<li class="toc-level-3"><a href="#use-cases">Use Cases</a></li>
-<li class="toc-level-3"><a href="#code-example-credit-decision-bias-auditing">Code Example: Credit Decision Bias Auditing</a></li>
+<li class="toc-level-2"><a href="#question-and-learning-goals">Question and learning goals</a></li>
+<li class="toc-level-2"><a href="#workflow">Workflow</a></li>
     </ul>
   </nav>
 </aside>

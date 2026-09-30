@@ -91,7 +91,7 @@ is a mapped summary of those model scores and should be checked against an
 annotated conservation register or expert labels before interpretation.
 
 <p align="center">
-  <img src="../figs/clip_historic_decision_spatial.svg" alt="Decision tree from a deterministic local image sample or opt-in Google Street View API to a manifest, CLIP similarity, mapped candidate index, and human check." width="100%"><br>
+  <img src="../figs/clip_historic_decision_spatial.svg" alt="A local street photograph is compared with four text prompts, then its sample-relative scores become a map point for human checking." width="100%"><br>
   <em>Offline-first decision path and spatial evidence chain. The final index is model-derived and requires validation.</em>
 </p>
 

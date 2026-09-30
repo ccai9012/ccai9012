@@ -54,14 +54,14 @@
 <h2 id="what-problem-does-this-module-solve">What problem does this module solve?</h2>
 <p>Large language models are useful here as structuring assistants: they can turn review text or retrieved document passages into fields that can be inspected, compared, and visualised. The output remains provisional evidence. Raw text, source locations, prompts, model metadata, and uncertainty should be retained whenever a result supports a real claim.</p>
 <p><strong>Modular mapping:</strong> unstructured text or PDF passages → structured fields → tables, maps, distributions, and research questions.</p>
-<p><strong>Shared prerequisites:</strong> Python and pandas, basic JSON/CSV handling, and critical reading of model outputs. Live API calls are optional and are not required for the default notebook paths.</p>
+<p><strong>Shared prerequisites:</strong> Python and pandas, basic JSON/CSV handling, and critical reading of model outputs. Airbnb, literature review, and urban sentiment call DeepSeek by default and need a local API key; the energy-plan path uses cached results by default.</p>
 <h2 id="choose-a-learning-path">Choose a learning path</h2>
 <table>
 <thead>
 <tr>
 <th>Notebook</th>
 <th>Question</th>
-<th>Offline default</th>
+<th>Default path</th>
 <th>Main output</th>
 </tr>
 </thead>
@@ -69,13 +69,13 @@
 <tr>
 <td><code>airbnb_hk.ipynb</code></td>
 <td>How do location, ratings, and review text provide different evidence about a stay?</td>
-<td>Two Inside Airbnb samples + deterministic mock labels</td>
+<td>Two Inside Airbnb samples + DeepSeek review extraction</td>
 <td>Aspect-level review table, map, rating distribution, and word clouds</td>
 </tr>
 <tr>
 <td><code>lit_review.ipynb</code></td>
 <td>How can a research question become a traceable evidence matrix?</td>
-<td>Local PDF text + tracked cached LLM tables</td>
+<td>Four local PDFs + one DeepSeek request per PDF</td>
 <td>Paper/field/value matrix with passage, page, and uncertainty</td>
 </tr>
 <tr>
@@ -87,28 +87,28 @@
 <tr>
 <td><code>urban_sentiment.ipynb</code></td>
 <td>How can sampled Yelp reviews become a cautious city scorecard?</td>
-<td>60 cached Indianapolis labels</td>
+<td>Fixed 24 of 60 local Yelp comments + DeepSeek</td>
 <td>Polarity-by-star scorecard, maps, and keyword inspection</td>
 </tr>
 </tbody>
 </table>
 <h2 id="data-and-access">Data and access</h2>
 <p>The module-level <a href="../../starter_kits/2_llm_structure_output/sample_manifest.json"><code>sample_manifest.json</code></a> records sample sources, licence notes, selection rules, schemas, and row counts. The Airbnb sample files are derived from the tracked Inside Airbnb Hong Kong snapshot and provide <code>central_western</code> and <code>yau_tsim_mong</code> configurations. The urban sentiment sample is derived from tracked cached Yelp-labelled output; it is not human ground truth.</p>
-<p>The default notebooks do not download data, request an API key, or call a paid model. Each notebook exposes a clearly marked live branch. Before enabling it, record the model, date, prompt, output path, cost boundary, and data-handling decision. For full Yelp data, obtain the current dataset and terms yourself; the repository does not silently download or extract an archive.</p>
+<p>The Airbnb notebook reads a tracked sample and makes one DeepSeek request per selected review by default. Its key stays in local configuration. Literature review makes at most four PDF requests, and urban sentiment makes at most 24 review requests. Energy Plan retains its cached default. For an API run, record the model, date, prompt, output path, cost boundary, and data-handling decision. For full Yelp data, obtain the current dataset and terms yourself; the repository does not silently download or extract an archive.</p>
 <h2 id="airbnb-reviews-map-to-sentiment-evidence-trail">Airbnb reviews: map-to-sentiment evidence trail</h2>
-<p><img alt="Listings and neighbourhood geometry branch to maps, while review text branches to structured sentiment; both support comparison." src="../figs/airbnb_evidence_trail.svg" /></p>
-<p>The notebook joins listings, neighbourhood geometry, and review text. GeoPandas supplies polygon context, Folium turns coordinates into an interactive map, and <code>llm_utils.analyze_airbnb_reviews</code> optionally converts review text into <code>overall_impression</code>, <code>decision_tags</code>, and location/facility/host fields. The mock path keeps the input/output contract visible without pretending to be an LLM evaluation.</p>
+<p><img alt="Four steps: join listings and reviews, map locations and ratings, ask DeepSeek for structured fields, and compare the evidence." src="../figs/airbnb_evidence_trail.svg" /></p>
+<p>The notebook joins listings, neighbourhood geometry, and review text. GeoPandas supplies polygon context, Folium turns coordinates into an interactive map, and <code>llm_utils.analyze_airbnb_reviews</code> converts review text into <code>overall_impression</code>, <code>decision_tags</code>, and location/facility/host fields. The notebook calls the course LLM API by default and guides students to check generated labels against the original comments.</p>
 <p>After each map, rating histogram, and word cloud, ask what the visual encodes and what it cannot establish. Review samples are not population estimates, ratings and text are not interchangeable endpoints, and spatial concentration is not causation.</p>
 <h2 id="literature-review-question-to-evidence-matrix">Literature review: question-to-evidence matrix</h2>
-<p><img alt="A research question retrieves passages, which become an evidence matrix with paper, page, field, value, and uncertainty before synthesis." src="../figs/literature_evidence_matrix.svg" /></p>
-<p>This path separates retrieval, summarisation, structured extraction, and synthesis. Each field retains a paper, retrieved passage, source location, and uncertainty note; missing information is written as <code>N/A</code> rather than silently inferred. The tracked cached tables are used for offline parsing, while local PDF text provides a transparent page-level evidence lookup.</p>
+<p><img alt="Research papers and a comparison question produce page-linked evidence notes for checking." src="../figs/literature_evidence_matrix.svg" /></p>
+<p>This path separates retrieval, summarisation, structured extraction, and synthesis. Each field retains a paper, retrieved passage, source location, and uncertainty note; missing information is written as <code>N/A</code> rather than silently inferred. The default run requests four structured model summaries from local PDF excerpts and retains candidate source pages for checking. Saved CSVs can be reviewed without another request.</p>
 <p>Use the matrix to formulate follow-up reading questions. It is a comparison aid, not a substitute for opening the original paper.</p>
 <h2 id="energy-plans-preserve-the-four-stage-rag-workflow">Energy plans: preserve the four-stage RAG workflow</h2>
 <p>The Energy Plan notebook retains the accepted prepare → retrieve → structure → compare narrative and its step-highlight SVGs. The default run reads local PDFs and tracked cached outputs; the optional semantic retriever and LLM branch remain explicit. Its comparison fields are <code>Location</code>, <code>Main Objectives</code>, <code>Key Actions</code>, <code>Stakeholders</code>, and <code>Timeline</code>, with <code>N/A</code> for missing evidence.</p>
 <p>The workflow is useful for cross-city policy documents or a focused methods/results review, provided filenames and page context survive into the evidence record. Retrieval can miss scans, tables, or neighbouring context, and an LLM can flatten uncertainty.</p>
 <h2 id="urban-sentiment-reviews-to-city-scorecard">Urban sentiment: reviews-to-city scorecard</h2>
-<p><img alt="Sampled Yelp reviews retain raw text and ratings, receive cached or LLM labels, and become a cautious city scorecard." src="../figs/urban_sentiment_scorecard.svg" /></p>
-<p>The notebook keeps raw review text, stars, coordinates, polarity, emotion, and keywords together before aggregation. <code>viz_utils.plot_review_heatmap</code> and <code>plot_review_map</code> show sampled spatial patterns; scorecards and distributions show how labels relate to stars. Neither establishes population sentiment or causal urban conditions.</p>
+<p><img alt="Review text and location stay linked to LLM labels before counts and map views." src="../figs/urban_sentiment_scorecard.svg" /></p>
+<p>The notebook selects 24 of 60 tracked local comments with a fixed seed and keeps raw review text, stars, coordinates, polarity, emotion, and keywords together before aggregation. <code>viz_utils.plot_review_heatmap</code> and <code>plot_review_map</code> show sampled spatial patterns; scorecards and distributions show how labels relate to stars. Neither establishes population sentiment or causal urban conditions.</p>
 <h2 id="common-glossary-and-extensions">Common glossary and extensions</h2>
 <ul>
 <li><strong>Retrieval:</strong> selecting passages relevant to a question; it is not summarisation.</li>
