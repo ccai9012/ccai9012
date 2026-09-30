@@ -51,7 +51,7 @@ The course project consists of the following assessed components:
 
 | Item | Description | Date | Individual (%) | Group (%) |
 |------|-------------|------|----------------|-----------|
-| **Project Team Formation Form** | Early indication of potential project partners to support team formation and initial scoping as a 100-200 word statement.  Submit via Moodle. | 2026.09.30 | – | – |
+| **Project Team Formation Form** | Early indication of potential project partners to support team formation and initial scoping as a 100-200 word statement.  Submit via [[**Link**]](https://docs.google.com/spreadsheets/d/1TmgiRMdmvWOttiB6A_EatlR2xTBzo156GsJSZwqYf94/edit?gid=20269012#gid=20269012) | 2026.09.30 | – | – |
 | [[**Mid-term Pecha Kucha Presentation**]](cp_pechakucha.html) | Time-limited presentation of project framing, proposed AI-assisted approach, and preliminary considerations on data, mechanisms, and responsibility. | 2026.10.21 | – | 15 |
 | **Crit-Style Peer Review (Post-Midterm)** | Structured studio-style peer critique conducted during tutorial slots, focused on problem definition, methodological coherence, assumptions, and responsible AI positioning. Formative and non-graded. | 2026.10.19-23 | – | – |
 | [[**Final Project Submission**]](cp_final.html)  | Submission of all core deliverables. Projects are presented through the screening of the vignette component. | 2026.12.09 | – | 25 |
