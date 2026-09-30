@@ -51,7 +51,8 @@ def detect_and_track(
         save_video=True,
         show_in_notebook=True,
         tracker_config="bytetrack.yaml",
-        classes_to_track=[0]
+        classes_to_track=(0,),
+        max_frames=None,
 ):
     """
     Detect and track objects in a video using a YOLO model with tracking (e.g., ByteTrack).
@@ -70,8 +71,10 @@ def detect_and_track(
     """
     os.makedirs(output_dir, exist_ok=True)
 
-    cap = cv2.VideoCapture(video_path)
-    fps = int(cap.get(cv2.CAP_PROP_FPS))
+    cap = cv2.VideoCapture(str(video_path))
+    if not cap.isOpened():
+        raise FileNotFoundError(f"Cannot open local video: {video_path}")
+    fps = max(1, int(cap.get(cv2.CAP_PROP_FPS)))
     width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
     height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
 
@@ -83,6 +86,8 @@ def detect_and_track(
     frame_index = 0
 
     while cap.isOpened():
+        if max_frames is not None and frame_index >= max_frames:
+            break
         ret, frame = cap.read()
         if not ret:
             break
@@ -92,7 +97,8 @@ def detect_and_track(
             frame,
             persist=True,
             classes=classes_to_track,
-            tracker=tracker_config
+            tracker=tracker_config,
+            verbose=False,
         )
         annotated_frame = results[0].plot()
 
@@ -135,7 +141,7 @@ def detect_and_track(
     cv2.destroyAllWindows()
 
     # Save results to CSV
-    df = pd.DataFrame(all_detections)
+    df = pd.DataFrame(all_detections, columns=["frame", "id", "x1", "y1", "x2", "y2"])
     csv_path = os.path.join(output_dir, f"{video_name}_results.csv")
     df.to_csv(csv_path, index=False)
 

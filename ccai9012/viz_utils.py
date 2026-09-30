@@ -441,7 +441,7 @@ def plot_points(
     if map_center is None:
         map_center = [df[lat_col].mean(), df[lon_col].mean()]
 
-    m = folium.Map(location=map_center, zoom_start=zoom, tiles='cartodbpositron')
+    m = folium.Map(location=map_center, zoom_start=zoom, tiles="OpenStreetMap")
 
     # Set min/max for colormap based on data
     vmin, vmax = df[value_col].min(), df[value_col].max()
@@ -493,7 +493,7 @@ def plot_review_map(df, name_field = 'business_name', sentiment_field='overall_i
     }
 
     # Create map
-    m = folium.Map(location=map_center, zoom_start=zoom, tiles="CartoDB positron")
+    m = folium.Map(location=map_center, zoom_start=zoom, tiles="OpenStreetMap")
 
     # Plot each review
     for _, row in df.iterrows():
@@ -660,7 +660,7 @@ def sample_street_points_map(bbox, dist=100, min_distance_m=50, zoom=15):
     sampled_points_latlon = [to_latlon.transform(pt.x, pt.y)[::-1] for pt in filtered_points_proj]  # (lat, lon)
 
     # Create folium map
-    m = folium.Map(location=map_center, zoom_start=zoom, tiles="cartodbpositron")
+    m = folium.Map(location=map_center, zoom_start=zoom, tiles="OpenStreetMap")
 
     # Add bounding box rectangle
     bounding_box = [(lat_min, lon_min), (lat_min, lon_max),

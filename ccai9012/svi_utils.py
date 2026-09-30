@@ -174,6 +174,40 @@ def match_svi_images_to_targets(
         raise ValueError(f"SVI images have no housing row for: {missing_names[:3]}")
     return joined.drop(columns="_merge")
 
+
+def prepare_svi_image_features(image_paths, mode="offline_stats") -> pd.DataFrame:
+    """Compute one aligned image-feature row per Street View image.
+
+    ``offline_stats`` uses RGB means, standard deviations and adjacent-pixel
+    differences. ``resnet`` opts into torchvision's pretrained weights.
+    """
+    if mode not in {"offline_stats", "resnet"}:
+        raise ValueError("mode must be 'offline_stats' or 'resnet'")
+    if mode == "resnet":
+        import torch
+        from torchvision import models, transforms
+
+        network = models.resnet18(weights=models.ResNet18_Weights.DEFAULT)
+        network.fc = torch.nn.Identity()
+        network.eval()
+        transform = transforms.Compose([transforms.Resize((224, 224)), transforms.ToTensor()])
+    features = []
+    for image_path in image_paths:
+        with Image.open(image_path) as source:
+            image = source.convert("RGB")
+            if mode == "resnet":
+                with torch.no_grad():
+                    feature = network(transform(image).unsqueeze(0)).squeeze().numpy()
+            else:
+                array = np.asarray(image.resize((32, 32)), dtype=np.float32) / 255.0
+                feature = np.concatenate([
+                    array.mean(axis=(0, 1)), array.std(axis=(0, 1)),
+                    np.asarray((np.abs(np.diff(array, axis=0)).mean(),
+                                np.abs(np.diff(array, axis=1)).mean()), dtype=np.float32),
+                ])
+            features.append(feature)
+    return pd.DataFrame(features, columns=[f"img_feat_{i}" for i in range(len(features[0]))])
+
 # === Pulling SVIs from Google Map ===
 class GoogleSVIDownloader:
     """

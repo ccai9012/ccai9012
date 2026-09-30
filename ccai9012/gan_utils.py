@@ -143,6 +143,27 @@ def build_pair_manifest(
         for region, relative_path, _, _ in pairs
     ]
 
+
+def resolve_manifest_pair(pair: dict[str, str], source_root: str | os.PathLike) -> tuple[Path, Path]:
+    """Resolve and validate both images in a paired manifest record."""
+    root = Path(source_root).resolve()
+    paths = []
+    for key in ("source", "target"):
+        path = (root / pair[key]).resolve()
+        if not path.is_relative_to(root) or not path.is_file():
+            raise FileNotFoundError(f"Missing or invalid {key} image: {path}")
+        paths.append(path)
+    return paths[0], paths[1]
+
+
+def open_pair_image(path: str | os.PathLike) -> Image.Image:
+    """Open a teaching tile with transparent pixels composited on white."""
+    with Image.open(path) as image:
+        rgba = image.convert("RGBA")
+        canvas = Image.new("RGB", rgba.size, "white")
+        canvas.paste(rgba, mask=rgba.getchannel("A"))
+        return canvas
+
 def process_and_save_image(image_path: str, dst_path: str) -> None:
     """Save an image, compositing transparent pixels over white when needed.
 

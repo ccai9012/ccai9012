@@ -560,6 +560,84 @@ from langchain_deepseek import ChatDeepSeek
 from langchain.prompts import PromptTemplate
 import os
 import re
+from pathlib import Path
+
+
+def extract_pdf_pages(pdf_path):
+    """Extract text with one-based physical PDF page numbers."""
+    from pypdf import PdfReader
+
+    return [
+        {"page": index, "text": page.extract_text() or ""}
+        for index, page in enumerate(PdfReader(str(pdf_path)).pages, start=1)
+    ]
+
+
+def retrieve_pdf_passages(pages, query, top_k=2, max_chars=3000):
+    """Rank PDF pages by simple query-token frequency for source inspection."""
+    terms = [term.lower() for term in re.findall(r"[A-Za-z]+", query) if len(term) > 2]
+    scored = []
+    for item in pages:
+        page_text = " ".join(item["text"].split())
+        if page_text:
+            score = sum(page_text.lower().count(term) for term in terms)
+            scored.append((score, item["page"], page_text[:max_chars]))
+    scored.sort(key=lambda row: (-row[0], row[1]))
+    return [{"page": page, "score": score, "text": page_text}
+            for score, page, page_text in scored[:top_k]]
+
+
+def compare_pdf_with_llm(pdf_path, llm, fields=None):
+    """Make one structured model request for a PDF and retain candidate source pages.
+
+    Page numbers identify supplied context for human verification; they do not
+    establish that the model's statement is supported by that page.
+    """
+    fields = fields or ("Problem", "Research Gap", "Methodology", "Key Results")
+    pages = extract_pdf_pages(pdf_path)
+    context = {}
+    search_terms = {
+        "Problem": "problem challenge objective",
+        "Research Gap": "research gap limitation prior work",
+        "Methodology": "method methodology data approach",
+        "Key Results": "results findings conclusion",
+    }
+    for field in fields:
+        context[field] = retrieve_pdf_passages(
+            pages, search_terms.get(field, field), top_k=2, max_chars=1800
+        )
+    prompt = (
+        "Compare this research paper using only the supplied PDF excerpts. "
+        "Return one JSON object with exactly these string fields: " + ", ".join(fields) +
+        ". Use N/A when evidence is insufficient. Do not invent page numbers.\n" +
+        json.dumps(context, ensure_ascii=False)
+    )
+    response = llm.invoke(prompt)
+    raw = response.content if hasattr(response, "content") else str(response)
+    parsed = json.loads(raw[raw.find("{"):raw.rfind("}") + 1])
+    rows = []
+    for field in fields:
+        passages = context[field]
+        rows.append({
+            "paper": Path(pdf_path).name, "extracted_field": field,
+            "value": str(parsed.get(field, "N/A") or "N/A"),
+            "retrieved_passage": passages[0]["text"][:320] if passages else "N/A",
+            "source_location": f"PDF page {passages[0]['page']}" if passages else "N/A",
+            "uncertainty": "Candidate source page; verify the claim in the original PDF.",
+        })
+    return rows
+
+
+def load_urban_review_sample(sample_csv, n=24, random_state=42):
+    """Select deterministic Yelp rows and preserve source text for model checks."""
+    frame = pd.read_csv(sample_csv)
+    required = {"review_text", "stars", "business_name", "latitude", "longitude"}
+    missing = required - set(frame.columns)
+    if missing:
+        raise ValueError(f"Yelp sample missing columns: {sorted(missing)}")
+    if n < 1 or n > len(frame):
+        raise ValueError(f"Requested {n} reviews from {len(frame)} rows")
+    return frame.sample(n=n, random_state=random_state).reset_index(drop=True)
 
 def build_pdf_retriever(
     pdf_path: str,
