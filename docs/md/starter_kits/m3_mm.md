@@ -5,6 +5,23 @@
 ### Overview
 **Category:** Visual-Language Reasoning
 
+This module assumes basic Python, pandas, image-file handling, and the Week 4
+multimodal LLM tutorial. Its two complementary paths are deliberately
+different: CLIP maps an image and a text prompt to a similarity score, whereas
+captioning and visual QA turn an image into text that can then be searched for
+candidate labels.
+
+### Learning path
+
+1. Start with the local, deterministic CLIP sample; use Google Street View only
+   after explicitly enabling the API branch and supplying a key.
+2. Keep the image/coordinate/heading relationship in a manifest, then map the
+   CLIP-derived score back to a point-level index.
+3. Run the controlled image-generation experiment and distinguish generated
+   images, captions, visual-QA answers, and keyword-extracted labels.
+4. Treat all model-derived labels as hypotheses requiring human or annotated
+   reference checks.
+
 **Modular Components:**
 
 - **Image generation and loading**
@@ -61,9 +78,34 @@ The flowchart combines both model directions: Stable Diffusion is the **text →
 - Evaluating mixing index of historic and added-on buildings
 
 **Dataset:**
-- Google Street View Imagery (SVI)
-- Source: Google Map API
-- 
+- Tracked Barcelona Street View images (`582` `.jpg` files) for the default
+  offline sample
+- Google Street View Imagery (SVI) from Google Maps API for the explicit opt-in
+  branch
+
+The notebook uses four text prompts (historic/traditional, modern, mixed, and
+open space). CLIP similarity is a ranking signal between each image and those
+prompts; it is not a conservation inventory, a ground-truth historic label, or
+proof that a building is historically protected. The weighted historic index
+is a mapped summary of those model scores and should be checked against an
+annotated conservation register or expert labels before interpretation.
+
+<p align="center">
+  <img src="../figs/clip_historic_decision_spatial.svg" alt="Decision tree from a deterministic local image sample or opt-in Google Street View API to a manifest, CLIP similarity, mapped candidate index, and human check." width="100%"><br>
+  <em>Offline-first decision path and spatial evidence chain. The final index is model-derived and requires validation.</em>
+</p>
+
+### Application matrix
+
+| Extension | Dataset needed | Annotation/reference standard | Reused functions/variables | Why it is meaningful |
+| --- | --- | --- | --- | --- |
+| Conservation-status screening | Municipal heritage register plus geolocated SVI | Protected-building status and boundary/date rules | `build_svi_image_manifest`, `join_clip_results`, `text_prompts`, `weighted_score` | Tests whether a candidate visual signal aligns with a defined conservation reference |
+| Historic/modern mixing index | Parcel/building footprints with construction-era labels | Building-level age labels and a declared spatial aggregation unit | `sample_manifest`, `groupby([\"latitude\", \"longitude\"])`, `plot_points` | Separates a scene-level mixture hypothesis from an unsupported historic label |
+| Cross-city transfer check | Matched SVI samples from multiple cities | City-specific, independently reviewed labels using the same coding protocol | `deterministic_image_sample`, `CLIPClassifier`, `all_scores` | Shows whether prompt similarity is stable across geography and imagery conditions |
+| Human-in-the-loop audit | Stratified image sample and expert review form | Two or more reviewers, adjudication rule, and inter-rater agreement | `df_results`, `label_text`, `confidence`, manifest coordinates | Quantifies disagreement and prevents confidence from being mistaken for truth |
+
+Each extension needs a new reference standard; none is completed by keyword or
+CLIP matching alone.
 <p align="center">
   <img src="../figs/SCR-20251218-lvlc.jpeg" width="400"><br>
   <em>Using CLIP to identify the historical status of the urban block.</em>

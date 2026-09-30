@@ -39,14 +39,32 @@
   <summary>On this page</summary>
   <nav aria-label="On this page"><ul>
 <li class="toc-level-3"><a href="#overview">Overview</a></li>
+<li class="toc-level-3"><a href="#learning-path">Learning path</a></li>
 <li class="toc-level-3"><a href="#use-cases">Use Cases</a></li>
 <li class="toc-level-3"><a href="#code-examples">Code Examples</a></li>
+<li class="toc-level-3"><a href="#application-matrix">Application matrix</a></li>
   </ul></nav>
 </details>
 <h1 id="multimodal-reasoning">Multimodal Reasoning</h1>
 <p><strong>Related API:</strong> <a href="../api/ccai9012/multi_modal_utils.html"><code>ccai9012.multi_modal_utils</code></a> · <a href="../api/ccai9012/svi_utils.html"><code>ccai9012.svi_utils</code></a> · <a href="../api/ccai9012/viz_utils.html"><code>ccai9012.viz_utils</code></a></p>
 <h3 id="overview">Overview</h3>
 <p><strong>Category:</strong> Visual-Language Reasoning</p>
+<p>This module assumes basic Python, pandas, image-file handling, and the Week 4
+multimodal LLM tutorial. Its two complementary paths are deliberately
+different: CLIP maps an image and a text prompt to a similarity score, whereas
+captioning and visual QA turn an image into text that can then be searched for
+candidate labels.</p>
+<h3 id="learning-path">Learning path</h3>
+<ol>
+<li>Start with the local, deterministic CLIP sample; use Google Street View only
+   after explicitly enabling the API branch and supplying a key.</li>
+<li>Keep the image/coordinate/heading relationship in a manifest, then map the
+   CLIP-derived score back to a point-level index.</li>
+<li>Run the controlled image-generation experiment and distinguish generated
+   images, captions, visual-QA answers, and keyword-extracted labels.</li>
+<li>Treat all model-derived labels as hypotheses requiring human or annotated
+   reference checks.</li>
+</ol>
 <p><strong>Modular Components:</strong></p>
 <ul>
 <li><strong>Image generation and loading</strong></li>
@@ -96,9 +114,65 @@
 - Categorizing SVIs of historic districts with CLIP
 - Evaluating mixing index of historic and added-on buildings</p>
 <p><strong>Dataset:</strong>
-- Google Street View Imagery (SVI)
-- Source: Google Map API
-- </p>
+- Tracked Barcelona Street View images (<code>582</code> <code>.jpg</code> files) for the default
+  offline sample
+- Google Street View Imagery (SVI) from Google Maps API for the explicit opt-in
+  branch</p>
+<p>The notebook uses four text prompts (historic/traditional, modern, mixed, and
+open space). CLIP similarity is a ranking signal between each image and those
+prompts; it is not a conservation inventory, a ground-truth historic label, or
+proof that a building is historically protected. The weighted historic index
+is a mapped summary of those model scores and should be checked against an
+annotated conservation register or expert labels before interpretation.</p>
+<p align="center">
+  <img src="../figs/clip_historic_decision_spatial.svg" alt="Decision tree from a deterministic local image sample or opt-in Google Street View API to a manifest, CLIP similarity, mapped candidate index, and human check." width="100%"><br>
+  <em>Offline-first decision path and spatial evidence chain. The final index is model-derived and requires validation.</em>
+</p>
+
+<h3 id="application-matrix">Application matrix</h3>
+<table>
+<thead>
+<tr>
+<th>Extension</th>
+<th>Dataset needed</th>
+<th>Annotation/reference standard</th>
+<th>Reused functions/variables</th>
+<th>Why it is meaningful</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Conservation-status screening</td>
+<td>Municipal heritage register plus geolocated SVI</td>
+<td>Protected-building status and boundary/date rules</td>
+<td><code>build_svi_image_manifest</code>, <code>join_clip_results</code>, <code>text_prompts</code>, <code>weighted_score</code></td>
+<td>Tests whether a candidate visual signal aligns with a defined conservation reference</td>
+</tr>
+<tr>
+<td>Historic/modern mixing index</td>
+<td>Parcel/building footprints with construction-era labels</td>
+<td>Building-level age labels and a declared spatial aggregation unit</td>
+<td><code>sample_manifest</code>, <code>groupby([\"latitude\", \"longitude\"])</code>, <code>plot_points</code></td>
+<td>Separates a scene-level mixture hypothesis from an unsupported historic label</td>
+</tr>
+<tr>
+<td>Cross-city transfer check</td>
+<td>Matched SVI samples from multiple cities</td>
+<td>City-specific, independently reviewed labels using the same coding protocol</td>
+<td><code>deterministic_image_sample</code>, <code>CLIPClassifier</code>, <code>all_scores</code></td>
+<td>Shows whether prompt similarity is stable across geography and imagery conditions</td>
+</tr>
+<tr>
+<td>Human-in-the-loop audit</td>
+<td>Stratified image sample and expert review form</td>
+<td>Two or more reviewers, adjudication rule, and inter-rater agreement</td>
+<td><code>df_results</code>, <code>label_text</code>, <code>confidence</code>, manifest coordinates</td>
+<td>Quantifies disagreement and prevents confidence from being mistaken for truth</td>
+</tr>
+</tbody>
+</table>
+<p>Each extension needs a new reference standard; none is completed by keyword or
+CLIP matching alone.</p>
 <p align="center">
   <img src="../figs/SCR-20251218-lvlc.jpeg" width="400"><br>
   <em>Using CLIP to identify the historical status of the urban block.</em>
@@ -109,8 +183,10 @@
     <p class="page-toc-title">On this page</p>
     <ul>
 <li class="toc-level-3"><a href="#overview">Overview</a></li>
+<li class="toc-level-3"><a href="#learning-path">Learning path</a></li>
 <li class="toc-level-3"><a href="#use-cases">Use Cases</a></li>
 <li class="toc-level-3"><a href="#code-examples">Code Examples</a></li>
+<li class="toc-level-3"><a href="#application-matrix">Application matrix</a></li>
     </ul>
   </nav>
 </aside>
