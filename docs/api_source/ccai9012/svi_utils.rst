@@ -48,6 +48,10 @@ Functions
    ~ccai9012.svi_utils.segment_and_save_images
    ~ccai9012.svi_utils.visualize_segmentation_pair
    ~ccai9012.svi_utils.batch_segment_and_visualize
+   ~ccai9012.svi_utils.build_svi_image_manifest
+   ~ccai9012.svi_utils.deterministic_image_sample
+   ~ccai9012.svi_utils.join_clip_results
+   ~ccai9012.svi_utils.match_svi_images_to_targets
 
 Constants
 ---------

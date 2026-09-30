@@ -47,6 +47,11 @@
 <p><strong>Related API:</strong> <a href="../api/ccai9012/yolo_utils.html"><code>ccai9012.yolo_utils</code></a> · <a href="../api/ccai9012/svi_utils.html"><code>ccai9012.svi_utils</code></a> </p>
 <h3 id="overview">Overview</h3>
 <p><strong>Category:</strong> Perception &amp; Prediction from Visual Data</p>
+<p>The module assumes basic Python, pandas, image/video handling, and the
+scikit-learn workflow from earlier Starter Kits. Both notebooks default to
+bounded local assets. Network acquisition and model downloads are explicit
+opt-in branches, so a fresh lesson run can first verify paths, joins, schemas,
+and output locations offline.</p>
 <p><strong>Modular Components:</strong></p>
 <ul>
 <li><strong>Image to perception</strong></li>
@@ -72,9 +77,30 @@
 - Track movement using DeepSORT
 - Analyze flow, dwell time, and walkability</p>
 <p><strong>Dataset:</strong>
-- Webcam data
-- Source: https://www.skylinewebcams.com/en.html</p>
-<p><strong>Required Packages:</strong> YOLOv5, OpenCV, DeepSORT, numpy, matplotlib</p>
+- A short local video clip when available (<code>video/closed_test_15.mp4</code> or
+  another user-provided clip)
+- Optional external source: <a href="https://www.skylinewebcams.com/en.html">SkylineWebcams</a>;
+  download and licensing must be checked by the user before placing a clip in
+  the local <code>video/</code> directory</p>
+<p><strong>Required Packages:</strong> Ultralytics YOLO11, OpenCV, pandas, numpy, matplotlib,
+SciPy (for the optional rendered-video helper)</p>
+<p>The notebook records one row per detected person per frame:
+<code>frame</code>, persistent <code>id</code>, and bounding-box coordinates <code>x1</code>, <code>y1</code>, <code>x2</code>, <code>y2</code>.
+Detection answers “what is in this frame”; tracking associates detections over
+time. Confidence is the detector&rsquo;s score, while IoU-based association and
+ByteTrack determine whether an ID persists. Occlusion, camera motion, missed
+detections, and a perspective-distorted bottom-centre point limit any direct
+interpretation as pedestrian flow or walkability.</p>
+<p>The expected model is the tracked <code>yolo11m.pt</code> file (YOLO11 medium). The
+notebook loads it from the Starter Kit directory and stops with a helpful
+message if it is absent; it does not silently replace it with a newer YOLO
+generation. Video, CSV, heatmap, and rendered-clip outputs belong under the
+ignored local <code>output/</code> directory.</p>
+<p align="center">
+  <img src="../figs/yolo_tracking_storyboard.svg" alt="Storyboard from per-frame pedestrian detection through persistent track IDs, trajectory table and heatmap, to a local rendered clip." width="100%"><br>
+  <em>Frame-to-trajectory storyboard. Every downstream visualisation depends on the detection table.</em>
+</p>
+
 <p align="center">
   <img src="../figs/SCR-20251218-lzkz.jpeg" width="600"><br>
   <em>Identify pedestrian location and generate footprint heatmap with tracking.</em>
@@ -89,6 +115,23 @@
 - Google Street View Imagery (SVI) from Google Map API
 - California housing price dataset from sklearn.datasets</p>
 <p><strong>Required Packages:</strong> OpenCV, scikit-learn, pandas, matplotlib, PyTorch</p>
+<p>The default path uses a deterministic sample from the 151 tracked SVI images
+and the matching California housing rows. Because the source CSV can contain
+several rows at the same rounded coordinate, the notebook aggregates <code>Target</code>
+to a coordinate-level mean before joining the image manifest. It then runs the
+same held-out split and MAE metric for three columns: tabular-only, image-only,
+and combined features. The offline image branch uses deterministic colour and
+edge statistics; cached/approved ResNet weights are an explicit opt-in. A
+Google Maps key is only requested when the acquisition flag is enabled.</p>
+<p align="center">
+  <img src="../figs/svi_housing_ablation.svg" alt="Three parallel SVI housing prediction columns: tabular-only, image-only, and combined features, using the same validated rows and held-out MAE." width="100%"><br>
+  <em>Modality ablation with a shared manifest, target, split, and metric.</em>
+</p>
+
+<p>The result is a predictive comparison under this sampling and feature setup;
+it does not identify a causal visual-quality effect or a fair property-value
+assessment. Image filenames, coordinates, and targets must remain aligned at
+every step.</p>
 <p align="center">
   <img src="../figs/SCR-20251218-mawu.jpeg" width="600"><br>
   <em>SVI-based housing price estimation. Nouriani, A., Lemke, L., 2022. Vision-based housing price estimation using interior, exterior & satellite images. Intelligent Systems with Applications 14, 200081. https://doi.org/10.1016/j.iswa.2022.200081.</em>

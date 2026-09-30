@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="500" viewBox="0 0 1200 500" role="img" aria-labelledby="title desc">
+  <title id="title">Three-column SVI housing-price modality ablation</title>
+  <desc id="desc">A validated image-to-target manifest feeds three parallel model columns: tabular-only, image-only, and combined features, each ending in the same held-out MAE comparison.</desc>
+  <defs><style>.c{fill:#fff;stroke:#1f4e79;stroke-width:3;rx:14}.h{fill:#eaf3fb;stroke:#1f4e79;stroke-width:3;rx:14}.o{fill:#eef8ee;stroke:#31723f;stroke-width:3;rx:14}.t{font:22px sans-serif;fill:#183247}.s{font:18px sans-serif;fill:#36586e}.a{stroke:#557b91;stroke-width:3;fill:none;marker-end:url(#arrow)}</style><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#557b91"/></marker></defs>
+  <rect width="1200" height="500" fill="#f8fbfd"/><text x="40" y="45" class="t" font-weight="700">SVI housing prediction: compare modalities on the same validated rows</text>
+  <rect x="380" y="70" width="440" height="72" class="h"/><text x="600" y="101" text-anchor="middle" class="t">manifest + housing targets</text><text x="600" y="127" text-anchor="middle" class="s">coordinate join · deterministic sample · no silent mismatch</text>
+  <path d="M600 142 L600 180" class="a"/>
+  <rect x="55" y="180" width="330" height="170" class="c"/><text x="220" y="220" text-anchor="middle" class="t">Tabular-only</text><text x="220" y="255" text-anchor="middle" class="s">MedInc · rooms · occupancy</text><text x="220" y="286" text-anchor="middle" class="s">GradientBoostingRegressor</text><text x="220" y="317" text-anchor="middle" class="s">same train/test split</text>
+  <rect x="435" y="180" width="330" height="170" class="c"/><text x="600" y="220" text-anchor="middle" class="t">Image-only</text><text x="600" y="255" text-anchor="middle" class="s">offline visual statistics</text><text x="600" y="286" text-anchor="middle" class="s">or cached ResNet features</text><text x="600" y="317" text-anchor="middle" class="s">same train/test split</text>
+  <rect x="815" y="180" width="330" height="170" class="c"/><text x="980" y="220" text-anchor="middle" class="t">Combined</text><text x="980" y="255" text-anchor="middle" class="s">tabular + image features</text><text x="980" y="286" text-anchor="middle" class="s">same target and split</text><text x="980" y="317" text-anchor="middle" class="s">no row reordering</text>
+  <path d="M600 142 L220 180 M600 142 L600 180 M600 142 L980 180" class="a"/>
+  <path d="M220 350 L220 395 L600 395 M600 350 L600 395 M980 350 L980 395 L600 395" class="a"/>
+  <rect x="400" y="395" width="400" height="72" class="o"/><text x="600" y="425" text-anchor="middle" class="t">compare held-out MAE</text><text x="600" y="451" text-anchor="middle" class="s">an association, not causal valuation evidence</text>
+</svg>

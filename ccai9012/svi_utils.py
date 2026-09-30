@@ -11,6 +11,7 @@ The module is organized into several components:
 - Google Street View downloader: Tools for fetching street view images using the Google Maps API
 - Segmentation utilities: Functions to perform semantic segmentation on street view images
 - Visualization utilities: Functions to visualize original images alongside their segmentations
+- Dataset utilities: Functions to index, sample, and align coordinate-named SVI images
 
 This is particularly useful for urban analysis, streetscape assessment, and understanding
 the composition of street-level imagery through semantic segmentation.
@@ -18,7 +19,11 @@ the composition of street-level imagery through semantic segmentation.
 """
 
 import os
+import re
+from pathlib import Path
+
 import numpy as np
+import pandas as pd
 import torch
 import requests
 from io import BytesIO
@@ -41,6 +46,133 @@ CITYSCAPES_COLORS = [
     (70, 130, 180), (220, 20, 60), (255, 0, 0), (0, 0, 142), (0, 0, 70),
     (0, 60, 100), (0, 80, 100), (0, 0, 230), (119, 11, 32)
 ]
+
+_SVI_FILENAME = re.compile(
+    r"^lat(?P<latitude>[-.\d]+)_lon(?P<longitude>[-.\d]+)"
+    r"_hdg(?P<heading>\d+)\.jpg$"
+)
+
+
+# === SVI dataset indexing and alignment ===
+def build_svi_image_manifest(image_dir: str | Path) -> pd.DataFrame:
+    """Build a validated manifest for coordinate-named SVI images.
+
+    Parameters
+    ----------
+    image_dir:
+        Directory containing files named ``lat..._lon..._hdg....jpg``.
+
+    Returns
+    -------
+    pandas.DataFrame
+        One row per image with ``filename``, ``image_path``, ``latitude``,
+        ``longitude``, and ``heading`` columns, sorted by filename.
+
+    Raises
+    ------
+    ValueError
+        If an image has an unsupported name or duplicate filename.
+    """
+
+    image_dir = Path(image_dir).expanduser().resolve()
+    rows: list[dict[str, object]] = []
+    for path in sorted(image_dir.glob("*.jpg")):
+        match = _SVI_FILENAME.fullmatch(path.name)
+        if match is None:
+            raise ValueError(
+                f"Cannot parse SVI filename {path.name!r}; expected "
+                "lat<value>_lon<value>_hdg<degrees>.jpg"
+            )
+        rows.append(
+            {
+                "filename": path.name,
+                "image_path": str(path),
+                "latitude": float(match.group("latitude")),
+                "longitude": float(match.group("longitude")),
+                "heading": int(match.group("heading")),
+            }
+        )
+
+    manifest = pd.DataFrame(rows)
+    if manifest.empty:
+        raise ValueError(f"No coordinate-named .jpg images found in {image_dir}")
+    if manifest["filename"].duplicated().any():
+        raise ValueError("The image manifest contains duplicate filenames")
+    return manifest.sort_values("filename").reset_index(drop=True)
+
+
+def deterministic_image_sample(
+    manifest: pd.DataFrame, n: int, random_state: int = 42
+) -> pd.DataFrame:
+    """Select a reproducible subset while preserving manifest columns."""
+
+    if n < 1:
+        raise ValueError("n must be at least 1")
+    if n > len(manifest):
+        raise ValueError(f"Requested {n} images, but manifest has only {len(manifest)}")
+    return (
+        manifest.sort_values("filename")
+        .sample(n=n, random_state=random_state)
+        .sort_values("filename")
+        .reset_index(drop=True)
+    )
+
+
+def join_clip_results(results: pd.DataFrame, manifest: pd.DataFrame) -> pd.DataFrame:
+    """Join CLIP results to SVI coordinates and reject missing/duplicate rows."""
+
+    required = {"filename"}
+    missing = required - set(results.columns)
+    if missing:
+        raise ValueError(f"CLIP results missing columns: {sorted(missing)}")
+    if results["filename"].duplicated().any():
+        raise ValueError("CLIP results contain duplicate filenames")
+    joined = results.merge(
+        manifest,
+        on="filename",
+        how="left",
+        validate="one_to_one",
+        indicator=True,
+    )
+    if not (joined["_merge"] == "both").all():
+        missing_names = joined.loc[joined["_merge"] != "both", "filename"].tolist()
+        raise ValueError(f"CLIP results have no manifest row for: {missing_names[:3]}")
+    return joined.drop(columns="_merge")
+
+
+def match_svi_images_to_targets(
+    manifest: pd.DataFrame, housing: pd.DataFrame
+) -> pd.DataFrame:
+    """Attach coordinate-level housing targets to SVI images.
+
+    The housing file can contain several rows at the same rounded coordinate.
+    We make that ambiguity explicit by aggregating numeric columns to the
+    coordinate mean before the many-to-one join.
+    """
+
+    required = {"Latitude", "Longitude", "Target"}
+    missing = required - set(housing.columns)
+    if missing:
+        raise ValueError(f"Housing data missing columns: {sorted(missing)}")
+    value_columns = [
+        column for column in housing.columns if column not in {"Latitude", "Longitude"}
+    ]
+    target_by_coord = (
+        housing.groupby(["Latitude", "Longitude"], as_index=False)[value_columns]
+        .mean(numeric_only=True)
+        .rename(columns={"Latitude": "latitude", "Longitude": "longitude"})
+    )
+    joined = manifest.merge(
+        target_by_coord,
+        on=["latitude", "longitude"],
+        how="left",
+        validate="many_to_one",
+        indicator=True,
+    )
+    if not (joined["_merge"] == "both").all():
+        missing_names = joined.loc[joined["_merge"] != "both", "filename"].tolist()
+        raise ValueError(f"SVI images have no housing row for: {missing_names[:3]}")
+    return joined.drop(columns="_merge")
 
 # === Pulling SVIs from Google Map ===
 class GoogleSVIDownloader:
