@@ -54,7 +54,7 @@ Collect approximately **5 collections** within your assigned artefact category a
     border-left: 5px solid #000;
     padding: 0.8rem 1rem;
     margin: 1.5rem 0;
-    background: #f2f2f2;
+    background: #fff4cc;
 ">
 
 <strong>BEFORE YOU BEGIN:</strong>
@@ -63,19 +63,20 @@ Collect approximately **5 collections** within your assigned artefact category a
 <li>
 <strong>Register your collection:</strong>
 Sign up for your chosen artefact theme on the
-<a href="https://docs.google.com/spreadsheets/d/1hBhfThNZ6BqrgTgKuV0z-TLPv7XqaO0BTZryHm98hfA/edit?gid=219541611#gid=219541611">sign-up sheet</a>
+<strong>[<a href="https://docs.google.com/spreadsheets/d/1hBhfThNZ6BqrgTgKuV0z-TLPv7XqaO0BTZryHm98hfA/edit?gid=219541611#gid=219541611">sign-up sheet</a>]</strong>
 before collecting material. Places are limited to approximately <strong>25 students per theme</strong> to avoid duplication.
 </li>
 
 <li>
 <strong>Map your sites:</strong>
 Add each collection to the course
-<a href="https://www.google.com/maps/d/edit?hl=en&mid=1qEkYQp27RYZvG_XF7OibSJl86pMvXAU&ll=29.00262686281719%2C-92.41699249999999&z=4">Google My Maps</a>
+<strong>[<a href="https://www.google.com/maps/d/edit?hl=en&mid=1qEkYQp27RYZvG_XF7OibSJl86pMvXAU&ll=29.00262686281719%2C-92.41699249999999&z=4">Google My Maps</a>]</strong>
 using the label format: <strong>Name – UID – Collection ##</strong>.
 </li>
 </ul>
 
 </div>
+
 
 ### 2–3. EXAMINE + IDENTIFY
 

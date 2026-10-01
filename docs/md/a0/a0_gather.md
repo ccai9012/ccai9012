@@ -163,8 +163,6 @@ The following guidelines will help you prepare this part of the assignment:
 </div>
 
 
-
-
 <!-- ### 1.3. Photography tips
 
 Photographs should be **purposeful rather than repetitive**. Aim for a compact set of images that collectively describe the artefact and provide useful variation in viewpoint and scale.

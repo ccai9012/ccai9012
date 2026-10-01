@@ -2,9 +2,27 @@
 
 <div style="height:4.0rem"></div> 
 
+<div style="padding:1.25rem 1.5rem; background-color:#fff3cd; border-left:6px solid #a00000;">
+
+  ⚠️ <strong>IMPORTANT UPDATE — CASE STUDY GUIDELINES ARE BEING SIMPLIFIED</strong><br><br>
+
+  Following our class discussion on <strong>2026.09.30</strong>, the Case Study requirements will be <strong>simplified and reduced in scope</strong>. This change is intended to rebalance the assessment and place greater emphasis on <strong>A.0: Applied Exercise</strong>.
+
+  <br><br>
+
+  📅 <strong>Updated Case Study guidelines will be released by 2026.10.07.</strong><br>
+  Please treat the detailed requirements currently shown below as <strong>under revision</strong> until the updated guidance is released.
+
+</div>
+<div style="height:2rem"></div>
+
+<div style="height:4.0rem"></div> 
+
 <hr style="height: 2px; border: none; background-color: #000;">
 
 <div style="height:1.5rem"></div> 
+
+<div style="height:2rem"></div>
 
 ## Overview
 
