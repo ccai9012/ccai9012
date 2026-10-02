@@ -28,23 +28,59 @@ Here are some important course links:
     - **Weekly Sign-up** [**[link]**](https://docs.google.com/spreadsheets/d/1-IZp2ZOT_mBhITrlvXxjpd7Fv1luljklvUd6RRtSrgg/edit?gid=105531914#gid=105531914): Register for your preferred tutorial session each week.
     - **General Availability** [**[link]**](https://docs.google.com/spreadsheets/d/1-IZp2ZOT_mBhITrlvXxjpd7Fv1luljklvUd6RRtSrgg/edit?gid=2087503560#gid=2087503560): Please indicate your general availability to help us plan and coordinate tutorial sessions.
 
+
 <div style="height:1.5rem"></div>
 
 <div style="padding:1rem 1.25rem; background-color:#fff3cd; border-left:5px solid #a00000;">
 
-  ⚠️ <strong>Coursework Update on 2026.09.30</strong><br><br>
+  ⚠️ <strong>Coursework Update — 2026.09.30</strong><br><br>
 
   Based on our class discussion on <strong>2026.09.30</strong>, we will make the following adjustments:
 
   <br><br>
 
-  • <strong>A.0: Applied Exercise</strong> — Deadline moved from <strong>2026.10.14</strong> to <strong>2026.10.28</strong>.<br><br>
+  • <strong>A.0: Applied Exercise — Deadline</strong><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;Moved from <strong>2026.10.14</strong> to <strong>2026.10.28</strong>.<br><br>
 
-  • <strong>A.0: Applied Exercise</strong> — Online tutorials will be arranged in <strong>early Week 6</strong> to support your development. A sign-up sheet will follow.<br><br>
+  • <strong>A.0: Applied Exercise — Additional Support</strong><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;Online tutorials will be arranged on <strong>2026.10.05</strong> and <strong>2026.10.06</strong> to support your development. Please sign up
+  <a href="https://docs.google.com/spreadsheets/d/1-IZp2ZOT_mBhITrlvXxjpd7Fv1luljklvUd6RRtSrgg/edit?gid=476294162#gid=476294162"><strong>[here]</strong></a>.<br><br>
 
-  • <strong>A.0 vs A.1</strong> — We will place greater assessment emphasis on <strong>A.0</strong> and reduce the emphasis on <strong>A.1</strong>. The exact weighting and arrangements are still being finalised, in accordance with best practice and pending further consultation.<br><br>
+  • <strong>A.0 vs A.1 — Assessment Arrangement</strong><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;Both assignments will be retained, with <strong>A.1 substantially simplified</strong>. The formal weighting of <strong>A.0 and A.1 will remain unchanged</strong>. However, students who demonstrate exceptional performance in <strong>A.0</strong> may receive <strong>bonus marks of up to 25% of the original A.0 contribution</strong>.<br><br>
 
-  • <strong>A.1: Case Study</strong> — The requirement will be simplified to a <strong>single-sheet submission</strong>. Updated guidelines will follow.
+  • <strong>A.1: Case Study — Deadline</strong><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;Moved from <strong>2026.11.04</strong> to <strong>2026.11.11</strong>.<br><br>
+
+  • <strong>A.1: Case Study — Simplified Requirement</strong><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;The requirement will be simplified to a <strong>single-sheet submission</strong>. Updated guidelines will follow.
+
+</div>
+
+<div style="height:1.5rem"></div>
+
+<div style="padding:1rem 1.25rem; background-color:#fff3cd; border-left:5px solid #a00000;">
+
+  ⚠️ <strong>Make-up Tutorials — 2026.09.30 </strong><br><br>
+
+  Two tutorial sessions are affected by public holidays. Make-up sessions have been arranged as follows:
+
+  <br><br>
+
+  • <strong>GenAI Tutorial</strong><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;Original session: <strong>2026.10.01</strong><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;Make-up sessions: <strong>2026.10.05</strong> and <strong>2026.10.06</strong><br><br>
+
+  • <strong>Crit-Style Peer Review</strong><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;Original session: <strong>2026.10.19</strong><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;Make-up sessions: <strong>2026.10.20</strong> and <strong>2026.10.21</strong><br><br>
+
+  📅 Please sign up for a make-up session
+  <a href="https://docs.google.com/spreadsheets/d/1-IZp2ZOT_mBhITrlvXxjpd7Fv1luljklvUd6RRtSrgg/edit?gid=476294162#gid=476294162"><strong>[here]</strong></a>.
+
+  <br><br>
+
+  Students who had already signed up for the affected tutorial dates are <strong>not required to attend a make-up session solely for attendance purposes; their attendance will be counted as fulfilled</strong>. However, please ensure that you attend at least <strong>one of the two Crit-Style Peer Review sessions</strong>.
 
 </div>
 
