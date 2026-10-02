@@ -47,7 +47,7 @@ Here are some important course links:
   <a href="https://docs.google.com/spreadsheets/d/1-IZp2ZOT_mBhITrlvXxjpd7Fv1luljklvUd6RRtSrgg/edit?gid=476294162#gid=476294162"><strong>[here]</strong></a>.<br><br>
 
   • <strong>A.0 vs A.1 — Assessment Arrangement</strong><br>
-  &nbsp;&nbsp;&nbsp;&nbsp;Both assignments will be retained, with <strong>A.1 substantially simplified</strong>. The formal weighting of <strong>A.0 and A.1 will remain unchanged</strong>. However, students who demonstrate exceptional performance in <strong>A.0</strong> may receive <strong>bonus marks of up to 25% of the original A.0 contribution</strong>.<br><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;Both assignments will be retained, with <strong>A.1 substantially simplified</strong>. The formal weighting of <strong>A.0 and A.1 will remain unchanged</strong>. <br><br>
 
   • <strong>A.1: Case Study — Deadline</strong><br>
   &nbsp;&nbsp;&nbsp;&nbsp;Moved from <strong>2026.11.04</strong> to <strong>2026.11.11</strong>.<br><br>
