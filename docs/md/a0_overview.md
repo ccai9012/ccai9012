@@ -120,12 +120,44 @@ Use selected collections as starting points for iterative transformation, then a
 
 *Figure 2. Overview of the Applied Exercise process. Image generated with ChatGPT / OpenAI.*
 
+<div style="height:1.5rem"></div>
+
+<hr style="height: 6px; border: none; background-color: #000;">
+
+<div style="height:1.5rem"></div>
+
+<div style="padding:1rem 1.25rem; background-color:#fffaf0; border-left:5px solid #d8bd78;">
+
+  🔎 <strong>A0: In a Nutshell: What Are We Looking For?</strong><br>
+  (These points summarises the intentions embedded in the assignment instructions.)<br><br>
+
+  • <strong>Careful observation and useful evidence</strong><br>
+  Build an organised visual collection connecting Context → System → Detail. Record your own observations, important features, and uncertainties before asking AI.<br><br>
+
+  • <strong>Meaningful questions and consistent testing</strong><br>
+  Ask questions that probe the AI’s visual understanding and its limits. Keep tests comparable and distinguish first responses from subsequent guided conversation.<br><br>
+
+  • <strong>Critical evaluation</strong><br>
+  Check AI responses against your observations and evidence. Identify patterns of success, error, unsupported assumptions, and appropriate uncertainty across your tests.<br><br>
+
+  • <strong>Purposeful transformation and reasoned selection</strong><br>
+  Develop alternatives through a clear intention and iterative interaction with AI. Use relevant criteria to explain your selections and show where your judgement shaped the outcomes.<br><br>
+
+  • <strong>Distillation and clear communication</strong><br>
+  Select revealing evidence and communicate a concise story through your abstract, slides, and video. Make your investigation, findings, and their significance understandable to a new audience.<br><br>
+
+  • <strong>Documentation and submission</strong><br>
+  Follow the instructions as closely as you can and keep supporting material organised and easy to review. <strong>Do your best</strong>—we will be understanding about minor formatting or organisational shortcomings and focus primarily on the substance of your work.
+
+</div>
 
 <div style="height:1.5rem"></div>
 
 <hr style="height: 6px; border: none; background-color: #000;">
 
 <div style="height:1.5rem"></div>
+
+
 
 ## Some helpful references...
 
@@ -169,6 +201,7 @@ Use selected collections as starting points for iterative transformation, then a
   <a href="https://www.dropbox.com/request/u7m4z8tt3a9sm4siibua"><strong>[link]</strong></a>
 
 </div>
+
 
 
 
