@@ -6,7 +6,7 @@
 
 <div style="padding:1rem 1.25rem; background-color:#fff4cc; border-left:5px solid #000;">
   <strong>Individual assignment:</strong> 20% of the course grade<br>
-  <strong>Deadline:</strong> 18 November 2026<br>
+  <strong>Deadline:</strong> 11 November 2026<br>
   <strong>Submission:</strong> One portrait graphic, AI dialogue and process record, generated images, and supporting text submitted through the Google Form.
 </div>
 
@@ -307,7 +307,7 @@ Please replace `UID` and `NAME` in the filenames with your student number and na
 
 <!-- Replace REPLACE_WITH_A1_SUBMISSION_URL with the actual A.1 Google Form URL before publishing. -->
 <div style="padding:1rem 1.25rem; background-color:#fff0f0; border-left:5px solid #a00000;">
-  📤 <strong>Final Submission — 18 November 2026</strong><br><br>
+  📤 <strong>Final Submission — 11 November 2026</strong><br><br>
   Complete the <a href=https://forms.gle/S8hvfzWXBijQs1r37><strong>[Google Form]</strong></a>:
   <ul>
     <li><strong>Upload:</strong> Your final graphic, AI dialogue and process record, and ZIP of generated images.</li>
