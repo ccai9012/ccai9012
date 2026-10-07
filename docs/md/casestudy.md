@@ -237,6 +237,7 @@ Please replace `UID` and `NAME` in the filenames with your student number and na
   <ul>
     <li><strong>Title:</strong> A clear title for your graphic.</li>
     <li><strong>Caption:</strong> Up to <strong>100 words</strong> identifying the case, explaining the central idea, and stating the main takeaway.</li>
+    <li><strong>Sources:</strong> At least three credible sources </li>
     <li><strong>Software:</strong> The AI models or platforms and editing tools used, with a brief note on what you used each for.</li>
   </ul>
 </div>
