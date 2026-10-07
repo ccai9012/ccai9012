@@ -4,9 +4,6 @@ python md_to_html.py
 
 python md_to_html.py md/participation.md
 
-
-
-
 python md_to_html.py md/a0_overview.md
 python md_to_html.py md/a0/a0_notes.md
 
@@ -24,6 +21,8 @@ python md_to_html.py md/a0/a0_transform.md
 
 # python md_to_html.py md/pii_resources.md
 # python md_to_html.py md/pii_showflow.md
+
+python md_to_html.py md/casestudy_0.md
 
 python md_to_html.py md/cp_pechakucha.md
 python md_to_html.py md/cp_final.md
