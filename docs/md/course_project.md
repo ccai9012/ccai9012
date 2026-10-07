@@ -51,8 +51,8 @@ The course project consists of the following assessed components:
 
 | Item | Description | Date | Individual (%) | Group (%) |
 |------|-------------|------|----------------|-----------|
-| **Project Team Formation Form** | Early indication of potential project partners to support team formation and initial scoping as a 100-200 word statement.  Submit via [[**Link**]](https://docs.google.com/spreadsheets/d/1TmgiRMdmvWOttiB6A_EatlR2xTBzo156GsJSZwqYf94/edit?gid=20269012#gid=20269012) | 2026.10.03 (EOD) | – | – |
-| [[**Mid-term Pecha Kucha Presentation**]](cp_pechakucha.html) | Time-limited presentation of project framing, proposed AI-assisted approach, and preliminary considerations on data, mechanisms, and responsibility. | 2026.10.21 | – | 15 |
+| **Project Team Formation Form** | Early indication of potential project partners to support team formation and initial scoping as a 100-200 word statement.  Submit via [[**Link**]](https://docs.google.com/spreadsheets/d/1TmgiRMdmvWOttiB6A_EatlR2xTBzo156GsJSZwqYf94/edit?gid=20269012#gid=20269012). | 2026.10.03 (EOD) | – | – |
+| [[**Mid-term Pecha Kucha Presentation**]](cp_pechakucha.html) | Time-limited presentation of project framing, proposed AI-assisted approach, and preliminary considerations on data, mechanisms, and responsibility. Submit via [[**Link**]](https://docs.google.com/forms/d/e/1FAIpQLSfn6P369rJ6ONGR1c7OIEGJOKr1wM_sQ3F0I8_k2EzlYHG7jg/viewform). | 2026.10.21 | – | 15 |
 | **Crit-Style Peer Review (Post-Midterm)** | Structured studio-style peer critique conducted during tutorial slots, focused on problem definition, methodological coherence, assumptions, and responsible AI positioning. Formative and non-graded. | 2026.10.19-23 | – | – |
 | [[**Final Project Submission**]](cp_final.html)  | Submission of all core deliverables. Projects are presented through the screening of the vignette component. | 2026.12.09 | – | 25 |
 | **Crit-Style Peer Review (Post-Final)** | Reflective peer critique of completed projects (via tutorial slots), emphasising evaluative judgement, strengths, limitations, and comparative learning. Formative and non-graded. | 2026.12.07-11 | – | – |

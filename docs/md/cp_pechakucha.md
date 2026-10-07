@@ -176,3 +176,14 @@ The midterm review is intended to help **strengthen the direction of your projec
 | **Communication** | Strong visual storytelling; minimal text; clear pacing; narrative makes feedback needs explicit | Understandable but uneven; some text-heavy slides or unclear transitions | Hard to follow; too dense; visuals do not support the narrative |
 
 <div style="height:1.5rem"></div>
+
+
+---
+
+<div style="height:1.5rem"></div>
+
+<div style="padding:1rem 1.25rem; background-color:#fff0f0; border-left:5px solid #a00000;">
+  📤 <strong>Pecha Kucha Assignment Submission</strong><br>
+  Please submit your Pecha Kucha assignments through the
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSfn6P369rJ6ONGR1c7OIEGJOKr1wM_sQ3F0I8_k2EzlYHG7jg/viewform"><strong>[submission form]</strong></a>.
+</div>
