@@ -275,7 +275,7 @@ Submit **one PDF** documenting how the **same systematic question** performs acr
 
 ### Systematic Question Across Collections
 
-Choose **one of your systematic questions** and test it independently across approximately **5 collections**.
+Document your test on **one of your systematic questions** across your **5 collections**.
 
 For each collection, show:
 
