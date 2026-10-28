@@ -123,7 +123,7 @@ These sections should **clearly relate to one another**, demonstrating how the s
 
 <div style="height:1.5rem"></div>
 
-• **Duration: Approximately 5-8 minutes**  
+• **Duration: Approximately 4 minutes**  
 
 The video should communicate the **core argument of the project** under limited viewing time.
 You must use a vertical viewing format.  
