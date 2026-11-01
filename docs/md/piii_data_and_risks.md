@@ -91,7 +91,7 @@ By the end of this module, you will be able to:
 
 ---
 
-<div style="height:1.5rem"></div>
+<!-- <div style="height:1.5rem"></div>
 
 ## How You'll Be Assessed
 
@@ -106,9 +106,9 @@ You will analyze a pre-trained GenAI/LLM system and show:
 **Full requirements and deliverables are provided in the A1.3 assignment-specific outline [link](piii_casestudy.html).**  
 This should be read alongside the general case study rubric [link](casestudy.html).
 
-<div style="height:1.5rem"></div>
+<div style="height:1.5rem"></div> -->
 
----
+<!-- --- -->
 
 <div style="height:1.5rem"></div>
 
