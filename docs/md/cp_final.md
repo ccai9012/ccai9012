@@ -1,15 +1,25 @@
-# A.2: Course Project : _Final Project Submission_
+# A.2: Course Project — Final Project Submission
+
+Your team will present in class on **Wednesday, 2 December 2026**. Submit the presentation video and the final project package using the separate forms below.
 
 <div style="height:2.0rem"></div>
 
-<span style="background-color:#a00000;color:#fff;">📅 Submit by: 2026.12.09 ⏰ 00:00 (Midnight before class)</span>  
+<div style="padding:1rem 1.25rem; background-color:#fff0f0; border-left:5px solid #a00000;">
 
-<div style="height:1rem"></div>
+  📅 <strong>Submission Deadlines</strong><br><br>
 
-> **📤 Upload your submission here:**  
-> [CCAI9012 Final Project Submission Form](https://forms.gle/Rq3PRdEt1qyMCBSs5)
+  • <strong>Presentation video (approximately 4 minutes)</strong><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;Submit by <strong style="color:#a00000;">00:00 on Wednesday, 2 December 2026</strong> (midnight between 1 and 2 December, before class).<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://forms.gle/LAaxrgXTT6jcqVJTA"><strong>[Final Project Video Submission Form]</strong></a><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;You may use the same form to resubmit a revised video by <strong style="color:#a00000;">00:00 on Wednesday, 9 December 2026</strong> (midnight between 8 and 9 December).<br><br>
 
-**All components must be submitted together. Late submissions may affect evaluation and presentation scheduling.**
+  • <strong>Final submission package</strong><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;Submit by <strong style="color:#a00000;">00:00 on Wednesday, 9 December 2026</strong> (midnight between 8 and 9 December). Upload the abstract, the report as a Word (.docx) file, and any optional supporting evidence.<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://forms.gle/A9w6C8TU2247drqS9"><strong>[Final Project Submission Form]</strong></a>
+
+</div>
+
+Late submissions may affect evaluation and presentation scheduling.
 
 <div style="height:2rem"></div> 
 
@@ -21,10 +31,7 @@
 
 <div style="height:1.5rem"></div> 
 
-Each team will submit **four coordinated artefacts** that together communicate the project as a coherent whole.
-
-This structure follows the case study format, featuring:  
-(1) **Annotation**; (2) **Artefact** (now in the form of an academic paper); (3) **Vignette** (a short video presentation); and (4) **optional evidences**.  
+As in the case study, give a short overview in the **abstract** and use the **video** to present the project. The **report** explains your methods and findings in more detail. Include **supporting evidence** as an appendix if it helps readers understand your results.
 
 
 <div style="height:1.5rem"></div>
@@ -33,40 +40,21 @@ This structure follows the case study format, featuring:
 
 <div style="height:1.5rem"></div>
 
-### 0. Online Gallery Post
-
-As with previous assignments, you are expected to prepare the **core items together**—namely the **paper and video**—as a coherent pair.  
-
-For archival purposes, you will also translate your work into an **online gallery post**, which should communicate the project as a **self-contained narrative** through a sequence of image slides.  
-
-Be strategic in how you construct your material:  
-- develop **core figure components** that can be reused across your paper, video, and gallery post  
-- maintain a **consistent narrative** across formats  
-
-The gallery post can be understood as a **image slide-based version of your paper and video**, presenting the same contents through a digestible visual image sequence.  There is no need to do new work.
- 
-Please prepare your online gallery post using a **template** similar to your case study [**[here]**](https://docs.google.com/presentation/d/12YJjW1pGqLk45Qcgpn_TiMWWSgrZd2Ny/edit?usp=sharing&ouid=110843421025662715021&rtpof=true&sd=true).
-
+### 1. ABSTRACT
 
 <div style="height:1.5rem"></div>
 
-<hr style="height: 3px; border: none; background-color: #000;">
-
-<div style="height:1.5rem"></div>
-
-### 1. Annotation: Title & Caption
-
-<div style="height:1.5rem"></div>
+Introduce the problem and your team’s approach, then explain how the project addresses each of the three course dimensions.
 
 • **300-word overall case description**  
-&nbsp;&nbsp;&nbsp;&nbsp;– Defines context, framing, and significance of the project  
+&nbsp;&nbsp;&nbsp;&nbsp;– Describe the problem, situate it in context, and explain why it matters.  
 
 • **Three focused sections (max 200 words each):**  
 &nbsp;&nbsp;&nbsp;&nbsp;– **Ethics, responsibility, and governance**  
 &nbsp;&nbsp;&nbsp;&nbsp;– **Application mechanics and system pipeline**  
 &nbsp;&nbsp;&nbsp;&nbsp;– **Data construction and associated risks**  
 
-These sections should **clearly relate to one another**, demonstrating how the system operates through the interaction of these dimensions.
+Show how the three dimensions connect in your project. For example, explain how a choice about the data affects the system’s outputs and what users can reasonably do with those outputs.
 
 <div style="height:1.5rem"></div>
 
@@ -74,16 +62,20 @@ These sections should **clearly relate to one another**, demonstrating how the s
 
 <div style="height:1.5rem"></div>
 
-### 2. Artefact: Paper
+### 2. REPORT
 
 <div style="height:1.5rem"></div>
 
-• **Max 1,500 words**  
-• **Max 10 pages (including figures, excluding references)**  
-• Must follow provided template (to be released)  
-• Written in an **academic / scientific format**  
+Write the report as an academic paper. Explain how you developed and tested your approach, and what the results showed. The report will be **exported directly as slides for the course gallery**, so you only need to prepare the report for the gallery.
 
-**Suggested Structure** (Indicative rather than mandatory. Sections may be adapted or combined, provided the reasoning remains explicit and well structured):  
+• **Submission format** — Microsoft Word (`.docx`)  
+• **Max 1,500 words**  
+• **Max 10 A4 pages (including figures, excluding references)**  
+• **Template** — Use the course template once it is released.  
+
+**Suggested report structure**
+
+Adapt or combine the sections below as needed. Make the link between your methods, results, and conclusions clear.  
 
 • **Introduction & Motivation**  
 &nbsp;&nbsp;&nbsp;&nbsp;– Define the problem and why it matters  
@@ -94,18 +86,15 @@ These sections should **clearly relate to one another**, demonstrating how the s
 &nbsp;&nbsp;&nbsp;&nbsp;– Clarify the role of AI  
 
 • **Methods & Implementation**  
-&nbsp;&nbsp;&nbsp;&nbsp;– Data sources / generation / preprocessing  
-&nbsp;&nbsp;&nbsp;&nbsp;– Models, tools, and technical decisions  
+&nbsp;&nbsp;&nbsp;&nbsp;– Explain where your data came from, how you generated any new data, and how you prepared it for use.  
+&nbsp;&nbsp;&nbsp;&nbsp;– Describe the models and tools you used, and explain the technical decisions that shaped your approach.  
 
 • **Results & Outputs**  
-&nbsp;&nbsp;&nbsp;&nbsp;– Demonstrate system behaviour through examples or visuals  
-&nbsp;&nbsp;&nbsp;&nbsp;– Avoid overstating results  
+&nbsp;&nbsp;&nbsp;&nbsp;– Use examples or visuals to show how the system behaved in your tests.
+&nbsp;&nbsp;&nbsp;&nbsp;– Explain what those results support and where the evidence is limited.  
 
 • **Analysis & Reflection**  
-&nbsp;&nbsp;&nbsp;&nbsp;– Critically examine interaction between:  
-&nbsp;&nbsp;&nbsp;&nbsp;◦ mechanisms  
-&nbsp;&nbsp;&nbsp;&nbsp;◦ datasets  
-&nbsp;&nbsp;&nbsp;&nbsp;◦ responsibility  
+&nbsp;&nbsp;&nbsp;&nbsp;– Explain how your choices about the system and its data affect how people can use it responsibly.  
 
 • **Limitations & Future Directions**  
 &nbsp;&nbsp;&nbsp;&nbsp;– Identify constraints and possible improvements  
@@ -119,24 +108,20 @@ These sections should **clearly relate to one another**, demonstrating how the s
 
 <div style="height:1.5rem"></div>
 
-### 3. Vignette: Short-Form Video
+### 3. VIDEO
 
 <div style="height:1.5rem"></div>
 
-• **Duration: Approximately 4 minutes**  
+Use the video to introduce your project to someone seeing it for the first time.
 
-The video should communicate the **core argument of the project** under limited viewing time.
-You must use a vertical viewing format.  
+Submit the video separately by <strong style="color:#a00000;">00:00 on Wednesday, 2 December 2026</strong> (midnight between 1 and 2 December, before class) using the <a href="https://forms.gle/LAaxrgXTT6jcqVJTA"><strong>[Final Project Video Submission Form]</strong></a>.
 
-• Present:  
-&nbsp;&nbsp;&nbsp;&nbsp;– the central idea  
-&nbsp;&nbsp;&nbsp;&nbsp;– the system or workflow  
-&nbsp;&nbsp;&nbsp;&nbsp;– key findings or insights  
+You may use the same form to resubmit a revised video by <strong style="color:#a00000;">00:00 on Wednesday, 9 December 2026</strong> (midnight between 8 and 9 December).
 
-• The video should **not reproduce the full paper**, but instead:  
-&nbsp;&nbsp;&nbsp;&nbsp;– highlight key contributions  
-&nbsp;&nbsp;&nbsp;&nbsp;– communicate clearly and concisely  
-&nbsp;&nbsp;&nbsp;&nbsp;– focus on coherence and narrative  
+• **Duration** — Approximately 4 minutes  
+• **Format** — Vertical (portrait) video
+
+Start with the central idea, show how the system or workflow works, and close with the findings or insights you want the audience to take away. Use visuals to help viewers follow the project’s main contribution.
 
 
 <div style="height:1.5rem"></div>
@@ -145,12 +130,11 @@ You must use a vertical viewing format.
 
 <div style="height:1.5rem"></div>
 
-### 4. Evidences (Optional)
+### 4. SUPPORTING EVIDENCE (OPTIONAL)
 
 <div style="height:1.5rem"></div>
 
-
-You may include **supplementary materials** in an appendix form, such as:
+Use the optional appendix for material that helps readers see how you reached a result or made a decision. Examples include the following.
 
 • Code snippets  
 • Parameter sweeps  
@@ -169,7 +153,7 @@ You may include **supplementary materials** in an appendix form, such as:
 
 <div style="height:1.5rem"></div>
 
-The final submission should communicate a **complete and resolved project**.
+Give a complete account of your project at its current stage. Explain what you built or proposed, what you tested, and what you learned.
 
 • **Problem Framing**
 
@@ -201,17 +185,7 @@ The final submission should communicate a **complete and resolved project**.
 
 <div style="height:1.5rem"></div>
 
-The emphasis is on **clarity, coherence, and critical thinking**.
-
-Your submission should:
-
-- present a **well-structured and complete project**  
-- demonstrate **clear reasoning and justified decisions**  
-- communicate ideas effectively through:
-
-&nbsp;&nbsp;&nbsp;&nbsp;• writing  
-&nbsp;&nbsp;&nbsp;&nbsp;• visuals  
-&nbsp;&nbsp;&nbsp;&nbsp;• narrative  
+Use your writing, visuals, and narration to guide readers and viewers through the same project. Make it easy to follow the decisions your team made, the reasons for those decisions, and what your evidence supports.
 
 <div style="height:1.5rem"></div>
 
@@ -222,6 +196,8 @@ Your submission should:
 ## Grading Criteria
 
 <div style="height:1.5rem"></div>
+
+Use the grading criteria and rubric to review how clearly your submission shows the thinking behind your project.
 
 ### In a nutshell
 
