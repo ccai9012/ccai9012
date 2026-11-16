@@ -71,7 +71,6 @@ Write the report as an academic paper. Explain how you developed and tested your
 • **Submission format** — Microsoft Word (`.docx`)  
 • **Max 1,500 words**  
 • **Max 10 A4 pages (including figures, excluding references)**  
-• **Template** — Use the course template once it is released.  
 
 **Suggested report structure**
 
