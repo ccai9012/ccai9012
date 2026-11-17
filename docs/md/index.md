@@ -37,7 +37,7 @@ Here are some important course links:
 
   <h3 style="font-size:1.05rem; margin:1rem 0 0.35rem;">Grades and participation records</h3>
   <ul style="margin:0; padding-left:1.5rem;">
-    <li><strong>A.0 Applied Exercise:</strong> Grades will be released by <strong>Wednesday morning, 18 November</strong>.</li>
+    <li><strong>A.0 Applied Exercise:</strong> Grades will be released by <strong>Wednesday, 18 November</strong>.</li>
     <li><strong>A.2.1 Midterm Pecha Kucha:</strong> Grades are now available on Moodle.</li>
     <li><strong>A.G Attendance and Participation:</strong> Logs will be posted on Moodle by <strong>Wednesday, 18 November</strong>. Please check your record and email us if anything looks off.</li>
   </ul>
