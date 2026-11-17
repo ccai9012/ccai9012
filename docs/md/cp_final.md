@@ -40,7 +40,7 @@ As in the case study, give a short overview in the **abstract** and use the **vi
 
 <div style="height:1.5rem"></div>
 
-### 1. ABSTRACT
+### i. ABSTRACT
 
 <div style="height:1.5rem"></div>
 
@@ -62,15 +62,15 @@ Show how the three dimensions connect in your project. For example, explain how 
 
 <div style="height:1.5rem"></div>
 
-### 2. REPORT
+### ii. REPORT
 
 <div style="height:1.5rem"></div>
 
 Write the report as an academic paper. Explain how you developed and tested your approach, and what the results showed. The report will be **exported directly as slides for the course gallery**, so you only need to prepare the report for the gallery.
 
 • **Submission format** — Microsoft Word (`.docx`)  
-• **Max 1,500 words**  
-• **Max 10 A4 pages (including figures, excluding references)**  
+• **Suggested Max 1,500 words**  
+• **Suggested Max 10 A4 pages (including figures, excluding references)**  
 
 **Suggested report structure**
 
@@ -107,7 +107,7 @@ Adapt or combine the sections below as needed. Make the link between your method
 
 <div style="height:1.5rem"></div>
 
-### 3. VIDEO
+### iii. VIDEO
 
 <div style="height:1.5rem"></div>
 
@@ -129,7 +129,7 @@ Start with the central idea, show how the system or workflow works, and close wi
 
 <div style="height:1.5rem"></div>
 
-### 4. SUPPORTING EVIDENCE (OPTIONAL)
+### iv. SUPPORTING EVIDENCE (optional)
 
 <div style="height:1.5rem"></div>
 
