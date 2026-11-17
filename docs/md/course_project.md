@@ -12,7 +12,7 @@ The course project is a **team-based, design-oriented assignment** in which stud
 
 Projects may take analytical, tool-based, or design-oriented forms, but all must demonstrate a considered synthesis of **responsibility and ethics**, **mechanisms and model behaviour**, and **datasets and data practices**, reflecting how these dimensions interact in real-world AI applications. The emphasis is on reasoned experimentation, explicit assumptions, and reflective judgement rather than technical novelty or performance optimisation.
 
-The project is completed in teams of **4–6 students**. Tutorials provide structured opportunities for skills development, feedback, and team formation.
+Teams normally have **4–6 students**, with smaller teams also permitted this term. Tutorials provide structured opportunities for skills development, feedback, and team formation.
 
 <div style="height:4.0rem"></div> 
 
@@ -24,14 +24,12 @@ The project is completed in teams of **4–6 students**. Tutorials provide struc
 
 The course project consists of the following assessed components:
 
-- **Mid-term Pecha Kucha Presentation**: A 4-minute time-limited presentation of work in progress, used to articulate the project direction and receive formative feedback.  
+- **A.2.1 Mid-term Pecha Kucha Presentation**: A 4-minute time-limited presentation of work in progress, used to articulate the project direction and receive formative feedback.  
 
-- **Final Project Submission**: Think of your project as developing a set of **artefacts and evidence that form the backbone of your work**. These may include outputs, experiments, comparisons, screenshots, diagrams, workflows, quantitative observations, intermediate results, prototypes, and other documentation of your process and findings. Each should be carefully selected, organised, and **captioned to explain what it shows and why it matters**. These artefacts should correspond directly to your **slides**, and then become the common ingredients from which you construct your **video and paper**. The same evidence should therefore support a coherent project story across all formats. The submission comprises:
+- **A.2.2 Final Project Submission**: Think of your project as developing a set of **artefacts and evidence that form the backbone of your work**. These may include outputs, experiments, comparisons, screenshots, diagrams, workflows, quantitative observations, intermediate results, prototypes, and other documentation of your process and findings. Each should be carefully selected, organised, and **captioned to explain what it shows and why it matters**. Use the same artefacts and evidence to tell a coherent story across your report and video. The submission has three components:
     - **(i) Abstract — Distilling the Story**: Write a concise abstraction of the project's **central question, approach, key result, and principal insight**. Rather than introducing new material, the abstract should distil the most important argument emerging from the work.
-    - **(ii) Report — Artefacts & Evidence**  Write your report in **A4 portrait format**, with each page designed to double as a slide in the course gallery. Use captioned artefacts and evidence alongside concise written analysis to explain why you undertook the project, how you designed and implemented the system, what you found, and what those findings mean. **Suggested Maximum 1,500 words and 10 A4 pages, including figures and excluding references.**
-    - **(iii) Video — Connecting the Story**: Develop a **4 minute video** using the slides and artefacts as its visual foundation. Use **narration, sequencing, animation, and transitions** to connect the evidence and communicate the project's motivation, development, findings, and key insights as a coherent story.
-
-
+    - **(ii) Report — Artefacts & Evidence**: Write your report in **A4 portrait format**, with each page designed to double as a slide in the course gallery. Use captioned artefacts and evidence alongside concise written analysis to explain why you undertook the project, how you designed and implemented the system, what you found, and what those findings mean. **Suggested Maximum 1,500 words and 10 A4 pages, including figures and excluding references.**
+    - **(iii) Video — Connecting the Story**: Develop a **four-minute video** using the project artefacts and evidence as its visual foundation. Use **narration, sequencing, animation, and transitions** to connect the evidence and communicate the project's motivation, development, findings, and key insights as a coherent story.
 
 - **Individual Reflection**: An individually assessed reflective statement documenting contributions and learning.
 
@@ -52,9 +50,10 @@ The course project consists of the following assessed components:
 | Item | Description | Date | Individual (%) | Group (%) |
 |------|-------------|------|----------------|-----------|
 | **Project Team Formation Form** | Early indication of potential project partners to support team formation and initial scoping as a 100-200 word statement.  Submit via [[**Link**]](https://docs.google.com/spreadsheets/d/1TmgiRMdmvWOttiB6A_EatlR2xTBzo156GsJSZwqYf94/edit?gid=20269012#gid=20269012). | 2026.10.03 (EOD) | – | – |
-| [[**Mid-term Pecha Kucha Presentation**]](cp_pechakucha.html) | Time-limited presentation of project framing, proposed AI-assisted approach, and preliminary considerations on data, mechanisms, and responsibility. Submit via [[**Link**]](https://docs.google.com/forms/d/e/1FAIpQLSfn6P369rJ6ONGR1c7OIEGJOKr1wM_sQ3F0I8_k2EzlYHG7jg/viewform). | 2026.10.21 | – | 15 |
+| [[**A.2.1 Mid-term Pecha Kucha Presentation**]](cp_pechakucha.html) | Time-limited presentation of project framing, proposed AI-assisted approach, and preliminary considerations on data, mechanisms, and responsibility. Submit via [[**Link**]](https://docs.google.com/forms/d/e/1FAIpQLSfn6P369rJ6ONGR1c7OIEGJOKr1wM_sQ3F0I8_k2EzlYHG7jg/viewform). | 2026.10.21 | – | 15 |
 | **Crit-Style Peer Review (Post-Midterm)** | Structured studio-style peer critique conducted during tutorial slots, focused on problem definition, methodological coherence, assumptions, and responsible AI positioning. Formative and non-graded. | 2026.10.19-23 | – | – |
-| [[**Final Project Submission**]](cp_final.html)  | Submission of all core deliverables. Projects are presented through the screening of the vignette component. | 2026.12.09 | – | 25 |
+| **A.2.2 Final Project Video and Presentations** | All groups submit their **four-minute video before class on 2 December**, including groups presenting on 9 December. The main screening is on 2 December. Up to five volunteer groups may present on 9 December. See the final project instructions [[**Link**]](cp_final.html). | 2026.12.02 (video due before class) | – | – |
+| [[**A.2.2 Final Project Submission**]](cp_final.html) | All groups submit their **abstract and report**. Groups may also submit a revised video by this date using the original video submission form. | 2026.12.09 | – | 25 (overall for A.2.2) |
 | **Crit-Style Peer Review (Post-Final)** | Reflective peer critique of completed projects (via tutorial slots), emphasising evaluative judgement, strengths, limitations, and comparative learning. Formative and non-graded. | 2026.12.07-11 | – | – |
 | [[**Individual Reflection**]](cp_reflect.html) | Individually assessed reflective statement on contributions, learning process, and key design decisions. | 2026.12.16 | 5 | – |
 | **Peer Assessment** | Advisory peer feedback on group process and individual contributions, used to inform moderation where appropriate. | 2026.12.16| – | – |
@@ -139,8 +138,8 @@ Similarly, to study whether multimodal, image-generation–enabled LLMs exhibit 
 
 1. Design prompts describing roles or scenarios: **text**
 2. Generate corresponding images: **text → image**
-3. Analyse those images for attributes (e.g., perceived gender/race/occupation): **image → text** and/or **image → scalar**
-4. Quantify bias by aggregating these attributes: **vectors (attribute scores across images) → scalars (bias metrics)**
+3. Analyse the images for attributes (e.g., perceived gender and race): **image → text** and/or **image → scalar**
+4. Quantify bias by aggregating these attributes: **vectors (attribute scores across images) → scalars** (bias metrics)
 
 The key is to think in terms of these modular transformations and then compose them into end-to-end pipelines tailored to your research question.
 
@@ -161,6 +160,5 @@ Listed below are example directions (analysing AI, using AI for analysis, develo
     - **Possible Project Response**: Use AI-based text analysis to scan a corpus of student reflections and identify how often issues such as accessibility, disability, and other user characteristics are mentioned.
 
 - **Developing AI‑Powered Tools**
-    - **Problem Statement**: In a first-year visual communication course, tutors must give feedback on many poster designs in short studio sessions. Time pressure and differing critique styles lead to inconsistent, often vague comments, leaving students unsure how to improve or how their work maps to assessment criteria. This makes it difficult for students to understand expectations and track their progress.
+    - **Problem Statement**: In a first-year visual communication module, tutors must give feedback on many poster designs in short studio sessions. Time pressure and differing critique styles lead to inconsistent, often vague comments, leaving students unsure how to improve or how their work maps to assessment criteria. This makes it difficult for students to understand expectations and track their progress.
     - **Possible Project Response**: Prototype an AI-assisted feedback tool that helps tutors quickly generate structured, criteria-based comments on poster designs.
-
