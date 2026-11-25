@@ -1,6 +1,6 @@
 # A.2: Course Project — Final Project Submission
 
-Check the [course project schedule](course_project.html) for your team’s presentation date, then enter your group number beside your preferred half-hour block in the [presentation signup](https://docs.google.com/spreadsheets/d/15uIuEneDNz91Dyf7peFP2uDKVGN_631CMuwk7p9l30c/edit?gid=2002#gid=2002). Your choice will help us plan the running order. Presentation times are approximate.
+Check the **course project schedule** [**[link]**](course_project.html) for your team’s presentation date, then enter your group number beside your preferred half-hour block in the **presentation signup** [**[link]**](https://docs.google.com/spreadsheets/d/15uIuEneDNz91Dyf7peFP2uDKVGN_631CMuwk7p9l30c/edit?gid=2002#gid=2002). Your choice will help us plan the running order. Presentation times are approximate.
 
 | Presentation date | Time blocks (Hong Kong time) |
 | --- | --- |
