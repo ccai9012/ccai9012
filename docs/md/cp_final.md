@@ -1,6 +1,13 @@
 # A.2: Course Project — Final Project Submission
 
-Your team will present in class on **Wednesday, 2 December 2026**. Submit the presentation video and the final project package using the separate forms below.
+Check the [course project schedule](course_project.html) for your team’s presentation date, then enter your group number beside your preferred half-hour block in the [presentation signup](https://docs.google.com/spreadsheets/d/15uIuEneDNz91Dyf7peFP2uDKVGN_631CMuwk7p9l30c/edit?gid=2002#gid=2002). Your choice will help us plan the running order. Presentation times are approximate.
+
+| Presentation date | Time blocks (Hong Kong time) |
+| --- | --- |
+| Wednesday, 2 December 2026 | 5:00–5:30, 5:30–6:00, 6:00–6:30 or 6:30–7:00 pm |
+| Wednesday, 9 December 2026 | 5:00–5:30 or 5:30–6:00 pm |
+
+Submit the presentation video and the final project package using the separate forms below.
 
 <div style="height:2.0rem"></div>
 
