@@ -90,7 +90,7 @@ The course project consists of the following assessed components:
     <tr style="background-color:#fff0f0;">
       <td><a href="cp_final.html"><strong>[A.2.2. Final Submission: Entire Package]</strong></a></td>
       <td><strong>All groups</strong> submit their <strong>captions and report</strong>. Groups may also resubmit their presentation and video by this deadline using the original submission form.<br><br>Instructions: <a href="cp_final.html"><strong>[Link]</strong></a>; Resubmit Presentation/Video: <a href="https://forms.gle/LAaxrgXTT6jcqVJTA"><strong>[Link]</strong></a>; Submit Captions+Report: <a href="https://forms.gle/A9w6C8TU2247drqS9"><strong>[Link]</strong></a>.</td>
-      <td><strong style="color:#a00000;">2026.12.09 at 00:00</strong> (midnight between 8 and 9 December)</td>
+      <td><strong style="color:#a00000;"><del>2026.12.09</del> 2026.12.12 at 00:00</strong> (midnight between 11 and 12 December)</td>
       <td>–</td>
       <td>25 (overall for A.2.2)</td>
     </tr>

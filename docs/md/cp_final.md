@@ -16,14 +16,14 @@ Your team will present in class on **Wednesday, 2 December 2026**. Submit the pr
       (midnight between 1 and 2 December).<br>
       <a href="https://forms.gle/LAaxrgXTT6jcqVJTA"><strong>[Final Project Video Submission Form]</strong></a><br>
       If you revise your video, you may resubmit it using the same form by
-      <strong style="color:#a00000;">00:00 on Wednesday, 9 December 2026</strong>
-      (midnight between 8 and 9 December).
+      <strong style="color:#a00000;">00:00 on <del>Wednesday, 9</del> Saturday, 12 December 2026</strong>
+      (midnight between 11 and 12 December).
     </li>
     <li>
       <strong>Abstract and report</strong><br>
       Submit your abstract, your report as a Word (<code>.docx</code>) file, and any optional supporting evidence by
-      <strong style="color:#a00000;">00:00 on Wednesday, 9 December 2026</strong>
-      (midnight between 8 and 9 December).<br>
+      <strong style="color:#a00000;">00:00 on <del>Wednesday, 9</del> Saturday, 12 December 2026</strong>
+      (midnight between 11 and 12 December).<br>
       <a href="https://forms.gle/A9w6C8TU2247drqS9"><strong>[Final Project Submission Form]</strong></a>
     </li>
   </ul>
@@ -126,7 +126,7 @@ Use the video to introduce your project to someone seeing it for the first time.
 
 Submit the video separately by <strong style="color:#a00000;">00:00 on Wednesday, 2 December 2026</strong> (midnight between 1 and 2 December, before class) using the <a href="https://forms.gle/LAaxrgXTT6jcqVJTA"><strong>[Final Project Video Submission Form]</strong></a>.
 
-You may use the same form to resubmit a revised video by <strong style="color:#a00000;">00:00 on Wednesday, 9 December 2026</strong> (midnight between 8 and 9 December).
+You may use the same form to resubmit a revised video by <strong style="color:#a00000;">00:00 on <del>Wednesday, 9</del> Saturday, 12 December 2026</strong> (midnight between 11 and 12 December).
 
 • **Duration** — Approximately 4 minutes  
 • **Format** — Vertical (portrait) video
