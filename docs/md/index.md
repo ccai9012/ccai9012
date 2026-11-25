@@ -33,7 +33,7 @@ Here are some important course links:
 
 <div style="padding:1rem 1.25rem; background-color:#fff3cd; border-left:5px solid #a00000;">
 
-  <p style="margin:0 0 1rem;"><strong>⚠️ Coursework Reminder — 2026.11.17</strong></p>
+  <p style="margin:0 0 1rem;"><strong>⚠️ Coursework Reminder — 2026.11.25</strong></p>
 
   <h3 style="font-size:1.05rem; margin:1rem 0 0.35rem;">Grades and participation records</h3>
   <ul style="margin:0; padding-left:1.5rem;">
@@ -60,7 +60,6 @@ Here are some important course links:
         <li><strong>Abstract and report — <del>Wednesday, 9</del> Saturday, 12 December at 00:00:</strong> Submit both using the final submission form <a href="https://forms.gle/Tgh5fTQhJbgJnAV3A"><strong>[link]</strong></a>. You can also upload a revised video by this date using the original video submission form <a href="https://forms.gle/ZCdqbbpNJPhVvwqr6"><strong>[link]</strong></a>.</li>
       </ul>
     </li>
-    <li><strong>Final project consultations:</strong> I’ll be in <strong>KB413 (within KB401)</strong> on <strong>Wednesday, 18 November</strong>, from <strong>4:00 to 4:45 pm</strong> and <strong>7:30 to 8:30 pm</strong>. I’ll open additional slots on <strong>Thursday, 19 November</strong>. Please sign up under <strong>Final Project Consultation</strong> in <strong>Special Tutorials</strong> <a href="https://docs.google.com/spreadsheets/d/1-IZp2ZOT_mBhITrlvXxjpd7Fv1luljklvUd6RRtSrgg/edit?gid=476294162#gid=476294162"><strong>[link]</strong></a>.</li>
   </ul>
 
   <h3 style="font-size:1.05rem; margin:1.25rem 0 0.35rem;">Participation and December sessions</h3>
