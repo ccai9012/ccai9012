@@ -1,0 +1,167 @@
+# Gallery
+
+[A.0. Applied Exercise](#a0-applied-exercise) · [A.1. Case Study](#a1-case-study) · [A.2. Course Project](#a2-course-project)
+
+<hr class="gallery-divider">
+
+<h2 id="a0-applied-exercise">A.0. Applied Exercise</h2>
+
+Under construction. Please come back here. 🙂
+
+<hr class="gallery-divider">
+
+<h2 id="a1-case-study">A.1. Case Study</h2>
+
+<!-- Edit the grid settings below. Each line inside the grid is one poster. -->
+<div class="a1-posters" style="--columns: 4; --gap: 16px; --poster-ratio: 4 / 5;">
+<a href="https://drive.google.com/file/d/16l6h4hXLGxZQG6EDUY2GWGkVfxQClY_t/view"><img loading="lazy" decoding="async" src="figs/a1_posters/16l6h4hXLGxZQG6EDUY2GWGkVfxQClY_t.webp" alt="View case study poster 1"></a>
+<a href="https://drive.google.com/file/d/10d3WLPoNAZYANgfhpqODqHAWaNJkhkPQ/view"><img loading="lazy" decoding="async" src="figs/a1_posters/10d3WLPoNAZYANgfhpqODqHAWaNJkhkPQ.webp" alt="View case study poster 2"></a>
+<a href="https://drive.google.com/file/d/1woyYgS2kJi9wljCkTnwIFMtMdhw2zxyC/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1woyYgS2kJi9wljCkTnwIFMtMdhw2zxyC.webp" alt="View case study poster 3"></a>
+<a href="https://drive.google.com/file/d/1U40a2kG8gzvYBN1BHgY-NaX52EVdz-Oy/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1U40a2kG8gzvYBN1BHgY-NaX52EVdz-Oy.webp" alt="View case study poster 4"></a>
+<a href="https://drive.google.com/file/d/1LqHw4EScp5YITeMxKsmeirUjJNtRH6fy/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1LqHw4EScp5YITeMxKsmeirUjJNtRH6fy.webp" alt="View case study poster 5"></a>
+<a href="https://drive.google.com/file/d/1KrjnxUY6C1FwMq58jyO3r85cuOK4hUtl/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1KrjnxUY6C1FwMq58jyO3r85cuOK4hUtl.webp" alt="View case study poster 6"></a>
+<a href="https://drive.google.com/file/d/1FJFEd-i0SEFwkLHMme5EKtErb4r0Ceej/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1FJFEd-i0SEFwkLHMme5EKtErb4r0Ceej.webp" alt="View case study poster 7"></a>
+<a href="https://drive.google.com/file/d/1iL2DKmcx8POJlObBWNdfylS3w6AVQ2Zc/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1iL2DKmcx8POJlObBWNdfylS3w6AVQ2Zc.webp" alt="View case study poster 8"></a>
+<a href="https://drive.google.com/file/d/1BLFXo-9Re7kcHOK9IGT2Lc2v_X_l1VMA/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1BLFXo-9Re7kcHOK9IGT2Lc2v_X_l1VMA.webp" alt="View case study poster 9"></a>
+<a href="https://drive.google.com/file/d/1oFFHLKDM78804h7tbGWKKCrgEDjnkwSV/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1oFFHLKDM78804h7tbGWKKCrgEDjnkwSV.webp" alt="View case study poster 10"></a>
+<a href="https://drive.google.com/file/d/1vBnftUEhFqiZgTrGYCvmIl6I6-kdKmIx/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1vBnftUEhFqiZgTrGYCvmIl6I6-kdKmIx.webp" alt="View case study poster 11"></a>
+<a href="https://drive.google.com/file/d/1bbhsWQk3z10gVeDAaLdF7XDB27KnKhGl/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1bbhsWQk3z10gVeDAaLdF7XDB27KnKhGl.webp" alt="View case study poster 12"></a>
+<a href="https://drive.google.com/file/d/1yNiTHXpxVhWN2TJXIe6ghcNICBtol0_L/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1yNiTHXpxVhWN2TJXIe6ghcNICBtol0_L.webp" alt="View case study poster 13"></a>
+<a href="https://drive.google.com/file/d/1gBgCceTfilhVNMuVD3br-2mA-hbnzGz6/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1gBgCceTfilhVNMuVD3br-2mA-hbnzGz6.webp" alt="View case study poster 14"></a>
+<a href="https://drive.google.com/file/d/1U09IOwc8gJxjGJE9loNBwoE0IrKSF6Tj/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1U09IOwc8gJxjGJE9loNBwoE0IrKSF6Tj.webp" alt="View case study poster 15"></a>
+<a href="https://drive.google.com/file/d/1zrxvBbP2zGOClBEYVz5qalj5xAgH6g7d/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1zrxvBbP2zGOClBEYVz5qalj5xAgH6g7d.webp" alt="View case study poster 16"></a>
+<a href="https://drive.google.com/file/d/1YNIS_Sm5BKch8hER_D5EQiBTQ8fQl-6a/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1YNIS_Sm5BKch8hER_D5EQiBTQ8fQl-6a.webp" alt="View case study poster 17"></a>
+<a href="https://drive.google.com/file/d/1mlHBVtrRnM5fQZFDKwBxTNvrWHHbJBlP/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1mlHBVtrRnM5fQZFDKwBxTNvrWHHbJBlP.webp" alt="View case study poster 18"></a>
+<a href="https://drive.google.com/file/d/1lgPAkuu8I6xmuPhodMT9C9h9mgoStMke/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1lgPAkuu8I6xmuPhodMT9C9h9mgoStMke.webp" alt="View case study poster 19"></a>
+<a href="https://drive.google.com/file/d/1A-g0Ic2Q2DrQuBGy4z-Klwf2QR9ZTPbg/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1A-g0Ic2Q2DrQuBGy4z-Klwf2QR9ZTPbg.webp" alt="View case study poster 20"></a>
+<a href="https://drive.google.com/file/d/16wyXzFbuG56jYIFLGrKxzRWiBkyAIaH0/view"><img loading="lazy" decoding="async" src="figs/a1_posters/16wyXzFbuG56jYIFLGrKxzRWiBkyAIaH0.webp" alt="View case study poster 21"></a>
+<a href="https://drive.google.com/file/d/1EHTqriIU-FjrIlHFv7uMDvATL4jHszVg/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1EHTqriIU-FjrIlHFv7uMDvATL4jHszVg.webp" alt="View case study poster 22"></a>
+<a href="https://drive.google.com/file/d/1kYkn8ZtWZ2uo5Jji3K3KTV5qRO2oTkNS/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1kYkn8ZtWZ2uo5Jji3K3KTV5qRO2oTkNS.webp" alt="View case study poster 23"></a>
+<a href="https://drive.google.com/file/d/1t1FInEVmTXVEM6VNPnad2WEBXRwQz4t1/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1t1FInEVmTXVEM6VNPnad2WEBXRwQz4t1.webp" alt="View case study poster 24"></a>
+<a href="https://drive.google.com/file/d/175LfnBbbimaIq1A9zlaMwNBn8UX5HV5K/view"><img loading="lazy" decoding="async" src="figs/a1_posters/175LfnBbbimaIq1A9zlaMwNBn8UX5HV5K.webp" alt="View case study poster 25"></a>
+<a href="https://drive.google.com/file/d/17nht17G1Z7O9Wc8I6-ZyyOFsf60kJFiQ/view"><img loading="lazy" decoding="async" src="figs/a1_posters/17nht17G1Z7O9Wc8I6-ZyyOFsf60kJFiQ.webp" alt="View case study poster 26"></a>
+<a href="https://drive.google.com/file/d/1DSO4bLn-KscAMIVdkaxQ5FoOu0md7FED/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1DSO4bLn-KscAMIVdkaxQ5FoOu0md7FED.webp" alt="View case study poster 27"></a>
+<a href="https://drive.google.com/file/d/1L0Dk6FGKZCmez6nctfsmhgA7n5tdnZvn/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1L0Dk6FGKZCmez6nctfsmhgA7n5tdnZvn.webp" alt="View case study poster 28"></a>
+<a href="https://drive.google.com/file/d/1nFyHzS5PKJ2W8v0_ihpeWh-Vj4iq0gxk/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1nFyHzS5PKJ2W8v0_ihpeWh-Vj4iq0gxk.webp" alt="View case study poster 29"></a>
+<a href="https://drive.google.com/file/d/1x-D61BTFrlOLA2gMSdFbOW9HQcPAMtFi/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1x-D61BTFrlOLA2gMSdFbOW9HQcPAMtFi.webp" alt="View case study poster 30"></a>
+<a href="https://drive.google.com/file/d/1bEz6ntaXBe74iyTZSUc5dWhYbcMe1HXl/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1bEz6ntaXBe74iyTZSUc5dWhYbcMe1HXl.webp" alt="View case study poster 31"></a>
+<a href="https://drive.google.com/file/d/15KjhaoyP7OpLcRdREdw2oYAweLfPFTxe/view"><img loading="lazy" decoding="async" src="figs/a1_posters/15KjhaoyP7OpLcRdREdw2oYAweLfPFTxe.webp" alt="View case study poster 32"></a>
+<a href="https://drive.google.com/file/d/1oJh7R2RgUh7MmcibPPR16O7NYJvU3AUD/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1oJh7R2RgUh7MmcibPPR16O7NYJvU3AUD.webp" alt="View case study poster 33"></a>
+<a href="https://drive.google.com/file/d/1idwacr4_LDk6rxHUJzuhlpFO5wnBMQG3/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1idwacr4_LDk6rxHUJzuhlpFO5wnBMQG3.webp" alt="View case study poster 34"></a>
+<a href="https://drive.google.com/file/d/16CtJuV46IVKWHmH5d8zjUUBjPV73evhv/view"><img loading="lazy" decoding="async" src="figs/a1_posters/16CtJuV46IVKWHmH5d8zjUUBjPV73evhv.webp" alt="View case study poster 35"></a>
+<a href="https://drive.google.com/file/d/1qj_68YAsdAxrFXsIBodZsRNXiuu_GExo/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1qj_68YAsdAxrFXsIBodZsRNXiuu_GExo.webp" alt="View case study poster 36"></a>
+<a href="https://drive.google.com/file/d/1DNb7LJmHV7y5JIpQ4cjAGLvb2URcLLOT/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1DNb7LJmHV7y5JIpQ4cjAGLvb2URcLLOT.webp" alt="View case study poster 37"></a>
+<a href="https://drive.google.com/file/d/1LRyOVeX07DcZ9poBI2kjRuzVgfMcRG-G/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1LRyOVeX07DcZ9poBI2kjRuzVgfMcRG-G.webp" alt="View case study poster 38"></a>
+<a href="https://drive.google.com/file/d/1RsXpW85dfFjxz_PJAOCOIbeXMlHL19tz/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1RsXpW85dfFjxz_PJAOCOIbeXMlHL19tz.webp" alt="View case study poster 39"></a>
+<a href="https://drive.google.com/file/d/1bAr74w6Di6tbQ7eMT2mEbLl7ytRfoYdd/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1bAr74w6Di6tbQ7eMT2mEbLl7ytRfoYdd.webp" alt="View case study poster 40"></a>
+<a href="https://drive.google.com/file/d/1S724JZkVtAawEeDVwj4iJvs4T0Kzckg1/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1S724JZkVtAawEeDVwj4iJvs4T0Kzckg1.webp" alt="View case study poster 41"></a>
+<a href="https://drive.google.com/file/d/1LERPxiZafcgtQvFjmj9Unp59ijERg99_/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1LERPxiZafcgtQvFjmj9Unp59ijERg99_.webp" alt="View case study poster 42"></a>
+<a href="https://drive.google.com/file/d/1TJXUPLgPLntM1k-AdUd4lFVS5edb-vEG/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1TJXUPLgPLntM1k-AdUd4lFVS5edb-vEG.webp" alt="View case study poster 43"></a>
+<a href="https://drive.google.com/file/d/1cZY7J4myEx4wNGLGv44JiMMkWBF0cDSH/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1cZY7J4myEx4wNGLGv44JiMMkWBF0cDSH.webp" alt="View case study poster 44"></a>
+<a href="https://drive.google.com/file/d/1daMrMMQhOYeGe7QxROoTJGZ7I8RACaVV/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1daMrMMQhOYeGe7QxROoTJGZ7I8RACaVV.webp" alt="View case study poster 45"></a>
+<a href="https://drive.google.com/file/d/1Nh-cBdybc8XjpcNVjKMWbWP2qEpZCzR_/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1Nh-cBdybc8XjpcNVjKMWbWP2qEpZCzR_.webp" alt="View case study poster 46"></a>
+<a href="https://drive.google.com/file/d/1d8Wf5hZ1bhPgrXNXV-BsLnTBF7gjXgsz/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1d8Wf5hZ1bhPgrXNXV-BsLnTBF7gjXgsz.webp" alt="View case study poster 47"></a>
+<a href="https://drive.google.com/file/d/1J9kobwUBlNEIAS14_rOk5fmQWxvvRGwE/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1J9kobwUBlNEIAS14_rOk5fmQWxvvRGwE.webp" alt="View case study poster 48"></a>
+<a href="https://drive.google.com/file/d/1rDg59jLFnzmgFLJ8z0-iNLNgJaTvxyVi/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1rDg59jLFnzmgFLJ8z0-iNLNgJaTvxyVi.webp" alt="View case study poster 49"></a>
+<a href="https://drive.google.com/file/d/1HrQhNk2LwZ_IaCAnGFQiy7_nwdoehj4y/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1HrQhNk2LwZ_IaCAnGFQiy7_nwdoehj4y.webp" alt="View case study poster 50"></a>
+<a href="https://drive.google.com/file/d/104v0skFRn0N-5M57aou83SiIpHNPe2hy/view"><img loading="lazy" decoding="async" src="figs/a1_posters/104v0skFRn0N-5M57aou83SiIpHNPe2hy.webp" alt="View case study poster 51"></a>
+<a href="https://drive.google.com/file/d/1jEs_nFzbXLh_v9YNtuFzQBcw7nzPfDQ9/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1jEs_nFzbXLh_v9YNtuFzQBcw7nzPfDQ9.webp" alt="View case study poster 52"></a>
+<a href="https://drive.google.com/file/d/1G0S6n2C8FLeXqPaxBvL5DLbKTMyvmgnF/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1G0S6n2C8FLeXqPaxBvL5DLbKTMyvmgnF.webp" alt="View case study poster 53"></a>
+<a href="https://drive.google.com/file/d/1Tu6n2erS2tWFbrFcvW-SgPM-dLzU3uDa/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1Tu6n2erS2tWFbrFcvW-SgPM-dLzU3uDa.webp" alt="View case study poster 54"></a>
+<a href="https://drive.google.com/file/d/16RNN_t5J50O2a4VmUtnWuArfRrfiOoHw/view"><img loading="lazy" decoding="async" src="figs/a1_posters/16RNN_t5J50O2a4VmUtnWuArfRrfiOoHw.webp" alt="View case study poster 55"></a>
+<a href="https://drive.google.com/file/d/1nbNKKH_-LgnFVOc0lcNedc6EeKFIZgMg/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1nbNKKH_-LgnFVOc0lcNedc6EeKFIZgMg.webp" alt="View case study poster 56"></a>
+<a href="https://drive.google.com/file/d/1Hnj8pzuZp_sRorvUQvGyzHnX5nsUOOen/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1Hnj8pzuZp_sRorvUQvGyzHnX5nsUOOen.webp" alt="View case study poster 57"></a>
+<a href="https://drive.google.com/file/d/1PU_h9M6mWdpEuWntvM4JKb10pDNmYmjO/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1PU_h9M6mWdpEuWntvM4JKb10pDNmYmjO.webp" alt="View case study poster 58"></a>
+<a href="https://drive.google.com/file/d/1dxh7-3VObfVNKTc54OfLA4gHwlCtm7IZ/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1dxh7-3VObfVNKTc54OfLA4gHwlCtm7IZ.webp" alt="View case study poster 59"></a>
+<a href="https://drive.google.com/file/d/1TPG3tD68oy1GkBjgvlhpbC_qg-TxUEJM/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1TPG3tD68oy1GkBjgvlhpbC_qg-TxUEJM.webp" alt="View case study poster 60"></a>
+<a href="https://drive.google.com/file/d/1EzuJniSvfGZ7Fc4cVBcqRwvtM82JFVNZ/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1EzuJniSvfGZ7Fc4cVBcqRwvtM82JFVNZ.webp" alt="View case study poster 61"></a>
+<a href="https://drive.google.com/file/d/1XKwEg374Zvmj4QHlzx2QrmNORxGbJcNY/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1XKwEg374Zvmj4QHlzx2QrmNORxGbJcNY.webp" alt="View case study poster 62"></a>
+<a href="https://drive.google.com/file/d/1AL0iARuNDdAIwFRFqdrHeB4EfMQcgqb-/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1AL0iARuNDdAIwFRFqdrHeB4EfMQcgqb-.webp" alt="View case study poster 63"></a>
+<a href="https://drive.google.com/file/d/1XGQzNdQC7I2JDGKvMt-Bx4BOfpCE8e_O/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1XGQzNdQC7I2JDGKvMt-Bx4BOfpCE8e_O.webp" alt="View case study poster 64"></a>
+<a href="https://drive.google.com/file/d/1aQPd9cYX1sj8pCCaoDbB2s3w4QJ0WEOe/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1aQPd9cYX1sj8pCCaoDbB2s3w4QJ0WEOe.webp" alt="View case study poster 65"></a>
+<a href="https://drive.google.com/file/d/1avKmngDCsveNBphAY0ArFoJkCCIEoPdz/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1avKmngDCsveNBphAY0ArFoJkCCIEoPdz.webp" alt="View case study poster 66"></a>
+<a href="https://drive.google.com/file/d/1zTAtnePt9mslwEaSU3jvGaXyOJmgsrbg/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1zTAtnePt9mslwEaSU3jvGaXyOJmgsrbg.webp" alt="View case study poster 67"></a>
+<a href="https://drive.google.com/file/d/1pnDq47P6_DFN2uU2ONvWnx31eJ27l-FF/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1pnDq47P6_DFN2uU2ONvWnx31eJ27l-FF.webp" alt="View case study poster 68"></a>
+<a href="https://drive.google.com/file/d/1K-xAVxf1Ji0PMGLX-leqKm4rEAWwIfVY/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1K-xAVxf1Ji0PMGLX-leqKm4rEAWwIfVY.webp" alt="View case study poster 69"></a>
+<a href="https://drive.google.com/file/d/1MjAD5yhnk_zwAE3gjoB2N_A99awSZZi8/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1MjAD5yhnk_zwAE3gjoB2N_A99awSZZi8.webp" alt="View case study poster 70"></a>
+<a href="https://drive.google.com/file/d/1tvyqLY878zpIsCy_wD2xHzYyjO39BqHu/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1tvyqLY878zpIsCy_wD2xHzYyjO39BqHu.webp" alt="View case study poster 71"></a>
+<a href="https://drive.google.com/file/d/1Plcn467Txva1ePU2raCGRkoyCeCc_pp-/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1Plcn467Txva1ePU2raCGRkoyCeCc_pp-.webp" alt="View case study poster 72"></a>
+<a href="https://drive.google.com/file/d/1TN2z-uQQzDj4jsbpv4ww278wzqhh0pLa/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1TN2z-uQQzDj4jsbpv4ww278wzqhh0pLa.webp" alt="View case study poster 73"></a>
+<a href="https://drive.google.com/file/d/1zV_RLYAwcWFgk6T9Y3GSZAA8RT5VI79f/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1zV_RLYAwcWFgk6T9Y3GSZAA8RT5VI79f.webp" alt="View case study poster 74"></a>
+<a href="https://drive.google.com/file/d/18CF3KtmNnVAeT4XMeT0ns1xqgJeeV6el/view"><img loading="lazy" decoding="async" src="figs/a1_posters/18CF3KtmNnVAeT4XMeT0ns1xqgJeeV6el.webp" alt="View case study poster 75"></a>
+<a href="https://drive.google.com/file/d/18VAvXhSsvQLjaE268YGe4xhzeeqa7hXF/view"><img loading="lazy" decoding="async" src="figs/a1_posters/18VAvXhSsvQLjaE268YGe4xhzeeqa7hXF.webp" alt="View case study poster 76"></a>
+<a href="https://drive.google.com/file/d/10Gm28_eOwbZ1BEzHzyyVprkyualJos_d/view"><img loading="lazy" decoding="async" src="figs/a1_posters/10Gm28_eOwbZ1BEzHzyyVprkyualJos_d.webp" alt="View case study poster 77"></a>
+<a href="https://drive.google.com/file/d/14QDQIOg2Tc5-u7PnNU3uctqTYMhQrtf3/view"><img loading="lazy" decoding="async" src="figs/a1_posters/14QDQIOg2Tc5-u7PnNU3uctqTYMhQrtf3.webp" alt="View case study poster 78"></a>
+<a href="https://drive.google.com/file/d/1A9UZvX4MyTsRFAZEHqOCZjCpHuheU6_Y/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1A9UZvX4MyTsRFAZEHqOCZjCpHuheU6_Y.webp" alt="View case study poster 79"></a>
+<a href="https://drive.google.com/file/d/1Os-Pz8hYxnCBuNl1Xp8TtoW31vVuOItG/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1Os-Pz8hYxnCBuNl1Xp8TtoW31vVuOItG.webp" alt="View case study poster 80"></a>
+<a href="https://drive.google.com/file/d/1rv9A94duIkcPy4aXp2X4_mGeW2IQGeMz/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1rv9A94duIkcPy4aXp2X4_mGeW2IQGeMz.webp" alt="View case study poster 81"></a>
+<a href="https://drive.google.com/file/d/10tNJs5NZOpB3MGZ9hHBXE-VNtj9zhdaO/view"><img loading="lazy" decoding="async" src="figs/a1_posters/10tNJs5NZOpB3MGZ9hHBXE-VNtj9zhdaO.webp" alt="View case study poster 82"></a>
+<a href="https://drive.google.com/file/d/1EXiyeV0_3PkBk_6aKQ35htCxZ4MN5KMr/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1EXiyeV0_3PkBk_6aKQ35htCxZ4MN5KMr.webp" alt="View case study poster 83"></a>
+<a href="https://drive.google.com/file/d/1odMk4FW_oUOMp64jrJz7xSNxFddA5ugc/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1odMk4FW_oUOMp64jrJz7xSNxFddA5ugc.webp" alt="View case study poster 84"></a>
+<a href="https://drive.google.com/file/d/1xWS-eWpI_HEWBHlozM4OFmeHXMtpIByq/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1xWS-eWpI_HEWBHlozM4OFmeHXMtpIByq.webp" alt="View case study poster 85"></a>
+<a href="https://drive.google.com/file/d/1mBpoOecOjJuCeaRWUYxjow5g9LE4lT2j/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1mBpoOecOjJuCeaRWUYxjow5g9LE4lT2j.webp" alt="View case study poster 86"></a>
+<a href="https://drive.google.com/file/d/1g34ms-JdSKd8g3vZqOXf9ZefkjrmGuZV/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1g34ms-JdSKd8g3vZqOXf9ZefkjrmGuZV.webp" alt="View case study poster 87"></a>
+<a href="https://drive.google.com/file/d/1bgBJsk_69H1PwgAHa_GivSJyHnnNSDn3/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1bgBJsk_69H1PwgAHa_GivSJyHnnNSDn3.webp" alt="View case study poster 88"></a>
+<a href="https://drive.google.com/file/d/1WlTCEQguJpmqRi3YPCleKnQiySy4lT0j/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1WlTCEQguJpmqRi3YPCleKnQiySy4lT0j.webp" alt="View case study poster 89"></a>
+<a href="https://drive.google.com/file/d/1yNbZ07IVTUFgnGoLJaB6cGugMfiHBiTD/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1yNbZ07IVTUFgnGoLJaB6cGugMfiHBiTD.webp" alt="View case study poster 90"></a>
+<a href="https://drive.google.com/file/d/1Aqilzf_j91Jlx_OJOvhJlyTMtg0mrUe2/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1Aqilzf_j91Jlx_OJOvhJlyTMtg0mrUe2.webp" alt="View case study poster 91"></a>
+<a href="https://drive.google.com/file/d/1PHJczowLtT__17IO13ST6-2eKTRkqtNV/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1PHJczowLtT__17IO13ST6-2eKTRkqtNV.webp" alt="View case study poster 92"></a>
+<a href="https://drive.google.com/file/d/1QoR7zwWc_XSwA5bGobJyyP2_J_2GXhxF/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1QoR7zwWc_XSwA5bGobJyyP2_J_2GXhxF.webp" alt="View case study poster 93"></a>
+<a href="https://drive.google.com/file/d/1OWkstp5oNQEwPIP3xMdOyDTOP0KAyFj4/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1OWkstp5oNQEwPIP3xMdOyDTOP0KAyFj4.webp" alt="View case study poster 94"></a>
+<a href="https://drive.google.com/file/d/1mhNv-42AN8OX922jyefsK0wfBx0PQISu/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1mhNv-42AN8OX922jyefsK0wfBx0PQISu.webp" alt="View case study poster 95"></a>
+<a href="https://drive.google.com/file/d/1ix36KzRm5LdMHkwhWnTEvuaZItQddWeC/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1ix36KzRm5LdMHkwhWnTEvuaZItQddWeC.webp" alt="View case study poster 96"></a>
+<a href="https://drive.google.com/file/d/1qreaKQSHTlMzkfmMluwbXkEnitFeGWe9/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1qreaKQSHTlMzkfmMluwbXkEnitFeGWe9.webp" alt="View case study poster 97"></a>
+<a href="https://drive.google.com/file/d/1PmPuNTNaNTFIDgtTJH9cqcu4i8rKBc2g/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1PmPuNTNaNTFIDgtTJH9cqcu4i8rKBc2g.webp" alt="View case study poster 98"></a>
+<a href="https://drive.google.com/file/d/1x5lk9bIH_mP1RQJII-OdeJKyDuJZrhd9/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1x5lk9bIH_mP1RQJII-OdeJKyDuJZrhd9.webp" alt="View case study poster 99"></a>
+<a href="https://drive.google.com/file/d/1UVTCTJMlLjHYiC_87iS7aJo-x5qdfrvq/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1UVTCTJMlLjHYiC_87iS7aJo-x5qdfrvq.webp" alt="View case study poster 100"></a>
+<a href="https://drive.google.com/file/d/1i-h4F9FXs6pTteFeJzNAu57lWnWwWV4N/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1i-h4F9FXs6pTteFeJzNAu57lWnWwWV4N.webp" alt="View case study poster 101"></a>
+<a href="https://drive.google.com/file/d/1yNoypjhPKAn7K1YPufrH0P4eG8BRhquQ/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1yNoypjhPKAn7K1YPufrH0P4eG8BRhquQ.webp" alt="View case study poster 102"></a>
+<a href="https://drive.google.com/file/d/1l8c5O5NLMZayeZJSeLNiKYcLc_eGJHpH/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1l8c5O5NLMZayeZJSeLNiKYcLc_eGJHpH.webp" alt="View case study poster 103"></a>
+<a href="https://drive.google.com/file/d/10tIC18dzm8MUTZhh-8ofQjRG8AcAYvza/view"><img loading="lazy" decoding="async" src="figs/a1_posters/10tIC18dzm8MUTZhh-8ofQjRG8AcAYvza.webp" alt="View case study poster 104"></a>
+<a href="https://drive.google.com/file/d/15_31IsajC-C08dz1LWZ3WkL_OcMYWAZF/view"><img loading="lazy" decoding="async" src="figs/a1_posters/15_31IsajC-C08dz1LWZ3WkL_OcMYWAZF.webp" alt="View case study poster 105"></a>
+<a href="https://drive.google.com/file/d/1D9Sw1-MgsnURaYwzo4AcAcGyRSRTH5Qi/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1D9Sw1-MgsnURaYwzo4AcAcGyRSRTH5Qi.webp" alt="View case study poster 106"></a>
+<a href="https://drive.google.com/file/d/1C8yRQs__RiiMkVKpCWMsMaoKT6huLUkn/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1C8yRQs__RiiMkVKpCWMsMaoKT6huLUkn.webp" alt="View case study poster 107"></a>
+<a href="https://drive.google.com/file/d/1k938D95g0mR434n3wC9qxUMUP5VeiaF-/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1k938D95g0mR434n3wC9qxUMUP5VeiaF-.webp" alt="View case study poster 108"></a>
+<a href="https://drive.google.com/file/d/18WQLCtAX5JzuLs3r1xFPxcmQedU2wrRf/view"><img loading="lazy" decoding="async" src="figs/a1_posters/18WQLCtAX5JzuLs3r1xFPxcmQedU2wrRf.webp" alt="View case study poster 109"></a>
+<a href="https://drive.google.com/file/d/1PsRiM8GUgN8vLKS4Izsd4FxiOeHTCWID/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1PsRiM8GUgN8vLKS4Izsd4FxiOeHTCWID.webp" alt="View case study poster 110"></a>
+<a href="https://drive.google.com/file/d/1hH0SARTouo276TMKp4sgkgBgZzWjWnHi/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1hH0SARTouo276TMKp4sgkgBgZzWjWnHi.webp" alt="View case study poster 111"></a>
+<a href="https://drive.google.com/file/d/1C2gWOV8wQ32SmXNM6DIWYa7eg2hyTDAm/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1C2gWOV8wQ32SmXNM6DIWYa7eg2hyTDAm.webp" alt="View case study poster 112"></a>
+<a href="https://drive.google.com/file/d/1ga8CKjnKuk0aHkSwSerFtzu7rBKt4vkQ/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1ga8CKjnKuk0aHkSwSerFtzu7rBKt4vkQ.webp" alt="View case study poster 113"></a>
+<a href="https://drive.google.com/file/d/13oXJMCuYcverf83UPE48Ub7MobFKDOVE/view"><img loading="lazy" decoding="async" src="figs/a1_posters/13oXJMCuYcverf83UPE48Ub7MobFKDOVE.webp" alt="View case study poster 114"></a>
+<a href="https://drive.google.com/file/d/1lC4DSFJgOthD9hHPtU5K0TZzonCuFkBG/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1lC4DSFJgOthD9hHPtU5K0TZzonCuFkBG.webp" alt="View case study poster 115"></a>
+<a href="https://drive.google.com/file/d/1FmURZTQkQdIvjiDChH-S-NLdcBXjv9nU/view"><img loading="lazy" decoding="async" src="figs/a1_posters/1FmURZTQkQdIvjiDChH-S-NLdcBXjv9nU.webp" alt="View case study poster 116"></a>
+<a href="https://drive.google.com/file/d/18LsKu3--0PBOWk70vKlwGSrEClsIsOPP/view"><img loading="lazy" decoding="async" src="figs/a1_posters/18LsKu3--0PBOWk70vKlwGSrEClsIsOPP.webp" alt="View case study poster 117"></a>
+</div>
+
+<hr class="gallery-divider">
+
+<h2 id="a2-course-project">A.2. Course Project</h2>
+
+Under construction. Please come back here. 🙂
+
+<style>
+.gallery-divider {
+  margin: 2rem 0 1rem;
+  border: 0;
+  border-top: 6px solid #000;
+}
+.a1-posters {
+  display: grid;
+  grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
+  gap: var(--gap);
+}
+.a1-posters a { display: block; }
+.a1-posters img {
+  display: block;
+  width: 100%;
+  aspect-ratio: var(--poster-ratio);
+  object-fit: contain;
+  background: #f6f5f2;
+}
+@media (max-width: 1000px) {
+  .a1-posters { grid-template-columns: repeat(min(2, var(--columns)), minmax(0, 1fr)); }
+}
+@media (max-width: 540px) {
+  .a1-posters { grid-template-columns: 1fr; }
+}
+</style>

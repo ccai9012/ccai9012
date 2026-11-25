@@ -1,6 +1,20 @@
-# A.2: Individual Reflection
+# A.2.3: Individual Reflection
 
+<div style="height:1.5rem"></div>
 
+<div style="padding:1rem 1.25rem; background-color:#fff0f0; border-left:5px solid #a00000;">
+
+  📅 <strong>Submission Deadline</strong><br><br>
+
+  Submit your individual reflection by
+  <strong style="color:#a00000;">16 December 2026 at 23:59</strong>.<br><br>
+
+  Upload your <strong>.docx or .pdf</strong> file using
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLScCiqMQEuiPsdG_XlvU1MwdWyChqR14LVsRps0PQZW7aFXfKw/viewform"><strong>[link]</strong></a>.
+
+</div>
+
+<div style="height:1.5rem"></div>
 
 ## _The Account of Contribution_
 
@@ -41,7 +55,6 @@ Your reflection should demonstrate:
 ## Integrity & Position
 
 <div style="height:1.0rem"></div>
-
 
 You are expected to represent your contributions **accurately and in good faith**.  
 
@@ -198,7 +211,7 @@ Evidence should support your claims, not replace explanation.
 
 <div style="height:1.0rem"></div>
 
-Your reflection will be submitted as a `*.docx` or `*.pdf` via `Moodle`.
+Your reflection will be submitted as a `*.docx` or `*.pdf` via [**[link]**](https://docs.google.com/forms/d/e/1FAIpQLScCiqMQEuiPsdG_XlvU1MwdWyChqR14LVsRps0PQZW7aFXfKw/viewform).
 
 <div style="height:4rem"></div> 
 
@@ -246,7 +259,17 @@ Your reflection will be submitted as a `*.docx` or `*.pdf` via `Moodle`.
 
 ### Submission Deadline
 
-📅2026.12.16 ⏰23:59
+<div style="height:1.5rem"></div>
+
+<div style="padding:1rem 1.25rem; background-color:#fff0f0; border-left:5px solid #a00000;">
+
+  Submit your individual reflection by
+  <strong style="color:#a00000;">16 December 2026 at 23:59</strong>.<br><br>
+
+  Upload your <strong>.docx or .pdf</strong> file using
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLScCiqMQEuiPsdG_XlvU1MwdWyChqR14LVsRps0PQZW7aFXfKw/viewform"><strong>[link]</strong></a>.
+
+</div>
 
 <div style="height:1.5rem"></div> 
 

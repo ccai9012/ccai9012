@@ -86,6 +86,13 @@
         ]
     },
     {
+      "key": "Gallery",
+      "label": "Gallery",
+      "title": "Gallery",
+      "source": "gallery.md",
+      "output": "gallery.html"
+    },
+    {
       "key": "reading",
       "label": "Reading Materials",
       "title": "Reading Materials",
