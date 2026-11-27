@@ -4,6 +4,15 @@
 
 # CCAI 9012 
 
+<aside class="presentation-venues" aria-labelledby="presentation-venues-title">
+  <h2 id="presentation-venues-title">Final project presentation venues</h2>
+  <p><strong>5:00 pm to 7:00 pm</strong></p>
+  <dl>
+    <div><dt>Wednesday, 2 December 2026</dt><dd>CPD-3.28</dd></div>
+    <div><dt>Wednesday, 9 December 2026</dt><dd>KB730</dd></div>
+  </dl>
+</aside>
+
 ## **Lecture:** Wednesdays, **17:00–18:50**, **LE4**
 
 <div style="height:1.5rem"></div>

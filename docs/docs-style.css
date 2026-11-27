@@ -122,6 +122,37 @@ body {
     max-width: 1200px;
 }
 
+.presentation-venues {
+    margin: 1rem 0 1.5rem;
+    padding: 1rem 1.25rem;
+    background: #fffaeb;
+    border: 1px solid #eed39a;
+    border-left: 6px solid #b56a05;
+    border-radius: 6px;
+}
+
+.presentation-venues p {
+    margin: 0.2rem 0 0.8rem;
+}
+
+.presentation-venues dl {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem 1.5rem;
+}
+
+.presentation-venues dl > div {
+    flex: 1 1 15rem;
+    border-top: 1px solid #eed39a;
+    padding-top: 0.6rem;
+}
+
+.presentation-venues dd {
+    color: #793e0c;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
 header h1 {
     font-size: 2.5rem;
     font-weight: 700;
