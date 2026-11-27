@@ -97,14 +97,14 @@ The course project consists of the following assessed components:
 
     <tr style="background-color:#eef5fb;">
       <td><strong>A.2.2. Final Presentation (In-Class) I</strong></td>
-      <td>In-class presentations and video screening for <strong>Groups 02, 03, 04, 05, 06, 07, 09, 10, 11, 12, 13, 16, 17, 18, 19, 21, 22, 23, 24, and 26</strong>, followed by comments and discussion.<br><br>Indicate your team’s preferred time in the <strong>presentation signup</strong> <a href="https://docs.google.com/spreadsheets/d/15uIuEneDNz91Dyf7peFP2uDKVGN_631CMuwk7p9l30c/edit?gid=2002#gid=2002"><strong>[link]</strong></a> (5:00–5:30, 5:30–6:00, 6:00–6:30 or 6:30–7:00 pm). Times are approximate.</td>
+      <td>In-class presentations and video screening.<br><br>Indicate your team’s preferred time in the <strong>presentation signup</strong> <a href="https://docs.google.com/spreadsheets/d/15uIuEneDNz91Dyf7peFP2uDKVGN_631CMuwk7p9l30c/edit?gid=2002#gid=2002"><strong>[link]</strong></a> (5:00–5:30, 5:30–6:00, 6:00–6:30 or 6:30–7:00 pm). Times are approximate.</td>
       <td><strong style="color:#a00000;">2026.12.02 (In-Class)</strong></td>
       <td>–</td>
       <td>–</td>
     </tr>
     <tr style="background-color:#eef5fb;">
       <td><strong>A.2.2. Final Presentation (In-Class) II</strong></td>
-      <td>In-class presentations and video screening for <strong>Groups 20, 25, 01, 15, 14, and 08</strong>, followed by comments and discussion.<br><br>Indicate your team’s preferred time in the <strong>presentation signup</strong> <a href="https://docs.google.com/spreadsheets/d/15uIuEneDNz91Dyf7peFP2uDKVGN_631CMuwk7p9l30c/edit?gid=2002#gid=2002"><strong>[link]</strong></a> (5:00–5:30 or 5:30–6:00 pm). Times are approximate.</td>
+      <td>In-class presentations and video screening.<br><br>Indicate your team’s preferred time in the <strong>presentation signup</strong> <a href="https://docs.google.com/spreadsheets/d/15uIuEneDNz91Dyf7peFP2uDKVGN_631CMuwk7p9l30c/edit?gid=2002#gid=2002"><strong>[link]</strong></a> (5:00–5:30 or 5:30–6:00 pm). Times are approximate.</td>
       <td><strong style="color:#a00000;">2026.12.09 (In-Class)</strong></td>
       <td>–</td>
       <td>–</td>

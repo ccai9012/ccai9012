@@ -48,8 +48,8 @@ Here are some important course links:
     <li style="margin-bottom:0.5rem;">
       <strong>Presentation dates</strong>
       <ul style="margin:0.25rem 0 0; padding-left:1.25rem;">
-        <li>Check the <strong>course project schedule</strong> <a href="course_project.html"><strong>[link]</strong></a> for your group’s date. Presentations run from <strong>5:00 to 7:00 pm on Wednesday, 2 December</strong> and <strong>5:00 to 6:00 pm on Wednesday, 9 December</strong>. We’ll play your videos in class.</li>
-        <li>Enter your group number in the <strong>presentation signup</strong> <a href="https://docs.google.com/spreadsheets/d/15uIuEneDNz91Dyf7peFP2uDKVGN_631CMuwk7p9l30c/edit?gid=2002#gid=2002"><strong>[link]</strong></a> beside your preferred half-hour block on that date. This helps us plan the order, so treat the times as approximate.</li>
+        <li>Presentations run from <strong>5:00 to 7:00 pm on Wednesday, 2 December</strong> and <strong>5:00 to 6:00 pm on Wednesday, 9 December</strong>. We’ll play your videos in class.</li>
+        <li>Enter your group number in the <strong>presentation signup</strong> <a href="https://docs.google.com/spreadsheets/d/15uIuEneDNz91Dyf7peFP2uDKVGN_631CMuwk7p9l30c/edit?gid=2002#gid=2002"><strong>[link]</strong></a> beside your preferred half-hour block. This helps us plan the order, so treat the times as approximate.</li>
         <li>Students who volunteered and present on 9 December will receive a small participation bonus.</li>
       </ul>
     </li>
